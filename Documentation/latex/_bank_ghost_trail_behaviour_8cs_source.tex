@@ -1,0 +1,149 @@
+\doxysection{Bank\+Ghost\+Trail\+Behaviour.\+cs}
+\hypertarget{_bank_ghost_trail_behaviour_8cs_source}{}\label{_bank_ghost_trail_behaviour_8cs_source}\index{Assets/Scripts/DA\_40\_SpecialFeatures/BankGhostTrailBehaviour.cs@{Assets/Scripts/DA\_40\_SpecialFeatures/BankGhostTrailBehaviour.cs}}
+\mbox{\hyperlink{_bank_ghost_trail_behaviour_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00003}\mbox{\hyperlink{class_bank_ghost_trail_behaviour}{00003}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_bank_ghost_trail_behaviour}{BankGhostTrailBehaviour}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00005}00005\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}enable"{}})]}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00006}\mbox{\hyperlink{class_bank_ghost_trail_behaviour_a2f13acbc55bcf045ed3678b700fb8c55}{00006}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bank_ghost_trail_behaviour_a2f13acbc55bcf045ed3678b700fb8c55}{enable}}\ =\ \textcolor{keyword}{true};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00007}00007\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}references"{}})]}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00008}\mbox{\hyperlink{class_bank_ghost_trail_behaviour_a5ed5ded60775b7184b88ec1b63cc1e03}{00008}}\ \ \ \ \ \textcolor{keyword}{public}\ ParticleSystem\ \mbox{\hyperlink{class_bank_ghost_trail_behaviour_a5ed5ded60775b7184b88ec1b63cc1e03}{ghostTrail}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00009}00009\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Ghost\ Trail\ Motion"{}})]}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00010}\mbox{\hyperlink{class_bank_ghost_trail_behaviour_a3c2e84d52143b8400d1f8caad2f38ab2}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bank_ghost_trail_behaviour_a3c2e84d52143b8400d1f8caad2f38ab2}{velocity}}\ =\ 50f;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00011}\mbox{\hyperlink{class_bank_ghost_trail_behaviour_aea1b748b1f6323fdb834aa6fe8d6806f}{00011}}\ \ \ \ \ \textcolor{keyword}{private}\ ParticleSystem.Particle[]\ \mbox{\hyperlink{class_bank_ghost_trail_behaviour_aea1b748b1f6323fdb834aa6fe8d6806f}{ghostParticles}};\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00018}\mbox{\hyperlink{class_bank_ghost_trail_behaviour_abf91a79b3df32e6f4450ad0018990c60}{00018}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bank_ghost_trail_behaviour_abf91a79b3df32e6f4450ad0018990c60}{Update}}()}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bank_ghost_trail_behaviour_a2f13acbc55bcf045ed3678b700fb8c55}{enable}})}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bank_ghost_trail_behaviour_a27a97212a1b68b5bb55791c6c7d4d161}{UpdateGhostTrailMotion}}();}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00044}\mbox{\hyperlink{class_bank_ghost_trail_behaviour_a27a97212a1b68b5bb55791c6c7d4d161}{00044}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bank_ghost_trail_behaviour_a27a97212a1b68b5bb55791c6c7d4d161}{UpdateGhostTrailMotion}}()}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00045}00045\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bank_ghost_trail_behaviour_a5ed5ded60775b7184b88ec1b63cc1e03}{ghostTrail}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bank_ghost_trail_behaviour_aea1b748b1f6323fdb834aa6fe8d6806f}{ghostParticles}}\ ==\ \textcolor{keyword}{null}\ ||\ \mbox{\hyperlink{class_bank_ghost_trail_behaviour_aea1b748b1f6323fdb834aa6fe8d6806f}{ghostParticles}}.Length\ <\ \mbox{\hyperlink{class_bank_ghost_trail_behaviour_a5ed5ded60775b7184b88ec1b63cc1e03}{ghostTrail}}.main.maxParticles)}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bank_ghost_trail_behaviour_aea1b748b1f6323fdb834aa6fe8d6806f}{ghostParticles}}\ =\ \textcolor{keyword}{new}\ ParticleSystem.Particle[\mbox{\hyperlink{class_bank_ghost_trail_behaviour_a5ed5ded60775b7184b88ec1b63cc1e03}{ghostTrail}}.main.maxParticles];}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ \mbox{\hyperlink{class_bank_ghost_trail_behaviour_a5ed5ded60775b7184b88ec1b63cc1e03}{ghostTrail}}.GetParticles(\mbox{\hyperlink{class_bank_ghost_trail_behaviour_aea1b748b1f6323fdb834aa6fe8d6806f}{ghostParticles}});}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log("{}Particle\ count:\ "{}\ +\ count);}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (count\ ==\ 0)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ bank\ angle}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ bankAngle\ =\ transform.rotation.eulerAngles.x;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ convert\ from\ unsigned\ 0-\/360\ to\ range\ -\/180\ and\ 180}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ signedBank\ =\ Mathf.DeltaAngle(0f,\ bankAngle);}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ in\ level\ flight}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Mathf.Abs(signedBank)\ <\ 1f)}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ return,\ particle\ system\ handles\ level\ flight\ by\ default}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Formula\ for\ calculating\ turning\ radius}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00070}00070\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ R\ =\ V\string^2\ /\ (g\ *\ tan(BankAngle)}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00071}00071\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ R\ =\ Radius\ m}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00072}00072\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ V\ =\ velocity\ m/s}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00073}00073\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ g\ =\ gravity\ m/s}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00074}00074\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ bankAngle\ =\ degrees}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00075}00075\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ g\ =\ 9.81f;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ convert\ bank\ angle\ from\ degrees\ to\ radians}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ bankRadians\ =\ Mathf.Abs(signedBank)\ *\ Mathf.Deg2Rad;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mathf.Tan\ expects\ radians\ not\ degrees}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tanResult\ =\ Mathf.Tan(bankRadians);}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ radius}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ radius\ =\ (\mbox{\hyperlink{class_bank_ghost_trail_behaviour_a3c2e84d52143b8400d1f8caad2f38ab2}{velocity}}\ *\ \mbox{\hyperlink{class_bank_ghost_trail_behaviour_a3c2e84d52143b8400d1f8caad2f38ab2}{velocity}})\ /\ (g\ *\ tanResult);}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ turn\ direction\ -\/1\ =\ right\ 1\ =\ left}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ turnDir\ =\ Mathf.Sign(signedBank);}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ planes\ forward\ axis\ is\ +x\ therefore\ transform.forward\ returns\ the\ direction\ the\ planes\ +z\ axis\ is\ facing}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ Vector3\ sidewaysDir\ =\ transform.forward;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Isolate\ horizontal\ x\ and\ z\ directions}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ sidewaysDir.y\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Normalize\ horizontal\ dir}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ sidewaysDir.Normalize();}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ change\ direction\ to\ left\ or\ right}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ sidewaysDir\ *=\ turnDir;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ calculate\ turn\ centre}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ Vector3\ turnCentre\ =\ transform.position\ +\ sidewaysDir\ *\ radius;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ verticalComponent\ =\ -\/transform.right.y;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ Each\ Ghost\ Particle}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ particle\ position}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ pos\ =\ \mbox{\hyperlink{class_bank_ghost_trail_behaviour_aea1b748b1f6323fdb834aa6fe8d6806f}{ghostParticles}}[i].position;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ get\ vector\ from\ current\ pos\ to\ centre}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ toCentre\ =\ turnCentre\ -\/\ pos;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ remove\ y\ conponent}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ toCentre.y\ =\ 0f;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ normalize}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ dirToCentre\ =\ toCentre.normalized;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ calculate\ the\ "{}tangent"{}\ using\ the\ cross\ product\ of\ the\ diirection\ to\ centre\ and\ vector3.down}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ returns\ the\ a\ vector\ perpendicular\ to\ both\ inputs}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ tangentDir\ =\ Vector3.Cross(Vector3.down,\ dirToCentre).normalized;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ flip\ the\ tangent\ direction\ based\ on\ the\ turn\ side.}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ tangentDir\ *=\ turnDir;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ vertical\ component}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ tangentDir.y\ =\ verticalComponent;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ set\ the\ new\ velocity\ along\ the\ tangent}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bank_ghost_trail_behaviour_aea1b748b1f6323fdb834aa6fe8d6806f}{ghostParticles}}[i].velocity\ =\ tangentDir\ *\ \mbox{\hyperlink{class_bank_ghost_trail_behaviour_a3c2e84d52143b8400d1f8caad2f38ab2}{velocity}};}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log("{}Particles\ velocity"{}\ +\ tangentDir*velocity);}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pass\ the\ updated\ particles\ back\ to\ the\ ParticleSystem}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bank_ghost_trail_behaviour_a5ed5ded60775b7184b88ec1b63cc1e03}{ghostTrail}}.SetParticles(\mbox{\hyperlink{class_bank_ghost_trail_behaviour_aea1b748b1f6323fdb834aa6fe8d6806f}{ghostParticles}},\ count);}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00130}00130\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00137}\mbox{\hyperlink{class_bank_ghost_trail_behaviour_adaa6c1445980d7a132207d667a5e7bfa}{00137}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bank_ghost_trail_behaviour_adaa6c1445980d7a132207d667a5e7bfa}{OnDrawGizmosSelected}}()}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00138}00138\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bank_ghost_trail_behaviour_a5ed5ded60775b7184b88ec1b63cc1e03}{ghostTrail}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ bank\ angle}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ bankAngle\ =\ transform.rotation.eulerAngles.x;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bankAngle\ <\ 5f)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ convert\ from\ unsigned\ 0-\/360\ to\ range\ -\/180\ and\ 180}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ signedBank\ =\ Mathf.DeltaAngle(0f,\ bankAngle);}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ g\ =\ 9.81f;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ convert\ bank\ angle\ from\ degrees\ to\ radians}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ bankRadians\ =\ Mathf.Abs(signedBank)\ *\ Mathf.Deg2Rad;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mathf.Tan\ expects\ radians\ not\ degrees}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tanResult\ =\ Mathf.Tan(bankRadians);}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ radius}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ radius\ =\ (\mbox{\hyperlink{class_bank_ghost_trail_behaviour_a3c2e84d52143b8400d1f8caad2f38ab2}{velocity}}\ *\ \mbox{\hyperlink{class_bank_ghost_trail_behaviour_a3c2e84d52143b8400d1f8caad2f38ab2}{velocity}})\ /\ (g\ *\ tanResult);}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ turn\ direction\ -\/1\ =\ right\ 1\ =\ left}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ turnDir\ =\ Mathf.Sign(signedBank);}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ planes\ forward\ axis\ is\ +x\ therefore\ transform.forward\ returns\ the\ direction\ the\ planes\ +z\ axis\ is\ facing}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ Vector3\ sidewaysDir\ =\ transform.forward;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Isolate\ horizontal\ x\ and\ z\ directions}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ sidewaysDir.y\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Normalize\ horizontal\ dir}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ sidewaysDir.Normalize();}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ change\ direction\ to\ left\ or\ right}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ sidewaysDir\ *=\ turnDir;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ calculate\ turn\ centre}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ Vector3\ turnCentre\ =\ transform.position\ +\ sidewaysDir\ *\ radius;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ Gizmos.color\ =\ Color.cyan;}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ Gizmos.DrawWireSphere(turnCentre,\ radius);}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00170}00170\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bank_ghost_trail_behaviour_8cs_source_l00171}00171\ \}}
+
+\end{DoxyCode}

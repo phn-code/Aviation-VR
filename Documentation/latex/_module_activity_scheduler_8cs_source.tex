@@ -1,0 +1,132 @@
+\doxysection{Module\+Activity\+Scheduler.\+cs}
+\hypertarget{_module_activity_scheduler_8cs_source}{}\label{_module_activity_scheduler_8cs_source}\index{Assets/Scripts/ModuleStructure/ModuleActivityScheduler.cs@{Assets/Scripts/ModuleStructure/ModuleActivityScheduler.cs}}
+\mbox{\hyperlink{_module_activity_scheduler_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }TMPro;}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00011}\mbox{\hyperlink{class_module_activity_scheduler}{00011}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_module_activity_scheduler}{ModuleActivityScheduler}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00013}\mbox{\hyperlink{class_module_activity_scheduler_a1219b044ebf9be859645b946cfe9114e}{00013}}\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ GameObject\ \mbox{\hyperlink{class_module_activity_scheduler_a1219b044ebf9be859645b946cfe9114e}{checkboxPanel}};\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00014}\mbox{\hyperlink{class_module_activity_scheduler_a64d3e24b534424e22a7285af5194aa31}{00014}}\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_checkbox_manager}{CheckboxManager}}\ \mbox{\hyperlink{class_module_activity_scheduler_a64d3e24b534424e22a7285af5194aa31}{checkboxManager}};\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00015}\mbox{\hyperlink{class_module_activity_scheduler_a8b90107060ba26261ff9108c00367d80}{00015}}\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ TextMeshProUGUI\ \mbox{\hyperlink{class_module_activity_scheduler_a8b90107060ba26261ff9108c00367d80}{activityTitle}};\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00017}\mbox{\hyperlink{class_module_activity_scheduler_a57aad2f50875d7a94a45e66243f49575}{00017}}\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_module_manager}{ModuleManager}}\ \mbox{\hyperlink{class_module_activity_scheduler_a57aad2f50875d7a94a45e66243f49575}{moduleManager}};\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00019}\mbox{\hyperlink{class_module_activity_scheduler_a13df3d901230cc6bb25770ca44ca19ba}{00019}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_module_activities}{ModuleActivities}}\ \mbox{\hyperlink{class_module_activity_scheduler_a13df3d901230cc6bb25770ca44ca19ba}{currentActivity}};\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00020}\mbox{\hyperlink{class_module_activity_scheduler_af1783dc72c57813cf7670b37890e64f7}{00020}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_module_activity_scheduler_af1783dc72c57813cf7670b37890e64f7}{currentStepIndex}}\ =\ 0;\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00021}\mbox{\hyperlink{class_module_activity_scheduler_a83bd6501fcc5ead41a263810482753ee}{00021}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_module_activity_scheduler_a83bd6501fcc5ead41a263810482753ee}{activityInProgress}}\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00022}\mbox{\hyperlink{class_module_activity_scheduler_a0e5a81125de82cd6bfaac4fafd82814b}{00022}}\ \ \ \ \ \textcolor{keyword}{private}\ GameObject\ \mbox{\hyperlink{class_module_activity_scheduler_a0e5a81125de82cd6bfaac4fafd82814b}{activeControllerObject}};\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00024}\mbox{\hyperlink{class_module_activity_scheduler_a14579487c05abb7ec7095bd25f7d119e}{00024}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_module_activity_scheduler}{ModuleActivityScheduler}}\ \mbox{\hyperlink{class_module_activity_scheduler_a14579487c05abb7ec7095bd25f7d119e}{Instance}};\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00030}\mbox{\hyperlink{class_module_activity_scheduler_a46f55a682aadad910cb9ca9cab917321}{00030}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_module_activity_scheduler_a46f55a682aadad910cb9ca9cab917321}{Awake}}()}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_module_activity_scheduler_a14579487c05abb7ec7095bd25f7d119e}{Instance}}\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activity_scheduler_a14579487c05abb7ec7095bd25f7d119e}{Instance}}\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(gameObject);}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00048}\mbox{\hyperlink{class_module_activity_scheduler_aeef82d8d979c33e9113bfc1bd55c936e}{00048}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_module_activity_scheduler_aeef82d8d979c33e9113bfc1bd55c936e}{StartActivity}}(\mbox{\hyperlink{class_module_activities}{ModuleActivities}}\ newActivity,\ \mbox{\hyperlink{class_module_manager}{ModuleManager}}\ manager)}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Should\ never\ happen,\ but\ stop\ a\ new\ activity\ from\ starting\ if\ it's\ already\ in\ progress}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_module_activity_scheduler_a83bd6501fcc5ead41a263810482753ee}{activityInProgress}})}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Refresh\ activity\ attribs\ to\ new\ slate}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activity_scheduler_a13df3d901230cc6bb25770ca44ca19ba}{currentActivity}}\ =\ newActivity;}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activity_scheduler_a57aad2f50875d7a94a45e66243f49575}{moduleManager}}\ =\ manager;}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activity_scheduler_af1783dc72c57813cf7670b37890e64f7}{currentStepIndex}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activity_scheduler_a83bd6501fcc5ead41a263810482753ee}{activityInProgress}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ UI\ setup}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activity_scheduler_a1219b044ebf9be859645b946cfe9114e}{checkboxPanel}}.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activity_scheduler_a1d3b2dd9defa958e532c5819f6d11a0d}{SetupActivityUI}}();}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Optionally\ instantiate\ controller\ prefab}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_module_activity_scheduler_a13df3d901230cc6bb25770ca44ca19ba}{currentActivity}}.customScript\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activity_scheduler_a0e5a81125de82cd6bfaac4fafd82814b}{activeControllerObject}}\ =\ Instantiate(\mbox{\hyperlink{class_module_activity_scheduler_a13df3d901230cc6bb25770ca44ca19ba}{currentActivity}}.customScript,\ \textcolor{keyword}{new}\ Vector3(0,\ 0,\ 0),\ Quaternion.identity);}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ var\ controller\ =\ \mbox{\hyperlink{class_module_activity_scheduler_a0e5a81125de82cd6bfaac4fafd82814b}{activeControllerObject}}.GetComponent<\mbox{\hyperlink{interface_i_activity_controller}{IActivityController}}>();}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (controller\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ controller.StartActivity();}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Display\ first\ step!\ Let's\ get\ this\ party\ started}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activity_scheduler_ace00696571985265b216d5cbca9d41b1}{DisplayCurrentStep}}();}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00086}\mbox{\hyperlink{class_module_activity_scheduler_a1d3b2dd9defa958e532c5819f6d11a0d}{00086}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_module_activity_scheduler_a1d3b2dd9defa958e532c5819f6d11a0d}{SetupActivityUI}}()}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00087}00087\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activity_scheduler_a64d3e24b534424e22a7285af5194aa31}{checkboxManager}}.SetupSteps(\mbox{\hyperlink{class_module_activity_scheduler_a13df3d901230cc6bb25770ca44ca19ba}{currentActivity}}.instructions);}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00095}\mbox{\hyperlink{class_module_activity_scheduler_ace00696571985265b216d5cbca9d41b1}{00095}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_module_activity_scheduler_ace00696571985265b216d5cbca9d41b1}{DisplayCurrentStep}}()}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00096}00096\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_module_activity_scheduler_af1783dc72c57813cf7670b37890e64f7}{currentStepIndex}}\ <\ \mbox{\hyperlink{class_module_activity_scheduler_a13df3d901230cc6bb25770ca44ca19ba}{currentActivity}}.instructions.Length)}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ activityTitle.text\ =\ \mbox{\hyperlink{class_module_activity_scheduler_a13df3d901230cc6bb25770ca44ca19ba}{currentActivity}}.activityName;}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activity_scheduler_a64d3e24b534424e22a7285af5194aa31}{checkboxManager}}.HighlightStep(\mbox{\hyperlink{class_module_activity_scheduler_af1783dc72c57813cf7670b37890e64f7}{currentStepIndex}});}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ If\ there\ are\ no\ more\ steps,\ the\ activity\ is\ complete!}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activity_scheduler_a49a44008f73fba38ce95ccdf393d4674}{CompleteActivity}}();}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00112}\mbox{\hyperlink{class_module_activity_scheduler_a6316d56d8b96e66b2d5eb63d7eb8e55c}{00112}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_module_activity_scheduler_a6316d56d8b96e66b2d5eb63d7eb8e55c}{OnStepCompleted}}()}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00113}00113\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}Step\ completed:\ \{currentStepIndex\}"{}});}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ that\ box!}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activity_scheduler_a64d3e24b534424e22a7285af5194aa31}{checkboxManager}}.CompleteStep(\mbox{\hyperlink{class_module_activity_scheduler_af1783dc72c57813cf7670b37890e64f7}{currentStepIndex}});}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activity_scheduler_af1783dc72c57813cf7670b37890e64f7}{currentStepIndex}}++;}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_module_activity_scheduler_af1783dc72c57813cf7670b37890e64f7}{currentStepIndex}}\ <\ \mbox{\hyperlink{class_module_activity_scheduler_a13df3d901230cc6bb25770ca44ca19ba}{currentActivity}}.instructions.Length)}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Displaying\ next\ step..."{}});}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activity_scheduler_ace00696571985265b216d5cbca9d41b1}{DisplayCurrentStep}}();}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}All\ steps\ done,\ completing\ activity..."{}});}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activity_scheduler_a49a44008f73fba38ce95ccdf393d4674}{CompleteActivity}}();}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00129}00129\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00135}\mbox{\hyperlink{class_module_activity_scheduler_aea2efe109952221222b37e807ff36fb9}{00135}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_module_activity_scheduler_aea2efe109952221222b37e807ff36fb9}{OnExternalStepCompleted}}()}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00136}00136\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}MAS:\ OnExternalStepCompleted()\ called!"{}});}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activity_scheduler_a6316d56d8b96e66b2d5eb63d7eb8e55c}{OnStepCompleted}}();}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00139}00139\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00145}\mbox{\hyperlink{class_module_activity_scheduler_a49a44008f73fba38ce95ccdf393d4674}{00145}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_module_activity_scheduler_a49a44008f73fba38ce95ccdf393d4674}{CompleteActivity}}()}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00146}00146\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}Completing\ activity:\ \{currentActivity\}"{}});}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Cleaning\ up}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activity_scheduler_a83bd6501fcc5ead41a263810482753ee}{activityInProgress}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_module_activity_scheduler_a0e5a81125de82cd6bfaac4fafd82814b}{activeControllerObject}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(\mbox{\hyperlink{class_module_activity_scheduler_a0e5a81125de82cd6bfaac4fafd82814b}{activeControllerObject}});}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activity_scheduler_a1219b044ebf9be859645b946cfe9114e}{checkboxPanel}}.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activity_scheduler_a13df3d901230cc6bb25770ca44ca19ba}{currentActivity}}\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Calling\ ModuleManager.OnActivityComplete()"{}});}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activity_scheduler_a57aad2f50875d7a94a45e66243f49575}{moduleManager}}.OnActivityComplete();}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00160}00160\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_activity_scheduler_8cs_source_l00161}00161\ \}}
+
+\end{DoxyCode}

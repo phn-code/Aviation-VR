@@ -1,0 +1,44 @@
+\doxysection{Ghost\+Trail\+Toggle.\+cs}
+\hypertarget{_ghost_trail_toggle_8cs_source}{}\label{_ghost_trail_toggle_8cs_source}\index{Assets/Scripts/MiscBehaviour/GhostTrailToggle.cs@{Assets/Scripts/MiscBehaviour/GhostTrailToggle.cs}}
+\mbox{\hyperlink{_ghost_trail_toggle_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine.InputSystem;}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00010}\mbox{\hyperlink{class_ghost_trail_toggle}{00010}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ghost_trail_toggle}{GhostTrailToggle}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00012}\mbox{\hyperlink{class_ghost_trail_toggle_a1cba3e3415e1e512d30d638e8bd1ef24}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ ParticleSystem\ \mbox{\hyperlink{class_ghost_trail_toggle_a1cba3e3415e1e512d30d638e8bd1ef24}{GhostTrail}};\ }
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00014}\mbox{\hyperlink{class_ghost_trail_toggle_a3999fa500d0535efa9262551125415e7}{00014}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ghost_trail_toggle_a3999fa500d0535efa9262551125415e7}{ghostTrailEnabled}}\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00016}\mbox{\hyperlink{class_ghost_trail_toggle_a573c4dfc1a3db6a80de61905386131ef}{00016}}\ \ \ \ \ \textcolor{keyword}{public}\ InputActionReference\ \mbox{\hyperlink{class_ghost_trail_toggle_a573c4dfc1a3db6a80de61905386131ef}{toggleAction}};\ }
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00022}\mbox{\hyperlink{class_ghost_trail_toggle_a21958430b85e667cf6c3085760eba66c}{00022}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ghost_trail_toggle_a21958430b85e667cf6c3085760eba66c}{OnEnable}}()}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ toggleAction.action.performed\ +=\ \mbox{\hyperlink{class_ghost_trail_toggle_ab53e88fcefbabd10173803a7636b0c9a}{OnTogglePressed}};}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ghost_trail_toggle_a573c4dfc1a3db6a80de61905386131ef}{toggleAction}}.action.Enable();}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00032}\mbox{\hyperlink{class_ghost_trail_toggle_ae5ba296033c18331da31e0d81e0c5e1a}{00032}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ghost_trail_toggle_ae5ba296033c18331da31e0d81e0c5e1a}{OnDisable}}()}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00033}00033\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ toggleAction.action.performed\ -\/=\ \mbox{\hyperlink{class_ghost_trail_toggle_ab53e88fcefbabd10173803a7636b0c9a}{OnTogglePressed}};}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ghost_trail_toggle_a573c4dfc1a3db6a80de61905386131ef}{toggleAction}}.action.Disable();}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00043}\mbox{\hyperlink{class_ghost_trail_toggle_ab53e88fcefbabd10173803a7636b0c9a}{00043}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ghost_trail_toggle_ab53e88fcefbabd10173803a7636b0c9a}{OnTogglePressed}}(InputAction.CallbackContext\ ctx)}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00044}00044\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ghost_trail_toggle_a3999fa500d0535efa9262551125415e7}{ghostTrailEnabled}}\ =\ !\mbox{\hyperlink{class_ghost_trail_toggle_a3999fa500d0535efa9262551125415e7}{ghostTrailEnabled}};}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_ghost_trail_toggle_a3999fa500d0535efa9262551125415e7}{ghostTrailEnabled}})\ \textcolor{comment}{//\ Start\ trail}}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ghost_trail_toggle_a1cba3e3415e1e512d30d638e8bd1ef24}{GhostTrail}}.Play();}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ Stop\ trail}}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ghost_trail_toggle_a1cba3e3415e1e512d30d638e8bd1ef24}{GhostTrail}}.Stop(\textcolor{keyword}{true},\ ParticleSystemStopBehavior.StopEmitting);}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ghost_trail_toggle_8cs_source_l00056}00056\ \}}
+
+\end{DoxyCode}

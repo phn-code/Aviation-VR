@@ -1,0 +1,70 @@
+\doxysection{Module\+Menu\+Selection.\+cs}
+\hypertarget{_module_menu_selection_8cs_source}{}\label{_module_menu_selection_8cs_source}\index{Assets/Scripts/UI/ModuleMenuSelection.cs@{Assets/Scripts/UI/ModuleMenuSelection.cs}}
+\mbox{\hyperlink{_module_menu_selection_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine.UI;}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine.Playables;}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00011}\mbox{\hyperlink{class_module_menu_selection}{00011}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_module_menu_selection}{ModuleMenuSelection}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00013}00013\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Buttons"{}})]}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00014}\mbox{\hyperlink{class_module_menu_selection_acef40b3aad48db3f425621a80934d504}{00014}}\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{public}\ Button\ \mbox{\hyperlink{class_module_menu_selection_acef40b3aad48db3f425621a80934d504}{playButton}};\ }
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00015}\mbox{\hyperlink{class_module_menu_selection_aa463b36a53eeeca23f6928eec508a12c}{00015}}\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{public}\ Button\ \mbox{\hyperlink{class_module_menu_selection_aa463b36a53eeeca23f6928eec508a12c}{module1Button}};\ }
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00016}\mbox{\hyperlink{class_module_menu_selection_a16ffa12ba994deb10081ae4b128debfe}{00016}}\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{public}\ Button\ \mbox{\hyperlink{class_module_menu_selection_a16ffa12ba994deb10081ae4b128debfe}{module2Button}};\ }
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00017}\mbox{\hyperlink{class_module_menu_selection_a69d5eb924834e9fc99fe9ae0911e6e3b}{00017}}\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{public}\ Button\ \mbox{\hyperlink{class_module_menu_selection_a69d5eb924834e9fc99fe9ae0911e6e3b}{module3Button}};\ }
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00018}\mbox{\hyperlink{class_module_menu_selection_ac2384fae47d1dcc4c838e275f9f7f5b5}{00018}}\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{public}\ Button\ \mbox{\hyperlink{class_module_menu_selection_ac2384fae47d1dcc4c838e275f9f7f5b5}{backButton}};\ }
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00020}00020\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Module\ Manager"{}})]}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00021}\mbox{\hyperlink{class_module_menu_selection_a0d74932332e0e376ec2306094f289cc6}{00021}}\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_module_manager}{ModuleManager}}\ \mbox{\hyperlink{class_module_menu_selection_a0d74932332e0e376ec2306094f289cc6}{moduleManager}};\ }
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00023}\mbox{\hyperlink{class_module_menu_selection_a066a82cea4936db92928a9b1c2ee5fce}{00023}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_module_menu_selection_a066a82cea4936db92928a9b1c2ee5fce}{selectedModule}}\ =\ -\/1;\ }
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00025}\mbox{\hyperlink{class_module_menu_selection_a60d72c2cf0362e1ae194e4bfc42e37ce}{00025}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_module_menu_selection_a60d72c2cf0362e1ae194e4bfc42e37ce}{Start}}()}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00026}00026\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ No\ modules\ selected\ to\ start\ with,\ play\ button\ disabled}}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ playButton.interactable\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Buttons\ will\ call\ SelectModule\ passing\ in\ their\ unique\ index\ when\ clicked}}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{comment}{//module1Button.onClick.AddListener(()\ =>\ SelectModule(0));}}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_menu_selection_a16ffa12ba994deb10081ae4b128debfe}{module2Button}}.onClick.AddListener(()\ =>\ \mbox{\hyperlink{class_module_menu_selection_a10656b27b2894970e27c09c1f741809c}{SelectModule}}(1));}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//module3Button.onClick.AddListener(()\ =>\ SelectModule(2));}}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Methods\ called\ when\ play\ or\ back\ buttons\ are\ clicked}}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_menu_selection_acef40b3aad48db3f425621a80934d504}{playButton}}.onClick.AddListener(\mbox{\hyperlink{class_module_menu_selection_aa5dda851a3d8df6375cc8fa764be07a6}{OnPlayPressed}});}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_menu_selection_ac2384fae47d1dcc4c838e275f9f7f5b5}{backButton}}.onClick.AddListener(\mbox{\hyperlink{class_module_menu_selection_a0e8b932a93e54b412659facca95df30a}{OnBackPressed}});}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00045}\mbox{\hyperlink{class_module_menu_selection_a10656b27b2894970e27c09c1f741809c}{00045}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_module_menu_selection_a10656b27b2894970e27c09c1f741809c}{SelectModule}}(\textcolor{keywordtype}{int}\ moduleIndex)}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00046}00046\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ selected\ module}}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_menu_selection_a066a82cea4936db92928a9b1c2ee5fce}{selectedModule}}\ =\ moduleIndex;}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Allow\ the\ play\ button\ to\ be\ interacted\ with}}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ playButton.interactable\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00058}\mbox{\hyperlink{class_module_menu_selection_aa5dda851a3d8df6375cc8fa764be07a6}{00058}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_module_menu_selection_aa5dda851a3d8df6375cc8fa764be07a6}{OnPlayPressed}}()}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00059}00059\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ No\ module\ selected,\ do\ nothing}}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_module_menu_selection_a066a82cea4936db92928a9b1c2ee5fce}{selectedModule}}\ ==\ -\/1)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Disable\ the\ menu\ and\ reset\ state\ of\ menu}}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ playButton.interactable\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Play\ the\ selected\ module\ timeline\ by\ talking\ to\ ModuleManager}}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_menu_selection_a0d74932332e0e376ec2306094f289cc6}{moduleManager}}.PlayModule(\mbox{\hyperlink{class_module_menu_selection_a066a82cea4936db92928a9b1c2ee5fce}{selectedModule}});}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_menu_selection_a066a82cea4936db92928a9b1c2ee5fce}{selectedModule}}\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00076}\mbox{\hyperlink{class_module_menu_selection_a0e8b932a93e54b412659facca95df30a}{00076}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_module_menu_selection_a0e8b932a93e54b412659facca95df30a}{OnBackPressed}}()}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00077}00077\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ state\ of\ menu}}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_menu_selection_a066a82cea4936db92928a9b1c2ee5fce}{selectedModule}}\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ playButton.interactable\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_menu_selection_8cs_source_l00082}00082\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3867888200257410541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7542355592533799017}
+  - component: {fileID: 1740021717748009372}
+  m_Layer: 0
+  m_Name: DescendingTurnActivity
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7542355592533799017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3867888200257410541}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -23.76615, y: 0.01091, z: -6.27977}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1740021717748009372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3867888200257410541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ae0f9babc084d74babda4f7f92f69e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  postBankAndPitch: {fileID: 11400000, guid: 5e691494e6c3f274180ff71a3b25094c, type: 2}
+  postPitchUp: {fileID: 11400000, guid: f00b904ecac040f41ada66dd84559b3a, type: 2}
+  postStall: {fileID: 11400000, guid: 1e8836f4c405c8346a3c51840111e82a, type: 2}
+  rotationInput: {fileID: 5979926668809119104, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  bankSensitivity: 1
+  deadZone: 15
+  stepAdvanceTolerance: 3
+  useMouseClicks: 0
+  mouseRollSpeed: 1

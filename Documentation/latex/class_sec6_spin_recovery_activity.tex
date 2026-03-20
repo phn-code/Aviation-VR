@@ -1,0 +1,834 @@
+\doxysection{Sec6\+Spin\+Recovery\+Activity Class Reference}
+\hypertarget{class_sec6_spin_recovery_activity}{}\label{class_sec6_spin_recovery_activity}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+
+
+Section 6 spin recovery training activity controller.  
+
+
+
+
+Inheritance diagram for Sec6\+Spin\+Recovery\+Activity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_sec6_spin_recovery_activity__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sec6\+Spin\+Recovery\+Activity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sec6_spin_recovery_activity__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sec6_spin_recovery_activity_aca9d93731133712f739839e304598f6c}{On\+Enable}} ()
+\begin{DoxyCompactList}\small\item\em Initialize activity on component enable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sec6_spin_recovery_activity_a49a6df5c1c073f32f0afcd118cc813bd}{On\+Disable}} ()
+\begin{DoxyCompactList}\small\item\em Cleanup activity on component disable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sec6_spin_recovery_activity_a8ce66b8db21ddda76a3906b02013d69b}{Start\+Activity}} ()
+\begin{DoxyCompactList}\small\item\em Start the activity when triggered by \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sec6_spin_recovery_activity_ad75f11b9fd49cf03ec1a9b55c8927931}{Enable\+Current\+Step}} ()
+\begin{DoxyCompactList}\small\item\em Unlock input for the current training step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_sec6_spin_recovery_activity_a45891b29cb3da3d20a0159eba6bfa7fd}{throttle\+Canvas\+Prefab}}
+\begin{DoxyCompactList}\small\item\em Prefab for throttle display UI canvas. \end{DoxyCompactList}\item 
+Timeline\+Asset\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_sec6_spin_recovery_activity_a0303fbd8e82e045bbcd17cf54543ab33}{pare\+Step\+Timeline\+Assets}}
+\begin{DoxyCompactList}\small\item\em Timeline for each PARE step completion (4 timelines). \end{DoxyCompactList}\item 
+Input\+Action\+Reference \mbox{\hyperlink{class_sec6_spin_recovery_activity_a43c769a2cf23125dc4b5a9b1357748c9}{rotation\+Input}}
+\begin{DoxyCompactList}\small\item\em Controller rotation for pitch/bank control. \end{DoxyCompactList}\item 
+Input\+Action\+Reference \mbox{\hyperlink{class_sec6_spin_recovery_activity_ac9c4293d15485044cc3c42aa6dec246e}{throttle\+Input}}
+\begin{DoxyCompactList}\small\item\em VR controller input for throttle control (Y-\/axis). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sec6_spin_recovery_activity_aef3dfd8f9ce6e8404b42d974837f647c}{control\+Sensitivity}} = 1f
+\begin{DoxyCompactList}\small\item\em Roll/pitch sensitivity multiplier for controller input. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sec6_spin_recovery_activity_a28e8ae245d83e6dec3bc21b8e1ab82f1}{dead\+Zone}} = 15f
+\begin{DoxyCompactList}\small\item\em Controller deadzone threshold in degrees to filter noise. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_sec6_spin_recovery_activity_adecfe12d544475625212c8540714f20d}{spin\+Direction\+Right}} = true
+\begin{DoxyCompactList}\small\item\em Spin direction\+: true = right spin, false = left spin. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sec6_spin_recovery_activity_a794e7bdc7922ca6d12b09c1d8a449bc9}{spin\+Rotation\+Speed}} = 180f
+\begin{DoxyCompactList}\small\item\em Yaw rotation speed during spin in degrees per second. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sec6_spin_recovery_activity_a66de2474882ff5291e3e72ffbf086950}{initial\+Spin\+Bank}} = 60f
+\begin{DoxyCompactList}\small\item\em Initial bank angle for spin in degrees. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sec6_spin_recovery_activity_a3e6af8495b2d31cec5c649f7fec942a1}{initial\+Spin\+AOA}} = 25f
+\begin{DoxyCompactList}\small\item\em Initial angle of attack for spin in degrees (stalled condition). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_sec6_spin_recovery_activity_ab018f72b429bc82309ac9ab1d85697fa}{use\+Mouse\+Input}} = false
+\begin{DoxyCompactList}\small\item\em Use mouse for testing without VR. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sec6_spin_recovery_activity_a4d385c68d985b8e4262606cd7b6eadb2}{mouse\+Control\+Speed}} = 10000f
+\begin{DoxyCompactList}\small\item\em Speed multiplier for mouse control. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} \mbox{\hyperlink{class_sec6_spin_recovery_activity_ad697c3d5a0c3106ef5218591dd508c5d}{mas}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Reference to singleton activity scheduler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_sec6_spin_recovery_activity_ab856d89be930c441b6ab438871366a01}{Turn\+Step}} \{ \newline
+\mbox{\hyperlink{class_sec6_spin_recovery_activity_ab856d89be930c441b6ab438871366a01ac5c2ab84d034e86ba6a327b14d5c48cf}{power\+To\+Idle}}
+, \mbox{\hyperlink{class_sec6_spin_recovery_activity_ab856d89be930c441b6ab438871366a01ac881e4705bd8b130129ecc01d0df859b}{ailerons\+Neutral}}
+, \mbox{\hyperlink{class_sec6_spin_recovery_activity_ab856d89be930c441b6ab438871366a01a622412d7ef8b404f9662eff6ae72484f}{rudder\+Opposite}}
+, \mbox{\hyperlink{class_sec6_spin_recovery_activity_ab856d89be930c441b6ab438871366a01a0affd502ac98486e8f886835957cfac4}{elevator\+Forward}}
+, \newline
+\mbox{\hyperlink{class_sec6_spin_recovery_activity_ab856d89be930c441b6ab438871366a01a78e3d51b297f156466282eb0220428e0}{level\+Flight}}
+ \}
+\begin{DoxyCompactList}\small\item\em PARE recovery sequence states. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sec6_spin_recovery_activity_ab2d709c524768055df1bdd24d734b571}{Initialize\+Spin\+State}} ()
+\begin{DoxyCompactList}\small\item\em Initialize aircraft into spin state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sec6_spin_recovery_activity_a15d88b41c197896ae05f61b8db7f6160}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Main update loop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sec6_spin_recovery_activity_a5e4b7dc95b6970aa83ef1f13622ddc3f}{Handle\+Power\+To\+Idle}} ()
+\begin{DoxyCompactList}\small\item\em Handle power reduction to idle step (PARE step 1). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sec6_spin_recovery_activity_ad0fe16f412bdac7ef4ac140065cf6557}{Handle\+Ailerons\+Neutral}} ()
+\begin{DoxyCompactList}\small\item\em Handle ailerons neutral step (PARE step 2). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sec6_spin_recovery_activity_a91b63e99a80fbb7634c4c5ed7f5e0afe}{Handle\+Rudder\+Opposite}} ()
+\begin{DoxyCompactList}\small\item\em Handle rudder opposite spin direction step (PARE step 3). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sec6_spin_recovery_activity_ab65b7534f63919632570075915d9f882}{Handle\+Elevator\+Forward}} ()
+\begin{DoxyCompactList}\small\item\em Handle elevator forward to break stall step (PARE step 4). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sec6_spin_recovery_activity_af45fc606813260437ba7bea2df94f75e}{Spin\+Plane}} ()
+\begin{DoxyCompactList}\small\item\em Continuously rotate aircraft in yaw to simulate spinning. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sec6_spin_recovery_activity_a0c4c27a58ab786359d6bca9854164958}{update\+Throttle\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Update throttle display canvas with current value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_sec6_spin_recovery_activity_ac6619901f3675b54e9e8806fdfcdfe2d}{throttle\+Canvas\+Instance}}
+\begin{DoxyCompactList}\small\item\em Instantiated throttle display canvas. \end{DoxyCompactList}\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_sec6_spin_recovery_activity_ad5b545386a440eef7521ed258ca6e6a8}{throttle\+Text}}
+\begin{DoxyCompactList}\small\item\em Text component for displaying throttle percentage. \end{DoxyCompactList}\item 
+Quaternion \mbox{\hyperlink{class_sec6_spin_recovery_activity_add3aa8b4041472bcb3c1d63fcb2a2302}{controller\+Origin}} = Quaternion.\+identity
+\begin{DoxyCompactList}\small\item\em Controller starting orientation captured at step start. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_sec6_spin_recovery_activity_ae51277ddb186a543951f215181b4368b}{has\+Controller\+Origin}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if controller origin has been captured. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} \mbox{\hyperlink{class_sec6_spin_recovery_activity_a780afaaea6e806ac1eda254141e4ba10}{aoa\+Manipulator}}
+\begin{DoxyCompactList}\small\item\em Reference to aircraft rotation controller. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sec6_spin_recovery_activity_ab856d89be930c441b6ab438871366a01}{Turn\+Step}} \mbox{\hyperlink{class_sec6_spin_recovery_activity_aff89baacda517cf1bac51683ee353be0}{current\+Step}}
+\begin{DoxyCompactList}\small\item\em Current step in PARE recovery sequence. \end{DoxyCompactList}\item 
+Playable\+Director\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_sec6_spin_recovery_activity_ad7d6e5bb729aa8d5fd8070e9ab51b930}{pare\+Step\+Timelines}}
+\begin{DoxyCompactList}\small\item\em Directors for PARE step confirmation timelines. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_sec6_spin_recovery_activity_ab37353e650e7d2daf0b0c5cf4726e396}{input\+Locked}} = false
+\begin{DoxyCompactList}\small\item\em Flag to disable user input during transitions. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sec6_spin_recovery_activity_a2b0548ce899215690d6363d94d33ce4e}{step\+Start\+Time}} = 0f
+\begin{DoxyCompactList}\small\item\em Time when current step started (for minimum step duration). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sec6_spin_recovery_activity_a07239d79febcd3106cdc054eac008aea}{minimum\+Step\+Time}} = 0.\+5f
+\begin{DoxyCompactList}\small\item\em Minimum time in seconds before step can complete (prevents instant completion). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_sec6_spin_recovery_activity_ac54b4b0e54a33c2d565c979871098bcb}{is\+Spinning}} = true
+\begin{DoxyCompactList}\small\item\em Flag indicating if aircraft is currently in spinning state. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sec6_spin_recovery_activity_a40da5191b4c9d33ce5a8259fbc7db087}{spin\+Direction}} = 1f
+\begin{DoxyCompactList}\small\item\em Spin direction multiplier\+: 1 for right spin, -\/1 for left spin. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sec6_spin_recovery_activity_a65b16277cc167ac2a0a07ee912783a41}{current\+Throttle}} = 1f
+\begin{DoxyCompactList}\small\item\em Current throttle input value from controller. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sec6_spin_recovery_activity_acb0abe88e100daa4ebf68b28dbaad904}{current\+Bank}} = 0f
+\begin{DoxyCompactList}\small\item\em Current bank angle in degrees, updated each frame. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sec6_spin_recovery_activity_a258dd1122e5762f3c40c5f8377ab9a6c}{current\+Pitch}} = 0f
+\begin{DoxyCompactList}\small\item\em Current pitch angle in degrees, updated each frame. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sec6_spin_recovery_activity_aaa105d1b206f5590e7d4b16660a6b891}{total\+Throttle}} = 100
+\begin{DoxyCompactList}\small\item\em Current throttle percentage (0-\/100) displayed to user. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sec6_spin_recovery_activity_a3b774d6470dd799df567a60edcbd2768}{throttle\+Increment}} = 20
+\begin{DoxyCompactList}\small\item\em Throttle change rate in percent per second. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Section 6 spin recovery training activity controller. 
+
+Manages a PARE (Power-\/\+Ailerons-\/\+Rudder-\/\+Elevator) spin recovery training exercise where users practice the four-\/step procedure to recover from an aircraft spin. The aircraft begins in an active spin state (rotating continuously in yaw) and users must execute the correct recovery sequence to stop the spin and return to level flight. Implements the \doxylink{interface_i_activity_controller}{IActivity\+Controller} interface for integration with the \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler} system.
+
+PARE Recovery Sequence\+:
+\begin{DoxyEnumerate}
+\item Power to Idle -\/ Reduce throttle to below 10\%
+\item Ailerons Neutral -\/ Automated demonstration (passive step)
+\item Rudder Opposite -\/ Apply opposite rudder to stop spin rotation
+\item Elevator Forward -\/ Push nose down to break the stall
+\item Level Flight -\/ Recovery complete
+\end{DoxyEnumerate}
+
+Key features\+:
+\begin{DoxyItemize}
+\item Continuous yaw rotation simulation during spin
+\item Configurable spin direction (left or right)
+\item Throttle control with visual display
+\item Real-\/time feedback on recovery inputs
+\item Automatic spin cessation when correct inputs applied
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Connor Freebairn \texorpdfstring{$\vert$}{|} \href{mailto:frecd002@mymail.unisa.edu.au}{\texttt{frecd002@mymail.\+unisa.\+edu.\+au}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+
+
+\label{doc-enum-members}
+\Hypertarget{class_sec6_spin_recovery_activity_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_sec6_spin_recovery_activity_ab856d89be930c441b6ab438871366a01}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!TurnStep@{TurnStep}}
+\index{TurnStep@{TurnStep}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{TurnStep}{TurnStep}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_ab856d89be930c441b6ab438871366a01} 
+enum \mbox{\hyperlink{class_sec6_spin_recovery_activity_ab856d89be930c441b6ab438871366a01}{Sec6\+Spin\+Recovery\+Activity.\+Turn\+Step}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+PARE recovery sequence states. 
+
+Defines the five steps of the PARE spin recovery procedure. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{powerToIdle@{powerToIdle}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!powerToIdle@{powerToIdle}}}\Hypertarget{class_sec6_spin_recovery_activity_ab856d89be930c441b6ab438871366a01ac5c2ab84d034e86ba6a327b14d5c48cf}\label{class_sec6_spin_recovery_activity_ab856d89be930c441b6ab438871366a01ac5c2ab84d034e86ba6a327b14d5c48cf} 
+power\+To\+Idle&User reduces throttle to idle position. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{aileronsNeutral@{aileronsNeutral}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!aileronsNeutral@{aileronsNeutral}}}\Hypertarget{class_sec6_spin_recovery_activity_ab856d89be930c441b6ab438871366a01ac881e4705bd8b130129ecc01d0df859b}\label{class_sec6_spin_recovery_activity_ab856d89be930c441b6ab438871366a01ac881e4705bd8b130129ecc01d0df859b} 
+ailerons\+Neutral&Automated demonstration of neutral ailerons. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rudderOpposite@{rudderOpposite}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!rudderOpposite@{rudderOpposite}}}\Hypertarget{class_sec6_spin_recovery_activity_ab856d89be930c441b6ab438871366a01a622412d7ef8b404f9662eff6ae72484f}\label{class_sec6_spin_recovery_activity_ab856d89be930c441b6ab438871366a01a622412d7ef8b404f9662eff6ae72484f} 
+rudder\+Opposite&User applies rudder opposite to spin direction. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{elevatorForward@{elevatorForward}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!elevatorForward@{elevatorForward}}}\Hypertarget{class_sec6_spin_recovery_activity_ab856d89be930c441b6ab438871366a01a0affd502ac98486e8f886835957cfac4}\label{class_sec6_spin_recovery_activity_ab856d89be930c441b6ab438871366a01a0affd502ac98486e8f886835957cfac4} 
+elevator\+Forward&User pushes elevator forward to break stall. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{levelFlight@{levelFlight}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!levelFlight@{levelFlight}}}\Hypertarget{class_sec6_spin_recovery_activity_ab856d89be930c441b6ab438871366a01a78e3d51b297f156466282eb0220428e0}\label{class_sec6_spin_recovery_activity_ab856d89be930c441b6ab438871366a01a78e3d51b297f156466282eb0220428e0} 
+level\+Flight&Recovery complete, return to level flight. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00072}{72}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_sec6_spin_recovery_activity_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sec6_spin_recovery_activity_ad75f11b9fd49cf03ec1a9b55c8927931}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!EnableCurrentStep@{EnableCurrentStep}}
+\index{EnableCurrentStep@{EnableCurrentStep}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{EnableCurrentStep()}{EnableCurrentStep()}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_ad75f11b9fd49cf03ec1a9b55c8927931} 
+void Sec6\+Spin\+Recovery\+Activity.\+Enable\+Current\+Step (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Unlock input for the current training step. 
+
+Resets input lock and controller origin flag to allow user control, and records the step start time for minimum duration enforcement. 
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00183}{183}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_ad0fe16f412bdac7ef4ac140065cf6557}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!HandleAileronsNeutral@{HandleAileronsNeutral}}
+\index{HandleAileronsNeutral@{HandleAileronsNeutral}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{HandleAileronsNeutral()}{HandleAileronsNeutral()}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_ad0fe16f412bdac7ef4ac140065cf6557} 
+void Sec6\+Spin\+Recovery\+Activity.\+Handle\+Ailerons\+Neutral (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handle ailerons neutral step (PARE step 2). 
+
+Automated/passive demonstration step with no user input required. Immediately locks input and plays timeline, then advances to rudder opposite step. 
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00285}{285}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_ab65b7534f63919632570075915d9f882}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!HandleElevatorForward@{HandleElevatorForward}}
+\index{HandleElevatorForward@{HandleElevatorForward}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{HandleElevatorForward()}{HandleElevatorForward()}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_ab65b7534f63919632570075915d9f882} 
+void Sec6\+Spin\+Recovery\+Activity.\+Handle\+Elevator\+Forward (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handle elevator forward to break stall step (PARE step 4). 
+
+User must push controller forward to pitch nose down below -\/10, breaking the stall condition. When correct pitch achieved and minimum time elapsed, locks input, lerps AOA to 3 (recovered flight), plays confirmation timeline, and advances to level flight completion. Allows controller or debug mouse input while waiting for correct input. 
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00367}{367}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_a5e4b7dc95b6970aa83ef1f13622ddc3f}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!HandlePowerToIdle@{HandlePowerToIdle}}
+\index{HandlePowerToIdle@{HandlePowerToIdle}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{HandlePowerToIdle()}{HandlePowerToIdle()}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_a5e4b7dc95b6970aa83ef1f13622ddc3f} 
+void Sec6\+Spin\+Recovery\+Activity.\+Handle\+Power\+To\+Idle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handle power reduction to idle step (PARE step 1). 
+
+User must reduce throttle below 10\% to complete this step. Continuously updates total\+Throttle based on controller input and displays current value on canvas. When throttle drops below threshold, locks input, plays confirmation timeline, advances to next step, and destroys throttle display canvas. 
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00253}{253}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_a91b63e99a80fbb7634c4c5ed7f5e0afe}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!HandleRudderOpposite@{HandleRudderOpposite}}
+\index{HandleRudderOpposite@{HandleRudderOpposite}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{HandleRudderOpposite()}{HandleRudderOpposite()}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_a91b63e99a80fbb7634c4c5ed7f5e0afe} 
+void Sec6\+Spin\+Recovery\+Activity.\+Handle\+Rudder\+Opposite (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handle rudder opposite spin direction step (PARE step 3). 
+
+User must apply rudder in direction opposite to spin by rolling controller\+:
+\begin{DoxyItemize}
+\item Right spin requires left rudder (negative bank \texorpdfstring{$<$}{<} -\/10)
+\item Left spin requires right rudder (positive bank \texorpdfstring{$>$}{>} 10)
+\end{DoxyItemize}
+
+When correct rudder is applied and minimum time elapsed, stops spin rotation, locks input, lerps bank to neutral, plays confirmation timeline, and advances to elevator forward step. Allows controller or debug mouse input while waiting for correct input. 
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00308}{308}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_ab2d709c524768055df1bdd24d734b571}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!InitializeSpinState@{InitializeSpinState}}
+\index{InitializeSpinState@{InitializeSpinState}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{InitializeSpinState()}{InitializeSpinState()}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_ab2d709c524768055df1bdd24d734b571} 
+void Sec6\+Spin\+Recovery\+Activity.\+Initialize\+Spin\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialize aircraft into spin state. 
+
+Sets the aircraft to initial spin conditions with high AOA (stalled) and appropriate bank angle based on spin direction. Uses lerp for smooth transition into spin state. 
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00153}{153}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_a49a6df5c1c073f32f0afcd118cc813bd}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_a49a6df5c1c073f32f0afcd118cc813bd} 
+void Sec6\+Spin\+Recovery\+Activity.\+On\+Disable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cleanup activity on component disable. 
+
+Disables input actions for rotation and throttle control. 
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00134}{134}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_aca9d93731133712f739839e304598f6c}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_aca9d93731133712f739839e304598f6c} 
+void Sec6\+Spin\+Recovery\+Activity.\+On\+Enable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize activity on component enable. 
+
+Enables input actions, resets progression state to initial PARE step, retrieves references to aircraft controller, finds Playable\+Directors for timeline assets, and initializes the aircraft into spin state with appropriate bank and AOA. 
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00107}{107}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_af45fc606813260437ba7bea2df94f75e}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!SpinPlane@{SpinPlane}}
+\index{SpinPlane@{SpinPlane}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{SpinPlane()}{SpinPlane()}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_af45fc606813260437ba7bea2df94f75e} 
+void Sec6\+Spin\+Recovery\+Activity.\+Spin\+Plane (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Continuously rotate aircraft in yaw to simulate spinning. 
+
+Called each frame while is\+Spinning flag is true. Applies continuous yaw rotation at spin\+Rotation\+Speed in the direction specified by spin\+Direction multiplier. Stops when is\+Spinning is set to false in Handle\+Rudder\+Opposite. 
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00409}{409}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_a8ce66b8db21ddda76a3906b02013d69b}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!StartActivity@{StartActivity}}
+\index{StartActivity@{StartActivity}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{StartActivity()}{StartActivity()}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_a8ce66b8db21ddda76a3906b02013d69b} 
+void Sec6\+Spin\+Recovery\+Activity.\+Start\+Activity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Start the activity when triggered by \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}. 
+
+Called by the activity scheduler to begin the PARE recovery sequence. Unlocks input for the first step. 
+
+Implements \mbox{\hyperlink{interface_i_activity_controller_a5edbf7511d4b716c7e5de8d2c0c261a0}{IActivity\+Controller}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00172}{172}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_a15d88b41c197896ae05f61b8db7f6160}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!Update@{Update}}
+\index{Update@{Update}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_a15d88b41c197896ae05f61b8db7f6160} 
+void Sec6\+Spin\+Recovery\+Activity.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Main update loop. 
+
+Continuously rotates aircraft during spin, captures controller origin, reads current aircraft state, and routes execution to appropriate PARE step handler. 
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00197}{197}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_a0c4c27a58ab786359d6bca9854164958}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!updateThrottleDisplay@{updateThrottleDisplay}}
+\index{updateThrottleDisplay@{updateThrottleDisplay}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{updateThrottleDisplay()}{updateThrottleDisplay()}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_a0c4c27a58ab786359d6bca9854164958} 
+void Sec6\+Spin\+Recovery\+Activity.\+update\+Throttle\+Display (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update throttle display canvas with current value. 
+
+Instantiates throttle canvas on first call and positions it in world space. Updates the TMP\+\_\+\+Text component with current total\+Throttle percentage value.
+
+\begin{DoxyNote}{Note}
+Uses hardcoded position values that should be replaced with more robust system 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00427}{427}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_sec6_spin_recovery_activity_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_sec6_spin_recovery_activity_a780afaaea6e806ac1eda254141e4ba10}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!aoaManipulator@{aoaManipulator}}
+\index{aoaManipulator@{aoaManipulator}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{aoaManipulator}{aoaManipulator}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_a780afaaea6e806ac1eda254141e4ba10} 
+\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} Sec6\+Spin\+Recovery\+Activity.\+aoa\+Manipulator\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to aircraft rotation controller. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00063}{63}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_add3aa8b4041472bcb3c1d63fcb2a2302}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!controllerOrigin@{controllerOrigin}}
+\index{controllerOrigin@{controllerOrigin}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{controllerOrigin}{controllerOrigin}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_add3aa8b4041472bcb3c1d63fcb2a2302} 
+Quaternion Sec6\+Spin\+Recovery\+Activity.\+controller\+Origin = Quaternion.\+identity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Controller starting orientation captured at step start. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00060}{60}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_aef3dfd8f9ce6e8404b42d974837f647c}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!controlSensitivity@{controlSensitivity}}
+\index{controlSensitivity@{controlSensitivity}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{controlSensitivity}{controlSensitivity}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_aef3dfd8f9ce6e8404b42d974837f647c} 
+float Sec6\+Spin\+Recovery\+Activity.\+control\+Sensitivity = 1f}
+
+
+
+Roll/pitch sensitivity multiplier for controller input. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00047}{47}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_acb0abe88e100daa4ebf68b28dbaad904}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!currentBank@{currentBank}}
+\index{currentBank@{currentBank}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{currentBank}{currentBank}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_acb0abe88e100daa4ebf68b28dbaad904} 
+float Sec6\+Spin\+Recovery\+Activity.\+current\+Bank = 0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current bank angle in degrees, updated each frame. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00093}{93}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_a258dd1122e5762f3c40c5f8377ab9a6c}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!currentPitch@{currentPitch}}
+\index{currentPitch@{currentPitch}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{currentPitch}{currentPitch}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_a258dd1122e5762f3c40c5f8377ab9a6c} 
+float Sec6\+Spin\+Recovery\+Activity.\+current\+Pitch = 0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current pitch angle in degrees, updated each frame. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00094}{94}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_aff89baacda517cf1bac51683ee353be0}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!currentStep@{currentStep}}
+\index{currentStep@{currentStep}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{currentStep}{currentStep}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_aff89baacda517cf1bac51683ee353be0} 
+\mbox{\hyperlink{class_sec6_spin_recovery_activity_ab856d89be930c441b6ab438871366a01}{Turn\+Step}} Sec6\+Spin\+Recovery\+Activity.\+current\+Step\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current step in PARE recovery sequence. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00065}{65}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_a65b16277cc167ac2a0a07ee912783a41}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!currentThrottle@{currentThrottle}}
+\index{currentThrottle@{currentThrottle}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{currentThrottle}{currentThrottle}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_a65b16277cc167ac2a0a07ee912783a41} 
+float Sec6\+Spin\+Recovery\+Activity.\+current\+Throttle = 1f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current throttle input value from controller. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00092}{92}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_a28e8ae245d83e6dec3bc21b8e1ab82f1}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!deadZone@{deadZone}}
+\index{deadZone@{deadZone}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{deadZone}{deadZone}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_a28e8ae245d83e6dec3bc21b8e1ab82f1} 
+float Sec6\+Spin\+Recovery\+Activity.\+dead\+Zone = 15f}
+
+
+
+Controller deadzone threshold in degrees to filter noise. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00048}{48}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_ae51277ddb186a543951f215181b4368b}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!hasControllerOrigin@{hasControllerOrigin}}
+\index{hasControllerOrigin@{hasControllerOrigin}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{hasControllerOrigin}{hasControllerOrigin}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_ae51277ddb186a543951f215181b4368b} 
+bool Sec6\+Spin\+Recovery\+Activity.\+has\+Controller\+Origin = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag indicating if controller origin has been captured. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00061}{61}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_a3e6af8495b2d31cec5c649f7fec942a1}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!initialSpinAOA@{initialSpinAOA}}
+\index{initialSpinAOA@{initialSpinAOA}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{initialSpinAOA}{initialSpinAOA}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_a3e6af8495b2d31cec5c649f7fec942a1} 
+float Sec6\+Spin\+Recovery\+Activity.\+initial\+Spin\+AOA = 25f}
+
+
+
+Initial angle of attack for spin in degrees (stalled condition). 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00054}{54}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_a66de2474882ff5291e3e72ffbf086950}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!initialSpinBank@{initialSpinBank}}
+\index{initialSpinBank@{initialSpinBank}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{initialSpinBank}{initialSpinBank}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_a66de2474882ff5291e3e72ffbf086950} 
+float Sec6\+Spin\+Recovery\+Activity.\+initial\+Spin\+Bank = 60f}
+
+
+
+Initial bank angle for spin in degrees. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00053}{53}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_ab37353e650e7d2daf0b0c5cf4726e396}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!inputLocked@{inputLocked}}
+\index{inputLocked@{inputLocked}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{inputLocked}{inputLocked}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_ab37353e650e7d2daf0b0c5cf4726e396} 
+bool Sec6\+Spin\+Recovery\+Activity.\+input\+Locked = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag to disable user input during transitions. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00083}{83}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_ac54b4b0e54a33c2d565c979871098bcb}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!isSpinning@{isSpinning}}
+\index{isSpinning@{isSpinning}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{isSpinning}{isSpinning}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_ac54b4b0e54a33c2d565c979871098bcb} 
+bool Sec6\+Spin\+Recovery\+Activity.\+is\+Spinning = true\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag indicating if aircraft is currently in spinning state. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00088}{88}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_a07239d79febcd3106cdc054eac008aea}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!minimumStepTime@{minimumStepTime}}
+\index{minimumStepTime@{minimumStepTime}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{minimumStepTime}{minimumStepTime}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_a07239d79febcd3106cdc054eac008aea} 
+float Sec6\+Spin\+Recovery\+Activity.\+minimum\+Step\+Time = 0.\+5f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Minimum time in seconds before step can complete (prevents instant completion). 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00085}{85}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_a4d385c68d985b8e4262606cd7b6eadb2}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!mouseControlSpeed@{mouseControlSpeed}}
+\index{mouseControlSpeed@{mouseControlSpeed}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{mouseControlSpeed}{mouseControlSpeed}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_a4d385c68d985b8e4262606cd7b6eadb2} 
+float Sec6\+Spin\+Recovery\+Activity.\+mouse\+Control\+Speed = 10000f}
+
+
+
+Speed multiplier for mouse control. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00058}{58}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_a0303fbd8e82e045bbcd17cf54543ab33}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!pareStepTimelineAssets@{pareStepTimelineAssets}}
+\index{pareStepTimelineAssets@{pareStepTimelineAssets}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{pareStepTimelineAssets}{pareStepTimelineAssets}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_a0303fbd8e82e045bbcd17cf54543ab33} 
+Timeline\+Asset \mbox{[}$\,$\mbox{]} Sec6\+Spin\+Recovery\+Activity.\+pare\+Step\+Timeline\+Assets}
+
+
+
+Timeline for each PARE step completion (4 timelines). 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00040}{40}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_ad7d6e5bb729aa8d5fd8070e9ab51b930}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!pareStepTimelines@{pareStepTimelines}}
+\index{pareStepTimelines@{pareStepTimelines}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{pareStepTimelines}{pareStepTimelines}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_ad7d6e5bb729aa8d5fd8070e9ab51b930} 
+Playable\+Director \mbox{[}$\,$\mbox{]} Sec6\+Spin\+Recovery\+Activity.\+pare\+Step\+Timelines\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Directors for PARE step confirmation timelines. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00081}{81}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_a43c769a2cf23125dc4b5a9b1357748c9}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!rotationInput@{rotationInput}}
+\index{rotationInput@{rotationInput}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{rotationInput}{rotationInput}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_a43c769a2cf23125dc4b5a9b1357748c9} 
+Input\+Action\+Reference Sec6\+Spin\+Recovery\+Activity.\+rotation\+Input}
+
+
+
+Controller rotation for pitch/bank control. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00043}{43}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_a40da5191b4c9d33ce5a8259fbc7db087}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!spinDirection@{spinDirection}}
+\index{spinDirection@{spinDirection}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{spinDirection}{spinDirection}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_a40da5191b4c9d33ce5a8259fbc7db087} 
+float Sec6\+Spin\+Recovery\+Activity.\+spin\+Direction = 1f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Spin direction multiplier\+: 1 for right spin, -\/1 for left spin. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00089}{89}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_adecfe12d544475625212c8540714f20d}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!spinDirectionRight@{spinDirectionRight}}
+\index{spinDirectionRight@{spinDirectionRight}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{spinDirectionRight}{spinDirectionRight}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_adecfe12d544475625212c8540714f20d} 
+bool Sec6\+Spin\+Recovery\+Activity.\+spin\+Direction\+Right = true}
+
+
+
+Spin direction\+: true = right spin, false = left spin. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00051}{51}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_a794e7bdc7922ca6d12b09c1d8a449bc9}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!spinRotationSpeed@{spinRotationSpeed}}
+\index{spinRotationSpeed@{spinRotationSpeed}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{spinRotationSpeed}{spinRotationSpeed}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_a794e7bdc7922ca6d12b09c1d8a449bc9} 
+float Sec6\+Spin\+Recovery\+Activity.\+spin\+Rotation\+Speed = 180f}
+
+
+
+Yaw rotation speed during spin in degrees per second. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00052}{52}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_a2b0548ce899215690d6363d94d33ce4e}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!stepStartTime@{stepStartTime}}
+\index{stepStartTime@{stepStartTime}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{stepStartTime}{stepStartTime}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_a2b0548ce899215690d6363d94d33ce4e} 
+float Sec6\+Spin\+Recovery\+Activity.\+step\+Start\+Time = 0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Time when current step started (for minimum step duration). 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00084}{84}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_ac6619901f3675b54e9e8806fdfcdfe2d}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!throttleCanvasInstance@{throttleCanvasInstance}}
+\index{throttleCanvasInstance@{throttleCanvasInstance}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{throttleCanvasInstance}{throttleCanvasInstance}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_ac6619901f3675b54e9e8806fdfcdfe2d} 
+Game\+Object Sec6\+Spin\+Recovery\+Activity.\+throttle\+Canvas\+Instance\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instantiated throttle display canvas. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00036}{36}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_a45891b29cb3da3d20a0159eba6bfa7fd}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!throttleCanvasPrefab@{throttleCanvasPrefab}}
+\index{throttleCanvasPrefab@{throttleCanvasPrefab}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{throttleCanvasPrefab}{throttleCanvasPrefab}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_a45891b29cb3da3d20a0159eba6bfa7fd} 
+Game\+Object Sec6\+Spin\+Recovery\+Activity.\+throttle\+Canvas\+Prefab}
+
+
+
+Prefab for throttle display UI canvas. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00035}{35}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_a3b774d6470dd799df567a60edcbd2768}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!throttleIncrement@{throttleIncrement}}
+\index{throttleIncrement@{throttleIncrement}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{throttleIncrement}{throttleIncrement}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_a3b774d6470dd799df567a60edcbd2768} 
+float Sec6\+Spin\+Recovery\+Activity.\+throttle\+Increment = 20\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Throttle change rate in percent per second. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00098}{98}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_ac9c4293d15485044cc3c42aa6dec246e}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!throttleInput@{throttleInput}}
+\index{throttleInput@{throttleInput}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{throttleInput}{throttleInput}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_ac9c4293d15485044cc3c42aa6dec246e} 
+Input\+Action\+Reference Sec6\+Spin\+Recovery\+Activity.\+throttle\+Input}
+
+
+
+VR controller input for throttle control (Y-\/axis). 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00044}{44}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_ad5b545386a440eef7521ed258ca6e6a8}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!throttleText@{throttleText}}
+\index{throttleText@{throttleText}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{throttleText}{throttleText}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_ad5b545386a440eef7521ed258ca6e6a8} 
+TMP\+\_\+\+Text Sec6\+Spin\+Recovery\+Activity.\+throttle\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Text component for displaying throttle percentage. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_aaa105d1b206f5590e7d4b16660a6b891}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!totalThrottle@{totalThrottle}}
+\index{totalThrottle@{totalThrottle}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{totalThrottle}{totalThrottle}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_aaa105d1b206f5590e7d4b16660a6b891} 
+float Sec6\+Spin\+Recovery\+Activity.\+total\+Throttle = 100\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current throttle percentage (0-\/100) displayed to user. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00097}{97}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+\Hypertarget{class_sec6_spin_recovery_activity_ab018f72b429bc82309ac9ab1d85697fa}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!useMouseInput@{useMouseInput}}
+\index{useMouseInput@{useMouseInput}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{useMouseInput}{useMouseInput}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_ab018f72b429bc82309ac9ab1d85697fa} 
+bool Sec6\+Spin\+Recovery\+Activity.\+use\+Mouse\+Input = false}
+
+
+
+Use mouse for testing without VR. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00057}{57}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_sec6_spin_recovery_activity_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_sec6_spin_recovery_activity_ad697c3d5a0c3106ef5218591dd508c5d}\index{Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}!mas@{mas}}
+\index{mas@{mas}!Sec6SpinRecoveryActivity@{Sec6SpinRecoveryActivity}}
+\doxysubsubsection{\texorpdfstring{mas}{mas}}
+{\footnotesize\ttfamily \label{class_sec6_spin_recovery_activity_ad697c3d5a0c3106ef5218591dd508c5d} 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} Sec6\+Spin\+Recovery\+Activity.\+mas\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
+
+
+
+Reference to singleton activity scheduler. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_sec6_spin_recovery_activity_8cs_source}{Sec6\+Spin\+Recovery\+Activity.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Module\+Exclusive\+Assets/\+Module2/\+Section6/\mbox{\hyperlink{_sec6_spin_recovery_activity_8cs}{Sec6\+Spin\+Recovery\+Activity.\+cs}}\end{DoxyCompactItemize}

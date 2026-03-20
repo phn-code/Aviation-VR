@@ -1,0 +1,60 @@
+\doxysection{IActivity\+Controller Interface Reference}
+\hypertarget{interface_i_activity_controller}{}\label{interface_i_activity_controller}\index{IActivityController@{IActivityController}}
+
+
+Interface class.  
+
+
+
+
+Inheritance diagram for IActivity\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{interface_i_activity_controller__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interface_i_activity_controller_a5edbf7511d4b716c7e5de8d2c0c261a0}{Start\+Activity}} ()
+\begin{DoxyCompactList}\small\item\em Each child activity can have a differing implementation of what must be carried out/what inputs must be switched on when the activity starts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface class. 
+
+All activities implement this interface to standardize access from \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}\textquotesingle{}s controller prefab instantiation.
+
+\begin{DoxyAuthor}{Author}
+Caleb Martin \texorpdfstring{$\vert$}{|} \href{mailto:marcy066@mymail.unisa.edu.au}{\texttt{marcy066@mymail.\+unisa.\+edu.\+au}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_i_activity_controller_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_i_activity_controller_8cs_source}{IActivity\+Controller.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{interface_i_activity_controller_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_i_activity_controller_a5edbf7511d4b716c7e5de8d2c0c261a0}\index{IActivityController@{IActivityController}!StartActivity@{StartActivity}}
+\index{StartActivity@{StartActivity}!IActivityController@{IActivityController}}
+\doxysubsubsection{\texorpdfstring{StartActivity()}{StartActivity()}}
+{\footnotesize\ttfamily \label{interface_i_activity_controller_a5edbf7511d4b716c7e5de8d2c0c261a0} 
+void IActivity\+Controller.\+Start\+Activity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Each child activity can have a differing implementation of what must be carried out/what inputs must be switched on when the activity starts. 
+
+Override this method for new activity scripts. 
+
+Implemented in \mbox{\hyperlink{class_accelerate_script_a4637483a98dca673301c578bdae48c0a}{Accelerate\+Script}}, \mbox{\hyperlink{class_climbing_turn_activity_a6f2995a2d3405ab52ade93963e744cc7}{Climbing\+Turn\+Activity}}, \mbox{\hyperlink{class_controller_backward_aa422e708e9af169d895af3fd39013f92}{Controller\+Backward}}, \mbox{\hyperlink{class_descending_turn_activity_a82335a585e197c76ea724fa05773e6ce}{Descending\+Turn\+Activity}}, \mbox{\hyperlink{class_hold_to_lower_nose_a47422cc7f0a823ebba00ff0387509c7d}{Hold\+To\+Lower\+Nose}}, \mbox{\hyperlink{class_increase_throttle_a55fc8109cb466c8f1192e8bb35f208cf}{Increase\+Throttle}}, \mbox{\hyperlink{class_level_turn_activity_ae5b645fa2126e98f246938c41430301d}{Level\+Turn\+Activity}}, \mbox{\hyperlink{class_rotate_left_controller_ad54ce79c3bd7df0801d33c283ea7985a}{Rotate\+Left\+Controller}}, \mbox{\hyperlink{class_sec1_stall_activity_a0c0033387b5efb35d4bd0bfa4867ba5f}{Sec1\+Stall\+Activity}}, \mbox{\hyperlink{class_sec6_spin_recovery_activity_a8ce66b8db21ddda76a3906b02013d69b}{Sec6\+Spin\+Recovery\+Activity}}, and \mbox{\hyperlink{class_tilt_controller_a5f88831e1490d3d81c0e981aef895fdb}{Tilt\+Controller}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Activity\+Structure/\mbox{\hyperlink{_i_activity_controller_8cs}{IActivity\+Controller.\+cs}}\end{DoxyCompactItemize}

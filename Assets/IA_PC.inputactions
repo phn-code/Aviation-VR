@@ -1,0 +1,34 @@
+{
+    "name": "IA_PC",
+    "maps": [
+        {
+            "name": "test",
+            "id": "1f350208-e3fd-4a7f-b885-2456ba314d0f",
+            "actions": [
+                {
+                    "name": "PressSpace",
+                    "type": "Button",
+                    "id": "55163fa0-9e3a-467e-8f26-3dc6b344e181",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8c940bca-6f4a-43ef-aa16-f184ac865188",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PressSpace",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

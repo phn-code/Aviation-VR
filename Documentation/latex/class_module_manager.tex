@@ -1,0 +1,364 @@
+\doxysection{Module\+Manager Class Reference}
+\hypertarget{class_module_manager}{}\label{class_module_manager}\index{ModuleManager@{ModuleManager}}
+
+
+Central driver class to control the flow of logic on which Modules/sections/timelines/activities should play, and in sequence.  
+
+
+
+
+Inheritance diagram for Module\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{class_module_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Module\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_module_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_module_manager_1_1_module}{Module}}
+\begin{DoxyCompactList}\small\item\em Modules are the collections of sections that form learning content within the application. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_module_manager_1_1_section}{Section}}
+\begin{DoxyCompactList}\small\item\em Sections are combinations of timelines and activities that form a \doxylink{class_module_manager_1_1_module}{Module}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_module_manager_a84555f55d269e5c76a466eaf3e27a68d}{On\+Activity\+Complete}} ()
+\begin{DoxyCompactList}\small\item\em Called by the \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler} when the current activity is completed, starting the next timeline. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_module_manager_aa8cd40defadea52fc0925a7a5998ac7d}{Play\+Module}} (int module\+Index)
+\begin{DoxyCompactList}\small\item\em Play a specific \doxylink{class_module_manager_1_1_module}{Module} instead of beginning from the first one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_module_manager_1_1_module}{Module}} $>$ \mbox{\hyperlink{class_module_manager_a08a427bc3d59be9fbacd6829181769cb}{modules}} = new List$<$\mbox{\hyperlink{class_module_manager_1_1_module}{Module}}$>$()
+\begin{DoxyCompactList}\small\item\em A list of Modules that form the application as a whole. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_module_manager_a8a364d7dc3411275d4e95cd92a7fb677}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_module_manager_a2fc4783efa775ad88ad6f7b951f3d864}{Play\+Current\+Timeline}} ()
+\begin{DoxyCompactList}\small\item\em Plays the timeline in the currently-\/selected section. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_module_manager_afd5a598d10501c72285be17231a3b462}{On\+Timeline\+Finished}} (Playable\+Director director)
+\begin{DoxyCompactList}\small\item\em When a timeline finishes, this method is called to check for activities to determine what to play next. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_module_manager_a3e2c8c163a10d082da43cc86c29d4dca}{Start\+Activity}} (\mbox{\hyperlink{class_module_activities}{Module\+Activities}} activity)
+\begin{DoxyCompactList}\small\item\em Communicate with the \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler} to initiate a passed-\/in activity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_module_manager_a734a26725022dd96d7c87ce4fa597c0e}{Next\+Timeline}} ()
+\begin{DoxyCompactList}\small\item\em Progress to the next timeline, skipping instead to the next \doxylink{class_module_manager_1_1_section}{Section} if there are no more timelines in this \doxylink{class_module_manager_1_1_section}{Section}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_module_manager_ab291c05e9b2ab7ed1d0f24f92e236909}{Next\+Section}} ()
+\begin{DoxyCompactList}\small\item\em Progress to the next \doxylink{class_module_manager_1_1_section}{Section}, skipping instead to the next \doxylink{class_module_manager_1_1_module}{Module} if there are no more Sections in this \doxylink{class_module_manager_1_1_module}{Module}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_module_manager_ab5f5a8f3cbdcd4069bf4602b4a10bcea}{Next\+Module}} ()
+\begin{DoxyCompactList}\small\item\em Progress to the next \doxylink{class_module_manager_1_1_module}{Module}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} \mbox{\hyperlink{class_module_manager_ad5aa308b6371230768697d7801075c45}{activity\+Scheduler}}
+\begin{DoxyCompactList}\small\item\em Reference to the \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler} singleton. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_module_manager_a36e070879809e767db1b401e9256c94c}{current\+Module\+Index}} = 0
+\begin{DoxyCompactList}\small\item\em The current \doxylink{class_module_manager_1_1_module}{Module} index. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_module_manager_a21966cb38a4be07e91bbb0d2bd8d0d98}{current\+Section\+Index}} = 0
+\begin{DoxyCompactList}\small\item\em The current \doxylink{class_module_manager_1_1_section}{Section} index. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_module_manager_a78320ac7c9be86032f79f548c286b6c9}{current\+Timeline\+Index}} = 0
+\begin{DoxyCompactList}\small\item\em The current timeline index. \end{DoxyCompactList}\item 
+Playable\+Director \mbox{\hyperlink{class_module_manager_a77228b8c7e2ac3ed3e7da464582c5170}{active\+Director}}
+\begin{DoxyCompactList}\small\item\em Reference to the current timeline. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_module_manager_a3a603d3b07953b8cda83bedb4a2b7107}{waiting\+For\+Activity}} = false
+\begin{DoxyCompactList}\small\item\em Flag that determines if an activity is currently playing or not, used to yield moving to the next timeline in the \doxylink{class_module_manager_1_1_section}{Section}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Central driver class to control the flow of logic on which Modules/sections/timelines/activities should play, and in sequence. 
+
+\begin{DoxyAuthor}{Author}
+Caleb Martin \texorpdfstring{$\vert$}{|} \href{mailto:marcy066@mymail.unisa.edu.au}{\texttt{marcy066@mymail.\+unisa.\+edu.\+au}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_module_manager_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_module_manager_8cs_source}{Module\+Manager.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_module_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_module_manager_ab5f5a8f3cbdcd4069bf4602b4a10bcea}\index{ModuleManager@{ModuleManager}!NextModule@{NextModule}}
+\index{NextModule@{NextModule}!ModuleManager@{ModuleManager}}
+\doxysubsubsection{\texorpdfstring{NextModule()}{NextModule()}}
+{\footnotesize\ttfamily \label{class_module_manager_ab5f5a8f3cbdcd4069bf4602b4a10bcea} 
+void Module\+Manager.\+Next\+Module (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Progress to the next \doxylink{class_module_manager_1_1_module}{Module}. 
+
+If there are no more Modules, we have reached the end of the learning content. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_module_manager_8cs_source_l00180}{180}} of file \mbox{\hyperlink{_module_manager_8cs_source}{Module\+Manager.\+cs}}.
+
+\Hypertarget{class_module_manager_ab291c05e9b2ab7ed1d0f24f92e236909}\index{ModuleManager@{ModuleManager}!NextSection@{NextSection}}
+\index{NextSection@{NextSection}!ModuleManager@{ModuleManager}}
+\doxysubsubsection{\texorpdfstring{NextSection()}{NextSection()}}
+{\footnotesize\ttfamily \label{class_module_manager_ab291c05e9b2ab7ed1d0f24f92e236909} 
+void Module\+Manager.\+Next\+Section (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Progress to the next \doxylink{class_module_manager_1_1_section}{Section}, skipping instead to the next \doxylink{class_module_manager_1_1_module}{Module} if there are no more Sections in this \doxylink{class_module_manager_1_1_module}{Module}. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_module_manager_8cs_source_l00161}{161}} of file \mbox{\hyperlink{_module_manager_8cs_source}{Module\+Manager.\+cs}}.
+
+\Hypertarget{class_module_manager_a734a26725022dd96d7c87ce4fa597c0e}\index{ModuleManager@{ModuleManager}!NextTimeline@{NextTimeline}}
+\index{NextTimeline@{NextTimeline}!ModuleManager@{ModuleManager}}
+\doxysubsubsection{\texorpdfstring{NextTimeline()}{NextTimeline()}}
+{\footnotesize\ttfamily \label{class_module_manager_a734a26725022dd96d7c87ce4fa597c0e} 
+void Module\+Manager.\+Next\+Timeline (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Progress to the next timeline, skipping instead to the next \doxylink{class_module_manager_1_1_section}{Section} if there are no more timelines in this \doxylink{class_module_manager_1_1_section}{Section}. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_module_manager_8cs_source_l00143}{143}} of file \mbox{\hyperlink{_module_manager_8cs_source}{Module\+Manager.\+cs}}.
+
+\Hypertarget{class_module_manager_a84555f55d269e5c76a466eaf3e27a68d}\index{ModuleManager@{ModuleManager}!OnActivityComplete@{OnActivityComplete}}
+\index{OnActivityComplete@{OnActivityComplete}!ModuleManager@{ModuleManager}}
+\doxysubsubsection{\texorpdfstring{OnActivityComplete()}{OnActivityComplete()}}
+{\footnotesize\ttfamily \label{class_module_manager_a84555f55d269e5c76a466eaf3e27a68d} 
+void Module\+Manager.\+On\+Activity\+Complete (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Called by the \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler} when the current activity is completed, starting the next timeline. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_module_manager_8cs_source_l00133}{133}} of file \mbox{\hyperlink{_module_manager_8cs_source}{Module\+Manager.\+cs}}.
+
+\Hypertarget{class_module_manager_afd5a598d10501c72285be17231a3b462}\index{ModuleManager@{ModuleManager}!OnTimelineFinished@{OnTimelineFinished}}
+\index{OnTimelineFinished@{OnTimelineFinished}!ModuleManager@{ModuleManager}}
+\doxysubsubsection{\texorpdfstring{OnTimelineFinished()}{OnTimelineFinished()}}
+{\footnotesize\ttfamily \label{class_module_manager_afd5a598d10501c72285be17231a3b462} 
+void Module\+Manager.\+On\+Timeline\+Finished (\begin{DoxyParamCaption}\item[{Playable\+Director}]{director}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+When a timeline finishes, this method is called to check for activities to determine what to play next. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em director} & Passed here to ensure that an unsubscription to the event is performed, mitigating event stacking. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_module_manager_8cs_source_l00078}{78}} of file \mbox{\hyperlink{_module_manager_8cs_source}{Module\+Manager.\+cs}}.
+
+\Hypertarget{class_module_manager_a2fc4783efa775ad88ad6f7b951f3d864}\index{ModuleManager@{ModuleManager}!PlayCurrentTimeline@{PlayCurrentTimeline}}
+\index{PlayCurrentTimeline@{PlayCurrentTimeline}!ModuleManager@{ModuleManager}}
+\doxysubsubsection{\texorpdfstring{PlayCurrentTimeline()}{PlayCurrentTimeline()}}
+{\footnotesize\ttfamily \label{class_module_manager_a2fc4783efa775ad88ad6f7b951f3d864} 
+void Module\+Manager.\+Play\+Current\+Timeline (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Plays the timeline in the currently-\/selected section. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_module_manager_8cs_source_l00055}{55}} of file \mbox{\hyperlink{_module_manager_8cs_source}{Module\+Manager.\+cs}}.
+
+\Hypertarget{class_module_manager_aa8cd40defadea52fc0925a7a5998ac7d}\index{ModuleManager@{ModuleManager}!PlayModule@{PlayModule}}
+\index{PlayModule@{PlayModule}!ModuleManager@{ModuleManager}}
+\doxysubsubsection{\texorpdfstring{PlayModule()}{PlayModule()}}
+{\footnotesize\ttfamily \label{class_module_manager_aa8cd40defadea52fc0925a7a5998ac7d} 
+void Module\+Manager.\+Play\+Module (\begin{DoxyParamCaption}\item[{int}]{module\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Play a specific \doxylink{class_module_manager_1_1_module}{Module} instead of beginning from the first one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em module\+Index} & The selected \doxylink{class_module_manager_1_1_module}{Module} to play. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_module_manager_8cs_source_l00201}{201}} of file \mbox{\hyperlink{_module_manager_8cs_source}{Module\+Manager.\+cs}}.
+
+\Hypertarget{class_module_manager_a8a364d7dc3411275d4e95cd92a7fb677}\index{ModuleManager@{ModuleManager}!Start@{Start}}
+\index{Start@{Start}!ModuleManager@{ModuleManager}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_module_manager_a8a364d7dc3411275d4e95cd92a7fb677} 
+void Module\+Manager.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_module_manager_8cs_source_l00046}{46}} of file \mbox{\hyperlink{_module_manager_8cs_source}{Module\+Manager.\+cs}}.
+
+\Hypertarget{class_module_manager_a3e2c8c163a10d082da43cc86c29d4dca}\index{ModuleManager@{ModuleManager}!StartActivity@{StartActivity}}
+\index{StartActivity@{StartActivity}!ModuleManager@{ModuleManager}}
+\doxysubsubsection{\texorpdfstring{StartActivity()}{StartActivity()}}
+{\footnotesize\ttfamily \label{class_module_manager_a3e2c8c163a10d082da43cc86c29d4dca} 
+void Module\+Manager.\+Start\+Activity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_module_activities}{Module\+Activities}}}]{activity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Communicate with the \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler} to initiate a passed-\/in activity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & The activity to be commenced. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_module_manager_8cs_source_l00116}{116}} of file \mbox{\hyperlink{_module_manager_8cs_source}{Module\+Manager.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_module_manager_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_module_manager_a77228b8c7e2ac3ed3e7da464582c5170}\index{ModuleManager@{ModuleManager}!activeDirector@{activeDirector}}
+\index{activeDirector@{activeDirector}!ModuleManager@{ModuleManager}}
+\doxysubsubsection{\texorpdfstring{activeDirector}{activeDirector}}
+{\footnotesize\ttfamily \label{class_module_manager_a77228b8c7e2ac3ed3e7da464582c5170} 
+Playable\+Director Module\+Manager.\+active\+Director\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the current timeline. 
+
+
+
+Definition at line \mbox{\hyperlink{_module_manager_8cs_source_l00042}{42}} of file \mbox{\hyperlink{_module_manager_8cs_source}{Module\+Manager.\+cs}}.
+
+\Hypertarget{class_module_manager_ad5aa308b6371230768697d7801075c45}\index{ModuleManager@{ModuleManager}!activityScheduler@{activityScheduler}}
+\index{activityScheduler@{activityScheduler}!ModuleManager@{ModuleManager}}
+\doxysubsubsection{\texorpdfstring{activityScheduler}{activityScheduler}}
+{\footnotesize\ttfamily \label{class_module_manager_ad5aa308b6371230768697d7801075c45} 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} Module\+Manager.\+activity\+Scheduler\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler} singleton. 
+
+
+
+Definition at line \mbox{\hyperlink{_module_manager_8cs_source_l00036}{36}} of file \mbox{\hyperlink{_module_manager_8cs_source}{Module\+Manager.\+cs}}.
+
+\Hypertarget{class_module_manager_a36e070879809e767db1b401e9256c94c}\index{ModuleManager@{ModuleManager}!currentModuleIndex@{currentModuleIndex}}
+\index{currentModuleIndex@{currentModuleIndex}!ModuleManager@{ModuleManager}}
+\doxysubsubsection{\texorpdfstring{currentModuleIndex}{currentModuleIndex}}
+{\footnotesize\ttfamily \label{class_module_manager_a36e070879809e767db1b401e9256c94c} 
+int Module\+Manager.\+current\+Module\+Index = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The current \doxylink{class_module_manager_1_1_module}{Module} index. 
+
+
+
+Definition at line \mbox{\hyperlink{_module_manager_8cs_source_l00039}{39}} of file \mbox{\hyperlink{_module_manager_8cs_source}{Module\+Manager.\+cs}}.
+
+\Hypertarget{class_module_manager_a21966cb38a4be07e91bbb0d2bd8d0d98}\index{ModuleManager@{ModuleManager}!currentSectionIndex@{currentSectionIndex}}
+\index{currentSectionIndex@{currentSectionIndex}!ModuleManager@{ModuleManager}}
+\doxysubsubsection{\texorpdfstring{currentSectionIndex}{currentSectionIndex}}
+{\footnotesize\ttfamily \label{class_module_manager_a21966cb38a4be07e91bbb0d2bd8d0d98} 
+int Module\+Manager.\+current\+Section\+Index = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The current \doxylink{class_module_manager_1_1_section}{Section} index. 
+
+
+
+Definition at line \mbox{\hyperlink{_module_manager_8cs_source_l00040}{40}} of file \mbox{\hyperlink{_module_manager_8cs_source}{Module\+Manager.\+cs}}.
+
+\Hypertarget{class_module_manager_a78320ac7c9be86032f79f548c286b6c9}\index{ModuleManager@{ModuleManager}!currentTimelineIndex@{currentTimelineIndex}}
+\index{currentTimelineIndex@{currentTimelineIndex}!ModuleManager@{ModuleManager}}
+\doxysubsubsection{\texorpdfstring{currentTimelineIndex}{currentTimelineIndex}}
+{\footnotesize\ttfamily \label{class_module_manager_a78320ac7c9be86032f79f548c286b6c9} 
+int Module\+Manager.\+current\+Timeline\+Index = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The current timeline index. 
+
+
+
+Definition at line \mbox{\hyperlink{_module_manager_8cs_source_l00041}{41}} of file \mbox{\hyperlink{_module_manager_8cs_source}{Module\+Manager.\+cs}}.
+
+\Hypertarget{class_module_manager_a08a427bc3d59be9fbacd6829181769cb}\index{ModuleManager@{ModuleManager}!modules@{modules}}
+\index{modules@{modules}!ModuleManager@{ModuleManager}}
+\doxysubsubsection{\texorpdfstring{modules}{modules}}
+{\footnotesize\ttfamily \label{class_module_manager_a08a427bc3d59be9fbacd6829181769cb} 
+List$<$\mbox{\hyperlink{class_module_manager_1_1_module}{Module}}$>$ Module\+Manager.\+modules = new List$<$\mbox{\hyperlink{class_module_manager_1_1_module}{Module}}$>$()}
+
+
+
+A list of Modules that form the application as a whole. 
+
+
+
+Definition at line \mbox{\hyperlink{_module_manager_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_module_manager_8cs_source}{Module\+Manager.\+cs}}.
+
+\Hypertarget{class_module_manager_a3a603d3b07953b8cda83bedb4a2b7107}\index{ModuleManager@{ModuleManager}!waitingForActivity@{waitingForActivity}}
+\index{waitingForActivity@{waitingForActivity}!ModuleManager@{ModuleManager}}
+\doxysubsubsection{\texorpdfstring{waitingForActivity}{waitingForActivity}}
+{\footnotesize\ttfamily \label{class_module_manager_a3a603d3b07953b8cda83bedb4a2b7107} 
+bool Module\+Manager.\+waiting\+For\+Activity = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag that determines if an activity is currently playing or not, used to yield moving to the next timeline in the \doxylink{class_module_manager_1_1_section}{Section}. 
+
+
+
+Definition at line \mbox{\hyperlink{_module_manager_8cs_source_l00044}{44}} of file \mbox{\hyperlink{_module_manager_8cs_source}{Module\+Manager.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Module\+Structure/\mbox{\hyperlink{_module_manager_8cs}{Module\+Manager.\+cs}}\end{DoxyCompactItemize}

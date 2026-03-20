@@ -1,0 +1,20 @@
+<map id="ModuleMenuSelection" name="ModuleMenuSelection">
+<area shape="rect" id="Node000001" title="Handles menu selection of each Module alongside a Play button to trigger Modules via the ModuleManage..." alt="" coords="5,180,155,207"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="320,5,432,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="306,27,249,38,187,57,158,71,130,88,105,109,85,133,78,157,80,180,74,180,73,156,80,131,102,105,127,84,155,66,185,52,247,32,305,22"/>
+<area shape="rect" id="Node000003" href="$class_module_manager.html" title="Central driver class to control the flow of logic on which Modules/sections/timelines/activities shou..." alt="" coords="207,81,321,108"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="346,43,285,83,282,79,343,39"/>
+<area shape="rect" id="Node000004" href="$class_module_activity_scheduler.html" title="Singleton management class that talks to the ModuleManager to schedule activities ahead of Timeline e..." alt="" coords="408,180,573,207"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="403,41,439,81,474,131,485,156,491,179,486,180,480,158,470,133,435,84,399,45"/>
+<area shape="rect" id="Node000005" href="$class_checkbox_manager.html" title="A central class to manage checkboxes in tandem with activities to support the user." alt="" coords="514,81,644,108"/>
+<area shape="poly" id="edge7_Node000005_Node000002" title=" " alt="" coords="437,34,496,54,554,78,551,83,494,58,436,39"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,108,140,119,118,126,104,134,90,156,84,180,79,179,85,154,101,130,116,121,138,114,192,103"/>
+<area shape="poly" id="edge8_Node000004_Node000003" title=" " alt="" coords="239,120,227,138,226,147,230,154,241,163,257,170,301,181,354,187,408,189,407,195,354,192,300,186,255,175,238,167,226,158,221,148,222,137,235,117"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="413,178,363,158,347,147,332,134,290,111,292,106,335,130,350,142,365,154,415,173"/>
+<area shape="poly" id="edge11_Node000004_Node000004" title=" " alt="" coords="590,185,600,193,592,201,574,205,573,199,590,196,595,193,587,189"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="559,121,504,182,500,178,555,118"/>
+<area shape="rect" id="Node000006" href="$class_module_activities.html" title=" " alt="" coords="668,81,785,108"/>
+<area shape="poly" id="edge9_Node000004_Node000006" title=" " alt="" coords="709,122,690,141,665,158,620,176,574,187,573,182,619,171,663,154,686,137,706,118"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="668,5,785,32"/>
+<area shape="poly" id="edge10_Node000006_Node000007" title=" " alt="" coords="729,47,729,81,724,81,724,47"/>
+</map>

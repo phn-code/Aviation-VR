@@ -1,0 +1,25 @@
+<map id="IActivityController" name="IActivityController">
+<area shape="rect" id="Node000001" title="Interface class." alt="" coords="5,259,131,285"/>
+<area shape="rect" id="Node000002" href="$class_accelerate_script.html" title=" " alt="" coords="209,5,326,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,243,85,199,105,144,135,89,155,64,177,42,207,26,209,30,180,46,159,68,140,92,110,147,90,200,78,244"/>
+<area shape="rect" id="Node000003" href="$class_climbing_turn_activity.html" title="Climbing turn training activity controller." alt="" coords="196,56,338,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="77,243,92,208,113,168,142,127,177,93,197,81,200,86,180,97,146,131,118,171,96,211,82,245"/>
+<area shape="rect" id="Node000004" href="$class_controller_backward.html" title=" " alt="" coords="200,107,335,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="83,244,122,193,148,166,177,143,201,131,203,136,180,148,151,170,126,196,88,247"/>
+<area shape="rect" id="Node000005" href="$class_descending_turn_activity.html" title="Descending turn training activity controller." alt="" coords="187,157,348,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="96,246,134,219,178,194,207,182,209,187,180,198,136,224,99,251"/>
+<area shape="rect" id="Node000006" href="$class_hold_to_lower_nose.html" title=" " alt="" coords="203,208,332,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="138,252,211,233,213,238,139,257"/>
+<area shape="rect" id="Node000007" href="$class_increase_throttle.html" title=" " alt="" coords="210,259,325,285"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="146,269,209,269,209,275,146,275"/>
+<area shape="rect" id="Node000008" href="$class_level_turn_activity.html" title="Level turn training activity controller." alt="" coords="206,309,328,336"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="139,287,213,306,211,311,138,292"/>
+<area shape="rect" id="Node000009" href="$class_rotate_left_controller.html" title=" " alt="" coords="198,360,336,387"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="99,293,136,320,180,346,209,357,207,362,178,350,134,325,96,298"/>
+<area shape="rect" id="Node000010" href="$class_sec1_stall_activity.html" title="Section 1 stall training activity controller." alt="" coords="207,411,328,437"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="88,297,126,348,151,374,180,396,207,409,205,414,177,401,148,378,122,351,83,300"/>
+<area shape="rect" id="Node000011" href="$class_sec6_spin_recovery_activity.html" title="Section 6 spin recovery training activity controller." alt="" coords="179,461,356,488"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="82,299,96,333,118,373,146,413,180,447,200,458,197,463,177,451,142,417,113,376,92,336,77,301"/>
+<area shape="rect" id="Node000012" href="$class_tilt_controller.html" title=" " alt="" coords="220,512,315,539"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="78,300,90,344,110,397,140,452,159,476,180,498,199,510,220,517,219,522,197,514,177,502,155,480,135,455,105,400,85,345,73,301"/>
+</map>

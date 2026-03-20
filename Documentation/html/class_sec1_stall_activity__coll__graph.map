@@ -1,0 +1,13 @@
+<map id="Sec1StallActivity" name="Sec1StallActivity">
+<area shape="rect" id="Node000001" title="Section 1 stall training activity controller." alt="" coords="117,180,239,207"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="42,5,154,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="56,42,35,55,17,71,8,89,9,97,12,107,33,132,60,151,90,166,120,177,118,182,88,171,58,156,30,136,8,109,3,98,3,88,13,68,31,51,54,37"/>
+<area shape="rect" id="Node000004" href="$class_axis_rotation_controller.html" title="Helper class to perform rotation actions." alt="" coords="22,81,174,108"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="101,47,101,81,95,81,95,47"/>
+<area shape="rect" id="Node000005" href="$class_procedural_airflow.html" title="Airflow, Force Arrows and COP Behaviour." alt="" coords="198,81,321,108"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="141,36,233,78,231,83,139,41"/>
+<area shape="rect" id="Node000003" href="$interface_i_activity_controller.html" title="Interface class." alt="" coords="345,81,470,108"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="393,122,375,142,353,158,325,171,296,180,240,191,239,186,295,175,323,166,350,154,371,138,389,118"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="109,122,127,154,155,177,152,181,123,158,104,124"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="247,123,223,158,197,181,194,177,219,154,243,120"/>
+</map>

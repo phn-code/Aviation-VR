@@ -1,0 +1,54 @@
+\doxysection{Module\+Activities.\+cs}
+\hypertarget{_module_activities_8cs_source}{}\label{_module_activities_8cs_source}\index{Assets/Scripts/ModuleStructure/ModuleActivities.cs@{Assets/Scripts/ModuleStructure/ModuleActivities.cs}}
+\mbox{\hyperlink{_module_activities_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine.Playables;}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00004}00004\ [CreateAssetMenu(fileName\ =\ \textcolor{stringliteral}{"{}NewModuleActivity"{}},\ menuName\ =\ \textcolor{stringliteral}{"{}Module\ Activity"{}})]\ \textcolor{comment}{//\ Add\ a\ menu\ control\ to\ make\ an\ activity!!!\ This\ is\ so\ cool\ i\ love\ this}}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00006}\mbox{\hyperlink{class_module_activities}{00006}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_module_activities}{ModuleActivities}}\ :\ ScriptableObject}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00008}\mbox{\hyperlink{class_module_activities_aaff99fd79ba94fd60fb7aac95c232c1a}{00008}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_module_activities_aaff99fd79ba94fd60fb7aac95c232c1a}{activityName}};}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00009}\mbox{\hyperlink{class_module_activities_a10207b3114937974972fe62555caee98}{00009}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}[]\ \mbox{\hyperlink{class_module_activities_a10207b3114937974972fe62555caee98}{instructions}};\ \textcolor{comment}{//\ The\ list\ of\ instructions,\ each\ corresponding\ to\ one\ of\ six\ checkboxes}}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00011}\mbox{\hyperlink{class_module_activities_ac771a2c22bae8eb528371f62d1f7839a}{00011}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_module_activities_ac771a2c22bae8eb528371f62d1f7839a}{usesCustomScript}}\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ If\ an\ activity\ is\ more\ involved,\ we\ can\ opt\ to\ use\ a\ custom\ script\ to\ handle\ it\ instead.\ This\ will\ act\ as\ an\ Adapter\ of\ sorts\ to\ whatever\ goes\ on\ in\ the\ activity}}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00012}\mbox{\hyperlink{class_module_activities_a36aae5576949d3d21bddc41a43eb826f}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_module_activities_a36aae5576949d3d21bddc41a43eb826f}{customScript}};\ \textcolor{comment}{//\ The\ actual\ GameObject\ that\ contains\ the\ custom\ script,\ if\ needed\ (this\ will\ be\ instanced\ from\ a\ prefab!!)}}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00014}\mbox{\hyperlink{class_module_activities_a81c376cc1c7aacf10476dd034ff609ff}{00014}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_module_activities_a81c376cc1c7aacf10476dd034ff609ff}{playerInputRequired}}\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ Acts\ as\ a\ check\ that\ when\ toggled,\ completes\ the\ activity}}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00016}\mbox{\hyperlink{class_module_activities_aacc0749eadc46f9f43822b42ab39ff5d}{00016}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_module_activities_aacc0749eadc46f9f43822b42ab39ff5d}{totalSteps}}\ =\ 1;\ \textcolor{comment}{//\ Total\ number\ of\ input\ steps\ for\ instructions,\ max\ of\ six,\ default\ to\ one}}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00017}\mbox{\hyperlink{class_module_activities_ac45cccb17e62587ef879c6b74b988d89}{00017}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_module_activities_ac45cccb17e62587ef879c6b74b988d89}{currentStep}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//\ If\ activity\ will\ be\ handled\ through\ a\ custom\ script,\ instantiate\ the\ prefab\ that\ contains\ said\ script}}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00020}\mbox{\hyperlink{class_module_activities_a955fef5120e2d474041f7d094ed821a9}{00020}}\ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_module_activities_a955fef5120e2d474041f7d094ed821a9}{PrefabSetup}}(Transform\ parent)}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_module_activities_ac771a2c22bae8eb528371f62d1f7839a}{usesCustomScript}}\ \&\&\ \mbox{\hyperlink{class_module_activities_a36aae5576949d3d21bddc41a43eb826f}{customScript}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Instantiate\ the\ new\ script\ from\ a\ prefab}}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ instance\ =\ GameObject.Instantiate(\mbox{\hyperlink{class_module_activities_a36aae5576949d3d21bddc41a43eb826f}{customScript}},\ parent);}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ instance.name\ =\ \$\textcolor{stringliteral}{"{}\{activityName\}\_ControllerInstance"{}};}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ No\ custom\ script\ required,\ skip\ prefab\ setup}}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//\ Self-\/explanatory.}}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00035}\mbox{\hyperlink{class_module_activities_aa70ca8a76815224ed6cd851bb2982791}{00035}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_module_activities_aa70ca8a76815224ed6cd851bb2982791}{AdvanceStep}}()}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00036}00036\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activities_ac45cccb17e62587ef879c6b74b988d89}{currentStep}}++;}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ whole\ activity\ has\ been\ completed}}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_module_activities_ac45cccb17e62587ef879c6b74b988d89}{currentStep}}\ >=\ \mbox{\hyperlink{class_module_activities_aacc0749eadc46f9f43822b42ab39ff5d}{totalSteps}})}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Activity\ is\ not\ yet\ complete,\ move\ onto\ next\ step}}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_activities_8cs_source_l00048}00048\ \}}
+
+\end{DoxyCode}

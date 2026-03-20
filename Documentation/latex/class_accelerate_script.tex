@@ -1,0 +1,216 @@
+\doxysection{Accelerate\+Script Class Reference}
+\hypertarget{class_accelerate_script}{}\label{class_accelerate_script}\index{AccelerateScript@{AccelerateScript}}
+
+
+Inheritance diagram for Accelerate\+Script\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_accelerate_script__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Accelerate\+Script\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_accelerate_script__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_accelerate_script_a4637483a98dca673301c578bdae48c0a}{Start\+Activity}} ()
+\begin{DoxyCompactList}\small\item\em Each child activity can have a differing implementation of what must be carried out/what inputs must be switched on when the activity starts. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_accelerate_script_aa0111f13400987253025755fe2689853}{get\+Has\+Triggered}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Input\+Action\+Reference \mbox{\hyperlink{class_accelerate_script_a2ce1c08bffbcd99223bd7e7bdcb3d893}{input\+Action}}
+\item 
+float \mbox{\hyperlink{class_accelerate_script_af1b8f94aa59df1a7214a3663d8f99348}{throttle\+Threshold}} = 0.\+1f
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} \mbox{\hyperlink{class_accelerate_script_a76b49d9a0dc3a5e39bdc8b5a6f7e2386}{mas}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_accelerate_script_a3119e4195d7fbc311a25bb8b0b3fe92a}{On\+Enable}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_accelerate_script_a3720ae68b53fa212cf5cbd709d361612}{Wait\+Coroutine}} ()
+\item 
+void \mbox{\hyperlink{class_accelerate_script_abec519333f2783ee696a749334778f3b}{On\+Disable}} ()
+\item 
+void \mbox{\hyperlink{class_accelerate_script_ab70e112060ae3bf9b8b46e49437d82a0}{On\+Pad\+Moved}} (Input\+Action.\+Callback\+Context ctx)
+\item 
+void \mbox{\hyperlink{class_accelerate_script_a38e3bfacbae9c9670ed44f9332960b1a}{On\+Pad\+Released}} (Input\+Action.\+Callback\+Context ctx)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_accelerate_script_a2d672636147f7e06271dcdfe17be4822}{activity\+Enabled}} = false
+\item 
+bool \mbox{\hyperlink{class_accelerate_script_adda71ad70a4ffe9271975fdc669faaf1}{has\+Triggered}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_accelerate_script_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_accelerate_script_8cs_source}{Accelerate\+Script.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_accelerate_script_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_accelerate_script_aa0111f13400987253025755fe2689853}\index{AccelerateScript@{AccelerateScript}!getHasTriggered@{getHasTriggered}}
+\index{getHasTriggered@{getHasTriggered}!AccelerateScript@{AccelerateScript}}
+\doxysubsubsection{\texorpdfstring{getHasTriggered()}{getHasTriggered()}}
+{\footnotesize\ttfamily \label{class_accelerate_script_aa0111f13400987253025755fe2689853} 
+bool Accelerate\+Script.\+get\+Has\+Triggered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_accelerate_script_8cs_source_l00088}{88}} of file \mbox{\hyperlink{_accelerate_script_8cs_source}{Accelerate\+Script.\+cs}}.
+
+\Hypertarget{class_accelerate_script_abec519333f2783ee696a749334778f3b}\index{AccelerateScript@{AccelerateScript}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!AccelerateScript@{AccelerateScript}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily \label{class_accelerate_script_abec519333f2783ee696a749334778f3b} 
+void Accelerate\+Script.\+On\+Disable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_accelerate_script_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_accelerate_script_8cs_source}{Accelerate\+Script.\+cs}}.
+
+\Hypertarget{class_accelerate_script_a3119e4195d7fbc311a25bb8b0b3fe92a}\index{AccelerateScript@{AccelerateScript}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!AccelerateScript@{AccelerateScript}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily \label{class_accelerate_script_a3119e4195d7fbc311a25bb8b0b3fe92a} 
+void Accelerate\+Script.\+On\+Enable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_accelerate_script_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_accelerate_script_8cs_source}{Accelerate\+Script.\+cs}}.
+
+\Hypertarget{class_accelerate_script_ab70e112060ae3bf9b8b46e49437d82a0}\index{AccelerateScript@{AccelerateScript}!OnPadMoved@{OnPadMoved}}
+\index{OnPadMoved@{OnPadMoved}!AccelerateScript@{AccelerateScript}}
+\doxysubsubsection{\texorpdfstring{OnPadMoved()}{OnPadMoved()}}
+{\footnotesize\ttfamily \label{class_accelerate_script_ab70e112060ae3bf9b8b46e49437d82a0} 
+void Accelerate\+Script.\+On\+Pad\+Moved (\begin{DoxyParamCaption}\item[{Input\+Action.\+Callback\+Context}]{ctx}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_accelerate_script_8cs_source_l00051}{51}} of file \mbox{\hyperlink{_accelerate_script_8cs_source}{Accelerate\+Script.\+cs}}.
+
+\Hypertarget{class_accelerate_script_a38e3bfacbae9c9670ed44f9332960b1a}\index{AccelerateScript@{AccelerateScript}!OnPadReleased@{OnPadReleased}}
+\index{OnPadReleased@{OnPadReleased}!AccelerateScript@{AccelerateScript}}
+\doxysubsubsection{\texorpdfstring{OnPadReleased()}{OnPadReleased()}}
+{\footnotesize\ttfamily \label{class_accelerate_script_a38e3bfacbae9c9670ed44f9332960b1a} 
+void Accelerate\+Script.\+On\+Pad\+Released (\begin{DoxyParamCaption}\item[{Input\+Action.\+Callback\+Context}]{ctx}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_accelerate_script_8cs_source_l00076}{76}} of file \mbox{\hyperlink{_accelerate_script_8cs_source}{Accelerate\+Script.\+cs}}.
+
+\Hypertarget{class_accelerate_script_a4637483a98dca673301c578bdae48c0a}\index{AccelerateScript@{AccelerateScript}!StartActivity@{StartActivity}}
+\index{StartActivity@{StartActivity}!AccelerateScript@{AccelerateScript}}
+\doxysubsubsection{\texorpdfstring{StartActivity()}{StartActivity()}}
+{\footnotesize\ttfamily \label{class_accelerate_script_a4637483a98dca673301c578bdae48c0a} 
+void Accelerate\+Script.\+Start\+Activity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Each child activity can have a differing implementation of what must be carried out/what inputs must be switched on when the activity starts. 
+
+Override this method for new activity scripts. 
+
+Implements \mbox{\hyperlink{interface_i_activity_controller_a5edbf7511d4b716c7e5de8d2c0c261a0}{IActivity\+Controller}}.
+
+
+
+Definition at line \mbox{\hyperlink{_accelerate_script_8cs_source_l00045}{45}} of file \mbox{\hyperlink{_accelerate_script_8cs_source}{Accelerate\+Script.\+cs}}.
+
+\Hypertarget{class_accelerate_script_a3720ae68b53fa212cf5cbd709d361612}\index{AccelerateScript@{AccelerateScript}!WaitCoroutine@{WaitCoroutine}}
+\index{WaitCoroutine@{WaitCoroutine}!AccelerateScript@{AccelerateScript}}
+\doxysubsubsection{\texorpdfstring{WaitCoroutine()}{WaitCoroutine()}}
+{\footnotesize\ttfamily \label{class_accelerate_script_a3720ae68b53fa212cf5cbd709d361612} 
+IEnumerator Accelerate\+Script.\+Wait\+Coroutine (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_accelerate_script_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_accelerate_script_8cs_source}{Accelerate\+Script.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_accelerate_script_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_accelerate_script_a2d672636147f7e06271dcdfe17be4822}\index{AccelerateScript@{AccelerateScript}!activityEnabled@{activityEnabled}}
+\index{activityEnabled@{activityEnabled}!AccelerateScript@{AccelerateScript}}
+\doxysubsubsection{\texorpdfstring{activityEnabled}{activityEnabled}}
+{\footnotesize\ttfamily \label{class_accelerate_script_a2d672636147f7e06271dcdfe17be4822} 
+bool Accelerate\+Script.\+activity\+Enabled = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_accelerate_script_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_accelerate_script_8cs_source}{Accelerate\+Script.\+cs}}.
+
+\Hypertarget{class_accelerate_script_adda71ad70a4ffe9271975fdc669faaf1}\index{AccelerateScript@{AccelerateScript}!hasTriggered@{hasTriggered}}
+\index{hasTriggered@{hasTriggered}!AccelerateScript@{AccelerateScript}}
+\doxysubsubsection{\texorpdfstring{hasTriggered}{hasTriggered}}
+{\footnotesize\ttfamily \label{class_accelerate_script_adda71ad70a4ffe9271975fdc669faaf1} 
+bool Accelerate\+Script.\+has\+Triggered = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_accelerate_script_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_accelerate_script_8cs_source}{Accelerate\+Script.\+cs}}.
+
+\Hypertarget{class_accelerate_script_a2ce1c08bffbcd99223bd7e7bdcb3d893}\index{AccelerateScript@{AccelerateScript}!inputAction@{inputAction}}
+\index{inputAction@{inputAction}!AccelerateScript@{AccelerateScript}}
+\doxysubsubsection{\texorpdfstring{inputAction}{inputAction}}
+{\footnotesize\ttfamily \label{class_accelerate_script_a2ce1c08bffbcd99223bd7e7bdcb3d893} 
+Input\+Action\+Reference Accelerate\+Script.\+input\+Action}
+
+
+
+Definition at line \mbox{\hyperlink{_accelerate_script_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_accelerate_script_8cs_source}{Accelerate\+Script.\+cs}}.
+
+\Hypertarget{class_accelerate_script_af1b8f94aa59df1a7214a3663d8f99348}\index{AccelerateScript@{AccelerateScript}!throttleThreshold@{throttleThreshold}}
+\index{throttleThreshold@{throttleThreshold}!AccelerateScript@{AccelerateScript}}
+\doxysubsubsection{\texorpdfstring{throttleThreshold}{throttleThreshold}}
+{\footnotesize\ttfamily \label{class_accelerate_script_af1b8f94aa59df1a7214a3663d8f99348} 
+float Accelerate\+Script.\+throttle\+Threshold = 0.\+1f}
+
+
+
+Definition at line \mbox{\hyperlink{_accelerate_script_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_accelerate_script_8cs_source}{Accelerate\+Script.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_accelerate_script_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_accelerate_script_a76b49d9a0dc3a5e39bdc8b5a6f7e2386}\index{AccelerateScript@{AccelerateScript}!mas@{mas}}
+\index{mas@{mas}!AccelerateScript@{AccelerateScript}}
+\doxysubsubsection{\texorpdfstring{mas}{mas}}
+{\footnotesize\ttfamily \label{class_accelerate_script_a76b49d9a0dc3a5e39bdc8b5a6f7e2386} 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} Accelerate\+Script.\+mas\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_accelerate_script_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_accelerate_script_8cs_source}{Accelerate\+Script.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Common\+Activity\+Behaviour/\mbox{\hyperlink{_accelerate_script_8cs}{Accelerate\+Script.\+cs}}\end{DoxyCompactItemize}

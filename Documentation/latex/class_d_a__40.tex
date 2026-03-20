@@ -1,0 +1,1147 @@
+\doxysection{DA\+\_\+40 Class Reference}
+\hypertarget{class_d_a__40}{}\label{class_d_a__40}\index{DA\_40@{DA\_40}}
+
+
+Handles mostly cosmetic elements of the DA-\/40 aircraft itself, including default appearance, sounds, component access and toggling, and propeller rotation.  
+
+
+
+
+Inheritance diagram for DA\+\_\+40\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{class_d_a__40__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for DA\+\_\+40\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{class_d_a__40__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_d_a__40_a06954e05ef520c819673cf1282f2b440}{play\+SFX}} (Audio\+Source sound)
+\begin{DoxyCompactList}\small\item\em Plays a sound that is passed in as an Audio\+Source. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_a__40_ad7a85cdc189ba03990718ae6c9b8ace3}{stop\+SFX}} (Audio\+Source sound)
+\begin{DoxyCompactList}\small\item\em Stops a sound that is currently playing, passed in as an Audio\+Source. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_a__40_a7720286105cb6125f390a4f73165aa34}{Toggle\+Propeller}} (bool new\+State)
+\begin{DoxyCompactList}\small\item\em Sets a new state for the propeller spin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_d_a__40_aa97d888bc1b70d1b3e8fb40734af6d09}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_d_a__40_a45978b6e38c3bde56eaeb8eb30c462f8}{Update}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Color \mbox{\hyperlink{class_d_a__40_a38e7d4a9d3150d653fc80cccccba9276}{Glow\+Colour}}
+\begin{DoxyCompactList}\small\item\em The colour in which highlighted components will glow. \end{DoxyCompactList}\item 
+List$<$ Game\+Object $>$ \mbox{\hyperlink{class_d_a__40_a248dd08ec3a4553669f0f9b38b82addf}{Initial\+Highlighted\+Components}} = new List$<$Game\+Object$>$()
+\begin{DoxyCompactList}\small\item\em A collection of aircraft components (as Game\+Objects) that will start glowing at runtime. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_a__40_aef3bbcde668948b87b168a774a5229cd}{Cockpit\+Closed}}
+\begin{DoxyCompactList}\small\item\em Flag determining if the cockpit of the aircraft is open or closed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_a__40_a8a0354634342506d068d307abed69b7e}{Porte\+Closed}}
+\begin{DoxyCompactList}\small\item\em Flag determining if the porte of the aircraft is open or closed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_a__40_ad4aa7d779c95c318386aa82140ee3d49}{Propeller\+Enabled}}
+\begin{DoxyCompactList}\small\item\em Flag determining if the front propeller is spinning or not. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_a__40_a85885ea20a202d260b7f648c39d44cd2}{Ghost\+Trail\+Enabled}}
+\begin{DoxyCompactList}\small\item\em Flag determining if the ghost trail is active or not. \end{DoxyCompactList}\item 
+Particle\+System \mbox{\hyperlink{class_d_a__40_a6e74a5a99f6af9d837f6fee5703ae8d0}{Ghost\+Trail}}
+\begin{DoxyCompactList}\small\item\em Particle system representing the "{}after-\/image"{}, or ghost trail, of the aircraft. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_a__40_a34027107fb39853e740ee9de2d6a1811}{Axial\+Panels\+Enabled}}
+\begin{DoxyCompactList}\small\item\em DEPRECATED\+: Flag determining if the axial panel visualisation system is active or not. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_d_a__40_a88ef222e29d41fa00be564c267d63420}{Propeller\+Rotation\+Speed}} = 1000f
+\begin{DoxyCompactList}\small\item\em The rotation speed of the front propeller. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_a__40_a0301a6c92636ba9f52a99f73b35e9e13}{Is\+Passthrough\+Enabled}}
+\begin{DoxyCompactList}\small\item\em DEPRECATED\+: Flag determining if passthrough mode is enabled or not. \end{DoxyCompactList}\item 
+List$<$ Game\+Object $>$ \mbox{\hyperlink{class_d_a__40_af148cfc39219f6cd99fdc71155da9b0c}{Axial\+Scrolling\+Planes}} = new List$<$Game\+Object$>$()
+\item 
+float \mbox{\hyperlink{class_d_a__40_a7abd6d0506241ccf2e66a4c266f07dc3}{Axial\+Scroll\+Speed}}
+\begin{DoxyCompactList}\small\item\em DEPRECATED\+: The sensitivity of the scroll speed at which the textures of the axial panels shift. \end{DoxyCompactList}\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_d_a__40_a0b88013efa2163f71ba3885e0411d248}{subtitles}}
+\begin{DoxyCompactList}\small\item\em Reference to the subtitles displayed on the Local\+Canvas of the user interface. \end{DoxyCompactList}\item 
+Audio\+Source \mbox{\hyperlink{class_d_a__40_a70a0252aaf438801adde8ed0dc04985b}{Flight\+Loop}}
+\begin{DoxyCompactList}\small\item\em The whirring sound of the engine. \end{DoxyCompactList}\item 
+Audio\+Source \mbox{\hyperlink{class_d_a__40_ae0e28d13359ed128ce097c2087f0b3a9}{Propeller\+Start}}
+\begin{DoxyCompactList}\small\item\em The startup sound of the engine when the plane is turned on. \end{DoxyCompactList}\item 
+Audio\+Source \mbox{\hyperlink{class_d_a__40_a1e54fe40bdfe74ebb5b945521bd2d059}{Stall\+Warning}}
+\begin{DoxyCompactList}\small\item\em The stall horn sound that plays when a wing (or wings) is stalling. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a6a921ac871f9220752495f96a364a49e}{Dashboard}}
+\begin{DoxyCompactList}\small\item\em The dashboard of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a3d83bf20a767a36d4848c6b15dcd008f}{Canopy}}
+\begin{DoxyCompactList}\small\item\em The canopy of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a00e1b7edcd6ca3c250b721152e042a80}{Porte}}
+\begin{DoxyCompactList}\small\item\em The porte of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a45fe13d5846f4ddabe26d15de692199d}{Vitres}}
+\begin{DoxyCompactList}\small\item\em The vitres of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a770779cd17972a0f28b1ece2e3e860b3}{Interior}}
+\begin{DoxyCompactList}\small\item\em The interior of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a8705cfb3d760986d4b4f24f71bb5ee87}{Seats}}
+\begin{DoxyCompactList}\small\item\em The seats of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_af4ad1b1b3ccc5a632bbeb321bee85b98}{Yoke\+\_\+R}}
+\begin{DoxyCompactList}\small\item\em The right yoke of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_aeee43c4f30e25235a8ca64c6cc743c5e}{Yoke\+\_\+L}}
+\begin{DoxyCompactList}\small\item\em The left yoke of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_ac35c7c4ec59f12835f8711b4c5ec71d8}{Fuselage\+Frame}}
+\begin{DoxyCompactList}\small\item\em The fuselage frame of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a1a1c783c9f57046ad4578e565ccd2559}{Step\+\_\+R}}
+\begin{DoxyCompactList}\small\item\em The right step of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a6bd40da2d9fa9e45a7c8dcd474263576}{Step\+\_\+L}}
+\begin{DoxyCompactList}\small\item\em The left step of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a9d320e09f54424dc0071eb5b4945bc94}{Antennes}}
+\begin{DoxyCompactList}\small\item\em The antennes of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a169410344744a37e65b69b361cdf18db}{Propeller\+Hub}}
+\begin{DoxyCompactList}\small\item\em The propeller hub of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_ae2c30a366ed6369ba1473ae9a623fea3}{Helice}}
+\begin{DoxyCompactList}\small\item\em The helice of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_ababd10f055278aa37a96d6649a5470f2}{Exhaust}}
+\begin{DoxyCompactList}\small\item\em The exhaust of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a2a8e063e63b7f3b2d24808626a86fe2e}{Empennage\+Frame}}
+\begin{DoxyCompactList}\small\item\em The empennage frame of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a9403ca659590683dc8ced5ea298d1541}{Rudder}}
+\begin{DoxyCompactList}\small\item\em The rudder of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_adbd9ae0fcdff5c9c473cafa21136db77}{Stabiliser}}
+\begin{DoxyCompactList}\small\item\em The stabiliser of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_adc0f1628f4d1229daa07589b75a35af0}{Elevator}}
+\begin{DoxyCompactList}\small\item\em The elevator of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a95fa9d326a905dc6b5c6f057e10cd879}{Tail\+Guard}}
+\begin{DoxyCompactList}\small\item\em The tail guard of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a4f80ac4138bb49335b669b1c024c99ae}{Tail\+Light}}
+\begin{DoxyCompactList}\small\item\em The tail light of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a6d42bdccb0a640db2b08bbceda01931c}{Wing\+Frame\+\_\+R}}
+\begin{DoxyCompactList}\small\item\em The right wing frame of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a6157d2952cb2b2f71dfa00ba4061b72d}{Aileron\+\_\+R}}
+\begin{DoxyCompactList}\small\item\em The right aileron of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_aa424ebf004d431336a3f7e991e844d3e}{Landing\+Flap\+\_\+R}}
+\begin{DoxyCompactList}\small\item\em The right landing flap of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a15a0e517400ae8c5dc4d2e3b7ecb0d49}{Wing\+Frame\+\_\+L}}
+\begin{DoxyCompactList}\small\item\em The left wing frame of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_adb1b34e160669b9abeac544ab15796a7}{Aileron\+\_\+L}}
+\begin{DoxyCompactList}\small\item\em The left aileron of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a38664b1bb343162dbb591be2e6e9ad9e}{Landing\+Flap\+\_\+L}}
+\begin{DoxyCompactList}\small\item\em The left landing flap of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a5e5582b6505e2f04344d35c5817d2d8b}{Landing\+Light\+Bulb}}
+\begin{DoxyCompactList}\small\item\em The landing light bulb of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a426078537442cd8911d0c7180214f387}{Inner\+Guards}}
+\begin{DoxyCompactList}\small\item\em The inner wing guards of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a1b2a1e1b633ca898d42d62499e85284f}{Struts}}
+\begin{DoxyCompactList}\small\item\em The struts of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_abe56317dbf55f56612ea805b11e88fa2}{Landing\+Strut\+Brace\+\_\+F}}
+\begin{DoxyCompactList}\small\item\em The front landing strut brace of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a1468c99a3a3a80544d34c9c1935d5244}{Landing\+Strut\+\_\+F}}
+\begin{DoxyCompactList}\small\item\em The front landing strut of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a85c941714082860cd1b5ce07324306fa}{Outer\+Guard\+\_\+F}}
+\begin{DoxyCompactList}\small\item\em The front outer guard of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a471e44655041d43eb5839f5b3410fe7e}{Inner\+Guard\+\_\+F}}
+\begin{DoxyCompactList}\small\item\em The front inner guard of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a4319f55360e1009385eaf6e1ce61654d}{Wheel\+\_\+F}}
+\begin{DoxyCompactList}\small\item\em The front wheel of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_ab50fc89fe728c9cef5de13fc5b4bd95d}{Landing\+Strut\+\_\+R}}
+\begin{DoxyCompactList}\small\item\em The right landing strut of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a2441caabb27e805b1e10324c7b2aac63}{Outer\+Guard\+\_\+R}}
+\begin{DoxyCompactList}\small\item\em The right outer guard of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a373a2000cc970155063032683c033050}{Inner\+Guard\+\_\+R}}
+\begin{DoxyCompactList}\small\item\em The right inner guard of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_aebbf9b614c166d0cb6fcefc048a332fc}{Wheel\+\_\+R}}
+\begin{DoxyCompactList}\small\item\em The right wheel of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a93c6fe1ec4937c0af1ee739add965737}{Landing\+Strut\+\_\+L}}
+\begin{DoxyCompactList}\small\item\em The left landing strut of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a21b97539e209cc42d0ee12df1d7b10a6}{Outer\+Guard\+\_\+L}}
+\begin{DoxyCompactList}\small\item\em The left outer guard of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a8447df0334f52ebd4bb96bf181dce092}{Inner\+Guard\+\_\+L}}
+\begin{DoxyCompactList}\small\item\em The left inner guard of the aircraft. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_d_a__40_a1851938699cb164604fbe1bde717d4a3}{Wheel\+\_\+L}}
+\begin{DoxyCompactList}\small\item\em The left wheel of the aircraft. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_a__40_a071c14af946e6be9d9051fe41261f8e8}{last\+Trail\+State}}
+\begin{DoxyCompactList}\small\item\em The previous state of the ghost trail. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_d_a__40_a26df4e3902bc69f423b3477c51366a3e}{propeller\+Acceleration}} = 500f
+\begin{DoxyCompactList}\small\item\em The rate at which the propeller rotation accelerates to full speed. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_d_a__40_acb0b7de563943c88c338bf9fb846b6b6}{current\+Propeller\+Speed}} = 0f
+\begin{DoxyCompactList}\small\item\em The current rotation speed of the propeller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles mostly cosmetic elements of the DA-\/40 aircraft itself, including default appearance, sounds, component access and toggling, and propeller rotation. 
+
+\begin{DoxyAuthor}{Author}
+Caleb Martin \texorpdfstring{$\vert$}{|} \href{mailto:marcy066@mymail.unisa.edu.au}{\texttt{marcy066@mymail.\+unisa.\+edu.\+au}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_d_a__40_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_d_a__40_a06954e05ef520c819673cf1282f2b440}\index{DA\_40@{DA\_40}!playSFX@{playSFX}}
+\index{playSFX@{playSFX}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{playSFX()}{playSFX()}}
+{\footnotesize\ttfamily \label{class_d_a__40_a06954e05ef520c819673cf1282f2b440} 
+void DA\+\_\+40.\+play\+SFX (\begin{DoxyParamCaption}\item[{Audio\+Source}]{sound}{}\end{DoxyParamCaption})}
+
+
+
+Plays a sound that is passed in as an Audio\+Source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sound} & The sound to be played. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00199}{199}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_aa97d888bc1b70d1b3e8fb40734af6d09}\index{DA\_40@{DA\_40}!Start@{Start}}
+\index{Start@{Start}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_d_a__40_aa97d888bc1b70d1b3e8fb40734af6d09} 
+void DA\+\_\+40.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00098}{98}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_ad7a85cdc189ba03990718ae6c9b8ace3}\index{DA\_40@{DA\_40}!stopSFX@{stopSFX}}
+\index{stopSFX@{stopSFX}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{stopSFX()}{stopSFX()}}
+{\footnotesize\ttfamily \label{class_d_a__40_ad7a85cdc189ba03990718ae6c9b8ace3} 
+void DA\+\_\+40.\+stop\+SFX (\begin{DoxyParamCaption}\item[{Audio\+Source}]{sound}{}\end{DoxyParamCaption})}
+
+
+
+Stops a sound that is currently playing, passed in as an Audio\+Source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sound} & The sound to be stopped. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00209}{209}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a7720286105cb6125f390a4f73165aa34}\index{DA\_40@{DA\_40}!TogglePropeller@{TogglePropeller}}
+\index{TogglePropeller@{TogglePropeller}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{TogglePropeller()}{TogglePropeller()}}
+{\footnotesize\ttfamily \label{class_d_a__40_a7720286105cb6125f390a4f73165aa34} 
+void DA\+\_\+40.\+Toggle\+Propeller (\begin{DoxyParamCaption}\item[{bool}]{new\+State}{}\end{DoxyParamCaption})}
+
+
+
+Sets a new state for the propeller spin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+State} & The new state for the propeller. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00219}{219}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a45978b6e38c3bde56eaeb8eb30c462f8}\index{DA\_40@{DA\_40}!Update@{Update}}
+\index{Update@{Update}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_d_a__40_a45978b6e38c3bde56eaeb8eb30c462f8} 
+void DA\+\_\+40.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00137}{137}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_d_a__40_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_d_a__40_adb1b34e160669b9abeac544ab15796a7}\index{DA\_40@{DA\_40}!Aileron\_L@{Aileron\_L}}
+\index{Aileron\_L@{Aileron\_L}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Aileron\_L}{Aileron\_L}}
+{\footnotesize\ttfamily \label{class_d_a__40_adb1b34e160669b9abeac544ab15796a7} 
+Game\+Object DA\+\_\+40.\+Aileron\+\_\+L\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The left aileron of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00069}{69}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a6157d2952cb2b2f71dfa00ba4061b72d}\index{DA\_40@{DA\_40}!Aileron\_R@{Aileron\_R}}
+\index{Aileron\_R@{Aileron\_R}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Aileron\_R}{Aileron\_R}}
+{\footnotesize\ttfamily \label{class_d_a__40_a6157d2952cb2b2f71dfa00ba4061b72d} 
+Game\+Object DA\+\_\+40.\+Aileron\+\_\+R\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The right aileron of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00064}{64}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a9d320e09f54424dc0071eb5b4945bc94}\index{DA\_40@{DA\_40}!Antennes@{Antennes}}
+\index{Antennes@{Antennes}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Antennes}{Antennes}}
+{\footnotesize\ttfamily \label{class_d_a__40_a9d320e09f54424dc0071eb5b4945bc94} 
+Game\+Object DA\+\_\+40.\+Antennes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The antennes of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00049}{49}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a34027107fb39853e740ee9de2d6a1811}\index{DA\_40@{DA\_40}!AxialPanelsEnabled@{AxialPanelsEnabled}}
+\index{AxialPanelsEnabled@{AxialPanelsEnabled}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{AxialPanelsEnabled}{AxialPanelsEnabled}}
+{\footnotesize\ttfamily \label{class_d_a__40_a34027107fb39853e740ee9de2d6a1811} 
+bool DA\+\_\+40.\+Axial\+Panels\+Enabled\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+DEPRECATED\+: Flag determining if the axial panel visualisation system is active or not. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_af148cfc39219f6cd99fdc71155da9b0c}\index{DA\_40@{DA\_40}!AxialScrollingPlanes@{AxialScrollingPlanes}}
+\index{AxialScrollingPlanes@{AxialScrollingPlanes}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{AxialScrollingPlanes}{AxialScrollingPlanes}}
+{\footnotesize\ttfamily \label{class_d_a__40_af148cfc39219f6cd99fdc71155da9b0c} 
+List$<$Game\+Object$>$ DA\+\_\+40.\+Axial\+Scrolling\+Planes = new List$<$Game\+Object$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a7abd6d0506241ccf2e66a4c266f07dc3}\index{DA\_40@{DA\_40}!AxialScrollSpeed@{AxialScrollSpeed}}
+\index{AxialScrollSpeed@{AxialScrollSpeed}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{AxialScrollSpeed}{AxialScrollSpeed}}
+{\footnotesize\ttfamily \label{class_d_a__40_a7abd6d0506241ccf2e66a4c266f07dc3} 
+float DA\+\_\+40.\+Axial\+Scroll\+Speed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+DEPRECATED\+: The sensitivity of the scroll speed at which the textures of the axial panels shift. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00025}{25}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a3d83bf20a767a36d4848c6b15dcd008f}\index{DA\_40@{DA\_40}!Canopy@{Canopy}}
+\index{Canopy@{Canopy}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Canopy}{Canopy}}
+{\footnotesize\ttfamily \label{class_d_a__40_a3d83bf20a767a36d4848c6b15dcd008f} 
+Game\+Object DA\+\_\+40.\+Canopy\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The canopy of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_aef3bbcde668948b87b168a774a5229cd}\index{DA\_40@{DA\_40}!CockpitClosed@{CockpitClosed}}
+\index{CockpitClosed@{CockpitClosed}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{CockpitClosed}{CockpitClosed}}
+{\footnotesize\ttfamily \label{class_d_a__40_aef3bbcde668948b87b168a774a5229cd} 
+bool DA\+\_\+40.\+Cockpit\+Closed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag determining if the cockpit of the aircraft is open or closed. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_acb0b7de563943c88c338bf9fb846b6b6}\index{DA\_40@{DA\_40}!currentPropellerSpeed@{currentPropellerSpeed}}
+\index{currentPropellerSpeed@{currentPropellerSpeed}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{currentPropellerSpeed}{currentPropellerSpeed}}
+{\footnotesize\ttfamily \label{class_d_a__40_acb0b7de563943c88c338bf9fb846b6b6} 
+float DA\+\_\+40.\+current\+Propeller\+Speed = 0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The current rotation speed of the propeller. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00095}{95}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a6a921ac871f9220752495f96a364a49e}\index{DA\_40@{DA\_40}!Dashboard@{Dashboard}}
+\index{Dashboard@{Dashboard}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Dashboard}{Dashboard}}
+{\footnotesize\ttfamily \label{class_d_a__40_a6a921ac871f9220752495f96a364a49e} 
+Game\+Object DA\+\_\+40.\+Dashboard\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The dashboard of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_adc0f1628f4d1229daa07589b75a35af0}\index{DA\_40@{DA\_40}!Elevator@{Elevator}}
+\index{Elevator@{Elevator}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Elevator}{Elevator}}
+{\footnotesize\ttfamily \label{class_d_a__40_adc0f1628f4d1229daa07589b75a35af0} 
+Game\+Object DA\+\_\+40.\+Elevator\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The elevator of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00058}{58}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a2a8e063e63b7f3b2d24808626a86fe2e}\index{DA\_40@{DA\_40}!EmpennageFrame@{EmpennageFrame}}
+\index{EmpennageFrame@{EmpennageFrame}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{EmpennageFrame}{EmpennageFrame}}
+{\footnotesize\ttfamily \label{class_d_a__40_a2a8e063e63b7f3b2d24808626a86fe2e} 
+Game\+Object DA\+\_\+40.\+Empennage\+Frame\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The empennage frame of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00055}{55}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_ababd10f055278aa37a96d6649a5470f2}\index{DA\_40@{DA\_40}!Exhaust@{Exhaust}}
+\index{Exhaust@{Exhaust}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Exhaust}{Exhaust}}
+{\footnotesize\ttfamily \label{class_d_a__40_ababd10f055278aa37a96d6649a5470f2} 
+Game\+Object DA\+\_\+40.\+Exhaust\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The exhaust of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00052}{52}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a70a0252aaf438801adde8ed0dc04985b}\index{DA\_40@{DA\_40}!FlightLoop@{FlightLoop}}
+\index{FlightLoop@{FlightLoop}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{FlightLoop}{FlightLoop}}
+{\footnotesize\ttfamily \label{class_d_a__40_a70a0252aaf438801adde8ed0dc04985b} 
+Audio\+Source DA\+\_\+40.\+Flight\+Loop\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The whirring sound of the engine. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_ac35c7c4ec59f12835f8711b4c5ec71d8}\index{DA\_40@{DA\_40}!FuselageFrame@{FuselageFrame}}
+\index{FuselageFrame@{FuselageFrame}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{FuselageFrame}{FuselageFrame}}
+{\footnotesize\ttfamily \label{class_d_a__40_ac35c7c4ec59f12835f8711b4c5ec71d8} 
+Game\+Object DA\+\_\+40.\+Fuselage\+Frame\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The fuselage frame of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00046}{46}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a6e74a5a99f6af9d837f6fee5703ae8d0}\index{DA\_40@{DA\_40}!GhostTrail@{GhostTrail}}
+\index{GhostTrail@{GhostTrail}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{GhostTrail}{GhostTrail}}
+{\footnotesize\ttfamily \label{class_d_a__40_a6e74a5a99f6af9d837f6fee5703ae8d0} 
+Particle\+System DA\+\_\+40.\+Ghost\+Trail\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Particle system representing the "{}after-\/image"{}, or ghost trail, of the aircraft. 
+
+It\textquotesingle{}s been implemented as a way to visualise the trajectory of the aircraft while it\textquotesingle{}s in-\/flight. 
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00020}{20}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a85885ea20a202d260b7f648c39d44cd2}\index{DA\_40@{DA\_40}!GhostTrailEnabled@{GhostTrailEnabled}}
+\index{GhostTrailEnabled@{GhostTrailEnabled}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{GhostTrailEnabled}{GhostTrailEnabled}}
+{\footnotesize\ttfamily \label{class_d_a__40_a85885ea20a202d260b7f648c39d44cd2} 
+bool DA\+\_\+40.\+Ghost\+Trail\+Enabled\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag determining if the ghost trail is active or not. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a38e7d4a9d3150d653fc80cccccba9276}\index{DA\_40@{DA\_40}!GlowColour@{GlowColour}}
+\index{GlowColour@{GlowColour}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{GlowColour}{GlowColour}}
+{\footnotesize\ttfamily \label{class_d_a__40_a38e7d4a9d3150d653fc80cccccba9276} 
+Color DA\+\_\+40.\+Glow\+Colour\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The colour in which highlighted components will glow. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_ae2c30a366ed6369ba1473ae9a623fea3}\index{DA\_40@{DA\_40}!Helice@{Helice}}
+\index{Helice@{Helice}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Helice}{Helice}}
+{\footnotesize\ttfamily \label{class_d_a__40_ae2c30a366ed6369ba1473ae9a623fea3} 
+Game\+Object DA\+\_\+40.\+Helice\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The helice of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00051}{51}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a248dd08ec3a4553669f0f9b38b82addf}\index{DA\_40@{DA\_40}!InitialHighlightedComponents@{InitialHighlightedComponents}}
+\index{InitialHighlightedComponents@{InitialHighlightedComponents}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{InitialHighlightedComponents}{InitialHighlightedComponents}}
+{\footnotesize\ttfamily \label{class_d_a__40_a248dd08ec3a4553669f0f9b38b82addf} 
+List$<$Game\+Object$>$ DA\+\_\+40.\+Initial\+Highlighted\+Components = new List$<$Game\+Object$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A collection of aircraft components (as Game\+Objects) that will start glowing at runtime. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a471e44655041d43eb5839f5b3410fe7e}\index{DA\_40@{DA\_40}!InnerGuard\_F@{InnerGuard\_F}}
+\index{InnerGuard\_F@{InnerGuard\_F}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{InnerGuard\_F}{InnerGuard\_F}}
+{\footnotesize\ttfamily \label{class_d_a__40_a471e44655041d43eb5839f5b3410fe7e} 
+Game\+Object DA\+\_\+40.\+Inner\+Guard\+\_\+F\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The front inner guard of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00081}{81}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a8447df0334f52ebd4bb96bf181dce092}\index{DA\_40@{DA\_40}!InnerGuard\_L@{InnerGuard\_L}}
+\index{InnerGuard\_L@{InnerGuard\_L}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{InnerGuard\_L}{InnerGuard\_L}}
+{\footnotesize\ttfamily \label{class_d_a__40_a8447df0334f52ebd4bb96bf181dce092} 
+Game\+Object DA\+\_\+40.\+Inner\+Guard\+\_\+L\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The left inner guard of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00089}{89}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a373a2000cc970155063032683c033050}\index{DA\_40@{DA\_40}!InnerGuard\_R@{InnerGuard\_R}}
+\index{InnerGuard\_R@{InnerGuard\_R}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{InnerGuard\_R}{InnerGuard\_R}}
+{\footnotesize\ttfamily \label{class_d_a__40_a373a2000cc970155063032683c033050} 
+Game\+Object DA\+\_\+40.\+Inner\+Guard\+\_\+R\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The right inner guard of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00085}{85}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a426078537442cd8911d0c7180214f387}\index{DA\_40@{DA\_40}!InnerGuards@{InnerGuards}}
+\index{InnerGuards@{InnerGuards}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{InnerGuards}{InnerGuards}}
+{\footnotesize\ttfamily \label{class_d_a__40_a426078537442cd8911d0c7180214f387} 
+Game\+Object DA\+\_\+40.\+Inner\+Guards\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The inner wing guards of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00074}{74}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a770779cd17972a0f28b1ece2e3e860b3}\index{DA\_40@{DA\_40}!Interior@{Interior}}
+\index{Interior@{Interior}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Interior}{Interior}}
+{\footnotesize\ttfamily \label{class_d_a__40_a770779cd17972a0f28b1ece2e3e860b3} 
+Game\+Object DA\+\_\+40.\+Interior\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The interior of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00040}{40}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a0301a6c92636ba9f52a99f73b35e9e13}\index{DA\_40@{DA\_40}!IsPassthroughEnabled@{IsPassthroughEnabled}}
+\index{IsPassthroughEnabled@{IsPassthroughEnabled}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{IsPassthroughEnabled}{IsPassthroughEnabled}}
+{\footnotesize\ttfamily \label{class_d_a__40_a0301a6c92636ba9f52a99f73b35e9e13} 
+bool DA\+\_\+40.\+Is\+Passthrough\+Enabled\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+DEPRECATED\+: Flag determining if passthrough mode is enabled or not. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00023}{23}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a38664b1bb343162dbb591be2e6e9ad9e}\index{DA\_40@{DA\_40}!LandingFlap\_L@{LandingFlap\_L}}
+\index{LandingFlap\_L@{LandingFlap\_L}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{LandingFlap\_L}{LandingFlap\_L}}
+{\footnotesize\ttfamily \label{class_d_a__40_a38664b1bb343162dbb591be2e6e9ad9e} 
+Game\+Object DA\+\_\+40.\+Landing\+Flap\+\_\+L\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The left landing flap of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00070}{70}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_aa424ebf004d431336a3f7e991e844d3e}\index{DA\_40@{DA\_40}!LandingFlap\_R@{LandingFlap\_R}}
+\index{LandingFlap\_R@{LandingFlap\_R}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{LandingFlap\_R}{LandingFlap\_R}}
+{\footnotesize\ttfamily \label{class_d_a__40_aa424ebf004d431336a3f7e991e844d3e} 
+Game\+Object DA\+\_\+40.\+Landing\+Flap\+\_\+R\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The right landing flap of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00065}{65}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a5e5582b6505e2f04344d35c5817d2d8b}\index{DA\_40@{DA\_40}!LandingLightBulb@{LandingLightBulb}}
+\index{LandingLightBulb@{LandingLightBulb}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{LandingLightBulb}{LandingLightBulb}}
+{\footnotesize\ttfamily \label{class_d_a__40_a5e5582b6505e2f04344d35c5817d2d8b} 
+Game\+Object DA\+\_\+40.\+Landing\+Light\+Bulb\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The landing light bulb of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00071}{71}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a1468c99a3a3a80544d34c9c1935d5244}\index{DA\_40@{DA\_40}!LandingStrut\_F@{LandingStrut\_F}}
+\index{LandingStrut\_F@{LandingStrut\_F}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{LandingStrut\_F}{LandingStrut\_F}}
+{\footnotesize\ttfamily \label{class_d_a__40_a1468c99a3a3a80544d34c9c1935d5244} 
+Game\+Object DA\+\_\+40.\+Landing\+Strut\+\_\+F\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The front landing strut of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00079}{79}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a93c6fe1ec4937c0af1ee739add965737}\index{DA\_40@{DA\_40}!LandingStrut\_L@{LandingStrut\_L}}
+\index{LandingStrut\_L@{LandingStrut\_L}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{LandingStrut\_L}{LandingStrut\_L}}
+{\footnotesize\ttfamily \label{class_d_a__40_a93c6fe1ec4937c0af1ee739add965737} 
+Game\+Object DA\+\_\+40.\+Landing\+Strut\+\_\+L\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The left landing strut of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00087}{87}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_ab50fc89fe728c9cef5de13fc5b4bd95d}\index{DA\_40@{DA\_40}!LandingStrut\_R@{LandingStrut\_R}}
+\index{LandingStrut\_R@{LandingStrut\_R}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{LandingStrut\_R}{LandingStrut\_R}}
+{\footnotesize\ttfamily \label{class_d_a__40_ab50fc89fe728c9cef5de13fc5b4bd95d} 
+Game\+Object DA\+\_\+40.\+Landing\+Strut\+\_\+R\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The right landing strut of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00083}{83}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_abe56317dbf55f56612ea805b11e88fa2}\index{DA\_40@{DA\_40}!LandingStrutBrace\_F@{LandingStrutBrace\_F}}
+\index{LandingStrutBrace\_F@{LandingStrutBrace\_F}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{LandingStrutBrace\_F}{LandingStrutBrace\_F}}
+{\footnotesize\ttfamily \label{class_d_a__40_abe56317dbf55f56612ea805b11e88fa2} 
+Game\+Object DA\+\_\+40.\+Landing\+Strut\+Brace\+\_\+F\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The front landing strut brace of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00078}{78}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a071c14af946e6be9d9051fe41261f8e8}\index{DA\_40@{DA\_40}!lastTrailState@{lastTrailState}}
+\index{lastTrailState@{lastTrailState}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{lastTrailState}{lastTrailState}}
+{\footnotesize\ttfamily \label{class_d_a__40_a071c14af946e6be9d9051fe41261f8e8} 
+bool DA\+\_\+40.\+last\+Trail\+State\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The previous state of the ghost trail. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00092}{92}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a85c941714082860cd1b5ce07324306fa}\index{DA\_40@{DA\_40}!OuterGuard\_F@{OuterGuard\_F}}
+\index{OuterGuard\_F@{OuterGuard\_F}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{OuterGuard\_F}{OuterGuard\_F}}
+{\footnotesize\ttfamily \label{class_d_a__40_a85c941714082860cd1b5ce07324306fa} 
+Game\+Object DA\+\_\+40.\+Outer\+Guard\+\_\+F\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The front outer guard of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00080}{80}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a21b97539e209cc42d0ee12df1d7b10a6}\index{DA\_40@{DA\_40}!OuterGuard\_L@{OuterGuard\_L}}
+\index{OuterGuard\_L@{OuterGuard\_L}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{OuterGuard\_L}{OuterGuard\_L}}
+{\footnotesize\ttfamily \label{class_d_a__40_a21b97539e209cc42d0ee12df1d7b10a6} 
+Game\+Object DA\+\_\+40.\+Outer\+Guard\+\_\+L\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The left outer guard of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00088}{88}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a2441caabb27e805b1e10324c7b2aac63}\index{DA\_40@{DA\_40}!OuterGuard\_R@{OuterGuard\_R}}
+\index{OuterGuard\_R@{OuterGuard\_R}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{OuterGuard\_R}{OuterGuard\_R}}
+{\footnotesize\ttfamily \label{class_d_a__40_a2441caabb27e805b1e10324c7b2aac63} 
+Game\+Object DA\+\_\+40.\+Outer\+Guard\+\_\+R\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The right outer guard of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00084}{84}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a00e1b7edcd6ca3c250b721152e042a80}\index{DA\_40@{DA\_40}!Porte@{Porte}}
+\index{Porte@{Porte}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Porte}{Porte}}
+{\footnotesize\ttfamily \label{class_d_a__40_a00e1b7edcd6ca3c250b721152e042a80} 
+Game\+Object DA\+\_\+40.\+Porte\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The porte of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00038}{38}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a8a0354634342506d068d307abed69b7e}\index{DA\_40@{DA\_40}!PorteClosed@{PorteClosed}}
+\index{PorteClosed@{PorteClosed}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{PorteClosed}{PorteClosed}}
+{\footnotesize\ttfamily \label{class_d_a__40_a8a0354634342506d068d307abed69b7e} 
+bool DA\+\_\+40.\+Porte\+Closed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag determining if the porte of the aircraft is open or closed. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a26df4e3902bc69f423b3477c51366a3e}\index{DA\_40@{DA\_40}!propellerAcceleration@{propellerAcceleration}}
+\index{propellerAcceleration@{propellerAcceleration}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{propellerAcceleration}{propellerAcceleration}}
+{\footnotesize\ttfamily \label{class_d_a__40_a26df4e3902bc69f423b3477c51366a3e} 
+float DA\+\_\+40.\+propeller\+Acceleration = 500f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The rate at which the propeller rotation accelerates to full speed. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00094}{94}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_ad4aa7d779c95c318386aa82140ee3d49}\index{DA\_40@{DA\_40}!PropellerEnabled@{PropellerEnabled}}
+\index{PropellerEnabled@{PropellerEnabled}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{PropellerEnabled}{PropellerEnabled}}
+{\footnotesize\ttfamily \label{class_d_a__40_ad4aa7d779c95c318386aa82140ee3d49} 
+bool DA\+\_\+40.\+Propeller\+Enabled\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag determining if the front propeller is spinning or not. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a169410344744a37e65b69b361cdf18db}\index{DA\_40@{DA\_40}!PropellerHub@{PropellerHub}}
+\index{PropellerHub@{PropellerHub}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{PropellerHub}{PropellerHub}}
+{\footnotesize\ttfamily \label{class_d_a__40_a169410344744a37e65b69b361cdf18db} 
+Game\+Object DA\+\_\+40.\+Propeller\+Hub\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The propeller hub of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00050}{50}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a88ef222e29d41fa00be564c267d63420}\index{DA\_40@{DA\_40}!PropellerRotationSpeed@{PropellerRotationSpeed}}
+\index{PropellerRotationSpeed@{PropellerRotationSpeed}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{PropellerRotationSpeed}{PropellerRotationSpeed}}
+{\footnotesize\ttfamily \label{class_d_a__40_a88ef222e29d41fa00be564c267d63420} 
+float DA\+\_\+40.\+Propeller\+Rotation\+Speed = 1000f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The rotation speed of the front propeller. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00022}{22}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_ae0e28d13359ed128ce097c2087f0b3a9}\index{DA\_40@{DA\_40}!PropellerStart@{PropellerStart}}
+\index{PropellerStart@{PropellerStart}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{PropellerStart}{PropellerStart}}
+{\footnotesize\ttfamily \label{class_d_a__40_ae0e28d13359ed128ce097c2087f0b3a9} 
+Audio\+Source DA\+\_\+40.\+Propeller\+Start\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The startup sound of the engine when the plane is turned on. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00030}{30}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a9403ca659590683dc8ced5ea298d1541}\index{DA\_40@{DA\_40}!Rudder@{Rudder}}
+\index{Rudder@{Rudder}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Rudder}{Rudder}}
+{\footnotesize\ttfamily \label{class_d_a__40_a9403ca659590683dc8ced5ea298d1541} 
+Game\+Object DA\+\_\+40.\+Rudder\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The rudder of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00056}{56}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a8705cfb3d760986d4b4f24f71bb5ee87}\index{DA\_40@{DA\_40}!Seats@{Seats}}
+\index{Seats@{Seats}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Seats}{Seats}}
+{\footnotesize\ttfamily \label{class_d_a__40_a8705cfb3d760986d4b4f24f71bb5ee87} 
+Game\+Object DA\+\_\+40.\+Seats\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The seats of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00041}{41}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_adbd9ae0fcdff5c9c473cafa21136db77}\index{DA\_40@{DA\_40}!Stabiliser@{Stabiliser}}
+\index{Stabiliser@{Stabiliser}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Stabiliser}{Stabiliser}}
+{\footnotesize\ttfamily \label{class_d_a__40_adbd9ae0fcdff5c9c473cafa21136db77} 
+Game\+Object DA\+\_\+40.\+Stabiliser\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The stabiliser of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00057}{57}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a1e54fe40bdfe74ebb5b945521bd2d059}\index{DA\_40@{DA\_40}!StallWarning@{StallWarning}}
+\index{StallWarning@{StallWarning}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{StallWarning}{StallWarning}}
+{\footnotesize\ttfamily \label{class_d_a__40_a1e54fe40bdfe74ebb5b945521bd2d059} 
+Audio\+Source DA\+\_\+40.\+Stall\+Warning\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The stall horn sound that plays when a wing (or wings) is stalling. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00031}{31}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a6bd40da2d9fa9e45a7c8dcd474263576}\index{DA\_40@{DA\_40}!Step\_L@{Step\_L}}
+\index{Step\_L@{Step\_L}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Step\_L}{Step\_L}}
+{\footnotesize\ttfamily \label{class_d_a__40_a6bd40da2d9fa9e45a7c8dcd474263576} 
+Game\+Object DA\+\_\+40.\+Step\+\_\+L\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The left step of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00048}{48}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a1a1c783c9f57046ad4578e565ccd2559}\index{DA\_40@{DA\_40}!Step\_R@{Step\_R}}
+\index{Step\_R@{Step\_R}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Step\_R}{Step\_R}}
+{\footnotesize\ttfamily \label{class_d_a__40_a1a1c783c9f57046ad4578e565ccd2559} 
+Game\+Object DA\+\_\+40.\+Step\+\_\+R\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The right step of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00047}{47}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a1b2a1e1b633ca898d42d62499e85284f}\index{DA\_40@{DA\_40}!Struts@{Struts}}
+\index{Struts@{Struts}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Struts}{Struts}}
+{\footnotesize\ttfamily \label{class_d_a__40_a1b2a1e1b633ca898d42d62499e85284f} 
+Game\+Object DA\+\_\+40.\+Struts\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The struts of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00075}{75}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a0b88013efa2163f71ba3885e0411d248}\index{DA\_40@{DA\_40}!subtitles@{subtitles}}
+\index{subtitles@{subtitles}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{subtitles}{subtitles}}
+{\footnotesize\ttfamily \label{class_d_a__40_a0b88013efa2163f71ba3885e0411d248} 
+Text\+Mesh\+Pro\+UGUI DA\+\_\+40.\+subtitles\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the subtitles displayed on the Local\+Canvas of the user interface. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00026}{26}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a95fa9d326a905dc6b5c6f057e10cd879}\index{DA\_40@{DA\_40}!TailGuard@{TailGuard}}
+\index{TailGuard@{TailGuard}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{TailGuard}{TailGuard}}
+{\footnotesize\ttfamily \label{class_d_a__40_a95fa9d326a905dc6b5c6f057e10cd879} 
+Game\+Object DA\+\_\+40.\+Tail\+Guard\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The tail guard of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00059}{59}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a4f80ac4138bb49335b669b1c024c99ae}\index{DA\_40@{DA\_40}!TailLight@{TailLight}}
+\index{TailLight@{TailLight}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{TailLight}{TailLight}}
+{\footnotesize\ttfamily \label{class_d_a__40_a4f80ac4138bb49335b669b1c024c99ae} 
+Game\+Object DA\+\_\+40.\+Tail\+Light\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The tail light of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00060}{60}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a45fe13d5846f4ddabe26d15de692199d}\index{DA\_40@{DA\_40}!Vitres@{Vitres}}
+\index{Vitres@{Vitres}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Vitres}{Vitres}}
+{\footnotesize\ttfamily \label{class_d_a__40_a45fe13d5846f4ddabe26d15de692199d} 
+Game\+Object DA\+\_\+40.\+Vitres\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The vitres of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00039}{39}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a4319f55360e1009385eaf6e1ce61654d}\index{DA\_40@{DA\_40}!Wheel\_F@{Wheel\_F}}
+\index{Wheel\_F@{Wheel\_F}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Wheel\_F}{Wheel\_F}}
+{\footnotesize\ttfamily \label{class_d_a__40_a4319f55360e1009385eaf6e1ce61654d} 
+Game\+Object DA\+\_\+40.\+Wheel\+\_\+F\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The front wheel of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00082}{82}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a1851938699cb164604fbe1bde717d4a3}\index{DA\_40@{DA\_40}!Wheel\_L@{Wheel\_L}}
+\index{Wheel\_L@{Wheel\_L}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Wheel\_L}{Wheel\_L}}
+{\footnotesize\ttfamily \label{class_d_a__40_a1851938699cb164604fbe1bde717d4a3} 
+Game\+Object DA\+\_\+40.\+Wheel\+\_\+L\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The left wheel of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00090}{90}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_aebbf9b614c166d0cb6fcefc048a332fc}\index{DA\_40@{DA\_40}!Wheel\_R@{Wheel\_R}}
+\index{Wheel\_R@{Wheel\_R}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Wheel\_R}{Wheel\_R}}
+{\footnotesize\ttfamily \label{class_d_a__40_aebbf9b614c166d0cb6fcefc048a332fc} 
+Game\+Object DA\+\_\+40.\+Wheel\+\_\+R\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The right wheel of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00086}{86}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a15a0e517400ae8c5dc4d2e3b7ecb0d49}\index{DA\_40@{DA\_40}!WingFrame\_L@{WingFrame\_L}}
+\index{WingFrame\_L@{WingFrame\_L}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{WingFrame\_L}{WingFrame\_L}}
+{\footnotesize\ttfamily \label{class_d_a__40_a15a0e517400ae8c5dc4d2e3b7ecb0d49} 
+Game\+Object DA\+\_\+40.\+Wing\+Frame\+\_\+L\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The left wing frame of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00068}{68}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_a6d42bdccb0a640db2b08bbceda01931c}\index{DA\_40@{DA\_40}!WingFrame\_R@{WingFrame\_R}}
+\index{WingFrame\_R@{WingFrame\_R}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{WingFrame\_R}{WingFrame\_R}}
+{\footnotesize\ttfamily \label{class_d_a__40_a6d42bdccb0a640db2b08bbceda01931c} 
+Game\+Object DA\+\_\+40.\+Wing\+Frame\+\_\+R\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The right wing frame of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00063}{63}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_aeee43c4f30e25235a8ca64c6cc743c5e}\index{DA\_40@{DA\_40}!Yoke\_L@{Yoke\_L}}
+\index{Yoke\_L@{Yoke\_L}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Yoke\_L}{Yoke\_L}}
+{\footnotesize\ttfamily \label{class_d_a__40_aeee43c4f30e25235a8ca64c6cc743c5e} 
+Game\+Object DA\+\_\+40.\+Yoke\+\_\+L\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The left yoke of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00043}{43}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+\Hypertarget{class_d_a__40_af4ad1b1b3ccc5a632bbeb321bee85b98}\index{DA\_40@{DA\_40}!Yoke\_R@{Yoke\_R}}
+\index{Yoke\_R@{Yoke\_R}!DA\_40@{DA\_40}}
+\doxysubsubsection{\texorpdfstring{Yoke\_R}{Yoke\_R}}
+{\footnotesize\ttfamily \label{class_d_a__40_af4ad1b1b3ccc5a632bbeb321bee85b98} 
+Game\+Object DA\+\_\+40.\+Yoke\+\_\+R\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The right yoke of the aircraft. 
+
+
+
+Definition at line \mbox{\hyperlink{_d_a__40_8cs_source_l00042}{42}} of file \mbox{\hyperlink{_d_a__40_8cs_source}{DA\+\_\+40.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+DA\+\_\+40\+\_\+\+Special\+Features/\mbox{\hyperlink{_d_a__40_8cs}{DA\+\_\+40.\+cs}}\end{DoxyCompactItemize}

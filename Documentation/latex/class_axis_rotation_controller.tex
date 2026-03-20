@@ -1,0 +1,491 @@
+\doxysection{Axis\+Rotation\+Controller Class Reference}
+\hypertarget{class_axis_rotation_controller}{}\label{class_axis_rotation_controller}\index{AxisRotationController@{AxisRotationController}}
+
+
+Helper class to perform rotation actions.  
+
+
+
+
+Inheritance diagram for Axis\+Rotation\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_axis_rotation_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Axis\+Rotation\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_axis_rotation_controller__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_axis_rotation_controller_a24f7cfea93c0b621d35b49055935d9a3}{Lerp\+AOA}} (float angle, float lerp\+Duration=1.\+5f)
+\begin{DoxyCompactList}\small\item\em Lerp between initial and target angle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_axis_rotation_controller_ad8c1a1a34b8b55b1592f6891f57d0ca5}{Lerp\+Bank}} (float angle, float lerp\+Duration=1.\+5f)
+\begin{DoxyCompactList}\small\item\em Lerp between initial and target angle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_axis_rotation_controller_adaf373b6566105f94276860068199138}{Increment\+Bank}} (float delta)
+\begin{DoxyCompactList}\small\item\em Increment x rotaiton. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_axis_rotation_controller_a1978aa1ddb6cf5e5b5fce8e03e1885e8}{Increment\+AOA}} (float delta)
+\begin{DoxyCompactList}\small\item\em Increment z rotaiton. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_axis_rotation_controller_aa0325af7cb4ec5da62840c413ea3fbc9}{Increment\+Yaw}} (float delta)
+\begin{DoxyCompactList}\small\item\em Increment y rotation (yaw). \end{DoxyCompactList}\item 
+Quaternion \mbox{\hyperlink{class_axis_rotation_controller_a7683405210b87aa5f395bb32476c3158}{get\+Rotation}} ()
+\begin{DoxyCompactList}\small\item\em Returns parent Quaternion rotation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_axis_rotation_controller_ae16f94fa84a21a50bd0bd39c71637f52}{set\+Roll}} (float roll)
+\begin{DoxyCompactList}\small\item\em Set x rotation of parent Game\+Object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_axis_rotation_controller_af737740d68ba8aafe076f1ff8f72c690}{set\+Pitch}} (float pitch)
+\begin{DoxyCompactList}\small\item\em Set x rotation of parent Game\+Object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_axis_rotation_controller_af14f83d553da80a0643733623a3eddd8}{Is\+Lerping\+Roll}} ()
+\begin{DoxyCompactList}\small\item\em Check if Plane Game\+Object is lerping roll. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_axis_rotation_controller_a627dfc5b0efa0c9d7ed2a6dd25336f26}{Is\+Lerping\+Pitch}} ()
+\begin{DoxyCompactList}\small\item\em Check if Plane Game\+Object is lerping pitch. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_axis_rotation_controller_ac278ccfdf0eea4d3cf72d81207a6f95f}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Main update loop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_axis_rotation_controller_a8dd3204bf3f12e1ae02ceb1317e80758}{Update\+Roll}} ()
+\begin{DoxyCompactList}\small\item\em Updates Roll according to lerp parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_axis_rotation_controller_a7f7ff9c65c1391d408b3de5a441f20be}{Update\+Pitch}} ()
+\begin{DoxyCompactList}\small\item\em Updates Pitch according to lerp parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_axis_rotation_controller_a67fa90256748903ca6b378bcfca76e70}{is\+Lerping\+Pitch}}
+\begin{DoxyCompactList}\small\item\em Current state of pitch lerp. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_axis_rotation_controller_a8a183f2dff2ba06e05dcdca77f482a84}{is\+Lerping\+Roll}}
+\begin{DoxyCompactList}\small\item\em Current state of roll lerp. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_axis_rotation_controller_a8f927ca0107ae431cd1f8f525f1798c1}{start\+RotationZ}}
+\begin{DoxyCompactList}\small\item\em Start for pitch lerp. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_axis_rotation_controller_ae0907c0fffeea49a5a54ae38ad7556c2}{target\+RotationZ}}
+\begin{DoxyCompactList}\small\item\em Target for for pitch lerp. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_axis_rotation_controller_a14a2677947d93660084d72fba8457b96}{start\+RotationX}}
+\begin{DoxyCompactList}\small\item\em Start for roll lerp. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_axis_rotation_controller_a31a5346aa21d811c94f20d22864566db}{target\+RotationX}}
+\begin{DoxyCompactList}\small\item\em Target for roll lerp. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_axis_rotation_controller_a76826cab49c937e91fa1b028109cb766}{duration\+Roll}}
+\begin{DoxyCompactList}\small\item\em Duration of lerp in seconds. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_axis_rotation_controller_a8e54725910194bbb309924224c5feff2}{duration\+Pitch}}
+\begin{DoxyCompactList}\small\item\em Duration of lerp in seconds. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_axis_rotation_controller_a2ef771c291f34e4447cc76129e6d41c1}{time\+Elapsed\+Roll}}
+\begin{DoxyCompactList}\small\item\em Current time elapsed during roll lerp. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_axis_rotation_controller_a5e31c3e01f79a48ca156ac6586665404}{time\+Elapsed\+Pitch}}
+\begin{DoxyCompactList}\small\item\em Current time elapsed during pitch lerp. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helper class to perform rotation actions. 
+
+Provides functions for performing different rotation actions on a game object. Only performs roll and pitch rotations for a game object with a +x forward axis and +z left side axis.
+
+\begin{DoxyAuthor}{Author}
+Connor Freebairn \texorpdfstring{$\vert$}{|} \href{mailto:frecd002@mymail.unisa.edu.au}{\texttt{frecd002@mymail.\+unisa.\+edu.\+au}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_axis_rotation_controller_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_axis_rotation_controller_a7683405210b87aa5f395bb32476c3158}\index{AxisRotationController@{AxisRotationController}!getRotation@{getRotation}}
+\index{getRotation@{getRotation}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{getRotation()}{getRotation()}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_a7683405210b87aa5f395bb32476c3158} 
+Quaternion Axis\+Rotation\+Controller.\+get\+Rotation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns parent Quaternion rotation. 
+
+\begin{DoxyReturn}{Returns}
+Quaternion 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00126}{126}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+\Hypertarget{class_axis_rotation_controller_a1978aa1ddb6cf5e5b5fce8e03e1885e8}\index{AxisRotationController@{AxisRotationController}!IncrementAOA@{IncrementAOA}}
+\index{IncrementAOA@{IncrementAOA}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{IncrementAOA()}{IncrementAOA()}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_a1978aa1ddb6cf5e5b5fce8e03e1885e8} 
+void Axis\+Rotation\+Controller.\+Increment\+AOA (\begin{DoxyParamCaption}\item[{float}]{delta}{}\end{DoxyParamCaption})}
+
+
+
+Increment z rotaiton. 
+
+Adds parameter delta to parent Game\+Objects z rotation. Usually scaled according to deltatime.
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta} & small -\//+ value for rotation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00085}{85}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+\Hypertarget{class_axis_rotation_controller_adaf373b6566105f94276860068199138}\index{AxisRotationController@{AxisRotationController}!IncrementBank@{IncrementBank}}
+\index{IncrementBank@{IncrementBank}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{IncrementBank()}{IncrementBank()}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_adaf373b6566105f94276860068199138} 
+void Axis\+Rotation\+Controller.\+Increment\+Bank (\begin{DoxyParamCaption}\item[{float}]{delta}{}\end{DoxyParamCaption})}
+
+
+
+Increment x rotaiton. 
+
+Adds parameter delta to parent Game\+Objects x rotation. Usually scaled according to deltatime.
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta} & small -\//+ value for rotation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00072}{72}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+\Hypertarget{class_axis_rotation_controller_aa0325af7cb4ec5da62840c413ea3fbc9}\index{AxisRotationController@{AxisRotationController}!IncrementYaw@{IncrementYaw}}
+\index{IncrementYaw@{IncrementYaw}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{IncrementYaw()}{IncrementYaw()}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_aa0325af7cb4ec5da62840c413ea3fbc9} 
+void Axis\+Rotation\+Controller.\+Increment\+Yaw (\begin{DoxyParamCaption}\item[{float}]{delta}{}\end{DoxyParamCaption})}
+
+
+
+Increment y rotation (yaw). 
+
+Adds parameter delta to the parent Game\+Objects y rotation. Usually scaled according to delta\+Time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta} & small -\//+ value for rotation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00098}{98}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+\Hypertarget{class_axis_rotation_controller_a627dfc5b0efa0c9d7ed2a6dd25336f26}\index{AxisRotationController@{AxisRotationController}!IsLerpingPitch@{IsLerpingPitch}}
+\index{IsLerpingPitch@{IsLerpingPitch}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{IsLerpingPitch()}{IsLerpingPitch()}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_a627dfc5b0efa0c9d7ed2a6dd25336f26} 
+bool Axis\+Rotation\+Controller.\+Is\+Lerping\+Pitch (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Check if Plane Game\+Object is lerping pitch. 
+
+\begin{DoxyReturn}{Returns}
+boolean for lerping state 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00166}{166}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+\Hypertarget{class_axis_rotation_controller_af14f83d553da80a0643733623a3eddd8}\index{AxisRotationController@{AxisRotationController}!IsLerpingRoll@{IsLerpingRoll}}
+\index{IsLerpingRoll@{IsLerpingRoll}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{IsLerpingRoll()}{IsLerpingRoll()}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_af14f83d553da80a0643733623a3eddd8} 
+bool Axis\+Rotation\+Controller.\+Is\+Lerping\+Roll (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Check if Plane Game\+Object is lerping roll. 
+
+\begin{DoxyReturn}{Returns}
+boolean for lerping state 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00156}{156}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+\Hypertarget{class_axis_rotation_controller_a24f7cfea93c0b621d35b49055935d9a3}\index{AxisRotationController@{AxisRotationController}!LerpAOA@{LerpAOA}}
+\index{LerpAOA@{LerpAOA}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{LerpAOA()}{LerpAOA()}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_a24f7cfea93c0b621d35b49055935d9a3} 
+void Axis\+Rotation\+Controller.\+Lerp\+AOA (\begin{DoxyParamCaption}\item[{float}]{angle}{, }\item[{float}]{lerp\+Duration}{ = {\ttfamily 1\+:\+:5f}}\end{DoxyParamCaption})}
+
+
+
+Lerp between initial and target angle. 
+
+Lerp from the current rotation of the parent Game\+Object to target angle around z axis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & target angle for lerp \\
+\hline
+{\em lerp\+Duration} & duration of time to lerp to target \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+\Hypertarget{class_axis_rotation_controller_ad8c1a1a34b8b55b1592f6891f57d0ca5}\index{AxisRotationController@{AxisRotationController}!LerpBank@{LerpBank}}
+\index{LerpBank@{LerpBank}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{LerpBank()}{LerpBank()}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_ad8c1a1a34b8b55b1592f6891f57d0ca5} 
+void Axis\+Rotation\+Controller.\+Lerp\+Bank (\begin{DoxyParamCaption}\item[{float}]{angle}{, }\item[{float}]{lerp\+Duration}{ = {\ttfamily 1\+:\+:5f}}\end{DoxyParamCaption})}
+
+
+
+Lerp between initial and target angle. 
+
+Lerp from the current rotation of the parent Game\+Object to target angle around x axis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & target angle for lerp \\
+\hline
+{\em lerp\+Duration} & duration of time to lerp to target \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00055}{55}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+\Hypertarget{class_axis_rotation_controller_af737740d68ba8aafe076f1ff8f72c690}\index{AxisRotationController@{AxisRotationController}!setPitch@{setPitch}}
+\index{setPitch@{setPitch}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{setPitch()}{setPitch()}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_af737740d68ba8aafe076f1ff8f72c690} 
+void Axis\+Rotation\+Controller.\+set\+Pitch (\begin{DoxyParamCaption}\item[{float}]{pitch}{}\end{DoxyParamCaption})}
+
+
+
+Set x rotation of parent Game\+Object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pitch} & rotation value as a float \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00146}{146}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+\Hypertarget{class_axis_rotation_controller_ae16f94fa84a21a50bd0bd39c71637f52}\index{AxisRotationController@{AxisRotationController}!setRoll@{setRoll}}
+\index{setRoll@{setRoll}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{setRoll()}{setRoll()}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_ae16f94fa84a21a50bd0bd39c71637f52} 
+void Axis\+Rotation\+Controller.\+set\+Roll (\begin{DoxyParamCaption}\item[{float}]{roll}{}\end{DoxyParamCaption})}
+
+
+
+Set x rotation of parent Game\+Object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em roll} & rotation value as a float \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00136}{136}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+\Hypertarget{class_axis_rotation_controller_ac278ccfdf0eea4d3cf72d81207a6f95f}\index{AxisRotationController@{AxisRotationController}!Update@{Update}}
+\index{Update@{Update}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_ac278ccfdf0eea4d3cf72d81207a6f95f} 
+void Axis\+Rotation\+Controller.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Main update loop. 
+
+Checks if pitch or roll needs to continue lerping and calls \doxylink{class_axis_rotation_controller_a7f7ff9c65c1391d408b3de5a441f20be}{Update\+Pitch()} and \doxylink{class_axis_rotation_controller_a8dd3204bf3f12e1ae02ceb1317e80758}{Update\+Roll()} respectivley 
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00108}{108}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+\Hypertarget{class_axis_rotation_controller_a7f7ff9c65c1391d408b3de5a441f20be}\index{AxisRotationController@{AxisRotationController}!UpdatePitch@{UpdatePitch}}
+\index{UpdatePitch@{UpdatePitch}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{UpdatePitch()}{UpdatePitch()}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_a7f7ff9c65c1391d408b3de5a441f20be} 
+void Axis\+Rotation\+Controller.\+Update\+Pitch (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates Pitch according to lerp parameters. 
+
+Called by main \doxylink{class_axis_rotation_controller_ac278ccfdf0eea4d3cf72d81207a6f95f}{Update()} loop to perform pitch lerp 
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00197}{197}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+\Hypertarget{class_axis_rotation_controller_a8dd3204bf3f12e1ae02ceb1317e80758}\index{AxisRotationController@{AxisRotationController}!UpdateRoll@{UpdateRoll}}
+\index{UpdateRoll@{UpdateRoll}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{UpdateRoll()}{UpdateRoll()}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_a8dd3204bf3f12e1ae02ceb1317e80758} 
+void Axis\+Rotation\+Controller.\+Update\+Roll (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates Roll according to lerp parameters. 
+
+Called by main \doxylink{class_axis_rotation_controller_ac278ccfdf0eea4d3cf72d81207a6f95f}{Update()} loop to perform roll lerp 
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00176}{176}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_axis_rotation_controller_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_axis_rotation_controller_a8e54725910194bbb309924224c5feff2}\index{AxisRotationController@{AxisRotationController}!durationPitch@{durationPitch}}
+\index{durationPitch@{durationPitch}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{durationPitch}{durationPitch}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_a8e54725910194bbb309924224c5feff2} 
+float Axis\+Rotation\+Controller.\+duration\+Pitch\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Duration of lerp in seconds. 
+
+
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00025}{25}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+\Hypertarget{class_axis_rotation_controller_a76826cab49c937e91fa1b028109cb766}\index{AxisRotationController@{AxisRotationController}!durationRoll@{durationRoll}}
+\index{durationRoll@{durationRoll}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{durationRoll}{durationRoll}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_a76826cab49c937e91fa1b028109cb766} 
+float Axis\+Rotation\+Controller.\+duration\+Roll\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Duration of lerp in seconds. 
+
+
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+\Hypertarget{class_axis_rotation_controller_a67fa90256748903ca6b378bcfca76e70}\index{AxisRotationController@{AxisRotationController}!isLerpingPitch@{isLerpingPitch}}
+\index{isLerpingPitch@{isLerpingPitch}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{isLerpingPitch}{isLerpingPitch}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_a67fa90256748903ca6b378bcfca76e70} 
+bool Axis\+Rotation\+Controller.\+is\+Lerping\+Pitch\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current state of pitch lerp. 
+
+
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+\Hypertarget{class_axis_rotation_controller_a8a183f2dff2ba06e05dcdca77f482a84}\index{AxisRotationController@{AxisRotationController}!isLerpingRoll@{isLerpingRoll}}
+\index{isLerpingRoll@{isLerpingRoll}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{isLerpingRoll}{isLerpingRoll}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_a8a183f2dff2ba06e05dcdca77f482a84} 
+bool Axis\+Rotation\+Controller.\+is\+Lerping\+Roll\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current state of roll lerp. 
+
+
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+\Hypertarget{class_axis_rotation_controller_a14a2677947d93660084d72fba8457b96}\index{AxisRotationController@{AxisRotationController}!startRotationX@{startRotationX}}
+\index{startRotationX@{startRotationX}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{startRotationX}{startRotationX}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_a14a2677947d93660084d72fba8457b96} 
+float Axis\+Rotation\+Controller.\+start\+RotationX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Start for roll lerp. 
+
+
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+\Hypertarget{class_axis_rotation_controller_a8f927ca0107ae431cd1f8f525f1798c1}\index{AxisRotationController@{AxisRotationController}!startRotationZ@{startRotationZ}}
+\index{startRotationZ@{startRotationZ}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{startRotationZ}{startRotationZ}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_a8f927ca0107ae431cd1f8f525f1798c1} 
+float Axis\+Rotation\+Controller.\+start\+RotationZ\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Start for pitch lerp. 
+
+
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+\Hypertarget{class_axis_rotation_controller_a31a5346aa21d811c94f20d22864566db}\index{AxisRotationController@{AxisRotationController}!targetRotationX@{targetRotationX}}
+\index{targetRotationX@{targetRotationX}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{targetRotationX}{targetRotationX}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_a31a5346aa21d811c94f20d22864566db} 
+float Axis\+Rotation\+Controller.\+target\+RotationX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Target for roll lerp. 
+
+
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00022}{22}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+\Hypertarget{class_axis_rotation_controller_ae0907c0fffeea49a5a54ae38ad7556c2}\index{AxisRotationController@{AxisRotationController}!targetRotationZ@{targetRotationZ}}
+\index{targetRotationZ@{targetRotationZ}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{targetRotationZ}{targetRotationZ}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_ae0907c0fffeea49a5a54ae38ad7556c2} 
+float Axis\+Rotation\+Controller.\+target\+RotationZ\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Target for for pitch lerp. 
+
+
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+\Hypertarget{class_axis_rotation_controller_a5e31c3e01f79a48ca156ac6586665404}\index{AxisRotationController@{AxisRotationController}!timeElapsedPitch@{timeElapsedPitch}}
+\index{timeElapsedPitch@{timeElapsedPitch}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{timeElapsedPitch}{timeElapsedPitch}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_a5e31c3e01f79a48ca156ac6586665404} 
+float Axis\+Rotation\+Controller.\+time\+Elapsed\+Pitch\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current time elapsed during pitch lerp. 
+
+
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00027}{27}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+\Hypertarget{class_axis_rotation_controller_a2ef771c291f34e4447cc76129e6d41c1}\index{AxisRotationController@{AxisRotationController}!timeElapsedRoll@{timeElapsedRoll}}
+\index{timeElapsedRoll@{timeElapsedRoll}!AxisRotationController@{AxisRotationController}}
+\doxysubsubsection{\texorpdfstring{timeElapsedRoll}{timeElapsedRoll}}
+{\footnotesize\ttfamily \label{class_axis_rotation_controller_a2ef771c291f34e4447cc76129e6d41c1} 
+float Axis\+Rotation\+Controller.\+time\+Elapsed\+Roll\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current time elapsed during roll lerp. 
+
+
+
+Definition at line \mbox{\hyperlink{_axis_rotation_controller_8cs_source_l00026}{26}} of file \mbox{\hyperlink{_axis_rotation_controller_8cs_source}{Axis\+Rotation\+Controller.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Misc\+Behaviour/\mbox{\hyperlink{_axis_rotation_controller_8cs}{Axis\+Rotation\+Controller.\+cs}}\end{DoxyCompactItemize}

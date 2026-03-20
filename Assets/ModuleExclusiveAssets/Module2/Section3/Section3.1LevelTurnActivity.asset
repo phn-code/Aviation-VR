@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7af545500308947a6c9ee6772556fe, type: 3}
+  m_Name: Section3.1LevelTurnActivity
+  m_EditorClassIdentifier: 
+  activityName: Level Flight Turns
+  instructions:
+  - Tilt the left controller to increase angle of bank to 15 degrees.
+  - Tilt the left controller to increase angle of bank to 30 degrees.
+  - Tilt the left controller to increase angle of bank to 45 degrees.
+  - Tilt the left controller to increase angle of bank to 60 degrees.
+  usesCustomScript: 1
+  customScript: {fileID: 5873369590918413978, guid: bdad279fc7d9af241936373530481260, type: 3}
+  playerInputRequired: 1
+  totalSteps: 5
+  currentStep: 0

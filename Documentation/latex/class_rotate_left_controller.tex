@@ -1,0 +1,187 @@
+\doxysection{Rotate\+Left\+Controller Class Reference}
+\hypertarget{class_rotate_left_controller}{}\label{class_rotate_left_controller}\index{RotateLeftController@{RotateLeftController}}
+
+
+Inheritance diagram for Rotate\+Left\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_rotate_left_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Rotate\+Left\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_rotate_left_controller__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_rotate_left_controller_ad54ce79c3bd7df0801d33c283ea7985a}{Start\+Activity}} ()
+\begin{DoxyCompactList}\small\item\em Each child activity can have a differing implementation of what must be carried out/what inputs must be switched on when the activity starts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Input\+Action\+Reference \mbox{\hyperlink{class_rotate_left_controller_ac98eb298bf33b0320e69461fd3bd8db3}{rotate\+Action}}
+\item 
+float \mbox{\hyperlink{class_rotate_left_controller_a4da8ea9ba8d14a8794f80bee9f0f201f}{rotation\+Threshold}} = 0.\+1f
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} \mbox{\hyperlink{class_rotate_left_controller_adc64f011fc7ac102fe98f9d63b7234d8}{mas}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_rotate_left_controller_aa76aedb23c9d1087ecf9703f65140f4b}{On\+Enable}} ()
+\item 
+void \mbox{\hyperlink{class_rotate_left_controller_ac0b8f9764418514719b9e064263a71ff}{On\+Disable}} ()
+\item 
+void \mbox{\hyperlink{class_rotate_left_controller_a9f6c0eb47e83952e331415e94bc776ab}{On\+Rotate\+Performed}} (Input\+Action.\+Callback\+Context ctx)
+\begin{DoxyCompactList}\small\item\em Rotate Method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_rotate_left_controller_a46b6d5a4a7343ec053a9e0241724ebdc}{activity\+Enabled}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Chintana Luu \texorpdfstring{$\vert$}{|} \href{mailto:luucy003@mymail.unisa.edu.au}{\texttt{luucy003@mymail.\+unisa.\+edu.\+au}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_rotate_left_controller_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_rotate_left_controller_8cs_source}{Rotate\+Left\+Controller.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_rotate_left_controller_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_rotate_left_controller_ac0b8f9764418514719b9e064263a71ff}\index{RotateLeftController@{RotateLeftController}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!RotateLeftController@{RotateLeftController}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily \label{class_rotate_left_controller_ac0b8f9764418514719b9e064263a71ff} 
+void Rotate\+Left\+Controller.\+On\+Disable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_rotate_left_controller_8cs_source_l00026}{26}} of file \mbox{\hyperlink{_rotate_left_controller_8cs_source}{Rotate\+Left\+Controller.\+cs}}.
+
+\Hypertarget{class_rotate_left_controller_aa76aedb23c9d1087ecf9703f65140f4b}\index{RotateLeftController@{RotateLeftController}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!RotateLeftController@{RotateLeftController}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily \label{class_rotate_left_controller_aa76aedb23c9d1087ecf9703f65140f4b} 
+void Rotate\+Left\+Controller.\+On\+Enable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_rotate_left_controller_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_rotate_left_controller_8cs_source}{Rotate\+Left\+Controller.\+cs}}.
+
+\Hypertarget{class_rotate_left_controller_a9f6c0eb47e83952e331415e94bc776ab}\index{RotateLeftController@{RotateLeftController}!OnRotatePerformed@{OnRotatePerformed}}
+\index{OnRotatePerformed@{OnRotatePerformed}!RotateLeftController@{RotateLeftController}}
+\doxysubsubsection{\texorpdfstring{OnRotatePerformed()}{OnRotatePerformed()}}
+{\footnotesize\ttfamily \label{class_rotate_left_controller_a9f6c0eb47e83952e331415e94bc776ab} 
+void Rotate\+Left\+Controller.\+On\+Rotate\+Performed (\begin{DoxyParamCaption}\item[{Input\+Action.\+Callback\+Context}]{ctx}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Rotate Method. 
+
+This method is subscribed onto the action performed in the On\+Enable method and will execute when the controller is rotated.
+
+and this is an extra line 
+\begin{DoxyParams}{Parameters}
+{\em nothing} & this is literally nothing \\
+\hline
+{\em this} & doesnt exist, literall the param this, does. not. exist. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no why would you think this returns something bozo 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_rotate_left_controller_8cs_source_l00055}{55}} of file \mbox{\hyperlink{_rotate_left_controller_8cs_source}{Rotate\+Left\+Controller.\+cs}}.
+
+\Hypertarget{class_rotate_left_controller_ad54ce79c3bd7df0801d33c283ea7985a}\index{RotateLeftController@{RotateLeftController}!StartActivity@{StartActivity}}
+\index{StartActivity@{StartActivity}!RotateLeftController@{RotateLeftController}}
+\doxysubsubsection{\texorpdfstring{StartActivity()}{StartActivity()}}
+{\footnotesize\ttfamily \label{class_rotate_left_controller_ad54ce79c3bd7df0801d33c283ea7985a} 
+void Rotate\+Left\+Controller.\+Start\+Activity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Each child activity can have a differing implementation of what must be carried out/what inputs must be switched on when the activity starts. 
+
+Override this method for new activity scripts. 
+
+Implements \mbox{\hyperlink{interface_i_activity_controller_a5edbf7511d4b716c7e5de8d2c0c261a0}{IActivity\+Controller}}.
+
+
+
+Definition at line \mbox{\hyperlink{_rotate_left_controller_8cs_source_l00036}{36}} of file \mbox{\hyperlink{_rotate_left_controller_8cs_source}{Rotate\+Left\+Controller.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_rotate_left_controller_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_rotate_left_controller_a46b6d5a4a7343ec053a9e0241724ebdc}\index{RotateLeftController@{RotateLeftController}!activityEnabled@{activityEnabled}}
+\index{activityEnabled@{activityEnabled}!RotateLeftController@{RotateLeftController}}
+\doxysubsubsection{\texorpdfstring{activityEnabled}{activityEnabled}}
+{\footnotesize\ttfamily \label{class_rotate_left_controller_a46b6d5a4a7343ec053a9e0241724ebdc} 
+bool Rotate\+Left\+Controller.\+activity\+Enabled = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_rotate_left_controller_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_rotate_left_controller_8cs_source}{Rotate\+Left\+Controller.\+cs}}.
+
+\Hypertarget{class_rotate_left_controller_ac98eb298bf33b0320e69461fd3bd8db3}\index{RotateLeftController@{RotateLeftController}!rotateAction@{rotateAction}}
+\index{rotateAction@{rotateAction}!RotateLeftController@{RotateLeftController}}
+\doxysubsubsection{\texorpdfstring{rotateAction}{rotateAction}}
+{\footnotesize\ttfamily \label{class_rotate_left_controller_ac98eb298bf33b0320e69461fd3bd8db3} 
+Input\+Action\+Reference Rotate\+Left\+Controller.\+rotate\+Action}
+
+
+
+Definition at line \mbox{\hyperlink{_rotate_left_controller_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_rotate_left_controller_8cs_source}{Rotate\+Left\+Controller.\+cs}}.
+
+\Hypertarget{class_rotate_left_controller_a4da8ea9ba8d14a8794f80bee9f0f201f}\index{RotateLeftController@{RotateLeftController}!rotationThreshold@{rotationThreshold}}
+\index{rotationThreshold@{rotationThreshold}!RotateLeftController@{RotateLeftController}}
+\doxysubsubsection{\texorpdfstring{rotationThreshold}{rotationThreshold}}
+{\footnotesize\ttfamily \label{class_rotate_left_controller_a4da8ea9ba8d14a8794f80bee9f0f201f} 
+float Rotate\+Left\+Controller.\+rotation\+Threshold = 0.\+1f}
+
+
+
+Definition at line \mbox{\hyperlink{_rotate_left_controller_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_rotate_left_controller_8cs_source}{Rotate\+Left\+Controller.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_rotate_left_controller_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_rotate_left_controller_adc64f011fc7ac102fe98f9d63b7234d8}\index{RotateLeftController@{RotateLeftController}!mas@{mas}}
+\index{mas@{mas}!RotateLeftController@{RotateLeftController}}
+\doxysubsubsection{\texorpdfstring{mas}{mas}}
+{\footnotesize\ttfamily \label{class_rotate_left_controller_adc64f011fc7ac102fe98f9d63b7234d8} 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} Rotate\+Left\+Controller.\+mas\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_rotate_left_controller_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_rotate_left_controller_8cs_source}{Rotate\+Left\+Controller.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Common\+Activity\+Behaviour/\mbox{\hyperlink{_rotate_left_controller_8cs}{Rotate\+Left\+Controller.\+cs}}\end{DoxyCompactItemize}

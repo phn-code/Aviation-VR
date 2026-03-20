@@ -1,0 +1,164 @@
+\doxysection{Checkbox\+Manager Class Reference}
+\hypertarget{class_checkbox_manager}{}\label{class_checkbox_manager}\index{CheckboxManager@{CheckboxManager}}
+
+
+A central class to manage checkboxes in tandem with activities to support the user.  
+
+
+
+
+Inheritance diagram for Checkbox\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{class_checkbox_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Checkbox\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{class_checkbox_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_checkbox_manager_ad1e782efc5a2c8da032209c0c3621adf}{Setup\+Steps}} (string\mbox{[}$\,$\mbox{]} instructions)
+\begin{DoxyCompactList}\small\item\em Called by the \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}, sets up a number of checkboxes and their descriptions based on activity content. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_checkbox_manager_abe0c564655cfe5f3460078c3651866a2}{Highlight\+Step}} (int step\+Index)
+\begin{DoxyCompactList}\small\item\em Highlights the current step as a different colour, making it clear what the user needs to perform next. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_checkbox_manager_a41106d18d7656d0a9fdbf61d628fecea}{Complete\+Step}} (int step\+Index)
+\begin{DoxyCompactList}\small\item\em Update the UI to reflect each completed step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_checkbox_group_u_i}{Checkbox\+Group\+UI}} $>$ \mbox{\hyperlink{class_checkbox_manager_a6391ba6850035a8dccf5bca634e31184}{checkbox\+Groups}} = new List$<$\mbox{\hyperlink{class_checkbox_group_u_i}{Checkbox\+Group\+UI}}$>$()
+\begin{DoxyCompactList}\small\item\em Collection of all of the \doxylink{class_checkbox_group_u_i}{Checkbox\+Group\+UI} instances. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_checkbox_manager_a8f34c4a6c20a7da23f81460936c8d49b}{total\+Steps}} = 0
+\begin{DoxyCompactList}\small\item\em The number of steps in the current activity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A central class to manage checkboxes in tandem with activities to support the user. 
+
+\begin{DoxyAuthor}{Author}
+Caleb Martin \texorpdfstring{$\vert$}{|} \href{mailto:marcy066@mymail.unisa.edu.au}{\texttt{marcy066@mymail.\+unisa.\+edu.\+au}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_checkbox_manager_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_checkbox_manager_8cs_source}{Checkbox\+Manager.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_checkbox_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_checkbox_manager_a41106d18d7656d0a9fdbf61d628fecea}\index{CheckboxManager@{CheckboxManager}!CompleteStep@{CompleteStep}}
+\index{CompleteStep@{CompleteStep}!CheckboxManager@{CheckboxManager}}
+\doxysubsubsection{\texorpdfstring{CompleteStep()}{CompleteStep()}}
+{\footnotesize\ttfamily \label{class_checkbox_manager_a41106d18d7656d0a9fdbf61d628fecea} 
+void Checkbox\+Manager.\+Complete\+Step (\begin{DoxyParamCaption}\item[{int}]{step\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Update the UI to reflect each completed step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em step\+Index} & The step that needs to be marked as complete. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_checkbox_manager_8cs_source_l00069}{69}} of file \mbox{\hyperlink{_checkbox_manager_8cs_source}{Checkbox\+Manager.\+cs}}.
+
+\Hypertarget{class_checkbox_manager_abe0c564655cfe5f3460078c3651866a2}\index{CheckboxManager@{CheckboxManager}!HighlightStep@{HighlightStep}}
+\index{HighlightStep@{HighlightStep}!CheckboxManager@{CheckboxManager}}
+\doxysubsubsection{\texorpdfstring{HighlightStep()}{HighlightStep()}}
+{\footnotesize\ttfamily \label{class_checkbox_manager_abe0c564655cfe5f3460078c3651866a2} 
+void Checkbox\+Manager.\+Highlight\+Step (\begin{DoxyParamCaption}\item[{int}]{step\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Highlights the current step as a different colour, making it clear what the user needs to perform next. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em step\+Index} & The step that needs to be highlighted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_checkbox_manager_8cs_source_l00051}{51}} of file \mbox{\hyperlink{_checkbox_manager_8cs_source}{Checkbox\+Manager.\+cs}}.
+
+\Hypertarget{class_checkbox_manager_ad1e782efc5a2c8da032209c0c3621adf}\index{CheckboxManager@{CheckboxManager}!SetupSteps@{SetupSteps}}
+\index{SetupSteps@{SetupSteps}!CheckboxManager@{CheckboxManager}}
+\doxysubsubsection{\texorpdfstring{SetupSteps()}{SetupSteps()}}
+{\footnotesize\ttfamily \label{class_checkbox_manager_ad1e782efc5a2c8da032209c0c3621adf} 
+void Checkbox\+Manager.\+Setup\+Steps (\begin{DoxyParamCaption}\item[{string\mbox{[}$\,$\mbox{]}}]{instructions}{}\end{DoxyParamCaption})}
+
+
+
+Called by the \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}, sets up a number of checkboxes and their descriptions based on activity content. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em instructions} & The series of instructions that each checkbox group\textquotesingle{}s descriptions will be sequentially set to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_checkbox_manager_8cs_source_l00023}{23}} of file \mbox{\hyperlink{_checkbox_manager_8cs_source}{Checkbox\+Manager.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_checkbox_manager_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_checkbox_manager_a6391ba6850035a8dccf5bca634e31184}\index{CheckboxManager@{CheckboxManager}!checkboxGroups@{checkboxGroups}}
+\index{checkboxGroups@{checkboxGroups}!CheckboxManager@{CheckboxManager}}
+\doxysubsubsection{\texorpdfstring{checkboxGroups}{checkboxGroups}}
+{\footnotesize\ttfamily \label{class_checkbox_manager_a6391ba6850035a8dccf5bca634e31184} 
+List$<$\mbox{\hyperlink{class_checkbox_group_u_i}{Checkbox\+Group\+UI}}$>$ Checkbox\+Manager.\+checkbox\+Groups = new List$<$\mbox{\hyperlink{class_checkbox_group_u_i}{Checkbox\+Group\+UI}}$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Collection of all of the \doxylink{class_checkbox_group_u_i}{Checkbox\+Group\+UI} instances. 
+
+
+
+Definition at line \mbox{\hyperlink{_checkbox_manager_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_checkbox_manager_8cs_source}{Checkbox\+Manager.\+cs}}.
+
+\Hypertarget{class_checkbox_manager_a8f34c4a6c20a7da23f81460936c8d49b}\index{CheckboxManager@{CheckboxManager}!totalSteps@{totalSteps}}
+\index{totalSteps@{totalSteps}!CheckboxManager@{CheckboxManager}}
+\doxysubsubsection{\texorpdfstring{totalSteps}{totalSteps}}
+{\footnotesize\ttfamily \label{class_checkbox_manager_a8f34c4a6c20a7da23f81460936c8d49b} 
+int Checkbox\+Manager.\+total\+Steps = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The number of steps in the current activity. 
+
+
+
+Definition at line \mbox{\hyperlink{_checkbox_manager_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_checkbox_manager_8cs_source}{Checkbox\+Manager.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+UI/\mbox{\hyperlink{_checkbox_manager_8cs}{Checkbox\+Manager.\+cs}}\end{DoxyCompactItemize}

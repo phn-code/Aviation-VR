@@ -1,0 +1,107 @@
+\doxysection{Controller\+Backward.\+cs}
+\hypertarget{_controller_backward_8cs_source}{}\label{_controller_backward_8cs_source}\index{Assets/Scripts/CommonActivityBehaviour/ControllerBackward.cs@{Assets/Scripts/CommonActivityBehaviour/ControllerBackward.cs}}
+\mbox{\hyperlink{_controller_backward_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine.InputSystem;}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine.XR.Interaction.Toolkit;}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }UnityEngine.XR.Interaction.Toolkit.Interactables;}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00009}\mbox{\hyperlink{class_controller_backward}{00009}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_controller_backward}{ControllerBackward}}\ :\ MonoBehaviour,\ \mbox{\hyperlink{interface_i_activity_controller}{IActivityController}}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00011}\mbox{\hyperlink{class_controller_backward_ab68366ddd78904b8399514090ce5d7ec}{00011}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_module_activity_scheduler}{ModuleActivityScheduler}}\ \mbox{\hyperlink{class_controller_backward_ab68366ddd78904b8399514090ce5d7ec}{mas}}\ =>\ \mbox{\hyperlink{class_module_activity_scheduler}{ModuleActivityScheduler}}.\mbox{\hyperlink{class_module_activity_scheduler_a14579487c05abb7ec7095bd25f7d119e}{Instance}};\ \textcolor{comment}{//\ Reference\ to\ MAS\ singleton}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00013}\mbox{\hyperlink{class_controller_backward_aefb9ef3a3785dd8023a75cad22525a70}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ InputActionReference\ \mbox{\hyperlink{class_controller_backward_aefb9ef3a3785dd8023a75cad22525a70}{rotateAction}};\ \textcolor{comment}{//\ Input\ action\ for\ rotating\ the\ left\ controller}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00015}00015\ \ \ \ \ [Range(0,1)]}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00016}\mbox{\hyperlink{class_controller_backward_a6ff0edcad87a83c615d21e0f1351bc41}{00016}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_controller_backward_a6ff0edcad87a83c615d21e0f1351bc41}{intensity}}\ =\ 1f;}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00017}\mbox{\hyperlink{class_controller_backward_ac15d033716597b70eb6fe83569d6b557}{00017}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_controller_backward_ac15d033716597b70eb6fe83569d6b557}{duration}}\ =\ 5f;}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00019}\mbox{\hyperlink{class_controller_backward_a48ab111a17cc3e8e9112da03814c6b10}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_controller_backward_a48ab111a17cc3e8e9112da03814c6b10}{minZPositionThreshold}}\ =\ 0f;\ \textcolor{comment}{//\ Default,\ can\ be\ changed\ in\ inspector}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00020}\mbox{\hyperlink{class_controller_backward_a499375d669f66c1991c3ae78349f3d80}{00020}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_controller_backward_a499375d669f66c1991c3ae78349f3d80}{maxZPositionThreshold}}\ =\ 90f;\ \textcolor{comment}{//\ 1.0f}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00022}\mbox{\hyperlink{class_controller_backward_a5e0862f2df096d2a74f724670f22563c}{00022}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_controller_backward_a5e0862f2df096d2a74f724670f22563c}{activityEnabled}}\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ Start\ as\ disabled}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00025}\mbox{\hyperlink{class_controller_backward_a77799f55ec73f73cf50875888e5d802a}{00025}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_controller_backward_a77799f55ec73f73cf50875888e5d802a}{Start}}()}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00026}00026\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ XRBaseInteractable\ interactable\ =\ GetComponent<XRBaseInteractable>();}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ interactable.activated.AddListener(\mbox{\hyperlink{class_controller_backward_a6a3455c374cf02451287000bf3aab38d}{TriggerHaptic}});}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ Subscribe\ to\ event\ listener\ and\ enable\ input\ action}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00032}\mbox{\hyperlink{class_controller_backward_a900c43caa1fcf4eac020ed32a7527d84}{00032}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_controller_backward_a900c43caa1fcf4eac020ed32a7527d84}{OnEnable}}()}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00033}00033\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_controller_backward_aefb9ef3a3785dd8023a75cad22525a70}{rotateAction}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//rotateAction.action.performed\ +=\ OnRotatePerformed;}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ rotateAction.action.performed\ +=\ \mbox{\hyperlink{class_controller_backward_a178cefd001c4c7f6d374bb4289a37990}{OnPositionChange}};}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_controller_backward_aefb9ef3a3785dd8023a75cad22525a70}{rotateAction}}.action.Enable();}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00042}00042\ \ \ \ \ \textcolor{comment}{//\ Unsubscribe\ to\ event\ listener\ and\ disable\ input\ action}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00043}\mbox{\hyperlink{class_controller_backward_ae8d0b36eadf699423e70d48620b8a90c}{00043}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_controller_backward_ae8d0b36eadf699423e70d48620b8a90c}{OnDisable}}()}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00044}00044\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_controller_backward_aefb9ef3a3785dd8023a75cad22525a70}{rotateAction}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//rotateAction.action.performed\ -\/=\ OnRotatePerformed;}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ rotateAction.action.performed\ -\/=\ \mbox{\hyperlink{class_controller_backward_a178cefd001c4c7f6d374bb4289a37990}{OnPositionChange}};}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_controller_backward_aefb9ef3a3785dd8023a75cad22525a70}{rotateAction}}.action.Disable();}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00053}00053\ \ \ \ \ \textcolor{comment}{//\ }}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00054}\mbox{\hyperlink{class_controller_backward_aa422e708e9af169d895af3fd39013f92}{00054}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_controller_backward_aa422e708e9af169d895af3fd39013f92}{StartActivity}}()}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00055}00055\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_controller_backward_a5e0862f2df096d2a74f724670f22563c}{activityEnabled}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ rotateAction.action.Enable();}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00060}00060\ \ \ \ \ \textcolor{comment}{//\ Wrapper\ for\ TriggerHaptic\ method.}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00061}\mbox{\hyperlink{class_controller_backward_a6a3455c374cf02451287000bf3aab38d}{00061}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_controller_backward_a6a3455c374cf02451287000bf3aab38d}{TriggerHaptic}}(BaseInteractionEventArgs\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (e.interactorObject\ is\ UnityEngine.XR.Interaction.Toolkit.Interactors.XRBaseInputInteractor\ controllerInteractor)\ \{}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_controller_backward_a6a3455c374cf02451287000bf3aab38d}{TriggerHaptic}}(controllerInteractor.xrController);}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00068}\mbox{\hyperlink{class_controller_backward_a0ca46fdb96e2b469103c6e52436b824c}{00068}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_controller_backward_a0ca46fdb96e2b469103c6e52436b824c}{TriggerHaptic}}(XRBaseController\ controller)\ \{}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_controller_backward_a6ff0edcad87a83c615d21e0f1351bc41}{intensity}}\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ controller.SendHapticImpulse(\mbox{\hyperlink{class_controller_backward_a6ff0edcad87a83c615d21e0f1351bc41}{intensity}},\ \mbox{\hyperlink{class_controller_backward_ac15d033716597b70eb6fe83569d6b557}{duration}});}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00075}\mbox{\hyperlink{class_controller_backward_a178cefd001c4c7f6d374bb4289a37990}{00075}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_controller_backward_a178cefd001c4c7f6d374bb4289a37990}{OnPositionChange}}(InputAction.CallbackContext\ ctx)}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00076}00076\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ Quaternion\ controllerPosition\ =\ ctx.ReadValue<Quaternion>();}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ zPosition\ =\ Mathf.DeltaAngle(0f,\ controllerPosition.normalized.z);}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{//float\ position\ =\ ctx.ReadValue<float>();//\ Get\ the\ value\ from\ the\ controller}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_controller_backward_a5e0862f2df096d2a74f724670f22563c}{activityEnabled}})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Same\ logic\ as\ ControllerForward.cs\ but\ using\ negative\ values\ this\ time.}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (zPosition\ >=\ -\/\mbox{\hyperlink{class_controller_backward_a48ab111a17cc3e8e9112da03814c6b10}{minZPositionThreshold}}\ \&\&\ zPosition\ <=\ -\/\mbox{\hyperlink{class_controller_backward_a499375d669f66c1991c3ae78349f3d80}{maxZPositionThreshold}})}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Send\ a\ haptic\ to\ the\ user\ so\ the\ user\ knows\ they\ are\ within\ range,\ also\ could\ be\ a\ good\ idea\ to\ add\ an\ angle\ meter\ for\ the\ DA-\/40\ rotation.}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_axis_rotation_controller}{AxisRotationController}}\ aoaManip\ =\ GameObject.FindAnyObjectByType<\mbox{\hyperlink{class_axis_rotation_controller}{AxisRotationController}}>();}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ aoaManip.\mbox{\hyperlink{class_axis_rotation_controller_a24f7cfea93c0b621d35b49055935d9a3}{LerpAOA}}(-\/10);\ \textcolor{comment}{//\ Lower\ AOA\ by\ 10\ degrees.}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//currentIndex++;}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_controller_backward_ab68366ddd78904b8399514090ce5d7ec}{mas}}.OnExternalStepCompleted();}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ is\ a\ one-\/action\ activity,\ so\ disable\ after\ completed\ input}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_controller_backward_a5e0862f2df096d2a74f724670f22563c}{activityEnabled}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Clean-\/up}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(gameObject);\ \textcolor{comment}{//\ there\ is\ only\ one\ step\ in\ the\ activity\ associated\ with\ this\ script.}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00103}00103\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_controller_backward_8cs_source_l00104}00104\ \}}
+
+\end{DoxyCode}

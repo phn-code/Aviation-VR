@@ -1,0 +1,71 @@
+\doxysection{Module\+Manager.\+Section Class Reference}
+\hypertarget{class_module_manager_1_1_section}{}\label{class_module_manager_1_1_section}\index{ModuleManager.Section@{ModuleManager.Section}}
+
+
+Sections are combinations of timelines and activities that form a \doxylink{class_module_manager_1_1_module}{Module}.  
+
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_module_manager_1_1_section_a02eba0230b253d94f7dd7fa517444362}{name}}
+\item 
+List$<$ Playable\+Director $>$ \mbox{\hyperlink{class_module_manager_1_1_section_a181cef90ce6d76c49a3369c304e4045a}{timelines}}
+\begin{DoxyCompactList}\small\item\em A collection of timelines that make up a \doxylink{class_module_manager_1_1_section}{Section}. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_module_activities}{Module\+Activities}} $>$ \mbox{\hyperlink{class_module_manager_1_1_section_a3c8de639a8e4092c17e6252e46aca1e0}{activities}}
+\begin{DoxyCompactList}\small\item\em A collection of activities that make up a \doxylink{class_module_manager_1_1_section}{Section}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sections are combinations of timelines and activities that form a \doxylink{class_module_manager_1_1_module}{Module}. 
+
+Definition at line \mbox{\hyperlink{_module_manager_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_module_manager_8cs_source}{Module\+Manager.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_module_manager_1_1_section_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_module_manager_1_1_section_a3c8de639a8e4092c17e6252e46aca1e0}\index{ModuleManager.Section@{ModuleManager.Section}!activities@{activities}}
+\index{activities@{activities}!ModuleManager.Section@{ModuleManager.Section}}
+\doxysubsubsection{\texorpdfstring{activities}{activities}}
+{\footnotesize\ttfamily \label{class_module_manager_1_1_section_a3c8de639a8e4092c17e6252e46aca1e0} 
+List$<$\mbox{\hyperlink{class_module_activities}{Module\+Activities}}$>$ Module\+Manager.\+Section.\+activities}
+
+
+
+A collection of activities that make up a \doxylink{class_module_manager_1_1_section}{Section}. 
+
+Note that for an activity to be paired with a timeline, it MUST be in the same index slot in this List as the relevant timeline in the timelines List (e.\+g. for an activity to play after the timeline in the \mbox{[}3\mbox{]} index of the timelines List, the activity must also be in the \mbox{[}3\mbox{]} slot of this List). 
+
+Definition at line \mbox{\hyperlink{_module_manager_8cs_source_l00033}{33}} of file \mbox{\hyperlink{_module_manager_8cs_source}{Module\+Manager.\+cs}}.
+
+\Hypertarget{class_module_manager_1_1_section_a02eba0230b253d94f7dd7fa517444362}\index{ModuleManager.Section@{ModuleManager.Section}!name@{name}}
+\index{name@{name}!ModuleManager.Section@{ModuleManager.Section}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{class_module_manager_1_1_section_a02eba0230b253d94f7dd7fa517444362} 
+string Module\+Manager.\+Section.\+name}
+
+
+
+Definition at line \mbox{\hyperlink{_module_manager_8cs_source_l00031}{31}} of file \mbox{\hyperlink{_module_manager_8cs_source}{Module\+Manager.\+cs}}.
+
+\Hypertarget{class_module_manager_1_1_section_a181cef90ce6d76c49a3369c304e4045a}\index{ModuleManager.Section@{ModuleManager.Section}!timelines@{timelines}}
+\index{timelines@{timelines}!ModuleManager.Section@{ModuleManager.Section}}
+\doxysubsubsection{\texorpdfstring{timelines}{timelines}}
+{\footnotesize\ttfamily \label{class_module_manager_1_1_section_a181cef90ce6d76c49a3369c304e4045a} 
+List$<$Playable\+Director$>$ Module\+Manager.\+Section.\+timelines}
+
+
+
+A collection of timelines that make up a \doxylink{class_module_manager_1_1_section}{Section}. 
+
+Each timeline contains animations, subtitles and narration, and signals. 
+
+Definition at line \mbox{\hyperlink{_module_manager_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_module_manager_8cs_source}{Module\+Manager.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Module\+Structure/\mbox{\hyperlink{_module_manager_8cs}{Module\+Manager.\+cs}}\end{DoxyCompactItemize}

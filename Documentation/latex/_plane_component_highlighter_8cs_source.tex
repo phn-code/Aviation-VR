@@ -1,0 +1,53 @@
+\doxysection{Plane\+Component\+Highlighter.\+cs}
+\hypertarget{_plane_component_highlighter_8cs_source}{}\label{_plane_component_highlighter_8cs_source}\index{Assets/Scripts/DA\_40\_SpecialFeatures/PlaneComponentHighlighter.cs@{Assets/Scripts/DA\_40\_SpecialFeatures/PlaneComponentHighlighter.cs}}
+\mbox{\hyperlink{_plane_component_highlighter_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00010}\mbox{\hyperlink{class_plane_highlighter}{00010}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_plane_highlighter}{PlaneHighlighter}}}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00018}\mbox{\hyperlink{class_plane_highlighter_a07c037335acb7ba14558eeadfceef6af}{00018}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_plane_highlighter_a07c037335acb7ba14558eeadfceef6af}{Highlight}}(IEnumerable<GameObject>\ components,\ Color\ glowColour)}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ obj\ \textcolor{keywordflow}{in}\ components)\ \textcolor{comment}{//\ Loop\ through\ each\ plane\ component\ passed\ in\ (parent\ or\ standalone)\ }}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}Highlighting:\ \{obj.name\}"{}});}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (obj\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{continue};\ \textcolor{comment}{//\ Skip\ plane\ components\ that\ are\ null\ (shouldn't\ happen,\ but\ a\ good\ failsafe)}}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ var\ renderers\ =\ obj.GetComponentsInChildren<Renderer>(\textcolor{keyword}{true});\ \textcolor{comment}{//\ Get\ the\ render\ component\ of\ each\ child\ object\ AND\ the\ parent\ object}}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ renderer\ \textcolor{keywordflow}{in}\ renderers)\ \textcolor{comment}{//\ Loop\ through\ each\ renderer}}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ mat\ =\ renderer.material;\ \textcolor{comment}{//\ Create\ a\ new\ material\ instance\ for\ JUST\ the\ selected\ component\ so\ that\ the\ original\ material\ and\ other\ components\ that\ may\ share\ that\ material\ aren't\ affected}}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mat.HasProperty(\textcolor{stringliteral}{"{}\_Surface"{}}))\ \textcolor{comment}{//\ Checking\ if\ the\ material\ is\ transparent\ or\ opaque,\ if\ so\ we\ want\ to\ skip\ it}}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ surface\ =\ (int)mat.GetFloat(\textcolor{stringliteral}{"{}\_Surface"{}});}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (surface\ ==\ 1)\ \textcolor{keywordflow}{continue};\ \textcolor{comment}{//\ Skip\ transparent\ material}}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mat.EnableKeyword(\textcolor{stringliteral}{"{}\_EMISSION"{}});\ \textcolor{comment}{//\ Toggle\ emission\ for\ the\ material\ if\ not\ already\ enabled}}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mat.SetColor(\textcolor{stringliteral}{"{}\_EmissionColor"{}},\ glowColour\ *\ 100f);\ \textcolor{comment}{//\ Set\ the\ emission\ colour\ to\ the\ passed\ in\ colour,\ and\ intensify\ it}}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00047}\mbox{\hyperlink{class_plane_highlighter_aacc462a1f4886251b7714cbea48d8745}{00047}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_plane_highlighter_aacc462a1f4886251b7714cbea48d8745}{Unhighlight}}(IEnumerable<GameObject>\ components)}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00048}00048\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ obj\ \textcolor{keywordflow}{in}\ components)\ \textcolor{comment}{//\ Loop\ through\ each\ plane\ component\ passed\ in\ (parent\ or\ standalone)}}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}Un-\/highlighting:\ \{obj.name\}"{}});}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (obj\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{continue};\ \textcolor{comment}{//\ Skip\ plane\ components\ that\ are\ null\ (shouldn't\ happen,\ but\ a\ good\ failsafe)}}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ var\ renderers\ =\ obj.GetComponentsInChildren<Renderer>(\textcolor{keyword}{true});\ \textcolor{comment}{//\ Get\ the\ render\ component\ of\ each\ child\ object\ AND\ the\ parent\ object}}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ renderer\ \textcolor{keywordflow}{in}\ renderers)\ \textcolor{comment}{//\ Loop\ through\ each\ renderer\ and\ turn\ off\ their\ emission\ and\ reset\ their\ properties}}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ mat\ =\ renderer.material;}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mat.DisableKeyword(\textcolor{stringliteral}{"{}\_EMISSION"{}});}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mat.SetColor(\textcolor{stringliteral}{"{}\_EmissionColor"{}},\ Color.black);}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plane_component_highlighter_8cs_source_l00063}00063\ \}}
+
+\end{DoxyCode}

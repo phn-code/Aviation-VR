@@ -1,0 +1,265 @@
+\doxysection{Tilt\+Controller Class Reference}
+\hypertarget{class_tilt_controller}{}\label{class_tilt_controller}\index{TiltController@{TiltController}}
+
+
+Inheritance diagram for Tilt\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_tilt_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Tilt\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_tilt_controller__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_tilt_controller_a9bf79a50595d461d247f1c79a4b0a9bf}{Rotation\+Axis}} \{ \mbox{\hyperlink{class_tilt_controller_a9bf79a50595d461d247f1c79a4b0a9bfa87f800274a7f46c50e17114f89171e2e}{Pitch}}
+, \mbox{\hyperlink{class_tilt_controller_a9bf79a50595d461d247f1c79a4b0a9bfac5d6d1002e8ca364762309fe642a2327}{Yaw}}
+, \mbox{\hyperlink{class_tilt_controller_a9bf79a50595d461d247f1c79a4b0a9bfa25b5eb3bbef15385b5f5ff3abe46f342}{Roll}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_tilt_controller_a5f88831e1490d3d81c0e981aef895fdb}{Start\+Activity}} ()
+\begin{DoxyCompactList}\small\item\em Each child activity can have a differing implementation of what must be carried out/what inputs must be switched on when the activity starts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Input\+Action\+Reference \mbox{\hyperlink{class_tilt_controller_a212e4a3ba393f7109f1314b59506e301}{input\+Action}}
+\item 
+float \mbox{\hyperlink{class_tilt_controller_a4fffaeb7a4171533e85088cc0a84b0ea}{rotation\+Threshold}} = 25f
+\item 
+\mbox{\hyperlink{class_tilt_controller_a9bf79a50595d461d247f1c79a4b0a9bf}{Rotation\+Axis}} \mbox{\hyperlink{class_tilt_controller_a0ed019031393215583b591fbbcc32edb}{monitored\+Axis}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} \mbox{\hyperlink{class_tilt_controller_a04b8432763ffbd4e17d686136cc8887f}{mas}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_tilt_controller_a3f9f9776e2aa58c101d461e025efd2d5}{On\+Enable}} ()
+\item 
+void \mbox{\hyperlink{class_tilt_controller_afc4793ea4eaeefd3f78f6ee654de5c08}{On\+Disable}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_tilt_controller_a8143393bc9b5c77baf5ef9a4093678b1}{Capture\+Initial\+Rotation\+Delayed}} ()
+\item 
+void \mbox{\hyperlink{class_tilt_controller_a1a27bbd70a9888b3fc31dea21a086544}{On\+Rotation\+Changed}} (Input\+Action.\+Callback\+Context ctx)
+\item 
+float \mbox{\hyperlink{class_tilt_controller_a14938e8afa126bbaab92a8b8e656a31e}{Normalize\+Angle}} (float angle)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Quaternion \mbox{\hyperlink{class_tilt_controller_a6ec08be4bac91933db6ab8e09ed39fd7}{initial\+Rotation}}
+\item 
+bool \mbox{\hyperlink{class_tilt_controller_ac48213f3b7f52f933b76d58d3b8c0dcf}{activity\+Enabled}} = false
+\item 
+bool \mbox{\hyperlink{class_tilt_controller_a34680016292dc311d87ff802e9bde6de}{has\+Triggered}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_tilt_controller_8cs_source_l00005}{5}} of file \mbox{\hyperlink{_tilt_controller_8cs_source}{Tilt\+Controller.\+cs}}.
+
+
+
+\label{doc-enum-members}
+\Hypertarget{class_tilt_controller_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_tilt_controller_a9bf79a50595d461d247f1c79a4b0a9bf}\index{TiltController@{TiltController}!RotationAxis@{RotationAxis}}
+\index{RotationAxis@{RotationAxis}!TiltController@{TiltController}}
+\doxysubsubsection{\texorpdfstring{RotationAxis}{RotationAxis}}
+{\footnotesize\ttfamily \label{class_tilt_controller_a9bf79a50595d461d247f1c79a4b0a9bf} 
+enum \mbox{\hyperlink{class_tilt_controller_a9bf79a50595d461d247f1c79a4b0a9bf}{Tilt\+Controller.\+Rotation\+Axis}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Pitch@{Pitch}!TiltController@{TiltController}}\index{TiltController@{TiltController}!Pitch@{Pitch}}}\Hypertarget{class_tilt_controller_a9bf79a50595d461d247f1c79a4b0a9bfa87f800274a7f46c50e17114f89171e2e}\label{class_tilt_controller_a9bf79a50595d461d247f1c79a4b0a9bfa87f800274a7f46c50e17114f89171e2e} 
+Pitch&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Yaw@{Yaw}!TiltController@{TiltController}}\index{TiltController@{TiltController}!Yaw@{Yaw}}}\Hypertarget{class_tilt_controller_a9bf79a50595d461d247f1c79a4b0a9bfac5d6d1002e8ca364762309fe642a2327}\label{class_tilt_controller_a9bf79a50595d461d247f1c79a4b0a9bfac5d6d1002e8ca364762309fe642a2327} 
+Yaw&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Roll@{Roll}!TiltController@{TiltController}}\index{TiltController@{TiltController}!Roll@{Roll}}}\Hypertarget{class_tilt_controller_a9bf79a50595d461d247f1c79a4b0a9bfa25b5eb3bbef15385b5f5ff3abe46f342}\label{class_tilt_controller_a9bf79a50595d461d247f1c79a4b0a9bfa25b5eb3bbef15385b5f5ff3abe46f342} 
+Roll&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_tilt_controller_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_tilt_controller_8cs_source}{Tilt\+Controller.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_tilt_controller_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_tilt_controller_a8143393bc9b5c77baf5ef9a4093678b1}\index{TiltController@{TiltController}!CaptureInitialRotationDelayed@{CaptureInitialRotationDelayed}}
+\index{CaptureInitialRotationDelayed@{CaptureInitialRotationDelayed}!TiltController@{TiltController}}
+\doxysubsubsection{\texorpdfstring{CaptureInitialRotationDelayed()}{CaptureInitialRotationDelayed()}}
+{\footnotesize\ttfamily \label{class_tilt_controller_a8143393bc9b5c77baf5ef9a4093678b1} 
+IEnumerator Tilt\+Controller.\+Capture\+Initial\+Rotation\+Delayed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tilt_controller_8cs_source_l00050}{50}} of file \mbox{\hyperlink{_tilt_controller_8cs_source}{Tilt\+Controller.\+cs}}.
+
+\Hypertarget{class_tilt_controller_a14938e8afa126bbaab92a8b8e656a31e}\index{TiltController@{TiltController}!NormalizeAngle@{NormalizeAngle}}
+\index{NormalizeAngle@{NormalizeAngle}!TiltController@{TiltController}}
+\doxysubsubsection{\texorpdfstring{NormalizeAngle()}{NormalizeAngle()}}
+{\footnotesize\ttfamily \label{class_tilt_controller_a14938e8afa126bbaab92a8b8e656a31e} 
+float Tilt\+Controller.\+Normalize\+Angle (\begin{DoxyParamCaption}\item[{float}]{angle}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tilt_controller_8cs_source_l00105}{105}} of file \mbox{\hyperlink{_tilt_controller_8cs_source}{Tilt\+Controller.\+cs}}.
+
+\Hypertarget{class_tilt_controller_afc4793ea4eaeefd3f78f6ee654de5c08}\index{TiltController@{TiltController}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!TiltController@{TiltController}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily \label{class_tilt_controller_afc4793ea4eaeefd3f78f6ee654de5c08} 
+void Tilt\+Controller.\+On\+Disable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tilt_controller_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_tilt_controller_8cs_source}{Tilt\+Controller.\+cs}}.
+
+\Hypertarget{class_tilt_controller_a3f9f9776e2aa58c101d461e025efd2d5}\index{TiltController@{TiltController}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!TiltController@{TiltController}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily \label{class_tilt_controller_a3f9f9776e2aa58c101d461e025efd2d5} 
+void Tilt\+Controller.\+On\+Enable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tilt_controller_8cs_source_l00022}{22}} of file \mbox{\hyperlink{_tilt_controller_8cs_source}{Tilt\+Controller.\+cs}}.
+
+\Hypertarget{class_tilt_controller_a1a27bbd70a9888b3fc31dea21a086544}\index{TiltController@{TiltController}!OnRotationChanged@{OnRotationChanged}}
+\index{OnRotationChanged@{OnRotationChanged}!TiltController@{TiltController}}
+\doxysubsubsection{\texorpdfstring{OnRotationChanged()}{OnRotationChanged()}}
+{\footnotesize\ttfamily \label{class_tilt_controller_a1a27bbd70a9888b3fc31dea21a086544} 
+void Tilt\+Controller.\+On\+Rotation\+Changed (\begin{DoxyParamCaption}\item[{Input\+Action.\+Callback\+Context}]{ctx}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tilt_controller_8cs_source_l00061}{61}} of file \mbox{\hyperlink{_tilt_controller_8cs_source}{Tilt\+Controller.\+cs}}.
+
+\Hypertarget{class_tilt_controller_a5f88831e1490d3d81c0e981aef895fdb}\index{TiltController@{TiltController}!StartActivity@{StartActivity}}
+\index{StartActivity@{StartActivity}!TiltController@{TiltController}}
+\doxysubsubsection{\texorpdfstring{StartActivity()}{StartActivity()}}
+{\footnotesize\ttfamily \label{class_tilt_controller_a5f88831e1490d3d81c0e981aef895fdb} 
+void Tilt\+Controller.\+Start\+Activity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Each child activity can have a differing implementation of what must be carried out/what inputs must be switched on when the activity starts. 
+
+Override this method for new activity scripts. 
+
+Implements \mbox{\hyperlink{interface_i_activity_controller_a5edbf7511d4b716c7e5de8d2c0c261a0}{IActivity\+Controller}}.
+
+
+
+Definition at line \mbox{\hyperlink{_tilt_controller_8cs_source_l00042}{42}} of file \mbox{\hyperlink{_tilt_controller_8cs_source}{Tilt\+Controller.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_tilt_controller_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_tilt_controller_ac48213f3b7f52f933b76d58d3b8c0dcf}\index{TiltController@{TiltController}!activityEnabled@{activityEnabled}}
+\index{activityEnabled@{activityEnabled}!TiltController@{TiltController}}
+\doxysubsubsection{\texorpdfstring{activityEnabled}{activityEnabled}}
+{\footnotesize\ttfamily \label{class_tilt_controller_ac48213f3b7f52f933b76d58d3b8c0dcf} 
+bool Tilt\+Controller.\+activity\+Enabled = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tilt_controller_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_tilt_controller_8cs_source}{Tilt\+Controller.\+cs}}.
+
+\Hypertarget{class_tilt_controller_a34680016292dc311d87ff802e9bde6de}\index{TiltController@{TiltController}!hasTriggered@{hasTriggered}}
+\index{hasTriggered@{hasTriggered}!TiltController@{TiltController}}
+\doxysubsubsection{\texorpdfstring{hasTriggered}{hasTriggered}}
+{\footnotesize\ttfamily \label{class_tilt_controller_a34680016292dc311d87ff802e9bde6de} 
+bool Tilt\+Controller.\+has\+Triggered = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tilt_controller_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_tilt_controller_8cs_source}{Tilt\+Controller.\+cs}}.
+
+\Hypertarget{class_tilt_controller_a6ec08be4bac91933db6ab8e09ed39fd7}\index{TiltController@{TiltController}!initialRotation@{initialRotation}}
+\index{initialRotation@{initialRotation}!TiltController@{TiltController}}
+\doxysubsubsection{\texorpdfstring{initialRotation}{initialRotation}}
+{\footnotesize\ttfamily \label{class_tilt_controller_a6ec08be4bac91933db6ab8e09ed39fd7} 
+Quaternion Tilt\+Controller.\+initial\+Rotation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tilt_controller_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_tilt_controller_8cs_source}{Tilt\+Controller.\+cs}}.
+
+\Hypertarget{class_tilt_controller_a212e4a3ba393f7109f1314b59506e301}\index{TiltController@{TiltController}!inputAction@{inputAction}}
+\index{inputAction@{inputAction}!TiltController@{TiltController}}
+\doxysubsubsection{\texorpdfstring{inputAction}{inputAction}}
+{\footnotesize\ttfamily \label{class_tilt_controller_a212e4a3ba393f7109f1314b59506e301} 
+Input\+Action\+Reference Tilt\+Controller.\+input\+Action}
+
+
+
+Definition at line \mbox{\hyperlink{_tilt_controller_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_tilt_controller_8cs_source}{Tilt\+Controller.\+cs}}.
+
+\Hypertarget{class_tilt_controller_a0ed019031393215583b591fbbcc32edb}\index{TiltController@{TiltController}!monitoredAxis@{monitoredAxis}}
+\index{monitoredAxis@{monitoredAxis}!TiltController@{TiltController}}
+\doxysubsubsection{\texorpdfstring{monitoredAxis}{monitoredAxis}}
+{\footnotesize\ttfamily \label{class_tilt_controller_a0ed019031393215583b591fbbcc32edb} 
+\mbox{\hyperlink{class_tilt_controller_a9bf79a50595d461d247f1c79a4b0a9bf}{Rotation\+Axis}} Tilt\+Controller.\+monitored\+Axis}
+
+
+
+Definition at line \mbox{\hyperlink{_tilt_controller_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_tilt_controller_8cs_source}{Tilt\+Controller.\+cs}}.
+
+\Hypertarget{class_tilt_controller_a4fffaeb7a4171533e85088cc0a84b0ea}\index{TiltController@{TiltController}!rotationThreshold@{rotationThreshold}}
+\index{rotationThreshold@{rotationThreshold}!TiltController@{TiltController}}
+\doxysubsubsection{\texorpdfstring{rotationThreshold}{rotationThreshold}}
+{\footnotesize\ttfamily \label{class_tilt_controller_a4fffaeb7a4171533e85088cc0a84b0ea} 
+float Tilt\+Controller.\+rotation\+Threshold = 25f}
+
+
+
+Definition at line \mbox{\hyperlink{_tilt_controller_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_tilt_controller_8cs_source}{Tilt\+Controller.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_tilt_controller_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_tilt_controller_a04b8432763ffbd4e17d686136cc8887f}\index{TiltController@{TiltController}!mas@{mas}}
+\index{mas@{mas}!TiltController@{TiltController}}
+\doxysubsubsection{\texorpdfstring{mas}{mas}}
+{\footnotesize\ttfamily \label{class_tilt_controller_a04b8432763ffbd4e17d686136cc8887f} 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} Tilt\+Controller.\+mas\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tilt_controller_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_tilt_controller_8cs_source}{Tilt\+Controller.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Module\+Exclusive\+Assets/\+Module2/\+Section7/\mbox{\hyperlink{_tilt_controller_8cs}{Tilt\+Controller.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,69 @@
+\doxysection{Checkbox\+Manager.\+cs}
+\hypertarget{_checkbox_manager_8cs_source}{}\label{_checkbox_manager_8cs_source}\index{Assets/Scripts/UI/CheckboxManager.cs@{Assets/Scripts/UI/CheckboxManager.cs}}
+\mbox{\hyperlink{_checkbox_manager_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }TMPro;}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }UnityEngine.UI;}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00012}\mbox{\hyperlink{class_checkbox_manager}{00012}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_checkbox_manager}{CheckboxManager}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00014}\mbox{\hyperlink{class_checkbox_manager_a6391ba6850035a8dccf5bca634e31184}{00014}}\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ List<CheckboxGroupUI>\ \mbox{\hyperlink{class_checkbox_manager_a6391ba6850035a8dccf5bca634e31184}{checkboxGroups}}\ =\ \textcolor{keyword}{new}\ List<CheckboxGroupUI>();\ }
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00016}\mbox{\hyperlink{class_checkbox_manager_a8f34c4a6c20a7da23f81460936c8d49b}{00016}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_checkbox_manager_a8f34c4a6c20a7da23f81460936c8d49b}{totalSteps}}\ =\ 0;\ }
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00023}\mbox{\hyperlink{class_checkbox_manager_ad1e782efc5a2c8da032209c0c3621adf}{00023}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_checkbox_manager_ad1e782efc5a2c8da032209c0c3621adf}{SetupSteps}}(\textcolor{keywordtype}{string}[]\ instructions)}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00024}00024\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_checkbox_manager_a8f34c4a6c20a7da23f81460936c8d49b}{totalSteps}}\ =\ instructions.Length;}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Hide\ all\ checkboxes\ and\ descriptions\ first\ before\ changing\ them\ and\ bringing\ them\ back\ changed,\ and\ with\ the\ correct\ quantity}}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ group\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_checkbox_manager_a6391ba6850035a8dccf5bca634e31184}{checkboxGroups}})}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ group.SetVisible(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ group.SetChecked(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_checkbox_manager_a8f34c4a6c20a7da23f81460936c8d49b}{totalSteps}}\ \&\&\ i\ <\ \mbox{\hyperlink{class_checkbox_manager_a6391ba6850035a8dccf5bca634e31184}{checkboxGroups}}.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ var\ group\ =\ \mbox{\hyperlink{class_checkbox_manager_a6391ba6850035a8dccf5bca634e31184}{checkboxGroups}}[i];}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ group.SetLabel(instructions[i]);}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ group.SetChecked(\textcolor{keyword}{false});\ \textcolor{comment}{//\ Start\ unchecked!}}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now\ we\ can\ enable\ the\ checkbox\ group}}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ group.SetVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00051}\mbox{\hyperlink{class_checkbox_manager_abe0c564655cfe5f3460078c3651866a2}{00051}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_checkbox_manager_abe0c564655cfe5f3460078c3651866a2}{HighlightStep}}(\textcolor{keywordtype}{int}\ stepIndex)}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00052}00052\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_checkbox_manager_a6391ba6850035a8dccf5bca634e31184}{checkboxGroups}}.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ var\ group\ =\ \mbox{\hyperlink{class_checkbox_manager_a6391ba6850035a8dccf5bca634e31184}{checkboxGroups}}[i];}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ stepIndex)}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ group.labelText.color\ =\ Color.yellow;}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00069}\mbox{\hyperlink{class_checkbox_manager_a41106d18d7656d0a9fdbf61d628fecea}{00069}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_checkbox_manager_a41106d18d7656d0a9fdbf61d628fecea}{CompleteStep}}(\textcolor{keywordtype}{int}\ stepIndex)}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00070}00070\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Should\ never\ happen,\ but\ checking\ for\ invalid\ checkbox\ index}}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stepIndex\ <\ 0\ ||\ stepIndex\ >=\ \mbox{\hyperlink{class_checkbox_manager_a6391ba6850035a8dccf5bca634e31184}{checkboxGroups}}.Count)}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ var\ group\ =\ \mbox{\hyperlink{class_checkbox_manager_a6391ba6850035a8dccf5bca634e31184}{checkboxGroups}}[stepIndex];}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ group.SetChecked(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ group.labelText.color\ =\ Color.green;\ \textcolor{comment}{//\ Change\ step\ colour\ to\ greed\ when\ completed}}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ group.labelText.ForceMeshUpdate();}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_checkbox_manager_8cs_source_l00083}00083\ \}}
+
+\end{DoxyCode}

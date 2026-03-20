@@ -1,0 +1,217 @@
+\doxysection{Airspeed\+Meter\+Display Class Reference}
+\hypertarget{class_airspeed_meter_display}{}\label{class_airspeed_meter_display}\index{AirspeedMeterDisplay@{AirspeedMeterDisplay}}
+
+
+A dynamic airspeed meter that is displayed on the UI.  
+
+
+
+
+Inheritance diagram for Airspeed\+Meter\+Display\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{class_airspeed_meter_display__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Airspeed\+Meter\+Display\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{class_airspeed_meter_display__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_airspeed_meter_display_a4ffe621a6c13ca46024690511f9f9207}{Airspeed\+Meter}}
+\begin{DoxyCompactList}\small\item\em The airspeed meter Game\+Object. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_airspeed_meter_display_ae61c1059bf704c921bb5ff3b06b67b92}{knots}} = 0
+\begin{DoxyCompactList}\small\item\em The current airspeed value. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_airspeed_meter_display_aca3b2d37c137b0006bb685e6ab0f5cf3}{target\+Value}}
+\begin{DoxyCompactList}\small\item\em The target airspeed, used in interpolation. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_airspeed_meter_display_a01c8b5efb7e72fc4d294c8548fc23a3e}{is\+Moving}}
+\begin{DoxyCompactList}\small\item\em Flag that determines if airspeed interpolation is currently occurring. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_airspeed_meter_display_aa3afb65617f889a5b4c11acae4e6487f}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_airspeed_meter_display_ad00c23df1b624221b35bf740fca73c02}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_airspeed_meter_display_a1f345f077535ffe03b04536e1682e79c}{set\+Knots}} (float new\+Knots)
+\begin{DoxyCompactList}\small\item\em Sets the airspeed to a new value immediately, without any smoothing/interpolation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_airspeed_meter_display_a85620500486d1b7bb934de2ea911dd27}{move\+Towards\+Knots\+Target}} (float target, float speed)
+\begin{DoxyCompactList}\small\item\em Special mutator for the airspeed that makes use of \doxylink{class_airspeed_meter_display_ad00c23df1b624221b35bf740fca73c02}{Update()} to gradually interpolate towards a target value at a set speed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_airspeed_meter_display_a7e6c7ef3615aa18ccb5c95b405736be4}{move\+Speed}}
+\begin{DoxyCompactList}\small\item\em The speed of airspeed interpolation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A dynamic airspeed meter that is displayed on the UI. 
+
+\begin{DoxyAuthor}{Author}
+Caleb Martin \texorpdfstring{$\vert$}{|} \href{mailto:marcy066@mymail.unisa.edu.au}{\texttt{marcy066@mymail.\+unisa.\+edu.\+au}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_airspeed_meter_display_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_airspeed_meter_display_8cs_source}{Airspeed\+Meter\+Display.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_airspeed_meter_display_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_airspeed_meter_display_a85620500486d1b7bb934de2ea911dd27}\index{AirspeedMeterDisplay@{AirspeedMeterDisplay}!moveTowardsKnotsTarget@{moveTowardsKnotsTarget}}
+\index{moveTowardsKnotsTarget@{moveTowardsKnotsTarget}!AirspeedMeterDisplay@{AirspeedMeterDisplay}}
+\doxysubsubsection{\texorpdfstring{moveTowardsKnotsTarget()}{moveTowardsKnotsTarget()}}
+{\footnotesize\ttfamily \label{class_airspeed_meter_display_a85620500486d1b7bb934de2ea911dd27} 
+void Airspeed\+Meter\+Display.\+move\+Towards\+Knots\+Target (\begin{DoxyParamCaption}\item[{float}]{target}{, }\item[{float}]{speed}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Special mutator for the airspeed that makes use of \doxylink{class_airspeed_meter_display_ad00c23df1b624221b35bf740fca73c02}{Update()} to gradually interpolate towards a target value at a set speed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The new value for the airspeed to be set to. \\
+\hline
+{\em speed} & The speed at which airspeed interpolation should occur. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_airspeed_meter_display_8cs_source_l00059}{59}} of file \mbox{\hyperlink{_airspeed_meter_display_8cs_source}{Airspeed\+Meter\+Display.\+cs}}.
+
+\Hypertarget{class_airspeed_meter_display_a1f345f077535ffe03b04536e1682e79c}\index{AirspeedMeterDisplay@{AirspeedMeterDisplay}!setKnots@{setKnots}}
+\index{setKnots@{setKnots}!AirspeedMeterDisplay@{AirspeedMeterDisplay}}
+\doxysubsubsection{\texorpdfstring{setKnots()}{setKnots()}}
+{\footnotesize\ttfamily \label{class_airspeed_meter_display_a1f345f077535ffe03b04536e1682e79c} 
+void Airspeed\+Meter\+Display.\+set\+Knots (\begin{DoxyParamCaption}\item[{float}]{new\+Knots}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sets the airspeed to a new value immediately, without any smoothing/interpolation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Knots} & The new value for the airspeed to be set to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_airspeed_meter_display_8cs_source_l00046}{46}} of file \mbox{\hyperlink{_airspeed_meter_display_8cs_source}{Airspeed\+Meter\+Display.\+cs}}.
+
+\Hypertarget{class_airspeed_meter_display_aa3afb65617f889a5b4c11acae4e6487f}\index{AirspeedMeterDisplay@{AirspeedMeterDisplay}!Start@{Start}}
+\index{Start@{Start}!AirspeedMeterDisplay@{AirspeedMeterDisplay}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_airspeed_meter_display_aa3afb65617f889a5b4c11acae4e6487f} 
+void Airspeed\+Meter\+Display.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_airspeed_meter_display_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_airspeed_meter_display_8cs_source}{Airspeed\+Meter\+Display.\+cs}}.
+
+\Hypertarget{class_airspeed_meter_display_ad00c23df1b624221b35bf740fca73c02}\index{AirspeedMeterDisplay@{AirspeedMeterDisplay}!Update@{Update}}
+\index{Update@{Update}!AirspeedMeterDisplay@{AirspeedMeterDisplay}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_airspeed_meter_display_ad00c23df1b624221b35bf740fca73c02} 
+void Airspeed\+Meter\+Display.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_airspeed_meter_display_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_airspeed_meter_display_8cs_source}{Airspeed\+Meter\+Display.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_airspeed_meter_display_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_airspeed_meter_display_a4ffe621a6c13ca46024690511f9f9207}\index{AirspeedMeterDisplay@{AirspeedMeterDisplay}!AirspeedMeter@{AirspeedMeter}}
+\index{AirspeedMeter@{AirspeedMeter}!AirspeedMeterDisplay@{AirspeedMeterDisplay}}
+\doxysubsubsection{\texorpdfstring{AirspeedMeter}{AirspeedMeter}}
+{\footnotesize\ttfamily \label{class_airspeed_meter_display_a4ffe621a6c13ca46024690511f9f9207} 
+Text\+Mesh\+Pro\+UGUI Airspeed\+Meter\+Display.\+Airspeed\+Meter}
+
+
+
+The airspeed meter Game\+Object. 
+
+
+
+Definition at line \mbox{\hyperlink{_airspeed_meter_display_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_airspeed_meter_display_8cs_source}{Airspeed\+Meter\+Display.\+cs}}.
+
+\Hypertarget{class_airspeed_meter_display_a01c8b5efb7e72fc4d294c8548fc23a3e}\index{AirspeedMeterDisplay@{AirspeedMeterDisplay}!isMoving@{isMoving}}
+\index{isMoving@{isMoving}!AirspeedMeterDisplay@{AirspeedMeterDisplay}}
+\doxysubsubsection{\texorpdfstring{isMoving}{isMoving}}
+{\footnotesize\ttfamily \label{class_airspeed_meter_display_a01c8b5efb7e72fc4d294c8548fc23a3e} 
+bool Airspeed\+Meter\+Display.\+is\+Moving}
+
+
+
+Flag that determines if airspeed interpolation is currently occurring. 
+
+
+
+Definition at line \mbox{\hyperlink{_airspeed_meter_display_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_airspeed_meter_display_8cs_source}{Airspeed\+Meter\+Display.\+cs}}.
+
+\Hypertarget{class_airspeed_meter_display_ae61c1059bf704c921bb5ff3b06b67b92}\index{AirspeedMeterDisplay@{AirspeedMeterDisplay}!knots@{knots}}
+\index{knots@{knots}!AirspeedMeterDisplay@{AirspeedMeterDisplay}}
+\doxysubsubsection{\texorpdfstring{knots}{knots}}
+{\footnotesize\ttfamily \label{class_airspeed_meter_display_ae61c1059bf704c921bb5ff3b06b67b92} 
+float Airspeed\+Meter\+Display.\+knots = 0}
+
+
+
+The current airspeed value. 
+
+
+
+Definition at line \mbox{\hyperlink{_airspeed_meter_display_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_airspeed_meter_display_8cs_source}{Airspeed\+Meter\+Display.\+cs}}.
+
+\Hypertarget{class_airspeed_meter_display_a7e6c7ef3615aa18ccb5c95b405736be4}\index{AirspeedMeterDisplay@{AirspeedMeterDisplay}!moveSpeed@{moveSpeed}}
+\index{moveSpeed@{moveSpeed}!AirspeedMeterDisplay@{AirspeedMeterDisplay}}
+\doxysubsubsection{\texorpdfstring{moveSpeed}{moveSpeed}}
+{\footnotesize\ttfamily \label{class_airspeed_meter_display_a7e6c7ef3615aa18ccb5c95b405736be4} 
+float Airspeed\+Meter\+Display.\+move\+Speed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The speed of airspeed interpolation. 
+
+
+
+Definition at line \mbox{\hyperlink{_airspeed_meter_display_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_airspeed_meter_display_8cs_source}{Airspeed\+Meter\+Display.\+cs}}.
+
+\Hypertarget{class_airspeed_meter_display_aca3b2d37c137b0006bb685e6ab0f5cf3}\index{AirspeedMeterDisplay@{AirspeedMeterDisplay}!targetValue@{targetValue}}
+\index{targetValue@{targetValue}!AirspeedMeterDisplay@{AirspeedMeterDisplay}}
+\doxysubsubsection{\texorpdfstring{targetValue}{targetValue}}
+{\footnotesize\ttfamily \label{class_airspeed_meter_display_aca3b2d37c137b0006bb685e6ab0f5cf3} 
+float Airspeed\+Meter\+Display.\+target\+Value}
+
+
+
+The target airspeed, used in interpolation. 
+
+
+
+Definition at line \mbox{\hyperlink{_airspeed_meter_display_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_airspeed_meter_display_8cs_source}{Airspeed\+Meter\+Display.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+UI/\mbox{\hyperlink{_airspeed_meter_display_8cs}{Airspeed\+Meter\+Display.\+cs}}\end{DoxyCompactItemize}

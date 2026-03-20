@@ -1,0 +1,89 @@
+\doxysection{Increase\+Throttle.\+cs}
+\hypertarget{_increase_throttle_8cs_source}{}\label{_increase_throttle_8cs_source}\index{Assets/ModuleExclusiveAssets/Module2/Section2/NEW/IncreaseThrottle.cs@{Assets/ModuleExclusiveAssets/Module2/Section2/NEW/IncreaseThrottle.cs}}
+\mbox{\hyperlink{_increase_throttle_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine.InputSystem;}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00004}\mbox{\hyperlink{class_increase_throttle}{00004}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_increase_throttle}{IncreaseThrottle}}\ :\ MonoBehaviour,\ \mbox{\hyperlink{interface_i_activity_controller}{IActivityController}}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00006}\mbox{\hyperlink{class_increase_throttle_a529c5aec5c51932d640616e481ca83bc}{00006}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_module_activity_scheduler}{ModuleActivityScheduler}}\ \mbox{\hyperlink{class_increase_throttle_a529c5aec5c51932d640616e481ca83bc}{mas}}\ =>\ \mbox{\hyperlink{class_module_activity_scheduler}{ModuleActivityScheduler}}.\mbox{\hyperlink{class_module_activity_scheduler_a14579487c05abb7ec7095bd25f7d119e}{Instance}};\ \textcolor{comment}{//\ Reference\ to\ MAS\ singleton}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00008}\mbox{\hyperlink{class_increase_throttle_a3c707e046398c50ac1e6965398690a91}{00008}}\ \ \ \ \ \textcolor{keyword}{public}\ InputActionReference\ \mbox{\hyperlink{class_increase_throttle_a3c707e046398c50ac1e6965398690a91}{inputAction}};\ \textcolor{comment}{//\ Input\ action\ for\ control\ pad\ on\ left\ controller}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00009}\mbox{\hyperlink{class_increase_throttle_a9fa87553ea5eb6a34c5ca72a4c9fa78c}{00009}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_increase_throttle_a9fa87553ea5eb6a34c5ca72a4c9fa78c}{throttleThreshold}}\ =\ 0.1f;\ \textcolor{comment}{//\ Default,\ can\ be\ changed\ in\ inspector}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00010}\mbox{\hyperlink{class_increase_throttle_a6bc335e6c3d12aa6fe2a5206f6715b20}{00010}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_increase_throttle_a6bc335e6c3d12aa6fe2a5206f6715b20}{activityEnabled}}\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ Start\ as\ disabled}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00012}\mbox{\hyperlink{class_increase_throttle_adde737023a17800b925006adad4d5d7f}{00012}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_increase_throttle_adde737023a17800b925006adad4d5d7f}{hasTriggered}}\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ Prevent\ multi-\/triggering}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00014}00014\ \ \ \ \ \textcolor{comment}{//\ Subscribe\ to\ event\ listener\ and\ enable\ input\ action}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00015}\mbox{\hyperlink{class_increase_throttle_ab2e9c85c89199f220a93d9cfa11a2054}{00015}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_increase_throttle_ab2e9c85c89199f220a93d9cfa11a2054}{OnEnable}}()}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_increase_throttle_a3c707e046398c50ac1e6965398690a91}{inputAction}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ inputAction.action.performed\ +=\ \mbox{\hyperlink{class_increase_throttle_a24bb4e832543f862020aba76db2d23d0}{OnPadMoved}};}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ inputAction.action.canceled\ +=\ \mbox{\hyperlink{class_increase_throttle_a937aa4b1fbbae8d0db924f884e977537}{OnPadReleased}};}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_increase_throttle_a3c707e046398c50ac1e6965398690a91}{inputAction}}.action.Enable();}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//\ Unsubscribe\ to\ event\ listener\ and\ disable\ input\ action}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00026}\mbox{\hyperlink{class_increase_throttle_a5f9d3d806e85b32033577179d52097c3}{00026}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_increase_throttle_a5f9d3d806e85b32033577179d52097c3}{OnDisable}}()}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_increase_throttle_a3c707e046398c50ac1e6965398690a91}{inputAction}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ inputAction.action.performed\ -\/=\ \mbox{\hyperlink{class_increase_throttle_a24bb4e832543f862020aba76db2d23d0}{OnPadMoved}};}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ inputAction.action.canceled\ -\/=\ \mbox{\hyperlink{class_increase_throttle_a937aa4b1fbbae8d0db924f884e977537}{OnPadReleased}};}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_increase_throttle_a3c707e046398c50ac1e6965398690a91}{inputAction}}.action.Disable();}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ }}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00037}\mbox{\hyperlink{class_increase_throttle_a55fc8109cb466c8f1192e8bb35f208cf}{00037}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_increase_throttle_a55fc8109cb466c8f1192e8bb35f208cf}{StartActivity}}()}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00038}00038\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_increase_throttle_a6bc335e6c3d12aa6fe2a5206f6715b20}{activityEnabled}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_increase_throttle_adde737023a17800b925006adad4d5d7f}{hasTriggered}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00043}\mbox{\hyperlink{class_increase_throttle_a24bb4e832543f862020aba76db2d23d0}{00043}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_increase_throttle_a24bb4e832543f862020aba76db2d23d0}{OnPadMoved}}(InputAction.CallbackContext\ ctx)}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00044}00044\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_increase_throttle_a6bc335e6c3d12aa6fe2a5206f6715b20}{activityEnabled}}\ ||\ \mbox{\hyperlink{class_increase_throttle_adde737023a17800b925006adad4d5d7f}{hasTriggered}})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Left\ control\ pad\ moved!"{}});}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ Vector2\ axis\ =\ ctx.ReadValue<Vector2>();\ \textcolor{comment}{//\ Get\ the\ axis\ to\ be\ read\ from\ the\ controller}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Detect\ if\ control\ pad\ is\ pulled\ up/north\ beyond\ threshold}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (axis.y\ >\ \mbox{\hyperlink{class_increase_throttle_a9fa87553ea5eb6a34c5ca72a4c9fa78c}{throttleThreshold}})}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Put\ this\ here\ for\ testing\ that\ script\ works!}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//AOAManipulator\ aoaManip\ =\ GameObject.FindAnyObjectByType<AOAManipulator>();}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//aoaManip.LerpAOA(-\/30);}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Step\ is\ considered\ completed}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_increase_throttle_adde737023a17800b925006adad4d5d7f}{hasTriggered}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_increase_throttle_a529c5aec5c51932d640616e481ca83bc}{mas}}.OnExternalStepCompleted();}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_increase_throttle_a6bc335e6c3d12aa6fe2a5206f6715b20}{activityEnabled}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(gameObject);}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_axis_rotation_controller}{AxisRotationController}}\ aoaManip\ =\ GameObject.FindAnyObjectByType<\mbox{\hyperlink{class_axis_rotation_controller}{AxisRotationController}}>();}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ aoaManip.\mbox{\hyperlink{class_axis_rotation_controller_a24f7cfea93c0b621d35b49055935d9a3}{LerpAOA}}(-\/180);\ \textcolor{comment}{//\ Rotate\ to\ different\ angles\ to\ test}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00074}\mbox{\hyperlink{class_increase_throttle_a937aa4b1fbbae8d0db924f884e977537}{00074}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_increase_throttle_a937aa4b1fbbae8d0db924f884e977537}{OnPadReleased}}(InputAction.CallbackContext\ ctx)}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00075}00075\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ trigger\ when\ the\ player\ releases\ the\ stick}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ Vector2\ axis\ =\ ctx.ReadValue<Vector2>();}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Mathf.Abs(axis.y)\ <\ 0.1f)}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_increase_throttle_adde737023a17800b925006adad4d5d7f}{hasTriggered}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_increase_throttle_8cs_source_l00083}00083\ \}}
+
+\end{DoxyCode}

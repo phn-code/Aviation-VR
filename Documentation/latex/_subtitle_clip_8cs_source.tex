@@ -1,0 +1,31 @@
+\doxysection{Subtitle\+Clip.\+cs}
+\hypertarget{_subtitle_clip_8cs_source}{}\label{_subtitle_clip_8cs_source}\index{Assets/Scripts/CustomTimelineTracks/SubtitleTimelineTrack/SubtitleClip.cs@{Assets/Scripts/CustomTimelineTracks/SubtitleTimelineTrack/SubtitleClip.cs}}
+\mbox{\hyperlink{_subtitle_clip_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine.Playables;}
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00005}\mbox{\hyperlink{class_subtitle_clip}{00005}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_subtitle_clip}{SubtitleClip}}\ :\ PlayableAsset}
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00007}\mbox{\hyperlink{class_subtitle_clip_a3948dd038336412b1098197caa27e243}{00007}}\ \ \ \ \ \textcolor{keyword}{public}\ Color\ \mbox{\hyperlink{class_subtitle_clip_a3948dd038336412b1098197caa27e243}{subtitleColor}};}
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00008}\mbox{\hyperlink{class_subtitle_clip_a9236c70a61b8dcee33012bd1bc999600}{00008}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_subtitle_clip_a9236c70a61b8dcee33012bd1bc999600}{subtitleText}};}
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00010}\mbox{\hyperlink{class_subtitle_clip_adf0ed6469013776ebd72a3e2582834e0}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ Playable\ \mbox{\hyperlink{class_subtitle_clip_adf0ed6469013776ebd72a3e2582834e0}{CreatePlayable}}(PlayableGraph\ graph,\ GameObject\ owner)}
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00012}00012\ \ \ \ \ \ \ \ \ var\ playable\ =\ ScriptPlayable<SubtitleBehaviour>.Create(graph);}
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_subtitle_behaviour}{SubtitleBehaviour}}\ subtitleBehaviour\ =\ playable.GetBehaviour();}
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ subtitleBehaviour.subtitleText\ =\ \mbox{\hyperlink{class_subtitle_clip_a9236c70a61b8dcee33012bd1bc999600}{subtitleText}};}
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ GET\ THE\ PLAYER\ DATA\ SO\ I\ CAN\ GET\ THE\ TEXT.COLOR!}}
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{comment}{//subtitleBehaviour.text.color\ =}}
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ subtitleBehaviour.subtitleColor\ =\ \mbox{\hyperlink{class_subtitle_clip_a3948dd038336412b1098197caa27e243}{subtitleColor}};}
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ playable;}
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_subtitle_clip_8cs_source_l00025}00025\ \}}
+
+\end{DoxyCode}

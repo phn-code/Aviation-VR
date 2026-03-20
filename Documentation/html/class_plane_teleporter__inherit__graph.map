@@ -1,0 +1,5 @@
+<map id="PlaneTeleporter" name="PlaneTeleporter">
+<area shape="rect" id="Node000001" title="Helper to handle translating the DA&#45;40 aircraft to and from the viewing platform in a Timeline." alt="" coords="5,80,117,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,117,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="64,48,64,80,58,80,58,48"/>
+</map>

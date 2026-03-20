@@ -1,0 +1,35 @@
+\doxysection{Material\+Clip.\+cs}
+\hypertarget{_material_clip_8cs_source}{}\label{_material_clip_8cs_source}\index{Assets/Scripts/CustomTimelineTracks/MaterialTimelineTrack/MaterialClip.cs@{Assets/Scripts/CustomTimelineTracks/MaterialTimelineTrack/MaterialClip.cs}}
+\mbox{\hyperlink{_material_clip_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine.Playables;}
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00005}\mbox{\hyperlink{class_material_clip}{00005}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_material_clip}{MaterialClip}}\ :\ PlayableAsset}
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00008}00008\ \ \ \ \ \textcolor{comment}{//\ MaterialClip\ is\ used\ in\ timeline\ and\ can\ edit\ the\ materials.}}
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00009}\mbox{\hyperlink{class_material_clip_a2d1b945c7a43de94f8cbad8c90ae3683}{00009}}\ \ \ \ \ \textcolor{keyword}{public}\ Material\ \mbox{\hyperlink{class_material_clip_a2d1b945c7a43de94f8cbad8c90ae3683}{currentMaterial}};}
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00010}\mbox{\hyperlink{class_material_clip_a48be86e7bd0d7b5141f1e19f4a215b8e}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ Texture\ \mbox{\hyperlink{class_material_clip_a48be86e7bd0d7b5141f1e19f4a215b8e}{targetTexture}};}
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00011}00011\ \ \ \ \ \textcolor{comment}{//public\ Material\ targetMaterial;}}
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00013}\mbox{\hyperlink{class_material_clip_addfc44ff41a41045e329d3fd355c7d8b}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ Playable\ \mbox{\hyperlink{class_material_clip_addfc44ff41a41045e329d3fd355c7d8b}{CreatePlayable}}(PlayableGraph\ graph,\ GameObject\ owner)}
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ update\ this\ to\ material\ behaviour:}}
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ var\ playable\ =\ ScriptPlayable<MaterialBehaviour>.Create(graph);}
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_material_behaviour}{MaterialBehaviour}}\ materialBehaviour\ =\ playable.GetBehaviour();}
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assign\ MaterialBehaviour\ variables.}}
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ materialBehaviour.currentMaterial\ =\ \mbox{\hyperlink{class_material_clip_a2d1b945c7a43de94f8cbad8c90ae3683}{currentMaterial}};}
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ materialBehaviour.targetTexture\ =\ \mbox{\hyperlink{class_material_clip_a48be86e7bd0d7b5141f1e19f4a215b8e}{targetTexture}};}
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{//materialBehaviour.targetMaterial\ =\ targetMaterial;}}
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ playable;\ \textcolor{comment}{//\ return\ vars\ to\ playable.}}
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_clip_8cs_source_l00029}00029\ \}}
+
+\end{DoxyCode}

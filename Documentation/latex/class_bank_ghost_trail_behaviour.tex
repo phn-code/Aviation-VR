@@ -1,0 +1,176 @@
+\doxysection{Bank\+Ghost\+Trail\+Behaviour Class Reference}
+\hypertarget{class_bank_ghost_trail_behaviour}{}\label{class_bank_ghost_trail_behaviour}\index{BankGhostTrailBehaviour@{BankGhostTrailBehaviour}}
+
+
+Inheritance diagram for Bank\+Ghost\+Trail\+Behaviour\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{class_bank_ghost_trail_behaviour__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bank\+Ghost\+Trail\+Behaviour\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{class_bank_ghost_trail_behaviour__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_bank_ghost_trail_behaviour_a2f13acbc55bcf045ed3678b700fb8c55}{enable}} = true
+\begin{DoxyCompactList}\small\item\em Enable banking behaviour. \end{DoxyCompactList}\item 
+Particle\+System \mbox{\hyperlink{class_bank_ghost_trail_behaviour_a5ed5ded60775b7184b88ec1b63cc1e03}{ghost\+Trail}}
+\begin{DoxyCompactList}\small\item\em Ghost trail particle system. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_bank_ghost_trail_behaviour_a3c2e84d52143b8400d1f8caad2f38ab2}{velocity}} = 50f
+\begin{DoxyCompactList}\small\item\em Velocity of the particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_bank_ghost_trail_behaviour_abf91a79b3df32e6f4450ad0018990c60}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Main update loop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bank_ghost_trail_behaviour_a27a97212a1b68b5bb55791c6c7d4d161}{Update\+Ghost\+Trail\+Motion}} ()
+\begin{DoxyCompactList}\small\item\em Determines and updates behaviour of particles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bank_ghost_trail_behaviour_adaa6c1445980d7a132207d667a5e7bfa}{On\+Draw\+Gizmos\+Selected}} ()
+\begin{DoxyCompactList}\small\item\em Draw Gizmo Sphere representing turn radius. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Particle\+System.\+Particle\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_bank_ghost_trail_behaviour_aea1b748b1f6323fdb834aa6fe8d6806f}{ghost\+Particles}}
+\begin{DoxyCompactList}\small\item\em List of particles emitted by the particle system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_bank_ghost_trail_behaviour_8cs_source_l00003}{3}} of file \mbox{\hyperlink{_bank_ghost_trail_behaviour_8cs_source}{Bank\+Ghost\+Trail\+Behaviour.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_bank_ghost_trail_behaviour_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_bank_ghost_trail_behaviour_adaa6c1445980d7a132207d667a5e7bfa}\index{BankGhostTrailBehaviour@{BankGhostTrailBehaviour}!OnDrawGizmosSelected@{OnDrawGizmosSelected}}
+\index{OnDrawGizmosSelected@{OnDrawGizmosSelected}!BankGhostTrailBehaviour@{BankGhostTrailBehaviour}}
+\doxysubsubsection{\texorpdfstring{OnDrawGizmosSelected()}{OnDrawGizmosSelected()}}
+{\footnotesize\ttfamily \label{class_bank_ghost_trail_behaviour_adaa6c1445980d7a132207d667a5e7bfa} 
+void Bank\+Ghost\+Trail\+Behaviour.\+On\+Draw\+Gizmos\+Selected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draw Gizmo Sphere representing turn radius. 
+
+Sphere represents the calculated radius of the plane and is rendered when Game\+Object is selected 
+
+Definition at line \mbox{\hyperlink{_bank_ghost_trail_behaviour_8cs_source_l00137}{137}} of file \mbox{\hyperlink{_bank_ghost_trail_behaviour_8cs_source}{Bank\+Ghost\+Trail\+Behaviour.\+cs}}.
+
+\Hypertarget{class_bank_ghost_trail_behaviour_abf91a79b3df32e6f4450ad0018990c60}\index{BankGhostTrailBehaviour@{BankGhostTrailBehaviour}!Update@{Update}}
+\index{Update@{Update}!BankGhostTrailBehaviour@{BankGhostTrailBehaviour}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_bank_ghost_trail_behaviour_abf91a79b3df32e6f4450ad0018990c60} 
+void Bank\+Ghost\+Trail\+Behaviour.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Main update loop. 
+
+Calls \doxylink{class_bank_ghost_trail_behaviour_a27a97212a1b68b5bb55791c6c7d4d161}{Update\+Ghost\+Trail\+Motion()} if enable flag set to true 
+
+Definition at line \mbox{\hyperlink{_bank_ghost_trail_behaviour_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_bank_ghost_trail_behaviour_8cs_source}{Bank\+Ghost\+Trail\+Behaviour.\+cs}}.
+
+\Hypertarget{class_bank_ghost_trail_behaviour_a27a97212a1b68b5bb55791c6c7d4d161}\index{BankGhostTrailBehaviour@{BankGhostTrailBehaviour}!UpdateGhostTrailMotion@{UpdateGhostTrailMotion}}
+\index{UpdateGhostTrailMotion@{UpdateGhostTrailMotion}!BankGhostTrailBehaviour@{BankGhostTrailBehaviour}}
+\doxysubsubsection{\texorpdfstring{UpdateGhostTrailMotion()}{UpdateGhostTrailMotion()}}
+{\footnotesize\ttfamily \label{class_bank_ghost_trail_behaviour_a27a97212a1b68b5bb55791c6c7d4d161} 
+void Bank\+Ghost\+Trail\+Behaviour.\+Update\+Ghost\+Trail\+Motion (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Determines and updates behaviour of particles. 
+
+Creates a local copy of the assigned Particle System\textquotesingle{}s particle buffer and modifies the tranform of particles. Particles follow the calculated radius and the logic is functional during level, ascending and descending flight.
+
+Formula for calculating turning radius   \[R = \frac{V^2}{g \times \tan(\theta)}
+\] where\+:
+\begin{DoxyItemize}
+\item $R$ = Radius (m)
+\item $V$ = Velocity (m/s)
+\item $g$ = Gravity (m/s²)
+\item $\theta$ = Bank angle (degrees)
+\end{DoxyItemize}
+
+Particles transforms are modified and buffer is returned to the Particle system. 
+
+Definition at line \mbox{\hyperlink{_bank_ghost_trail_behaviour_8cs_source_l00044}{44}} of file \mbox{\hyperlink{_bank_ghost_trail_behaviour_8cs_source}{Bank\+Ghost\+Trail\+Behaviour.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_bank_ghost_trail_behaviour_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_bank_ghost_trail_behaviour_a2f13acbc55bcf045ed3678b700fb8c55}\index{BankGhostTrailBehaviour@{BankGhostTrailBehaviour}!enable@{enable}}
+\index{enable@{enable}!BankGhostTrailBehaviour@{BankGhostTrailBehaviour}}
+\doxysubsubsection{\texorpdfstring{enable}{enable}}
+{\footnotesize\ttfamily \label{class_bank_ghost_trail_behaviour_a2f13acbc55bcf045ed3678b700fb8c55} 
+bool Bank\+Ghost\+Trail\+Behaviour.\+enable = true}
+
+
+
+Enable banking behaviour. 
+
+
+
+Definition at line \mbox{\hyperlink{_bank_ghost_trail_behaviour_8cs_source_l00006}{6}} of file \mbox{\hyperlink{_bank_ghost_trail_behaviour_8cs_source}{Bank\+Ghost\+Trail\+Behaviour.\+cs}}.
+
+\Hypertarget{class_bank_ghost_trail_behaviour_aea1b748b1f6323fdb834aa6fe8d6806f}\index{BankGhostTrailBehaviour@{BankGhostTrailBehaviour}!ghostParticles@{ghostParticles}}
+\index{ghostParticles@{ghostParticles}!BankGhostTrailBehaviour@{BankGhostTrailBehaviour}}
+\doxysubsubsection{\texorpdfstring{ghostParticles}{ghostParticles}}
+{\footnotesize\ttfamily \label{class_bank_ghost_trail_behaviour_aea1b748b1f6323fdb834aa6fe8d6806f} 
+Particle\+System.\+Particle \mbox{[}$\,$\mbox{]} Bank\+Ghost\+Trail\+Behaviour.\+ghost\+Particles\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+List of particles emitted by the particle system. 
+
+
+
+Definition at line \mbox{\hyperlink{_bank_ghost_trail_behaviour_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_bank_ghost_trail_behaviour_8cs_source}{Bank\+Ghost\+Trail\+Behaviour.\+cs}}.
+
+\Hypertarget{class_bank_ghost_trail_behaviour_a5ed5ded60775b7184b88ec1b63cc1e03}\index{BankGhostTrailBehaviour@{BankGhostTrailBehaviour}!ghostTrail@{ghostTrail}}
+\index{ghostTrail@{ghostTrail}!BankGhostTrailBehaviour@{BankGhostTrailBehaviour}}
+\doxysubsubsection{\texorpdfstring{ghostTrail}{ghostTrail}}
+{\footnotesize\ttfamily \label{class_bank_ghost_trail_behaviour_a5ed5ded60775b7184b88ec1b63cc1e03} 
+Particle\+System Bank\+Ghost\+Trail\+Behaviour.\+ghost\+Trail}
+
+
+
+Ghost trail particle system. 
+
+
+
+Definition at line \mbox{\hyperlink{_bank_ghost_trail_behaviour_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_bank_ghost_trail_behaviour_8cs_source}{Bank\+Ghost\+Trail\+Behaviour.\+cs}}.
+
+\Hypertarget{class_bank_ghost_trail_behaviour_a3c2e84d52143b8400d1f8caad2f38ab2}\index{BankGhostTrailBehaviour@{BankGhostTrailBehaviour}!velocity@{velocity}}
+\index{velocity@{velocity}!BankGhostTrailBehaviour@{BankGhostTrailBehaviour}}
+\doxysubsubsection{\texorpdfstring{velocity}{velocity}}
+{\footnotesize\ttfamily \label{class_bank_ghost_trail_behaviour_a3c2e84d52143b8400d1f8caad2f38ab2} 
+float Bank\+Ghost\+Trail\+Behaviour.\+velocity = 50f}
+
+
+
+Velocity of the particles. 
+
+
+
+Definition at line \mbox{\hyperlink{_bank_ghost_trail_behaviour_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_bank_ghost_trail_behaviour_8cs_source}{Bank\+Ghost\+Trail\+Behaviour.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+DA\+\_\+40\+\_\+\+Special\+Features/\mbox{\hyperlink{_bank_ghost_trail_behaviour_8cs}{Bank\+Ghost\+Trail\+Behaviour.\+cs}}\end{DoxyCompactItemize}

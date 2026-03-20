@@ -1,0 +1,350 @@
+\doxysection{Module\+Activity\+Scheduler Class Reference}
+\hypertarget{class_module_activity_scheduler}{}\label{class_module_activity_scheduler}\index{ModuleActivityScheduler@{ModuleActivityScheduler}}
+
+
+Singleton management class that talks to the \doxylink{class_module_manager}{Module\+Manager} to schedule activities ahead of Timeline endings, forming the interactive components of each section that make up a Module.  
+
+
+
+
+Inheritance diagram for Module\+Activity\+Scheduler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{class_module_activity_scheduler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Module\+Activity\+Scheduler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_module_activity_scheduler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_module_activity_scheduler_aeef82d8d979c33e9113bfc1bd55c936e}{Start\+Activity}} (\mbox{\hyperlink{class_module_activities}{Module\+Activities}} new\+Activity, \mbox{\hyperlink{class_module_manager}{Module\+Manager}} manager)
+\begin{DoxyCompactList}\small\item\em Called by \doxylink{class_module_manager}{Module\+Manager} when a new activity starts, to setup UI and controller inputs/activity scripts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_module_activity_scheduler_aea2efe109952221222b37e807ff36fb9}{On\+External\+Step\+Completed}} ()
+\begin{DoxyCompactList}\small\item\em Public-\/facing method to complete a step, to be called by activities like \doxylink{class_rotate_left_controller}{Rotate\+Left\+Controller}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} \mbox{\hyperlink{class_module_activity_scheduler_a14579487c05abb7ec7095bd25f7d119e}{Instance}}
+\begin{DoxyCompactList}\small\item\em Singleton accessor reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_module_activity_scheduler_a46f55a682aadad910cb9ca9cab917321}{Awake}} ()
+\begin{DoxyCompactList}\small\item\em The setup for the Singleton design pattern implementation occurs when the Game\+Object this script is attached to is instantiated in the scene at runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_module_activity_scheduler_a1d3b2dd9defa958e532c5819f6d11a0d}{Setup\+Activity\+UI}} ()
+\begin{DoxyCompactList}\small\item\em Calls the checkbox\+Manager to setup the special checbox UI for each activity, passing the relevant instructions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_module_activity_scheduler_ace00696571985265b216d5cbca9d41b1}{Display\+Current\+Step}} ()
+\begin{DoxyCompactList}\small\item\em Displays the activity text as the header of the checkbox panel in the UI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_module_activity_scheduler_a6316d56d8b96e66b2d5eb63d7eb8e55c}{On\+Step\+Completed}} ()
+\begin{DoxyCompactList}\small\item\em When an activity\textquotesingle{}s current step is completed, the MAS moves onto the next step if applicable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_module_activity_scheduler_a49a44008f73fba38ce95ccdf393d4674}{Complete\+Activity}} ()
+\begin{DoxyCompactList}\small\item\em When an activity is completed, turn the UI checkbox panel off, cleanup flags, and call the module\+Manager to move onto the next timeline. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_module_activity_scheduler_a1219b044ebf9be859645b946cfe9114e}{checkbox\+Panel}}
+\begin{DoxyCompactList}\small\item\em The UI panel that contains all of the checkboxes/instructions/title. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_checkbox_manager}{Checkbox\+Manager}} \mbox{\hyperlink{class_module_activity_scheduler_a64d3e24b534424e22a7285af5194aa31}{checkbox\+Manager}}
+\begin{DoxyCompactList}\small\item\em Manages toggling checkboxes and descriptions. \end{DoxyCompactList}\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_module_activity_scheduler_a8b90107060ba26261ff9108c00367d80}{activity\+Title}}
+\begin{DoxyCompactList}\small\item\em Instruction title (e.\+g. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_module_manager}{Module\+Manager}} \mbox{\hyperlink{class_module_activity_scheduler_a57aad2f50875d7a94a45e66243f49575}{module\+Manager}}
+\begin{DoxyCompactList}\small\item\em Reference to the \doxylink{class_module_manager}{Module\+Manager}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_module_activities}{Module\+Activities}} \mbox{\hyperlink{class_module_activity_scheduler_a13df3d901230cc6bb25770ca44ca19ba}{current\+Activity}}
+\begin{DoxyCompactList}\small\item\em The activity that is currently running. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_module_activity_scheduler_af1783dc72c57813cf7670b37890e64f7}{current\+Step\+Index}} = 0
+\begin{DoxyCompactList}\small\item\em The current step index in the activity. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_module_activity_scheduler_a83bd6501fcc5ead41a263810482753ee}{activity\+In\+Progress}} = false
+\begin{DoxyCompactList}\small\item\em Flag to determine if an activity is currently in progress or not. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_module_activity_scheduler_a0e5a81125de82cd6bfaac4fafd82814b}{active\+Controller\+Object}}
+\begin{DoxyCompactList}\small\item\em The spawned \doxylink{class_module_activities}{Module\+Activities} prefab for the current activity (if applicable). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Singleton management class that talks to the \doxylink{class_module_manager}{Module\+Manager} to schedule activities ahead of Timeline endings, forming the interactive components of each section that make up a Module. 
+
+\begin{DoxyAuthor}{Author}
+Caleb Martin \texorpdfstring{$\vert$}{|} \href{mailto:marcy066@mymail.unisa.edu.au}{\texttt{marcy066@mymail.\+unisa.\+edu.\+au}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_module_activity_scheduler_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_module_activity_scheduler_8cs_source}{Module\+Activity\+Scheduler.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_module_activity_scheduler_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_module_activity_scheduler_a46f55a682aadad910cb9ca9cab917321}\index{ModuleActivityScheduler@{ModuleActivityScheduler}!Awake@{Awake}}
+\index{Awake@{Awake}!ModuleActivityScheduler@{ModuleActivityScheduler}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily \label{class_module_activity_scheduler_a46f55a682aadad910cb9ca9cab917321} 
+void Module\+Activity\+Scheduler.\+Awake (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The setup for the Singleton design pattern implementation occurs when the Game\+Object this script is attached to is instantiated in the scene at runtime. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_module_activity_scheduler_8cs_source_l00030}{30}} of file \mbox{\hyperlink{_module_activity_scheduler_8cs_source}{Module\+Activity\+Scheduler.\+cs}}.
+
+\Hypertarget{class_module_activity_scheduler_a49a44008f73fba38ce95ccdf393d4674}\index{ModuleActivityScheduler@{ModuleActivityScheduler}!CompleteActivity@{CompleteActivity}}
+\index{CompleteActivity@{CompleteActivity}!ModuleActivityScheduler@{ModuleActivityScheduler}}
+\doxysubsubsection{\texorpdfstring{CompleteActivity()}{CompleteActivity()}}
+{\footnotesize\ttfamily \label{class_module_activity_scheduler_a49a44008f73fba38ce95ccdf393d4674} 
+void Module\+Activity\+Scheduler.\+Complete\+Activity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+When an activity is completed, turn the UI checkbox panel off, cleanup flags, and call the module\+Manager to move onto the next timeline. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_module_activity_scheduler_8cs_source_l00145}{145}} of file \mbox{\hyperlink{_module_activity_scheduler_8cs_source}{Module\+Activity\+Scheduler.\+cs}}.
+
+\Hypertarget{class_module_activity_scheduler_ace00696571985265b216d5cbca9d41b1}\index{ModuleActivityScheduler@{ModuleActivityScheduler}!DisplayCurrentStep@{DisplayCurrentStep}}
+\index{DisplayCurrentStep@{DisplayCurrentStep}!ModuleActivityScheduler@{ModuleActivityScheduler}}
+\doxysubsubsection{\texorpdfstring{DisplayCurrentStep()}{DisplayCurrentStep()}}
+{\footnotesize\ttfamily \label{class_module_activity_scheduler_ace00696571985265b216d5cbca9d41b1} 
+void Module\+Activity\+Scheduler.\+Display\+Current\+Step (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Displays the activity text as the header of the checkbox panel in the UI. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_module_activity_scheduler_8cs_source_l00095}{95}} of file \mbox{\hyperlink{_module_activity_scheduler_8cs_source}{Module\+Activity\+Scheduler.\+cs}}.
+
+\Hypertarget{class_module_activity_scheduler_aea2efe109952221222b37e807ff36fb9}\index{ModuleActivityScheduler@{ModuleActivityScheduler}!OnExternalStepCompleted@{OnExternalStepCompleted}}
+\index{OnExternalStepCompleted@{OnExternalStepCompleted}!ModuleActivityScheduler@{ModuleActivityScheduler}}
+\doxysubsubsection{\texorpdfstring{OnExternalStepCompleted()}{OnExternalStepCompleted()}}
+{\footnotesize\ttfamily \label{class_module_activity_scheduler_aea2efe109952221222b37e807ff36fb9} 
+void Module\+Activity\+Scheduler.\+On\+External\+Step\+Completed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Public-\/facing method to complete a step, to be called by activities like \doxylink{class_rotate_left_controller}{Rotate\+Left\+Controller}. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_module_activity_scheduler_8cs_source_l00135}{135}} of file \mbox{\hyperlink{_module_activity_scheduler_8cs_source}{Module\+Activity\+Scheduler.\+cs}}.
+
+\Hypertarget{class_module_activity_scheduler_a6316d56d8b96e66b2d5eb63d7eb8e55c}\index{ModuleActivityScheduler@{ModuleActivityScheduler}!OnStepCompleted@{OnStepCompleted}}
+\index{OnStepCompleted@{OnStepCompleted}!ModuleActivityScheduler@{ModuleActivityScheduler}}
+\doxysubsubsection{\texorpdfstring{OnStepCompleted()}{OnStepCompleted()}}
+{\footnotesize\ttfamily \label{class_module_activity_scheduler_a6316d56d8b96e66b2d5eb63d7eb8e55c} 
+void Module\+Activity\+Scheduler.\+On\+Step\+Completed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+When an activity\textquotesingle{}s current step is completed, the MAS moves onto the next step if applicable. 
+
+If there are no more steps, we move onto the following timeline instead by calling the module\+Manager to proceed with relevant logic. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_module_activity_scheduler_8cs_source_l00112}{112}} of file \mbox{\hyperlink{_module_activity_scheduler_8cs_source}{Module\+Activity\+Scheduler.\+cs}}.
+
+\Hypertarget{class_module_activity_scheduler_a1d3b2dd9defa958e532c5819f6d11a0d}\index{ModuleActivityScheduler@{ModuleActivityScheduler}!SetupActivityUI@{SetupActivityUI}}
+\index{SetupActivityUI@{SetupActivityUI}!ModuleActivityScheduler@{ModuleActivityScheduler}}
+\doxysubsubsection{\texorpdfstring{SetupActivityUI()}{SetupActivityUI()}}
+{\footnotesize\ttfamily \label{class_module_activity_scheduler_a1d3b2dd9defa958e532c5819f6d11a0d} 
+void Module\+Activity\+Scheduler.\+Setup\+Activity\+UI (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calls the checkbox\+Manager to setup the special checbox UI for each activity, passing the relevant instructions. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_module_activity_scheduler_8cs_source_l00086}{86}} of file \mbox{\hyperlink{_module_activity_scheduler_8cs_source}{Module\+Activity\+Scheduler.\+cs}}.
+
+\Hypertarget{class_module_activity_scheduler_aeef82d8d979c33e9113bfc1bd55c936e}\index{ModuleActivityScheduler@{ModuleActivityScheduler}!StartActivity@{StartActivity}}
+\index{StartActivity@{StartActivity}!ModuleActivityScheduler@{ModuleActivityScheduler}}
+\doxysubsubsection{\texorpdfstring{StartActivity()}{StartActivity()}}
+{\footnotesize\ttfamily \label{class_module_activity_scheduler_aeef82d8d979c33e9113bfc1bd55c936e} 
+void Module\+Activity\+Scheduler.\+Start\+Activity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_module_activities}{Module\+Activities}}}]{new\+Activity}{, }\item[{\mbox{\hyperlink{class_module_manager}{Module\+Manager}}}]{manager}{}\end{DoxyParamCaption})}
+
+
+
+Called by \doxylink{class_module_manager}{Module\+Manager} when a new activity starts, to setup UI and controller inputs/activity scripts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Activity} & The activity to commence. \\
+\hline
+{\em manager} & A reference to the \doxylink{class_module_manager}{Module\+Manager}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_module_activity_scheduler_8cs_source_l00048}{48}} of file \mbox{\hyperlink{_module_activity_scheduler_8cs_source}{Module\+Activity\+Scheduler.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_module_activity_scheduler_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_module_activity_scheduler_a0e5a81125de82cd6bfaac4fafd82814b}\index{ModuleActivityScheduler@{ModuleActivityScheduler}!activeControllerObject@{activeControllerObject}}
+\index{activeControllerObject@{activeControllerObject}!ModuleActivityScheduler@{ModuleActivityScheduler}}
+\doxysubsubsection{\texorpdfstring{activeControllerObject}{activeControllerObject}}
+{\footnotesize\ttfamily \label{class_module_activity_scheduler_a0e5a81125de82cd6bfaac4fafd82814b} 
+Game\+Object Module\+Activity\+Scheduler.\+active\+Controller\+Object\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The spawned \doxylink{class_module_activities}{Module\+Activities} prefab for the current activity (if applicable). 
+
+
+
+Definition at line \mbox{\hyperlink{_module_activity_scheduler_8cs_source_l00022}{22}} of file \mbox{\hyperlink{_module_activity_scheduler_8cs_source}{Module\+Activity\+Scheduler.\+cs}}.
+
+\Hypertarget{class_module_activity_scheduler_a83bd6501fcc5ead41a263810482753ee}\index{ModuleActivityScheduler@{ModuleActivityScheduler}!activityInProgress@{activityInProgress}}
+\index{activityInProgress@{activityInProgress}!ModuleActivityScheduler@{ModuleActivityScheduler}}
+\doxysubsubsection{\texorpdfstring{activityInProgress}{activityInProgress}}
+{\footnotesize\ttfamily \label{class_module_activity_scheduler_a83bd6501fcc5ead41a263810482753ee} 
+bool Module\+Activity\+Scheduler.\+activity\+In\+Progress = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag to determine if an activity is currently in progress or not. 
+
+
+
+Definition at line \mbox{\hyperlink{_module_activity_scheduler_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_module_activity_scheduler_8cs_source}{Module\+Activity\+Scheduler.\+cs}}.
+
+\Hypertarget{class_module_activity_scheduler_a8b90107060ba26261ff9108c00367d80}\index{ModuleActivityScheduler@{ModuleActivityScheduler}!activityTitle@{activityTitle}}
+\index{activityTitle@{activityTitle}!ModuleActivityScheduler@{ModuleActivityScheduler}}
+\doxysubsubsection{\texorpdfstring{activityTitle}{activityTitle}}
+{\footnotesize\ttfamily \label{class_module_activity_scheduler_a8b90107060ba26261ff9108c00367d80} 
+Text\+Mesh\+Pro\+UGUI Module\+Activity\+Scheduler.\+activity\+Title\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instruction title (e.\+g. 
+
+"{}\+Increase Pitch"{}, "{}\+Increase Power"{}, etc.). 
+
+Definition at line \mbox{\hyperlink{_module_activity_scheduler_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_module_activity_scheduler_8cs_source}{Module\+Activity\+Scheduler.\+cs}}.
+
+\Hypertarget{class_module_activity_scheduler_a64d3e24b534424e22a7285af5194aa31}\index{ModuleActivityScheduler@{ModuleActivityScheduler}!checkboxManager@{checkboxManager}}
+\index{checkboxManager@{checkboxManager}!ModuleActivityScheduler@{ModuleActivityScheduler}}
+\doxysubsubsection{\texorpdfstring{checkboxManager}{checkboxManager}}
+{\footnotesize\ttfamily \label{class_module_activity_scheduler_a64d3e24b534424e22a7285af5194aa31} 
+\mbox{\hyperlink{class_checkbox_manager}{Checkbox\+Manager}} Module\+Activity\+Scheduler.\+checkbox\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Manages toggling checkboxes and descriptions. 
+
+
+
+Definition at line \mbox{\hyperlink{_module_activity_scheduler_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_module_activity_scheduler_8cs_source}{Module\+Activity\+Scheduler.\+cs}}.
+
+\Hypertarget{class_module_activity_scheduler_a1219b044ebf9be859645b946cfe9114e}\index{ModuleActivityScheduler@{ModuleActivityScheduler}!checkboxPanel@{checkboxPanel}}
+\index{checkboxPanel@{checkboxPanel}!ModuleActivityScheduler@{ModuleActivityScheduler}}
+\doxysubsubsection{\texorpdfstring{checkboxPanel}{checkboxPanel}}
+{\footnotesize\ttfamily \label{class_module_activity_scheduler_a1219b044ebf9be859645b946cfe9114e} 
+Game\+Object Module\+Activity\+Scheduler.\+checkbox\+Panel\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The UI panel that contains all of the checkboxes/instructions/title. 
+
+
+
+Definition at line \mbox{\hyperlink{_module_activity_scheduler_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_module_activity_scheduler_8cs_source}{Module\+Activity\+Scheduler.\+cs}}.
+
+\Hypertarget{class_module_activity_scheduler_a13df3d901230cc6bb25770ca44ca19ba}\index{ModuleActivityScheduler@{ModuleActivityScheduler}!currentActivity@{currentActivity}}
+\index{currentActivity@{currentActivity}!ModuleActivityScheduler@{ModuleActivityScheduler}}
+\doxysubsubsection{\texorpdfstring{currentActivity}{currentActivity}}
+{\footnotesize\ttfamily \label{class_module_activity_scheduler_a13df3d901230cc6bb25770ca44ca19ba} 
+\mbox{\hyperlink{class_module_activities}{Module\+Activities}} Module\+Activity\+Scheduler.\+current\+Activity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The activity that is currently running. 
+
+
+
+Definition at line \mbox{\hyperlink{_module_activity_scheduler_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_module_activity_scheduler_8cs_source}{Module\+Activity\+Scheduler.\+cs}}.
+
+\Hypertarget{class_module_activity_scheduler_af1783dc72c57813cf7670b37890e64f7}\index{ModuleActivityScheduler@{ModuleActivityScheduler}!currentStepIndex@{currentStepIndex}}
+\index{currentStepIndex@{currentStepIndex}!ModuleActivityScheduler@{ModuleActivityScheduler}}
+\doxysubsubsection{\texorpdfstring{currentStepIndex}{currentStepIndex}}
+{\footnotesize\ttfamily \label{class_module_activity_scheduler_af1783dc72c57813cf7670b37890e64f7} 
+int Module\+Activity\+Scheduler.\+current\+Step\+Index = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The current step index in the activity. 
+
+
+
+Definition at line \mbox{\hyperlink{_module_activity_scheduler_8cs_source_l00020}{20}} of file \mbox{\hyperlink{_module_activity_scheduler_8cs_source}{Module\+Activity\+Scheduler.\+cs}}.
+
+\Hypertarget{class_module_activity_scheduler_a14579487c05abb7ec7095bd25f7d119e}\index{ModuleActivityScheduler@{ModuleActivityScheduler}!Instance@{Instance}}
+\index{Instance@{Instance}!ModuleActivityScheduler@{ModuleActivityScheduler}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \label{class_module_activity_scheduler_a14579487c05abb7ec7095bd25f7d119e} 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} Module\+Activity\+Scheduler.\+Instance\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Singleton accessor reference. 
+
+
+
+Definition at line \mbox{\hyperlink{_module_activity_scheduler_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_module_activity_scheduler_8cs_source}{Module\+Activity\+Scheduler.\+cs}}.
+
+\Hypertarget{class_module_activity_scheduler_a57aad2f50875d7a94a45e66243f49575}\index{ModuleActivityScheduler@{ModuleActivityScheduler}!moduleManager@{moduleManager}}
+\index{moduleManager@{moduleManager}!ModuleActivityScheduler@{ModuleActivityScheduler}}
+\doxysubsubsection{\texorpdfstring{moduleManager}{moduleManager}}
+{\footnotesize\ttfamily \label{class_module_activity_scheduler_a57aad2f50875d7a94a45e66243f49575} 
+\mbox{\hyperlink{class_module_manager}{Module\+Manager}} Module\+Activity\+Scheduler.\+module\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the \doxylink{class_module_manager}{Module\+Manager}. 
+
+
+
+Definition at line \mbox{\hyperlink{_module_activity_scheduler_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_module_activity_scheduler_8cs_source}{Module\+Activity\+Scheduler.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Module\+Structure/\mbox{\hyperlink{_module_activity_scheduler_8cs}{Module\+Activity\+Scheduler.\+cs}}\end{DoxyCompactItemize}

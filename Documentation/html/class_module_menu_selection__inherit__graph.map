@@ -1,0 +1,5 @@
+<map id="ModuleMenuSelection" name="ModuleMenuSelection">
+<area shape="rect" id="Node000001" title="Handles menu selection of each Module alongside a Play button to trigger Modules via the ModuleManage..." alt="" coords="5,80,155,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="24,5,136,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,48,83,80,77,80,77,48"/>
+</map>

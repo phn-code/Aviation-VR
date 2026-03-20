@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7af545500308947a6c9ee6772556fe, type: 3}
+  m_Name: TiltControllerRight
+  m_EditorClassIdentifier: 
+  activityName: Roll Wings Level
+  instructions:
+  - Tilt the left controller to the right to level the wings.
+  usesCustomScript: 1
+  customScript: {fileID: 21315843494900281, guid: eca1c159e702eb148905ea7928805357, type: 3}
+  playerInputRequired: 1
+  totalSteps: 1
+  currentStep: 0

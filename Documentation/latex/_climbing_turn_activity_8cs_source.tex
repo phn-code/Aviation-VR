@@ -1,0 +1,222 @@
+\doxysection{Climbing\+Turn\+Activity.\+cs}
+\hypertarget{_climbing_turn_activity_8cs_source}{}\label{_climbing_turn_activity_8cs_source}\index{Assets/ModuleExclusiveAssets/Module2/Section3/ClimbingTurnActivity.cs@{Assets/ModuleExclusiveAssets/Module2/Section3/ClimbingTurnActivity.cs}}
+\mbox{\hyperlink{_climbing_turn_activity_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine.InputSystem;}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine.Playables;}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }UnityEngine.Timeline;}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00022}\mbox{\hyperlink{class_climbing_turn_activity}{00022}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_climbing_turn_activity}{ClimbingTurnActivity}}\ :\ MonoBehaviour,\ \mbox{\hyperlink{interface_i_activity_controller}{IActivityController}}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00024}\mbox{\hyperlink{class_climbing_turn_activity_a20830a8fc2a2ff90723dd0387bf0b191}{00024}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_module_activity_scheduler}{ModuleActivityScheduler}}\ \mbox{\hyperlink{class_climbing_turn_activity_a20830a8fc2a2ff90723dd0387bf0b191}{mas}}\ =>\ \mbox{\hyperlink{class_module_activity_scheduler}{ModuleActivityScheduler}}.\mbox{\hyperlink{class_module_activity_scheduler_a14579487c05abb7ec7095bd25f7d119e}{Instance}};\ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00026}00026\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}timeline\ assets"{}})]}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00027}\mbox{\hyperlink{class_climbing_turn_activity_a2b8c14faf7a198b57007863bcca5c4d3}{00027}}\ \ \ \ \ \textcolor{keyword}{public}\ TimelineAsset\ \mbox{\hyperlink{class_climbing_turn_activity_a2b8c14faf7a198b57007863bcca5c4d3}{postSlipStream}};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00028}\mbox{\hyperlink{class_climbing_turn_activity_a4bbf13f2ee27f16417a105d38963a6f7}{00028}}\ \ \ \ \ \textcolor{keyword}{public}\ TimelineAsset\ \mbox{\hyperlink{class_climbing_turn_activity_a4bbf13f2ee27f16417a105d38963a6f7}{postBank}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00029}\mbox{\hyperlink{class_climbing_turn_activity_af1b6a4682d3e671c0f0a90ed281ee50b}{00029}}\ \ \ \ \ \textcolor{keyword}{public}\ TimelineAsset\ \mbox{\hyperlink{class_climbing_turn_activity_af1b6a4682d3e671c0f0a90ed281ee50b}{postStall}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00031}00031\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Input\ action\ references"{}})]}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00032}\mbox{\hyperlink{class_climbing_turn_activity_ae6e07f55b4fa4af7dbb5fb46fc465d45}{00032}}\ \ \ \ \ \textcolor{keyword}{public}\ InputActionReference\ \mbox{\hyperlink{class_climbing_turn_activity_ae6e07f55b4fa4af7dbb5fb46fc465d45}{rotationInput}};\ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00034}00034\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Control\ Settings"{}})]}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00035}\mbox{\hyperlink{class_climbing_turn_activity_aab8dccb97da8d87397f2e05a94a441b7}{00035}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_climbing_turn_activity_aab8dccb97da8d87397f2e05a94a441b7}{bankSensitivity}}\ =\ 45f;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00036}\mbox{\hyperlink{class_climbing_turn_activity_ac393484b97346ea54141469092e2b2bb}{00036}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_climbing_turn_activity_ac393484b97346ea54141469092e2b2bb}{deadZone}}\ =\ 0.1f;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00037}\mbox{\hyperlink{class_climbing_turn_activity_a4b7ffbfc4e833460a324955e1c3ccb99}{00037}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_climbing_turn_activity_a4b7ffbfc4e833460a324955e1c3ccb99}{stepAdvanceTolerance}}\ =\ 3f;\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00039}00039\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Editor\ Debug\ settings"{}})]}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00040}\mbox{\hyperlink{class_climbing_turn_activity_a68e3ee75f27c8baa473fcd7ffdb71978}{00040}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_climbing_turn_activity_a68e3ee75f27c8baa473fcd7ffdb71978}{useMouseClicks}}\ =\ \textcolor{keyword}{true};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00041}\mbox{\hyperlink{class_climbing_turn_activity_a9ec9a14540307394ae4f7e3b09030a45}{00041}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_climbing_turn_activity_a9ec9a14540307394ae4f7e3b09030a45}{mouseRollSpeed}}\ =\ 10f;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00048}\mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271}{00048}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271}{TurnStep}}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00050}\mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271a07d34959aaf783563ce2b21b4cb51367}{00050}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271a07d34959aaf783563ce2b21b4cb51367}{SlipStream}},\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00051}\mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271aeb45bd2725cb8ac50d0795432a918f86}{00051}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271aeb45bd2725cb8ac50d0795432a918f86}{Bank}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00052}\mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271aa0f50ad4a913f4008911c70870d4028b}{00052}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271aa0f50ad4a913f4008911c70870d4028b}{Stall}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00053}\mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271aae94f80b3ce82062a5dd7815daa04f9d}{00053}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271aae94f80b3ce82062a5dd7815daa04f9d}{Complete}}\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00055}00055\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00056}\mbox{\hyperlink{class_climbing_turn_activity_a5699f8c6981e6eadc2693440de49344c}{00056}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_climbing_turn_activity_a5699f8c6981e6eadc2693440de49344c}{rollInputLocked}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00057}\mbox{\hyperlink{class_climbing_turn_activity_a1c02fc1b87b7c8fb483146685769af17}{00057}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_climbing_turn_activity_a1c02fc1b87b7c8fb483146685769af17}{pitchInputLocked}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00058}\mbox{\hyperlink{class_climbing_turn_activity_ac82f57de535f4314ee8d1456016eff29}{00058}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271}{TurnStep}}\ \mbox{\hyperlink{class_climbing_turn_activity_ac82f57de535f4314ee8d1456016eff29}{currentStep}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00059}\mbox{\hyperlink{class_climbing_turn_activity_a360d213fbfbe379e40d0a0585a2c1391}{00059}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_climbing_turn_activity_a360d213fbfbe379e40d0a0585a2c1391}{currentBank}}\ =\ 0f;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00061}\mbox{\hyperlink{class_climbing_turn_activity_a9ac758fc3379d1e1645409cc5f8561bb}{00061}}\ \ \ \ \ \textcolor{keyword}{private}\ Quaternion\ \mbox{\hyperlink{class_climbing_turn_activity_a9ac758fc3379d1e1645409cc5f8561bb}{controllerOrigin}}\ =\ Quaternion.identity;\ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00062}\mbox{\hyperlink{class_climbing_turn_activity_ac84beede734a15ab371aefe72d277952}{00062}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_climbing_turn_activity_ac84beede734a15ab371aefe72d277952}{hasControllerOrigin}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00064}\mbox{\hyperlink{class_climbing_turn_activity_a65037b3383afee43c140e6e740850316}{00064}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_climbing_turn_activity_a65037b3383afee43c140e6e740850316}{hasNotifiedMAS}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00066}00066\ \ \ \ \ \textcolor{comment}{//\ Manipulators}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00067}\mbox{\hyperlink{class_climbing_turn_activity_a14f69b1de5f0b9feb062cd384993fab3}{00067}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_axis_rotation_controller}{AxisRotationController}}\ \mbox{\hyperlink{class_climbing_turn_activity_a14f69b1de5f0b9feb062cd384993fab3}{aoaManipulator}};\ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00068}\mbox{\hyperlink{class_climbing_turn_activity_a74bc7741859452cd0ae66c35b0e73279}{00068}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_bank_ghost_trail_behaviour}{BankGhostTrailBehaviour}}\ \mbox{\hyperlink{class_climbing_turn_activity_a74bc7741859452cd0ae66c35b0e73279}{bankGhostTrail}};\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00069}00069\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00070}00070\ \ \ \ \ \textcolor{comment}{//\ Timeline\ PlayableDirectors}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00071}\mbox{\hyperlink{class_climbing_turn_activity_a21c1eb988e6c4b562b811bc8804da9a0}{00071}}\ \ \ \ \ \textcolor{keyword}{private}\ PlayableDirector\ \mbox{\hyperlink{class_climbing_turn_activity_a21c1eb988e6c4b562b811bc8804da9a0}{postSlipStreamDirector}};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00072}\mbox{\hyperlink{class_climbing_turn_activity_a3cf6bbd9e49a09b296d3164898051ad7}{00072}}\ \ \ \ \ \textcolor{keyword}{private}\ PlayableDirector\ \mbox{\hyperlink{class_climbing_turn_activity_a3cf6bbd9e49a09b296d3164898051ad7}{postBankDirector}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00073}\mbox{\hyperlink{class_climbing_turn_activity_aedd0dbbf9695f6af334f72528a607df2}{00073}}\ \ \ \ \ \textcolor{keyword}{private}\ PlayableDirector\ \mbox{\hyperlink{class_climbing_turn_activity_aedd0dbbf9695f6af334f72528a607df2}{postStallDirector}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00082}\mbox{\hyperlink{class_climbing_turn_activity_a049c3e86930fa28fbd38d9629a5dad9e}{00082}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_climbing_turn_activity_a049c3e86930fa28fbd38d9629a5dad9e}{OnEnable}}()}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00083}00083\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_climbing_turn_activity_ae6e07f55b4fa4af7dbb5fb46fc465d45}{rotationInput}}\ !=\ \textcolor{keyword}{null}\ \&\&\ \mbox{\hyperlink{class_climbing_turn_activity_ae6e07f55b4fa4af7dbb5fb46fc465d45}{rotationInput}}.action\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_ae6e07f55b4fa4af7dbb5fb46fc465d45}{rotationInput}}.action.Enable();}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ reset\ progression}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_ac82f57de535f4314ee8d1456016eff29}{currentStep}}\ =\ \mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271}{TurnStep}}.SlipStream;}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a5699f8c6981e6eadc2693440de49344c}{rollInputLocked}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a1c02fc1b87b7c8fb483146685769af17}{pitchInputLocked}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_ac84beede734a15ab371aefe72d277952}{hasControllerOrigin}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a360d213fbfbe379e40d0a0585a2c1391}{currentBank}}\ =\ 0f;}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a14f69b1de5f0b9feb062cd384993fab3}{aoaManipulator}}\ =\ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_adb076aa068f0702843b7d4709caf5ca8}{getAxisRotationController}}(10f,\ 0f);}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a74bc7741859452cd0ae66c35b0e73279}{bankGhostTrail}}\ =\ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a0f32a28a90deaf1f25de7f9a2c82d4c4}{getBankGhostTrail}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Call\ helper\ to\ find\ directors\ for\ timeline\ assets}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a21c1eb988e6c4b562b811bc8804da9a0}{postSlipStreamDirector}}\ =\ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a3a17628c1569eeef4dcce5598f021905}{FindPlayableDirector}}(\mbox{\hyperlink{class_climbing_turn_activity_a2b8c14faf7a198b57007863bcca5c4d3}{postSlipStream}});}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a3cf6bbd9e49a09b296d3164898051ad7}{postBankDirector}}\ =\ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a3a17628c1569eeef4dcce5598f021905}{FindPlayableDirector}}(\mbox{\hyperlink{class_climbing_turn_activity_a4bbf13f2ee27f16417a105d38963a6f7}{postBank}});}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_aedd0dbbf9695f6af334f72528a607df2}{postStallDirector}}\ =\ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a3a17628c1569eeef4dcce5598f021905}{FindPlayableDirector}}(\mbox{\hyperlink{class_climbing_turn_activity_af1b6a4682d3e671c0f0a90ed281ee50b}{postStall}});}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00103}00103\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00110}\mbox{\hyperlink{class_climbing_turn_activity_ad22a2d8838cf6d3efaa3e2ed1ad96fb7}{00110}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_climbing_turn_activity_ad22a2d8838cf6d3efaa3e2ed1ad96fb7}{OnDisable}}()}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00111}00111\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_climbing_turn_activity_ae6e07f55b4fa4af7dbb5fb46fc465d45}{rotationInput}}\ !=\ \textcolor{keyword}{null}\ \&\&\ \mbox{\hyperlink{class_climbing_turn_activity_ae6e07f55b4fa4af7dbb5fb46fc465d45}{rotationInput}}.action\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_ae6e07f55b4fa4af7dbb5fb46fc465d45}{rotationInput}}.action.Disable();}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ bankGhostTrail.enable\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00125}\mbox{\hyperlink{class_climbing_turn_activity_a6f2995a2d3405ab52ade93963e744cc7}{00125}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_climbing_turn_activity_a6f2995a2d3405ab52ade93963e744cc7}{StartActivity}}()}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00126}00126\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a48ee7d76e8441c2a42595341eda84b0c}{EnableCurrentStep}}();}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00128}00128\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00136}\mbox{\hyperlink{class_climbing_turn_activity_a48ee7d76e8441c2a42595341eda84b0c}{00136}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_climbing_turn_activity_a48ee7d76e8441c2a42595341eda84b0c}{EnableCurrentStep}}()}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00137}00137\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a5699f8c6981e6eadc2693440de49344c}{rollInputLocked}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a1c02fc1b87b7c8fb483146685769af17}{pitchInputLocked}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_ac84beede734a15ab371aefe72d277952}{hasControllerOrigin}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00141}00141\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00149}\mbox{\hyperlink{class_climbing_turn_activity_a497c074232ca9d9cc19db1bf2ea96947}{00149}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_climbing_turn_activity_a497c074232ca9d9cc19db1bf2ea96947}{Update}}()}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00150}00150\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ ((\mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271}{TurnStep}})\mbox{\hyperlink{class_climbing_turn_activity_ac82f57de535f4314ee8d1456016eff29}{currentStep}})}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271}{TurnStep}}.SlipStream:}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_ac9405e13f7495eb1d62ef126cd4eebe6}{HandleSlipStream}}();}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271}{TurnStep}}.Bank:}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a83fa5a42e5e6481c3ec1df242e96ab22}{HandleBanking}}();}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271}{TurnStep}}.Stall:}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a00fa80aba361c3242460119c71b0bf1c}{HandleStall}}();}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271}{TurnStep}}.Complete:}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_climbing_turn_activity_a65037b3383afee43c140e6e740850316}{hasNotifiedMAS}})\ \textcolor{comment}{//\ failsafe\ for\ preventing\ multiple\ triggers}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Climbing\ Turn\ Activity\ Complete\ -\/\ notifying\ MAS"{}});}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a20830a8fc2a2ff90723dd0387bf0b191}{mas}}.OnExternalStepCompleted();}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a65037b3383afee43c140e6e740850316}{hasNotifiedMAS}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00171}00171\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00182}\mbox{\hyperlink{class_climbing_turn_activity_ac9405e13f7495eb1d62ef126cd4eebe6}{00182}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_climbing_turn_activity_ac9405e13f7495eb1d62ef126cd4eebe6}{HandleSlipStream}}()}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00183}00183\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \textcolor{comment}{//TODO\ Slipstream\ Animation/effect}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_climbing_turn_activity_a5699f8c6981e6eadc2693440de49344c}{rollInputLocked}})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a5699f8c6981e6eadc2693440de49344c}{rollInputLocked}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a96bb773842c1fce0e460557bf7e64c1a}{PlayTimeLine}}(\mbox{\hyperlink{class_climbing_turn_activity_a21c1eb988e6c4b562b811bc8804da9a0}{postSlipStreamDirector}},\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentStep\ =\ TurnStep.Bank;}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rollInputLocked\ =\ false;}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00193}00193\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00204}\mbox{\hyperlink{class_climbing_turn_activity_a83fa5a42e5e6481c3ec1df242e96ab22}{00204}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_climbing_turn_activity_a83fa5a42e5e6481c3ec1df242e96ab22}{HandleBanking}}()}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00205}00205\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_climbing_turn_activity_a5699f8c6981e6eadc2693440de49344c}{rollInputLocked}})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ Quaternion\ currentRotation\ =\ \mbox{\hyperlink{class_climbing_turn_activity_ae6e07f55b4fa4af7dbb5fb46fc465d45}{rotationInput}}.action.ReadValue<Quaternion>();}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_climbing_turn_activity_ac84beede734a15ab371aefe72d277952}{hasControllerOrigin}})}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a9ac758fc3379d1e1645409cc5f8561bb}{controllerOrigin}}\ =\ currentRotation;}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_ac84beede734a15ab371aefe72d277952}{hasControllerOrigin}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Captured\ controller\ origin\ (Bank):\ "{}}\ +\ \mbox{\hyperlink{class_climbing_turn_activity_a9ac758fc3379d1e1645409cc5f8561bb}{controllerOrigin}}.eulerAngles);}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a360d213fbfbe379e40d0a0585a2c1391}{currentBank}}\ =\ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a8d7e6ab91e2178c7b4aae332de0d662a}{getNormalisedPlaneRoll}}(\mbox{\hyperlink{class_climbing_turn_activity_a14f69b1de5f0b9feb062cd384993fab3}{aoaManipulator}});}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a9340481b12579f96c9b13f1a6ab865a0}{checkExactRotationTargetAchieved}}(\mbox{\hyperlink{class_climbing_turn_activity_a360d213fbfbe379e40d0a0585a2c1391}{currentBank}},\ 15f,\ \mbox{\hyperlink{class_climbing_turn_activity_a4b7ffbfc4e833460a324955e1c3ccb99}{stepAdvanceTolerance}}))}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_ac84beede734a15ab371aefe72d277952}{hasControllerOrigin}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a5699f8c6981e6eadc2693440de49344c}{rollInputLocked}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a14f69b1de5f0b9feb062cd384993fab3}{aoaManipulator}}.LerpBank(15f);}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a96bb773842c1fce0e460557bf7e64c1a}{PlayTimeLine}}(\mbox{\hyperlink{class_climbing_turn_activity_a3cf6bbd9e49a09b296d3164898051ad7}{postBankDirector}},\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pitchInputLocked\ =\ false;}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentStep\ =\ TurnStep.Stall;}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ uncomment\ after\ testing}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mas.OnExternalStepCompleted();}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_climbing_turn_activity_a68e3ee75f27c8baa473fcd7ffdb71978}{useMouseClicks}})}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a6330cf284d5311559517bb68214a57d4}{DebugMouseControlRoll}}(\mbox{\hyperlink{class_climbing_turn_activity_a9ec9a14540307394ae4f7e3b09030a45}{mouseRollSpeed}},\ \mbox{\hyperlink{class_climbing_turn_activity_a14f69b1de5f0b9feb062cd384993fab3}{aoaManipulator}});}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a5f89a4d089170b50bd97e725d00cff67}{controllerRollControl}}(\mbox{\hyperlink{class_climbing_turn_activity_aab8dccb97da8d87397f2e05a94a441b7}{bankSensitivity}},\ \mbox{\hyperlink{class_climbing_turn_activity_a14f69b1de5f0b9feb062cd384993fab3}{aoaManipulator}},\ \mbox{\hyperlink{class_climbing_turn_activity_ae6e07f55b4fa4af7dbb5fb46fc465d45}{rotationInput}},\ \mbox{\hyperlink{class_climbing_turn_activity_ac393484b97346ea54141469092e2b2bb}{deadZone}},\ \mbox{\hyperlink{class_climbing_turn_activity_a9ac758fc3379d1e1645409cc5f8561bb}{controllerOrigin}}.eulerAngles.z);}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00243}00243\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00244}00244\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00255}\mbox{\hyperlink{class_climbing_turn_activity_a00fa80aba361c3242460119c71b0bf1c}{00255}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_climbing_turn_activity_a00fa80aba361c3242460119c71b0bf1c}{HandleStall}}()}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00256}00256\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00257}00257\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_climbing_turn_activity_a1c02fc1b87b7c8fb483146685769af17}{pitchInputLocked}})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00258}00258\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00259}00259\ \ \ \ \ \ \ \ \ Quaternion\ currentRotation\ =\ \mbox{\hyperlink{class_climbing_turn_activity_ae6e07f55b4fa4af7dbb5fb46fc465d45}{rotationInput}}.action.ReadValue<Quaternion>();}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00260}00260\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00261}00261\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_climbing_turn_activity_ac84beede734a15ab371aefe72d277952}{hasControllerOrigin}})}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00262}00262\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a9ac758fc3379d1e1645409cc5f8561bb}{controllerOrigin}}\ =\ currentRotation;}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_ac84beede734a15ab371aefe72d277952}{hasControllerOrigin}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Captured\ controller\ origin\ (Stall):\ "{}}\ +\ \mbox{\hyperlink{class_climbing_turn_activity_a9ac758fc3379d1e1645409cc5f8561bb}{controllerOrigin}}.eulerAngles);}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00266}00266\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00267}00267\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00268}00268\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ currentPitch\ =\ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a937c930008f9e200cbb6324e3981fe7d}{getNormalisedPlanePitch}}(\mbox{\hyperlink{class_climbing_turn_activity_a14f69b1de5f0b9feb062cd384993fab3}{aoaManipulator}});}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00269}00269\ }
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00270}00270\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a9829fb7b76954e7918cb381c7cf5b91d}{checkRotationTargetAchieved}}(currentPitch,\ 25f,\ \mbox{\hyperlink{class_climbing_turn_activity_a4b7ffbfc4e833460a324955e1c3ccb99}{stepAdvanceTolerance}}))}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00271}00271\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a1c02fc1b87b7c8fb483146685769af17}{pitchInputLocked}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_ac84beede734a15ab371aefe72d277952}{hasControllerOrigin}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_climbing_turn_activity_a14f69b1de5f0b9feb062cd384993fab3}{aoaManipulator}}.LerpAOA(25f);}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a96bb773842c1fce0e460557bf7e64c1a}{PlayTimeLine}}(\mbox{\hyperlink{class_climbing_turn_activity_aedd0dbbf9695f6af334f72528a607df2}{postStallDirector}},\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Advance\ to\ next\ stage}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentStep\ =\ TurnStep.Complete;}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ uncomment\ after\ testing}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mas.OnExternalStepCompleted();}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00282}00282\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00283}00283\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00284}00284\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_climbing_turn_activity_a68e3ee75f27c8baa473fcd7ffdb71978}{useMouseClicks}})}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_ac7033b3da588d5137ce2a33c96943d1e}{DebugMouseControlPitch}}(\mbox{\hyperlink{class_climbing_turn_activity_a9ec9a14540307394ae4f7e3b09030a45}{mouseRollSpeed}},\ \mbox{\hyperlink{class_climbing_turn_activity_a14f69b1de5f0b9feb062cd384993fab3}{aoaManipulator}});}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_aab90abd5307ecc59d455eb96ea7577ac}{controllerPitchControl}}(\mbox{\hyperlink{class_climbing_turn_activity_aab8dccb97da8d87397f2e05a94a441b7}{bankSensitivity}},\ \mbox{\hyperlink{class_climbing_turn_activity_a14f69b1de5f0b9feb062cd384993fab3}{aoaManipulator}},\ \mbox{\hyperlink{class_climbing_turn_activity_ae6e07f55b4fa4af7dbb5fb46fc465d45}{rotationInput}},\ \mbox{\hyperlink{class_climbing_turn_activity_ac393484b97346ea54141469092e2b2bb}{deadZone}},\ \mbox{\hyperlink{class_climbing_turn_activity_a9ac758fc3379d1e1645409cc5f8561bb}{controllerOrigin}}.eulerAngles.x);}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00293}00293\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00294}00294\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_climbing_turn_activity_8cs_source_l00295}00295\ \}}
+
+\end{DoxyCode}

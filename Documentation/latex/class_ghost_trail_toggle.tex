@@ -1,0 +1,173 @@
+\doxysection{Ghost\+Trail\+Toggle Class Reference}
+\hypertarget{class_ghost_trail_toggle}{}\label{class_ghost_trail_toggle}\index{GhostTrailToggle@{GhostTrailToggle}}
+
+
+Handles the toggling of the ghost trail belonging to the DA-\/40 aircraft on and off.  
+
+
+
+
+Inheritance diagram for Ghost\+Trail\+Toggle\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{class_ghost_trail_toggle__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ghost\+Trail\+Toggle\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{class_ghost_trail_toggle__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Particle\+System \mbox{\hyperlink{class_ghost_trail_toggle_a1cba3e3415e1e512d30d638e8bd1ef24}{Ghost\+Trail}}
+\begin{DoxyCompactList}\small\item\em The ghost trail particle system. \end{DoxyCompactList}\item 
+Input\+Action\+Reference \mbox{\hyperlink{class_ghost_trail_toggle_a573c4dfc1a3db6a80de61905386131ef}{toggle\+Action}}
+\begin{DoxyCompactList}\small\item\em Reference to the Input\+Action that dictates the toggling of the ghost trail. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ghost_trail_toggle_a21958430b85e667cf6c3085760eba66c}{On\+Enable}} ()
+\begin{DoxyCompactList}\small\item\em Code to be executed at runtime, subscribes to input action so that ghost trail can be toggled on and off. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_trail_toggle_ae5ba296033c18331da31e0d81e0c5e1a}{On\+Disable}} ()
+\begin{DoxyCompactList}\small\item\em Code to be executed at termination of application, unsubscribes to input action. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_trail_toggle_ab53e88fcefbabd10173803a7636b0c9a}{On\+Toggle\+Pressed}} (Input\+Action.\+Callback\+Context ctx)
+\begin{DoxyCompactList}\small\item\em Handles the toggling of the ghost trail on and off. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_ghost_trail_toggle_a3999fa500d0535efa9262551125415e7}{ghost\+Trail\+Enabled}} = false
+\begin{DoxyCompactList}\small\item\em Flag determining if the ghost trail is currently enabled or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles the toggling of the ghost trail belonging to the DA-\/40 aircraft on and off. 
+
+\begin{DoxyAuthor}{Author}
+Caleb Martin \texorpdfstring{$\vert$}{|} \href{mailto:marcy066@mymail.unisa.edu.au}{\texttt{marcy066@mymail.\+unisa.\+edu.\+au}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_ghost_trail_toggle_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_ghost_trail_toggle_8cs_source}{Ghost\+Trail\+Toggle.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_ghost_trail_toggle_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ghost_trail_toggle_ae5ba296033c18331da31e0d81e0c5e1a}\index{GhostTrailToggle@{GhostTrailToggle}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!GhostTrailToggle@{GhostTrailToggle}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily \label{class_ghost_trail_toggle_ae5ba296033c18331da31e0d81e0c5e1a} 
+void Ghost\+Trail\+Toggle.\+On\+Disable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Code to be executed at termination of application, unsubscribes to input action. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_ghost_trail_toggle_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_ghost_trail_toggle_8cs_source}{Ghost\+Trail\+Toggle.\+cs}}.
+
+\Hypertarget{class_ghost_trail_toggle_a21958430b85e667cf6c3085760eba66c}\index{GhostTrailToggle@{GhostTrailToggle}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!GhostTrailToggle@{GhostTrailToggle}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily \label{class_ghost_trail_toggle_a21958430b85e667cf6c3085760eba66c} 
+void Ghost\+Trail\+Toggle.\+On\+Enable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Code to be executed at runtime, subscribes to input action so that ghost trail can be toggled on and off. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_ghost_trail_toggle_8cs_source_l00022}{22}} of file \mbox{\hyperlink{_ghost_trail_toggle_8cs_source}{Ghost\+Trail\+Toggle.\+cs}}.
+
+\Hypertarget{class_ghost_trail_toggle_ab53e88fcefbabd10173803a7636b0c9a}\index{GhostTrailToggle@{GhostTrailToggle}!OnTogglePressed@{OnTogglePressed}}
+\index{OnTogglePressed@{OnTogglePressed}!GhostTrailToggle@{GhostTrailToggle}}
+\doxysubsubsection{\texorpdfstring{OnTogglePressed()}{OnTogglePressed()}}
+{\footnotesize\ttfamily \label{class_ghost_trail_toggle_ab53e88fcefbabd10173803a7636b0c9a} 
+void Ghost\+Trail\+Toggle.\+On\+Toggle\+Pressed (\begin{DoxyParamCaption}\item[{Input\+Action.\+Callback\+Context}]{ctx}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles the toggling of the ghost trail on and off. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & The callback context provided by the Input\+Action to interpret input. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_ghost_trail_toggle_8cs_source_l00043}{43}} of file \mbox{\hyperlink{_ghost_trail_toggle_8cs_source}{Ghost\+Trail\+Toggle.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_ghost_trail_toggle_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ghost_trail_toggle_a1cba3e3415e1e512d30d638e8bd1ef24}\index{GhostTrailToggle@{GhostTrailToggle}!GhostTrail@{GhostTrail}}
+\index{GhostTrail@{GhostTrail}!GhostTrailToggle@{GhostTrailToggle}}
+\doxysubsubsection{\texorpdfstring{GhostTrail}{GhostTrail}}
+{\footnotesize\ttfamily \label{class_ghost_trail_toggle_a1cba3e3415e1e512d30d638e8bd1ef24} 
+Particle\+System Ghost\+Trail\+Toggle.\+Ghost\+Trail}
+
+
+
+The ghost trail particle system. 
+
+
+
+Definition at line \mbox{\hyperlink{_ghost_trail_toggle_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_ghost_trail_toggle_8cs_source}{Ghost\+Trail\+Toggle.\+cs}}.
+
+\Hypertarget{class_ghost_trail_toggle_a3999fa500d0535efa9262551125415e7}\index{GhostTrailToggle@{GhostTrailToggle}!ghostTrailEnabled@{ghostTrailEnabled}}
+\index{ghostTrailEnabled@{ghostTrailEnabled}!GhostTrailToggle@{GhostTrailToggle}}
+\doxysubsubsection{\texorpdfstring{ghostTrailEnabled}{ghostTrailEnabled}}
+{\footnotesize\ttfamily \label{class_ghost_trail_toggle_a3999fa500d0535efa9262551125415e7} 
+bool Ghost\+Trail\+Toggle.\+ghost\+Trail\+Enabled = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag determining if the ghost trail is currently enabled or not. 
+
+
+
+Definition at line \mbox{\hyperlink{_ghost_trail_toggle_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_ghost_trail_toggle_8cs_source}{Ghost\+Trail\+Toggle.\+cs}}.
+
+\Hypertarget{class_ghost_trail_toggle_a573c4dfc1a3db6a80de61905386131ef}\index{GhostTrailToggle@{GhostTrailToggle}!toggleAction@{toggleAction}}
+\index{toggleAction@{toggleAction}!GhostTrailToggle@{GhostTrailToggle}}
+\doxysubsubsection{\texorpdfstring{toggleAction}{toggleAction}}
+{\footnotesize\ttfamily \label{class_ghost_trail_toggle_a573c4dfc1a3db6a80de61905386131ef} 
+Input\+Action\+Reference Ghost\+Trail\+Toggle.\+toggle\+Action}
+
+
+
+Reference to the Input\+Action that dictates the toggling of the ghost trail. 
+
+
+
+Definition at line \mbox{\hyperlink{_ghost_trail_toggle_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_ghost_trail_toggle_8cs_source}{Ghost\+Trail\+Toggle.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Misc\+Behaviour/\mbox{\hyperlink{_ghost_trail_toggle_8cs}{Ghost\+Trail\+Toggle.\+cs}}\end{DoxyCompactItemize}

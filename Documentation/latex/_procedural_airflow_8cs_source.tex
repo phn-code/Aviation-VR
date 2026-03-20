@@ -1,0 +1,588 @@
+\doxysection{Procedural\+Airflow.\+cs}
+\hypertarget{_procedural_airflow_8cs_source}{}\label{_procedural_airflow_8cs_source}\index{Assets/Scripts/DA\_40\_SpecialFeatures/ProceduralAirflow.cs@{Assets/Scripts/DA\_40\_SpecialFeatures/ProceduralAirflow.cs}}
+\mbox{\hyperlink{_procedural_airflow_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00017}00017\ [ExecuteAlways]}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00018}\mbox{\hyperlink{class_procedural_airflow}{00018}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_procedural_airflow}{ProceduralAirflow}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//\ Enable/disable\ bool}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00022}00022\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}"{}})]}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00023}\mbox{\hyperlink{class_procedural_airflow_a6fec0fa25a6905132421eb792db4d5d8}{00023}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_procedural_airflow_a6fec0fa25a6905132421eb792db4d5d8}{enableParticleSystem}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00024}\mbox{\hyperlink{class_procedural_airflow_aea8d91982058402643a892ccfab82484}{00024}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_procedural_airflow_aea8d91982058402643a892ccfab82484}{enableForceArrows}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00025}\mbox{\hyperlink{class_procedural_airflow_a6380504cf984cf8cd8efb186238dfdf9}{00025}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_procedural_airflow_a6380504cf984cf8cd8efb186238dfdf9}{enableCentreOfPressure}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//\ Wing\ references}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00028}00028\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Wing\ References"{}})]}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00029}\mbox{\hyperlink{class_procedural_airflow_a32c9cc93a9cbe1a4bd158c855c7d71c3}{00029}}\ \ \ \ \ \textcolor{keyword}{public}\ Transform\ \mbox{\hyperlink{class_procedural_airflow_a32c9cc93a9cbe1a4bd158c855c7d71c3}{leadingEdge}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00030}\mbox{\hyperlink{class_procedural_airflow_ac22293941f23eae5b6ace878af8172d6}{00030}}\ \ \ \ \ \textcolor{keyword}{public}\ Transform\ \mbox{\hyperlink{class_procedural_airflow_ac22293941f23eae5b6ace878af8172d6}{trailingEdge}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00032}00032\ \ \ \ \ \textcolor{comment}{//\ Arrow\ anchor\ point\ references}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00033}00033\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Force\ Arrow\ Anchor\ Points"{}})]}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00034}\mbox{\hyperlink{class_procedural_airflow_a2e32b0536075dda68f06ec22d1f95dc1}{00034}}\ \ \ \ \ \textcolor{keyword}{public}\ Transform\ \mbox{\hyperlink{class_procedural_airflow_a2e32b0536075dda68f06ec22d1f95dc1}{liftAnchor}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00035}\mbox{\hyperlink{class_procedural_airflow_a82fab4f32b18d76896a2659406e72f77}{00035}}\ \ \ \ \ \textcolor{keyword}{public}\ Transform\ \mbox{\hyperlink{class_procedural_airflow_a82fab4f32b18d76896a2659406e72f77}{weightAnchor}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00036}\mbox{\hyperlink{class_procedural_airflow_afc09dede145d3c1ef3b35d5b9984f7d8}{00036}}\ \ \ \ \ \textcolor{keyword}{public}\ Transform\ \mbox{\hyperlink{class_procedural_airflow_afc09dede145d3c1ef3b35d5b9984f7d8}{thrusAnchor}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00037}\mbox{\hyperlink{class_procedural_airflow_a029cbe72dfb6da5e7524b9c8f5e42c55}{00037}}\ \ \ \ \ \textcolor{keyword}{public}\ Transform\ \mbox{\hyperlink{class_procedural_airflow_a029cbe72dfb6da5e7524b9c8f5e42c55}{dragAnchor}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00039}00039\ \ \ \ \ \textcolor{comment}{//\ Arrow\ Settings}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00040}00040\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Arrow\ Settings"{}})]}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00041}\mbox{\hyperlink{class_procedural_airflow_a4a5f1d2fe1d182db13e4cd66aeec9fa4}{00041}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_procedural_airflow_a4a5f1d2fe1d182db13e4cd66aeec9fa4}{defaultArrowSize}}\ =\ 1f;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00042}\mbox{\hyperlink{class_procedural_airflow_a4c98c4ce23a3e96ae487628aac356054}{00042}}\ \ \ \ \ \textcolor{keyword}{public}\ Material\ \mbox{\hyperlink{class_procedural_airflow_a4c98c4ce23a3e96ae487628aac356054}{forceArrowMaterial}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00043}\mbox{\hyperlink{class_procedural_airflow_a7ea2d9168a074a40176a876d972dc4b7}{00043}}\ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_procedural_airflow_a7ea2d9168a074a40176a876d972dc4b7}{arrowHeadModel}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00045}00045\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}COP\ Variables"{}})]}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00046}\mbox{\hyperlink{class_procedural_airflow_aee503d8b6da33b879bc9cf8535a18c8f}{00046}}\ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_procedural_airflow_aee503d8b6da33b879bc9cf8535a18c8f}{copModel}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00048}00048\ \ \ \ \ \textcolor{comment}{//\ Particle\ system\ settings}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00049}00049\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Particle\ System\ Settings"{}})]}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00050}\mbox{\hyperlink{class_procedural_airflow_aafdc546a334fd32472fd9049a24ce243}{00050}}\ \ \ \ \ \textcolor{keyword}{public}\ ParticleSystem\ \mbox{\hyperlink{class_procedural_airflow_aafdc546a334fd32472fd9049a24ce243}{ps}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00051}\mbox{\hyperlink{class_procedural_airflow_aab2f990469ad23f7cc73fc25aca5003f}{00051}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_procedural_airflow_aab2f990469ad23f7cc73fc25aca5003f}{emissionRate}}\ =\ 20f;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00052}\mbox{\hyperlink{class_procedural_airflow_a1e138f3b30f7500ef57e433a3d0199a2}{00052}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_procedural_airflow_a1e138f3b30f7500ef57e433a3d0199a2}{forwardSpawnDistance}}\ =\ 0.5f;\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00053}\mbox{\hyperlink{class_procedural_airflow_a010273564fe39d29651c19c8f7e3e33f}{00053}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_procedural_airflow_a010273564fe39d29651c19c8f7e3e33f}{particleSize}}\ =\ 0.05f;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00054}\mbox{\hyperlink{class_procedural_airflow_a1f4c377f27c3de16d1dc693f2cbec0dc}{00054}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_procedural_airflow_a1f4c377f27c3de16d1dc693f2cbec0dc}{maxParticles}}\ =\ 1000;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00056}00056\ \ \ \ \ \textcolor{comment}{//\ Flow\ speed\ bounds}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00057}00057\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Flow\ Speed\ Bounds"{}})]}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00058}\mbox{\hyperlink{class_procedural_airflow_a35ccc55c5e6878e68d827fe559f5d3f6}{00058}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_procedural_airflow_a35ccc55c5e6878e68d827fe559f5d3f6}{topMaxSpeed}}\ =\ 2f;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00059}\mbox{\hyperlink{class_procedural_airflow_a8f76b6f45346cec39e4a2112a198ac36}{00059}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_procedural_airflow_a8f76b6f45346cec39e4a2112a198ac36}{topMinSpeed}}\ =\ 1.5f;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00060}\mbox{\hyperlink{class_procedural_airflow_a8e6c936393cb9896835cc41a13798d60}{00060}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_procedural_airflow_a8e6c936393cb9896835cc41a13798d60}{bottomMaxSpeed}}\ =\ 1f;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00061}\mbox{\hyperlink{class_procedural_airflow_a685db6ec440818064c0f827152f733ca}{00061}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_procedural_airflow_a685db6ec440818064c0f827152f733ca}{bottomMinSpeed}}\ =\ 0.5f;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00063}00063\ \ \ \ \ \textcolor{comment}{//\ Simulation\ settings}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00064}00064\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Simulation\ Settings"{}})]}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00065}\mbox{\hyperlink{class_procedural_airflow_a7f39168089285eb0688113a105365c1f}{00065}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_procedural_airflow_a7f39168089285eb0688113a105365c1f}{airSeperationStrength}}\ =\ 0.5f;\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00066}\mbox{\hyperlink{class_procedural_airflow_abe4b22aa654acc664213473b5c504aaf}{00066}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_procedural_airflow_abe4b22aa654acc664213473b5c504aaf}{trailDownForcePercent}}\ =\ 0.2f;\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00067}\mbox{\hyperlink{class_procedural_airflow_a27f911dda96acb389d59664a1fa043ff}{00067}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_procedural_airflow_a27f911dda96acb389d59664a1fa043ff}{useFixedDeltaInEditor}}\ =\ \textcolor{keyword}{true};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00068}\mbox{\hyperlink{class_procedural_airflow_aa7332fa6d8c5a124edcaf33fd964d101}{00068}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_procedural_airflow_aa7332fa6d8c5a124edcaf33fd964d101}{editorDelta}}\ =\ 1f\ /\ 60f;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00070}00070\ \ \ \ \ \textcolor{comment}{//\ Internal\ data}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00071}\mbox{\hyperlink{class_procedural_airflow_a40b8421c4b00fb8ae8dec30a5859157e}{00071}}\ \ \ \ \ \textcolor{keyword}{private}\ ParticleSystem.Particle[]\ \mbox{\hyperlink{class_procedural_airflow_a40b8421c4b00fb8ae8dec30a5859157e}{buffer}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00072}\mbox{\hyperlink{class_procedural_airflow_a9183f5c4df257ca40e65cc63e9800c48}{00072}}\ \ \ \ \ \textcolor{keyword}{private}\ List<Vector3>\ \mbox{\hyperlink{class_procedural_airflow_a9183f5c4df257ca40e65cc63e9800c48}{velocities}}\ =\ \textcolor{keyword}{new}\ List<Vector3>();\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00073}\mbox{\hyperlink{class_procedural_airflow_accc798171f724404dbbfa837ce3b4932}{00073}}\ \ \ \ \ \textcolor{keyword}{private}\ List<bool>\ \mbox{\hyperlink{class_procedural_airflow_accc798171f724404dbbfa837ce3b4932}{sideFlags}}\ =\ \textcolor{keyword}{new}\ List<bool>();\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00074}\mbox{\hyperlink{class_procedural_airflow_a83cbb8590a5fded67bb0d0d753728e9a}{00074}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_procedural_airflow_a83cbb8590a5fded67bb0d0d753728e9a}{emissionsNextFrame}}\ =\ 0f;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00075}\mbox{\hyperlink{class_procedural_airflow_a87b3e127c27ec56ceb460c04cfbab777}{00075}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_procedural_airflow_a87b3e127c27ec56ceb460c04cfbab777}{rotation}}\ =\ 0f;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00076}00076\ \ \ \ \ \textcolor{comment}{//\ Arrows}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00077}\mbox{\hyperlink{class_procedural_airflow_aa9e1dfd501cb31685c954fd616e37fcf}{00077}}\ \ \ \ \ \textcolor{keyword}{private}\ GameObject\ \mbox{\hyperlink{class_procedural_airflow_aa9e1dfd501cb31685c954fd616e37fcf}{liftArrow}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00078}\mbox{\hyperlink{class_procedural_airflow_a8dae8e4a225a83394038c38b81a57ad6}{00078}}\ \ \ \ \ \textcolor{keyword}{private}\ GameObject\ \mbox{\hyperlink{class_procedural_airflow_a8dae8e4a225a83394038c38b81a57ad6}{weightArrow}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00079}\mbox{\hyperlink{class_procedural_airflow_a3d47a854cdfe91d14b2105e3ff939006}{00079}}\ \ \ \ \ \textcolor{keyword}{private}\ GameObject\ \mbox{\hyperlink{class_procedural_airflow_a3d47a854cdfe91d14b2105e3ff939006}{thrustArrow}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00080}\mbox{\hyperlink{class_procedural_airflow_ab99b0ff8df8181961f69dab7e53cc17f}{00080}}\ \ \ \ \ \textcolor{keyword}{private}\ GameObject\ \mbox{\hyperlink{class_procedural_airflow_ab99b0ff8df8181961f69dab7e53cc17f}{dragArrow}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00081}00081\ \ \ \ \ \textcolor{comment}{//\ AOA\ stages}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00082}\mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{00082}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}[]\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}\ =\ \{3f,\ 7f,\ 10f,\ 14f,\ 16f,\ 18f\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00083}00083\ \ \ \ \ \textcolor{comment}{//\ multipliers\ for\ default\ arrow\ size}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00084}00084\ \ \ \ \ \textcolor{comment}{//\ used\ to\ lerp\ arro\ sizes\ based\ on\ AOA}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00085}\mbox{\hyperlink{class_procedural_airflow_a57f1444731855efb7b948cb0440f7fea}{00085}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}[]\ \mbox{\hyperlink{class_procedural_airflow_a57f1444731855efb7b948cb0440f7fea}{liftValues}}\ =\ \{\ 1.0f,\ 1.2f,\ 1.5f,\ 1.7f,\ 1.6f,\ 0.8f\ \};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00086}\mbox{\hyperlink{class_procedural_airflow_a4a53fbe3ac2a76bb4bf67391b67e3367}{00086}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}[]\ \mbox{\hyperlink{class_procedural_airflow_a4a53fbe3ac2a76bb4bf67391b67e3367}{dragValues}}\ =\ \{\ 1.0f,\ 1.2f,\ 1.5f,\ 1.7f,\ 2.0f,\ 2.5f\ \};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00087}\mbox{\hyperlink{class_procedural_airflow_a82e6315db54d7f343b9b1b4172210886}{00087}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}[]\ \mbox{\hyperlink{class_procedural_airflow_a82e6315db54d7f343b9b1b4172210886}{thrustValues}}\ =\ \{\ 1.0f,\ 1.2f,\ 1.5f,\ 1.6f,\ 1.0f,\ 0.6f\ \};\ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00089}00089\ \ \ \ \ \textcolor{comment}{//\ cop\ percentages\ from\ leading\ edge}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00090}\mbox{\hyperlink{class_procedural_airflow_a3e22a9edb2de537e6961119656dd244d}{00090}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}[]\ \mbox{\hyperlink{class_procedural_airflow_a3e22a9edb2de537e6961119656dd244d}{copValues}}\ =\ \{\ 0.25f,\ 0.24f,\ 0.22f,\ 0.20f,\ 0.20f,\ 0.45f\ \};}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00092}00092\ \ \ \ \ \textcolor{comment}{//\ COP\ indicator}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00093}\mbox{\hyperlink{class_procedural_airflow_adf5bba10e6b97f32033242a36fa73b89}{00093}}\ \ \ \ \ \textcolor{keyword}{private}\ GameObject\ \mbox{\hyperlink{class_procedural_airflow_adf5bba10e6b97f32033242a36fa73b89}{copGameObject}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00094}00094\ \ \ \ \ \textcolor{comment}{//\ Initialization}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00101}\mbox{\hyperlink{class_procedural_airflow_a2b5762fd47eca82fd2b02b4ed56aeee7}{00101}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_procedural_airflow_a2b5762fd47eca82fd2b02b4ed56aeee7}{Awake}}()}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00102}00102\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a33d3beed08a30832ea8a8f767dd156c4}{InitializeParticleSystem}}();}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a40b8421c4b00fb8ae8dec30a5859157e}{buffer}}\ =\ \textcolor{keyword}{new}\ ParticleSystem.Particle[\mbox{\hyperlink{class_procedural_airflow_a1f4c377f27c3de16d1dc693f2cbec0dc}{maxParticles}}];}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00105}00105\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00114}\mbox{\hyperlink{class_procedural_airflow_a33d3beed08a30832ea8a8f767dd156c4}{00114}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_procedural_airflow_a33d3beed08a30832ea8a8f767dd156c4}{InitializeParticleSystem}}()}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00115}00115\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_procedural_airflow_aafdc546a334fd32472fd9049a24ce243}{ps}}\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_aafdc546a334fd32472fd9049a24ce243}{ps}}\ =\ gameObject.AddComponent<ParticleSystem>();}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ var\ main\ =\ \mbox{\hyperlink{class_procedural_airflow_aafdc546a334fd32472fd9049a24ce243}{ps}}.main;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ main.maxParticles\ =\ \mbox{\hyperlink{class_procedural_airflow_a1f4c377f27c3de16d1dc693f2cbec0dc}{maxParticles}};}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Particle\ lifetime\ will\ be\ manually\ controlled\ and\ a\ extended\ lifetime\ is\ to\ allow\ removal\ in\ edgecases}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ main.startLifetime\ =\ 15f;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ main.startSize\ =\ \mbox{\hyperlink{class_procedural_airflow_a010273564fe39d29651c19c8f7e3e33f}{particleSize}};}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ main.startSpeed\ =\ 0f;\ \textcolor{comment}{//\ we\ control\ manually}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ main.simulationSpace\ =\ ParticleSystemSimulationSpace.World;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ main.playOnAwake\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ var\ emission\ =\ \mbox{\hyperlink{class_procedural_airflow_aafdc546a334fd32472fd9049a24ce243}{ps}}.emission;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ emission.enabled\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ manual\ emission}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ var\ shape\ =\ \mbox{\hyperlink{class_procedural_airflow_aafdc546a334fd32472fd9049a24ce243}{ps}}.shape;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ shape.enabled\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ spawn\ at\ exact\ positions}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//TODO\ add\ material\ creation}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}ParticleSystem\ auto\ created."{}});}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ clear\ previous\ lists}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a9183f5c4df257ca40e65cc63e9800c48}{velocities}}.Clear();}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_accc798171f724404dbbfa837ce3b4932}{sideFlags}}.Clear();}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00143}00143\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00150}\mbox{\hyperlink{class_procedural_airflow_a33c45b9ffcdedb5e3457936970b6d8ff}{00150}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_procedural_airflow_a33c45b9ffcdedb5e3457936970b6d8ff}{Update}}()}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00151}00151\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_procedural_airflow_a32c9cc93a9cbe1a4bd158c855c7d71c3}{leadingEdge}}\ ==\ \textcolor{keyword}{null}\ ||\ \mbox{\hyperlink{class_procedural_airflow_ac22293941f23eae5b6ace878af8172d6}{trailingEdge}}\ ==\ \textcolor{keyword}{null}\ ||\ \mbox{\hyperlink{class_procedural_airflow_aafdc546a334fd32472fd9049a24ce243}{ps}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_procedural_airflow_a40b8421c4b00fb8ae8dec30a5859157e}{buffer}}\ ==\ \textcolor{keyword}{null}\ ||\ \mbox{\hyperlink{class_procedural_airflow_a40b8421c4b00fb8ae8dec30a5859157e}{buffer}}.Length\ !=\ \mbox{\hyperlink{class_procedural_airflow_a1f4c377f27c3de16d1dc693f2cbec0dc}{maxParticles}})}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a40b8421c4b00fb8ae8dec30a5859157e}{buffer}}\ =\ \textcolor{keyword}{new}\ ParticleSystem.Particle[\mbox{\hyperlink{class_procedural_airflow_a1f4c377f27c3de16d1dc693f2cbec0dc}{maxParticles}}];}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dt\ =\ Application.isPlaying\ ?\ Time.deltaTime\ :\ (\mbox{\hyperlink{class_procedural_airflow_a27f911dda96acb389d59664a1fa043ff}{useFixedDeltaInEditor}}\ ?\ \mbox{\hyperlink{class_procedural_airflow_aa7332fa6d8c5a124edcaf33fd964d101}{editorDelta}}\ :\ Time.deltaTime);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_procedural_airflow_a6fec0fa25a6905132421eb792db4d5d8}{enableParticleSystem}})}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Emit\ new\ particles}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a5709163e184898993a5b68823da845cf}{EmitParticles}}(dt);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ existing\ particles}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_af37e0357f7910dde24bee472e113f073}{UpdateParticles}}(dt);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log("{}Are\ force\ Arrows\ Enabled?\ "{}\ +\ enableForceArrows);}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_procedural_airflow_aea8d91982058402643a892ccfab82484}{enableForceArrows}})}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Fix\ inconsistent\ toggle\ behaviour}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ a\ check\ for\ if\ arrows\ are\ enabled\ but\ not\ instantiated}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ missingArrow\ =\ \mbox{\hyperlink{class_procedural_airflow_aa9e1dfd501cb31685c954fd616e37fcf}{liftArrow}}\ ==\ \textcolor{keyword}{null}\ ||\ \mbox{\hyperlink{class_procedural_airflow_a8dae8e4a225a83394038c38b81a57ad6}{weightArrow}}\ ==\ \textcolor{keyword}{null}\ ||\ \mbox{\hyperlink{class_procedural_airflow_a3d47a854cdfe91d14b2105e3ff939006}{thrustArrow}}\ ==\ \textcolor{keyword}{null}\ ||\ \mbox{\hyperlink{class_procedural_airflow_ab99b0ff8df8181961f69dab7e53cc17f}{dragArrow}}\ ==\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ force\ arrows}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ newRotation\ =\ transform.rotation.eulerAngles.z;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (missingArrow\ ||\ \mbox{\hyperlink{class_procedural_airflow_a87b3e127c27ec56ceb460c04cfbab777}{rotation}}\ !=\ newRotation)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log("{}Is\ this\ working"{});}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a87b3e127c27ec56ceb460c04cfbab777}{rotation}}\ =\ newRotation;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a16f833bdcce098119c9aa0bc9c3c058f}{UpdateForceArrows}}();}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a2ad553da31bb630067c0b0d6298d6787}{DestroyPreviousArrows}}();}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log(\$"{}lift\ arrow:\ \{liftArrow\ ==\ null\}\ weight\ arrow:\ \{weightArrow\ ==\ null\}\ thrust\ arrow:\ \{thrustArrow\ ==\ null\}\ drag\ arrow:\ \{dragArrow\ ==\ null\}"{});}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_procedural_airflow_a6380504cf984cf8cd8efb186238dfdf9}{enableCentreOfPressure}})}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_ae53f0b31ccdb2645ee7a854fbde25676}{updateCentreOfPressure}}();}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a080635f7f18f77802d45cee917c5174e}{destroyCentreOfPressure}}();}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ensure\ particle\ system\ is\ playing}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_procedural_airflow_aafdc546a334fd32472fd9049a24ce243}{ps}}.isPlaying)\ \mbox{\hyperlink{class_procedural_airflow_aafdc546a334fd32472fd9049a24ce243}{ps}}.Play();}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Editor\ simulation}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Application.isPlaying)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_aafdc546a334fd32472fd9049a24ce243}{ps}}.Simulate(dt,\ \textcolor{keyword}{true},\ \textcolor{keyword}{false},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00204}00204\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00213}\mbox{\hyperlink{class_procedural_airflow_a5709163e184898993a5b68823da845cf}{00213}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_procedural_airflow_a5709163e184898993a5b68823da845cf}{EmitParticles}}(\textcolor{keywordtype}{float}\ dt)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00214}00214\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ calculate\ particles\ number\ of\ particles\ to\ spawn}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a83cbb8590a5fded67bb0d0d753728e9a}{emissionsNextFrame}}\ +=\ \mbox{\hyperlink{class_procedural_airflow_aab2f990469ad23f7cc73fc25aca5003f}{emissionRate}}\ *\ dt;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00218}00218\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ get\ integer\ value\ of\ particle\ spawn\ requirements\ and\ decrement\ counter}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ particlesToEmit\ =\ Mathf.FloorToInt(\mbox{\hyperlink{class_procedural_airflow_a83cbb8590a5fded67bb0d0d753728e9a}{emissionsNextFrame}});}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a83cbb8590a5fded67bb0d0d753728e9a}{emissionsNextFrame}}\ -\/=\ particlesToEmit;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Return\ if\ no\ particles\ to\ spawn}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (particlesToEmit\ <=\ 0)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00224}00224\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ get\ normalised\ vector\ of\ the\ chord}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ Vector3\ chordDir\ =\ (trailingEdge.position\ -\/\ \mbox{\hyperlink{class_procedural_airflow_a32c9cc93a9cbe1a4bd158c855c7d71c3}{leadingEdge}}.position).normalized;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ particlesToEmit;\ i++)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ spawn\ position\ of\ the\ particle\ }}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ var\ emitParams\ =\ \textcolor{keyword}{new}\ ParticleSystem.EmitParams();}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ spawnPos\ =\ leadingEdge.position\ -\/\ chordDir\ *\ \mbox{\hyperlink{class_procedural_airflow_a1e138f3b30f7500ef57e433a3d0199a2}{forwardSpawnDistance}};}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ emitParams.position\ =\ spawnPos;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ emitParams.startLifetime\ =\ 5f;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ emitParams.startSize\ =\ \mbox{\hyperlink{class_procedural_airflow_a010273564fe39d29651c19c8f7e3e33f}{particleSize}};}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ toLeadingEdge\ =\ (leadingEdge.position\ -\/\ spawnPos).normalized;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ emitParams.velocity\ =\ toLeadingEdge\ *\ Random.Range(\mbox{\hyperlink{class_procedural_airflow_a8f76b6f45346cec39e4a2112a198ac36}{topMinSpeed}},\ \mbox{\hyperlink{class_procedural_airflow_a35ccc55c5e6878e68d827fe559f5d3f6}{topMaxSpeed}});}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ randomly\ assign\ particle\ as\ above\ or\ below\ the\ chord}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ set\ random\ velocity\ between\ top\ and\ min\ speeds\ for\ update\ loop\ conditions}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ above\ =\ Random.value\ >\ 0.2f;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ velocity;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (above)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ airflowDir\ =\ chordDir;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ airflowDir.y\ *=\ \mbox{\hyperlink{class_procedural_airflow_a7f39168089285eb0688113a105365c1f}{airSeperationStrength}};}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ airflowDir\ =\ airflowDir.normalized;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ velocity\ =\ airflowDir\ *\ Random.Range(\mbox{\hyperlink{class_procedural_airflow_a8f76b6f45346cec39e4a2112a198ac36}{topMinSpeed}},\ \mbox{\hyperlink{class_procedural_airflow_a35ccc55c5e6878e68d827fe559f5d3f6}{topMaxSpeed}});}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_accc798171f724404dbbfa837ce3b4932}{sideFlags}}.Add(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ velocity\ =\ chordDir\ *\ Random.Range(\mbox{\hyperlink{class_procedural_airflow_a685db6ec440818064c0f827152f733ca}{bottomMinSpeed}},\ \mbox{\hyperlink{class_procedural_airflow_a8e6c936393cb9896835cc41a13798d60}{bottomMaxSpeed}});}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_accc798171f724404dbbfa837ce3b4932}{sideFlags}}.Add(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00258}00258\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Store\ the\ per\ particle\ velocities}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a9183f5c4df257ca40e65cc63e9800c48}{velocities}}.Add(velocity);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00261}00261\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ add\ particles\ to\ local\ buffer\ and\ particle\ system}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_aafdc546a334fd32472fd9049a24ce243}{ps}}.Emit(emitParams,\ 1);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00264}00264\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00266}00266\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00267}00267\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00278}\mbox{\hyperlink{class_procedural_airflow_af37e0357f7910dde24bee472e113f073}{00278}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_procedural_airflow_af37e0357f7910dde24bee472e113f073}{UpdateParticles}}(\textcolor{keywordtype}{float}\ dt)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00279}00279\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00280}00280\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ \mbox{\hyperlink{class_procedural_airflow_aafdc546a334fd32472fd9049a24ce243}{ps}}.GetParticles(\mbox{\hyperlink{class_procedural_airflow_a40b8421c4b00fb8ae8dec30a5859157e}{buffer}});}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00281}00281\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00282}00282\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ local\ position\ of\ leading\ and\ trailing\ edges}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00283}00283\ \ \ \ \ \ \ \ \ Vector3\ localLeading\ =\ transform.InverseTransformPoint(\mbox{\hyperlink{class_procedural_airflow_a32c9cc93a9cbe1a4bd158c855c7d71c3}{leadingEdge}}.position);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00284}00284\ \ \ \ \ \ \ \ \ Vector3\ localTrailing\ =\ transform.InverseTransformPoint(\mbox{\hyperlink{class_procedural_airflow_ac22293941f23eae5b6ace878af8172d6}{trailingEdge}}.position);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00285}00285\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00286}00286\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ calculate\ chord\ direction\ in\ world\ space}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00287}00287\ \ \ \ \ \ \ \ \ Vector3\ chordDir\ =\ (trailingEdge.position\ -\/\ \mbox{\hyperlink{class_procedural_airflow_a32c9cc93a9cbe1a4bd158c855c7d71c3}{leadingEdge}}.position).normalized;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00288}00288\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ calculate\ the\ chord\ length\ in\ local\ space}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00289}00289\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ chordLengthLocal\ =\ Vector3.Distance(localTrailing,\ localLeading);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00290}00290\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00291}00291\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ determine\ the\ chord\ orientation\ in\ local\ space.\ sign\ determines\ if\ teh\ trailing\ edge\ is\ at\ +x\ or\ -\/x\ in\ local\ space}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00292}00292\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sign\ =\ Mathf.Sign(localTrailing.x\ -\/\ localLeading.x);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00293}00293\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00294}00294\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ calculate\ poiints\ for\ particle\ direction\ changes}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00295}00295\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ deflectionStart\ =\ chordLengthLocal\ *\ .10f;\ \ \ \ \ \textcolor{comment}{//\ 20\%\ of\ the\ chord\ length\ from\ leading\ edge}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00296}00296\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ trailDistance\ =\ chordLengthLocal\ *\ .50f;\ \ \ \ \ \ \ \textcolor{comment}{//\ 50\%\ of\ the\ chord\ length\ past\ trailing\ edge}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00297}00297\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00298}00298\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Loop\ over\ all\ active\ particles}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00299}00299\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00300}00300\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ get\ particle\ world\ position\ and\ convert\ to\ local\ position}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ particleWorld\ =\ \mbox{\hyperlink{class_procedural_airflow_a40b8421c4b00fb8ae8dec30a5859157e}{buffer}}[i].position;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ particleLocal\ =\ transform.InverseTransformPoint(particleWorld);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00304}00304\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Determines\ a\ particles\ position\ along\ the\ chord\ /\ displacement\ from\ leading\ edge}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ sign\ ensures\ distances\ along\ the\ chord\ are\ positive}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ alongChord\ =\ (particleLocal.x\ -\/\ localLeading.x)\ *\ sign;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00308}00308\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ check\ is\ particles\ are\ over\ trail\ distance}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (alongChord\ >\ chordLengthLocal\ +\ trailDistance)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ particle\ by\ swapping\ with\ last\ and\ reducing\ count}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ lastIdx\ =\ count\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ lastIdx)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a40b8421c4b00fb8ae8dec30a5859157e}{buffer}}[i]\ =\ \mbox{\hyperlink{class_procedural_airflow_a40b8421c4b00fb8ae8dec30a5859157e}{buffer}}[lastIdx];}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a9183f5c4df257ca40e65cc63e9800c48}{velocities}}[i]\ =\ \mbox{\hyperlink{class_procedural_airflow_a9183f5c4df257ca40e65cc63e9800c48}{velocities}}[lastIdx];}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_accc798171f724404dbbfa837ce3b4932}{sideFlags}}[i]\ =\ \mbox{\hyperlink{class_procedural_airflow_accc798171f724404dbbfa837ce3b4932}{sideFlags}}[lastIdx];}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count-\/-\/;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a9183f5c4df257ca40e65cc63e9800c48}{velocities}}.RemoveAt(lastIdx);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_accc798171f724404dbbfa837ce3b4932}{sideFlags}}.RemoveAt(lastIdx);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00325}00325\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ particle\ is\ at\ or\ past\ deflection\ point\ deflect\ based\ on\ side\ flags}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (alongChord\ >=\ -\/deflectionStart\ \&\&\ alongChord\ <=\ 0f)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Deflect\ relative\ to\ planes\ local\ up\ }}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ offsetTargetLocal;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_procedural_airflow_accc798171f724404dbbfa837ce3b4932}{sideFlags}}[i])}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Particle\ is\ above\ the\ wing,\ deflect\ upwards}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ offsetTargetLocal\ =\ \textcolor{keyword}{new}\ Vector3(}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ localLeading.x\ +\ deflectionStart\ *\ sign,}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ localLeading.y\ +\ deflectionStart,}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ particleLocal.z}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Particle\ is\ below\ the\ wing\ deflect\ downwards}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ offsetTargetLocal\ =\ \textcolor{keyword}{new}\ Vector3(}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ localLeading.x\ +\ deflectionStart\ *\ sign,}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ localLeading.y\ -\/\ deflectionStart,}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ particleLocal.z}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00349}00349\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ convert\ offset\ target\ to\ world\ coorinates}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ offsetTargetWorld\ =\ transform.TransformPoint(offsetTargetLocal);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ get\ direction\ in\ world\ coordinates\ to\ target}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ targetDir\ =\ (offsetTargetWorld\ -\/\ particleWorld).normalized;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00354}00354\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ speed\ =\ \mbox{\hyperlink{class_procedural_airflow_a9183f5c4df257ca40e65cc63e9800c48}{velocities}}[i].magnitude;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a40b8421c4b00fb8ae8dec30a5859157e}{buffer}}[i].velocity\ =\ targetDir\ *\ speed;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00358}00358\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ particle\ is\ past\ the\ deflection\ target\ (leading\ edge)\ set\ velocity\ to\ stored\ velocities\ value}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (alongChord\ >\ deflectionStart\ \&\&\ alongChord\ <=\ chordLengthLocal)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a40b8421c4b00fb8ae8dec30a5859157e}{buffer}}[i].velocity\ =\ \mbox{\hyperlink{class_procedural_airflow_a9183f5c4df257ca40e65cc63e9800c48}{velocities}}[i];}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ particle\ is\ past\ trailing\ edge\ remove\ vertical\ velocity\ component}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (alongChord\ >\ chordLengthLocal\ \&\&\ alongChord\ <=\ chordLengthLocal\ +\ trailDistance)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ horizontalSpeed\ =\ \mbox{\hyperlink{class_procedural_airflow_a9183f5c4df257ca40e65cc63e9800c48}{velocities}}[i].magnitude;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ y\ component\ from\ chordDir\ and\ normalize}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ chordDirNoY\ =\ \textcolor{keyword}{new}\ Vector3(chordDir.x,\ chordDir.y\ *\ \mbox{\hyperlink{class_procedural_airflow_abe4b22aa654acc664213473b5c504aaf}{trailDownForcePercent}},\ chordDir.z).normalized;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a40b8421c4b00fb8ae8dec30a5859157e}{buffer}}[i].velocity\ =\ chordDirNoY\ *\ horizontalSpeed;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00373}00373\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00376}00376\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Apply\ velocity\ update\ to\ position}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00378}00378\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a40b8421c4b00fb8ae8dec30a5859157e}{buffer}}[i].position\ +=\ \mbox{\hyperlink{class_procedural_airflow_a40b8421c4b00fb8ae8dec30a5859157e}{buffer}}[i].velocity\ *\ dt;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00379}00379\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00380}00380\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00381}00381\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Hand\ updated\ particles\ back\ to\ the\ system\ for\ rendering}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00382}00382\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_aafdc546a334fd32472fd9049a24ce243}{ps}}.SetParticles(\mbox{\hyperlink{class_procedural_airflow_a40b8421c4b00fb8ae8dec30a5859157e}{buffer}},\ count);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00383}00383\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00384}00384\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00385}00385\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00391}\mbox{\hyperlink{class_procedural_airflow_a16f833bdcce098119c9aa0bc9c3c058f}{00391}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_procedural_airflow_a16f833bdcce098119c9aa0bc9c3c058f}{UpdateForceArrows}}()}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00392}00392\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00393}00393\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00394}00394\ \textcolor{comment}{\ \ \ \ \ \ \ \ //\ TODO\ fix\ arrow\ offset\ by\ using\ bounding\ box\ calculation\ ot\ centre\ arrows.}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00395}00395\ \textcolor{comment}{\ \ \ \ \ \ \ \ Renderer\ render\ =\ GetComponentInChildren<MeshRenderer>();}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00396}00396\ \textcolor{comment}{\ \ \ \ \ \ \ \ Debug.LogError(render\ +\ "{}This\ is\ a\ debug\ message\ for\ force\ arrows"{});}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00397}00397\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00398}00398\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_procedural_airflow_aa9e1dfd501cb31685c954fd616e37fcf}{liftArrow}}\ ==\ \textcolor{keyword}{null}\ ||\ \mbox{\hyperlink{class_procedural_airflow_a8dae8e4a225a83394038c38b81a57ad6}{weightArrow}}\ ==\ \textcolor{keyword}{null}\ ||\ \mbox{\hyperlink{class_procedural_airflow_a3d47a854cdfe91d14b2105e3ff939006}{thrustArrow}}\ ==\ \textcolor{keyword}{null}\ ||\ \mbox{\hyperlink{class_procedural_airflow_ab99b0ff8df8181961f69dab7e53cc17f}{dragArrow}}\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00399}00399\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a981a9efbb0abe158ed82da3d7a3cb9af}{CreateForceArrows}}();}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00401}00401\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00402}00402\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00403}00403\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ get\ the\ angle\ of\ the\ plane}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00404}00404\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ aoa\ =\ transform.eulerAngles.z;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00405}00405\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00406}00406\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_af7e785d4224d6d0bdccf8e360c383c0b}{SetArrow}}(\mbox{\hyperlink{class_procedural_airflow_aa9e1dfd501cb31685c954fd616e37fcf}{liftArrow}},\ \mbox{\hyperlink{class_procedural_airflow_a2e32b0536075dda68f06ec22d1f95dc1}{liftAnchor}}.position,\ Vector3.up,\ \mbox{\hyperlink{class_procedural_airflow_ac7f36639759393137c590df20f5fec4f}{GetLiftLength}}(aoa));}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00407}00407\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_af7e785d4224d6d0bdccf8e360c383c0b}{SetArrow}}(\mbox{\hyperlink{class_procedural_airflow_a8dae8e4a225a83394038c38b81a57ad6}{weightArrow}},\ \mbox{\hyperlink{class_procedural_airflow_a82fab4f32b18d76896a2659406e72f77}{weightAnchor}}.position,\ Vector3.down,\ \mbox{\hyperlink{class_procedural_airflow_a8a5eb5afa469808a782a3df8b5acc0ce}{GetWeightLength}}(aoa));}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00408}00408\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_af7e785d4224d6d0bdccf8e360c383c0b}{SetArrow}}(\mbox{\hyperlink{class_procedural_airflow_a3d47a854cdfe91d14b2105e3ff939006}{thrustArrow}},\ \mbox{\hyperlink{class_procedural_airflow_afc09dede145d3c1ef3b35d5b9984f7d8}{thrusAnchor}}.position,\ Vector3.right,\ \mbox{\hyperlink{class_procedural_airflow_ad19dfef3a1475257ca6e0b7e21db38e3}{GetThrustLength}}(aoa));}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00409}00409\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_af7e785d4224d6d0bdccf8e360c383c0b}{SetArrow}}(\mbox{\hyperlink{class_procedural_airflow_ab99b0ff8df8181961f69dab7e53cc17f}{dragArrow}},\ \mbox{\hyperlink{class_procedural_airflow_a029cbe72dfb6da5e7524b9c8f5e42c55}{dragAnchor}}.position,\ Vector3.left,\ \mbox{\hyperlink{class_procedural_airflow_ae9fec637887c3ecc446e5a983e5da939}{GetDragLength}}(aoa));}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00410}00410\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00411}00411\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00412}00412\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00423}\mbox{\hyperlink{class_procedural_airflow_ac7f36639759393137c590df20f5fec4f}{00423}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_procedural_airflow_ac7f36639759393137c590df20f5fec4f}{GetLiftLength}}(\textcolor{keywordtype}{float}\ aoa)\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00424}00424\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00425}00425\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_procedural_airflow_a4a5f1d2fe1d182db13e4cd66aeec9fa4}{defaultArrowSize}}\ *\ \mbox{\hyperlink{class_procedural_airflow_a185723e23968638c5f237570be490668}{InterpolateForceValue}}(aoa,\ \mbox{\hyperlink{class_procedural_airflow_a57f1444731855efb7b948cb0440f7fea}{liftValues}});}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00426}00426\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00427}00427\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00437}\mbox{\hyperlink{class_procedural_airflow_a8a5eb5afa469808a782a3df8b5acc0ce}{00437}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_procedural_airflow_a8a5eb5afa469808a782a3df8b5acc0ce}{GetWeightLength}}(\textcolor{keywordtype}{float}\ aoa)\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00438}00438\ \ \ \ \ \{\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00439}00439\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_procedural_airflow_a4a5f1d2fe1d182db13e4cd66aeec9fa4}{defaultArrowSize}};\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00440}00440\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00441}00441\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00452}\mbox{\hyperlink{class_procedural_airflow_ad19dfef3a1475257ca6e0b7e21db38e3}{00452}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_procedural_airflow_ad19dfef3a1475257ca6e0b7e21db38e3}{GetThrustLength}}(\textcolor{keywordtype}{float}\ aoa)\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00453}00453\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00454}00454\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_procedural_airflow_a4a5f1d2fe1d182db13e4cd66aeec9fa4}{defaultArrowSize}}\ *\ \mbox{\hyperlink{class_procedural_airflow_a185723e23968638c5f237570be490668}{InterpolateForceValue}}(aoa,\ \mbox{\hyperlink{class_procedural_airflow_a82e6315db54d7f343b9b1b4172210886}{thrustValues}});}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00455}00455\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00456}00456\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00467}\mbox{\hyperlink{class_procedural_airflow_ae9fec637887c3ecc446e5a983e5da939}{00467}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_procedural_airflow_ae9fec637887c3ecc446e5a983e5da939}{GetDragLength}}(\textcolor{keywordtype}{float}\ aoa)\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00468}00468\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00469}00469\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_procedural_airflow_a4a5f1d2fe1d182db13e4cd66aeec9fa4}{defaultArrowSize}}\ *\ \mbox{\hyperlink{class_procedural_airflow_a185723e23968638c5f237570be490668}{InterpolateForceValue}}(aoa,\ \mbox{\hyperlink{class_procedural_airflow_a4a53fbe3ac2a76bb4bf67391b67e3367}{dragValues}});}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00470}00470\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00471}00471\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00487}\mbox{\hyperlink{class_procedural_airflow_a185723e23968638c5f237570be490668}{00487}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_procedural_airflow_a185723e23968638c5f237570be490668}{InterpolateForceValue}}(\textcolor{keywordtype}{float}\ aoa,\ \textcolor{keywordtype}{float}[]\ forceValues)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00488}00488\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00489}00489\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Handle\ values\ below\ minimum\ stage}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00490}00490\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aoa\ <=\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[0])\ \textcolor{keywordflow}{return}\ forceValues[0];}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00491}00491\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00492}00492\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Handle\ values\ above\ maximum\ stage}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00493}00493\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aoa\ >=\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[\mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}.Length\ -\/\ 1])}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00494}00494\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ forceValues[forceValues.Length\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00495}00495\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00496}00496\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ the\ appropriate\ stage\ interval\ and\ interpolate}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00497}00497\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ aoaStages.Length\ -\/\ 1;\ i++)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00498}00498\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00499}00499\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aoa\ <=\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[i\ +\ 1])}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00500}00500\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00501}00501\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ interpolation\ factor\ 0\ =\ start,\ 1\ =\ end,\ 0.5\ =\ halfway}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00502}00502\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ t\ =\ (aoa\ -\/\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[i])\ /\ (\mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[i\ +\ 1]\ -\/\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[i]);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00503}00503\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00504}00504\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Linearly\ interpolate\ between\ lower\ and\ upper\ force\ values}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00505}00505\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Mathf.Lerp(forceValues[i],\ forceValues[i\ +\ 1],\ t);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00506}00506\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00507}00507\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00508}00508\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Fallback\ to\ maximum\ value}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00509}00509\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ forceValues[forceValues.Length\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00510}00510\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00511}00511\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00524}\mbox{\hyperlink{class_procedural_airflow_af7e785d4224d6d0bdccf8e360c383c0b}{00524}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_procedural_airflow_af7e785d4224d6d0bdccf8e360c383c0b}{SetArrow}}(GameObject\ arrow,\ Vector3\ basePos,\ Vector3\ dir,\ \textcolor{keywordtype}{float}\ length)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00525}00525\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00526}00526\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ width\ =\ 0.1f;\ \ \ \textcolor{comment}{//\ arrow\ width}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00527}00527\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ height\ =\ 0.1f;\ \ \textcolor{comment}{//\ arrow\ height}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00528}00528\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ headSize\ =\ .2f;\ \textcolor{comment}{//\ Arrow\ head\ size}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00529}00529\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00530}00530\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log(arrow.name\ +\ "{}\ "{}\ +\ length);}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00531}00531\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00532}00532\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Scale\ the\ arrow}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00533}00533\ \ \ \ \ \ \ \ \ arrow.transform.localScale\ =\ \textcolor{keyword}{new}\ Vector3(width,\ height,\ length);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00534}00534\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00535}00535\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Make\ the\ arrow\ point\ along\ the\ force\ direction}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00536}00536\ \ \ \ \ \ \ \ \ Quaternion\ lookRotation\ =\ Quaternion.LookRotation(dir,\ Vector3.up);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00537}00537\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ a\ quaternion\ consisting\ only\ of\ the\ planes\ y\ rotation}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00538}00538\ \ \ \ \ \ \ \ \ Quaternion\ yRotation\ =\ Quaternion.Euler(0f,\ transform.eulerAngles.y,\ 0f);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00539}00539\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ apply\ the\ planes\ y\ rotation\ then\ rotate\ the\ arrow\ to\ point\ along\ force\ direction}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00540}00540\ \ \ \ \ \ \ \ \ arrow.transform.rotation\ =\ yRotation\ *\ lookRotation;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00541}00541\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00542}00542\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ arrows\ position\ so\ the\ base\ is\ along\ the\ anchor\ point.}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00543}00543\ \ \ \ \ \ \ \ \ arrow.transform.position\ =\ basePos\ +\ arrow.transform.forward\ *\ (length\ *\ 0.5f);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00544}00544\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00545}00545\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ the\ arrow\ head}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00546}00546\ \ \ \ \ \ \ \ \ Transform\ headTransform\ =\ arrow.transform.GetChild(0);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00547}00547\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ head\ position\ to\ the\ shafts\ forward\ face}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00548}00548\ \ \ \ \ \ \ \ \ headTransform.localPosition\ =\ \textcolor{keyword}{new}\ Vector3(0,\ 0,\ 0.5f);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00549}00549\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ compensate\ for\ the\ shafts\ scale.}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00550}00550\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ localScale\ *\ parentScale\ =\ worldScale\ therefore\ localScale\ =\ worldScale\ /\ parentScale}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00551}00551\ \ \ \ \ \ \ \ \ headTransform.localScale\ =\ \textcolor{keyword}{new}\ Vector3(headSize\ /\ width,\ headSize\ /\ height,\ headSize\ /\ length);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00552}00552\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00553}00553\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00560}\mbox{\hyperlink{class_procedural_airflow_a981a9efbb0abe158ed82da3d7a3cb9af}{00560}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_procedural_airflow_a981a9efbb0abe158ed82da3d7a3cb9af}{CreateForceArrows}}()\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00561}00561\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00562}00562\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a2ad553da31bb630067c0b0d6298d6787}{DestroyPreviousArrows}}();\ \textcolor{comment}{//\ remove\ old\ arrows}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00563}00563\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00564}00564\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_aa9e1dfd501cb31685c954fd616e37fcf}{liftArrow}}\ =\ \mbox{\hyperlink{class_procedural_airflow_a5325b21371f95a54c563374ecf9712b4}{CreateArrow}}(\textcolor{stringliteral}{"{}Lift"{}},\ Color.green);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00565}00565\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a8dae8e4a225a83394038c38b81a57ad6}{weightArrow}}\ =\ \mbox{\hyperlink{class_procedural_airflow_a5325b21371f95a54c563374ecf9712b4}{CreateArrow}}(\textcolor{stringliteral}{"{}Weight"{}},\ Color.red);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00566}00566\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a3d47a854cdfe91d14b2105e3ff939006}{thrustArrow}}\ =\ \mbox{\hyperlink{class_procedural_airflow_a5325b21371f95a54c563374ecf9712b4}{CreateArrow}}(\textcolor{stringliteral}{"{}Thrust"{}},\ Color.blue);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00567}00567\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_ab99b0ff8df8181961f69dab7e53cc17f}{dragArrow}}\ =\ \mbox{\hyperlink{class_procedural_airflow_a5325b21371f95a54c563374ecf9712b4}{CreateArrow}}(\textcolor{stringliteral}{"{}Drag"{}},\ Color.yellow);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00568}00568\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00569}00569\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00580}\mbox{\hyperlink{class_procedural_airflow_a5325b21371f95a54c563374ecf9712b4}{00580}}\ \ \ \ \ GameObject\ \mbox{\hyperlink{class_procedural_airflow_a5325b21371f95a54c563374ecf9712b4}{CreateArrow}}(\textcolor{keywordtype}{string}\ name,\ Color\ colour)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00581}00581\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00582}00582\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ a\ new\ box\ /\ "{}Arrow"{}}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00583}00583\ \ \ \ \ \ \ \ \ GameObject\ box\ =\ GameObject.CreatePrimitive(PrimitiveType.Cube);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00584}00584\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ set\ the\ name}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00585}00585\ \ \ \ \ \ \ \ \ box.name\ =\ name\ +\ \textcolor{stringliteral}{"{}\_Arrow"{}};}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00586}00586\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00587}00587\ \ \ \ \ \ \ \ \ Renderer\ rend\ =\ box.GetComponent<Renderer>();}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00588}00588\ \ \ \ \ \ \ \ \ Material\ mat\ =\ \textcolor{keyword}{new}\ Material(\mbox{\hyperlink{class_procedural_airflow_a4c98c4ce23a3e96ae487628aac356054}{forceArrowMaterial}});}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00589}00589\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Handle\ material\ leaks\ during\ edit\ mode}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00590}00590\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Application.isPlaying)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00591}00591\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00592}00592\ \ \ \ \ \ \ \ \ \ \ \ \ mat.color\ =\ colour;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00593}00593\ \ \ \ \ \ \ \ \ \ \ \ \ rend.material\ =\ mat;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00594}00594\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00595}00595\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00596}00596\ \ \ \ \ \ \ \ \ \ \ \ \ rend.sharedMaterial.color\ =\ colour;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00597}00597\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00598}00598\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ empt\ game\ object\ for\ the\ head\ with\ specified\ name}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00599}00599\ \ \ \ \ \ \ \ \ GameObject\ arrowHead\ =\ Instantiate(\mbox{\hyperlink{class_procedural_airflow_a7ea2d9168a074a40176a876d972dc4b7}{arrowHeadModel}});}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00600}00600\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Parent\ to\ arrow\ shaft}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00601}00601\ \ \ \ \ \ \ \ \ arrowHead.transform.SetParent(box.transform);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00602}00602\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ mesh\ renderer}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00603}00603\ \ \ \ \ \ \ \ \ MeshRenderer\ rendHead\ =\ arrowHead.GetComponent<MeshRenderer>();}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00604}00604\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assign\ material\ to\ arrow\ head}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00605}00605\ \ \ \ \ \ \ \ \ rendHead.material\ =\ mat;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00606}00606\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00607}00607\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Position\ head\ to\ front\ face\ of\ parent\ arrow\ shaft}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00608}00608\ \ \ \ \ \ \ \ \ arrowHead.transform.localPosition\ =\ \textcolor{keyword}{new}\ Vector3(0,\ 0,\ 0.5f);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00609}00609\ \ \ \ \ \ \ \ \ arrowHead.transform.localRotation\ =\ Quaternion.Euler(0,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00610}00610\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00611}00611\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Return\ new\ arrow\ game\ object}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00612}00612\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ box;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00613}00613\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00614}00614\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00621}\mbox{\hyperlink{class_procedural_airflow_a2ad553da31bb630067c0b0d6298d6787}{00621}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_procedural_airflow_a2ad553da31bb630067c0b0d6298d6787}{DestroyPreviousArrows}}()}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00622}00622\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00623}00623\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Names\ of\ generated\ Arrows\ }}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00624}00624\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}[]\ arrowNames\ =\ \{\ \textcolor{stringliteral}{"{}Lift\_Arrow"{}},\ \textcolor{stringliteral}{"{}Weight\_Arrow"{}},\ \textcolor{stringliteral}{"{}Thrust\_Arrow"{}},\ \textcolor{stringliteral}{"{}Drag\_Arrow"{}}\ \};}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00625}00625\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{string}\ name\ \textcolor{keywordflow}{in}\ arrowNames)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00626}00626\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00627}00627\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ existing\ =\ GameObject.Find(name);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00628}00628\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (existing\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00629}00629\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00630}00630\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Schedule\ dduplicates\ for\ destruction\ in\ play\ mode}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00631}00631\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Application.isPlaying)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00632}00632\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(existing);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00633}00633\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Else\ in\ edit\ mode\ destroy\ immediately}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00634}00634\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00635}00635\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DestroyImmediate(existing);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00636}00636\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00637}00637\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00638}00638\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00639}00639\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00647}\mbox{\hyperlink{class_procedural_airflow_ae53f0b31ccdb2645ee7a854fbde25676}{00647}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_procedural_airflow_ae53f0b31ccdb2645ee7a854fbde25676}{updateCentreOfPressure}}()}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00648}00648\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00649}00649\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_procedural_airflow_adf5bba10e6b97f32033242a36fa73b89}{copGameObject}}\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00650}00650\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00651}00651\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_adf5bba10e6b97f32033242a36fa73b89}{copGameObject}}\ =\ \mbox{\hyperlink{class_procedural_airflow_ac096db013e846e6dc9e89539b23360ae}{createCopIndicator}}(\textcolor{stringliteral}{"{}COP\_Indicator"{}},\ Color.grey);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00652}00652\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00653}00653\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00654}00654\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ get\ the\ angle\ of\ the\ plane}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00655}00655\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ aoa\ =\ transform.eulerAngles.z;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00656}00656\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00657}00657\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ the\ percentage\ along\ the\ chord}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00658}00658\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ percentage\ =\ \mbox{\hyperlink{class_procedural_airflow_aee0e75708d59c900c885c058b8120508}{getCopPercentage}}(aoa);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00659}00659\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log("{}COP\ percentage:\ "{}\ +\ percentage);}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00660}00660\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00661}00661\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ chord\ direction\ and\ length}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00662}00662\ \ \ \ \ \ \ \ \ Vector3\ chordDir\ =\ (trailingEdge.position\ -\/\ \mbox{\hyperlink{class_procedural_airflow_a32c9cc93a9cbe1a4bd158c855c7d71c3}{leadingEdge}}.position).normalized;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00663}00663\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ chordLength\ =\ Vector3.Distance(\mbox{\hyperlink{class_procedural_airflow_a32c9cc93a9cbe1a4bd158c855c7d71c3}{leadingEdge}}.position,\ \mbox{\hyperlink{class_procedural_airflow_ac22293941f23eae5b6ace878af8172d6}{trailingEdge}}.position);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00664}00664\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00665}00665\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ position\ along\ the\ chord}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00666}00666\ \ \ \ \ \ \ \ \ Vector3\ copPos\ =\ leadingEdge.position\ +\ chordDir\ *\ (chordLength\ *\ percentage);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00667}00667\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00668}00668\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Offset\ below\ the\ chord\ }}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00669}00669\ \ \ \ \ \ \ \ \ Vector3\ offset\ =\ -\/transform.up\ *\ 0.3f;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00670}00670\ \ \ \ \ \ \ \ \ copGameObject.transform.position\ =\ copPos\ +\ offset;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00671}00671\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00672}00672\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00683}\mbox{\hyperlink{class_procedural_airflow_ac096db013e846e6dc9e89539b23360ae}{00683}}\ \ \ \ \ GameObject\ \mbox{\hyperlink{class_procedural_airflow_ac096db013e846e6dc9e89539b23360ae}{createCopIndicator}}(\textcolor{keywordtype}{string}\ name,\ Color\ colour)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00684}00684\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00685}00685\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_procedural_airflow_a080635f7f18f77802d45cee917c5174e}{destroyCentreOfPressure}}();}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00686}00686\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00687}00687\ \ \ \ \ \ \ \ \ GameObject\ cop\ =\ Instantiate(\mbox{\hyperlink{class_procedural_airflow_aee503d8b6da33b879bc9cf8535a18c8f}{copModel}});}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00688}00688\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00689}00689\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ set\ the\ name}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00690}00690\ \ \ \ \ \ \ \ \ cop.name\ =\ name;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00691}00691\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00692}00692\ \ \ \ \ \ \ \ \ \textcolor{comment}{//cop.transform.localScale\ =\ new\ Vector3(0.1f,\ 0.2f,0.1f);}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00701}00701\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ cop;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00702}00702\ \ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00703}00703\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00704}00704\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00715}\mbox{\hyperlink{class_procedural_airflow_aee0e75708d59c900c885c058b8120508}{00715}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_procedural_airflow_aee0e75708d59c900c885c058b8120508}{getCopPercentage}}(\textcolor{keywordtype}{float}\ aoa)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00716}00716\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00717}00717\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ same\ logic\ as\ arrow\ calculations}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00718}00718\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aoa\ <=\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[0])\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_procedural_airflow_a3e22a9edb2de537e6961119656dd244d}{copValues}}[0];}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00719}00719\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aoa\ <=\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[1])\ \textcolor{keywordflow}{return}\ Mathf.Lerp(\mbox{\hyperlink{class_procedural_airflow_a3e22a9edb2de537e6961119656dd244d}{copValues}}[0],\ \mbox{\hyperlink{class_procedural_airflow_a3e22a9edb2de537e6961119656dd244d}{copValues}}[1],\ (aoa\ -\/\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[0])\ /\ (\mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[1]\ -\/\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[0]));}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00720}00720\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aoa\ <=\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[2])\ \textcolor{keywordflow}{return}\ Mathf.Lerp(\mbox{\hyperlink{class_procedural_airflow_a3e22a9edb2de537e6961119656dd244d}{copValues}}[1],\ \mbox{\hyperlink{class_procedural_airflow_a3e22a9edb2de537e6961119656dd244d}{copValues}}[2],\ (aoa\ -\/\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[1])\ /\ (\mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[2]\ -\/\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[1]));}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00721}00721\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aoa\ <=\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[3])\ \textcolor{keywordflow}{return}\ Mathf.Lerp(\mbox{\hyperlink{class_procedural_airflow_a3e22a9edb2de537e6961119656dd244d}{copValues}}[2],\ \mbox{\hyperlink{class_procedural_airflow_a3e22a9edb2de537e6961119656dd244d}{copValues}}[3],\ (aoa\ -\/\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[2])\ /\ (\mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[3]\ -\/\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[2]));}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00722}00722\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aoa\ <=\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[4])\ \textcolor{keywordflow}{return}\ Mathf.Lerp(\mbox{\hyperlink{class_procedural_airflow_a3e22a9edb2de537e6961119656dd244d}{copValues}}[3],\ \mbox{\hyperlink{class_procedural_airflow_a3e22a9edb2de537e6961119656dd244d}{copValues}}[4],\ (aoa\ -\/\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[3])\ /\ (\mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[4]\ -\/\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[3]));}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00723}00723\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aoa\ <=\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[5])\ \textcolor{keywordflow}{return}\ Mathf.Lerp(\mbox{\hyperlink{class_procedural_airflow_a3e22a9edb2de537e6961119656dd244d}{copValues}}[4],\ \mbox{\hyperlink{class_procedural_airflow_a3e22a9edb2de537e6961119656dd244d}{copValues}}[5],\ (aoa\ -\/\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[4])\ /\ (\mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[5]\ -\/\ \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoaStages}}[4]));}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00724}00724\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_procedural_airflow_a3e22a9edb2de537e6961119656dd244d}{copValues}}[5];}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00725}00725\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00726}00726\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00733}\mbox{\hyperlink{class_procedural_airflow_a080635f7f18f77802d45cee917c5174e}{00733}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_procedural_airflow_a080635f7f18f77802d45cee917c5174e}{destroyCentreOfPressure}}()}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00734}00734\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00735}00735\ \ \ \ \ \ \ \ \ GameObject\ existing\ =\ GameObject.Find(\textcolor{stringliteral}{"{}COP\_Indicator"{}});}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00736}00736\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Schedule\ duplicates\ for\ destruction\ in\ play\ mode}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00737}00737\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Application.isPlaying)}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00738}00738\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(existing);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00739}00739\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Else\ in\ edit\ mode\ destroy\ immediately\ (Since\ destroy\ is\ tied\ to\ the\ end\ of\ the\ next\ frame\ which\ doesnt\ trigger\ in\ edit\ mode)}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00740}00740\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00741}00741\ \ \ \ \ \ \ \ \ \ \ \ \ DestroyImmediate(existing);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00742}00742\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00743}00743\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00750}\mbox{\hyperlink{class_procedural_airflow_a516092f238026607d97aa76a2f3c3104}{00750}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_procedural_airflow_a516092f238026607d97aa76a2f3c3104}{OnDrawGizmos}}()}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00751}00751\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00752}00752\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_procedural_airflow_a32c9cc93a9cbe1a4bd158c855c7d71c3}{leadingEdge}}\ !=\ \textcolor{keyword}{null}\ \&\&\ \mbox{\hyperlink{class_procedural_airflow_ac22293941f23eae5b6ace878af8172d6}{trailingEdge}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00753}00753\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00754}00754\ \ \ \ \ \ \ \ \ \ \ \ \ Gizmos.color\ =\ Color.yellow;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00755}00755\ \ \ \ \ \ \ \ \ \ \ \ \ Gizmos.DrawLine(\mbox{\hyperlink{class_procedural_airflow_a32c9cc93a9cbe1a4bd158c855c7d71c3}{leadingEdge}}.position,\ \mbox{\hyperlink{class_procedural_airflow_ac22293941f23eae5b6ace878af8172d6}{trailingEdge}}.position);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00756}00756\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00757}00757\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ draw\ small\ offset\ lines\ for\ top/bottom\ airflow\ guidance}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00758}00758\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ chordDir\ =\ (trailingEdge.position\ -\/\ \mbox{\hyperlink{class_procedural_airflow_a32c9cc93a9cbe1a4bd158c855c7d71c3}{leadingEdge}}.position).normalized;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00759}00759\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ chordLen\ =\ Vector3.Distance(\mbox{\hyperlink{class_procedural_airflow_a32c9cc93a9cbe1a4bd158c855c7d71c3}{leadingEdge}}.position,\ \mbox{\hyperlink{class_procedural_airflow_ac22293941f23eae5b6ace878af8172d6}{trailingEdge}}.position);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00760}00760\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3\ midpoint\ =\ leadingEdge.position\ +\ chordDir\ *\ chordLen\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00761}00761\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00762}00762\ \ \ \ \ \ \ \ \ \ \ \ \ Gizmos.color\ =\ Color.cyan;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00763}00763\ \ \ \ \ \ \ \ \ \ \ \ \ Gizmos.DrawLine(midpoint,\ midpoint\ +\ Vector3.up\ *\ 0.2f);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00764}00764\ }
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00765}00765\ \ \ \ \ \ \ \ \ \ \ \ \ Gizmos.color\ =\ Color.magenta;}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00766}00766\ \ \ \ \ \ \ \ \ \ \ \ \ Gizmos.DrawLine(midpoint,\ midpoint\ +\ Vector3.down\ *\ 0.2f);}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00767}00767\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00768}00768\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_procedural_airflow_8cs_source_l00769}00769\ \}}
+
+\end{DoxyCode}

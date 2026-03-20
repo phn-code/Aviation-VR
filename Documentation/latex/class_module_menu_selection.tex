@@ -1,0 +1,249 @@
+\doxysection{Module\+Menu\+Selection Class Reference}
+\hypertarget{class_module_menu_selection}{}\label{class_module_menu_selection}\index{ModuleMenuSelection@{ModuleMenuSelection}}
+
+
+Handles menu selection of each Module alongside a Play button to trigger Modules via the \doxylink{class_module_manager}{Module\+Manager}.  
+
+
+
+
+Inheritance diagram for Module\+Menu\+Selection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{class_module_menu_selection__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Module\+Menu\+Selection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_module_menu_selection__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Button \mbox{\hyperlink{class_module_menu_selection_acef40b3aad48db3f425621a80934d504}{play\+Button}}
+\begin{DoxyCompactList}\small\item\em The interactible Play button Game\+Object. \end{DoxyCompactList}\item 
+Button \mbox{\hyperlink{class_module_menu_selection_aa463b36a53eeeca23f6928eec508a12c}{module1\+Button}}
+\begin{DoxyCompactList}\small\item\em The button for the first Module. \end{DoxyCompactList}\item 
+Button \mbox{\hyperlink{class_module_menu_selection_a16ffa12ba994deb10081ae4b128debfe}{module2\+Button}}
+\begin{DoxyCompactList}\small\item\em The button for the second Module. \end{DoxyCompactList}\item 
+Button \mbox{\hyperlink{class_module_menu_selection_a69d5eb924834e9fc99fe9ae0911e6e3b}{module3\+Button}}
+\begin{DoxyCompactList}\small\item\em The button for the third Module. \end{DoxyCompactList}\item 
+Button \mbox{\hyperlink{class_module_menu_selection_ac2384fae47d1dcc4c838e275f9f7f5b5}{back\+Button}}
+\begin{DoxyCompactList}\small\item\em The interactible Back button Game\+Object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_module_menu_selection_a60d72c2cf0362e1ae194e4bfc42e37ce}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_module_menu_selection_a10656b27b2894970e27c09c1f741809c}{Select\+Module}} (int module\+Index)
+\begin{DoxyCompactList}\small\item\em Changes the currently selected Module to a new one. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_module_menu_selection_aa5dda851a3d8df6375cc8fa764be07a6}{On\+Play\+Pressed}} ()
+\begin{DoxyCompactList}\small\item\em Called by the Play button, calls the \doxylink{class_module_manager}{Module\+Manager} to initiate the selected Module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_module_menu_selection_a0e8b932a93e54b412659facca95df30a}{On\+Back\+Pressed}} ()
+\begin{DoxyCompactList}\small\item\em When the Back button is pressed, reset the selected Module back to -\/1 as default. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_module_manager}{Module\+Manager}} \mbox{\hyperlink{class_module_menu_selection_a0d74932332e0e376ec2306094f289cc6}{module\+Manager}}
+\begin{DoxyCompactList}\small\item\em Reference to the \doxylink{class_module_manager}{Module\+Manager}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_module_menu_selection_a066a82cea4936db92928a9b1c2ee5fce}{selected\+Module}} = -\/1
+\begin{DoxyCompactList}\small\item\em Index for the currently selected Module, defaulting to -\/1 where no Module is selected. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles menu selection of each Module alongside a Play button to trigger Modules via the \doxylink{class_module_manager}{Module\+Manager}. 
+
+\begin{DoxyAuthor}{Author}
+Caleb Martin \texorpdfstring{$\vert$}{|} \href{mailto:marcy066@mymail.unisa.edu.au}{\texttt{marcy066@mymail.\+unisa.\+edu.\+au}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_module_menu_selection_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_module_menu_selection_8cs_source}{Module\+Menu\+Selection.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_module_menu_selection_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_module_menu_selection_a0e8b932a93e54b412659facca95df30a}\index{ModuleMenuSelection@{ModuleMenuSelection}!OnBackPressed@{OnBackPressed}}
+\index{OnBackPressed@{OnBackPressed}!ModuleMenuSelection@{ModuleMenuSelection}}
+\doxysubsubsection{\texorpdfstring{OnBackPressed()}{OnBackPressed()}}
+{\footnotesize\ttfamily \label{class_module_menu_selection_a0e8b932a93e54b412659facca95df30a} 
+void Module\+Menu\+Selection.\+On\+Back\+Pressed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+When the Back button is pressed, reset the selected Module back to -\/1 as default. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_module_menu_selection_8cs_source_l00076}{76}} of file \mbox{\hyperlink{_module_menu_selection_8cs_source}{Module\+Menu\+Selection.\+cs}}.
+
+\Hypertarget{class_module_menu_selection_aa5dda851a3d8df6375cc8fa764be07a6}\index{ModuleMenuSelection@{ModuleMenuSelection}!OnPlayPressed@{OnPlayPressed}}
+\index{OnPlayPressed@{OnPlayPressed}!ModuleMenuSelection@{ModuleMenuSelection}}
+\doxysubsubsection{\texorpdfstring{OnPlayPressed()}{OnPlayPressed()}}
+{\footnotesize\ttfamily \label{class_module_menu_selection_aa5dda851a3d8df6375cc8fa764be07a6} 
+void Module\+Menu\+Selection.\+On\+Play\+Pressed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Called by the Play button, calls the \doxylink{class_module_manager}{Module\+Manager} to initiate the selected Module. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_module_menu_selection_8cs_source_l00058}{58}} of file \mbox{\hyperlink{_module_menu_selection_8cs_source}{Module\+Menu\+Selection.\+cs}}.
+
+\Hypertarget{class_module_menu_selection_a10656b27b2894970e27c09c1f741809c}\index{ModuleMenuSelection@{ModuleMenuSelection}!SelectModule@{SelectModule}}
+\index{SelectModule@{SelectModule}!ModuleMenuSelection@{ModuleMenuSelection}}
+\doxysubsubsection{\texorpdfstring{SelectModule()}{SelectModule()}}
+{\footnotesize\ttfamily \label{class_module_menu_selection_a10656b27b2894970e27c09c1f741809c} 
+void Module\+Menu\+Selection.\+Select\+Module (\begin{DoxyParamCaption}\item[{int}]{module\+Index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Changes the currently selected Module to a new one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em module\+Index} & The Module to be selected. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_module_menu_selection_8cs_source_l00045}{45}} of file \mbox{\hyperlink{_module_menu_selection_8cs_source}{Module\+Menu\+Selection.\+cs}}.
+
+\Hypertarget{class_module_menu_selection_a60d72c2cf0362e1ae194e4bfc42e37ce}\index{ModuleMenuSelection@{ModuleMenuSelection}!Start@{Start}}
+\index{Start@{Start}!ModuleMenuSelection@{ModuleMenuSelection}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_module_menu_selection_a60d72c2cf0362e1ae194e4bfc42e37ce} 
+void Module\+Menu\+Selection.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_module_menu_selection_8cs_source_l00025}{25}} of file \mbox{\hyperlink{_module_menu_selection_8cs_source}{Module\+Menu\+Selection.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_module_menu_selection_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_module_menu_selection_ac2384fae47d1dcc4c838e275f9f7f5b5}\index{ModuleMenuSelection@{ModuleMenuSelection}!backButton@{backButton}}
+\index{backButton@{backButton}!ModuleMenuSelection@{ModuleMenuSelection}}
+\doxysubsubsection{\texorpdfstring{backButton}{backButton}}
+{\footnotesize\ttfamily \label{class_module_menu_selection_ac2384fae47d1dcc4c838e275f9f7f5b5} 
+Button Module\+Menu\+Selection.\+back\+Button}
+
+
+
+The interactible Back button Game\+Object. 
+
+
+
+Definition at line \mbox{\hyperlink{_module_menu_selection_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_module_menu_selection_8cs_source}{Module\+Menu\+Selection.\+cs}}.
+
+\Hypertarget{class_module_menu_selection_aa463b36a53eeeca23f6928eec508a12c}\index{ModuleMenuSelection@{ModuleMenuSelection}!module1Button@{module1Button}}
+\index{module1Button@{module1Button}!ModuleMenuSelection@{ModuleMenuSelection}}
+\doxysubsubsection{\texorpdfstring{module1Button}{module1Button}}
+{\footnotesize\ttfamily \label{class_module_menu_selection_aa463b36a53eeeca23f6928eec508a12c} 
+Button Module\+Menu\+Selection.\+module1\+Button}
+
+
+
+The button for the first Module. 
+
+
+
+Definition at line \mbox{\hyperlink{_module_menu_selection_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_module_menu_selection_8cs_source}{Module\+Menu\+Selection.\+cs}}.
+
+\Hypertarget{class_module_menu_selection_a16ffa12ba994deb10081ae4b128debfe}\index{ModuleMenuSelection@{ModuleMenuSelection}!module2Button@{module2Button}}
+\index{module2Button@{module2Button}!ModuleMenuSelection@{ModuleMenuSelection}}
+\doxysubsubsection{\texorpdfstring{module2Button}{module2Button}}
+{\footnotesize\ttfamily \label{class_module_menu_selection_a16ffa12ba994deb10081ae4b128debfe} 
+Button Module\+Menu\+Selection.\+module2\+Button}
+
+
+
+The button for the second Module. 
+
+
+
+Definition at line \mbox{\hyperlink{_module_menu_selection_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_module_menu_selection_8cs_source}{Module\+Menu\+Selection.\+cs}}.
+
+\Hypertarget{class_module_menu_selection_a69d5eb924834e9fc99fe9ae0911e6e3b}\index{ModuleMenuSelection@{ModuleMenuSelection}!module3Button@{module3Button}}
+\index{module3Button@{module3Button}!ModuleMenuSelection@{ModuleMenuSelection}}
+\doxysubsubsection{\texorpdfstring{module3Button}{module3Button}}
+{\footnotesize\ttfamily \label{class_module_menu_selection_a69d5eb924834e9fc99fe9ae0911e6e3b} 
+Button Module\+Menu\+Selection.\+module3\+Button}
+
+
+
+The button for the third Module. 
+
+
+
+Definition at line \mbox{\hyperlink{_module_menu_selection_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_module_menu_selection_8cs_source}{Module\+Menu\+Selection.\+cs}}.
+
+\Hypertarget{class_module_menu_selection_a0d74932332e0e376ec2306094f289cc6}\index{ModuleMenuSelection@{ModuleMenuSelection}!moduleManager@{moduleManager}}
+\index{moduleManager@{moduleManager}!ModuleMenuSelection@{ModuleMenuSelection}}
+\doxysubsubsection{\texorpdfstring{moduleManager}{moduleManager}}
+{\footnotesize\ttfamily \label{class_module_menu_selection_a0d74932332e0e376ec2306094f289cc6} 
+\mbox{\hyperlink{class_module_manager}{Module\+Manager}} Module\+Menu\+Selection.\+module\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the \doxylink{class_module_manager}{Module\+Manager}. 
+
+
+
+Definition at line \mbox{\hyperlink{_module_menu_selection_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_module_menu_selection_8cs_source}{Module\+Menu\+Selection.\+cs}}.
+
+\Hypertarget{class_module_menu_selection_acef40b3aad48db3f425621a80934d504}\index{ModuleMenuSelection@{ModuleMenuSelection}!playButton@{playButton}}
+\index{playButton@{playButton}!ModuleMenuSelection@{ModuleMenuSelection}}
+\doxysubsubsection{\texorpdfstring{playButton}{playButton}}
+{\footnotesize\ttfamily \label{class_module_menu_selection_acef40b3aad48db3f425621a80934d504} 
+Button Module\+Menu\+Selection.\+play\+Button}
+
+
+
+The interactible Play button Game\+Object. 
+
+
+
+Definition at line \mbox{\hyperlink{_module_menu_selection_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_module_menu_selection_8cs_source}{Module\+Menu\+Selection.\+cs}}.
+
+\Hypertarget{class_module_menu_selection_a066a82cea4936db92928a9b1c2ee5fce}\index{ModuleMenuSelection@{ModuleMenuSelection}!selectedModule@{selectedModule}}
+\index{selectedModule@{selectedModule}!ModuleMenuSelection@{ModuleMenuSelection}}
+\doxysubsubsection{\texorpdfstring{selectedModule}{selectedModule}}
+{\footnotesize\ttfamily \label{class_module_menu_selection_a066a82cea4936db92928a9b1c2ee5fce} 
+int Module\+Menu\+Selection.\+selected\+Module = -\/1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Index for the currently selected Module, defaulting to -\/1 where no Module is selected. 
+
+
+
+Definition at line \mbox{\hyperlink{_module_menu_selection_8cs_source_l00023}{23}} of file \mbox{\hyperlink{_module_menu_selection_8cs_source}{Module\+Menu\+Selection.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+UI/\mbox{\hyperlink{_module_menu_selection_8cs}{Module\+Menu\+Selection.\+cs}}\end{DoxyCompactItemize}

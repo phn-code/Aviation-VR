@@ -1,0 +1,243 @@
+\doxysection{Controller\+Backward Class Reference}
+\hypertarget{class_controller_backward}{}\label{class_controller_backward}\index{ControllerBackward@{ControllerBackward}}
+
+
+Inheritance diagram for Controller\+Backward\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_controller_backward__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Controller\+Backward\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_controller_backward__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_controller_backward_a77799f55ec73f73cf50875888e5d802a}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_controller_backward_aa422e708e9af169d895af3fd39013f92}{Start\+Activity}} ()
+\begin{DoxyCompactList}\small\item\em Each child activity can have a differing implementation of what must be carried out/what inputs must be switched on when the activity starts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_backward_a6a3455c374cf02451287000bf3aab38d}{Trigger\+Haptic}} (Base\+Interaction\+Event\+Args e)
+\item 
+void \mbox{\hyperlink{class_controller_backward_a0ca46fdb96e2b469103c6e52436b824c}{Trigger\+Haptic}} (XRBase\+Controller controller)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Input\+Action\+Reference \mbox{\hyperlink{class_controller_backward_aefb9ef3a3785dd8023a75cad22525a70}{rotate\+Action}}
+\item 
+float \mbox{\hyperlink{class_controller_backward_a6ff0edcad87a83c615d21e0f1351bc41}{intensity}} = 1f
+\item 
+float \mbox{\hyperlink{class_controller_backward_ac15d033716597b70eb6fe83569d6b557}{duration}} = 5f
+\item 
+float \mbox{\hyperlink{class_controller_backward_a48ab111a17cc3e8e9112da03814c6b10}{min\+ZPosition\+Threshold}} = 0f
+\item 
+float \mbox{\hyperlink{class_controller_backward_a499375d669f66c1991c3ae78349f3d80}{max\+ZPosition\+Threshold}} = 90f
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} \mbox{\hyperlink{class_controller_backward_ab68366ddd78904b8399514090ce5d7ec}{mas}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_controller_backward_a900c43caa1fcf4eac020ed32a7527d84}{On\+Enable}} ()
+\item 
+void \mbox{\hyperlink{class_controller_backward_ae8d0b36eadf699423e70d48620b8a90c}{On\+Disable}} ()
+\item 
+void \mbox{\hyperlink{class_controller_backward_a178cefd001c4c7f6d374bb4289a37990}{On\+Position\+Change}} (Input\+Action.\+Callback\+Context ctx)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_controller_backward_a5e0862f2df096d2a74f724670f22563c}{activity\+Enabled}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Chintana Luu \texorpdfstring{$\vert$}{|} \href{mailto:luucy003@mymail.unisa.edu.au}{\texttt{luucy003@mymail.\+unisa.\+edu.\+au}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_controller_backward_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_controller_backward_8cs_source}{Controller\+Backward.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_controller_backward_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_controller_backward_ae8d0b36eadf699423e70d48620b8a90c}\index{ControllerBackward@{ControllerBackward}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!ControllerBackward@{ControllerBackward}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily \label{class_controller_backward_ae8d0b36eadf699423e70d48620b8a90c} 
+void Controller\+Backward.\+On\+Disable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_backward_8cs_source_l00043}{43}} of file \mbox{\hyperlink{_controller_backward_8cs_source}{Controller\+Backward.\+cs}}.
+
+\Hypertarget{class_controller_backward_a900c43caa1fcf4eac020ed32a7527d84}\index{ControllerBackward@{ControllerBackward}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!ControllerBackward@{ControllerBackward}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily \label{class_controller_backward_a900c43caa1fcf4eac020ed32a7527d84} 
+void Controller\+Backward.\+On\+Enable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_backward_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_controller_backward_8cs_source}{Controller\+Backward.\+cs}}.
+
+\Hypertarget{class_controller_backward_a178cefd001c4c7f6d374bb4289a37990}\index{ControllerBackward@{ControllerBackward}!OnPositionChange@{OnPositionChange}}
+\index{OnPositionChange@{OnPositionChange}!ControllerBackward@{ControllerBackward}}
+\doxysubsubsection{\texorpdfstring{OnPositionChange()}{OnPositionChange()}}
+{\footnotesize\ttfamily \label{class_controller_backward_a178cefd001c4c7f6d374bb4289a37990} 
+void Controller\+Backward.\+On\+Position\+Change (\begin{DoxyParamCaption}\item[{Input\+Action.\+Callback\+Context}]{ctx}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_backward_8cs_source_l00075}{75}} of file \mbox{\hyperlink{_controller_backward_8cs_source}{Controller\+Backward.\+cs}}.
+
+\Hypertarget{class_controller_backward_a77799f55ec73f73cf50875888e5d802a}\index{ControllerBackward@{ControllerBackward}!Start@{Start}}
+\index{Start@{Start}!ControllerBackward@{ControllerBackward}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_controller_backward_a77799f55ec73f73cf50875888e5d802a} 
+void Controller\+Backward.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_backward_8cs_source_l00025}{25}} of file \mbox{\hyperlink{_controller_backward_8cs_source}{Controller\+Backward.\+cs}}.
+
+\Hypertarget{class_controller_backward_aa422e708e9af169d895af3fd39013f92}\index{ControllerBackward@{ControllerBackward}!StartActivity@{StartActivity}}
+\index{StartActivity@{StartActivity}!ControllerBackward@{ControllerBackward}}
+\doxysubsubsection{\texorpdfstring{StartActivity()}{StartActivity()}}
+{\footnotesize\ttfamily \label{class_controller_backward_aa422e708e9af169d895af3fd39013f92} 
+void Controller\+Backward.\+Start\+Activity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Each child activity can have a differing implementation of what must be carried out/what inputs must be switched on when the activity starts. 
+
+Override this method for new activity scripts. 
+
+Implements \mbox{\hyperlink{interface_i_activity_controller_a5edbf7511d4b716c7e5de8d2c0c261a0}{IActivity\+Controller}}.
+
+
+
+Definition at line \mbox{\hyperlink{_controller_backward_8cs_source_l00054}{54}} of file \mbox{\hyperlink{_controller_backward_8cs_source}{Controller\+Backward.\+cs}}.
+
+\Hypertarget{class_controller_backward_a6a3455c374cf02451287000bf3aab38d}\index{ControllerBackward@{ControllerBackward}!TriggerHaptic@{TriggerHaptic}}
+\index{TriggerHaptic@{TriggerHaptic}!ControllerBackward@{ControllerBackward}}
+\doxysubsubsection{\texorpdfstring{TriggerHaptic()}{TriggerHaptic()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_controller_backward_a6a3455c374cf02451287000bf3aab38d} 
+void Controller\+Backward.\+Trigger\+Haptic (\begin{DoxyParamCaption}\item[{Base\+Interaction\+Event\+Args}]{e}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_backward_8cs_source_l00061}{61}} of file \mbox{\hyperlink{_controller_backward_8cs_source}{Controller\+Backward.\+cs}}.
+
+\Hypertarget{class_controller_backward_a0ca46fdb96e2b469103c6e52436b824c}\index{ControllerBackward@{ControllerBackward}!TriggerHaptic@{TriggerHaptic}}
+\index{TriggerHaptic@{TriggerHaptic}!ControllerBackward@{ControllerBackward}}
+\doxysubsubsection{\texorpdfstring{TriggerHaptic()}{TriggerHaptic()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_controller_backward_a0ca46fdb96e2b469103c6e52436b824c} 
+void Controller\+Backward.\+Trigger\+Haptic (\begin{DoxyParamCaption}\item[{XRBase\+Controller}]{controller}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_backward_8cs_source_l00068}{68}} of file \mbox{\hyperlink{_controller_backward_8cs_source}{Controller\+Backward.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_controller_backward_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_controller_backward_a5e0862f2df096d2a74f724670f22563c}\index{ControllerBackward@{ControllerBackward}!activityEnabled@{activityEnabled}}
+\index{activityEnabled@{activityEnabled}!ControllerBackward@{ControllerBackward}}
+\doxysubsubsection{\texorpdfstring{activityEnabled}{activityEnabled}}
+{\footnotesize\ttfamily \label{class_controller_backward_a5e0862f2df096d2a74f724670f22563c} 
+bool Controller\+Backward.\+activity\+Enabled = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_backward_8cs_source_l00022}{22}} of file \mbox{\hyperlink{_controller_backward_8cs_source}{Controller\+Backward.\+cs}}.
+
+\Hypertarget{class_controller_backward_ac15d033716597b70eb6fe83569d6b557}\index{ControllerBackward@{ControllerBackward}!duration@{duration}}
+\index{duration@{duration}!ControllerBackward@{ControllerBackward}}
+\doxysubsubsection{\texorpdfstring{duration}{duration}}
+{\footnotesize\ttfamily \label{class_controller_backward_ac15d033716597b70eb6fe83569d6b557} 
+float Controller\+Backward.\+duration = 5f}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_backward_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_controller_backward_8cs_source}{Controller\+Backward.\+cs}}.
+
+\Hypertarget{class_controller_backward_a6ff0edcad87a83c615d21e0f1351bc41}\index{ControllerBackward@{ControllerBackward}!intensity@{intensity}}
+\index{intensity@{intensity}!ControllerBackward@{ControllerBackward}}
+\doxysubsubsection{\texorpdfstring{intensity}{intensity}}
+{\footnotesize\ttfamily \label{class_controller_backward_a6ff0edcad87a83c615d21e0f1351bc41} 
+float Controller\+Backward.\+intensity = 1f}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_backward_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_controller_backward_8cs_source}{Controller\+Backward.\+cs}}.
+
+\Hypertarget{class_controller_backward_a499375d669f66c1991c3ae78349f3d80}\index{ControllerBackward@{ControllerBackward}!maxZPositionThreshold@{maxZPositionThreshold}}
+\index{maxZPositionThreshold@{maxZPositionThreshold}!ControllerBackward@{ControllerBackward}}
+\doxysubsubsection{\texorpdfstring{maxZPositionThreshold}{maxZPositionThreshold}}
+{\footnotesize\ttfamily \label{class_controller_backward_a499375d669f66c1991c3ae78349f3d80} 
+float Controller\+Backward.\+max\+ZPosition\+Threshold = 90f}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_backward_8cs_source_l00020}{20}} of file \mbox{\hyperlink{_controller_backward_8cs_source}{Controller\+Backward.\+cs}}.
+
+\Hypertarget{class_controller_backward_a48ab111a17cc3e8e9112da03814c6b10}\index{ControllerBackward@{ControllerBackward}!minZPositionThreshold@{minZPositionThreshold}}
+\index{minZPositionThreshold@{minZPositionThreshold}!ControllerBackward@{ControllerBackward}}
+\doxysubsubsection{\texorpdfstring{minZPositionThreshold}{minZPositionThreshold}}
+{\footnotesize\ttfamily \label{class_controller_backward_a48ab111a17cc3e8e9112da03814c6b10} 
+float Controller\+Backward.\+min\+ZPosition\+Threshold = 0f}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_backward_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_controller_backward_8cs_source}{Controller\+Backward.\+cs}}.
+
+\Hypertarget{class_controller_backward_aefb9ef3a3785dd8023a75cad22525a70}\index{ControllerBackward@{ControllerBackward}!rotateAction@{rotateAction}}
+\index{rotateAction@{rotateAction}!ControllerBackward@{ControllerBackward}}
+\doxysubsubsection{\texorpdfstring{rotateAction}{rotateAction}}
+{\footnotesize\ttfamily \label{class_controller_backward_aefb9ef3a3785dd8023a75cad22525a70} 
+Input\+Action\+Reference Controller\+Backward.\+rotate\+Action}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_backward_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_controller_backward_8cs_source}{Controller\+Backward.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_controller_backward_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_controller_backward_ab68366ddd78904b8399514090ce5d7ec}\index{ControllerBackward@{ControllerBackward}!mas@{mas}}
+\index{mas@{mas}!ControllerBackward@{ControllerBackward}}
+\doxysubsubsection{\texorpdfstring{mas}{mas}}
+{\footnotesize\ttfamily \label{class_controller_backward_ab68366ddd78904b8399514090ce5d7ec} 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} Controller\+Backward.\+mas\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_controller_backward_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_controller_backward_8cs_source}{Controller\+Backward.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Common\+Activity\+Behaviour/\mbox{\hyperlink{_controller_backward_8cs}{Controller\+Backward.\+cs}}\end{DoxyCompactItemize}

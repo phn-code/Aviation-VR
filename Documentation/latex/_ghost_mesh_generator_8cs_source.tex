@@ -1,0 +1,42 @@
+\doxysection{Ghost\+Mesh\+Generator.\+cs}
+\hypertarget{_ghost_mesh_generator_8cs_source}{}\label{_ghost_mesh_generator_8cs_source}\index{Assets/Editor/GhostMeshGenerator.cs@{Assets/Editor/GhostMeshGenerator.cs}}
+\mbox{\hyperlink{_ghost_mesh_generator_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.IO;}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00005}\mbox{\hyperlink{class_ghost_mesh_generator}{00005}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ghost_mesh_generator}{GhostMeshGenerator}}}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00007}00007\ \ \ \ \ [MenuItem(\textcolor{stringliteral}{"{}Tools/Generate\ mesh\ from\ selected\ meshes"{}})]}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00008}\mbox{\hyperlink{class_ghost_mesh_generator_a6033bf4df9be1e832ebbc530b709586c}{00008}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ghost_mesh_generator_a6033bf4df9be1e832ebbc530b709586c}{GenerateShostMesh}}()}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00009}00009\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00010}00010\ \ \ \ \ \ \ \ \ GameObject\ target\ =\ Selection.activeGameObject;}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00011}00011\ \ \ \ \ \ \ \ \ MeshFilter[]\ meshFilters\ =\ target.GetComponentsInChildren<MeshFilter>();}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00013}00013\ \ \ \ \ \ \ \ \ CombineInstance[]\ combine\ =\ \textcolor{keyword}{new}\ CombineInstance[meshFilters.Length];}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ meshFilters.Length;\ i++)}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ combine[i].mesh\ =\ meshFilters[i].sharedMesh;}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ combine[i].transform\ =\ meshFilters[i].transform.localToWorldMatrix;}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ Mesh\ ghostMesh\ =\ \textcolor{keyword}{new}\ Mesh();}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ ghostMesh.name\ =\ target.name\ +\ \textcolor{stringliteral}{"{}\_GhostMesh"{}};}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ ghostMesh.indexFormat\ =\ UnityEngine.Rendering.IndexFormat.UInt32;}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ ghostMesh.CombineMeshes(combine,\ \textcolor{keyword}{true},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ path\ =\ \textcolor{stringliteral}{"{}Assets/GhostMeshes"{}};}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Directory.Exists(path))}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ Directory.CreateDirectory(path);}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ assetPath\ =\ path\ +\ \textcolor{stringliteral}{"{}/"{}}\ +\ ghostMesh.name\ +\ \textcolor{stringliteral}{"{}.asset"{}};}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ AssetDatabase.CreateAsset(ghostMesh,\ assetPath);}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ AssetDatabase.SaveAssets();}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ghost_mesh_generator_8cs_source_l00036}00036\ \}}
+
+\end{DoxyCode}

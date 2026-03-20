@@ -1,0 +1,17 @@
+<map id="ModuleManager" name="ModuleManager">
+<area shape="rect" id="Node000001" title="Central driver class to control the flow of logic on which Modules/sections/timelines/activities shou..." alt="" coords="67,81,180,108"/>
+<area shape="rect" id="Node000003" href="$class_module_activity_scheduler.html" title="Singleton management class that talks to the ModuleManager to schedule activities ahead of Timeline e..." alt="" coords="169,180,334,207"/>
+<area shape="poly" id="edge6_Node000003_Node000001" title=" " alt="" coords="53,113,31,121,15,131,8,142,14,154,37,168,75,178,169,188,168,193,74,184,35,173,10,158,3,141,11,127,29,116,51,108"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="196,5,307,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,42,147,83,144,79,215,38"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="254,48,254,180,249,180,249,48"/>
+<area shape="rect" id="Node000004" href="$class_checkbox_manager.html" title="A central class to manage checkboxes in tandem with activities to support the user." alt="" coords="289,81,419,108"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="283,39,338,79,335,83,280,43"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="153,181,137,171,123,158,117,146,115,132,117,108,123,109,120,132,122,144,127,154,140,167,156,177"/>
+<area shape="poly" id="edge9_Node000003_Node000003" title=" " alt="" coords="351,185,361,193,353,201,335,205,334,199,351,196,356,193,348,189"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="332,121,267,182,263,178,328,117"/>
+<area shape="rect" id="Node000005" href="$class_module_activities.html" title=" " alt="" coords="444,81,561,108"/>
+<area shape="poly" id="edge7_Node000003_Node000005" title=" " alt="" coords="484,121,462,141,435,158,386,177,335,188,334,182,384,172,433,154,459,137,480,117"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="444,5,561,32"/>
+<area shape="poly" id="edge8_Node000005_Node000006" title=" " alt="" coords="505,47,505,81,500,81,500,47"/>
+</map>

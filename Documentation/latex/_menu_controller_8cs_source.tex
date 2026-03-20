@@ -1,0 +1,48 @@
+\doxysection{Menu\+Controller.\+cs}
+\hypertarget{_menu_controller_8cs_source}{}\label{_menu_controller_8cs_source}\index{Assets/Scripts/UI/MenuController.cs@{Assets/Scripts/UI/MenuController.cs}}
+\mbox{\hyperlink{_menu_controller_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00001}00001\ \textcolor{comment}{//using\ UnityEditor.VersionControl;}}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine.InputSystem;}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00005}\mbox{\hyperlink{class_menu_controller}{00005}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_menu_controller}{MenuController}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00008}\mbox{\hyperlink{class_menu_controller_af6eb57d31437c0eadc2e175a7808ba23}{00008}}\ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_menu_controller_af6eb57d31437c0eadc2e175a7808ba23}{menuPanel}};}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00009}\mbox{\hyperlink{class_menu_controller_a31a6f78be0b13d22162ec77d0ef1e9e3}{00009}}\ \ \ \ \ \textcolor{keyword}{public}\ InputActionReference\ \mbox{\hyperlink{class_menu_controller_a31a6f78be0b13d22162ec77d0ef1e9e3}{openMenuAction}};}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00010}\mbox{\hyperlink{class_menu_controller_ac2cebfbf2a6c4f2f7de8c6768c46658b}{00010}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_controller_ac2cebfbf2a6c4f2f7de8c6768c46658b}{Awake}}()}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00012}00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_controller_a31a6f78be0b13d22162ec77d0ef1e9e3}{openMenuAction}}.action.Enable();}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00013}00013\ \ \ \ \ \ \ \ \ openMenuAction.action.performed\ +=\ \mbox{\hyperlink{class_menu_controller_a208219210f1e5b354c4f9c5129517f86}{ToggleMenu}};}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ InputSystem.onDeviceChange\ +=\ \mbox{\hyperlink{class_menu_controller_a5769dbed20203704813fef2bbb0b9884}{OnDeviceChange}};}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00015}00015\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00017}\mbox{\hyperlink{class_menu_controller_a298eb8615cdb5feaa65e601ae048bc2b}{00017}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_controller_a298eb8615cdb5feaa65e601ae048bc2b}{OnDestroy}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_controller_a31a6f78be0b13d22162ec77d0ef1e9e3}{openMenuAction}}.action.Disable();}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ openMenuAction.action.performed\ -\/=\ \mbox{\hyperlink{class_menu_controller_a208219210f1e5b354c4f9c5129517f86}{ToggleMenu}};}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ InputSystem.onDeviceChange\ -\/=\ \mbox{\hyperlink{class_menu_controller_a5769dbed20203704813fef2bbb0b9884}{OnDeviceChange}};}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00024}\mbox{\hyperlink{class_menu_controller_a208219210f1e5b354c4f9c5129517f86}{00024}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_controller_a208219210f1e5b354c4f9c5129517f86}{ToggleMenu}}(InputAction.CallbackContext\ context)\ \{\ }
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_controller_af6eb57d31437c0eadc2e175a7808ba23}{menuPanel}}.SetActive(!\mbox{\hyperlink{class_menu_controller_af6eb57d31437c0eadc2e175a7808ba23}{menuPanel}}.activeSelf);\ \textcolor{comment}{//\ the\ variable\ menuPanel\ of\ menuController\ has\ not\ been\ assigned.}}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00028}\mbox{\hyperlink{class_menu_controller_a5769dbed20203704813fef2bbb0b9884}{00028}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_controller_a5769dbed20203704813fef2bbb0b9884}{OnDeviceChange}}(InputDevice\ device,\ InputDeviceChange\ change)\ \{}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (change)\ \{\ }
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ InputDeviceChange.Disconnected:}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_controller_a31a6f78be0b13d22162ec77d0ef1e9e3}{openMenuAction}}.action.Disable();}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ openMenuAction.action.performed\ -\/=\ \mbox{\hyperlink{class_menu_controller_a208219210f1e5b354c4f9c5129517f86}{ToggleMenu}};}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ InputDeviceChange.Reconnected:}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_controller_a31a6f78be0b13d22162ec77d0ef1e9e3}{openMenuAction}}.action.Enable();}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ openMenuAction.action.performed\ +=\ \mbox{\hyperlink{class_menu_controller_a208219210f1e5b354c4f9c5129517f86}{ToggleMenu}};}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_menu_controller_8cs_source_l00042}00042\ \}}
+
+\end{DoxyCode}

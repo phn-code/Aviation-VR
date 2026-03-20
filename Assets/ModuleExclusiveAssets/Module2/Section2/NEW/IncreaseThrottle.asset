@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7af545500308947a6c9ee6772556fe, type: 3}
+  m_Name: IncreaseThrottle
+  m_EditorClassIdentifier: 
+  activityName: Increase Throttle
+  instructions:
+  - Increase power by pushing the left control stick forward.
+  usesCustomScript: 1
+  customScript: {fileID: 6786989911988349206, guid: 116c956f02356f84cbd003522fe0cdc3, type: 3}
+  playerInputRequired: 1
+  totalSteps: 1
+  currentStep: 0

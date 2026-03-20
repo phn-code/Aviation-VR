@@ -1,0 +1,582 @@
+\doxysection{Level\+Turn\+Activity Class Reference}
+\hypertarget{class_level_turn_activity}{}\label{class_level_turn_activity}\index{LevelTurnActivity@{LevelTurnActivity}}
+
+
+Level turn training activity controller.  
+
+
+
+
+Inheritance diagram for Level\+Turn\+Activity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_level_turn_activity__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Level\+Turn\+Activity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_turn_activity__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_level_turn_activity_ac278ff62703e7980b71cb77fe4a3ab55}{On\+Enable}} ()
+\begin{DoxyCompactList}\small\item\em Initialize activity on component enable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_turn_activity_aa584c143e9e2810eb488a58541438e60}{On\+Disable}} ()
+\begin{DoxyCompactList}\small\item\em Cleanup activity on component disable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_turn_activity_ae5b645fa2126e98f246938c41430301d}{Start\+Activity}} ()
+\begin{DoxyCompactList}\small\item\em Start the activity when triggered by \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_turn_activity_a51a1b1e711b5014cd0b46c0f57823801}{Enable\+Current\+Step}} ()
+\begin{DoxyCompactList}\small\item\em Unlock input for the current training step. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_turn_activity_a7aefd8dd7e7661f275d97cfdcba7c42a}{Handle\+Banking}} ()
+\begin{DoxyCompactList}\small\item\em Handle progressive banking training step. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_turn_activity_adcb764cd117aaca97074b0784238abbf}{Stall\+Setup}} ()
+\begin{DoxyCompactList}\small\item\em Automated setup for stall demonstration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_turn_activity_a5c91f9767baa12b74ac4958d29c87b5e}{Handle\+Stall}} ()
+\begin{DoxyCompactList}\small\item\em Handle stall demonstration training step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Timeline\+Asset\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_level_turn_activity_a39e2cb5c7cdfd9eff2a9224e0e4a0e83}{bank\+Timeline\+Assets}}
+\begin{DoxyCompactList}\small\item\em Timeline assets for each bank angle milestone (15, 30, 45, 60). \end{DoxyCompactList}\item 
+Timeline\+Asset \mbox{\hyperlink{class_level_turn_activity_ad9c0b2cfa0e24a2c2fedc4636cf4a18b}{stall\+Timeline\+Asset}}
+\begin{DoxyCompactList}\small\item\em Timeline asset for stall demonstration sequence. \end{DoxyCompactList}\item 
+Input\+Action\+Reference \mbox{\hyperlink{class_level_turn_activity_ad03641f49a8d149becba1442aa6daccf}{rotation\+Input}}
+\begin{DoxyCompactList}\small\item\em VR controller rotation input action for aircraft control. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_level_turn_activity_a4fef8df8fe33549ce9b577c139c11926}{bank\+Sensitivity}} = 45f
+\begin{DoxyCompactList}\small\item\em Roll sensitivity multiplier for controller input. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_level_turn_activity_a5765ea45df455b3d57c640a94e44f4db}{dead\+Zone}} = 0.\+1f
+\begin{DoxyCompactList}\small\item\em Controller deadzone threshold in degrees to filter noise. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_level_turn_activity_a73214867c622da3689c883b2ff104ec5}{step\+Advance\+Tolerance}} = 3f
+\begin{DoxyCompactList}\small\item\em Tolerance in degrees for achieving target angles before advancing. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_level_turn_activity_a6f543f268aab4317f53becb046bc9fc4}{use\+Mouse\+Clicks}} = false
+\begin{DoxyCompactList}\small\item\em Enable mouse button control for testing without VR. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_level_turn_activity_a674d562e1d27a6ed35ad9dc6aea19708}{mouse\+Roll\+Speed}} = 10000f
+\begin{DoxyCompactList}\small\item\em Speed multiplier for mouse-\/based roll/pitch control. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} \mbox{\hyperlink{class_level_turn_activity_a73cac97d926149df5d39baae47500f96}{mas}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Reference to singleton activity scheduler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946}{Turn\+Step}} \{ \mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946aeb45bd2725cb8ac50d0795432a918f86}{Bank}}
+, \mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946ad91f525230e6ed6dbd32c46111a5abd4}{stall\+Setup}}
+, \mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946aa0f50ad4a913f4008911c70870d4028b}{Stall}}
+, \mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946aae94f80b3ce82062a5dd7815daa04f9d}{Complete}}
+ \}
+\begin{DoxyCompactList}\small\item\em Training progression states. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_level_turn_activity_a283812c63bfb84497f409d2742a798f4}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Main update loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Quaternion \mbox{\hyperlink{class_level_turn_activity_afbbb30e60cece791ada488f19660b20b}{controller\+Origin}} = Quaternion.\+identity
+\begin{DoxyCompactList}\small\item\em Initial controller orientation captured at step start. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_level_turn_activity_a9d0c4bdb0b1bda829d49e935345b28e2}{has\+Controller\+Origin}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if controller origin has been captured this step. \end{DoxyCompactList}\item 
+float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_level_turn_activity_a8fc6adc114fc95a778affd29f28588e1}{bank\+Targets}} = \{ 15f, 30f, 45f, 60f \}
+\begin{DoxyCompactList}\small\item\em Progressive bank angle targets in degrees. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_level_turn_activity_acfb30d64c193cba05d09c317516ee10d}{current\+Bank\+Target}} = 0
+\begin{DoxyCompactList}\small\item\em Index of current bank target in bank\+Targets array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946}{Turn\+Step}} \mbox{\hyperlink{class_level_turn_activity_ab6f8fc967b52b6b1ae5d2d7c4611e51e}{current\+Step}}
+\begin{DoxyCompactList}\small\item\em Current training step in the activity sequence. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_level_turn_activity_ae3bf4c38236e882e4caca46d2264486a}{input\+Locked}} = false
+\begin{DoxyCompactList}\small\item\em Flag to disable user input during transitions and timelines. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_level_turn_activity_a38411c7713e82c153bd8a7fb7e5bb07c}{current\+Bank}} = 0f
+\begin{DoxyCompactList}\small\item\em Current aircraft bank angle in degrees, updated each frame. \end{DoxyCompactList}\item 
+Playable\+Director\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_level_turn_activity_a5af4890e911a8895a4bffc91e9dc7eeb}{bank\+Timelines}}
+\begin{DoxyCompactList}\small\item\em Playable\+Directors corresponding to bank\+Timeline\+Assets. \end{DoxyCompactList}\item 
+Playable\+Director \mbox{\hyperlink{class_level_turn_activity_ac6b783d591924ed63f6029c4836eca9c}{stall\+Timeline}}
+\begin{DoxyCompactList}\small\item\em Playable\+Director for stall demonstration timeline. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} \mbox{\hyperlink{class_level_turn_activity_ab024b3190b429cb4006b474c9b6de0b0}{aoa\+Manipulator}}
+\begin{DoxyCompactList}\small\item\em Controller for aircraft pitch and roll manipulation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bank_ghost_trail_behaviour}{Bank\+Ghost\+Trail\+Behaviour}} \mbox{\hyperlink{class_level_turn_activity_ac01f79836f9ded0757013e0029984f73}{bank\+Ghost\+Trail}}
+\begin{DoxyCompactList}\small\item\em Visual trail effect showing aircraft bank history. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Level turn training activity controller. 
+
+Manages a progressive banking exercise where users practice aircraft turns at increasing bank angles (15, 30, 45, 60) followed by a stall recovery demonstration. Implements the \doxylink{interface_i_activity_controller}{IActivity\+Controller} interface for integration with the \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler} system.
+
+Training sequence\+:
+\begin{DoxyEnumerate}
+\item Bank -\/ Practice banking at progressive angles with VR controller input
+\item Stall Setup -\/ Automatically position aircraft to 60 bank
+\item Stall -\/ Practice pitch control to induce controlled stall
+\item Complete -\/ Wait for activity termination
+\end{DoxyEnumerate}
+
+\begin{DoxyAuthor}{Author}
+Connor Freebairn \texorpdfstring{$\vert$}{|} \href{mailto:frecd002@mymail.unisa.edu.au}{\texttt{frecd002@mymail.\+unisa.\+edu.\+au}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+
+
+\label{doc-enum-members}
+\Hypertarget{class_level_turn_activity_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946}\index{LevelTurnActivity@{LevelTurnActivity}!TurnStep@{TurnStep}}
+\index{TurnStep@{TurnStep}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{TurnStep}{TurnStep}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946} 
+enum \mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946}{Level\+Turn\+Activity.\+Turn\+Step}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Training progression states. 
+
+Defines the sequence of training steps in the level turn activity. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bank@{Bank}!LevelTurnActivity@{LevelTurnActivity}}\index{LevelTurnActivity@{LevelTurnActivity}!Bank@{Bank}}}\Hypertarget{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946aeb45bd2725cb8ac50d0795432a918f86}\label{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946aeb45bd2725cb8ac50d0795432a918f86} 
+Bank&User practices progressive banking angles. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{stallSetup@{stallSetup}!LevelTurnActivity@{LevelTurnActivity}}\index{LevelTurnActivity@{LevelTurnActivity}!stallSetup@{stallSetup}}}\Hypertarget{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946ad91f525230e6ed6dbd32c46111a5abd4}\label{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946ad91f525230e6ed6dbd32c46111a5abd4} 
+stall\+Setup&Automated positioning to 60 bank for stall. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Stall@{Stall}!LevelTurnActivity@{LevelTurnActivity}}\index{LevelTurnActivity@{LevelTurnActivity}!Stall@{Stall}}}\Hypertarget{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946aa0f50ad4a913f4008911c70870d4028b}\label{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946aa0f50ad4a913f4008911c70870d4028b} 
+Stall&User practices pitch control to induce stall. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Complete@{Complete}!LevelTurnActivity@{LevelTurnActivity}}\index{LevelTurnActivity@{LevelTurnActivity}!Complete@{Complete}}}\Hypertarget{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946aae94f80b3ce82062a5dd7815daa04f9d}\label{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946aae94f80b3ce82062a5dd7815daa04f9d} 
+Complete&Activity finished, awaiting cleanup. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00049}{49}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_level_turn_activity_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_level_turn_activity_a51a1b1e711b5014cd0b46c0f57823801}\index{LevelTurnActivity@{LevelTurnActivity}!EnableCurrentStep@{EnableCurrentStep}}
+\index{EnableCurrentStep@{EnableCurrentStep}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{EnableCurrentStep()}{EnableCurrentStep()}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_a51a1b1e711b5014cd0b46c0f57823801} 
+void Level\+Turn\+Activity.\+Enable\+Current\+Step (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Unlock input for the current training step. 
+
+Resets input lock and controller origin flags to allow user control. Called after transitions and timeline completions. 
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00126}{126}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_a7aefd8dd7e7661f275d97cfdcba7c42a}\index{LevelTurnActivity@{LevelTurnActivity}!HandleBanking@{HandleBanking}}
+\index{HandleBanking@{HandleBanking}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{HandleBanking()}{HandleBanking()}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_a7aefd8dd7e7661f275d97cfdcba7c42a} 
+void Level\+Turn\+Activity.\+Handle\+Banking (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handle progressive banking training step. 
+
+Captures controller origin on first frame, reads current bank angle, and checks if user has achieved the current target angle. When target is reached, locks input, plays confirmation timeline, and advances to next bank target or stall setup. Allows controller or debug mouse input when target not yet achieved. 
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00164}{164}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_a5c91f9767baa12b74ac4958d29c87b5e}\index{LevelTurnActivity@{LevelTurnActivity}!HandleStall@{HandleStall}}
+\index{HandleStall@{HandleStall}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{HandleStall()}{HandleStall()}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_a5c91f9767baa12b74ac4958d29c87b5e} 
+void Level\+Turn\+Activity.\+Handle\+Stall (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handle stall demonstration training step. 
+
+Captures controller origin on first frame, reads current pitch angle, and checks if user has achieved 10 pitch target to induce stall. When target is reached, locks input, plays stall timeline, and notifies activity scheduler of completion. Allows controller or debug mouse input for pitch control when target not yet achieved. 
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00249}{249}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_aa584c143e9e2810eb488a58541438e60}\index{LevelTurnActivity@{LevelTurnActivity}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_aa584c143e9e2810eb488a58541438e60} 
+void Level\+Turn\+Activity.\+On\+Disable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cleanup activity on component disable. 
+
+Disables input actions and turns off visual trail effects. 
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00100}{100}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_ac278ff62703e7980b71cb77fe4a3ab55}\index{LevelTurnActivity@{LevelTurnActivity}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_ac278ff62703e7980b71cb77fe4a3ab55} 
+void Level\+Turn\+Activity.\+On\+Enable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize activity on component enable. 
+
+Enables input actions, resets progression state to initial values, retrieves references to aircraft controllers and visual effects, and finds Playable\+Directors for all timeline assets. 
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00076}{76}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_adcb764cd117aaca97074b0784238abbf}\index{LevelTurnActivity@{LevelTurnActivity}!StallSetup@{StallSetup}}
+\index{StallSetup@{StallSetup}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{StallSetup()}{StallSetup()}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_adcb764cd117aaca97074b0784238abbf} 
+void Level\+Turn\+Activity.\+Stall\+Setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Automated setup for stall demonstration. 
+
+Locks input and automatically positions aircraft to 60 bank angle using lerp. Handles both positive and negative bank angles by detecting current bank sign. Advances to stall step when 60° target is achieved within tolerance. 
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00219}{219}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_ae5b645fa2126e98f246938c41430301d}\index{LevelTurnActivity@{LevelTurnActivity}!StartActivity@{StartActivity}}
+\index{StartActivity@{StartActivity}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{StartActivity()}{StartActivity()}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_ae5b645fa2126e98f246938c41430301d} 
+void Level\+Turn\+Activity.\+Start\+Activity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Start the activity when triggered by \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}. 
+
+Called by the activity scheduler to begin the training sequence. Unlocks input for the first step. 
+
+Implements \mbox{\hyperlink{interface_i_activity_controller_a5edbf7511d4b716c7e5de8d2c0c261a0}{IActivity\+Controller}}.
+
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00115}{115}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_a283812c63bfb84497f409d2742a798f4}\index{LevelTurnActivity@{LevelTurnActivity}!Update@{Update}}
+\index{Update@{Update}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_a283812c63bfb84497f409d2742a798f4} 
+void Level\+Turn\+Activity.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Main update loop. 
+
+Routes execution to appropriate handler based on current training step. 
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00137}{137}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_level_turn_activity_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_level_turn_activity_ab024b3190b429cb4006b474c9b6de0b0}\index{LevelTurnActivity@{LevelTurnActivity}!aoaManipulator@{aoaManipulator}}
+\index{aoaManipulator@{aoaManipulator}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{aoaManipulator}{aoaManipulator}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_ab024b3190b429cb4006b474c9b6de0b0} 
+\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} Level\+Turn\+Activity.\+aoa\+Manipulator\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Controller for aircraft pitch and roll manipulation. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00066}{66}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_ac01f79836f9ded0757013e0029984f73}\index{LevelTurnActivity@{LevelTurnActivity}!bankGhostTrail@{bankGhostTrail}}
+\index{bankGhostTrail@{bankGhostTrail}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{bankGhostTrail}{bankGhostTrail}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_ac01f79836f9ded0757013e0029984f73} 
+\mbox{\hyperlink{class_bank_ghost_trail_behaviour}{Bank\+Ghost\+Trail\+Behaviour}} Level\+Turn\+Activity.\+bank\+Ghost\+Trail\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Visual trail effect showing aircraft bank history. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00067}{67}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_a4fef8df8fe33549ce9b577c139c11926}\index{LevelTurnActivity@{LevelTurnActivity}!bankSensitivity@{bankSensitivity}}
+\index{bankSensitivity@{bankSensitivity}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{bankSensitivity}{bankSensitivity}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_a4fef8df8fe33549ce9b577c139c11926} 
+float Level\+Turn\+Activity.\+bank\+Sensitivity = 45f}
+
+
+
+Roll sensitivity multiplier for controller input. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00033}{33}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_a8fc6adc114fc95a778affd29f28588e1}\index{LevelTurnActivity@{LevelTurnActivity}!bankTargets@{bankTargets}}
+\index{bankTargets@{bankTargets}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{bankTargets}{bankTargets}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_a8fc6adc114fc95a778affd29f28588e1} 
+float \mbox{[}$\,$\mbox{]} Level\+Turn\+Activity.\+bank\+Targets = \{ 15f, 30f, 45f, 60f \}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Progressive bank angle targets in degrees. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00057}{57}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_a39e2cb5c7cdfd9eff2a9224e0e4a0e83}\index{LevelTurnActivity@{LevelTurnActivity}!bankTimelineAssets@{bankTimelineAssets}}
+\index{bankTimelineAssets@{bankTimelineAssets}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{bankTimelineAssets}{bankTimelineAssets}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_a39e2cb5c7cdfd9eff2a9224e0e4a0e83} 
+Timeline\+Asset \mbox{[}$\,$\mbox{]} Level\+Turn\+Activity.\+bank\+Timeline\+Assets}
+
+
+
+Timeline assets for each bank angle milestone (15, 30, 45, 60). 
+
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00026}{26}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_a5af4890e911a8895a4bffc91e9dc7eeb}\index{LevelTurnActivity@{LevelTurnActivity}!bankTimelines@{bankTimelines}}
+\index{bankTimelines@{bankTimelines}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{bankTimelines}{bankTimelines}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_a5af4890e911a8895a4bffc91e9dc7eeb} 
+Playable\+Director \mbox{[}$\,$\mbox{]} Level\+Turn\+Activity.\+bank\+Timelines\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Playable\+Directors corresponding to bank\+Timeline\+Assets. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00063}{63}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_afbbb30e60cece791ada488f19660b20b}\index{LevelTurnActivity@{LevelTurnActivity}!controllerOrigin@{controllerOrigin}}
+\index{controllerOrigin@{controllerOrigin}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{controllerOrigin}{controllerOrigin}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_afbbb30e60cece791ada488f19660b20b} 
+Quaternion Level\+Turn\+Activity.\+controller\+Origin = Quaternion.\+identity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initial controller orientation captured at step start. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_a38411c7713e82c153bd8a7fb7e5bb07c}\index{LevelTurnActivity@{LevelTurnActivity}!currentBank@{currentBank}}
+\index{currentBank@{currentBank}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{currentBank}{currentBank}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_a38411c7713e82c153bd8a7fb7e5bb07c} 
+float Level\+Turn\+Activity.\+current\+Bank = 0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current aircraft bank angle in degrees, updated each frame. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00061}{61}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_acfb30d64c193cba05d09c317516ee10d}\index{LevelTurnActivity@{LevelTurnActivity}!currentBankTarget@{currentBankTarget}}
+\index{currentBankTarget@{currentBankTarget}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{currentBankTarget}{currentBankTarget}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_acfb30d64c193cba05d09c317516ee10d} 
+int Level\+Turn\+Activity.\+current\+Bank\+Target = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Index of current bank target in bank\+Targets array. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00058}{58}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_ab6f8fc967b52b6b1ae5d2d7c4611e51e}\index{LevelTurnActivity@{LevelTurnActivity}!currentStep@{currentStep}}
+\index{currentStep@{currentStep}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{currentStep}{currentStep}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_ab6f8fc967b52b6b1ae5d2d7c4611e51e} 
+\mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946}{Turn\+Step}} Level\+Turn\+Activity.\+current\+Step\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current training step in the activity sequence. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00059}{59}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_a5765ea45df455b3d57c640a94e44f4db}\index{LevelTurnActivity@{LevelTurnActivity}!deadZone@{deadZone}}
+\index{deadZone@{deadZone}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{deadZone}{deadZone}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_a5765ea45df455b3d57c640a94e44f4db} 
+float Level\+Turn\+Activity.\+dead\+Zone = 0.\+1f}
+
+
+
+Controller deadzone threshold in degrees to filter noise. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_a9d0c4bdb0b1bda829d49e935345b28e2}\index{LevelTurnActivity@{LevelTurnActivity}!hasControllerOrigin@{hasControllerOrigin}}
+\index{hasControllerOrigin@{hasControllerOrigin}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{hasControllerOrigin}{hasControllerOrigin}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_a9d0c4bdb0b1bda829d49e935345b28e2} 
+bool Level\+Turn\+Activity.\+has\+Controller\+Origin = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag indicating if controller origin has been captured this step. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00038}{38}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_ae3bf4c38236e882e4caca46d2264486a}\index{LevelTurnActivity@{LevelTurnActivity}!inputLocked@{inputLocked}}
+\index{inputLocked@{inputLocked}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{inputLocked}{inputLocked}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_ae3bf4c38236e882e4caca46d2264486a} 
+bool Level\+Turn\+Activity.\+input\+Locked = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag to disable user input during transitions and timelines. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00060}{60}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_a674d562e1d27a6ed35ad9dc6aea19708}\index{LevelTurnActivity@{LevelTurnActivity}!mouseRollSpeed@{mouseRollSpeed}}
+\index{mouseRollSpeed@{mouseRollSpeed}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{mouseRollSpeed}{mouseRollSpeed}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_a674d562e1d27a6ed35ad9dc6aea19708} 
+float Level\+Turn\+Activity.\+mouse\+Roll\+Speed = 10000f}
+
+
+
+Speed multiplier for mouse-\/based roll/pitch control. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00042}{42}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_ad03641f49a8d149becba1442aa6daccf}\index{LevelTurnActivity@{LevelTurnActivity}!rotationInput@{rotationInput}}
+\index{rotationInput@{rotationInput}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{rotationInput}{rotationInput}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_ad03641f49a8d149becba1442aa6daccf} 
+Input\+Action\+Reference Level\+Turn\+Activity.\+rotation\+Input}
+
+
+
+VR controller rotation input action for aircraft control. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00030}{30}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_ac6b783d591924ed63f6029c4836eca9c}\index{LevelTurnActivity@{LevelTurnActivity}!stallTimeline@{stallTimeline}}
+\index{stallTimeline@{stallTimeline}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{stallTimeline}{stallTimeline}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_ac6b783d591924ed63f6029c4836eca9c} 
+Playable\+Director Level\+Turn\+Activity.\+stall\+Timeline\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Playable\+Director for stall demonstration timeline. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00064}{64}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_ad9c0b2cfa0e24a2c2fedc4636cf4a18b}\index{LevelTurnActivity@{LevelTurnActivity}!stallTimelineAsset@{stallTimelineAsset}}
+\index{stallTimelineAsset@{stallTimelineAsset}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{stallTimelineAsset}{stallTimelineAsset}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_ad9c0b2cfa0e24a2c2fedc4636cf4a18b} 
+Timeline\+Asset Level\+Turn\+Activity.\+stall\+Timeline\+Asset}
+
+
+
+Timeline asset for stall demonstration sequence. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00027}{27}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_a73214867c622da3689c883b2ff104ec5}\index{LevelTurnActivity@{LevelTurnActivity}!stepAdvanceTolerance@{stepAdvanceTolerance}}
+\index{stepAdvanceTolerance@{stepAdvanceTolerance}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{stepAdvanceTolerance}{stepAdvanceTolerance}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_a73214867c622da3689c883b2ff104ec5} 
+float Level\+Turn\+Activity.\+step\+Advance\+Tolerance = 3f}
+
+
+
+Tolerance in degrees for achieving target angles before advancing. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00035}{35}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_level_turn_activity_a6f543f268aab4317f53becb046bc9fc4}\index{LevelTurnActivity@{LevelTurnActivity}!useMouseClicks@{useMouseClicks}}
+\index{useMouseClicks@{useMouseClicks}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{useMouseClicks}{useMouseClicks}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_a6f543f268aab4317f53becb046bc9fc4} 
+bool Level\+Turn\+Activity.\+use\+Mouse\+Clicks = false}
+
+
+
+Enable mouse button control for testing without VR. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00041}{41}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_level_turn_activity_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_level_turn_activity_a73cac97d926149df5d39baae47500f96}\index{LevelTurnActivity@{LevelTurnActivity}!mas@{mas}}
+\index{mas@{mas}!LevelTurnActivity@{LevelTurnActivity}}
+\doxysubsubsection{\texorpdfstring{mas}{mas}}
+{\footnotesize\ttfamily \label{class_level_turn_activity_a73cac97d926149df5d39baae47500f96} 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} Level\+Turn\+Activity.\+mas\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
+
+
+
+Reference to singleton activity scheduler. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_turn_activity_8cs_source_l00023}{23}} of file \mbox{\hyperlink{_level_turn_activity_8cs_source}{Level\+Turn\+Activity.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Module\+Exclusive\+Assets/\+Module2/\+Section3/\mbox{\hyperlink{_level_turn_activity_8cs}{Level\+Turn\+Activity.\+cs}}\end{DoxyCompactItemize}

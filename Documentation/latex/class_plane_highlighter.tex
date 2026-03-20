@@ -1,0 +1,84 @@
+\doxysection{Plane\+Highlighter Class Reference}
+\hypertarget{class_plane_highlighter}{}\label{class_plane_highlighter}\index{PlaneHighlighter@{PlaneHighlighter}}
+
+
+Handles highlighting of specific components of the aircraft.  
+
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_plane_highlighter_a07c037335acb7ba14558eeadfceef6af}{Highlight}} (IEnumerable$<$ Game\+Object $>$ components, Color glow\+Colour)
+\begin{DoxyCompactList}\small\item\em Highlights a collection of Game\+Objects a determined colour using emission. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_plane_highlighter_aacc462a1f4886251b7714cbea48d8745}{Unhighlight}} (IEnumerable$<$ Game\+Object $>$ components)
+\begin{DoxyCompactList}\small\item\em Uh-\/highlights a collection of Game\+Objects by disabling their emission and resetting their materials\textquotesingle{} properties. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles highlighting of specific components of the aircraft. 
+
+Works by duplicating, modifying, and then assigning a new emissive material to the selected Game\+Objects. Typically called from \doxylink{_d_a__40_8cs}{DA\+\_\+40.\+cs}.
+
+\begin{DoxyAuthor}{Author}
+Caleb Martin \texorpdfstring{$\vert$}{|} \href{mailto:marcy066@mymail.unisa.edu.au}{\texttt{marcy066@mymail.\+unisa.\+edu.\+au}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_plane_component_highlighter_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_plane_component_highlighter_8cs_source}{Plane\+Component\+Highlighter.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_plane_highlighter_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_plane_highlighter_a07c037335acb7ba14558eeadfceef6af}\index{PlaneHighlighter@{PlaneHighlighter}!Highlight@{Highlight}}
+\index{Highlight@{Highlight}!PlaneHighlighter@{PlaneHighlighter}}
+\doxysubsubsection{\texorpdfstring{Highlight()}{Highlight()}}
+{\footnotesize\ttfamily \label{class_plane_highlighter_a07c037335acb7ba14558eeadfceef6af} 
+void Plane\+Highlighter.\+Highlight (\begin{DoxyParamCaption}\item[{IEnumerable$<$ Game\+Object $>$}]{components}{, }\item[{Color}]{glow\+Colour}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Highlights a collection of Game\+Objects a determined colour using emission. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em components} & The collection of Game\+Objects to be highlighted. \\
+\hline
+{\em glow\+Colour} & The the colour that the selected Game\+Objects should glow. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_plane_component_highlighter_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_plane_component_highlighter_8cs_source}{Plane\+Component\+Highlighter.\+cs}}.
+
+\Hypertarget{class_plane_highlighter_aacc462a1f4886251b7714cbea48d8745}\index{PlaneHighlighter@{PlaneHighlighter}!Unhighlight@{Unhighlight}}
+\index{Unhighlight@{Unhighlight}!PlaneHighlighter@{PlaneHighlighter}}
+\doxysubsubsection{\texorpdfstring{Unhighlight()}{Unhighlight()}}
+{\footnotesize\ttfamily \label{class_plane_highlighter_aacc462a1f4886251b7714cbea48d8745} 
+void Plane\+Highlighter.\+Unhighlight (\begin{DoxyParamCaption}\item[{IEnumerable$<$ Game\+Object $>$}]{components}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Uh-\/highlights a collection of Game\+Objects by disabling their emission and resetting their materials\textquotesingle{} properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em components} & The collection of Game\+Objects to be reverted to a non-\/emissive state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_plane_component_highlighter_8cs_source_l00047}{47}} of file \mbox{\hyperlink{_plane_component_highlighter_8cs_source}{Plane\+Component\+Highlighter.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+DA\+\_\+40\+\_\+\+Special\+Features/\mbox{\hyperlink{_plane_component_highlighter_8cs}{Plane\+Component\+Highlighter.\+cs}}\end{DoxyCompactItemize}

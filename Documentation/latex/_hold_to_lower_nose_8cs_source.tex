@@ -1,0 +1,138 @@
+\doxysection{Hold\+To\+Lower\+Nose.\+cs}
+\hypertarget{_hold_to_lower_nose_8cs_source}{}\label{_hold_to_lower_nose_8cs_source}\index{Assets/ModuleExclusiveAssets/Module2/Section2/HoldToLowerNose.cs@{Assets/ModuleExclusiveAssets/Module2/Section2/HoldToLowerNose.cs}}
+\mbox{\hyperlink{_hold_to_lower_nose_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00002}00002\ \textcolor{comment}{//using\ Unity.Tutorials.Core.Editor;}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }UnityEngine.InputSystem;}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }UnityEngine.XR.Interaction.Toolkit;}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00012}\mbox{\hyperlink{class_hold_to_lower_nose}{00012}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_hold_to_lower_nose}{HoldToLowerNose}}\ :\ MonoBehaviour,\ \mbox{\hyperlink{interface_i_activity_controller}{IActivityController}}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00014}\mbox{\hyperlink{class_hold_to_lower_nose_a54c1231b11694350d74e425bc04a4a25}{00014}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_module_activity_scheduler}{ModuleActivityScheduler}}\ \mbox{\hyperlink{class_hold_to_lower_nose_a54c1231b11694350d74e425bc04a4a25}{mas}}\ =>\ \mbox{\hyperlink{class_module_activity_scheduler}{ModuleActivityScheduler}}.\mbox{\hyperlink{class_module_activity_scheduler_a14579487c05abb7ec7095bd25f7d119e}{Instance}};\ \textcolor{comment}{//\ Reference\ to\ MAS\ singleton}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00016}\mbox{\hyperlink{class_hold_to_lower_nose_a7658ee8bec0101f95226414102f5ebf3}{00016}}\ \ \ \ \ \textcolor{keyword}{public}\ InputActionReference\ \mbox{\hyperlink{class_hold_to_lower_nose_a7658ee8bec0101f95226414102f5ebf3}{rotateAction}};\ \textcolor{comment}{//\ Input\ action\ for\ rotating\ the\ left\ controller}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00018}\mbox{\hyperlink{class_hold_to_lower_nose_a7ee22877ee1a2320784090ca1a2709b9}{00018}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_hold_to_lower_nose_a7ee22877ee1a2320784090ca1a2709b9}{minRotationThreshold}}\ =\ 0.1f;\ \textcolor{comment}{//\ Default,\ can\ be\ changed\ in\ inspector}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00019}\mbox{\hyperlink{class_hold_to_lower_nose_a6848ae8158fc4e9c1514485c36f2bbfd}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_hold_to_lower_nose_a6848ae8158fc4e9c1514485c36f2bbfd}{maxRotationThreshold}}\ =\ 90f;}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//public\ float\ minZPositionThreshold\ =\ 0.1f;\ //\ Default,\ can\ be\ changed\ in\ inspector}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//public\ float\ maxZPositionThreshold\ =\ 1.0f;}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00024}\mbox{\hyperlink{class_hold_to_lower_nose_a955041768da5c410b4fdaf25effc1d9f}{00024}}\ \ \ \ \ Quaternion\ \mbox{\hyperlink{class_hold_to_lower_nose_a955041768da5c410b4fdaf25effc1d9f}{initialControllerRotation}};}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00025}\mbox{\hyperlink{class_hold_to_lower_nose_a83a1913c562ea558995e0aab66ca3dde}{00025}}\ \ \ \ \ Quaternion\ \mbox{\hyperlink{class_hold_to_lower_nose_a83a1913c562ea558995e0aab66ca3dde}{controllerRotation}};}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00026}\mbox{\hyperlink{class_hold_to_lower_nose_ae623acaf6fb22e6ce4d549cf72c82953}{00026}}\ \ \ \ \ Vector3\ \mbox{\hyperlink{class_hold_to_lower_nose_ae623acaf6fb22e6ce4d549cf72c82953}{initialControllerRot}};}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00027}\mbox{\hyperlink{class_hold_to_lower_nose_a5612e67f72a43cd0362daa6c0b7b79b7}{00027}}\ \ \ \ \ Vector3\ \mbox{\hyperlink{class_hold_to_lower_nose_a5612e67f72a43cd0362daa6c0b7b79b7}{controllerRot}};}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//public\ ActionBasedController\ controller;}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00031}\mbox{\hyperlink{class_hold_to_lower_nose_a904ba5c7674d67d7902c022d04f77530}{00031}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_hold_to_lower_nose_a904ba5c7674d67d7902c022d04f77530}{waitPeriodOver}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//\ Controller\ Position.}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00035}\mbox{\hyperlink{class_hold_to_lower_nose_a30313fa6d804c4f4424c5c7987a0af04}{00035}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_hold_to_lower_nose_a30313fa6d804c4f4424c5c7987a0af04}{activityEnabled}}\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ Start\ as\ disabled}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//\ Subscribe\ to\ event\ listener\ and\ enable\ input\ action}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00038}\mbox{\hyperlink{class_hold_to_lower_nose_aa7a2d54cbf644a0e6a7dc6cad1ea6c4d}{00038}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hold_to_lower_nose_aa7a2d54cbf644a0e6a7dc6cad1ea6c4d}{OnEnable}}()}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00039}00039\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_hold_to_lower_nose_a7658ee8bec0101f95226414102f5ebf3}{rotateAction}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//rotateAction.action.performed\ +=\ OnRotatePerformed;}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ rotateAction.action.performed\ +=\ \mbox{\hyperlink{class_hold_to_lower_nose_a9d70f1585c8c3148755939a398cc2b63}{OnPositionChange}};}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hold_to_lower_nose_a7658ee8bec0101f95226414102f5ebf3}{rotateAction}}.action.Enable();}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00048}00048\ \ \ \ \ \textcolor{comment}{//\ Unsubscribe\ to\ event\ listener\ and\ disable\ input\ action}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00049}\mbox{\hyperlink{class_hold_to_lower_nose_a55c8cb0d0ec06469f9f8c5f9cdc3e6dc}{00049}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hold_to_lower_nose_a55c8cb0d0ec06469f9f8c5f9cdc3e6dc}{OnDisable}}()}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00050}00050\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_hold_to_lower_nose_a7658ee8bec0101f95226414102f5ebf3}{rotateAction}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//rotateAction.action.performed\ -\/=\ OnRotatePerformed;}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ rotateAction.action.performed\ -\/=\ \mbox{\hyperlink{class_hold_to_lower_nose_a9d70f1585c8c3148755939a398cc2b63}{OnPositionChange}};}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hold_to_lower_nose_a7658ee8bec0101f95226414102f5ebf3}{rotateAction}}.action.Disable();}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00059}00059\ \ \ \ \ \textcolor{comment}{//\ }}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00060}\mbox{\hyperlink{class_hold_to_lower_nose_a47422cc7f0a823ebba00ff0387509c7d}{00060}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hold_to_lower_nose_a47422cc7f0a823ebba00ff0387509c7d}{StartActivity}}()}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00061}00061\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hold_to_lower_nose_a30313fa6d804c4f4424c5c7987a0af04}{activityEnabled}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ rotateAction.action.Enable();}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00067}\mbox{\hyperlink{class_hold_to_lower_nose_a2e16a8fa9a0977dca59ed2cd82496043}{00067}}\ \ \ \ \ IEnumerator\ \mbox{\hyperlink{class_hold_to_lower_nose_a2e16a8fa9a0977dca59ed2cd82496043}{WaitPeriod}}()}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00068}00068\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(3);}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hold_to_lower_nose_a904ba5c7674d67d7902c022d04f77530}{waitPeriodOver}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00085}00085\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ user\ has\ moved\ the\ controller\ forward.}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00086}00086\ \ \ \ \ \textcolor{comment}{//\ i.e:\ PUSH\ THE\ CONTROL\ COLUMN\ FORWARD\ TO\ LOWER\ AOA.}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00088}\mbox{\hyperlink{class_hold_to_lower_nose_a9d70f1585c8c3148755939a398cc2b63}{00088}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hold_to_lower_nose_a9d70f1585c8c3148755939a398cc2b63}{OnPositionChange}}(InputAction.CallbackContext\ ctx)}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00089}00089\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ (initialControllerRotation\ ==\ null)}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ initialControllerRotation\ =\ ctx.ReadValue<Quaternion>();\ //\ Store\ initial\ position.}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ initialControllerRot\ =\ initialControllerRotation.eulerAngles;}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hold_to_lower_nose_a83a1913c562ea558995e0aab66ca3dde}{controllerRotation}}\ =\ ctx.ReadValue<Quaternion>();}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hold_to_lower_nose_a5612e67f72a43cd0362daa6c0b7b79b7}{controllerRot}}\ =\ \mbox{\hyperlink{class_hold_to_lower_nose_a83a1913c562ea558995e0aab66ca3dde}{controllerRotation}}.eulerAngles;}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ the\ X\ rotation.}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ xRotation\ =\ Mathf.DeltaAngle(0f,\ \mbox{\hyperlink{class_hold_to_lower_nose_a83a1913c562ea558995e0aab66ca3dde}{controllerRotation}}.normalized.x);\ \textcolor{comment}{//\ fixed\ changed\ this\ to\ x}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_hold_to_lower_nose_a30313fa6d804c4f4424c5c7987a0af04}{activityEnabled}})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 0.1f,\ -\/30f}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (xRotation\ >=\ \mbox{\hyperlink{class_hold_to_lower_nose_a7ee22877ee1a2320784090ca1a2709b9}{minRotationThreshold}}\ \&\&\ xRotation\ <=\ \mbox{\hyperlink{class_hold_to_lower_nose_a6848ae8158fc4e9c1514485c36f2bbfd}{maxRotationThreshold}})}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//controller.SendHapticImpulse(1,\ 5f);}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//StartCoroutine(WaitPeriod());}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ (initialControllerRot.magnitude\ >\ controllerRot.magnitude)\ //\ remove\ this\ for\ testing}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_hold_to_lower_nose_a2e16a8fa9a0977dca59ed2cd82496043}{WaitPeriod}}());}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_axis_rotation_controller}{AxisRotationController}}\ aoaManip\ =\ GameObject.FindAnyObjectByType<\mbox{\hyperlink{class_axis_rotation_controller}{AxisRotationController}}>();}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ aoaManip.\mbox{\hyperlink{class_axis_rotation_controller_a24f7cfea93c0b621d35b49055935d9a3}{LerpAOA}}(-\/10);\ \textcolor{comment}{//\ Lower\ nose\ by\ 10\ degrees.}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00123}00123\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00126}\mbox{\hyperlink{class_hold_to_lower_nose_a5b69ae2f58d56c5e9da6fa009fa90585}{00126}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hold_to_lower_nose_a5b69ae2f58d56c5e9da6fa009fa90585}{Update}}()}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00127}00127\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_hold_to_lower_nose_a904ba5c7674d67d7902c022d04f77530}{waitPeriodOver}}\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hold_to_lower_nose_a904ba5c7674d67d7902c022d04f77530}{waitPeriodOver}}\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ Run\ the\ code\ only\ once.}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hold_to_lower_nose_a54c1231b11694350d74e425bc04a4a25}{mas}}.OnExternalStepCompleted();}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ is\ a\ one-\/action\ activity,\ so\ disable\ after\ completed\ input}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hold_to_lower_nose_a30313fa6d804c4f4424c5c7987a0af04}{activityEnabled}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Clean-\/up}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(gameObject);\ \textcolor{comment}{//\ there\ is\ only\ one\ step\ in\ the\ activity\ associated\ with\ this\ script.}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00143}00143\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hold_to_lower_nose_8cs_source_l00144}00144\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,5 @@
+<map id="SkyboxRotation" name="SkyboxRotation">
+<area shape="rect" id="Node000001" title="Ambient class that slowly and gradualy rotates the skybox in the world to give the impression of movi..." alt="" coords="5,80,120,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="7,5,118,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,48,65,80,60,80,60,48"/>
+</map>

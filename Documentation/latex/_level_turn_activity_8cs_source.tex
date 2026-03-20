@@ -1,0 +1,228 @@
+\doxysection{Level\+Turn\+Activity.\+cs}
+\hypertarget{_level_turn_activity_8cs_source}{}\label{_level_turn_activity_8cs_source}\index{Assets/ModuleExclusiveAssets/Module2/Section3/LevelTurnActivity.cs@{Assets/ModuleExclusiveAssets/Module2/Section3/LevelTurnActivity.cs}}
+\mbox{\hyperlink{_level_turn_activity_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine.InputSystem;}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine.Playables;}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }UnityEngine.Timeline;}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00021}\mbox{\hyperlink{class_level_turn_activity}{00021}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_level_turn_activity}{LevelTurnActivity}}\ :\ MonoBehaviour,\ \mbox{\hyperlink{interface_i_activity_controller}{IActivityController}}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00022}00022\ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00023}\mbox{\hyperlink{class_level_turn_activity_a73cac97d926149df5d39baae47500f96}{00023}}\ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_module_activity_scheduler}{ModuleActivityScheduler}}\ \mbox{\hyperlink{class_level_turn_activity_a73cac97d926149df5d39baae47500f96}{mas}}\ =>\ \mbox{\hyperlink{class_module_activity_scheduler}{ModuleActivityScheduler}}.\mbox{\hyperlink{class_module_activity_scheduler_a14579487c05abb7ec7095bd25f7d119e}{Instance}};\ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00025}00025\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}timelines"{}})]}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00026}\mbox{\hyperlink{class_level_turn_activity_a39e2cb5c7cdfd9eff2a9224e0e4a0e83}{00026}}\ \ \ \ \ \textcolor{keyword}{public}\ TimelineAsset[]\ \mbox{\hyperlink{class_level_turn_activity_a39e2cb5c7cdfd9eff2a9224e0e4a0e83}{bankTimelineAssets}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00027}\mbox{\hyperlink{class_level_turn_activity_ad9c0b2cfa0e24a2c2fedc4636cf4a18b}{00027}}\ \ \ \ \ \textcolor{keyword}{public}\ TimelineAsset\ \mbox{\hyperlink{class_level_turn_activity_ad9c0b2cfa0e24a2c2fedc4636cf4a18b}{stallTimelineAsset}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00029}00029\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Input\ action\ references"{}})]}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00030}\mbox{\hyperlink{class_level_turn_activity_ad03641f49a8d149becba1442aa6daccf}{00030}}\ \ \ \ \ \textcolor{keyword}{public}\ InputActionReference\ \mbox{\hyperlink{class_level_turn_activity_ad03641f49a8d149becba1442aa6daccf}{rotationInput}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00032}00032\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Control\ Settings"{}})]}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00033}\mbox{\hyperlink{class_level_turn_activity_a4fef8df8fe33549ce9b577c139c11926}{00033}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_level_turn_activity_a4fef8df8fe33549ce9b577c139c11926}{bankSensitivity}}\ =\ 45f;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00034}\mbox{\hyperlink{class_level_turn_activity_a5765ea45df455b3d57c640a94e44f4db}{00034}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_level_turn_activity_a5765ea45df455b3d57c640a94e44f4db}{deadZone}}\ =\ 0.1f;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00035}\mbox{\hyperlink{class_level_turn_activity_a73214867c622da3689c883b2ff104ec5}{00035}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_level_turn_activity_a73214867c622da3689c883b2ff104ec5}{stepAdvanceTolerance}}\ =\ 3f;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00037}\mbox{\hyperlink{class_level_turn_activity_afbbb30e60cece791ada488f19660b20b}{00037}}\ \ \ \ \ \textcolor{keyword}{private}\ Quaternion\ \mbox{\hyperlink{class_level_turn_activity_afbbb30e60cece791ada488f19660b20b}{controllerOrigin}}\ =\ Quaternion.identity;\ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00038}\mbox{\hyperlink{class_level_turn_activity_a9d0c4bdb0b1bda829d49e935345b28e2}{00038}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_level_turn_activity_a9d0c4bdb0b1bda829d49e935345b28e2}{hasControllerOrigin}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00040}00040\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Editor\ Debug\ settings"{}})]}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00041}\mbox{\hyperlink{class_level_turn_activity_a6f543f268aab4317f53becb046bc9fc4}{00041}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_level_turn_activity_a6f543f268aab4317f53becb046bc9fc4}{useMouseClicks}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00042}\mbox{\hyperlink{class_level_turn_activity_a674d562e1d27a6ed35ad9dc6aea19708}{00042}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_level_turn_activity_a674d562e1d27a6ed35ad9dc6aea19708}{mouseRollSpeed}}\ =\ 10000f;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00049}\mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946}{00049}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946}{TurnStep}}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00050}00050\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00051}\mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946aeb45bd2725cb8ac50d0795432a918f86}{00051}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946aeb45bd2725cb8ac50d0795432a918f86}{Bank}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00052}\mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946ad91f525230e6ed6dbd32c46111a5abd4}{00052}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946ad91f525230e6ed6dbd32c46111a5abd4}{stallSetup}},\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00053}\mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946aa0f50ad4a913f4008911c70870d4028b}{00053}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946aa0f50ad4a913f4008911c70870d4028b}{Stall}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00054}\mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946aae94f80b3ce82062a5dd7815daa04f9d}{00054}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946aae94f80b3ce82062a5dd7815daa04f9d}{Complete}}\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00056}00056\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00057}\mbox{\hyperlink{class_level_turn_activity_a8fc6adc114fc95a778affd29f28588e1}{00057}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}[]\ \mbox{\hyperlink{class_level_turn_activity_a8fc6adc114fc95a778affd29f28588e1}{bankTargets}}\ =\ \{\ 15f,\ 30f,\ 45f,\ 60f\ \};\ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00058}\mbox{\hyperlink{class_level_turn_activity_acfb30d64c193cba05d09c317516ee10d}{00058}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_level_turn_activity_acfb30d64c193cba05d09c317516ee10d}{currentBankTarget}}\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00059}\mbox{\hyperlink{class_level_turn_activity_ab6f8fc967b52b6b1ae5d2d7c4611e51e}{00059}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946}{TurnStep}}\ \mbox{\hyperlink{class_level_turn_activity_ab6f8fc967b52b6b1ae5d2d7c4611e51e}{currentStep}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00060}\mbox{\hyperlink{class_level_turn_activity_ae3bf4c38236e882e4caca46d2264486a}{00060}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_level_turn_activity_ae3bf4c38236e882e4caca46d2264486a}{inputLocked}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00061}\mbox{\hyperlink{class_level_turn_activity_a38411c7713e82c153bd8a7fb7e5bb07c}{00061}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_level_turn_activity_a38411c7713e82c153bd8a7fb7e5bb07c}{currentBank}}\ =\ 0f;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00063}\mbox{\hyperlink{class_level_turn_activity_a5af4890e911a8895a4bffc91e9dc7eeb}{00063}}\ \ \ \ \ \textcolor{keyword}{private}\ PlayableDirector[]\ \mbox{\hyperlink{class_level_turn_activity_a5af4890e911a8895a4bffc91e9dc7eeb}{bankTimelines}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00064}\mbox{\hyperlink{class_level_turn_activity_ac6b783d591924ed63f6029c4836eca9c}{00064}}\ \ \ \ \ \textcolor{keyword}{private}\ PlayableDirector\ \mbox{\hyperlink{class_level_turn_activity_ac6b783d591924ed63f6029c4836eca9c}{stallTimeline}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00066}\mbox{\hyperlink{class_level_turn_activity_ab024b3190b429cb4006b474c9b6de0b0}{00066}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_axis_rotation_controller}{AxisRotationController}}\ \mbox{\hyperlink{class_level_turn_activity_ab024b3190b429cb4006b474c9b6de0b0}{aoaManipulator}};\ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00067}\mbox{\hyperlink{class_level_turn_activity_ac01f79836f9ded0757013e0029984f73}{00067}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_bank_ghost_trail_behaviour}{BankGhostTrailBehaviour}}\ \mbox{\hyperlink{class_level_turn_activity_ac01f79836f9ded0757013e0029984f73}{bankGhostTrail}};\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00076}\mbox{\hyperlink{class_level_turn_activity_ac278ff62703e7980b71cb77fe4a3ab55}{00076}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_turn_activity_ac278ff62703e7980b71cb77fe4a3ab55}{OnEnable}}()}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00077}00077\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_level_turn_activity_ad03641f49a8d149becba1442aa6daccf}{rotationInput}}\ !=\ \textcolor{keyword}{null}\ \&\&\ \mbox{\hyperlink{class_level_turn_activity_ad03641f49a8d149becba1442aa6daccf}{rotationInput}}.action\ !=\ \textcolor{keyword}{null})\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ad03641f49a8d149becba1442aa6daccf}{rotationInput}}.action.Enable();}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ reset\ progression}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ab6f8fc967b52b6b1ae5d2d7c4611e51e}{currentStep}}\ =\ \mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946}{TurnStep}}.Bank;}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_acfb30d64c193cba05d09c317516ee10d}{currentBankTarget}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ae3bf4c38236e882e4caca46d2264486a}{inputLocked}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_a38411c7713e82c153bd8a7fb7e5bb07c}{currentBank}}\ =\ 0f;}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Manipulators}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ab024b3190b429cb4006b474c9b6de0b0}{aoaManipulator}}\ =\ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_adb076aa068f0702843b7d4709caf5ca8}{getAxisRotationController}}(0f,\ 0f);}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ac01f79836f9ded0757013e0029984f73}{bankGhostTrail}}\ =\ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a0f32a28a90deaf1f25de7f9a2c82d4c4}{getBankGhostTrail}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Call\ helper\ to\ find\ directors\ for\ timeline\ assets}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_a5af4890e911a8895a4bffc91e9dc7eeb}{bankTimelines}}\ =\ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a3a17628c1569eeef4dcce5598f021905}{FindPlayableDirector}}(\mbox{\hyperlink{class_level_turn_activity_a39e2cb5c7cdfd9eff2a9224e0e4a0e83}{bankTimelineAssets}});}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ac6b783d591924ed63f6029c4836eca9c}{stallTimeline}}\ =\ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a3a17628c1569eeef4dcce5598f021905}{FindPlayableDirector}}(\mbox{\hyperlink{class_level_turn_activity_ad9c0b2cfa0e24a2c2fedc4636cf4a18b}{stallTimelineAsset}});}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00100}\mbox{\hyperlink{class_level_turn_activity_aa584c143e9e2810eb488a58541438e60}{00100}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_turn_activity_aa584c143e9e2810eb488a58541438e60}{OnDisable}}()}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00101}00101\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_level_turn_activity_ad03641f49a8d149becba1442aa6daccf}{rotationInput}}\ !=\ \textcolor{keyword}{null}\ \&\&\ \mbox{\hyperlink{class_level_turn_activity_ad03641f49a8d149becba1442aa6daccf}{rotationInput}}.action\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ad03641f49a8d149becba1442aa6daccf}{rotationInput}}.action.Disable();}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ bankGhostTrail.enable\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00107}00107\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00115}\mbox{\hyperlink{class_level_turn_activity_ae5b645fa2126e98f246938c41430301d}{00115}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_turn_activity_ae5b645fa2126e98f246938c41430301d}{StartActivity}}()}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00116}00116\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_a51a1b1e711b5014cd0b46c0f57823801}{EnableCurrentStep}}();}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00118}00118\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00126}\mbox{\hyperlink{class_level_turn_activity_a51a1b1e711b5014cd0b46c0f57823801}{00126}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_turn_activity_a51a1b1e711b5014cd0b46c0f57823801}{EnableCurrentStep}}()}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00127}00127\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ae3bf4c38236e882e4caca46d2264486a}{inputLocked}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_a9d0c4bdb0b1bda829d49e935345b28e2}{hasControllerOrigin}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00130}00130\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00137}\mbox{\hyperlink{class_level_turn_activity_a283812c63bfb84497f409d2742a798f4}{00137}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_turn_activity_a283812c63bfb84497f409d2742a798f4}{Update}}()}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00138}00138\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ ((\mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946}{TurnStep}})\mbox{\hyperlink{class_level_turn_activity_ab6f8fc967b52b6b1ae5d2d7c4611e51e}{currentStep}})}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946}{TurnStep}}.Bank:}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_a7aefd8dd7e7661f275d97cfdcba7c42a}{HandleBanking}}();}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946}{TurnStep}}.stallSetup:}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_adcb764cd117aaca97074b0784238abbf}{StallSetup}}();}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946}{TurnStep}}.Stall:}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_a5c91f9767baa12b74ac4958d29c87b5e}{HandleStall}}();}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946}{TurnStep}}.Complete:}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Do\ nothing,\ wait\ for\ MAS\ to\ end\ activity}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00154}00154\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00164}\mbox{\hyperlink{class_level_turn_activity_a7aefd8dd7e7661f275d97cfdcba7c42a}{00164}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_turn_activity_a7aefd8dd7e7661f275d97cfdcba7c42a}{HandleBanking}}()}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00165}00165\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_level_turn_activity_ae3bf4c38236e882e4caca46d2264486a}{inputLocked}})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ Quaternion\ currentRotation\ =\ \mbox{\hyperlink{class_level_turn_activity_ad03641f49a8d149becba1442aa6daccf}{rotationInput}}.action.ReadValue<Quaternion>();}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_level_turn_activity_a9d0c4bdb0b1bda829d49e935345b28e2}{hasControllerOrigin}})}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_afbbb30e60cece791ada488f19660b20b}{controllerOrigin}}\ =\ currentRotation;}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_a9d0c4bdb0b1bda829d49e935345b28e2}{hasControllerOrigin}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Captured\ controller\ origin:\ "{}}\ +\ \mbox{\hyperlink{class_level_turn_activity_afbbb30e60cece791ada488f19660b20b}{controllerOrigin}}.eulerAngles);}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_a38411c7713e82c153bd8a7fb7e5bb07c}{currentBank}}\ =\ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a8d7e6ab91e2178c7b4aae332de0d662a}{getNormalisedPlaneRoll}}(\mbox{\hyperlink{class_level_turn_activity_ab024b3190b429cb4006b474c9b6de0b0}{aoaManipulator}});}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a9829fb7b76954e7918cb381c7cf5b91d}{checkRotationTargetAchieved}}(\mbox{\hyperlink{class_level_turn_activity_a38411c7713e82c153bd8a7fb7e5bb07c}{currentBank}},\ \mbox{\hyperlink{class_level_turn_activity_a8fc6adc114fc95a778affd29f28588e1}{bankTargets}}[\mbox{\hyperlink{class_level_turn_activity_acfb30d64c193cba05d09c317516ee10d}{currentBankTarget}}],\ \mbox{\hyperlink{class_level_turn_activity_a73214867c622da3689c883b2ff104ec5}{stepAdvanceTolerance}}))}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ae3bf4c38236e882e4caca46d2264486a}{inputLocked}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_a9d0c4bdb0b1bda829d49e935345b28e2}{hasControllerOrigin}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ab024b3190b429cb4006b474c9b6de0b0}{aoaManipulator}}.LerpBank(\mbox{\hyperlink{class_level_turn_activity_a8fc6adc114fc95a778affd29f28588e1}{bankTargets}}[\mbox{\hyperlink{class_level_turn_activity_acfb30d64c193cba05d09c317516ee10d}{currentBankTarget}}]\ *\ Mathf.Sign(\mbox{\hyperlink{class_level_turn_activity_a38411c7713e82c153bd8a7fb7e5bb07c}{currentBank}}));}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a96bb773842c1fce0e460557bf7e64c1a}{PlayTimeLine}}(\mbox{\hyperlink{class_level_turn_activity_a5af4890e911a8895a4bffc91e9dc7eeb}{bankTimelines}}[\mbox{\hyperlink{class_level_turn_activity_acfb30d64c193cba05d09c317516ee10d}{currentBankTarget}}],\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EnableCurrentStep();}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentBankTarget++;}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ uncomment\ after\ testing}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mas.OnExternalStepCompleted();}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}currentbank\ target:\ "{}}\ +\ currentBankTarget\ +\ \textcolor{stringliteral}{"{}\ bankTarget\ Length:\ "{}}\ +\ bankTargets.Length);}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (currentBankTarget\ >=\ bankTargets.Length)}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Advance\ to\ next\ stage}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentStep\ =\ TurnStep.stallSetup;}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}currentbankTarget:\ "{}}\ +\ currentBankTarget\ +\ \textcolor{stringliteral}{"{}\ cbankTarget\ length:\ "{}}\ +\ bankTargets.Length\ +\ \textcolor{stringliteral}{"{}\ currentStep\ "{}}\ +\ currentStep);}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_level_turn_activity_a6f543f268aab4317f53becb046bc9fc4}{useMouseClicks}})}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a6330cf284d5311559517bb68214a57d4}{DebugMouseControlRoll}}(\mbox{\hyperlink{class_level_turn_activity_a674d562e1d27a6ed35ad9dc6aea19708}{mouseRollSpeed}},\ \mbox{\hyperlink{class_level_turn_activity_ab024b3190b429cb4006b474c9b6de0b0}{aoaManipulator}});}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ActivityHelper.controllerRollControl(\mbox{\hyperlink{class_level_turn_activity_a4fef8df8fe33549ce9b577c139c11926}{bankSensitivity}},\ \mbox{\hyperlink{class_level_turn_activity_ab024b3190b429cb4006b474c9b6de0b0}{aoaManipulator}},\ \mbox{\hyperlink{class_level_turn_activity_ad03641f49a8d149becba1442aa6daccf}{rotationInput}},\ \mbox{\hyperlink{class_level_turn_activity_a5765ea45df455b3d57c640a94e44f4db}{deadZone}},\ \mbox{\hyperlink{class_level_turn_activity_afbbb30e60cece791ada488f19660b20b}{controllerOrigin}}.eulerAngles.z);}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00210}00210\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00219}\mbox{\hyperlink{class_level_turn_activity_adcb764cd117aaca97074b0784238abbf}{00219}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_turn_activity_adcb764cd117aaca97074b0784238abbf}{StallSetup}}()}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00220}00220\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ae3bf4c38236e882e4caca46d2264486a}{inputLocked}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ set\ bank\ to\ 60\ for\ initial\ state\ of\ stall\ timeline}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_a38411c7713e82c153bd8a7fb7e5bb07c}{currentBank}}\ =\ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a8d7e6ab91e2178c7b4aae332de0d662a}{getNormalisedPlaneRoll}}(\mbox{\hyperlink{class_level_turn_activity_ab024b3190b429cb4006b474c9b6de0b0}{aoaManipulator}});}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_level_turn_activity_a38411c7713e82c153bd8a7fb7e5bb07c}{currentBank}}\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ab024b3190b429cb4006b474c9b6de0b0}{aoaManipulator}}.LerpBank(60f,\ 5f);}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ab024b3190b429cb4006b474c9b6de0b0}{aoaManipulator}}.LerpBank(60f);}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a9340481b12579f96c9b13f1a6ab865a0}{checkExactRotationTargetAchieved}}(\mbox{\hyperlink{class_level_turn_activity_a38411c7713e82c153bd8a7fb7e5bb07c}{currentBank}},\ 60f,\ \mbox{\hyperlink{class_level_turn_activity_a73214867c622da3689c883b2ff104ec5}{stepAdvanceTolerance}}))}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ab024b3190b429cb4006b474c9b6de0b0}{aoaManipulator}}.LerpBank(60f,\ .5f);}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ae3bf4c38236e882e4caca46d2264486a}{inputLocked}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ab6f8fc967b52b6b1ae5d2d7c4611e51e}{currentStep}}\ =\ \mbox{\hyperlink{class_level_turn_activity_ac7679f24a3279a21607a69e30354e946}{TurnStep}}.Stall;}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00239}00239\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00249}\mbox{\hyperlink{class_level_turn_activity_a5c91f9767baa12b74ac4958d29c87b5e}{00249}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_turn_activity_a5c91f9767baa12b74ac4958d29c87b5e}{HandleStall}}()}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00250}00250\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_level_turn_activity_ae3bf4c38236e882e4caca46d2264486a}{inputLocked}})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00252}00252\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00253}00253\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Read\ current\ rotation\ from\ the\ input}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ Quaternion\ currentRotation\ =\ \mbox{\hyperlink{class_level_turn_activity_ad03641f49a8d149becba1442aa6daccf}{rotationInput}}.action.ReadValue<Quaternion>();}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00256}00256\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_level_turn_activity_a9d0c4bdb0b1bda829d49e935345b28e2}{hasControllerOrigin}})}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00257}00257\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_afbbb30e60cece791ada488f19660b20b}{controllerOrigin}}\ =\ currentRotation;}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_a9d0c4bdb0b1bda829d49e935345b28e2}{hasControllerOrigin}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Captured\ controller\ origin:\ "{}}\ +\ \mbox{\hyperlink{class_level_turn_activity_afbbb30e60cece791ada488f19660b20b}{controllerOrigin}}.eulerAngles);}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00261}00261\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00263}00263\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ currentPitch\ =\ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a937c930008f9e200cbb6324e3981fe7d}{getNormalisedPlanePitch}}(\mbox{\hyperlink{class_level_turn_activity_ab024b3190b429cb4006b474c9b6de0b0}{aoaManipulator}});}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00264}00264\ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00265}00265\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a9829fb7b76954e7918cb381c7cf5b91d}{checkRotationTargetAchieved}}(currentPitch,\ 10f,\ \mbox{\hyperlink{class_level_turn_activity_a73214867c622da3689c883b2ff104ec5}{stepAdvanceTolerance}}))}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00266}00266\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ae3bf4c38236e882e4caca46d2264486a}{inputLocked}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_a9d0c4bdb0b1bda829d49e935345b28e2}{hasControllerOrigin}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_ab024b3190b429cb4006b474c9b6de0b0}{aoaManipulator}}.LerpAOA(10f);}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a96bb773842c1fce0e460557bf7e64c1a}{PlayTimeLine}}(\mbox{\hyperlink{class_level_turn_activity_ac6b783d591924ed63f6029c4836eca9c}{stallTimeline}},\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EnableCurrentStep();}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (currentBankTarget\ >=\ bankTargets.Length)}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Advance\ to\ next\ stage}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentStep\ =\ TurnStep.Stall;}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ uncomment\ after\ testing}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_turn_activity_a73cac97d926149df5d39baae47500f96}{mas}}.OnExternalStepCompleted();}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00281}00281\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00282}00282\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00283}00283\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (useMouseClicks)}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_ac7033b3da588d5137ce2a33c96943d1e}{DebugMouseControlPitch}}(mouseRollSpeed,\ aoaManipulator);}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_aab90abd5307ecc59d455eb96ea7577ac}{controllerPitchControl}}(bankSensitivity,\ aoaManipulator,\ rotationInput,\ deadZone,\ controllerOrigin.eulerAngles.x);}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00292}00292\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00293}00293\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_turn_activity_8cs_source_l00294}00294\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,283 @@
+\doxysection{Hold\+To\+Lower\+Nose Class Reference}
+\hypertarget{class_hold_to_lower_nose}{}\label{class_hold_to_lower_nose}\index{HoldToLowerNose@{HoldToLowerNose}}
+
+
+Inheritance diagram for Hold\+To\+Lower\+Nose\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_hold_to_lower_nose__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Hold\+To\+Lower\+Nose\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_hold_to_lower_nose__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_hold_to_lower_nose_a47422cc7f0a823ebba00ff0387509c7d}{Start\+Activity}} ()
+\begin{DoxyCompactList}\small\item\em Each child activity can have a differing implementation of what must be carried out/what inputs must be switched on when the activity starts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hold_to_lower_nose_a5b69ae2f58d56c5e9da6fa009fa90585}{Update}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Input\+Action\+Reference \mbox{\hyperlink{class_hold_to_lower_nose_a7658ee8bec0101f95226414102f5ebf3}{rotate\+Action}}
+\item 
+float \mbox{\hyperlink{class_hold_to_lower_nose_a7ee22877ee1a2320784090ca1a2709b9}{min\+Rotation\+Threshold}} = 0.\+1f
+\item 
+float \mbox{\hyperlink{class_hold_to_lower_nose_a6848ae8158fc4e9c1514485c36f2bbfd}{max\+Rotation\+Threshold}} = 90f
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} \mbox{\hyperlink{class_hold_to_lower_nose_a54c1231b11694350d74e425bc04a4a25}{mas}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_hold_to_lower_nose_aa7a2d54cbf644a0e6a7dc6cad1ea6c4d}{On\+Enable}} ()
+\item 
+void \mbox{\hyperlink{class_hold_to_lower_nose_a55c8cb0d0ec06469f9f8c5f9cdc3e6dc}{On\+Disable}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_hold_to_lower_nose_a2e16a8fa9a0977dca59ed2cd82496043}{Wait\+Period}} ()
+\item 
+void \mbox{\hyperlink{class_hold_to_lower_nose_a9d70f1585c8c3148755939a398cc2b63}{On\+Position\+Change}} (Input\+Action.\+Callback\+Context ctx)
+\begin{DoxyCompactList}\small\item\em This script checks if the nose is lowered in the correct range and then waits the for number of seconds specified in the Wait coroutine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Quaternion \mbox{\hyperlink{class_hold_to_lower_nose_a955041768da5c410b4fdaf25effc1d9f}{initial\+Controller\+Rotation}}
+\item 
+Quaternion \mbox{\hyperlink{class_hold_to_lower_nose_a83a1913c562ea558995e0aab66ca3dde}{controller\+Rotation}}
+\item 
+Vector3 \mbox{\hyperlink{class_hold_to_lower_nose_ae623acaf6fb22e6ce4d549cf72c82953}{initial\+Controller\+Rot}}
+\item 
+Vector3 \mbox{\hyperlink{class_hold_to_lower_nose_a5612e67f72a43cd0362daa6c0b7b79b7}{controller\+Rot}}
+\item 
+bool \mbox{\hyperlink{class_hold_to_lower_nose_a904ba5c7674d67d7902c022d04f77530}{wait\+Period\+Over}} = false
+\item 
+bool \mbox{\hyperlink{class_hold_to_lower_nose_a30313fa6d804c4f4424c5c7987a0af04}{activity\+Enabled}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Chintana Luu \texorpdfstring{$\vert$}{|} \href{mailto:luucy003@mymail.unisa.edu.au}{\texttt{luucy003@mymail.\+unisa.\+edu.\+au}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_hold_to_lower_nose_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_hold_to_lower_nose_8cs_source}{Hold\+To\+Lower\+Nose.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_hold_to_lower_nose_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_hold_to_lower_nose_a55c8cb0d0ec06469f9f8c5f9cdc3e6dc}\index{HoldToLowerNose@{HoldToLowerNose}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!HoldToLowerNose@{HoldToLowerNose}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily \label{class_hold_to_lower_nose_a55c8cb0d0ec06469f9f8c5f9cdc3e6dc} 
+void Hold\+To\+Lower\+Nose.\+On\+Disable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_hold_to_lower_nose_8cs_source_l00049}{49}} of file \mbox{\hyperlink{_hold_to_lower_nose_8cs_source}{Hold\+To\+Lower\+Nose.\+cs}}.
+
+\Hypertarget{class_hold_to_lower_nose_aa7a2d54cbf644a0e6a7dc6cad1ea6c4d}\index{HoldToLowerNose@{HoldToLowerNose}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!HoldToLowerNose@{HoldToLowerNose}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily \label{class_hold_to_lower_nose_aa7a2d54cbf644a0e6a7dc6cad1ea6c4d} 
+void Hold\+To\+Lower\+Nose.\+On\+Enable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_hold_to_lower_nose_8cs_source_l00038}{38}} of file \mbox{\hyperlink{_hold_to_lower_nose_8cs_source}{Hold\+To\+Lower\+Nose.\+cs}}.
+
+\Hypertarget{class_hold_to_lower_nose_a9d70f1585c8c3148755939a398cc2b63}\index{HoldToLowerNose@{HoldToLowerNose}!OnPositionChange@{OnPositionChange}}
+\index{OnPositionChange@{OnPositionChange}!HoldToLowerNose@{HoldToLowerNose}}
+\doxysubsubsection{\texorpdfstring{OnPositionChange()}{OnPositionChange()}}
+{\footnotesize\ttfamily \label{class_hold_to_lower_nose_a9d70f1585c8c3148755939a398cc2b63} 
+void Hold\+To\+Lower\+Nose.\+On\+Position\+Change (\begin{DoxyParamCaption}\item[{Input\+Action.\+Callback\+Context}]{ctx}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This script checks if the nose is lowered in the correct range and then waits the for number of seconds specified in the Wait coroutine. 
+
+However, for future developers I suggest adding some haptics and improving the threshold range to make it easier for the user to complete this step.
+
+and this is an extra line 
+\begin{DoxyParams}{Parameters}
+{\em no} & params in this method lol \\
+\hline
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_hold_to_lower_nose_8cs_source_l00088}{88}} of file \mbox{\hyperlink{_hold_to_lower_nose_8cs_source}{Hold\+To\+Lower\+Nose.\+cs}}.
+
+\Hypertarget{class_hold_to_lower_nose_a47422cc7f0a823ebba00ff0387509c7d}\index{HoldToLowerNose@{HoldToLowerNose}!StartActivity@{StartActivity}}
+\index{StartActivity@{StartActivity}!HoldToLowerNose@{HoldToLowerNose}}
+\doxysubsubsection{\texorpdfstring{StartActivity()}{StartActivity()}}
+{\footnotesize\ttfamily \label{class_hold_to_lower_nose_a47422cc7f0a823ebba00ff0387509c7d} 
+void Hold\+To\+Lower\+Nose.\+Start\+Activity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Each child activity can have a differing implementation of what must be carried out/what inputs must be switched on when the activity starts. 
+
+Override this method for new activity scripts. 
+
+Implements \mbox{\hyperlink{interface_i_activity_controller_a5edbf7511d4b716c7e5de8d2c0c261a0}{IActivity\+Controller}}.
+
+
+
+Definition at line \mbox{\hyperlink{_hold_to_lower_nose_8cs_source_l00060}{60}} of file \mbox{\hyperlink{_hold_to_lower_nose_8cs_source}{Hold\+To\+Lower\+Nose.\+cs}}.
+
+\Hypertarget{class_hold_to_lower_nose_a5b69ae2f58d56c5e9da6fa009fa90585}\index{HoldToLowerNose@{HoldToLowerNose}!Update@{Update}}
+\index{Update@{Update}!HoldToLowerNose@{HoldToLowerNose}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_hold_to_lower_nose_a5b69ae2f58d56c5e9da6fa009fa90585} 
+void Hold\+To\+Lower\+Nose.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_hold_to_lower_nose_8cs_source_l00126}{126}} of file \mbox{\hyperlink{_hold_to_lower_nose_8cs_source}{Hold\+To\+Lower\+Nose.\+cs}}.
+
+\Hypertarget{class_hold_to_lower_nose_a2e16a8fa9a0977dca59ed2cd82496043}\index{HoldToLowerNose@{HoldToLowerNose}!WaitPeriod@{WaitPeriod}}
+\index{WaitPeriod@{WaitPeriod}!HoldToLowerNose@{HoldToLowerNose}}
+\doxysubsubsection{\texorpdfstring{WaitPeriod()}{WaitPeriod()}}
+{\footnotesize\ttfamily \label{class_hold_to_lower_nose_a2e16a8fa9a0977dca59ed2cd82496043} 
+IEnumerator Hold\+To\+Lower\+Nose.\+Wait\+Period (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_hold_to_lower_nose_8cs_source_l00067}{67}} of file \mbox{\hyperlink{_hold_to_lower_nose_8cs_source}{Hold\+To\+Lower\+Nose.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_hold_to_lower_nose_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_hold_to_lower_nose_a30313fa6d804c4f4424c5c7987a0af04}\index{HoldToLowerNose@{HoldToLowerNose}!activityEnabled@{activityEnabled}}
+\index{activityEnabled@{activityEnabled}!HoldToLowerNose@{HoldToLowerNose}}
+\doxysubsubsection{\texorpdfstring{activityEnabled}{activityEnabled}}
+{\footnotesize\ttfamily \label{class_hold_to_lower_nose_a30313fa6d804c4f4424c5c7987a0af04} 
+bool Hold\+To\+Lower\+Nose.\+activity\+Enabled = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_hold_to_lower_nose_8cs_source_l00035}{35}} of file \mbox{\hyperlink{_hold_to_lower_nose_8cs_source}{Hold\+To\+Lower\+Nose.\+cs}}.
+
+\Hypertarget{class_hold_to_lower_nose_a5612e67f72a43cd0362daa6c0b7b79b7}\index{HoldToLowerNose@{HoldToLowerNose}!controllerRot@{controllerRot}}
+\index{controllerRot@{controllerRot}!HoldToLowerNose@{HoldToLowerNose}}
+\doxysubsubsection{\texorpdfstring{controllerRot}{controllerRot}}
+{\footnotesize\ttfamily \label{class_hold_to_lower_nose_a5612e67f72a43cd0362daa6c0b7b79b7} 
+Vector3 Hold\+To\+Lower\+Nose.\+controller\+Rot\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_hold_to_lower_nose_8cs_source_l00027}{27}} of file \mbox{\hyperlink{_hold_to_lower_nose_8cs_source}{Hold\+To\+Lower\+Nose.\+cs}}.
+
+\Hypertarget{class_hold_to_lower_nose_a83a1913c562ea558995e0aab66ca3dde}\index{HoldToLowerNose@{HoldToLowerNose}!controllerRotation@{controllerRotation}}
+\index{controllerRotation@{controllerRotation}!HoldToLowerNose@{HoldToLowerNose}}
+\doxysubsubsection{\texorpdfstring{controllerRotation}{controllerRotation}}
+{\footnotesize\ttfamily \label{class_hold_to_lower_nose_a83a1913c562ea558995e0aab66ca3dde} 
+Quaternion Hold\+To\+Lower\+Nose.\+controller\+Rotation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_hold_to_lower_nose_8cs_source_l00025}{25}} of file \mbox{\hyperlink{_hold_to_lower_nose_8cs_source}{Hold\+To\+Lower\+Nose.\+cs}}.
+
+\Hypertarget{class_hold_to_lower_nose_ae623acaf6fb22e6ce4d549cf72c82953}\index{HoldToLowerNose@{HoldToLowerNose}!initialControllerRot@{initialControllerRot}}
+\index{initialControllerRot@{initialControllerRot}!HoldToLowerNose@{HoldToLowerNose}}
+\doxysubsubsection{\texorpdfstring{initialControllerRot}{initialControllerRot}}
+{\footnotesize\ttfamily \label{class_hold_to_lower_nose_ae623acaf6fb22e6ce4d549cf72c82953} 
+Vector3 Hold\+To\+Lower\+Nose.\+initial\+Controller\+Rot\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_hold_to_lower_nose_8cs_source_l00026}{26}} of file \mbox{\hyperlink{_hold_to_lower_nose_8cs_source}{Hold\+To\+Lower\+Nose.\+cs}}.
+
+\Hypertarget{class_hold_to_lower_nose_a955041768da5c410b4fdaf25effc1d9f}\index{HoldToLowerNose@{HoldToLowerNose}!initialControllerRotation@{initialControllerRotation}}
+\index{initialControllerRotation@{initialControllerRotation}!HoldToLowerNose@{HoldToLowerNose}}
+\doxysubsubsection{\texorpdfstring{initialControllerRotation}{initialControllerRotation}}
+{\footnotesize\ttfamily \label{class_hold_to_lower_nose_a955041768da5c410b4fdaf25effc1d9f} 
+Quaternion Hold\+To\+Lower\+Nose.\+initial\+Controller\+Rotation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_hold_to_lower_nose_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_hold_to_lower_nose_8cs_source}{Hold\+To\+Lower\+Nose.\+cs}}.
+
+\Hypertarget{class_hold_to_lower_nose_a6848ae8158fc4e9c1514485c36f2bbfd}\index{HoldToLowerNose@{HoldToLowerNose}!maxRotationThreshold@{maxRotationThreshold}}
+\index{maxRotationThreshold@{maxRotationThreshold}!HoldToLowerNose@{HoldToLowerNose}}
+\doxysubsubsection{\texorpdfstring{maxRotationThreshold}{maxRotationThreshold}}
+{\footnotesize\ttfamily \label{class_hold_to_lower_nose_a6848ae8158fc4e9c1514485c36f2bbfd} 
+float Hold\+To\+Lower\+Nose.\+max\+Rotation\+Threshold = 90f}
+
+
+
+Definition at line \mbox{\hyperlink{_hold_to_lower_nose_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_hold_to_lower_nose_8cs_source}{Hold\+To\+Lower\+Nose.\+cs}}.
+
+\Hypertarget{class_hold_to_lower_nose_a7ee22877ee1a2320784090ca1a2709b9}\index{HoldToLowerNose@{HoldToLowerNose}!minRotationThreshold@{minRotationThreshold}}
+\index{minRotationThreshold@{minRotationThreshold}!HoldToLowerNose@{HoldToLowerNose}}
+\doxysubsubsection{\texorpdfstring{minRotationThreshold}{minRotationThreshold}}
+{\footnotesize\ttfamily \label{class_hold_to_lower_nose_a7ee22877ee1a2320784090ca1a2709b9} 
+float Hold\+To\+Lower\+Nose.\+min\+Rotation\+Threshold = 0.\+1f}
+
+
+
+Definition at line \mbox{\hyperlink{_hold_to_lower_nose_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_hold_to_lower_nose_8cs_source}{Hold\+To\+Lower\+Nose.\+cs}}.
+
+\Hypertarget{class_hold_to_lower_nose_a7658ee8bec0101f95226414102f5ebf3}\index{HoldToLowerNose@{HoldToLowerNose}!rotateAction@{rotateAction}}
+\index{rotateAction@{rotateAction}!HoldToLowerNose@{HoldToLowerNose}}
+\doxysubsubsection{\texorpdfstring{rotateAction}{rotateAction}}
+{\footnotesize\ttfamily \label{class_hold_to_lower_nose_a7658ee8bec0101f95226414102f5ebf3} 
+Input\+Action\+Reference Hold\+To\+Lower\+Nose.\+rotate\+Action}
+
+
+
+Definition at line \mbox{\hyperlink{_hold_to_lower_nose_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_hold_to_lower_nose_8cs_source}{Hold\+To\+Lower\+Nose.\+cs}}.
+
+\Hypertarget{class_hold_to_lower_nose_a904ba5c7674d67d7902c022d04f77530}\index{HoldToLowerNose@{HoldToLowerNose}!waitPeriodOver@{waitPeriodOver}}
+\index{waitPeriodOver@{waitPeriodOver}!HoldToLowerNose@{HoldToLowerNose}}
+\doxysubsubsection{\texorpdfstring{waitPeriodOver}{waitPeriodOver}}
+{\footnotesize\ttfamily \label{class_hold_to_lower_nose_a904ba5c7674d67d7902c022d04f77530} 
+bool Hold\+To\+Lower\+Nose.\+wait\+Period\+Over = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_hold_to_lower_nose_8cs_source_l00031}{31}} of file \mbox{\hyperlink{_hold_to_lower_nose_8cs_source}{Hold\+To\+Lower\+Nose.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_hold_to_lower_nose_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_hold_to_lower_nose_a54c1231b11694350d74e425bc04a4a25}\index{HoldToLowerNose@{HoldToLowerNose}!mas@{mas}}
+\index{mas@{mas}!HoldToLowerNose@{HoldToLowerNose}}
+\doxysubsubsection{\texorpdfstring{mas}{mas}}
+{\footnotesize\ttfamily \label{class_hold_to_lower_nose_a54c1231b11694350d74e425bc04a4a25} 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} Hold\+To\+Lower\+Nose.\+mas\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_hold_to_lower_nose_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_hold_to_lower_nose_8cs_source}{Hold\+To\+Lower\+Nose.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Module\+Exclusive\+Assets/\+Module2/\+Section2/\mbox{\hyperlink{_hold_to_lower_nose_8cs}{Hold\+To\+Lower\+Nose.\+cs}}\end{DoxyCompactItemize}

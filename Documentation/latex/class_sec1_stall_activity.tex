@@ -1,0 +1,521 @@
+\doxysection{Sec1\+Stall\+Activity Class Reference}
+\hypertarget{class_sec1_stall_activity}{}\label{class_sec1_stall_activity}\index{Sec1StallActivity@{Sec1StallActivity}}
+
+
+Section 1 stall training activity controller.  
+
+
+
+
+Inheritance diagram for Sec1\+Stall\+Activity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_sec1_stall_activity__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sec1\+Stall\+Activity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sec1_stall_activity__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sec1_stall_activity_aff55b064dc8ddb8bf165e09d0e934f94}{On\+Enable}} ()
+\begin{DoxyCompactList}\small\item\em Initialize activity on component enable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sec1_stall_activity_a27fb973e1f3a404db9642a9226ee973f}{On\+Disable}} ()
+\begin{DoxyCompactList}\small\item\em Cleanup activity on component disable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sec1_stall_activity_a0c0033387b5efb35d4bd0bfa4867ba5f}{Start\+Activity}} ()
+\begin{DoxyCompactList}\small\item\em Start the activity when triggered by \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sec1_stall_activity_ac77b4bdf29e186ed303dbfd4ab3d1a9b}{Enable\+Current\+Step}} ()
+\begin{DoxyCompactList}\small\item\em Unlock input for the current training step. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sec1_stall_activity_a0bce475135bc142185634ecca191dee1}{Handle\+Pitching}} ()
+\begin{DoxyCompactList}\small\item\em Handle progressive pitch training step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Timeline\+Asset\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_sec1_stall_activity_a974d5eaddc3c3d33936715f6aa4bd7e2}{pitch\+Timeline\+Assets}}
+\begin{DoxyCompactList}\small\item\em Timeline assets for each pitch milestone (3, 7, 10, 14, 16, 18). \end{DoxyCompactList}\item 
+Input\+Action\+Reference \mbox{\hyperlink{class_sec1_stall_activity_aaaae4796c11e8ef6f544b9324beb3dba}{rotation\+Input}}
+\begin{DoxyCompactList}\small\item\em VR controller rotation input action for aircraft pitch control. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sec1_stall_activity_ace16878c938c6ca9e694a82c03e3729d}{pitch\+Sensitivity}} = 1f
+\begin{DoxyCompactList}\small\item\em Pitch sensitivity multiplier for controller input. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sec1_stall_activity_af53c4fc142e9457534b9e7ae823afd66}{dead\+Zone}} = 15f
+\begin{DoxyCompactList}\small\item\em Controller deadzone threshold in degrees to filter noise. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sec1_stall_activity_aa0655b698d9dfa1b13b5719498489096}{step\+Advance\+Tolerance}} = 3f
+\begin{DoxyCompactList}\small\item\em Tolerance in degrees for achieving target pitch before advancing. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_sec1_stall_activity_a8daf90be275c5f4838179a592a60b6cc}{use\+Mouse\+Clicks}} = false
+\begin{DoxyCompactList}\small\item\em Enable mouse button control for testing without VR. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sec1_stall_activity_aa4ed01a508a2a2da78d716f8d384a428}{mouse\+Roll\+Speed}} = 10f
+\begin{DoxyCompactList}\small\item\em Speed multiplier for mouse-\/based pitch control. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} \mbox{\hyperlink{class_sec1_stall_activity_a445afb443680b2b62c81c932f6f44c48}{mas}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Reference to singleton activity scheduler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7}{Turn\+Step}} \{ \mbox{\hyperlink{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7a87f800274a7f46c50e17114f89171e2e}{Pitch}}
+, \mbox{\hyperlink{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7aae94f80b3ce82062a5dd7815daa04f9d}{Complete}}
+ \}
+\begin{DoxyCompactList}\small\item\em Training progression states. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sec1_stall_activity_afe4033e3b965f719991382d59ccb218b}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Main update loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Quaternion \mbox{\hyperlink{class_sec1_stall_activity_a812282d680513a5d71e0c66f7b4e6ecd}{controller\+Origin}} = Quaternion.\+identity
+\begin{DoxyCompactList}\small\item\em Initial controller orientation captured at step start. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_sec1_stall_activity_adaa646189b9bc73298d7c344c3ed16a6}{has\+Controller\+Origin}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if controller origin has been captured this step. \end{DoxyCompactList}\item 
+float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_sec1_stall_activity_a46654aef7ef965284e36739809d93349}{pitch\+Targets}} = \{ 3f, 7f, 10f, 14f, 16f, 18f \}
+\begin{DoxyCompactList}\small\item\em Progressive pitch angle targets in degrees leading to stall. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_sec1_stall_activity_abb28b926f05cba871cc270193573e5a2}{current\+Pitch\+Target}} = 0
+\begin{DoxyCompactList}\small\item\em Index of current pitch target in pitch\+Targets array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7}{Turn\+Step}} \mbox{\hyperlink{class_sec1_stall_activity_ad8abcb13947733eda7c745ef8d27b6e5}{current\+Step}}
+\begin{DoxyCompactList}\small\item\em Current training step in the activity sequence. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_sec1_stall_activity_a81ef6cb547a4abaaa28a2ddba1bcec2a}{input\+Locked}} = false
+\begin{DoxyCompactList}\small\item\em Flag to disable user input during transitions and timelines. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sec1_stall_activity_a9e86b3726cc258c40a090dcad448ea0b}{current\+Pitch}} = 0f
+\begin{DoxyCompactList}\small\item\em Current aircraft pitch angle in degrees, updated each frame. \end{DoxyCompactList}\item 
+Playable\+Director\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_sec1_stall_activity_a1756985005dbb16979c620577b5d6a73}{pitch\+Timelines}}
+\begin{DoxyCompactList}\small\item\em Playable\+Directors corresponding to pitch\+Timeline\+Assets. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} \mbox{\hyperlink{class_sec1_stall_activity_ae6e8d83430f1f3b75c2c8116dec97269}{aoa\+Manipulator}}
+\begin{DoxyCompactList}\small\item\em Controller for aircraft pitch manipulation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_procedural_airflow}{Procedural\+Airflow}} \mbox{\hyperlink{class_sec1_stall_activity_a435540f024044bbd0e2e675beb1c541f}{procedural\+Airflow}}
+\begin{DoxyCompactList}\small\item\em Airflow visualization system for force arrows, particles, and COP. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Section 1 stall training activity controller. 
+
+Manages a progressive pitch exercise where users practice increasing angle of attack through six stages (3°, 7°, 10°, 14°, 16°, 18°) while observing aerodynamic effects. Enables real-\/time visualization of force arrows, airflow particles, and center of pressure to demonstrate the relationship between pitch angle and aerodynamic forces leading to stall. Implements the \doxylink{interface_i_activity_controller}{IActivity\+Controller} interface for integration with the \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler} system.
+
+Training sequence\+:
+\begin{DoxyEnumerate}
+\item Pitch -\/ Progressive pitch targets with aerodynamic visualization
+\item Complete -\/ Activity finished, notifies scheduler
+\end{DoxyEnumerate}
+
+Key features\+:
+\begin{DoxyItemize}
+\item Real-\/time force arrow visualization (lift, weight, thrust, drag)
+\item Procedural airflow particle system
+\item Dynamic center of pressure indicator
+\item Progressive angle of attack demonstration leading to stall
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Connor Freebairn \texorpdfstring{$\vert$}{|} \href{mailto:frecd002@mymail.unisa.edu.au}{\texttt{frecd002@mymail.\+unisa.\+edu.\+au}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00028}{28}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+
+
+\label{doc-enum-members}
+\Hypertarget{class_sec1_stall_activity_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7}\index{Sec1StallActivity@{Sec1StallActivity}!TurnStep@{TurnStep}}
+\index{TurnStep@{TurnStep}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{TurnStep}{TurnStep}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7} 
+enum \mbox{\hyperlink{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7}{Sec1\+Stall\+Activity.\+Turn\+Step}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Training progression states. 
+
+Defines the sequence of training steps in the stall activity. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Pitch@{Pitch}!Sec1StallActivity@{Sec1StallActivity}}\index{Sec1StallActivity@{Sec1StallActivity}!Pitch@{Pitch}}}\Hypertarget{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7a87f800274a7f46c50e17114f89171e2e}\label{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7a87f800274a7f46c50e17114f89171e2e} 
+Pitch&User practices progressive pitch angles with aerodynamic visualization. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Complete@{Complete}!Sec1StallActivity@{Sec1StallActivity}}\index{Sec1StallActivity@{Sec1StallActivity}!Complete@{Complete}}}\Hypertarget{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7aae94f80b3ce82062a5dd7815daa04f9d}\label{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7aae94f80b3ce82062a5dd7815daa04f9d} 
+Complete&Activity finished, awaiting cleanup. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00055}{55}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_sec1_stall_activity_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sec1_stall_activity_ac77b4bdf29e186ed303dbfd4ab3d1a9b}\index{Sec1StallActivity@{Sec1StallActivity}!EnableCurrentStep@{EnableCurrentStep}}
+\index{EnableCurrentStep@{EnableCurrentStep}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{EnableCurrentStep()}{EnableCurrentStep()}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_ac77b4bdf29e186ed303dbfd4ab3d1a9b} 
+void Sec1\+Stall\+Activity.\+Enable\+Current\+Step (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Unlock input for the current training step. 
+
+Resets input lock and controller origin flag to allow user control. Called after transitions and timeline completions. 
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00135}{135}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+\Hypertarget{class_sec1_stall_activity_a0bce475135bc142185634ecca191dee1}\index{Sec1StallActivity@{Sec1StallActivity}!HandlePitching@{HandlePitching}}
+\index{HandlePitching@{HandlePitching}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{HandlePitching()}{HandlePitching()}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_a0bce475135bc142185634ecca191dee1} 
+void Sec1\+Stall\+Activity.\+Handle\+Pitching (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handle progressive pitch training step. 
+
+Captures controller origin on first frame, reads current pitch angle, and checks if user has achieved the current target angle. When target is reached, locks input, plays confirmation timeline, and advances to next pitch target or completion. The progression through six pitch angles (3, 7, 10, 14, 16, 18) demonstrates increasing aerodynamic forces and changing center of pressure as the aircraft approaches stall conditions. Allows controller or debug mouse input when target not yet achieved.
+
+Aerodynamic visualizations update in real-\/time\+:
+\begin{DoxyItemize}
+\item Force arrows show changing lift, drag, thrust, and weight magnitudes
+\item Particle system shows airflow separation at higher angles
+\item Center of pressure indicator moves along chord as angle increases 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00177}{177}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+\Hypertarget{class_sec1_stall_activity_a27fb973e1f3a404db9642a9226ee973f}\index{Sec1StallActivity@{Sec1StallActivity}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_a27fb973e1f3a404db9642a9226ee973f} 
+void Sec1\+Stall\+Activity.\+On\+Disable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cleanup activity on component disable. 
+
+Disables input actions and deactivates all aerodynamic visualization features (force arrows, particle system, center of pressure indicator). 
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00107}{107}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+\Hypertarget{class_sec1_stall_activity_aff55b064dc8ddb8bf165e09d0e934f94}\index{Sec1StallActivity@{Sec1StallActivity}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_aff55b064dc8ddb8bf165e09d0e934f94} 
+void Sec1\+Stall\+Activity.\+On\+Enable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize activity on component enable. 
+
+Enables input actions, resets progression state to initial values, retrieves references to aircraft controllers and airflow visualization system, and finds Playable\+Directors for all timeline assets. Activates all aerodynamic visualization features (force arrows, particle system, center of pressure indicator). 
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00079}{79}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+\Hypertarget{class_sec1_stall_activity_a0c0033387b5efb35d4bd0bfa4867ba5f}\index{Sec1StallActivity@{Sec1StallActivity}!StartActivity@{StartActivity}}
+\index{StartActivity@{StartActivity}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{StartActivity()}{StartActivity()}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_a0c0033387b5efb35d4bd0bfa4867ba5f} 
+void Sec1\+Stall\+Activity.\+Start\+Activity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Start the activity when triggered by \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}. 
+
+Called by the activity scheduler to begin the training sequence. Unlocks input for the first step. 
+
+Implements \mbox{\hyperlink{interface_i_activity_controller_a5edbf7511d4b716c7e5de8d2c0c261a0}{IActivity\+Controller}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00124}{124}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+\Hypertarget{class_sec1_stall_activity_afe4033e3b965f719991382d59ccb218b}\index{Sec1StallActivity@{Sec1StallActivity}!Update@{Update}}
+\index{Update@{Update}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_afe4033e3b965f719991382d59ccb218b} 
+void Sec1\+Stall\+Activity.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Main update loop. 
+
+Routes execution to appropriate handler based on current training step. Notifies activity scheduler upon completion. 
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00147}{147}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_sec1_stall_activity_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_sec1_stall_activity_ae6e8d83430f1f3b75c2c8116dec97269}\index{Sec1StallActivity@{Sec1StallActivity}!aoaManipulator@{aoaManipulator}}
+\index{aoaManipulator@{aoaManipulator}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{aoaManipulator}{aoaManipulator}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_ae6e8d83430f1f3b75c2c8116dec97269} 
+\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} Sec1\+Stall\+Activity.\+aoa\+Manipulator\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Controller for aircraft pitch manipulation. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00068}{68}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+\Hypertarget{class_sec1_stall_activity_a812282d680513a5d71e0c66f7b4e6ecd}\index{Sec1StallActivity@{Sec1StallActivity}!controllerOrigin@{controllerOrigin}}
+\index{controllerOrigin@{controllerOrigin}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{controllerOrigin}{controllerOrigin}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_a812282d680513a5d71e0c66f7b4e6ecd} 
+Quaternion Sec1\+Stall\+Activity.\+controller\+Origin = Quaternion.\+identity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initial controller orientation captured at step start. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00043}{43}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+\Hypertarget{class_sec1_stall_activity_a9e86b3726cc258c40a090dcad448ea0b}\index{Sec1StallActivity@{Sec1StallActivity}!currentPitch@{currentPitch}}
+\index{currentPitch@{currentPitch}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{currentPitch}{currentPitch}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_a9e86b3726cc258c40a090dcad448ea0b} 
+float Sec1\+Stall\+Activity.\+current\+Pitch = 0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current aircraft pitch angle in degrees, updated each frame. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00065}{65}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+\Hypertarget{class_sec1_stall_activity_abb28b926f05cba871cc270193573e5a2}\index{Sec1StallActivity@{Sec1StallActivity}!currentPitchTarget@{currentPitchTarget}}
+\index{currentPitchTarget@{currentPitchTarget}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{currentPitchTarget}{currentPitchTarget}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_abb28b926f05cba871cc270193573e5a2} 
+int Sec1\+Stall\+Activity.\+current\+Pitch\+Target = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Index of current pitch target in pitch\+Targets array. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00062}{62}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+\Hypertarget{class_sec1_stall_activity_ad8abcb13947733eda7c745ef8d27b6e5}\index{Sec1StallActivity@{Sec1StallActivity}!currentStep@{currentStep}}
+\index{currentStep@{currentStep}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{currentStep}{currentStep}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_ad8abcb13947733eda7c745ef8d27b6e5} 
+\mbox{\hyperlink{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7}{Turn\+Step}} Sec1\+Stall\+Activity.\+current\+Step\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current training step in the activity sequence. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00063}{63}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+\Hypertarget{class_sec1_stall_activity_af53c4fc142e9457534b9e7ae823afd66}\index{Sec1StallActivity@{Sec1StallActivity}!deadZone@{deadZone}}
+\index{deadZone@{deadZone}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{deadZone}{deadZone}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_af53c4fc142e9457534b9e7ae823afd66} 
+float Sec1\+Stall\+Activity.\+dead\+Zone = 15f}
+
+
+
+Controller deadzone threshold in degrees to filter noise. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00041}{41}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+\Hypertarget{class_sec1_stall_activity_adaa646189b9bc73298d7c344c3ed16a6}\index{Sec1StallActivity@{Sec1StallActivity}!hasControllerOrigin@{hasControllerOrigin}}
+\index{hasControllerOrigin@{hasControllerOrigin}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{hasControllerOrigin}{hasControllerOrigin}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_adaa646189b9bc73298d7c344c3ed16a6} 
+bool Sec1\+Stall\+Activity.\+has\+Controller\+Origin = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag indicating if controller origin has been captured this step. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00044}{44}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+\Hypertarget{class_sec1_stall_activity_a81ef6cb547a4abaaa28a2ddba1bcec2a}\index{Sec1StallActivity@{Sec1StallActivity}!inputLocked@{inputLocked}}
+\index{inputLocked@{inputLocked}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{inputLocked}{inputLocked}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_a81ef6cb547a4abaaa28a2ddba1bcec2a} 
+bool Sec1\+Stall\+Activity.\+input\+Locked = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag to disable user input during transitions and timelines. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00064}{64}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+\Hypertarget{class_sec1_stall_activity_aa4ed01a508a2a2da78d716f8d384a428}\index{Sec1StallActivity@{Sec1StallActivity}!mouseRollSpeed@{mouseRollSpeed}}
+\index{mouseRollSpeed@{mouseRollSpeed}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{mouseRollSpeed}{mouseRollSpeed}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_aa4ed01a508a2a2da78d716f8d384a428} 
+float Sec1\+Stall\+Activity.\+mouse\+Roll\+Speed = 10f}
+
+
+
+Speed multiplier for mouse-\/based pitch control. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00048}{48}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+\Hypertarget{class_sec1_stall_activity_ace16878c938c6ca9e694a82c03e3729d}\index{Sec1StallActivity@{Sec1StallActivity}!pitchSensitivity@{pitchSensitivity}}
+\index{pitchSensitivity@{pitchSensitivity}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{pitchSensitivity}{pitchSensitivity}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_ace16878c938c6ca9e694a82c03e3729d} 
+float Sec1\+Stall\+Activity.\+pitch\+Sensitivity = 1f}
+
+
+
+Pitch sensitivity multiplier for controller input. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00040}{40}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+\Hypertarget{class_sec1_stall_activity_a46654aef7ef965284e36739809d93349}\index{Sec1StallActivity@{Sec1StallActivity}!pitchTargets@{pitchTargets}}
+\index{pitchTargets@{pitchTargets}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{pitchTargets}{pitchTargets}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_a46654aef7ef965284e36739809d93349} 
+float \mbox{[}$\,$\mbox{]} Sec1\+Stall\+Activity.\+pitch\+Targets = \{ 3f, 7f, 10f, 14f, 16f, 18f \}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Progressive pitch angle targets in degrees leading to stall. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00061}{61}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+\Hypertarget{class_sec1_stall_activity_a974d5eaddc3c3d33936715f6aa4bd7e2}\index{Sec1StallActivity@{Sec1StallActivity}!pitchTimelineAssets@{pitchTimelineAssets}}
+\index{pitchTimelineAssets@{pitchTimelineAssets}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{pitchTimelineAssets}{pitchTimelineAssets}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_a974d5eaddc3c3d33936715f6aa4bd7e2} 
+Timeline\+Asset \mbox{[}$\,$\mbox{]} Sec1\+Stall\+Activity.\+pitch\+Timeline\+Assets}
+
+
+
+Timeline assets for each pitch milestone (3, 7, 10, 14, 16, 18). 
+
+
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+\Hypertarget{class_sec1_stall_activity_a1756985005dbb16979c620577b5d6a73}\index{Sec1StallActivity@{Sec1StallActivity}!pitchTimelines@{pitchTimelines}}
+\index{pitchTimelines@{pitchTimelines}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{pitchTimelines}{pitchTimelines}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_a1756985005dbb16979c620577b5d6a73} 
+Playable\+Director \mbox{[}$\,$\mbox{]} Sec1\+Stall\+Activity.\+pitch\+Timelines\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Playable\+Directors corresponding to pitch\+Timeline\+Assets. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00067}{67}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+\Hypertarget{class_sec1_stall_activity_a435540f024044bbd0e2e675beb1c541f}\index{Sec1StallActivity@{Sec1StallActivity}!proceduralAirflow@{proceduralAirflow}}
+\index{proceduralAirflow@{proceduralAirflow}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{proceduralAirflow}{proceduralAirflow}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_a435540f024044bbd0e2e675beb1c541f} 
+\mbox{\hyperlink{class_procedural_airflow}{Procedural\+Airflow}} Sec1\+Stall\+Activity.\+procedural\+Airflow\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Airflow visualization system for force arrows, particles, and COP. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00069}{69}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+\Hypertarget{class_sec1_stall_activity_aaaae4796c11e8ef6f544b9324beb3dba}\index{Sec1StallActivity@{Sec1StallActivity}!rotationInput@{rotationInput}}
+\index{rotationInput@{rotationInput}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{rotationInput}{rotationInput}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_aaaae4796c11e8ef6f544b9324beb3dba} 
+Input\+Action\+Reference Sec1\+Stall\+Activity.\+rotation\+Input}
+
+
+
+VR controller rotation input action for aircraft pitch control. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+\Hypertarget{class_sec1_stall_activity_aa0655b698d9dfa1b13b5719498489096}\index{Sec1StallActivity@{Sec1StallActivity}!stepAdvanceTolerance@{stepAdvanceTolerance}}
+\index{stepAdvanceTolerance@{stepAdvanceTolerance}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{stepAdvanceTolerance}{stepAdvanceTolerance}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_aa0655b698d9dfa1b13b5719498489096} 
+float Sec1\+Stall\+Activity.\+step\+Advance\+Tolerance = 3f}
+
+
+
+Tolerance in degrees for achieving target pitch before advancing. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00042}{42}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+\Hypertarget{class_sec1_stall_activity_a8daf90be275c5f4838179a592a60b6cc}\index{Sec1StallActivity@{Sec1StallActivity}!useMouseClicks@{useMouseClicks}}
+\index{useMouseClicks@{useMouseClicks}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{useMouseClicks}{useMouseClicks}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_a8daf90be275c5f4838179a592a60b6cc} 
+bool Sec1\+Stall\+Activity.\+use\+Mouse\+Clicks = false}
+
+
+
+Enable mouse button control for testing without VR. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00047}{47}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_sec1_stall_activity_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_sec1_stall_activity_a445afb443680b2b62c81c932f6f44c48}\index{Sec1StallActivity@{Sec1StallActivity}!mas@{mas}}
+\index{mas@{mas}!Sec1StallActivity@{Sec1StallActivity}}
+\doxysubsubsection{\texorpdfstring{mas}{mas}}
+{\footnotesize\ttfamily \label{class_sec1_stall_activity_a445afb443680b2b62c81c932f6f44c48} 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} Sec1\+Stall\+Activity.\+mas\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
+
+
+
+Reference to singleton activity scheduler. 
+
+
+
+Definition at line \mbox{\hyperlink{_sec1_stall_activity_8cs_source_l00031}{31}} of file \mbox{\hyperlink{_sec1_stall_activity_8cs_source}{Sec1\+Stall\+Activity.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Module\+Exclusive\+Assets/\+Module2/\+Section1/\mbox{\hyperlink{_sec1_stall_activity_8cs}{Sec1\+Stall\+Activity.\+cs}}\end{DoxyCompactItemize}

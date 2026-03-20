@@ -1,0 +1,609 @@
+\doxysection{Activity\+Helper Class Reference}
+\hypertarget{class_activity_helper}{}\label{class_activity_helper}\index{ActivityHelper@{ActivityHelper}}
+
+
+Static helper class for activity management and control.  
+
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Playable\+Director \mbox{\hyperlink{class_activity_helper_a3a17628c1569eeef4dcce5598f021905}{Find\+Playable\+Director}} (Timeline\+Asset asset)
+\begin{DoxyCompactList}\small\item\em Finds the Playable\+Director associated with a given Timeline\+Asset. \end{DoxyCompactList}\item 
+static Playable\+Director\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_activity_helper_a361004a32ce29fd55deae20f7ec0aa36}{Find\+Playable\+Director}} (Timeline\+Asset\mbox{[}$\,$\mbox{]} assets)
+\begin{DoxyCompactList}\small\item\em Finds Playable\+Directors for multiple Timeline\+Assets. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_procedural_airflow}{Procedural\+Airflow}} \mbox{\hyperlink{class_activity_helper_a28a0fcbfe145b5f4d8101a49b41a717e}{get\+Procedural\+Airflow}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the \doxylink{class_procedural_airflow}{Procedural\+Airflow} component from the scene. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} \mbox{\hyperlink{class_activity_helper_adb076aa068f0702843b7d4709caf5ca8}{get\+Axis\+Rotation\+Controller}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the \doxylink{class_axis_rotation_controller}{Axis\+Rotation\+Controller} component from the scene. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} \mbox{\hyperlink{class_activity_helper_a5415a05119c5225a227914dd55c218a4}{get\+Axis\+Rotation\+Controller}} (float aoa=0, float bank=0)
+\begin{DoxyCompactList}\small\item\em Retrieves and configures the \doxylink{class_axis_rotation_controller}{Axis\+Rotation\+Controller} with initial rotation values. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_bank_ghost_trail_behaviour}{Bank\+Ghost\+Trail\+Behaviour}} \mbox{\hyperlink{class_activity_helper_a0f32a28a90deaf1f25de7f9a2c82d4c4}{get\+Bank\+Ghost\+Trail}} (bool enable=true)
+\begin{DoxyCompactList}\small\item\em Retrieves and configures the \doxylink{class_bank_ghost_trail_behaviour}{Bank\+Ghost\+Trail\+Behaviour} component. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{class_activity_helper_a2bb3d0c62c925a7aaa13adfa1635ca8f}{normalized\+Controller\+ZRotation}} (Input\+Action\+Reference input, float initial=0)
+\begin{DoxyCompactList}\small\item\em Returns normalized Z-\/axis rotation from VR controller input. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{class_activity_helper_a5e5be427edea760490038be94f06e58d}{normalized\+Controller\+XRotation}} (Input\+Action\+Reference input, float initial=0)
+\begin{DoxyCompactList}\small\item\em Returns normalized X-\/axis rotation from VR controller input. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_activity_helper_a6330cf284d5311559517bb68214a57d4}{Debug\+Mouse\+Control\+Roll}} (float speed, \mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} manip)
+\begin{DoxyCompactList}\small\item\em Debug function for mouse-\/based roll control. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_activity_helper_ac7033b3da588d5137ce2a33c96943d1e}{Debug\+Mouse\+Control\+Pitch}} (float speed, \mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} manip)
+\begin{DoxyCompactList}\small\item\em Debug function for mouse-\/based pitch control. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_activity_helper_a8714c3def06ac1b26c85b99e8d2f704d}{Debug\+Mouse\+Control\+Roll\+Left}} (float speed, \mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} manip)
+\begin{DoxyCompactList}\small\item\em Debug function for mouse-\/based left roll control. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_activity_helper_a73857533fad3eb2da563b373c2dc15e0}{Debug\+Mouse\+Control\+Pitch\+Up}} (float speed, \mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} manip)
+\begin{DoxyCompactList}\small\item\em Debug function for mouse-\/based pitch up control. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_activity_helper_a5f89a4d089170b50bd97e725d00cff67}{controller\+Roll\+Control}} (float speed, \mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} manip, Input\+Action\+Reference input, float dead\+Zone, float initial=0, Vector2 vector=default)
+\begin{DoxyCompactList}\small\item\em Processes VR controller input for aircraft roll control. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_activity_helper_aab90abd5307ecc59d455eb96ea7577ac}{controller\+Pitch\+Control}} (float speed, \mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} manip, Input\+Action\+Reference input, float dead\+Zone, float initial=0, Vector2 vector=default)
+\begin{DoxyCompactList}\small\item\em Processes VR controller input for aircraft pitch control. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{class_activity_helper_a9840cea8bf8ead55cefc11da4b0d4f7b}{clamp\+Range}} (float rotation, Vector2 range)
+\begin{DoxyCompactList}\small\item\em Clamps a rotation value within a specified range. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{class_activity_helper_a7b50b67158e96c88db75a0d893630366}{get\+Rotation\+Speed}} (float rotation, float speed, float dead\+Zone)
+\begin{DoxyCompactList}\small\item\em Calculates rotation speed with deadzone compensation. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_activity_helper_a9829fb7b76954e7918cb381c7cf5b91d}{check\+Rotation\+Target\+Achieved}} (float current\+Rotation, float target\+Rotation, float tolerance)
+\begin{DoxyCompactList}\small\item\em Checks if current rotation is within tolerance of target (absolute value comparison). \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_activity_helper_a9340481b12579f96c9b13f1a6ab865a0}{check\+Exact\+Rotation\+Target\+Achieved}} (float current\+Rotation, float target\+Rotation, float tolerance)
+\begin{DoxyCompactList}\small\item\em Checks if current rotation exactly matches target within tolerance. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{class_activity_helper_a8d7e6ab91e2178c7b4aae332de0d662a}{get\+Normalised\+Plane\+Roll}} (\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} manip)
+\begin{DoxyCompactList}\small\item\em Gets the aircraft\textquotesingle{}s normalized roll angle. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{class_activity_helper_a937c930008f9e200cbb6324e3981fe7d}{get\+Normalised\+Plane\+Pitch}} (\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} manip)
+\begin{DoxyCompactList}\small\item\em Gets the aircraft\textquotesingle{}s normalized pitch angle. \end{DoxyCompactList}\item 
+static IEnumerator \mbox{\hyperlink{class_activity_helper_a96bb773842c1fce0e460557bf7e64c1a}{Play\+Time\+Line}} (Playable\+Director director, System.\+Action on\+Complete, float fall\+Back\+Wait=1f)
+\begin{DoxyCompactList}\small\item\em Coroutine to play a Unity Timeline and invoke callback on completion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Static helper class for activity management and control. 
+
+Provides utility functions for\+:
+\begin{DoxyItemize}
+\item Timeline and Playable\+Director management
+\item VR controller input processing and normalization
+\item Aircraft rotation control (pitch and roll)
+\item Debug mouse controls for testing
+\item Rotation clamping and target verification
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Connor Freebairn \texorpdfstring{$\vert$}{|} \href{mailto:frecd002@mymail.unisa.edu.au}{\texttt{frecd002@mymail.\+unisa.\+edu.\+au}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_activity_helper_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_activity_helper_a9340481b12579f96c9b13f1a6ab865a0}\index{ActivityHelper@{ActivityHelper}!checkExactRotationTargetAchieved@{checkExactRotationTargetAchieved}}
+\index{checkExactRotationTargetAchieved@{checkExactRotationTargetAchieved}!ActivityHelper@{ActivityHelper}}
+\doxysubsubsection{\texorpdfstring{checkExactRotationTargetAchieved()}{checkExactRotationTargetAchieved()}}
+{\footnotesize\ttfamily \label{class_activity_helper_a9340481b12579f96c9b13f1a6ab865a0} 
+bool Activity\+Helper.\+check\+Exact\+Rotation\+Target\+Achieved (\begin{DoxyParamCaption}\item[{float}]{current\+Rotation}{, }\item[{float}]{target\+Rotation}{, }\item[{float}]{tolerance}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if current rotation exactly matches target within tolerance. 
+
+Compares current and target rotation directly, respecting sign. Useful for checking if at a specific signed rotation (e.\+g., exactly at +30 or -\/30 degrees).
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Rotation} & Current rotation value \\
+\hline
+{\em target\+Rotation} & Target rotation value \\
+\hline
+{\em tolerance} & Acceptable difference threshold \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if within tolerance, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00472}{472}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+\Hypertarget{class_activity_helper_a9829fb7b76954e7918cb381c7cf5b91d}\index{ActivityHelper@{ActivityHelper}!checkRotationTargetAchieved@{checkRotationTargetAchieved}}
+\index{checkRotationTargetAchieved@{checkRotationTargetAchieved}!ActivityHelper@{ActivityHelper}}
+\doxysubsubsection{\texorpdfstring{checkRotationTargetAchieved()}{checkRotationTargetAchieved()}}
+{\footnotesize\ttfamily \label{class_activity_helper_a9829fb7b76954e7918cb381c7cf5b91d} 
+bool Activity\+Helper.\+check\+Rotation\+Target\+Achieved (\begin{DoxyParamCaption}\item[{float}]{current\+Rotation}{, }\item[{float}]{target\+Rotation}{, }\item[{float}]{tolerance}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if current rotation is within tolerance of target (absolute value comparison). 
+
+Compares the absolute values of current and target rotation. Useful when direction doesn\textquotesingle{}t matter, only magnitude (e.\+g., checking if at 30 degrees regardless of sign).
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Rotation} & Current rotation value \\
+\hline
+{\em target\+Rotation} & Target rotation value \\
+\hline
+{\em tolerance} & Acceptable difference threshold \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if within tolerance, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00452}{452}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+\Hypertarget{class_activity_helper_a9840cea8bf8ead55cefc11da4b0d4f7b}\index{ActivityHelper@{ActivityHelper}!clampRange@{clampRange}}
+\index{clampRange@{clampRange}!ActivityHelper@{ActivityHelper}}
+\doxysubsubsection{\texorpdfstring{clampRange()}{clampRange()}}
+{\footnotesize\ttfamily \label{class_activity_helper_a9840cea8bf8ead55cefc11da4b0d4f7b} 
+float Activity\+Helper.\+clamp\+Range (\begin{DoxyParamCaption}\item[{float}]{rotation}{, }\item[{Vector2}]{range}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Clamps a rotation value within a specified range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rotation} & Rotation value to clamp \\
+\hline
+{\em range} & Vector2 containing min (x) and max (y) clamp values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Clamped rotation value 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00416}{416}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+\Hypertarget{class_activity_helper_aab90abd5307ecc59d455eb96ea7577ac}\index{ActivityHelper@{ActivityHelper}!controllerPitchControl@{controllerPitchControl}}
+\index{controllerPitchControl@{controllerPitchControl}!ActivityHelper@{ActivityHelper}}
+\doxysubsubsection{\texorpdfstring{controllerPitchControl()}{controllerPitchControl()}}
+{\footnotesize\ttfamily \label{class_activity_helper_aab90abd5307ecc59d455eb96ea7577ac} 
+void Activity\+Helper.\+controller\+Pitch\+Control (\begin{DoxyParamCaption}\item[{float}]{speed}{, }\item[{\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}}}]{manip}{, }\item[{Input\+Action\+Reference}]{input}{, }\item[{float}]{dead\+Zone}{, }\item[{float}]{initial}{ = {\ttfamily 0}, }\item[{Vector2}]{vector}{ = {\ttfamily default}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Processes VR controller input for aircraft pitch control. 
+
+Reads controller X-\/axis rotation and applies it to the aircraft\textquotesingle{}s angle of attack with deadzone filtering and speed scaling. Inverts the input so pulling back increases AOA. Clamps the resulting pitch to the specified range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & Maximum pitch speed multiplier \\
+\hline
+{\em manip} & \doxylink{class_axis_rotation_controller}{Axis\+Rotation\+Controller} to manipulate \\
+\hline
+{\em input} & Input\+Action\+Reference for reading controller rotation \\
+\hline
+{\em dead\+Zone} & Deadzone threshold below which input is ignored \\
+\hline
+{\em initial} & Initial controller X rotation offset (default\+: 0) \\
+\hline
+{\em vector} & Clamp range for pitch as Vector2(min, max) (default\+: -\/40 to 40 degrees) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00388}{388}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+\Hypertarget{class_activity_helper_a5f89a4d089170b50bd97e725d00cff67}\index{ActivityHelper@{ActivityHelper}!controllerRollControl@{controllerRollControl}}
+\index{controllerRollControl@{controllerRollControl}!ActivityHelper@{ActivityHelper}}
+\doxysubsubsection{\texorpdfstring{controllerRollControl()}{controllerRollControl()}}
+{\footnotesize\ttfamily \label{class_activity_helper_a5f89a4d089170b50bd97e725d00cff67} 
+void Activity\+Helper.\+controller\+Roll\+Control (\begin{DoxyParamCaption}\item[{float}]{speed}{, }\item[{\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}}}]{manip}{, }\item[{Input\+Action\+Reference}]{input}{, }\item[{float}]{dead\+Zone}{, }\item[{float}]{initial}{ = {\ttfamily 0}, }\item[{Vector2}]{vector}{ = {\ttfamily default}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Processes VR controller input for aircraft roll control. 
+
+Reads controller Z-\/axis rotation and applies it to the aircraft\textquotesingle{}s bank angle with deadzone filtering and speed scaling. Clamps the resulting roll to the specified range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & Maximum roll speed multiplier \\
+\hline
+{\em manip} & \doxylink{class_axis_rotation_controller}{Axis\+Rotation\+Controller} to manipulate \\
+\hline
+{\em input} & Input\+Action\+Reference for reading controller rotation \\
+\hline
+{\em dead\+Zone} & Deadzone threshold below which input is ignored \\
+\hline
+{\em initial} & Initial controller Z rotation offset (default\+: 0) \\
+\hline
+{\em vector} & Clamp range for roll as Vector2(min, max) (default\+: -\/70 to 70 degrees) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00354}{354}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+\Hypertarget{class_activity_helper_ac7033b3da588d5137ce2a33c96943d1e}\index{ActivityHelper@{ActivityHelper}!DebugMouseControlPitch@{DebugMouseControlPitch}}
+\index{DebugMouseControlPitch@{DebugMouseControlPitch}!ActivityHelper@{ActivityHelper}}
+\doxysubsubsection{\texorpdfstring{DebugMouseControlPitch()}{DebugMouseControlPitch()}}
+{\footnotesize\ttfamily \label{class_activity_helper_ac7033b3da588d5137ce2a33c96943d1e} 
+void Activity\+Helper.\+Debug\+Mouse\+Control\+Pitch (\begin{DoxyParamCaption}\item[{float}]{speed}{, }\item[{\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}}}]{manip}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Debug function for mouse-\/based pitch control. 
+
+Allows testing pitch control using left and right mouse buttons. Left button pitches down (negative), right button pitches up (positive).
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & Pitch speed multiplier \\
+\hline
+{\em manip} & \doxylink{class_axis_rotation_controller}{Axis\+Rotation\+Controller} to manipulate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00296}{296}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+\Hypertarget{class_activity_helper_a73857533fad3eb2da563b373c2dc15e0}\index{ActivityHelper@{ActivityHelper}!DebugMouseControlPitchUp@{DebugMouseControlPitchUp}}
+\index{DebugMouseControlPitchUp@{DebugMouseControlPitchUp}!ActivityHelper@{ActivityHelper}}
+\doxysubsubsection{\texorpdfstring{DebugMouseControlPitchUp()}{DebugMouseControlPitchUp()}}
+{\footnotesize\ttfamily \label{class_activity_helper_a73857533fad3eb2da563b373c2dc15e0} 
+void Activity\+Helper.\+Debug\+Mouse\+Control\+Pitch\+Up (\begin{DoxyParamCaption}\item[{float}]{speed}{, }\item[{\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}}}]{manip}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Debug function for mouse-\/based pitch up control. 
+
+Allows testing pitch up using only the left mouse button.
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & Pitch speed multiplier \\
+\hline
+{\em manip} & \doxylink{class_axis_rotation_controller}{Axis\+Rotation\+Controller} to manipulate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00333}{333}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+\Hypertarget{class_activity_helper_a6330cf284d5311559517bb68214a57d4}\index{ActivityHelper@{ActivityHelper}!DebugMouseControlRoll@{DebugMouseControlRoll}}
+\index{DebugMouseControlRoll@{DebugMouseControlRoll}!ActivityHelper@{ActivityHelper}}
+\doxysubsubsection{\texorpdfstring{DebugMouseControlRoll()}{DebugMouseControlRoll()}}
+{\footnotesize\ttfamily \label{class_activity_helper_a6330cf284d5311559517bb68214a57d4} 
+void Activity\+Helper.\+Debug\+Mouse\+Control\+Roll (\begin{DoxyParamCaption}\item[{float}]{speed}{, }\item[{\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}}}]{manip}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Debug function for mouse-\/based roll control. 
+
+Allows testing roll control using left and right mouse buttons. Left button rolls left (negative), right button rolls right (positive).
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & Roll speed multiplier \\
+\hline
+{\em manip} & \doxylink{class_axis_rotation_controller}{Axis\+Rotation\+Controller} to manipulate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00275}{275}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+\Hypertarget{class_activity_helper_a8714c3def06ac1b26c85b99e8d2f704d}\index{ActivityHelper@{ActivityHelper}!DebugMouseControlRollLeft@{DebugMouseControlRollLeft}}
+\index{DebugMouseControlRollLeft@{DebugMouseControlRollLeft}!ActivityHelper@{ActivityHelper}}
+\doxysubsubsection{\texorpdfstring{DebugMouseControlRollLeft()}{DebugMouseControlRollLeft()}}
+{\footnotesize\ttfamily \label{class_activity_helper_a8714c3def06ac1b26c85b99e8d2f704d} 
+void Activity\+Helper.\+Debug\+Mouse\+Control\+Roll\+Left (\begin{DoxyParamCaption}\item[{float}]{speed}{, }\item[{\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}}}]{manip}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Debug function for mouse-\/based left roll control. 
+
+Allows testing roll left using only the right mouse button.
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & Roll speed multiplier \\
+\hline
+{\em manip} & \doxylink{class_axis_rotation_controller}{Axis\+Rotation\+Controller} to manipulate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00316}{316}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+\Hypertarget{class_activity_helper_a3a17628c1569eeef4dcce5598f021905}\index{ActivityHelper@{ActivityHelper}!FindPlayableDirector@{FindPlayableDirector}}
+\index{FindPlayableDirector@{FindPlayableDirector}!ActivityHelper@{ActivityHelper}}
+\doxysubsubsection{\texorpdfstring{FindPlayableDirector()}{FindPlayableDirector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_activity_helper_a3a17628c1569eeef4dcce5598f021905} 
+Playable\+Director Activity\+Helper.\+Find\+Playable\+Director (\begin{DoxyParamCaption}\item[{Timeline\+Asset}]{asset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Finds the Playable\+Director associated with a given Timeline\+Asset. 
+
+Searches all Playable\+Directors in the scene to find the one that uses the specified Timeline\+Asset. Logs a warning if the asset is null or no matching director is found.
+
+
+\begin{DoxyParams}{Parameters}
+{\em asset} & The Timeline\+Asset to search for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Playable\+Director using the asset, or null if not found 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00033}{33}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+\Hypertarget{class_activity_helper_a361004a32ce29fd55deae20f7ec0aa36}\index{ActivityHelper@{ActivityHelper}!FindPlayableDirector@{FindPlayableDirector}}
+\index{FindPlayableDirector@{FindPlayableDirector}!ActivityHelper@{ActivityHelper}}
+\doxysubsubsection{\texorpdfstring{FindPlayableDirector()}{FindPlayableDirector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_activity_helper_a361004a32ce29fd55deae20f7ec0aa36} 
+Playable\+Director\mbox{[}$\,$\mbox{]} Activity\+Helper.\+Find\+Playable\+Director (\begin{DoxyParamCaption}\item[{Timeline\+Asset\mbox{[}$\,$\mbox{]}}]{assets}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Finds Playable\+Directors for multiple Timeline\+Assets. 
+
+Searches all Playable\+Directors in the scene to find those that use the specified Timeline\+Assets. Returns an array with matching directors in corresponding indices. Null entries indicate no director was found for that asset.
+
+
+\begin{DoxyParams}{Parameters}
+{\em assets} & Array of Timeline\+Assets to search for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array of Playable\+Directors matching the input assets, or null if input is invalid 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00069}{69}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+\Hypertarget{class_activity_helper_adb076aa068f0702843b7d4709caf5ca8}\index{ActivityHelper@{ActivityHelper}!getAxisRotationController@{getAxisRotationController}}
+\index{getAxisRotationController@{getAxisRotationController}!ActivityHelper@{ActivityHelper}}
+\doxysubsubsection{\texorpdfstring{getAxisRotationController()}{getAxisRotationController()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_activity_helper_adb076aa068f0702843b7d4709caf5ca8} 
+\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} Activity\+Helper.\+get\+Axis\+Rotation\+Controller (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieves the \doxylink{class_axis_rotation_controller}{Axis\+Rotation\+Controller} component from the scene. 
+
+Searches for and returns the first \doxylink{class_axis_rotation_controller}{Axis\+Rotation\+Controller} component found in the scene. Logs an error if the component cannot be found.
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{class_axis_rotation_controller}{Axis\+Rotation\+Controller} component, or null if not found or error occurs 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00146}{146}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+\Hypertarget{class_activity_helper_a5415a05119c5225a227914dd55c218a4}\index{ActivityHelper@{ActivityHelper}!getAxisRotationController@{getAxisRotationController}}
+\index{getAxisRotationController@{getAxisRotationController}!ActivityHelper@{ActivityHelper}}
+\doxysubsubsection{\texorpdfstring{getAxisRotationController()}{getAxisRotationController()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_activity_helper_a5415a05119c5225a227914dd55c218a4} 
+\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} Activity\+Helper.\+get\+Axis\+Rotation\+Controller (\begin{DoxyParamCaption}\item[{float}]{aoa}{ = {\ttfamily 0}, }\item[{float}]{bank}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieves and configures the \doxylink{class_axis_rotation_controller}{Axis\+Rotation\+Controller} with initial rotation values. 
+
+Searches for the \doxylink{class_axis_rotation_controller}{Axis\+Rotation\+Controller} and sets its angle of attack and bank angle to the specified values using lerp functions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em aoa} & Angle of attack to set (default\+: 0) \\
+\hline
+{\em bank} & Bank angle to set (default\+: 0) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The configured \doxylink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}, or null if not found or error occurs 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00169}{169}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+\Hypertarget{class_activity_helper_a0f32a28a90deaf1f25de7f9a2c82d4c4}\index{ActivityHelper@{ActivityHelper}!getBankGhostTrail@{getBankGhostTrail}}
+\index{getBankGhostTrail@{getBankGhostTrail}!ActivityHelper@{ActivityHelper}}
+\doxysubsubsection{\texorpdfstring{getBankGhostTrail()}{getBankGhostTrail()}}
+{\footnotesize\ttfamily \label{class_activity_helper_a0f32a28a90deaf1f25de7f9a2c82d4c4} 
+\mbox{\hyperlink{class_bank_ghost_trail_behaviour}{Bank\+Ghost\+Trail\+Behaviour}} Activity\+Helper.\+get\+Bank\+Ghost\+Trail (\begin{DoxyParamCaption}\item[{bool}]{enable}{ = {\ttfamily true}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieves and configures the \doxylink{class_bank_ghost_trail_behaviour}{Bank\+Ghost\+Trail\+Behaviour} component. 
+
+Searches for the \doxylink{class_bank_ghost_trail_behaviour}{Bank\+Ghost\+Trail\+Behaviour} component and sets its enable state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & Whether to enable the ghost trail (default\+: true) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{class_bank_ghost_trail_behaviour}{Bank\+Ghost\+Trail\+Behaviour} component, or null if not found or error occurs 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00193}{193}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+\Hypertarget{class_activity_helper_a937c930008f9e200cbb6324e3981fe7d}\index{ActivityHelper@{ActivityHelper}!getNormalisedPlanePitch@{getNormalisedPlanePitch}}
+\index{getNormalisedPlanePitch@{getNormalisedPlanePitch}!ActivityHelper@{ActivityHelper}}
+\doxysubsubsection{\texorpdfstring{getNormalisedPlanePitch()}{getNormalisedPlanePitch()}}
+{\footnotesize\ttfamily \label{class_activity_helper_a937c930008f9e200cbb6324e3981fe7d} 
+float Activity\+Helper.\+get\+Normalised\+Plane\+Pitch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}}}]{manip}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the aircraft\textquotesingle{}s normalized pitch angle. 
+
+Extracts and normalizes the Z-\/axis rotation (pitch) from the \doxylink{class_axis_rotation_controller}{Axis\+Rotation\+Controller} to a range of -\/180 to 180 degrees.
+
+
+\begin{DoxyParams}{Parameters}
+{\em manip} & \doxylink{class_axis_rotation_controller}{Axis\+Rotation\+Controller} to query \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Normalized pitch angle in degrees, range \mbox{[}-\/180, 180\mbox{]} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00506}{506}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+\Hypertarget{class_activity_helper_a8d7e6ab91e2178c7b4aae332de0d662a}\index{ActivityHelper@{ActivityHelper}!getNormalisedPlaneRoll@{getNormalisedPlaneRoll}}
+\index{getNormalisedPlaneRoll@{getNormalisedPlaneRoll}!ActivityHelper@{ActivityHelper}}
+\doxysubsubsection{\texorpdfstring{getNormalisedPlaneRoll()}{getNormalisedPlaneRoll()}}
+{\footnotesize\ttfamily \label{class_activity_helper_a8d7e6ab91e2178c7b4aae332de0d662a} 
+float Activity\+Helper.\+get\+Normalised\+Plane\+Roll (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}}}]{manip}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the aircraft\textquotesingle{}s normalized roll angle. 
+
+Extracts and normalizes the X-\/axis rotation (roll) from the \doxylink{class_axis_rotation_controller}{Axis\+Rotation\+Controller} to a range of -\/180 to 180 degrees.
+
+
+\begin{DoxyParams}{Parameters}
+{\em manip} & \doxylink{class_axis_rotation_controller}{Axis\+Rotation\+Controller} to query \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Normalized roll angle in degrees, range \mbox{[}-\/180, 180\mbox{]} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00491}{491}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+\Hypertarget{class_activity_helper_a28a0fcbfe145b5f4d8101a49b41a717e}\index{ActivityHelper@{ActivityHelper}!getProceduralAirflow@{getProceduralAirflow}}
+\index{getProceduralAirflow@{getProceduralAirflow}!ActivityHelper@{ActivityHelper}}
+\doxysubsubsection{\texorpdfstring{getProceduralAirflow()}{getProceduralAirflow()}}
+{\footnotesize\ttfamily \label{class_activity_helper_a28a0fcbfe145b5f4d8101a49b41a717e} 
+\mbox{\hyperlink{class_procedural_airflow}{Procedural\+Airflow}} Activity\+Helper.\+get\+Procedural\+Airflow (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieves the \doxylink{class_procedural_airflow}{Procedural\+Airflow} component from the scene. 
+
+Searches for and returns the first \doxylink{class_procedural_airflow}{Procedural\+Airflow} component found in the scene. Logs an error if the component cannot be found.
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{class_procedural_airflow}{Procedural\+Airflow} component, or null if not found or error occurs 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00125}{125}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+\Hypertarget{class_activity_helper_a7b50b67158e96c88db75a0d893630366}\index{ActivityHelper@{ActivityHelper}!getRotationSpeed@{getRotationSpeed}}
+\index{getRotationSpeed@{getRotationSpeed}!ActivityHelper@{ActivityHelper}}
+\doxysubsubsection{\texorpdfstring{getRotationSpeed()}{getRotationSpeed()}}
+{\footnotesize\ttfamily \label{class_activity_helper_a7b50b67158e96c88db75a0d893630366} 
+float Activity\+Helper.\+get\+Rotation\+Speed (\begin{DoxyParamCaption}\item[{float}]{rotation}{, }\item[{float}]{speed}{, }\item[{float}]{dead\+Zone}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates rotation speed with deadzone compensation. 
+
+Scales the rotation speed proportionally to how far the input exceeds the deadzone. Preserves the sign of the original rotation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rotation} & Input rotation value \\
+\hline
+{\em speed} & Speed multiplier \\
+\hline
+{\em dead\+Zone} & Deadzone threshold \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Scaled rotation speed with sign preserved 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00433}{433}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+\Hypertarget{class_activity_helper_a5e5be427edea760490038be94f06e58d}\index{ActivityHelper@{ActivityHelper}!normalizedControllerXRotation@{normalizedControllerXRotation}}
+\index{normalizedControllerXRotation@{normalizedControllerXRotation}!ActivityHelper@{ActivityHelper}}
+\doxysubsubsection{\texorpdfstring{normalizedControllerXRotation()}{normalizedControllerXRotation()}}
+{\footnotesize\ttfamily \label{class_activity_helper_a5e5be427edea760490038be94f06e58d} 
+float Activity\+Helper.\+normalized\+Controller\+XRotation (\begin{DoxyParamCaption}\item[{Input\+Action\+Reference}]{input}{, }\item[{float}]{initial}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns normalized X-\/axis rotation from VR controller input. 
+
+Reads the controller rotation quaternion and calculates the X-\/axis rotation relative to an initial rotation value. The result is normalized between -\/180 and 180 degrees using Mathf.\+Delta\+Angle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Input\+Action\+Reference for reading controller rotation \\
+\hline
+{\em initial} & Initial X rotation offset in degrees (default\+: 0) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Normalized X rotation in degrees, range \mbox{[}-\/180, 180\mbox{]} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00248}{248}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+\Hypertarget{class_activity_helper_a2bb3d0c62c925a7aaa13adfa1635ca8f}\index{ActivityHelper@{ActivityHelper}!normalizedControllerZRotation@{normalizedControllerZRotation}}
+\index{normalizedControllerZRotation@{normalizedControllerZRotation}!ActivityHelper@{ActivityHelper}}
+\doxysubsubsection{\texorpdfstring{normalizedControllerZRotation()}{normalizedControllerZRotation()}}
+{\footnotesize\ttfamily \label{class_activity_helper_a2bb3d0c62c925a7aaa13adfa1635ca8f} 
+float Activity\+Helper.\+normalized\+Controller\+ZRotation (\begin{DoxyParamCaption}\item[{Input\+Action\+Reference}]{input}{, }\item[{float}]{initial}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns normalized Z-\/axis rotation from VR controller input. 
+
+Reads the controller rotation quaternion and calculates the Z-\/axis rotation relative to an initial rotation value. The result is normalized between -\/180 and 180 degrees using Mathf.\+Delta\+Angle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Input\+Action\+Reference for reading controller rotation \\
+\hline
+{\em initial} & Initial Z rotation offset in degrees (default\+: 0) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Normalized Z rotation in degrees, range \mbox{[}-\/180, 180\mbox{]} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00219}{219}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+\Hypertarget{class_activity_helper_a96bb773842c1fce0e460557bf7e64c1a}\index{ActivityHelper@{ActivityHelper}!PlayTimeLine@{PlayTimeLine}}
+\index{PlayTimeLine@{PlayTimeLine}!ActivityHelper@{ActivityHelper}}
+\doxysubsubsection{\texorpdfstring{PlayTimeLine()}{PlayTimeLine()}}
+{\footnotesize\ttfamily \label{class_activity_helper_a96bb773842c1fce0e460557bf7e64c1a} 
+IEnumerator Activity\+Helper.\+Play\+Time\+Line (\begin{DoxyParamCaption}\item[{Playable\+Director}]{director}{, }\item[{System.\+Action}]{on\+Complete}{, }\item[{float}]{fall\+Back\+Wait}{ = {\ttfamily 1f}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Coroutine to play a Unity Timeline and invoke callback on completion. 
+
+Plays the specified Playable\+Director and waits until the timeline completes before invoking the provided callback action. If the director or asset is null, waits for the fallback duration before invoking the callback.
+
+
+\begin{DoxyParams}{Parameters}
+{\em director} & Playable\+Director containing the timeline to play \\
+\hline
+{\em on\+Complete} & Callback action to invoke when timeline completes \\
+\hline
+{\em fall\+Back\+Wait} & Fallback wait time in seconds if director is invalid (default\+: 1s) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IEnumerator for coroutine execution 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_activity_helper_8cs_source_l00524}{524}} of file \mbox{\hyperlink{_activity_helper_8cs_source}{Activity\+Helper.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Activity\+Structure/\mbox{\hyperlink{_activity_helper_8cs}{Activity\+Helper.\+cs}}\end{DoxyCompactItemize}

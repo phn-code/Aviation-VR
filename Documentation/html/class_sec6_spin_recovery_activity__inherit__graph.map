@@ -1,0 +1,7 @@
+<map id="Sec6SpinRecoveryActivity" name="Sec6SpinRecoveryActivity">
+<area shape="rect" id="Node000001" title="Section 6 spin recovery training activity controller." alt="" coords="43,80,220,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,117,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,41,121,78,118,81,82,45"/>
+<area shape="rect" id="Node000003" href="$interface_i_activity_controller.html" title="Interface class." alt="" coords="141,5,266,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="182,45,146,81,142,78,179,41"/>
+</map>

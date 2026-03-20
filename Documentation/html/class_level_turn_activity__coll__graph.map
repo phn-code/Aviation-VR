@@ -1,0 +1,13 @@
+<map id="LevelTurnActivity" name="LevelTurnActivity">
+<area shape="rect" id="Node000001" title="Level turn training activity controller." alt="" coords="129,180,251,207"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="43,5,154,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="56,42,35,55,17,71,8,89,9,97,12,107,35,133,65,154,97,168,129,179,128,184,95,173,62,158,32,137,8,109,3,99,3,88,13,68,31,51,54,37"/>
+<area shape="rect" id="Node000004" href="$class_axis_rotation_controller.html" title="Helper class to perform rotation actions." alt="" coords="22,81,174,108"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="101,47,101,81,96,81,96,47"/>
+<area shape="rect" id="Node000005" href="$class_bank_ghost_trail_behaviour.html" title=" " alt="" coords="199,81,368,108"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="145,36,253,78,251,83,143,41"/>
+<area shape="rect" id="Node000003" href="$interface_i_activity_controller.html" title="Interface class." alt="" coords="393,81,518,108"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="426,119,390,140,350,158,301,174,252,185,251,180,299,169,348,154,388,135,423,114"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="110,121,131,154,163,177,160,182,127,158,105,124"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="263,121,204,182,200,178,259,117"/>
+</map>

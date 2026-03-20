@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7af545500308947a6c9ee6772556fe, type: 3}
+  m_Name: TiltControllerBack
+  m_EditorClassIdentifier: 
+  activityName: Tilt Controller Back
+  instructions:
+  - Slowly tilt the left controller backwards to raise the nose and safely pull out
+    of the dive.
+  usesCustomScript: 1
+  customScript: {fileID: 21315843494900281, guid: 3e6c98bde6ca03f42afa1eec63ad1b65, type: 3}
+  playerInputRequired: 1
+  totalSteps: 1
+  currentStep: 0

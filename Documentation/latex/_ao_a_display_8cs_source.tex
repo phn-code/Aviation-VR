@@ -1,0 +1,32 @@
+\doxysection{Ao\+ADisplay.\+cs}
+\hypertarget{_ao_a_display_8cs_source}{}\label{_ao_a_display_8cs_source}\index{Assets/Scripts/UI/AoADisplay.cs@{Assets/Scripts/UI/AoADisplay.cs}}
+\mbox{\hyperlink{_ao_a_display_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }TMPro;}
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00010}\mbox{\hyperlink{class_ao_a_display}{00010}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ao_a_display}{AoADisplay}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00012}\mbox{\hyperlink{class_ao_a_display_a960c3bfe8407583f7c15b65e6a125e27}{00012}}\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_ao_a_display_a960c3bfe8407583f7c15b65e6a125e27}{AoAMeter}};\ }
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00013}\mbox{\hyperlink{class_ao_a_display_a96bfa887fcba0b585801cb7ed06f8b61}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_ao_a_display_a96bfa887fcba0b585801cb7ed06f8b61}{aircraft}};\ }
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00015}\mbox{\hyperlink{class_ao_a_display_a5fc24b91819e72ad6b94b67c28b2fb76}{00015}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ao_a_display_a5fc24b91819e72ad6b94b67c28b2fb76}{Start}}()}
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00020}\mbox{\hyperlink{class_ao_a_display_aec67469cbf42c9f28f09803aa42f131a}{00020}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ao_a_display_aec67469cbf42c9f28f09803aa42f131a}{Update}}()}
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ aoa\ =\ \mbox{\hyperlink{class_ao_a_display_a96bfa887fcba0b585801cb7ed06f8b61}{aircraft}}.transform.eulerAngles.z;\ \textcolor{comment}{//\ Get\ the\ Angle\ of\ Attack}}
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ t\ =\ Mathf.InverseLerp(0f,\ 15f,\ aoa);}
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ Color\ textColour\ =\ Color.Lerp(Color.green,\ Color.red,\ t);}
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ AoAMeter.color\ =\ textColour;}
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ AoAMeter.text\ =\ aoa.ToString(\textcolor{stringliteral}{"{}F0"{}})\ +\ \textcolor{stringliteral}{"{}{\ucr}"{}};}
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_ao_a_display_8cs_source_l00031}00031\ \}}
+
+\end{DoxyCode}

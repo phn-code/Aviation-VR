@@ -1,0 +1,823 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Todo List }{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Directory Hierarchy}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Directories}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Hierarchical Index}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class Hierarchy}{7}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Class Index}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Class List}{9}{section.4.1}%
+\contentsline {chapter}{\numberline {5}File Index}{11}{chapter.5}%
+\contentsline {section}{\numberline {5.1}File List}{11}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Directory Documentation}{13}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Structure Directory Reference}{13}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Assets Directory Reference}{13}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Common\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Behaviour Directory Reference}{14}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Custom\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timeline\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tracks Directory Reference}{14}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DA\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}40\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Special\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Features Directory Reference}{15}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Editor Directory Reference}{15}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Custom\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timeline\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tracks/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Material\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timeline\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Track Directory Reference}{16}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Misc Directory Reference}{16}{section.6.8}%
+\contentsline {section}{\numberline {6.9}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Misc\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Behaviour Directory Reference}{17}{section.6.9}%
+\contentsline {section}{\numberline {6.10}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exclusive\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module2 Directory Reference}{17}{section.6.10}%
+\contentsline {section}{\numberline {6.11}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exclusive\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assets Directory Reference}{18}{section.6.11}%
+\contentsline {section}{\numberline {6.12}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Structure Directory Reference}{18}{section.6.12}%
+\contentsline {section}{\numberline {6.13}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exclusive\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Section2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}NEW Directory Reference}{19}{section.6.13}%
+\contentsline {section}{\numberline {6.14}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts Directory Reference}{19}{section.6.14}%
+\contentsline {section}{\numberline {6.15}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exclusive\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Section1 Directory Reference}{20}{section.6.15}%
+\contentsline {section}{\numberline {6.16}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exclusive\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Section2 Directory Reference}{20}{section.6.16}%
+\contentsline {section}{\numberline {6.17}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exclusive\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Section3 Directory Reference}{21}{section.6.17}%
+\contentsline {section}{\numberline {6.18}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exclusive\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Section6 Directory Reference}{21}{section.6.18}%
+\contentsline {section}{\numberline {6.19}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exclusive\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Section7 Directory Reference}{22}{section.6.19}%
+\contentsline {section}{\numberline {6.20}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Custom\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timeline\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tracks/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Subtitle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timeline\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Track Directory Reference}{22}{section.6.20}%
+\contentsline {section}{\numberline {6.21}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Directory Reference}{23}{section.6.21}%
+\contentsline {chapter}{\numberline {7}Class Documentation}{25}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Accelerate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Script Class Reference}{25}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Detailed Description}{26}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Member Function Documentation}{26}{subsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.2.1}getHasTriggered()}{26}{subsubsection.7.1.2.1}%
+\contentsline {subsubsection}{\numberline {7.1.2.2}OnDisable()}{26}{subsubsection.7.1.2.2}%
+\contentsline {subsubsection}{\numberline {7.1.2.3}OnEnable()}{27}{subsubsection.7.1.2.3}%
+\contentsline {subsubsection}{\numberline {7.1.2.4}OnPadMoved()}{27}{subsubsection.7.1.2.4}%
+\contentsline {subsubsection}{\numberline {7.1.2.5}OnPadReleased()}{27}{subsubsection.7.1.2.5}%
+\contentsline {subsubsection}{\numberline {7.1.2.6}StartActivity()}{27}{subsubsection.7.1.2.6}%
+\contentsline {subsubsection}{\numberline {7.1.2.7}WaitCoroutine()}{27}{subsubsection.7.1.2.7}%
+\contentsline {subsection}{\numberline {7.1.3}Member Data Documentation}{27}{subsection.7.1.3}%
+\contentsline {subsubsection}{\numberline {7.1.3.1}activityEnabled}{27}{subsubsection.7.1.3.1}%
+\contentsline {subsubsection}{\numberline {7.1.3.2}hasTriggered}{28}{subsubsection.7.1.3.2}%
+\contentsline {subsubsection}{\numberline {7.1.3.3}inputAction}{28}{subsubsection.7.1.3.3}%
+\contentsline {subsubsection}{\numberline {7.1.3.4}throttleThreshold}{28}{subsubsection.7.1.3.4}%
+\contentsline {subsection}{\numberline {7.1.4}Property Documentation}{28}{subsection.7.1.4}%
+\contentsline {subsubsection}{\numberline {7.1.4.1}mas}{28}{subsubsection.7.1.4.1}%
+\contentsline {section}{\numberline {7.2}Activity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Helper Class Reference}{28}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Detailed Description}{30}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Member Function Documentation}{30}{subsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.2.1}checkExactRotationTargetAchieved()}{30}{subsubsection.7.2.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2.2}checkRotationTargetAchieved()}{30}{subsubsection.7.2.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.2.3}clampRange()}{31}{subsubsection.7.2.2.3}%
+\contentsline {subsubsection}{\numberline {7.2.2.4}controllerPitchControl()}{31}{subsubsection.7.2.2.4}%
+\contentsline {subsubsection}{\numberline {7.2.2.5}controllerRollControl()}{32}{subsubsection.7.2.2.5}%
+\contentsline {subsubsection}{\numberline {7.2.2.6}DebugMouseControlPitch()}{32}{subsubsection.7.2.2.6}%
+\contentsline {subsubsection}{\numberline {7.2.2.7}DebugMouseControlPitchUp()}{33}{subsubsection.7.2.2.7}%
+\contentsline {subsubsection}{\numberline {7.2.2.8}DebugMouseControlRoll()}{33}{subsubsection.7.2.2.8}%
+\contentsline {subsubsection}{\numberline {7.2.2.9}DebugMouseControlRollLeft()}{33}{subsubsection.7.2.2.9}%
+\contentsline {subsubsection}{\numberline {7.2.2.10}FindPlayableDirector()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{34}{subsubsection.7.2.2.10}%
+\contentsline {subsubsection}{\numberline {7.2.2.11}FindPlayableDirector()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{34}{subsubsection.7.2.2.11}%
+\contentsline {subsubsection}{\numberline {7.2.2.12}getAxisRotationController()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{35}{subsubsection.7.2.2.12}%
+\contentsline {subsubsection}{\numberline {7.2.2.13}getAxisRotationController()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{35}{subsubsection.7.2.2.13}%
+\contentsline {subsubsection}{\numberline {7.2.2.14}getBankGhostTrail()}{35}{subsubsection.7.2.2.14}%
+\contentsline {subsubsection}{\numberline {7.2.2.15}getNormalisedPlanePitch()}{36}{subsubsection.7.2.2.15}%
+\contentsline {subsubsection}{\numberline {7.2.2.16}getNormalisedPlaneRoll()}{36}{subsubsection.7.2.2.16}%
+\contentsline {subsubsection}{\numberline {7.2.2.17}getProceduralAirflow()}{37}{subsubsection.7.2.2.17}%
+\contentsline {subsubsection}{\numberline {7.2.2.18}getRotationSpeed()}{37}{subsubsection.7.2.2.18}%
+\contentsline {subsubsection}{\numberline {7.2.2.19}normalizedControllerXRotation()}{37}{subsubsection.7.2.2.19}%
+\contentsline {subsubsection}{\numberline {7.2.2.20}normalizedControllerZRotation()}{38}{subsubsection.7.2.2.20}%
+\contentsline {subsubsection}{\numberline {7.2.2.21}PlayTimeLine()}{38}{subsubsection.7.2.2.21}%
+\contentsline {section}{\numberline {7.3}Airspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Meter\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Display Class Reference}{39}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Detailed Description}{40}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Member Function Documentation}{40}{subsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.2.1}moveTowardsKnotsTarget()}{40}{subsubsection.7.3.2.1}%
+\contentsline {subsubsection}{\numberline {7.3.2.2}setKnots()}{41}{subsubsection.7.3.2.2}%
+\contentsline {subsubsection}{\numberline {7.3.2.3}Start()}{41}{subsubsection.7.3.2.3}%
+\contentsline {subsubsection}{\numberline {7.3.2.4}Update()}{41}{subsubsection.7.3.2.4}%
+\contentsline {subsection}{\numberline {7.3.3}Member Data Documentation}{41}{subsection.7.3.3}%
+\contentsline {subsubsection}{\numberline {7.3.3.1}AirspeedMeter}{41}{subsubsection.7.3.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.3.2}isMoving}{42}{subsubsection.7.3.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.3.3}knots}{42}{subsubsection.7.3.3.3}%
+\contentsline {subsubsection}{\numberline {7.3.3.4}moveSpeed}{42}{subsubsection.7.3.3.4}%
+\contentsline {subsubsection}{\numberline {7.3.3.5}targetValue}{42}{subsubsection.7.3.3.5}%
+\contentsline {section}{\numberline {7.4}Ao\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ADisplay Class Reference}{43}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Detailed Description}{44}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Member Function Documentation}{44}{subsection.7.4.2}%
+\contentsline {subsubsection}{\numberline {7.4.2.1}Start()}{44}{subsubsection.7.4.2.1}%
+\contentsline {subsubsection}{\numberline {7.4.2.2}Update()}{44}{subsubsection.7.4.2.2}%
+\contentsline {subsection}{\numberline {7.4.3}Member Data Documentation}{44}{subsection.7.4.3}%
+\contentsline {subsubsection}{\numberline {7.4.3.1}aircraft}{44}{subsubsection.7.4.3.1}%
+\contentsline {subsubsection}{\numberline {7.4.3.2}AoAMeter}{44}{subsubsection.7.4.3.2}%
+\contentsline {section}{\numberline {7.5}Axis\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Rotation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller Class Reference}{45}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Detailed Description}{46}{subsection.7.5.1}%
+\contentsline {subsection}{\numberline {7.5.2}Member Function Documentation}{47}{subsection.7.5.2}%
+\contentsline {subsubsection}{\numberline {7.5.2.1}getRotation()}{47}{subsubsection.7.5.2.1}%
+\contentsline {subsubsection}{\numberline {7.5.2.2}IncrementAOA()}{47}{subsubsection.7.5.2.2}%
+\contentsline {subsubsection}{\numberline {7.5.2.3}IncrementBank()}{47}{subsubsection.7.5.2.3}%
+\contentsline {subsubsection}{\numberline {7.5.2.4}IncrementYaw()}{47}{subsubsection.7.5.2.4}%
+\contentsline {subsubsection}{\numberline {7.5.2.5}IsLerpingPitch()}{48}{subsubsection.7.5.2.5}%
+\contentsline {subsubsection}{\numberline {7.5.2.6}IsLerpingRoll()}{48}{subsubsection.7.5.2.6}%
+\contentsline {subsubsection}{\numberline {7.5.2.7}LerpAOA()}{48}{subsubsection.7.5.2.7}%
+\contentsline {subsubsection}{\numberline {7.5.2.8}LerpBank()}{48}{subsubsection.7.5.2.8}%
+\contentsline {subsubsection}{\numberline {7.5.2.9}setPitch()}{49}{subsubsection.7.5.2.9}%
+\contentsline {subsubsection}{\numberline {7.5.2.10}setRoll()}{49}{subsubsection.7.5.2.10}%
+\contentsline {subsubsection}{\numberline {7.5.2.11}Update()}{49}{subsubsection.7.5.2.11}%
+\contentsline {subsubsection}{\numberline {7.5.2.12}UpdatePitch()}{49}{subsubsection.7.5.2.12}%
+\contentsline {subsubsection}{\numberline {7.5.2.13}UpdateRoll()}{50}{subsubsection.7.5.2.13}%
+\contentsline {subsection}{\numberline {7.5.3}Member Data Documentation}{50}{subsection.7.5.3}%
+\contentsline {subsubsection}{\numberline {7.5.3.1}durationPitch}{50}{subsubsection.7.5.3.1}%
+\contentsline {subsubsection}{\numberline {7.5.3.2}durationRoll}{50}{subsubsection.7.5.3.2}%
+\contentsline {subsubsection}{\numberline {7.5.3.3}isLerpingPitch}{50}{subsubsection.7.5.3.3}%
+\contentsline {subsubsection}{\numberline {7.5.3.4}isLerpingRoll}{50}{subsubsection.7.5.3.4}%
+\contentsline {subsubsection}{\numberline {7.5.3.5}startRotationX}{50}{subsubsection.7.5.3.5}%
+\contentsline {subsubsection}{\numberline {7.5.3.6}startRotationZ}{51}{subsubsection.7.5.3.6}%
+\contentsline {subsubsection}{\numberline {7.5.3.7}targetRotationX}{51}{subsubsection.7.5.3.7}%
+\contentsline {subsubsection}{\numberline {7.5.3.8}targetRotationZ}{51}{subsubsection.7.5.3.8}%
+\contentsline {subsubsection}{\numberline {7.5.3.9}timeElapsedPitch}{51}{subsubsection.7.5.3.9}%
+\contentsline {subsubsection}{\numberline {7.5.3.10}timeElapsedRoll}{51}{subsubsection.7.5.3.10}%
+\contentsline {section}{\numberline {7.6}Bank\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Ghost\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Trail\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Behaviour Class Reference}{52}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}Detailed Description}{53}{subsection.7.6.1}%
+\contentsline {subsection}{\numberline {7.6.2}Member Function Documentation}{53}{subsection.7.6.2}%
+\contentsline {subsubsection}{\numberline {7.6.2.1}OnDrawGizmosSelected()}{53}{subsubsection.7.6.2.1}%
+\contentsline {subsubsection}{\numberline {7.6.2.2}Update()}{53}{subsubsection.7.6.2.2}%
+\contentsline {subsubsection}{\numberline {7.6.2.3}UpdateGhostTrailMotion()}{53}{subsubsection.7.6.2.3}%
+\contentsline {subsection}{\numberline {7.6.3}Member Data Documentation}{54}{subsection.7.6.3}%
+\contentsline {subsubsection}{\numberline {7.6.3.1}enable}{54}{subsubsection.7.6.3.1}%
+\contentsline {subsubsection}{\numberline {7.6.3.2}ghostParticles}{54}{subsubsection.7.6.3.2}%
+\contentsline {subsubsection}{\numberline {7.6.3.3}ghostTrail}{54}{subsubsection.7.6.3.3}%
+\contentsline {subsubsection}{\numberline {7.6.3.4}velocity}{54}{subsubsection.7.6.3.4}%
+\contentsline {section}{\numberline {7.7}Bank\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Ghost\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Trail\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Demo Class Reference}{55}{section.7.7}%
+\contentsline {subsection}{\numberline {7.7.1}Detailed Description}{56}{subsection.7.7.1}%
+\contentsline {subsection}{\numberline {7.7.2}Member Function Documentation}{56}{subsection.7.7.2}%
+\contentsline {subsubsection}{\numberline {7.7.2.1}Start()}{56}{subsubsection.7.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.7.2.2}Update()}{56}{subsubsection.7.7.2.2}%
+\contentsline {subsection}{\numberline {7.7.3}Member Data Documentation}{57}{subsection.7.7.3}%
+\contentsline {subsubsection}{\numberline {7.7.3.1}delay}{57}{subsubsection.7.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.7.3.2}delayTarget}{57}{subsubsection.7.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.7.3.3}manip}{57}{subsubsection.7.7.3.3}%
+\contentsline {subsubsection}{\numberline {7.7.3.4}started}{57}{subsubsection.7.7.3.4}%
+\contentsline {section}{\numberline {7.8}Checkbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Group\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Class Reference}{58}{section.7.8}%
+\contentsline {subsection}{\numberline {7.8.1}Detailed Description}{59}{subsection.7.8.1}%
+\contentsline {subsection}{\numberline {7.8.2}Member Function Documentation}{59}{subsection.7.8.2}%
+\contentsline {subsubsection}{\numberline {7.8.2.1}SetChecked()}{59}{subsubsection.7.8.2.1}%
+\contentsline {subsubsection}{\numberline {7.8.2.2}SetLabel()}{59}{subsubsection.7.8.2.2}%
+\contentsline {subsubsection}{\numberline {7.8.2.3}SetVisible()}{60}{subsubsection.7.8.2.3}%
+\contentsline {subsection}{\numberline {7.8.3}Member Data Documentation}{60}{subsection.7.8.3}%
+\contentsline {subsubsection}{\numberline {7.8.3.1}checkImage}{60}{subsubsection.7.8.3.1}%
+\contentsline {subsubsection}{\numberline {7.8.3.2}groupObject}{60}{subsubsection.7.8.3.2}%
+\contentsline {subsubsection}{\numberline {7.8.3.3}labelText}{60}{subsubsection.7.8.3.3}%
+\contentsline {section}{\numberline {7.9}Checkbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{61}{section.7.9}%
+\contentsline {subsection}{\numberline {7.9.1}Detailed Description}{62}{subsection.7.9.1}%
+\contentsline {subsection}{\numberline {7.9.2}Member Function Documentation}{62}{subsection.7.9.2}%
+\contentsline {subsubsection}{\numberline {7.9.2.1}CompleteStep()}{62}{subsubsection.7.9.2.1}%
+\contentsline {subsubsection}{\numberline {7.9.2.2}HighlightStep()}{62}{subsubsection.7.9.2.2}%
+\contentsline {subsubsection}{\numberline {7.9.2.3}SetupSteps()}{62}{subsubsection.7.9.2.3}%
+\contentsline {subsection}{\numberline {7.9.3}Member Data Documentation}{63}{subsection.7.9.3}%
+\contentsline {subsubsection}{\numberline {7.9.3.1}checkboxGroups}{63}{subsubsection.7.9.3.1}%
+\contentsline {subsubsection}{\numberline {7.9.3.2}totalSteps}{63}{subsubsection.7.9.3.2}%
+\contentsline {section}{\numberline {7.10}Climbing\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Turn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity Class Reference}{63}{section.7.10}%
+\contentsline {subsection}{\numberline {7.10.1}Detailed Description}{66}{subsection.7.10.1}%
+\contentsline {subsection}{\numberline {7.10.2}Member Enumeration Documentation}{66}{subsection.7.10.2}%
+\contentsline {subsubsection}{\numberline {7.10.2.1}TurnStep}{66}{subsubsection.7.10.2.1}%
+\contentsline {subsection}{\numberline {7.10.3}Member Function Documentation}{66}{subsection.7.10.3}%
+\contentsline {subsubsection}{\numberline {7.10.3.1}EnableCurrentStep()}{66}{subsubsection.7.10.3.1}%
+\contentsline {subsubsection}{\numberline {7.10.3.2}HandleBanking()}{67}{subsubsection.7.10.3.2}%
+\contentsline {subsubsection}{\numberline {7.10.3.3}HandleSlipStream()}{67}{subsubsection.7.10.3.3}%
+\contentsline {subsubsection}{\numberline {7.10.3.4}HandleStall()}{67}{subsubsection.7.10.3.4}%
+\contentsline {subsubsection}{\numberline {7.10.3.5}OnDisable()}{67}{subsubsection.7.10.3.5}%
+\contentsline {subsubsection}{\numberline {7.10.3.6}OnEnable()}{68}{subsubsection.7.10.3.6}%
+\contentsline {subsubsection}{\numberline {7.10.3.7}StartActivity()}{68}{subsubsection.7.10.3.7}%
+\contentsline {subsubsection}{\numberline {7.10.3.8}Update()}{68}{subsubsection.7.10.3.8}%
+\contentsline {subsection}{\numberline {7.10.4}Member Data Documentation}{68}{subsection.7.10.4}%
+\contentsline {subsubsection}{\numberline {7.10.4.1}aoaManipulator}{68}{subsubsection.7.10.4.1}%
+\contentsline {subsubsection}{\numberline {7.10.4.2}bankGhostTrail}{68}{subsubsection.7.10.4.2}%
+\contentsline {subsubsection}{\numberline {7.10.4.3}bankSensitivity}{69}{subsubsection.7.10.4.3}%
+\contentsline {subsubsection}{\numberline {7.10.4.4}controllerOrigin}{69}{subsubsection.7.10.4.4}%
+\contentsline {subsubsection}{\numberline {7.10.4.5}currentBank}{69}{subsubsection.7.10.4.5}%
+\contentsline {subsubsection}{\numberline {7.10.4.6}currentStep}{69}{subsubsection.7.10.4.6}%
+\contentsline {subsubsection}{\numberline {7.10.4.7}deadZone}{69}{subsubsection.7.10.4.7}%
+\contentsline {subsubsection}{\numberline {7.10.4.8}hasControllerOrigin}{69}{subsubsection.7.10.4.8}%
+\contentsline {subsubsection}{\numberline {7.10.4.9}hasNotifiedMAS}{70}{subsubsection.7.10.4.9}%
+\contentsline {subsubsection}{\numberline {7.10.4.10}mouseRollSpeed}{70}{subsubsection.7.10.4.10}%
+\contentsline {subsubsection}{\numberline {7.10.4.11}pitchInputLocked}{70}{subsubsection.7.10.4.11}%
+\contentsline {subsubsection}{\numberline {7.10.4.12}postBank}{70}{subsubsection.7.10.4.12}%
+\contentsline {subsubsection}{\numberline {7.10.4.13}postBankDirector}{70}{subsubsection.7.10.4.13}%
+\contentsline {subsubsection}{\numberline {7.10.4.14}postSlipStream}{70}{subsubsection.7.10.4.14}%
+\contentsline {subsubsection}{\numberline {7.10.4.15}postSlipStreamDirector}{71}{subsubsection.7.10.4.15}%
+\contentsline {subsubsection}{\numberline {7.10.4.16}postStall}{71}{subsubsection.7.10.4.16}%
+\contentsline {subsubsection}{\numberline {7.10.4.17}postStallDirector}{71}{subsubsection.7.10.4.17}%
+\contentsline {subsubsection}{\numberline {7.10.4.18}rollInputLocked}{71}{subsubsection.7.10.4.18}%
+\contentsline {subsubsection}{\numberline {7.10.4.19}rotationInput}{71}{subsubsection.7.10.4.19}%
+\contentsline {subsubsection}{\numberline {7.10.4.20}stepAdvanceTolerance}{71}{subsubsection.7.10.4.20}%
+\contentsline {subsubsection}{\numberline {7.10.4.21}useMouseClicks}{72}{subsubsection.7.10.4.21}%
+\contentsline {subsection}{\numberline {7.10.5}Property Documentation}{72}{subsection.7.10.5}%
+\contentsline {subsubsection}{\numberline {7.10.5.1}mas}{72}{subsubsection.7.10.5.1}%
+\contentsline {section}{\numberline {7.11}Controller\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Backward Class Reference}{72}{section.7.11}%
+\contentsline {subsection}{\numberline {7.11.1}Detailed Description}{73}{subsection.7.11.1}%
+\contentsline {subsection}{\numberline {7.11.2}Member Function Documentation}{73}{subsection.7.11.2}%
+\contentsline {subsubsection}{\numberline {7.11.2.1}OnDisable()}{73}{subsubsection.7.11.2.1}%
+\contentsline {subsubsection}{\numberline {7.11.2.2}OnEnable()}{74}{subsubsection.7.11.2.2}%
+\contentsline {subsubsection}{\numberline {7.11.2.3}OnPositionChange()}{74}{subsubsection.7.11.2.3}%
+\contentsline {subsubsection}{\numberline {7.11.2.4}Start()}{74}{subsubsection.7.11.2.4}%
+\contentsline {subsubsection}{\numberline {7.11.2.5}StartActivity()}{74}{subsubsection.7.11.2.5}%
+\contentsline {subsubsection}{\numberline {7.11.2.6}TriggerHaptic()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{74}{subsubsection.7.11.2.6}%
+\contentsline {subsubsection}{\numberline {7.11.2.7}TriggerHaptic()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{74}{subsubsection.7.11.2.7}%
+\contentsline {subsection}{\numberline {7.11.3}Member Data Documentation}{75}{subsection.7.11.3}%
+\contentsline {subsubsection}{\numberline {7.11.3.1}activityEnabled}{75}{subsubsection.7.11.3.1}%
+\contentsline {subsubsection}{\numberline {7.11.3.2}duration}{75}{subsubsection.7.11.3.2}%
+\contentsline {subsubsection}{\numberline {7.11.3.3}intensity}{75}{subsubsection.7.11.3.3}%
+\contentsline {subsubsection}{\numberline {7.11.3.4}maxZPositionThreshold}{75}{subsubsection.7.11.3.4}%
+\contentsline {subsubsection}{\numberline {7.11.3.5}minZPositionThreshold}{75}{subsubsection.7.11.3.5}%
+\contentsline {subsubsection}{\numberline {7.11.3.6}rotateAction}{75}{subsubsection.7.11.3.6}%
+\contentsline {subsection}{\numberline {7.11.4}Property Documentation}{75}{subsection.7.11.4}%
+\contentsline {subsubsection}{\numberline {7.11.4.1}mas}{75}{subsubsection.7.11.4.1}%
+\contentsline {section}{\numberline {7.12}DA\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}40 Class Reference}{76}{section.7.12}%
+\contentsline {subsection}{\numberline {7.12.1}Detailed Description}{79}{subsection.7.12.1}%
+\contentsline {subsection}{\numberline {7.12.2}Member Function Documentation}{79}{subsection.7.12.2}%
+\contentsline {subsubsection}{\numberline {7.12.2.1}playSFX()}{79}{subsubsection.7.12.2.1}%
+\contentsline {subsubsection}{\numberline {7.12.2.2}Start()}{80}{subsubsection.7.12.2.2}%
+\contentsline {subsubsection}{\numberline {7.12.2.3}stopSFX()}{80}{subsubsection.7.12.2.3}%
+\contentsline {subsubsection}{\numberline {7.12.2.4}TogglePropeller()}{80}{subsubsection.7.12.2.4}%
+\contentsline {subsubsection}{\numberline {7.12.2.5}Update()}{80}{subsubsection.7.12.2.5}%
+\contentsline {subsection}{\numberline {7.12.3}Member Data Documentation}{81}{subsection.7.12.3}%
+\contentsline {subsubsection}{\numberline {7.12.3.1}Aileron\_L}{81}{subsubsection.7.12.3.1}%
+\contentsline {subsubsection}{\numberline {7.12.3.2}Aileron\_R}{81}{subsubsection.7.12.3.2}%
+\contentsline {subsubsection}{\numberline {7.12.3.3}Antennes}{81}{subsubsection.7.12.3.3}%
+\contentsline {subsubsection}{\numberline {7.12.3.4}AxialPanelsEnabled}{81}{subsubsection.7.12.3.4}%
+\contentsline {subsubsection}{\numberline {7.12.3.5}AxialScrollingPlanes}{81}{subsubsection.7.12.3.5}%
+\contentsline {subsubsection}{\numberline {7.12.3.6}AxialScrollSpeed}{81}{subsubsection.7.12.3.6}%
+\contentsline {subsubsection}{\numberline {7.12.3.7}Canopy}{82}{subsubsection.7.12.3.7}%
+\contentsline {subsubsection}{\numberline {7.12.3.8}CockpitClosed}{82}{subsubsection.7.12.3.8}%
+\contentsline {subsubsection}{\numberline {7.12.3.9}currentPropellerSpeed}{82}{subsubsection.7.12.3.9}%
+\contentsline {subsubsection}{\numberline {7.12.3.10}Dashboard}{82}{subsubsection.7.12.3.10}%
+\contentsline {subsubsection}{\numberline {7.12.3.11}Elevator}{82}{subsubsection.7.12.3.11}%
+\contentsline {subsubsection}{\numberline {7.12.3.12}EmpennageFrame}{82}{subsubsection.7.12.3.12}%
+\contentsline {subsubsection}{\numberline {7.12.3.13}Exhaust}{83}{subsubsection.7.12.3.13}%
+\contentsline {subsubsection}{\numberline {7.12.3.14}FlightLoop}{83}{subsubsection.7.12.3.14}%
+\contentsline {subsubsection}{\numberline {7.12.3.15}FuselageFrame}{83}{subsubsection.7.12.3.15}%
+\contentsline {subsubsection}{\numberline {7.12.3.16}GhostTrail}{83}{subsubsection.7.12.3.16}%
+\contentsline {subsubsection}{\numberline {7.12.3.17}GhostTrailEnabled}{83}{subsubsection.7.12.3.17}%
+\contentsline {subsubsection}{\numberline {7.12.3.18}GlowColour}{83}{subsubsection.7.12.3.18}%
+\contentsline {subsubsection}{\numberline {7.12.3.19}Helice}{84}{subsubsection.7.12.3.19}%
+\contentsline {subsubsection}{\numberline {7.12.3.20}InitialHighlightedComponents}{84}{subsubsection.7.12.3.20}%
+\contentsline {subsubsection}{\numberline {7.12.3.21}InnerGuard\_F}{84}{subsubsection.7.12.3.21}%
+\contentsline {subsubsection}{\numberline {7.12.3.22}InnerGuard\_L}{84}{subsubsection.7.12.3.22}%
+\contentsline {subsubsection}{\numberline {7.12.3.23}InnerGuard\_R}{84}{subsubsection.7.12.3.23}%
+\contentsline {subsubsection}{\numberline {7.12.3.24}InnerGuards}{84}{subsubsection.7.12.3.24}%
+\contentsline {subsubsection}{\numberline {7.12.3.25}Interior}{85}{subsubsection.7.12.3.25}%
+\contentsline {subsubsection}{\numberline {7.12.3.26}IsPassthroughEnabled}{85}{subsubsection.7.12.3.26}%
+\contentsline {subsubsection}{\numberline {7.12.3.27}LandingFlap\_L}{85}{subsubsection.7.12.3.27}%
+\contentsline {subsubsection}{\numberline {7.12.3.28}LandingFlap\_R}{85}{subsubsection.7.12.3.28}%
+\contentsline {subsubsection}{\numberline {7.12.3.29}LandingLightBulb}{85}{subsubsection.7.12.3.29}%
+\contentsline {subsubsection}{\numberline {7.12.3.30}LandingStrut\_F}{85}{subsubsection.7.12.3.30}%
+\contentsline {subsubsection}{\numberline {7.12.3.31}LandingStrut\_L}{86}{subsubsection.7.12.3.31}%
+\contentsline {subsubsection}{\numberline {7.12.3.32}LandingStrut\_R}{86}{subsubsection.7.12.3.32}%
+\contentsline {subsubsection}{\numberline {7.12.3.33}LandingStrutBrace\_F}{86}{subsubsection.7.12.3.33}%
+\contentsline {subsubsection}{\numberline {7.12.3.34}lastTrailState}{86}{subsubsection.7.12.3.34}%
+\contentsline {subsubsection}{\numberline {7.12.3.35}OuterGuard\_F}{86}{subsubsection.7.12.3.35}%
+\contentsline {subsubsection}{\numberline {7.12.3.36}OuterGuard\_L}{86}{subsubsection.7.12.3.36}%
+\contentsline {subsubsection}{\numberline {7.12.3.37}OuterGuard\_R}{87}{subsubsection.7.12.3.37}%
+\contentsline {subsubsection}{\numberline {7.12.3.38}Porte}{87}{subsubsection.7.12.3.38}%
+\contentsline {subsubsection}{\numberline {7.12.3.39}PorteClosed}{87}{subsubsection.7.12.3.39}%
+\contentsline {subsubsection}{\numberline {7.12.3.40}propellerAcceleration}{87}{subsubsection.7.12.3.40}%
+\contentsline {subsubsection}{\numberline {7.12.3.41}PropellerEnabled}{87}{subsubsection.7.12.3.41}%
+\contentsline {subsubsection}{\numberline {7.12.3.42}PropellerHub}{87}{subsubsection.7.12.3.42}%
+\contentsline {subsubsection}{\numberline {7.12.3.43}PropellerRotationSpeed}{88}{subsubsection.7.12.3.43}%
+\contentsline {subsubsection}{\numberline {7.12.3.44}PropellerStart}{88}{subsubsection.7.12.3.44}%
+\contentsline {subsubsection}{\numberline {7.12.3.45}Rudder}{88}{subsubsection.7.12.3.45}%
+\contentsline {subsubsection}{\numberline {7.12.3.46}Seats}{88}{subsubsection.7.12.3.46}%
+\contentsline {subsubsection}{\numberline {7.12.3.47}Stabiliser}{88}{subsubsection.7.12.3.47}%
+\contentsline {subsubsection}{\numberline {7.12.3.48}StallWarning}{88}{subsubsection.7.12.3.48}%
+\contentsline {subsubsection}{\numberline {7.12.3.49}Step\_L}{89}{subsubsection.7.12.3.49}%
+\contentsline {subsubsection}{\numberline {7.12.3.50}Step\_R}{89}{subsubsection.7.12.3.50}%
+\contentsline {subsubsection}{\numberline {7.12.3.51}Struts}{89}{subsubsection.7.12.3.51}%
+\contentsline {subsubsection}{\numberline {7.12.3.52}subtitles}{89}{subsubsection.7.12.3.52}%
+\contentsline {subsubsection}{\numberline {7.12.3.53}TailGuard}{89}{subsubsection.7.12.3.53}%
+\contentsline {subsubsection}{\numberline {7.12.3.54}TailLight}{89}{subsubsection.7.12.3.54}%
+\contentsline {subsubsection}{\numberline {7.12.3.55}Vitres}{90}{subsubsection.7.12.3.55}%
+\contentsline {subsubsection}{\numberline {7.12.3.56}Wheel\_F}{90}{subsubsection.7.12.3.56}%
+\contentsline {subsubsection}{\numberline {7.12.3.57}Wheel\_L}{90}{subsubsection.7.12.3.57}%
+\contentsline {subsubsection}{\numberline {7.12.3.58}Wheel\_R}{90}{subsubsection.7.12.3.58}%
+\contentsline {subsubsection}{\numberline {7.12.3.59}WingFrame\_L}{90}{subsubsection.7.12.3.59}%
+\contentsline {subsubsection}{\numberline {7.12.3.60}WingFrame\_R}{90}{subsubsection.7.12.3.60}%
+\contentsline {subsubsection}{\numberline {7.12.3.61}Yoke\_L}{91}{subsubsection.7.12.3.61}%
+\contentsline {subsubsection}{\numberline {7.12.3.62}Yoke\_R}{91}{subsubsection.7.12.3.62}%
+\contentsline {section}{\numberline {7.13}Descending\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Turn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity Class Reference}{91}{section.7.13}%
+\contentsline {subsection}{\numberline {7.13.1}Detailed Description}{93}{subsection.7.13.1}%
+\contentsline {subsection}{\numberline {7.13.2}Member Enumeration Documentation}{94}{subsection.7.13.2}%
+\contentsline {subsubsection}{\numberline {7.13.2.1}TurnStep}{94}{subsubsection.7.13.2.1}%
+\contentsline {subsection}{\numberline {7.13.3}Member Function Documentation}{94}{subsection.7.13.3}%
+\contentsline {subsubsection}{\numberline {7.13.3.1}CheckSetupComplete()}{94}{subsubsection.7.13.3.1}%
+\contentsline {subsubsection}{\numberline {7.13.3.2}EnableCurrentStep()}{94}{subsubsection.7.13.3.2}%
+\contentsline {subsubsection}{\numberline {7.13.3.3}HandleBankAndPitch()}{95}{subsubsection.7.13.3.3}%
+\contentsline {subsubsection}{\numberline {7.13.3.4}HandlePitch()}{95}{subsubsection.7.13.3.4}%
+\contentsline {subsubsection}{\numberline {7.13.3.5}HandleStall()}{95}{subsubsection.7.13.3.5}%
+\contentsline {subsubsection}{\numberline {7.13.3.6}OnDisable()}{95}{subsubsection.7.13.3.6}%
+\contentsline {subsubsection}{\numberline {7.13.3.7}OnEnable()}{96}{subsubsection.7.13.3.7}%
+\contentsline {subsubsection}{\numberline {7.13.3.8}StartActivity()}{96}{subsubsection.7.13.3.8}%
+\contentsline {subsubsection}{\numberline {7.13.3.9}Update()}{96}{subsubsection.7.13.3.9}%
+\contentsline {subsection}{\numberline {7.13.4}Member Data Documentation}{96}{subsection.7.13.4}%
+\contentsline {subsubsection}{\numberline {7.13.4.1}aoaManipulator}{96}{subsubsection.7.13.4.1}%
+\contentsline {subsubsection}{\numberline {7.13.4.2}bankGhostTrail}{96}{subsubsection.7.13.4.2}%
+\contentsline {subsubsection}{\numberline {7.13.4.3}bankSensitivity}{97}{subsubsection.7.13.4.3}%
+\contentsline {subsubsection}{\numberline {7.13.4.4}controllerOrigin}{97}{subsubsection.7.13.4.4}%
+\contentsline {subsubsection}{\numberline {7.13.4.5}currentBank}{97}{subsubsection.7.13.4.5}%
+\contentsline {subsubsection}{\numberline {7.13.4.6}currentStep}{97}{subsubsection.7.13.4.6}%
+\contentsline {subsubsection}{\numberline {7.13.4.7}deadZone}{97}{subsubsection.7.13.4.7}%
+\contentsline {subsubsection}{\numberline {7.13.4.8}hasControllerOrigin}{97}{subsubsection.7.13.4.8}%
+\contentsline {subsubsection}{\numberline {7.13.4.9}hasNotifiedMAS}{98}{subsubsection.7.13.4.9}%
+\contentsline {subsubsection}{\numberline {7.13.4.10}mouseRollSpeed}{98}{subsubsection.7.13.4.10}%
+\contentsline {subsubsection}{\numberline {7.13.4.11}pitchInputLocked}{98}{subsubsection.7.13.4.11}%
+\contentsline {subsubsection}{\numberline {7.13.4.12}postBankAndPitch}{98}{subsubsection.7.13.4.12}%
+\contentsline {subsubsection}{\numberline {7.13.4.13}postBankAndPitchDirector}{98}{subsubsection.7.13.4.13}%
+\contentsline {subsubsection}{\numberline {7.13.4.14}postPitchUp}{98}{subsubsection.7.13.4.14}%
+\contentsline {subsubsection}{\numberline {7.13.4.15}postPitchUpDirector}{99}{subsubsection.7.13.4.15}%
+\contentsline {subsubsection}{\numberline {7.13.4.16}postStall}{99}{subsubsection.7.13.4.16}%
+\contentsline {subsubsection}{\numberline {7.13.4.17}postStallDirector}{99}{subsubsection.7.13.4.17}%
+\contentsline {subsubsection}{\numberline {7.13.4.18}rollInputLocked}{99}{subsubsection.7.13.4.18}%
+\contentsline {subsubsection}{\numberline {7.13.4.19}rotationInput}{99}{subsubsection.7.13.4.19}%
+\contentsline {subsubsection}{\numberline {7.13.4.20}stepAdvanceTolerance}{99}{subsubsection.7.13.4.20}%
+\contentsline {subsubsection}{\numberline {7.13.4.21}useMouseClicks}{100}{subsubsection.7.13.4.21}%
+\contentsline {subsection}{\numberline {7.13.5}Property Documentation}{100}{subsection.7.13.5}%
+\contentsline {subsubsection}{\numberline {7.13.5.1}mas}{100}{subsubsection.7.13.5.1}%
+\contentsline {section}{\numberline {7.14}Detect\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Rotation Class Reference}{100}{section.7.14}%
+\contentsline {subsection}{\numberline {7.14.1}Detailed Description}{101}{subsection.7.14.1}%
+\contentsline {subsection}{\numberline {7.14.2}Member Function Documentation}{101}{subsection.7.14.2}%
+\contentsline {subsubsection}{\numberline {7.14.2.1}Update()}{101}{subsubsection.7.14.2.1}%
+\contentsline {subsection}{\numberline {7.14.3}Member Data Documentation}{101}{subsection.7.14.3}%
+\contentsline {subsubsection}{\numberline {7.14.3.1}DA\_40}{101}{subsubsection.7.14.3.1}%
+\contentsline {subsubsection}{\numberline {7.14.3.2}locomotionToggle}{101}{subsubsection.7.14.3.2}%
+\contentsline {subsubsection}{\numberline {7.14.3.3}rightController}{101}{subsubsection.7.14.3.3}%
+\contentsline {subsubsection}{\numberline {7.14.3.4}rotationToggle}{102}{subsubsection.7.14.3.4}%
+\contentsline {section}{\numberline {7.15}Ghost\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mesh\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Generator Class Reference}{102}{section.7.15}%
+\contentsline {subsection}{\numberline {7.15.1}Detailed Description}{102}{subsection.7.15.1}%
+\contentsline {subsection}{\numberline {7.15.2}Member Function Documentation}{102}{subsection.7.15.2}%
+\contentsline {subsubsection}{\numberline {7.15.2.1}GenerateShostMesh()}{102}{subsubsection.7.15.2.1}%
+\contentsline {section}{\numberline {7.16}Ghost\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Trail\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toggle Class Reference}{103}{section.7.16}%
+\contentsline {subsection}{\numberline {7.16.1}Detailed Description}{104}{subsection.7.16.1}%
+\contentsline {subsection}{\numberline {7.16.2}Member Function Documentation}{104}{subsection.7.16.2}%
+\contentsline {subsubsection}{\numberline {7.16.2.1}OnDisable()}{104}{subsubsection.7.16.2.1}%
+\contentsline {subsubsection}{\numberline {7.16.2.2}OnEnable()}{104}{subsubsection.7.16.2.2}%
+\contentsline {subsubsection}{\numberline {7.16.2.3}OnTogglePressed()}{104}{subsubsection.7.16.2.3}%
+\contentsline {subsection}{\numberline {7.16.3}Member Data Documentation}{105}{subsection.7.16.3}%
+\contentsline {subsubsection}{\numberline {7.16.3.1}GhostTrail}{105}{subsubsection.7.16.3.1}%
+\contentsline {subsubsection}{\numberline {7.16.3.2}ghostTrailEnabled}{105}{subsubsection.7.16.3.2}%
+\contentsline {subsubsection}{\numberline {7.16.3.3}toggleAction}{105}{subsubsection.7.16.3.3}%
+\contentsline {section}{\numberline {7.17}Hold\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}To\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lower\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Nose Class Reference}{106}{section.7.17}%
+\contentsline {subsection}{\numberline {7.17.1}Detailed Description}{107}{subsection.7.17.1}%
+\contentsline {subsection}{\numberline {7.17.2}Member Function Documentation}{107}{subsection.7.17.2}%
+\contentsline {subsubsection}{\numberline {7.17.2.1}OnDisable()}{107}{subsubsection.7.17.2.1}%
+\contentsline {subsubsection}{\numberline {7.17.2.2}OnEnable()}{107}{subsubsection.7.17.2.2}%
+\contentsline {subsubsection}{\numberline {7.17.2.3}OnPositionChange()}{107}{subsubsection.7.17.2.3}%
+\contentsline {subsubsection}{\numberline {7.17.2.4}StartActivity()}{108}{subsubsection.7.17.2.4}%
+\contentsline {subsubsection}{\numberline {7.17.2.5}Update()}{108}{subsubsection.7.17.2.5}%
+\contentsline {subsubsection}{\numberline {7.17.2.6}WaitPeriod()}{108}{subsubsection.7.17.2.6}%
+\contentsline {subsection}{\numberline {7.17.3}Member Data Documentation}{108}{subsection.7.17.3}%
+\contentsline {subsubsection}{\numberline {7.17.3.1}activityEnabled}{108}{subsubsection.7.17.3.1}%
+\contentsline {subsubsection}{\numberline {7.17.3.2}controllerRot}{108}{subsubsection.7.17.3.2}%
+\contentsline {subsubsection}{\numberline {7.17.3.3}controllerRotation}{109}{subsubsection.7.17.3.3}%
+\contentsline {subsubsection}{\numberline {7.17.3.4}initialControllerRot}{109}{subsubsection.7.17.3.4}%
+\contentsline {subsubsection}{\numberline {7.17.3.5}initialControllerRotation}{109}{subsubsection.7.17.3.5}%
+\contentsline {subsubsection}{\numberline {7.17.3.6}maxRotationThreshold}{109}{subsubsection.7.17.3.6}%
+\contentsline {subsubsection}{\numberline {7.17.3.7}minRotationThreshold}{109}{subsubsection.7.17.3.7}%
+\contentsline {subsubsection}{\numberline {7.17.3.8}rotateAction}{109}{subsubsection.7.17.3.8}%
+\contentsline {subsubsection}{\numberline {7.17.3.9}waitPeriodOver}{109}{subsubsection.7.17.3.9}%
+\contentsline {subsection}{\numberline {7.17.4}Property Documentation}{110}{subsection.7.17.4}%
+\contentsline {subsubsection}{\numberline {7.17.4.1}mas}{110}{subsubsection.7.17.4.1}%
+\contentsline {section}{\numberline {7.18}IActivity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller Interface Reference}{110}{section.7.18}%
+\contentsline {subsection}{\numberline {7.18.1}Detailed Description}{111}{subsection.7.18.1}%
+\contentsline {subsection}{\numberline {7.18.2}Member Function Documentation}{111}{subsection.7.18.2}%
+\contentsline {subsubsection}{\numberline {7.18.2.1}StartActivity()}{111}{subsubsection.7.18.2.1}%
+\contentsline {section}{\numberline {7.19}Increase\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Throttle Class Reference}{112}{section.7.19}%
+\contentsline {subsection}{\numberline {7.19.1}Detailed Description}{113}{subsection.7.19.1}%
+\contentsline {subsection}{\numberline {7.19.2}Member Function Documentation}{113}{subsection.7.19.2}%
+\contentsline {subsubsection}{\numberline {7.19.2.1}OnDisable()}{113}{subsubsection.7.19.2.1}%
+\contentsline {subsubsection}{\numberline {7.19.2.2}OnEnable()}{113}{subsubsection.7.19.2.2}%
+\contentsline {subsubsection}{\numberline {7.19.2.3}OnPadMoved()}{113}{subsubsection.7.19.2.3}%
+\contentsline {subsubsection}{\numberline {7.19.2.4}OnPadReleased()}{113}{subsubsection.7.19.2.4}%
+\contentsline {subsubsection}{\numberline {7.19.2.5}StartActivity()}{114}{subsubsection.7.19.2.5}%
+\contentsline {subsection}{\numberline {7.19.3}Member Data Documentation}{114}{subsection.7.19.3}%
+\contentsline {subsubsection}{\numberline {7.19.3.1}activityEnabled}{114}{subsubsection.7.19.3.1}%
+\contentsline {subsubsection}{\numberline {7.19.3.2}hasTriggered}{114}{subsubsection.7.19.3.2}%
+\contentsline {subsubsection}{\numberline {7.19.3.3}inputAction}{114}{subsubsection.7.19.3.3}%
+\contentsline {subsubsection}{\numberline {7.19.3.4}throttleThreshold}{114}{subsubsection.7.19.3.4}%
+\contentsline {subsection}{\numberline {7.19.4}Property Documentation}{114}{subsection.7.19.4}%
+\contentsline {subsubsection}{\numberline {7.19.4.1}mas}{114}{subsubsection.7.19.4.1}%
+\contentsline {section}{\numberline {7.20}Level\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Turn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity Class Reference}{115}{section.7.20}%
+\contentsline {subsection}{\numberline {7.20.1}Detailed Description}{117}{subsection.7.20.1}%
+\contentsline {subsection}{\numberline {7.20.2}Member Enumeration Documentation}{117}{subsection.7.20.2}%
+\contentsline {subsubsection}{\numberline {7.20.2.1}TurnStep}{117}{subsubsection.7.20.2.1}%
+\contentsline {subsection}{\numberline {7.20.3}Member Function Documentation}{118}{subsection.7.20.3}%
+\contentsline {subsubsection}{\numberline {7.20.3.1}EnableCurrentStep()}{118}{subsubsection.7.20.3.1}%
+\contentsline {subsubsection}{\numberline {7.20.3.2}HandleBanking()}{118}{subsubsection.7.20.3.2}%
+\contentsline {subsubsection}{\numberline {7.20.3.3}HandleStall()}{118}{subsubsection.7.20.3.3}%
+\contentsline {subsubsection}{\numberline {7.20.3.4}OnDisable()}{118}{subsubsection.7.20.3.4}%
+\contentsline {subsubsection}{\numberline {7.20.3.5}OnEnable()}{119}{subsubsection.7.20.3.5}%
+\contentsline {subsubsection}{\numberline {7.20.3.6}StallSetup()}{119}{subsubsection.7.20.3.6}%
+\contentsline {subsubsection}{\numberline {7.20.3.7}StartActivity()}{119}{subsubsection.7.20.3.7}%
+\contentsline {subsubsection}{\numberline {7.20.3.8}Update()}{119}{subsubsection.7.20.3.8}%
+\contentsline {subsection}{\numberline {7.20.4}Member Data Documentation}{119}{subsection.7.20.4}%
+\contentsline {subsubsection}{\numberline {7.20.4.1}aoaManipulator}{119}{subsubsection.7.20.4.1}%
+\contentsline {subsubsection}{\numberline {7.20.4.2}bankGhostTrail}{120}{subsubsection.7.20.4.2}%
+\contentsline {subsubsection}{\numberline {7.20.4.3}bankSensitivity}{120}{subsubsection.7.20.4.3}%
+\contentsline {subsubsection}{\numberline {7.20.4.4}bankTargets}{120}{subsubsection.7.20.4.4}%
+\contentsline {subsubsection}{\numberline {7.20.4.5}bankTimelineAssets}{120}{subsubsection.7.20.4.5}%
+\contentsline {subsubsection}{\numberline {7.20.4.6}bankTimelines}{120}{subsubsection.7.20.4.6}%
+\contentsline {subsubsection}{\numberline {7.20.4.7}controllerOrigin}{120}{subsubsection.7.20.4.7}%
+\contentsline {subsubsection}{\numberline {7.20.4.8}currentBank}{121}{subsubsection.7.20.4.8}%
+\contentsline {subsubsection}{\numberline {7.20.4.9}currentBankTarget}{121}{subsubsection.7.20.4.9}%
+\contentsline {subsubsection}{\numberline {7.20.4.10}currentStep}{121}{subsubsection.7.20.4.10}%
+\contentsline {subsubsection}{\numberline {7.20.4.11}deadZone}{121}{subsubsection.7.20.4.11}%
+\contentsline {subsubsection}{\numberline {7.20.4.12}hasControllerOrigin}{121}{subsubsection.7.20.4.12}%
+\contentsline {subsubsection}{\numberline {7.20.4.13}inputLocked}{121}{subsubsection.7.20.4.13}%
+\contentsline {subsubsection}{\numberline {7.20.4.14}mouseRollSpeed}{122}{subsubsection.7.20.4.14}%
+\contentsline {subsubsection}{\numberline {7.20.4.15}rotationInput}{122}{subsubsection.7.20.4.15}%
+\contentsline {subsubsection}{\numberline {7.20.4.16}stallTimeline}{122}{subsubsection.7.20.4.16}%
+\contentsline {subsubsection}{\numberline {7.20.4.17}stallTimelineAsset}{122}{subsubsection.7.20.4.17}%
+\contentsline {subsubsection}{\numberline {7.20.4.18}stepAdvanceTolerance}{122}{subsubsection.7.20.4.18}%
+\contentsline {subsubsection}{\numberline {7.20.4.19}useMouseClicks}{122}{subsubsection.7.20.4.19}%
+\contentsline {subsection}{\numberline {7.20.5}Property Documentation}{123}{subsection.7.20.5}%
+\contentsline {subsubsection}{\numberline {7.20.5.1}mas}{123}{subsubsection.7.20.5.1}%
+\contentsline {section}{\numberline {7.21}Material\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Behaviour Class Reference}{123}{section.7.21}%
+\contentsline {subsection}{\numberline {7.21.1}Detailed Description}{124}{subsection.7.21.1}%
+\contentsline {subsection}{\numberline {7.21.2}Member Function Documentation}{124}{subsection.7.21.2}%
+\contentsline {subsubsection}{\numberline {7.21.2.1}ProcessFrame()}{124}{subsubsection.7.21.2.1}%
+\contentsline {subsection}{\numberline {7.21.3}Member Data Documentation}{124}{subsection.7.21.3}%
+\contentsline {subsubsection}{\numberline {7.21.3.1}currentMaterial}{124}{subsubsection.7.21.3.1}%
+\contentsline {subsubsection}{\numberline {7.21.3.2}targetTexture}{124}{subsubsection.7.21.3.2}%
+\contentsline {section}{\numberline {7.22}Material\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Clip Class Reference}{125}{section.7.22}%
+\contentsline {subsection}{\numberline {7.22.1}Detailed Description}{125}{subsection.7.22.1}%
+\contentsline {subsection}{\numberline {7.22.2}Member Function Documentation}{126}{subsection.7.22.2}%
+\contentsline {subsubsection}{\numberline {7.22.2.1}CreatePlayable()}{126}{subsubsection.7.22.2.1}%
+\contentsline {subsection}{\numberline {7.22.3}Member Data Documentation}{126}{subsection.7.22.3}%
+\contentsline {subsubsection}{\numberline {7.22.3.1}currentMaterial}{126}{subsubsection.7.22.3.1}%
+\contentsline {subsubsection}{\numberline {7.22.3.2}targetTexture}{126}{subsubsection.7.22.3.2}%
+\contentsline {section}{\numberline {7.23}Material\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Track Class Reference}{126}{section.7.23}%
+\contentsline {subsection}{\numberline {7.23.1}Detailed Description}{127}{subsection.7.23.1}%
+\contentsline {subsection}{\numberline {7.23.2}Member Function Documentation}{127}{subsection.7.23.2}%
+\contentsline {subsubsection}{\numberline {7.23.2.1}Start()}{127}{subsubsection.7.23.2.1}%
+\contentsline {subsubsection}{\numberline {7.23.2.2}Update()}{127}{subsubsection.7.23.2.2}%
+\contentsline {section}{\numberline {7.24}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller Class Reference}{128}{section.7.24}%
+\contentsline {subsection}{\numberline {7.24.1}Detailed Description}{128}{subsection.7.24.1}%
+\contentsline {subsection}{\numberline {7.24.2}Member Function Documentation}{129}{subsection.7.24.2}%
+\contentsline {subsubsection}{\numberline {7.24.2.1}Awake()}{129}{subsubsection.7.24.2.1}%
+\contentsline {subsubsection}{\numberline {7.24.2.2}OnDestroy()}{129}{subsubsection.7.24.2.2}%
+\contentsline {subsubsection}{\numberline {7.24.2.3}OnDeviceChange()}{129}{subsubsection.7.24.2.3}%
+\contentsline {subsubsection}{\numberline {7.24.2.4}ToggleMenu()}{129}{subsubsection.7.24.2.4}%
+\contentsline {subsection}{\numberline {7.24.3}Member Data Documentation}{129}{subsection.7.24.3}%
+\contentsline {subsubsection}{\numberline {7.24.3.1}menuPanel}{129}{subsubsection.7.24.3.1}%
+\contentsline {subsubsection}{\numberline {7.24.3.2}openMenuAction}{129}{subsubsection.7.24.3.2}%
+\contentsline {section}{\numberline {7.25}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module Class Reference}{130}{section.7.25}%
+\contentsline {subsection}{\numberline {7.25.1}Detailed Description}{130}{subsection.7.25.1}%
+\contentsline {subsection}{\numberline {7.25.2}Member Data Documentation}{130}{subsection.7.25.2}%
+\contentsline {subsubsection}{\numberline {7.25.2.1}name}{130}{subsubsection.7.25.2.1}%
+\contentsline {subsubsection}{\numberline {7.25.2.2}sections}{130}{subsubsection.7.25.2.2}%
+\contentsline {section}{\numberline {7.26}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activities Class Reference}{131}{section.7.26}%
+\contentsline {subsection}{\numberline {7.26.1}Detailed Description}{131}{subsection.7.26.1}%
+\contentsline {subsection}{\numberline {7.26.2}Member Function Documentation}{132}{subsection.7.26.2}%
+\contentsline {subsubsection}{\numberline {7.26.2.1}AdvanceStep()}{132}{subsubsection.7.26.2.1}%
+\contentsline {subsubsection}{\numberline {7.26.2.2}PrefabSetup()}{132}{subsubsection.7.26.2.2}%
+\contentsline {subsection}{\numberline {7.26.3}Member Data Documentation}{132}{subsection.7.26.3}%
+\contentsline {subsubsection}{\numberline {7.26.3.1}activityName}{132}{subsubsection.7.26.3.1}%
+\contentsline {subsubsection}{\numberline {7.26.3.2}currentStep}{132}{subsubsection.7.26.3.2}%
+\contentsline {subsubsection}{\numberline {7.26.3.3}customScript}{132}{subsubsection.7.26.3.3}%
+\contentsline {subsubsection}{\numberline {7.26.3.4}instructions}{132}{subsubsection.7.26.3.4}%
+\contentsline {subsubsection}{\numberline {7.26.3.5}playerInputRequired}{132}{subsubsection.7.26.3.5}%
+\contentsline {subsubsection}{\numberline {7.26.3.6}totalSteps}{133}{subsubsection.7.26.3.6}%
+\contentsline {subsubsection}{\numberline {7.26.3.7}usesCustomScript}{133}{subsubsection.7.26.3.7}%
+\contentsline {section}{\numberline {7.27}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheduler Class Reference}{133}{section.7.27}%
+\contentsline {subsection}{\numberline {7.27.1}Detailed Description}{135}{subsection.7.27.1}%
+\contentsline {subsection}{\numberline {7.27.2}Member Function Documentation}{135}{subsection.7.27.2}%
+\contentsline {subsubsection}{\numberline {7.27.2.1}Awake()}{135}{subsubsection.7.27.2.1}%
+\contentsline {subsubsection}{\numberline {7.27.2.2}CompleteActivity()}{136}{subsubsection.7.27.2.2}%
+\contentsline {subsubsection}{\numberline {7.27.2.3}DisplayCurrentStep()}{136}{subsubsection.7.27.2.3}%
+\contentsline {subsubsection}{\numberline {7.27.2.4}OnExternalStepCompleted()}{136}{subsubsection.7.27.2.4}%
+\contentsline {subsubsection}{\numberline {7.27.2.5}OnStepCompleted()}{136}{subsubsection.7.27.2.5}%
+\contentsline {subsubsection}{\numberline {7.27.2.6}SetupActivityUI()}{137}{subsubsection.7.27.2.6}%
+\contentsline {subsubsection}{\numberline {7.27.2.7}StartActivity()}{137}{subsubsection.7.27.2.7}%
+\contentsline {subsection}{\numberline {7.27.3}Member Data Documentation}{137}{subsection.7.27.3}%
+\contentsline {subsubsection}{\numberline {7.27.3.1}activeControllerObject}{137}{subsubsection.7.27.3.1}%
+\contentsline {subsubsection}{\numberline {7.27.3.2}activityInProgress}{137}{subsubsection.7.27.3.2}%
+\contentsline {subsubsection}{\numberline {7.27.3.3}activityTitle}{138}{subsubsection.7.27.3.3}%
+\contentsline {subsubsection}{\numberline {7.27.3.4}checkboxManager}{138}{subsubsection.7.27.3.4}%
+\contentsline {subsubsection}{\numberline {7.27.3.5}checkboxPanel}{138}{subsubsection.7.27.3.5}%
+\contentsline {subsubsection}{\numberline {7.27.3.6}currentActivity}{138}{subsubsection.7.27.3.6}%
+\contentsline {subsubsection}{\numberline {7.27.3.7}currentStepIndex}{138}{subsubsection.7.27.3.7}%
+\contentsline {subsubsection}{\numberline {7.27.3.8}Instance}{138}{subsubsection.7.27.3.8}%
+\contentsline {subsubsection}{\numberline {7.27.3.9}moduleManager}{139}{subsubsection.7.27.3.9}%
+\contentsline {section}{\numberline {7.28}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{139}{section.7.28}%
+\contentsline {subsection}{\numberline {7.28.1}Detailed Description}{141}{subsection.7.28.1}%
+\contentsline {subsection}{\numberline {7.28.2}Member Function Documentation}{141}{subsection.7.28.2}%
+\contentsline {subsubsection}{\numberline {7.28.2.1}NextModule()}{141}{subsubsection.7.28.2.1}%
+\contentsline {subsubsection}{\numberline {7.28.2.2}NextSection()}{141}{subsubsection.7.28.2.2}%
+\contentsline {subsubsection}{\numberline {7.28.2.3}NextTimeline()}{141}{subsubsection.7.28.2.3}%
+\contentsline {subsubsection}{\numberline {7.28.2.4}OnActivityComplete()}{142}{subsubsection.7.28.2.4}%
+\contentsline {subsubsection}{\numberline {7.28.2.5}OnTimelineFinished()}{142}{subsubsection.7.28.2.5}%
+\contentsline {subsubsection}{\numberline {7.28.2.6}PlayCurrentTimeline()}{142}{subsubsection.7.28.2.6}%
+\contentsline {subsubsection}{\numberline {7.28.2.7}PlayModule()}{142}{subsubsection.7.28.2.7}%
+\contentsline {subsubsection}{\numberline {7.28.2.8}Start()}{143}{subsubsection.7.28.2.8}%
+\contentsline {subsubsection}{\numberline {7.28.2.9}StartActivity()}{143}{subsubsection.7.28.2.9}%
+\contentsline {subsection}{\numberline {7.28.3}Member Data Documentation}{143}{subsection.7.28.3}%
+\contentsline {subsubsection}{\numberline {7.28.3.1}activeDirector}{143}{subsubsection.7.28.3.1}%
+\contentsline {subsubsection}{\numberline {7.28.3.2}activityScheduler}{143}{subsubsection.7.28.3.2}%
+\contentsline {subsubsection}{\numberline {7.28.3.3}currentModuleIndex}{144}{subsubsection.7.28.3.3}%
+\contentsline {subsubsection}{\numberline {7.28.3.4}currentSectionIndex}{144}{subsubsection.7.28.3.4}%
+\contentsline {subsubsection}{\numberline {7.28.3.5}currentTimelineIndex}{144}{subsubsection.7.28.3.5}%
+\contentsline {subsubsection}{\numberline {7.28.3.6}modules}{144}{subsubsection.7.28.3.6}%
+\contentsline {subsubsection}{\numberline {7.28.3.7}waitingForActivity}{144}{subsubsection.7.28.3.7}%
+\contentsline {section}{\numberline {7.29}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Selection Class Reference}{145}{section.7.29}%
+\contentsline {subsection}{\numberline {7.29.1}Detailed Description}{146}{subsection.7.29.1}%
+\contentsline {subsection}{\numberline {7.29.2}Member Function Documentation}{146}{subsection.7.29.2}%
+\contentsline {subsubsection}{\numberline {7.29.2.1}OnBackPressed()}{146}{subsubsection.7.29.2.1}%
+\contentsline {subsubsection}{\numberline {7.29.2.2}OnPlayPressed()}{146}{subsubsection.7.29.2.2}%
+\contentsline {subsubsection}{\numberline {7.29.2.3}SelectModule()}{146}{subsubsection.7.29.2.3}%
+\contentsline {subsubsection}{\numberline {7.29.2.4}Start()}{147}{subsubsection.7.29.2.4}%
+\contentsline {subsection}{\numberline {7.29.3}Member Data Documentation}{147}{subsection.7.29.3}%
+\contentsline {subsubsection}{\numberline {7.29.3.1}backButton}{147}{subsubsection.7.29.3.1}%
+\contentsline {subsubsection}{\numberline {7.29.3.2}module1Button}{147}{subsubsection.7.29.3.2}%
+\contentsline {subsubsection}{\numberline {7.29.3.3}module2Button}{147}{subsubsection.7.29.3.3}%
+\contentsline {subsubsection}{\numberline {7.29.3.4}module3Button}{147}{subsubsection.7.29.3.4}%
+\contentsline {subsubsection}{\numberline {7.29.3.5}moduleManager}{148}{subsubsection.7.29.3.5}%
+\contentsline {subsubsection}{\numberline {7.29.3.6}playButton}{148}{subsubsection.7.29.3.6}%
+\contentsline {subsubsection}{\numberline {7.29.3.7}selectedModule}{148}{subsubsection.7.29.3.7}%
+\contentsline {section}{\numberline {7.30}Plane\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Highlighter Class Reference}{148}{section.7.30}%
+\contentsline {subsection}{\numberline {7.30.1}Detailed Description}{148}{subsection.7.30.1}%
+\contentsline {subsection}{\numberline {7.30.2}Member Function Documentation}{149}{subsection.7.30.2}%
+\contentsline {subsubsection}{\numberline {7.30.2.1}Highlight()}{149}{subsubsection.7.30.2.1}%
+\contentsline {subsubsection}{\numberline {7.30.2.2}Unhighlight()}{150}{subsubsection.7.30.2.2}%
+\contentsline {section}{\numberline {7.31}Plane\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Teleporter Class Reference}{150}{section.7.31}%
+\contentsline {subsection}{\numberline {7.31.1}Detailed Description}{151}{subsection.7.31.1}%
+\contentsline {subsection}{\numberline {7.31.2}Member Function Documentation}{151}{subsection.7.31.2}%
+\contentsline {subsubsection}{\numberline {7.31.2.1}TeleportToTarget()}{151}{subsubsection.7.31.2.1}%
+\contentsline {subsection}{\numberline {7.31.3}Member Data Documentation}{152}{subsection.7.31.3}%
+\contentsline {subsubsection}{\numberline {7.31.3.1}targetPosition}{152}{subsubsection.7.31.3.1}%
+\contentsline {section}{\numberline {7.32}Procedural\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Airflow Class Reference}{152}{section.7.32}%
+\contentsline {subsection}{\numberline {7.32.1}Detailed Description}{155}{subsection.7.32.1}%
+\contentsline {subsection}{\numberline {7.32.2}Member Function Documentation}{156}{subsection.7.32.2}%
+\contentsline {subsubsection}{\numberline {7.32.2.1}Awake()}{156}{subsubsection.7.32.2.1}%
+\contentsline {subsubsection}{\numberline {7.32.2.2}CreateArrow()}{156}{subsubsection.7.32.2.2}%
+\contentsline {subsubsection}{\numberline {7.32.2.3}createCopIndicator()}{156}{subsubsection.7.32.2.3}%
+\contentsline {subsubsection}{\numberline {7.32.2.4}CreateForceArrows()}{157}{subsubsection.7.32.2.4}%
+\contentsline {subsubsection}{\numberline {7.32.2.5}destroyCentreOfPressure()}{157}{subsubsection.7.32.2.5}%
+\contentsline {subsubsection}{\numberline {7.32.2.6}DestroyPreviousArrows()}{157}{subsubsection.7.32.2.6}%
+\contentsline {subsubsection}{\numberline {7.32.2.7}EmitParticles()}{157}{subsubsection.7.32.2.7}%
+\contentsline {subsubsection}{\numberline {7.32.2.8}getCopPercentage()}{158}{subsubsection.7.32.2.8}%
+\contentsline {subsubsection}{\numberline {7.32.2.9}GetDragLength()}{158}{subsubsection.7.32.2.9}%
+\contentsline {subsubsection}{\numberline {7.32.2.10}GetLiftLength()}{158}{subsubsection.7.32.2.10}%
+\contentsline {subsubsection}{\numberline {7.32.2.11}GetThrustLength()}{159}{subsubsection.7.32.2.11}%
+\contentsline {subsubsection}{\numberline {7.32.2.12}GetWeightLength()}{159}{subsubsection.7.32.2.12}%
+\contentsline {subsubsection}{\numberline {7.32.2.13}InitializeParticleSystem()}{160}{subsubsection.7.32.2.13}%
+\contentsline {subsubsection}{\numberline {7.32.2.14}InterpolateForceValue()}{160}{subsubsection.7.32.2.14}%
+\contentsline {subsubsection}{\numberline {7.32.2.15}OnDrawGizmos()}{160}{subsubsection.7.32.2.15}%
+\contentsline {subsubsection}{\numberline {7.32.2.16}SetArrow()}{161}{subsubsection.7.32.2.16}%
+\contentsline {subsubsection}{\numberline {7.32.2.17}Update()}{161}{subsubsection.7.32.2.17}%
+\contentsline {subsubsection}{\numberline {7.32.2.18}updateCentreOfPressure()}{161}{subsubsection.7.32.2.18}%
+\contentsline {subsubsection}{\numberline {7.32.2.19}UpdateForceArrows()}{161}{subsubsection.7.32.2.19}%
+\contentsline {subsubsection}{\numberline {7.32.2.20}UpdateParticles()}{162}{subsubsection.7.32.2.20}%
+\contentsline {subsection}{\numberline {7.32.3}Member Data Documentation}{162}{subsection.7.32.3}%
+\contentsline {subsubsection}{\numberline {7.32.3.1}airSeperationStrength}{162}{subsubsection.7.32.3.1}%
+\contentsline {subsubsection}{\numberline {7.32.3.2}aoaStages}{162}{subsubsection.7.32.3.2}%
+\contentsline {subsubsection}{\numberline {7.32.3.3}arrowHeadModel}{162}{subsubsection.7.32.3.3}%
+\contentsline {subsubsection}{\numberline {7.32.3.4}bottomMaxSpeed}{163}{subsubsection.7.32.3.4}%
+\contentsline {subsubsection}{\numberline {7.32.3.5}bottomMinSpeed}{163}{subsubsection.7.32.3.5}%
+\contentsline {subsubsection}{\numberline {7.32.3.6}buffer}{163}{subsubsection.7.32.3.6}%
+\contentsline {subsubsection}{\numberline {7.32.3.7}copGameObject}{163}{subsubsection.7.32.3.7}%
+\contentsline {subsubsection}{\numberline {7.32.3.8}copModel}{163}{subsubsection.7.32.3.8}%
+\contentsline {subsubsection}{\numberline {7.32.3.9}copValues}{163}{subsubsection.7.32.3.9}%
+\contentsline {subsubsection}{\numberline {7.32.3.10}defaultArrowSize}{164}{subsubsection.7.32.3.10}%
+\contentsline {subsubsection}{\numberline {7.32.3.11}dragAnchor}{164}{subsubsection.7.32.3.11}%
+\contentsline {subsubsection}{\numberline {7.32.3.12}dragArrow}{164}{subsubsection.7.32.3.12}%
+\contentsline {subsubsection}{\numberline {7.32.3.13}dragValues}{164}{subsubsection.7.32.3.13}%
+\contentsline {subsubsection}{\numberline {7.32.3.14}editorDelta}{164}{subsubsection.7.32.3.14}%
+\contentsline {subsubsection}{\numberline {7.32.3.15}emissionRate}{164}{subsubsection.7.32.3.15}%
+\contentsline {subsubsection}{\numberline {7.32.3.16}emissionsNextFrame}{165}{subsubsection.7.32.3.16}%
+\contentsline {subsubsection}{\numberline {7.32.3.17}enableCentreOfPressure}{165}{subsubsection.7.32.3.17}%
+\contentsline {subsubsection}{\numberline {7.32.3.18}enableForceArrows}{165}{subsubsection.7.32.3.18}%
+\contentsline {subsubsection}{\numberline {7.32.3.19}enableParticleSystem}{165}{subsubsection.7.32.3.19}%
+\contentsline {subsubsection}{\numberline {7.32.3.20}forceArrowMaterial}{165}{subsubsection.7.32.3.20}%
+\contentsline {subsubsection}{\numberline {7.32.3.21}forwardSpawnDistance}{165}{subsubsection.7.32.3.21}%
+\contentsline {subsubsection}{\numberline {7.32.3.22}leadingEdge}{166}{subsubsection.7.32.3.22}%
+\contentsline {subsubsection}{\numberline {7.32.3.23}liftAnchor}{166}{subsubsection.7.32.3.23}%
+\contentsline {subsubsection}{\numberline {7.32.3.24}liftArrow}{166}{subsubsection.7.32.3.24}%
+\contentsline {subsubsection}{\numberline {7.32.3.25}liftValues}{166}{subsubsection.7.32.3.25}%
+\contentsline {subsubsection}{\numberline {7.32.3.26}maxParticles}{166}{subsubsection.7.32.3.26}%
+\contentsline {subsubsection}{\numberline {7.32.3.27}particleSize}{166}{subsubsection.7.32.3.27}%
+\contentsline {subsubsection}{\numberline {7.32.3.28}ps}{167}{subsubsection.7.32.3.28}%
+\contentsline {subsubsection}{\numberline {7.32.3.29}rotation}{167}{subsubsection.7.32.3.29}%
+\contentsline {subsubsection}{\numberline {7.32.3.30}sideFlags}{167}{subsubsection.7.32.3.30}%
+\contentsline {subsubsection}{\numberline {7.32.3.31}thrusAnchor}{167}{subsubsection.7.32.3.31}%
+\contentsline {subsubsection}{\numberline {7.32.3.32}thrustArrow}{167}{subsubsection.7.32.3.32}%
+\contentsline {subsubsection}{\numberline {7.32.3.33}thrustValues}{167}{subsubsection.7.32.3.33}%
+\contentsline {subsubsection}{\numberline {7.32.3.34}topMaxSpeed}{168}{subsubsection.7.32.3.34}%
+\contentsline {subsubsection}{\numberline {7.32.3.35}topMinSpeed}{168}{subsubsection.7.32.3.35}%
+\contentsline {subsubsection}{\numberline {7.32.3.36}trailDownForcePercent}{168}{subsubsection.7.32.3.36}%
+\contentsline {subsubsection}{\numberline {7.32.3.37}trailingEdge}{168}{subsubsection.7.32.3.37}%
+\contentsline {subsubsection}{\numberline {7.32.3.38}useFixedDeltaInEditor}{168}{subsubsection.7.32.3.38}%
+\contentsline {subsubsection}{\numberline {7.32.3.39}velocities}{168}{subsubsection.7.32.3.39}%
+\contentsline {subsubsection}{\numberline {7.32.3.40}weightAnchor}{169}{subsubsection.7.32.3.40}%
+\contentsline {subsubsection}{\numberline {7.32.3.41}weightArrow}{169}{subsubsection.7.32.3.41}%
+\contentsline {section}{\numberline {7.33}Rotate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Left\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller Class Reference}{169}{section.7.33}%
+\contentsline {subsection}{\numberline {7.33.1}Detailed Description}{170}{subsection.7.33.1}%
+\contentsline {subsection}{\numberline {7.33.2}Member Function Documentation}{170}{subsection.7.33.2}%
+\contentsline {subsubsection}{\numberline {7.33.2.1}OnDisable()}{170}{subsubsection.7.33.2.1}%
+\contentsline {subsubsection}{\numberline {7.33.2.2}OnEnable()}{170}{subsubsection.7.33.2.2}%
+\contentsline {subsubsection}{\numberline {7.33.2.3}OnRotatePerformed()}{171}{subsubsection.7.33.2.3}%
+\contentsline {subsubsection}{\numberline {7.33.2.4}StartActivity()}{172}{subsubsection.7.33.2.4}%
+\contentsline {subsection}{\numberline {7.33.3}Member Data Documentation}{172}{subsection.7.33.3}%
+\contentsline {subsubsection}{\numberline {7.33.3.1}activityEnabled}{172}{subsubsection.7.33.3.1}%
+\contentsline {subsubsection}{\numberline {7.33.3.2}rotateAction}{172}{subsubsection.7.33.3.2}%
+\contentsline {subsubsection}{\numberline {7.33.3.3}rotationThreshold}{172}{subsubsection.7.33.3.3}%
+\contentsline {subsection}{\numberline {7.33.4}Property Documentation}{173}{subsection.7.33.4}%
+\contentsline {subsubsection}{\numberline {7.33.4.1}mas}{173}{subsubsection.7.33.4.1}%
+\contentsline {section}{\numberline {7.34}Sec1\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Stall\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity Class Reference}{173}{section.7.34}%
+\contentsline {subsection}{\numberline {7.34.1}Detailed Description}{175}{subsection.7.34.1}%
+\contentsline {subsection}{\numberline {7.34.2}Member Enumeration Documentation}{176}{subsection.7.34.2}%
+\contentsline {subsubsection}{\numberline {7.34.2.1}TurnStep}{176}{subsubsection.7.34.2.1}%
+\contentsline {subsection}{\numberline {7.34.3}Member Function Documentation}{176}{subsection.7.34.3}%
+\contentsline {subsubsection}{\numberline {7.34.3.1}EnableCurrentStep()}{176}{subsubsection.7.34.3.1}%
+\contentsline {subsubsection}{\numberline {7.34.3.2}HandlePitching()}{176}{subsubsection.7.34.3.2}%
+\contentsline {subsubsection}{\numberline {7.34.3.3}OnDisable()}{177}{subsubsection.7.34.3.3}%
+\contentsline {subsubsection}{\numberline {7.34.3.4}OnEnable()}{177}{subsubsection.7.34.3.4}%
+\contentsline {subsubsection}{\numberline {7.34.3.5}StartActivity()}{177}{subsubsection.7.34.3.5}%
+\contentsline {subsubsection}{\numberline {7.34.3.6}Update()}{177}{subsubsection.7.34.3.6}%
+\contentsline {subsection}{\numberline {7.34.4}Member Data Documentation}{177}{subsection.7.34.4}%
+\contentsline {subsubsection}{\numberline {7.34.4.1}aoaManipulator}{177}{subsubsection.7.34.4.1}%
+\contentsline {subsubsection}{\numberline {7.34.4.2}controllerOrigin}{178}{subsubsection.7.34.4.2}%
+\contentsline {subsubsection}{\numberline {7.34.4.3}currentPitch}{178}{subsubsection.7.34.4.3}%
+\contentsline {subsubsection}{\numberline {7.34.4.4}currentPitchTarget}{178}{subsubsection.7.34.4.4}%
+\contentsline {subsubsection}{\numberline {7.34.4.5}currentStep}{178}{subsubsection.7.34.4.5}%
+\contentsline {subsubsection}{\numberline {7.34.4.6}deadZone}{178}{subsubsection.7.34.4.6}%
+\contentsline {subsubsection}{\numberline {7.34.4.7}hasControllerOrigin}{178}{subsubsection.7.34.4.7}%
+\contentsline {subsubsection}{\numberline {7.34.4.8}inputLocked}{179}{subsubsection.7.34.4.8}%
+\contentsline {subsubsection}{\numberline {7.34.4.9}mouseRollSpeed}{179}{subsubsection.7.34.4.9}%
+\contentsline {subsubsection}{\numberline {7.34.4.10}pitchSensitivity}{179}{subsubsection.7.34.4.10}%
+\contentsline {subsubsection}{\numberline {7.34.4.11}pitchTargets}{179}{subsubsection.7.34.4.11}%
+\contentsline {subsubsection}{\numberline {7.34.4.12}pitchTimelineAssets}{179}{subsubsection.7.34.4.12}%
+\contentsline {subsubsection}{\numberline {7.34.4.13}pitchTimelines}{179}{subsubsection.7.34.4.13}%
+\contentsline {subsubsection}{\numberline {7.34.4.14}proceduralAirflow}{180}{subsubsection.7.34.4.14}%
+\contentsline {subsubsection}{\numberline {7.34.4.15}rotationInput}{180}{subsubsection.7.34.4.15}%
+\contentsline {subsubsection}{\numberline {7.34.4.16}stepAdvanceTolerance}{180}{subsubsection.7.34.4.16}%
+\contentsline {subsubsection}{\numberline {7.34.4.17}useMouseClicks}{180}{subsubsection.7.34.4.17}%
+\contentsline {subsection}{\numberline {7.34.5}Property Documentation}{180}{subsection.7.34.5}%
+\contentsline {subsubsection}{\numberline {7.34.5.1}mas}{180}{subsubsection.7.34.5.1}%
+\contentsline {section}{\numberline {7.35}Sec6\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spin\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Recovery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity Class Reference}{181}{section.7.35}%
+\contentsline {subsection}{\numberline {7.35.1}Detailed Description}{184}{subsection.7.35.1}%
+\contentsline {subsection}{\numberline {7.35.2}Member Enumeration Documentation}{184}{subsection.7.35.2}%
+\contentsline {subsubsection}{\numberline {7.35.2.1}TurnStep}{184}{subsubsection.7.35.2.1}%
+\contentsline {subsection}{\numberline {7.35.3}Member Function Documentation}{185}{subsection.7.35.3}%
+\contentsline {subsubsection}{\numberline {7.35.3.1}EnableCurrentStep()}{185}{subsubsection.7.35.3.1}%
+\contentsline {subsubsection}{\numberline {7.35.3.2}HandleAileronsNeutral()}{185}{subsubsection.7.35.3.2}%
+\contentsline {subsubsection}{\numberline {7.35.3.3}HandleElevatorForward()}{185}{subsubsection.7.35.3.3}%
+\contentsline {subsubsection}{\numberline {7.35.3.4}HandlePowerToIdle()}{186}{subsubsection.7.35.3.4}%
+\contentsline {subsubsection}{\numberline {7.35.3.5}HandleRudderOpposite()}{186}{subsubsection.7.35.3.5}%
+\contentsline {subsubsection}{\numberline {7.35.3.6}InitializeSpinState()}{186}{subsubsection.7.35.3.6}%
+\contentsline {subsubsection}{\numberline {7.35.3.7}OnDisable()}{186}{subsubsection.7.35.3.7}%
+\contentsline {subsubsection}{\numberline {7.35.3.8}OnEnable()}{187}{subsubsection.7.35.3.8}%
+\contentsline {subsubsection}{\numberline {7.35.3.9}SpinPlane()}{187}{subsubsection.7.35.3.9}%
+\contentsline {subsubsection}{\numberline {7.35.3.10}StartActivity()}{187}{subsubsection.7.35.3.10}%
+\contentsline {subsubsection}{\numberline {7.35.3.11}Update()}{187}{subsubsection.7.35.3.11}%
+\contentsline {subsubsection}{\numberline {7.35.3.12}updateThrottleDisplay()}{188}{subsubsection.7.35.3.12}%
+\contentsline {subsection}{\numberline {7.35.4}Member Data Documentation}{188}{subsection.7.35.4}%
+\contentsline {subsubsection}{\numberline {7.35.4.1}aoaManipulator}{188}{subsubsection.7.35.4.1}%
+\contentsline {subsubsection}{\numberline {7.35.4.2}controllerOrigin}{188}{subsubsection.7.35.4.2}%
+\contentsline {subsubsection}{\numberline {7.35.4.3}controlSensitivity}{188}{subsubsection.7.35.4.3}%
+\contentsline {subsubsection}{\numberline {7.35.4.4}currentBank}{188}{subsubsection.7.35.4.4}%
+\contentsline {subsubsection}{\numberline {7.35.4.5}currentPitch}{189}{subsubsection.7.35.4.5}%
+\contentsline {subsubsection}{\numberline {7.35.4.6}currentStep}{189}{subsubsection.7.35.4.6}%
+\contentsline {subsubsection}{\numberline {7.35.4.7}currentThrottle}{189}{subsubsection.7.35.4.7}%
+\contentsline {subsubsection}{\numberline {7.35.4.8}deadZone}{189}{subsubsection.7.35.4.8}%
+\contentsline {subsubsection}{\numberline {7.35.4.9}hasControllerOrigin}{189}{subsubsection.7.35.4.9}%
+\contentsline {subsubsection}{\numberline {7.35.4.10}initialSpinAOA}{189}{subsubsection.7.35.4.10}%
+\contentsline {subsubsection}{\numberline {7.35.4.11}initialSpinBank}{190}{subsubsection.7.35.4.11}%
+\contentsline {subsubsection}{\numberline {7.35.4.12}inputLocked}{190}{subsubsection.7.35.4.12}%
+\contentsline {subsubsection}{\numberline {7.35.4.13}isSpinning}{190}{subsubsection.7.35.4.13}%
+\contentsline {subsubsection}{\numberline {7.35.4.14}minimumStepTime}{190}{subsubsection.7.35.4.14}%
+\contentsline {subsubsection}{\numberline {7.35.4.15}mouseControlSpeed}{190}{subsubsection.7.35.4.15}%
+\contentsline {subsubsection}{\numberline {7.35.4.16}pareStepTimelineAssets}{190}{subsubsection.7.35.4.16}%
+\contentsline {subsubsection}{\numberline {7.35.4.17}pareStepTimelines}{191}{subsubsection.7.35.4.17}%
+\contentsline {subsubsection}{\numberline {7.35.4.18}rotationInput}{191}{subsubsection.7.35.4.18}%
+\contentsline {subsubsection}{\numberline {7.35.4.19}spinDirection}{191}{subsubsection.7.35.4.19}%
+\contentsline {subsubsection}{\numberline {7.35.4.20}spinDirectionRight}{191}{subsubsection.7.35.4.20}%
+\contentsline {subsubsection}{\numberline {7.35.4.21}spinRotationSpeed}{191}{subsubsection.7.35.4.21}%
+\contentsline {subsubsection}{\numberline {7.35.4.22}stepStartTime}{191}{subsubsection.7.35.4.22}%
+\contentsline {subsubsection}{\numberline {7.35.4.23}throttleCanvasInstance}{192}{subsubsection.7.35.4.23}%
+\contentsline {subsubsection}{\numberline {7.35.4.24}throttleCanvasPrefab}{192}{subsubsection.7.35.4.24}%
+\contentsline {subsubsection}{\numberline {7.35.4.25}throttleIncrement}{192}{subsubsection.7.35.4.25}%
+\contentsline {subsubsection}{\numberline {7.35.4.26}throttleInput}{192}{subsubsection.7.35.4.26}%
+\contentsline {subsubsection}{\numberline {7.35.4.27}throttleText}{192}{subsubsection.7.35.4.27}%
+\contentsline {subsubsection}{\numberline {7.35.4.28}totalThrottle}{192}{subsubsection.7.35.4.28}%
+\contentsline {subsubsection}{\numberline {7.35.4.29}useMouseInput}{193}{subsubsection.7.35.4.29}%
+\contentsline {subsection}{\numberline {7.35.5}Property Documentation}{193}{subsection.7.35.5}%
+\contentsline {subsubsection}{\numberline {7.35.5.1}mas}{193}{subsubsection.7.35.5.1}%
+\contentsline {section}{\numberline {7.36}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Section Class Reference}{193}{section.7.36}%
+\contentsline {subsection}{\numberline {7.36.1}Detailed Description}{193}{subsection.7.36.1}%
+\contentsline {subsection}{\numberline {7.36.2}Member Data Documentation}{193}{subsection.7.36.2}%
+\contentsline {subsubsection}{\numberline {7.36.2.1}activities}{193}{subsubsection.7.36.2.1}%
+\contentsline {subsubsection}{\numberline {7.36.2.2}name}{194}{subsubsection.7.36.2.2}%
+\contentsline {subsubsection}{\numberline {7.36.2.3}timelines}{194}{subsubsection.7.36.2.3}%
+\contentsline {section}{\numberline {7.37}Skybox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Rotation Class Reference}{194}{section.7.37}%
+\contentsline {subsection}{\numberline {7.37.1}Detailed Description}{195}{subsection.7.37.1}%
+\contentsline {subsection}{\numberline {7.37.2}Member Function Documentation}{195}{subsection.7.37.2}%
+\contentsline {subsubsection}{\numberline {7.37.2.1}Update()}{195}{subsubsection.7.37.2.1}%
+\contentsline {subsection}{\numberline {7.37.3}Member Data Documentation}{195}{subsection.7.37.3}%
+\contentsline {subsubsection}{\numberline {7.37.3.1}rotationSpeed}{195}{subsubsection.7.37.3.1}%
+\contentsline {section}{\numberline {7.38}Subtiitle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Track Class Reference}{196}{section.7.38}%
+\contentsline {subsection}{\numberline {7.38.1}Detailed Description}{196}{subsection.7.38.1}%
+\contentsline {section}{\numberline {7.39}Subtitle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Behaviour Class Reference}{197}{section.7.39}%
+\contentsline {subsection}{\numberline {7.39.1}Detailed Description}{197}{subsection.7.39.1}%
+\contentsline {subsection}{\numberline {7.39.2}Member Function Documentation}{198}{subsection.7.39.2}%
+\contentsline {subsubsection}{\numberline {7.39.2.1}ProcessFrame()}{198}{subsubsection.7.39.2.1}%
+\contentsline {subsection}{\numberline {7.39.3}Member Data Documentation}{198}{subsection.7.39.3}%
+\contentsline {subsubsection}{\numberline {7.39.3.1}subtitleColor}{198}{subsubsection.7.39.3.1}%
+\contentsline {subsubsection}{\numberline {7.39.3.2}subtitleText}{198}{subsubsection.7.39.3.2}%
+\contentsline {section}{\numberline {7.40}Subtitle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Clip Class Reference}{198}{section.7.40}%
+\contentsline {subsection}{\numberline {7.40.1}Detailed Description}{199}{subsection.7.40.1}%
+\contentsline {subsection}{\numberline {7.40.2}Member Function Documentation}{199}{subsection.7.40.2}%
+\contentsline {subsubsection}{\numberline {7.40.2.1}CreatePlayable()}{199}{subsubsection.7.40.2.1}%
+\contentsline {subsection}{\numberline {7.40.3}Member Data Documentation}{199}{subsection.7.40.3}%
+\contentsline {subsubsection}{\numberline {7.40.3.1}subtitleColor}{199}{subsubsection.7.40.3.1}%
+\contentsline {subsubsection}{\numberline {7.40.3.2}subtitleText}{200}{subsubsection.7.40.3.2}%
+\contentsline {section}{\numberline {7.41}Tilt\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller Class Reference}{200}{section.7.41}%
+\contentsline {subsection}{\numberline {7.41.1}Detailed Description}{201}{subsection.7.41.1}%
+\contentsline {subsection}{\numberline {7.41.2}Member Enumeration Documentation}{201}{subsection.7.41.2}%
+\contentsline {subsubsection}{\numberline {7.41.2.1}RotationAxis}{201}{subsubsection.7.41.2.1}%
+\contentsline {subsection}{\numberline {7.41.3}Member Function Documentation}{202}{subsection.7.41.3}%
+\contentsline {subsubsection}{\numberline {7.41.3.1}CaptureInitialRotationDelayed()}{202}{subsubsection.7.41.3.1}%
+\contentsline {subsubsection}{\numberline {7.41.3.2}NormalizeAngle()}{202}{subsubsection.7.41.3.2}%
+\contentsline {subsubsection}{\numberline {7.41.3.3}OnDisable()}{202}{subsubsection.7.41.3.3}%
+\contentsline {subsubsection}{\numberline {7.41.3.4}OnEnable()}{202}{subsubsection.7.41.3.4}%
+\contentsline {subsubsection}{\numberline {7.41.3.5}OnRotationChanged()}{202}{subsubsection.7.41.3.5}%
+\contentsline {subsubsection}{\numberline {7.41.3.6}StartActivity()}{202}{subsubsection.7.41.3.6}%
+\contentsline {subsection}{\numberline {7.41.4}Member Data Documentation}{203}{subsection.7.41.4}%
+\contentsline {subsubsection}{\numberline {7.41.4.1}activityEnabled}{203}{subsubsection.7.41.4.1}%
+\contentsline {subsubsection}{\numberline {7.41.4.2}hasTriggered}{203}{subsubsection.7.41.4.2}%
+\contentsline {subsubsection}{\numberline {7.41.4.3}initialRotation}{203}{subsubsection.7.41.4.3}%
+\contentsline {subsubsection}{\numberline {7.41.4.4}inputAction}{203}{subsubsection.7.41.4.4}%
+\contentsline {subsubsection}{\numberline {7.41.4.5}monitoredAxis}{203}{subsubsection.7.41.4.5}%
+\contentsline {subsubsection}{\numberline {7.41.4.6}rotationThreshold}{203}{subsubsection.7.41.4.6}%
+\contentsline {subsection}{\numberline {7.41.5}Property Documentation}{203}{subsection.7.41.5}%
+\contentsline {subsubsection}{\numberline {7.41.5.1}mas}{203}{subsubsection.7.41.5.1}%
+\contentsline {chapter}{\numberline {8}File Documentation}{205}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Editor/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Ghost\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mesh\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Generator.cs File Reference}{205}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Ghost\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mesh\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Generator.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{205}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exclusive\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Section1/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sec1\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Stall\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity.cs File Reference}{206}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Sec1\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Stall\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{206}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exclusive\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Section2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Hold\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}To\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lower\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Nose.cs File Reference}{208}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Hold\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}To\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lower\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Nose.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{208}{section.8.6}%
+\contentsline {section}{\numberline {8.7}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exclusive\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Section2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}NEW/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Increase\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Throttle.cs File Reference}{210}{section.8.7}%
+\contentsline {section}{\numberline {8.8}Increase\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Throttle.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{210}{section.8.8}%
+\contentsline {section}{\numberline {8.9}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exclusive\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Section3/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Climbing\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Turn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity.cs File Reference}{211}{section.8.9}%
+\contentsline {section}{\numberline {8.10}Climbing\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Turn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{211}{section.8.10}%
+\contentsline {section}{\numberline {8.11}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exclusive\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Section3/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Descending\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Turn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity.cs File Reference}{214}{section.8.11}%
+\contentsline {section}{\numberline {8.12}Descending\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Turn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{214}{section.8.12}%
+\contentsline {section}{\numberline {8.13}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exclusive\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Section3/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Level\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Turn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity.cs File Reference}{217}{section.8.13}%
+\contentsline {section}{\numberline {8.14}Level\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Turn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{217}{section.8.14}%
+\contentsline {section}{\numberline {8.15}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exclusive\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Section6/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sec6\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spin\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Recovery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity.cs File Reference}{220}{section.8.15}%
+\contentsline {section}{\numberline {8.16}Sec6\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spin\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Recovery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{220}{section.8.16}%
+\contentsline {section}{\numberline {8.17}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exclusive\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Section7/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tilt\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.cs File Reference}{224}{section.8.17}%
+\contentsline {section}{\numberline {8.18}Tilt\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{224}{section.8.18}%
+\contentsline {section}{\numberline {8.19}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Structure/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Helper.cs File Reference}{226}{section.8.19}%
+\contentsline {section}{\numberline {8.20}Activity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Helper.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{226}{section.8.20}%
+\contentsline {section}{\numberline {8.21}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Structure/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IActivity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.cs File Reference}{230}{section.8.21}%
+\contentsline {section}{\numberline {8.22}IActivity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{230}{section.8.22}%
+\contentsline {section}{\numberline {8.23}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Common\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Behaviour/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Accelerate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Script.cs File Reference}{230}{section.8.23}%
+\contentsline {section}{\numberline {8.24}Accelerate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Script.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{231}{section.8.24}%
+\contentsline {section}{\numberline {8.25}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Common\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Behaviour/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Backward.cs File Reference}{232}{section.8.25}%
+\contentsline {section}{\numberline {8.26}Controller\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Backward.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{232}{section.8.26}%
+\contentsline {section}{\numberline {8.27}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Common\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Behaviour/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Detect\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Rotation.cs File Reference}{233}{section.8.27}%
+\contentsline {section}{\numberline {8.28}Detect\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Rotation.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{233}{section.8.28}%
+\contentsline {section}{\numberline {8.29}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Common\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Behaviour/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Rotate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Left\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.cs File Reference}{234}{section.8.29}%
+\contentsline {section}{\numberline {8.30}Rotate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Left\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{235}{section.8.30}%
+\contentsline {section}{\numberline {8.31}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Custom\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timeline\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tracks/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Material\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timeline\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Track/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Material\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Behaviour.cs File Reference}{235}{section.8.31}%
+\contentsline {section}{\numberline {8.32}Material\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Behaviour.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{236}{section.8.32}%
+\contentsline {section}{\numberline {8.33}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Custom\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timeline\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tracks/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Material\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timeline\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Track/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Material\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Clip.cs File Reference}{236}{section.8.33}%
+\contentsline {section}{\numberline {8.34}Material\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Clip.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{236}{section.8.34}%
+\contentsline {section}{\numberline {8.35}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Custom\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timeline\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tracks/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Material\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timeline\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Track/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Material\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Track.cs File Reference}{237}{section.8.35}%
+\contentsline {section}{\numberline {8.36}Material\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Track.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{237}{section.8.36}%
+\contentsline {section}{\numberline {8.37}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Custom\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timeline\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tracks/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Subtitle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timeline\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Track/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Subtitle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Behaviour.cs File Reference}{237}{section.8.37}%
+\contentsline {section}{\numberline {8.38}Subtitle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Behaviour.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{237}{section.8.38}%
+\contentsline {section}{\numberline {8.39}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Custom\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timeline\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tracks/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Subtitle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timeline\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Track/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Subtitle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Clip.cs File Reference}{238}{section.8.39}%
+\contentsline {section}{\numberline {8.40}Subtitle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Clip.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{238}{section.8.40}%
+\contentsline {section}{\numberline {8.41}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Custom\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timeline\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tracks/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Subtitle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timeline\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Track/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Subtitle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Track.cs File Reference}{238}{section.8.41}%
+\contentsline {section}{\numberline {8.42}Subtitle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Track.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{238}{section.8.42}%
+\contentsline {section}{\numberline {8.43}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DA\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}40\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Special\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Features/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bank\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Ghost\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Trail\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Behaviour.cs File Reference}{239}{section.8.43}%
+\contentsline {section}{\numberline {8.44}Bank\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Ghost\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Trail\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Behaviour.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{239}{section.8.44}%
+\contentsline {section}{\numberline {8.45}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DA\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}40\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Special\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Features/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DA\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}40.cs File Reference}{241}{section.8.45}%
+\contentsline {section}{\numberline {8.46}DA\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}40.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{241}{section.8.46}%
+\contentsline {section}{\numberline {8.47}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DA\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}40\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Special\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Features/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Plane\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Highlighter.cs File Reference}{243}{section.8.47}%
+\contentsline {section}{\numberline {8.48}Plane\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Highlighter.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{243}{section.8.48}%
+\contentsline {section}{\numberline {8.49}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DA\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}40\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Special\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Features/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Procedural\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Airflow.cs File Reference}{244}{section.8.49}%
+\contentsline {section}{\numberline {8.50}Procedural\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Airflow.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{244}{section.8.50}%
+\contentsline {section}{\numberline {8.51}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Misc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bank\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Ghost\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Trail\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Demo.cs File Reference}{251}{section.8.51}%
+\contentsline {section}{\numberline {8.52}Bank\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Ghost\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Trail\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Demo.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{252}{section.8.52}%
+\contentsline {section}{\numberline {8.53}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Misc\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Behaviour/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Axis\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Rotation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.cs File Reference}{252}{section.8.53}%
+\contentsline {section}{\numberline {8.54}Axis\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Rotation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{252}{section.8.54}%
+\contentsline {section}{\numberline {8.55}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Misc\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Behaviour/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Ghost\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Trail\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toggle.cs File Reference}{254}{section.8.55}%
+\contentsline {section}{\numberline {8.56}Ghost\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Trail\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toggle.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{254}{section.8.56}%
+\contentsline {section}{\numberline {8.57}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Misc\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Behaviour/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Move\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Plane\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}To\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Platform.cs File Reference}{255}{section.8.57}%
+\contentsline {section}{\numberline {8.58}Move\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Plane\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}To\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Platform.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{255}{section.8.58}%
+\contentsline {section}{\numberline {8.59}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Misc\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Behaviour/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Skybox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Rotation.cs File Reference}{255}{section.8.59}%
+\contentsline {section}{\numberline {8.60}Skybox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Rotation.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{255}{section.8.60}%
+\contentsline {section}{\numberline {8.61}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Structure/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activities.cs File Reference}{255}{section.8.61}%
+\contentsline {section}{\numberline {8.62}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activities.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{256}{section.8.62}%
+\contentsline {section}{\numberline {8.63}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Structure/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheduler.cs File Reference}{256}{section.8.63}%
+\contentsline {section}{\numberline {8.64}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Activity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheduler.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{257}{section.8.64}%
+\contentsline {section}{\numberline {8.65}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Structure/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.cs File Reference}{258}{section.8.65}%
+\contentsline {section}{\numberline {8.66}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{258}{section.8.66}%
+\contentsline {section}{\numberline {8.67}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Airspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Meter\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Display.cs File Reference}{260}{section.8.67}%
+\contentsline {section}{\numberline {8.68}Airspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Meter\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Display.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{261}{section.8.68}%
+\contentsline {section}{\numberline {8.69}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Ao\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ADisplay.cs File Reference}{261}{section.8.69}%
+\contentsline {section}{\numberline {8.70}Ao\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ADisplay.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{261}{section.8.70}%
+\contentsline {section}{\numberline {8.71}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Checkbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Group\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI.cs File Reference}{262}{section.8.71}%
+\contentsline {section}{\numberline {8.72}Checkbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Group\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{262}{section.8.72}%
+\contentsline {section}{\numberline {8.73}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Checkbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.cs File Reference}{262}{section.8.73}%
+\contentsline {section}{\numberline {8.74}Checkbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{263}{section.8.74}%
+\contentsline {section}{\numberline {8.75}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.cs File Reference}{263}{section.8.75}%
+\contentsline {section}{\numberline {8.76}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{264}{section.8.76}%
+\contentsline {section}{\numberline {8.77}Assets/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Selection.cs File Reference}{264}{section.8.77}%
+\contentsline {section}{\numberline {8.78}Module\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Selection.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{264}{section.8.78}%

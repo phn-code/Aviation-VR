@@ -1,0 +1,26 @@
+var class_axis_rotation_controller =
+[
+    [ "getRotation", "class_axis_rotation_controller.html#a7683405210b87aa5f395bb32476c3158", null ],
+    [ "IncrementAOA", "class_axis_rotation_controller.html#a1978aa1ddb6cf5e5b5fce8e03e1885e8", null ],
+    [ "IncrementBank", "class_axis_rotation_controller.html#adaf373b6566105f94276860068199138", null ],
+    [ "IncrementYaw", "class_axis_rotation_controller.html#aa0325af7cb4ec5da62840c413ea3fbc9", null ],
+    [ "IsLerpingPitch", "class_axis_rotation_controller.html#a627dfc5b0efa0c9d7ed2a6dd25336f26", null ],
+    [ "IsLerpingRoll", "class_axis_rotation_controller.html#af14f83d553da80a0643733623a3eddd8", null ],
+    [ "LerpAOA", "class_axis_rotation_controller.html#a24f7cfea93c0b621d35b49055935d9a3", null ],
+    [ "LerpBank", "class_axis_rotation_controller.html#ad8c1a1a34b8b55b1592f6891f57d0ca5", null ],
+    [ "setPitch", "class_axis_rotation_controller.html#af737740d68ba8aafe076f1ff8f72c690", null ],
+    [ "setRoll", "class_axis_rotation_controller.html#ae16f94fa84a21a50bd0bd39c71637f52", null ],
+    [ "Update", "class_axis_rotation_controller.html#ac278ccfdf0eea4d3cf72d81207a6f95f", null ],
+    [ "UpdatePitch", "class_axis_rotation_controller.html#a7f7ff9c65c1391d408b3de5a441f20be", null ],
+    [ "UpdateRoll", "class_axis_rotation_controller.html#a8dd3204bf3f12e1ae02ceb1317e80758", null ],
+    [ "durationPitch", "class_axis_rotation_controller.html#a8e54725910194bbb309924224c5feff2", null ],
+    [ "durationRoll", "class_axis_rotation_controller.html#a76826cab49c937e91fa1b028109cb766", null ],
+    [ "isLerpingPitch", "class_axis_rotation_controller.html#a67fa90256748903ca6b378bcfca76e70", null ],
+    [ "isLerpingRoll", "class_axis_rotation_controller.html#a8a183f2dff2ba06e05dcdca77f482a84", null ],
+    [ "startRotationX", "class_axis_rotation_controller.html#a14a2677947d93660084d72fba8457b96", null ],
+    [ "startRotationZ", "class_axis_rotation_controller.html#a8f927ca0107ae431cd1f8f525f1798c1", null ],
+    [ "targetRotationX", "class_axis_rotation_controller.html#a31a5346aa21d811c94f20d22864566db", null ],
+    [ "targetRotationZ", "class_axis_rotation_controller.html#ae0907c0fffeea49a5a54ae38ad7556c2", null ],
+    [ "timeElapsedPitch", "class_axis_rotation_controller.html#a5e31c3e01f79a48ca156ac6586665404", null ],
+    [ "timeElapsedRoll", "class_axis_rotation_controller.html#a2ef771c291f34e4447cc76129e6d41c1", null ]
+];

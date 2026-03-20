@@ -1,0 +1,55 @@
+\doxysection{Airspeed\+Meter\+Display.\+cs}
+\hypertarget{_airspeed_meter_display_8cs_source}{}\label{_airspeed_meter_display_8cs_source}\index{Assets/Scripts/UI/AirspeedMeterDisplay.cs@{Assets/Scripts/UI/AirspeedMeterDisplay.cs}}
+\mbox{\hyperlink{_airspeed_meter_display_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }TMPro;}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00010}\mbox{\hyperlink{class_airspeed_meter_display}{00010}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_airspeed_meter_display}{AirspeedMeterDisplay}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00012}\mbox{\hyperlink{class_airspeed_meter_display_a4ffe621a6c13ca46024690511f9f9207}{00012}}\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{public}\ TextMeshProUGUI\ \mbox{\hyperlink{class_airspeed_meter_display_a4ffe621a6c13ca46024690511f9f9207}{AirspeedMeter}};\ }
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00013}\mbox{\hyperlink{class_airspeed_meter_display_ae61c1059bf704c921bb5ff3b06b67b92}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_airspeed_meter_display_ae61c1059bf704c921bb5ff3b06b67b92}{knots}}\ =\ 0;\ }
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00014}\mbox{\hyperlink{class_airspeed_meter_display_aca3b2d37c137b0006bb685e6ab0f5cf3}{00014}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_airspeed_meter_display_aca3b2d37c137b0006bb685e6ab0f5cf3}{targetValue}};\ }
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00015}\mbox{\hyperlink{class_airspeed_meter_display_a7e6c7ef3615aa18ccb5c95b405736be4}{00015}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_airspeed_meter_display_a7e6c7ef3615aa18ccb5c95b405736be4}{moveSpeed}};\ }
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00016}\mbox{\hyperlink{class_airspeed_meter_display_a01c8b5efb7e72fc4d294c8548fc23a3e}{00016}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_airspeed_meter_display_a01c8b5efb7e72fc4d294c8548fc23a3e}{isMoving}};\ }
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00018}\mbox{\hyperlink{class_airspeed_meter_display_aa3afb65617f889a5b4c11acae4e6487f}{00018}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_airspeed_meter_display_aa3afb65617f889a5b4c11acae4e6487f}{Start}}()}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{comment}{//setKnots(40f);}}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_airspeed_meter_display_a85620500486d1b7bb934de2ea911dd27}{moveTowardsKnotsTarget}}(40f,\ 10f);}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00024}\mbox{\hyperlink{class_airspeed_meter_display_ad00c23df1b624221b35bf740fca73c02}{00024}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_airspeed_meter_display_ad00c23df1b624221b35bf740fca73c02}{Update}}()}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00025}00025\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ AirspeedMeter.text\ =\ \mbox{\hyperlink{class_airspeed_meter_display_ae61c1059bf704c921bb5ff3b06b67b92}{knots}}.ToString(\textcolor{stringliteral}{"{}F0"{}})\ +\ \textcolor{stringliteral}{"{}\ knots"{}};\ \textcolor{comment}{//\ String\ formatted\ as\ 0\ knots\ (no\ decimals)}}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Interpolation\ only\ happens\ if\ flag\ says\ it\ should}}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_airspeed_meter_display_a01c8b5efb7e72fc4d294c8548fc23a3e}{isMoving}})}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_airspeed_meter_display_ae61c1059bf704c921bb5ff3b06b67b92}{knots}}\ =\ Mathf.MoveTowards(\mbox{\hyperlink{class_airspeed_meter_display_ae61c1059bf704c921bb5ff3b06b67b92}{knots}},\ \mbox{\hyperlink{class_airspeed_meter_display_aca3b2d37c137b0006bb685e6ab0f5cf3}{targetValue}},\ \mbox{\hyperlink{class_airspeed_meter_display_a7e6c7ef3615aa18ccb5c95b405736be4}{moveSpeed}}\ *\ Time.deltaTime);}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ it's\ close\ enough\ to\ the\ target\ (accounting\ for\ rounding\ errors),\ we're\ done\ here!}}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Mathf.Approximately(\mbox{\hyperlink{class_airspeed_meter_display_ae61c1059bf704c921bb5ff3b06b67b92}{knots}},\ \mbox{\hyperlink{class_airspeed_meter_display_aca3b2d37c137b0006bb685e6ab0f5cf3}{targetValue}}))}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_airspeed_meter_display_a01c8b5efb7e72fc4d294c8548fc23a3e}{isMoving}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00046}\mbox{\hyperlink{class_airspeed_meter_display_a1f345f077535ffe03b04536e1682e79c}{00046}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_airspeed_meter_display_a1f345f077535ffe03b04536e1682e79c}{setKnots}}(\textcolor{keywordtype}{float}\ newKnots)}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_airspeed_meter_display_ae61c1059bf704c921bb5ff3b06b67b92}{knots}}\ =\ newKnots;}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_airspeed_meter_display_a01c8b5efb7e72fc4d294c8548fc23a3e}{isMoving}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00052}00052\ \ \ \ \ \textcolor{comment}{//\ Glorified\ mutator\ for\ targetValue\ that\ Update()\ then\ makes\ use\ of}}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00059}\mbox{\hyperlink{class_airspeed_meter_display_a85620500486d1b7bb934de2ea911dd27}{00059}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_airspeed_meter_display_a85620500486d1b7bb934de2ea911dd27}{moveTowardsKnotsTarget}}(\textcolor{keywordtype}{float}\ target,\ \textcolor{keywordtype}{float}\ speed)}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00060}00060\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_airspeed_meter_display_aca3b2d37c137b0006bb685e6ab0f5cf3}{targetValue}}\ =\ target;}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_airspeed_meter_display_a7e6c7ef3615aa18ccb5c95b405736be4}{moveSpeed}}\ =\ Mathf.Abs(speed);}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_airspeed_meter_display_a01c8b5efb7e72fc4d294c8548fc23a3e}{isMoving}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_airspeed_meter_display_8cs_source_l00065}00065\ \}}
+
+\end{DoxyCode}

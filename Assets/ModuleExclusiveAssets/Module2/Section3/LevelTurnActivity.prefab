@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5873369590918413978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1469832370319579088}
+  - component: {fileID: 3158896130185409012}
+  m_Layer: 0
+  m_Name: LevelTurnActivity
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1469832370319579088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5873369590918413978}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 101.94229, y: 0.00007, z: -33.41685}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3158896130185409012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5873369590918413978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8befc8a3e315a1644ba6a3847a71a6b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bankTimelineAssets:
+  - {fileID: 11400000, guid: 4ee1934a9e7d7fd47b06ad7f53369fc0, type: 2}
+  - {fileID: 11400000, guid: f28589eb47438b94e9ca6c8fb2f5a75d, type: 2}
+  - {fileID: 11400000, guid: ca39bd95b0f56494aaaf2f0be14d1a77, type: 2}
+  - {fileID: 11400000, guid: 163af1880cedc834cb059e0d4771a1e5, type: 2}
+  stallTimelineAsset: {fileID: 11400000, guid: 011371ef9eceec1429bdf5e4605f66f9, type: 2}
+  rotationInput: {fileID: 5979926668809119104, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  bankSensitivity: 1
+  deadZone: 15
+  stepAdvanceTolerance: 3
+  useMouseClicks: 0
+  mouseRollSpeed: 1

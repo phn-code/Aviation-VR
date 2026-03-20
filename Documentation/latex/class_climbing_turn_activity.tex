@@ -1,0 +1,618 @@
+\doxysection{Climbing\+Turn\+Activity Class Reference}
+\hypertarget{class_climbing_turn_activity}{}\label{class_climbing_turn_activity}\index{ClimbingTurnActivity@{ClimbingTurnActivity}}
+
+
+Climbing turn training activity controller.  
+
+
+
+
+Inheritance diagram for Climbing\+Turn\+Activity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_climbing_turn_activity__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Climbing\+Turn\+Activity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_climbing_turn_activity__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_climbing_turn_activity_a049c3e86930fa28fbd38d9629a5dad9e}{On\+Enable}} ()
+\begin{DoxyCompactList}\small\item\em Initialize activity on component enable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_climbing_turn_activity_ad22a2d8838cf6d3efaa3e2ed1ad96fb7}{On\+Disable}} ()
+\begin{DoxyCompactList}\small\item\em Cleanup activity on component disable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_climbing_turn_activity_a6f2995a2d3405ab52ade93963e744cc7}{Start\+Activity}} ()
+\begin{DoxyCompactList}\small\item\em Start the activity when triggered by \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_climbing_turn_activity_a48ee7d76e8441c2a42595341eda84b0c}{Enable\+Current\+Step}} ()
+\begin{DoxyCompactList}\small\item\em Unlock input for the current training step. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_climbing_turn_activity_ac9405e13f7495eb1d62ef126cd4eebe6}{Handle\+Slip\+Stream}} ()
+\begin{DoxyCompactList}\small\item\em Handle automated slipstream demonstration step. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_climbing_turn_activity_a83fa5a42e5e6481c3ec1df242e96ab22}{Handle\+Banking}} ()
+\begin{DoxyCompactList}\small\item\em Handle banking during climb training step. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_climbing_turn_activity_a00fa80aba361c3242460119c71b0bf1c}{Handle\+Stall}} ()
+\begin{DoxyCompactList}\small\item\em Handle stall induction training step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Timeline\+Asset \mbox{\hyperlink{class_climbing_turn_activity_a2b8c14faf7a198b57007863bcca5c4d3}{post\+Slip\+Stream}}
+\begin{DoxyCompactList}\small\item\em Timeline demonstrating slipstream effects during climb. \end{DoxyCompactList}\item 
+Timeline\+Asset \mbox{\hyperlink{class_climbing_turn_activity_a4bbf13f2ee27f16417a105d38963a6f7}{post\+Bank}}
+\begin{DoxyCompactList}\small\item\em Timeline played after achieving 15 bank target. \end{DoxyCompactList}\item 
+Timeline\+Asset \mbox{\hyperlink{class_climbing_turn_activity_af1b6a4682d3e671c0f0a90ed281ee50b}{post\+Stall}}
+\begin{DoxyCompactList}\small\item\em Timeline demonstrating stall during climbing turn. \end{DoxyCompactList}\item 
+Input\+Action\+Reference \mbox{\hyperlink{class_climbing_turn_activity_ae6e07f55b4fa4af7dbb5fb46fc465d45}{rotation\+Input}}
+\begin{DoxyCompactList}\small\item\em VR controller rotation input action for aircraft control. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_climbing_turn_activity_aab8dccb97da8d87397f2e05a94a441b7}{bank\+Sensitivity}} = 45f
+\begin{DoxyCompactList}\small\item\em Roll/pitch sensitivity multiplier for controller input. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_climbing_turn_activity_ac393484b97346ea54141469092e2b2bb}{dead\+Zone}} = 0.\+1f
+\begin{DoxyCompactList}\small\item\em Controller deadzone threshold in degrees to filter noise. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_climbing_turn_activity_a4b7ffbfc4e833460a324955e1c3ccb99}{step\+Advance\+Tolerance}} = 3f
+\begin{DoxyCompactList}\small\item\em Tolerance in degrees for achieving target angles before advancing. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_climbing_turn_activity_a68e3ee75f27c8baa473fcd7ffdb71978}{use\+Mouse\+Clicks}} = true
+\begin{DoxyCompactList}\small\item\em Enable mouse button control for testing without VR. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_climbing_turn_activity_a9ec9a14540307394ae4f7e3b09030a45}{mouse\+Roll\+Speed}} = 10f
+\begin{DoxyCompactList}\small\item\em Speed multiplier for mouse-\/based roll/pitch control. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} \mbox{\hyperlink{class_climbing_turn_activity_a20830a8fc2a2ff90723dd0387bf0b191}{mas}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Reference to singleton activity scheduler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271}{Turn\+Step}} \{ \mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271a07d34959aaf783563ce2b21b4cb51367}{Slip\+Stream}}
+, \mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271aeb45bd2725cb8ac50d0795432a918f86}{Bank}}
+, \mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271aa0f50ad4a913f4008911c70870d4028b}{Stall}}
+, \mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271aae94f80b3ce82062a5dd7815daa04f9d}{Complete}}
+ \}
+\begin{DoxyCompactList}\small\item\em Training progression states. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_climbing_turn_activity_a497c074232ca9d9cc19db1bf2ea96947}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Main update loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_climbing_turn_activity_a5699f8c6981e6eadc2693440de49344c}{roll\+Input\+Locked}} = false
+\begin{DoxyCompactList}\small\item\em Flag to disable roll input during transitions and timelines. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_climbing_turn_activity_a1c02fc1b87b7c8fb483146685769af17}{pitch\+Input\+Locked}} = false
+\begin{DoxyCompactList}\small\item\em Flag to disable pitch input during transitions and timelines. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271}{Turn\+Step}} \mbox{\hyperlink{class_climbing_turn_activity_ac82f57de535f4314ee8d1456016eff29}{current\+Step}}
+\begin{DoxyCompactList}\small\item\em Current training step in the activity sequence. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_climbing_turn_activity_a360d213fbfbe379e40d0a0585a2c1391}{current\+Bank}} = 0f
+\begin{DoxyCompactList}\small\item\em Current aircraft bank angle in degrees, updated each frame. \end{DoxyCompactList}\item 
+Quaternion \mbox{\hyperlink{class_climbing_turn_activity_a9ac758fc3379d1e1645409cc5f8561bb}{controller\+Origin}} = Quaternion.\+identity
+\begin{DoxyCompactList}\small\item\em Initial controller orientation captured at step start. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_climbing_turn_activity_ac84beede734a15ab371aefe72d277952}{has\+Controller\+Origin}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if controller origin has been captured this step. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_climbing_turn_activity_a65037b3383afee43c140e6e740850316}{has\+Notified\+MAS}} = false
+\begin{DoxyCompactList}\small\item\em Failsafe flag to prevent multiple completion notifications to scheduler. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} \mbox{\hyperlink{class_climbing_turn_activity_a14f69b1de5f0b9feb062cd384993fab3}{aoa\+Manipulator}}
+\begin{DoxyCompactList}\small\item\em Controller for aircraft pitch and roll manipulation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bank_ghost_trail_behaviour}{Bank\+Ghost\+Trail\+Behaviour}} \mbox{\hyperlink{class_climbing_turn_activity_a74bc7741859452cd0ae66c35b0e73279}{bank\+Ghost\+Trail}}
+\begin{DoxyCompactList}\small\item\em Visual trail effect showing aircraft bank history. \end{DoxyCompactList}\item 
+Playable\+Director \mbox{\hyperlink{class_climbing_turn_activity_a21c1eb988e6c4b562b811bc8804da9a0}{post\+Slip\+Stream\+Director}}
+\begin{DoxyCompactList}\small\item\em Playable\+Director for slipstream demonstration timeline. \end{DoxyCompactList}\item 
+Playable\+Director \mbox{\hyperlink{class_climbing_turn_activity_a3cf6bbd9e49a09b296d3164898051ad7}{post\+Bank\+Director}}
+\begin{DoxyCompactList}\small\item\em Playable\+Director for post-\/bank timeline. \end{DoxyCompactList}\item 
+Playable\+Director \mbox{\hyperlink{class_climbing_turn_activity_aedd0dbbf9695f6af334f72528a607df2}{post\+Stall\+Director}}
+\begin{DoxyCompactList}\small\item\em Playable\+Director for stall demonstration timeline. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Climbing turn training activity controller. 
+
+Manages a climbing turn exercise where users practice banking while maintaining a climbing attitude, followed by an aggressive pitch to induce stall. Demonstrates the relationship between climbing turns, slipstream effects, and stall conditions. Implements the \doxylink{interface_i_activity_controller}{IActivity\+Controller} interface for integration with the \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler} system.
+
+Training sequence\+:
+\begin{DoxyEnumerate}
+\item Slip\+Stream -\/ Automated demonstration of slipstream effects during climb
+\item Bank -\/ User achieves 15° bank while maintaining 10° climb attitude
+\item Stall -\/ User increases pitch to 25° to induce stall condition
+\item Complete -\/ Activity finished, notifies scheduler
+\end{DoxyEnumerate}
+
+\begin{DoxyAuthor}{Author}
+Connor Freebairn \texorpdfstring{$\vert$}{|} \href{mailto:frecd002@mymail.unisa.edu.au}{\texttt{frecd002@mymail.\+unisa.\+edu.\+au}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00022}{22}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+
+
+\label{doc-enum-members}
+\Hypertarget{class_climbing_turn_activity_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!TurnStep@{TurnStep}}
+\index{TurnStep@{TurnStep}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{TurnStep}{TurnStep}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271} 
+enum \mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271}{Climbing\+Turn\+Activity.\+Turn\+Step}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Training progression states. 
+
+Defines the sequence of training steps in the climbing turn activity. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SlipStream@{SlipStream}!ClimbingTurnActivity@{ClimbingTurnActivity}}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!SlipStream@{SlipStream}}}\Hypertarget{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271a07d34959aaf783563ce2b21b4cb51367}\label{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271a07d34959aaf783563ce2b21b4cb51367} 
+Slip\+Stream&Automated slipstream demonstration during initial climb. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bank@{Bank}!ClimbingTurnActivity@{ClimbingTurnActivity}}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!Bank@{Bank}}}\Hypertarget{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271aeb45bd2725cb8ac50d0795432a918f86}\label{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271aeb45bd2725cb8ac50d0795432a918f86} 
+Bank&User performs banking while maintaining climb. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Stall@{Stall}!ClimbingTurnActivity@{ClimbingTurnActivity}}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!Stall@{Stall}}}\Hypertarget{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271aa0f50ad4a913f4008911c70870d4028b}\label{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271aa0f50ad4a913f4008911c70870d4028b} 
+Stall&User increases pitch to induce stall condition. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Complete@{Complete}!ClimbingTurnActivity@{ClimbingTurnActivity}}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!Complete@{Complete}}}\Hypertarget{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271aae94f80b3ce82062a5dd7815daa04f9d}\label{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271aae94f80b3ce82062a5dd7815daa04f9d} 
+Complete&Activity finished, awaiting cleanup. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00048}{48}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_climbing_turn_activity_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_climbing_turn_activity_a48ee7d76e8441c2a42595341eda84b0c}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!EnableCurrentStep@{EnableCurrentStep}}
+\index{EnableCurrentStep@{EnableCurrentStep}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{EnableCurrentStep()}{EnableCurrentStep()}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a48ee7d76e8441c2a42595341eda84b0c} 
+void Climbing\+Turn\+Activity.\+Enable\+Current\+Step (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Unlock input for the current training step. 
+
+Resets roll and pitch input locks and controller origin flag to allow user control. Called after transitions and timeline completions. 
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00136}{136}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_a83fa5a42e5e6481c3ec1df242e96ab22}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!HandleBanking@{HandleBanking}}
+\index{HandleBanking@{HandleBanking}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{HandleBanking()}{HandleBanking()}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a83fa5a42e5e6481c3ec1df242e96ab22} 
+void Climbing\+Turn\+Activity.\+Handle\+Banking (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handle banking during climb training step. 
+
+Captures controller origin on first frame, reads current bank angle, and checks if user has achieved 15 bank target while maintaining the 10° climb attitude. When target is reached, locks input, plays confirmation timeline, and advances to stall demonstration. Allows controller or debug mouse input when target not yet achieved. 
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00204}{204}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_ac9405e13f7495eb1d62ef126cd4eebe6}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!HandleSlipStream@{HandleSlipStream}}
+\index{HandleSlipStream@{HandleSlipStream}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{HandleSlipStream()}{HandleSlipStream()}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_ac9405e13f7495eb1d62ef126cd4eebe6} 
+void Climbing\+Turn\+Activity.\+Handle\+Slip\+Stream (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handle automated slipstream demonstration step. 
+
+Locks input and immediately plays the slipstream demonstration timeline on first call. Advances to banking step after timeline completes. This is a passive demonstration step with no user input required.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]Slipstream animation/effect needs implementation \end{DoxyRefDesc}
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00182}{182}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_a00fa80aba361c3242460119c71b0bf1c}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!HandleStall@{HandleStall}}
+\index{HandleStall@{HandleStall}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{HandleStall()}{HandleStall()}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a00fa80aba361c3242460119c71b0bf1c} 
+void Climbing\+Turn\+Activity.\+Handle\+Stall (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handle stall induction training step. 
+
+Captures controller origin on first frame, reads current pitch angle, and checks if user has achieved 25 pitch target to induce stall during the climbing turn. Uses absolute value comparison (check\+Rotation\+Target\+Achieved) allowing either positive or negative 25 pitch. When target is reached, locks input, plays stall demonstration timeline, and advances to completion. Allows controller or debug mouse input when target not yet achieved. 
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00255}{255}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_ad22a2d8838cf6d3efaa3e2ed1ad96fb7}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_ad22a2d8838cf6d3efaa3e2ed1ad96fb7} 
+void Climbing\+Turn\+Activity.\+On\+Disable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cleanup activity on component disable. 
+
+Disables input actions and turns off visual trail effects. 
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00110}{110}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_a049c3e86930fa28fbd38d9629a5dad9e}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a049c3e86930fa28fbd38d9629a5dad9e} 
+void Climbing\+Turn\+Activity.\+On\+Enable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize activity on component enable. 
+
+Enables input actions, resets progression state to initial values, retrieves references to aircraft controllers and visual effects, and finds Playable\+Directors for all timeline assets. Initializes aircraft to 10 pitch (climbing attitude). 
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00082}{82}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_a6f2995a2d3405ab52ade93963e744cc7}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!StartActivity@{StartActivity}}
+\index{StartActivity@{StartActivity}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{StartActivity()}{StartActivity()}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a6f2995a2d3405ab52ade93963e744cc7} 
+void Climbing\+Turn\+Activity.\+Start\+Activity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Start the activity when triggered by \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}. 
+
+Called by the activity scheduler to begin the training sequence. Unlocks input for the first step. 
+
+Implements \mbox{\hyperlink{interface_i_activity_controller_a5edbf7511d4b716c7e5de8d2c0c261a0}{IActivity\+Controller}}.
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00125}{125}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_a497c074232ca9d9cc19db1bf2ea96947}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!Update@{Update}}
+\index{Update@{Update}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a497c074232ca9d9cc19db1bf2ea96947} 
+void Climbing\+Turn\+Activity.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Main update loop. 
+
+Routes execution to appropriate handler based on current training step. Handles completion notification with failsafe to prevent duplicate calls. 
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00149}{149}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_climbing_turn_activity_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_climbing_turn_activity_a14f69b1de5f0b9feb062cd384993fab3}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!aoaManipulator@{aoaManipulator}}
+\index{aoaManipulator@{aoaManipulator}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{aoaManipulator}{aoaManipulator}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a14f69b1de5f0b9feb062cd384993fab3} 
+\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} Climbing\+Turn\+Activity.\+aoa\+Manipulator\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Controller for aircraft pitch and roll manipulation. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00067}{67}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_a74bc7741859452cd0ae66c35b0e73279}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!bankGhostTrail@{bankGhostTrail}}
+\index{bankGhostTrail@{bankGhostTrail}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{bankGhostTrail}{bankGhostTrail}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a74bc7741859452cd0ae66c35b0e73279} 
+\mbox{\hyperlink{class_bank_ghost_trail_behaviour}{Bank\+Ghost\+Trail\+Behaviour}} Climbing\+Turn\+Activity.\+bank\+Ghost\+Trail\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Visual trail effect showing aircraft bank history. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00068}{68}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_aab8dccb97da8d87397f2e05a94a441b7}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!bankSensitivity@{bankSensitivity}}
+\index{bankSensitivity@{bankSensitivity}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{bankSensitivity}{bankSensitivity}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_aab8dccb97da8d87397f2e05a94a441b7} 
+float Climbing\+Turn\+Activity.\+bank\+Sensitivity = 45f}
+
+
+
+Roll/pitch sensitivity multiplier for controller input. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00035}{35}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_a9ac758fc3379d1e1645409cc5f8561bb}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!controllerOrigin@{controllerOrigin}}
+\index{controllerOrigin@{controllerOrigin}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{controllerOrigin}{controllerOrigin}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a9ac758fc3379d1e1645409cc5f8561bb} 
+Quaternion Climbing\+Turn\+Activity.\+controller\+Origin = Quaternion.\+identity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initial controller orientation captured at step start. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00061}{61}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_a360d213fbfbe379e40d0a0585a2c1391}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!currentBank@{currentBank}}
+\index{currentBank@{currentBank}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{currentBank}{currentBank}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a360d213fbfbe379e40d0a0585a2c1391} 
+float Climbing\+Turn\+Activity.\+current\+Bank = 0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current aircraft bank angle in degrees, updated each frame. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00059}{59}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_ac82f57de535f4314ee8d1456016eff29}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!currentStep@{currentStep}}
+\index{currentStep@{currentStep}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{currentStep}{currentStep}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_ac82f57de535f4314ee8d1456016eff29} 
+\mbox{\hyperlink{class_climbing_turn_activity_a5d2378ca424b2cfbe9ed5498e7765271}{Turn\+Step}} Climbing\+Turn\+Activity.\+current\+Step\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current training step in the activity sequence. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00058}{58}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_ac393484b97346ea54141469092e2b2bb}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!deadZone@{deadZone}}
+\index{deadZone@{deadZone}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{deadZone}{deadZone}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_ac393484b97346ea54141469092e2b2bb} 
+float Climbing\+Turn\+Activity.\+dead\+Zone = 0.\+1f}
+
+
+
+Controller deadzone threshold in degrees to filter noise. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00036}{36}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_ac84beede734a15ab371aefe72d277952}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!hasControllerOrigin@{hasControllerOrigin}}
+\index{hasControllerOrigin@{hasControllerOrigin}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{hasControllerOrigin}{hasControllerOrigin}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_ac84beede734a15ab371aefe72d277952} 
+bool Climbing\+Turn\+Activity.\+has\+Controller\+Origin = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag indicating if controller origin has been captured this step. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00062}{62}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_a65037b3383afee43c140e6e740850316}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!hasNotifiedMAS@{hasNotifiedMAS}}
+\index{hasNotifiedMAS@{hasNotifiedMAS}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{hasNotifiedMAS}{hasNotifiedMAS}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a65037b3383afee43c140e6e740850316} 
+bool Climbing\+Turn\+Activity.\+has\+Notified\+MAS = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Failsafe flag to prevent multiple completion notifications to scheduler. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00064}{64}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_a9ec9a14540307394ae4f7e3b09030a45}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!mouseRollSpeed@{mouseRollSpeed}}
+\index{mouseRollSpeed@{mouseRollSpeed}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{mouseRollSpeed}{mouseRollSpeed}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a9ec9a14540307394ae4f7e3b09030a45} 
+float Climbing\+Turn\+Activity.\+mouse\+Roll\+Speed = 10f}
+
+
+
+Speed multiplier for mouse-\/based roll/pitch control. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00041}{41}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_a1c02fc1b87b7c8fb483146685769af17}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!pitchInputLocked@{pitchInputLocked}}
+\index{pitchInputLocked@{pitchInputLocked}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{pitchInputLocked}{pitchInputLocked}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a1c02fc1b87b7c8fb483146685769af17} 
+bool Climbing\+Turn\+Activity.\+pitch\+Input\+Locked = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag to disable pitch input during transitions and timelines. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00057}{57}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_a4bbf13f2ee27f16417a105d38963a6f7}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!postBank@{postBank}}
+\index{postBank@{postBank}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{postBank}{postBank}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a4bbf13f2ee27f16417a105d38963a6f7} 
+Timeline\+Asset Climbing\+Turn\+Activity.\+post\+Bank}
+
+
+
+Timeline played after achieving 15 bank target. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00028}{28}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_a3cf6bbd9e49a09b296d3164898051ad7}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!postBankDirector@{postBankDirector}}
+\index{postBankDirector@{postBankDirector}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{postBankDirector}{postBankDirector}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a3cf6bbd9e49a09b296d3164898051ad7} 
+Playable\+Director Climbing\+Turn\+Activity.\+post\+Bank\+Director\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Playable\+Director for post-\/bank timeline. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00072}{72}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_a2b8c14faf7a198b57007863bcca5c4d3}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!postSlipStream@{postSlipStream}}
+\index{postSlipStream@{postSlipStream}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{postSlipStream}{postSlipStream}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a2b8c14faf7a198b57007863bcca5c4d3} 
+Timeline\+Asset Climbing\+Turn\+Activity.\+post\+Slip\+Stream}
+
+
+
+Timeline demonstrating slipstream effects during climb. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00027}{27}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_a21c1eb988e6c4b562b811bc8804da9a0}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!postSlipStreamDirector@{postSlipStreamDirector}}
+\index{postSlipStreamDirector@{postSlipStreamDirector}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{postSlipStreamDirector}{postSlipStreamDirector}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a21c1eb988e6c4b562b811bc8804da9a0} 
+Playable\+Director Climbing\+Turn\+Activity.\+post\+Slip\+Stream\+Director\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Playable\+Director for slipstream demonstration timeline. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00071}{71}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_af1b6a4682d3e671c0f0a90ed281ee50b}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!postStall@{postStall}}
+\index{postStall@{postStall}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{postStall}{postStall}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_af1b6a4682d3e671c0f0a90ed281ee50b} 
+Timeline\+Asset Climbing\+Turn\+Activity.\+post\+Stall}
+
+
+
+Timeline demonstrating stall during climbing turn. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_aedd0dbbf9695f6af334f72528a607df2}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!postStallDirector@{postStallDirector}}
+\index{postStallDirector@{postStallDirector}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{postStallDirector}{postStallDirector}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_aedd0dbbf9695f6af334f72528a607df2} 
+Playable\+Director Climbing\+Turn\+Activity.\+post\+Stall\+Director\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Playable\+Director for stall demonstration timeline. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00073}{73}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_a5699f8c6981e6eadc2693440de49344c}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!rollInputLocked@{rollInputLocked}}
+\index{rollInputLocked@{rollInputLocked}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{rollInputLocked}{rollInputLocked}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a5699f8c6981e6eadc2693440de49344c} 
+bool Climbing\+Turn\+Activity.\+roll\+Input\+Locked = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag to disable roll input during transitions and timelines. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00056}{56}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_ae6e07f55b4fa4af7dbb5fb46fc465d45}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!rotationInput@{rotationInput}}
+\index{rotationInput@{rotationInput}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{rotationInput}{rotationInput}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_ae6e07f55b4fa4af7dbb5fb46fc465d45} 
+Input\+Action\+Reference Climbing\+Turn\+Activity.\+rotation\+Input}
+
+
+
+VR controller rotation input action for aircraft control. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_a4b7ffbfc4e833460a324955e1c3ccb99}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!stepAdvanceTolerance@{stepAdvanceTolerance}}
+\index{stepAdvanceTolerance@{stepAdvanceTolerance}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{stepAdvanceTolerance}{stepAdvanceTolerance}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a4b7ffbfc4e833460a324955e1c3ccb99} 
+float Climbing\+Turn\+Activity.\+step\+Advance\+Tolerance = 3f}
+
+
+
+Tolerance in degrees for achieving target angles before advancing. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_climbing_turn_activity_a68e3ee75f27c8baa473fcd7ffdb71978}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!useMouseClicks@{useMouseClicks}}
+\index{useMouseClicks@{useMouseClicks}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{useMouseClicks}{useMouseClicks}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a68e3ee75f27c8baa473fcd7ffdb71978} 
+bool Climbing\+Turn\+Activity.\+use\+Mouse\+Clicks = true}
+
+
+
+Enable mouse button control for testing without VR. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00040}{40}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_climbing_turn_activity_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_climbing_turn_activity_a20830a8fc2a2ff90723dd0387bf0b191}\index{ClimbingTurnActivity@{ClimbingTurnActivity}!mas@{mas}}
+\index{mas@{mas}!ClimbingTurnActivity@{ClimbingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{mas}{mas}}
+{\footnotesize\ttfamily \label{class_climbing_turn_activity_a20830a8fc2a2ff90723dd0387bf0b191} 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} Climbing\+Turn\+Activity.\+mas\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
+
+
+
+Reference to singleton activity scheduler. 
+
+
+
+Definition at line \mbox{\hyperlink{_climbing_turn_activity_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_climbing_turn_activity_8cs_source}{Climbing\+Turn\+Activity.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Module\+Exclusive\+Assets/\+Module2/\+Section3/\mbox{\hyperlink{_climbing_turn_activity_8cs}{Climbing\+Turn\+Activity.\+cs}}\end{DoxyCompactItemize}

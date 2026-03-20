@@ -1,0 +1,156 @@
+\doxysection{Sec1\+Stall\+Activity.\+cs}
+\hypertarget{_sec1_stall_activity_8cs_source}{}\label{_sec1_stall_activity_8cs_source}\index{Assets/ModuleExclusiveAssets/Module2/Section1/Sec1StallActivity.cs@{Assets/ModuleExclusiveAssets/Module2/Section1/Sec1StallActivity.cs}}
+\mbox{\hyperlink{_sec1_stall_activity_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine.InputSystem;}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine.Playables;}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }UnityEngine.Timeline;}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00028}\mbox{\hyperlink{class_sec1_stall_activity}{00028}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sec1_stall_activity}{Sec1StallActivity}}\ :\ MonoBehaviour,\ \mbox{\hyperlink{interface_i_activity_controller}{IActivityController}}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00029}00029\ \{}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00031}\mbox{\hyperlink{class_sec1_stall_activity_a445afb443680b2b62c81c932f6f44c48}{00031}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_module_activity_scheduler}{ModuleActivityScheduler}}\ \mbox{\hyperlink{class_sec1_stall_activity_a445afb443680b2b62c81c932f6f44c48}{mas}}\ =>\ \mbox{\hyperlink{class_module_activity_scheduler}{ModuleActivityScheduler}}.\mbox{\hyperlink{class_module_activity_scheduler_a14579487c05abb7ec7095bd25f7d119e}{Instance}};\ \ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00033}00033\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}timelines"{}})]}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00034}\mbox{\hyperlink{class_sec1_stall_activity_a974d5eaddc3c3d33936715f6aa4bd7e2}{00034}}\ \ \ \ \ \textcolor{keyword}{public}\ TimelineAsset[]\ \mbox{\hyperlink{class_sec1_stall_activity_a974d5eaddc3c3d33936715f6aa4bd7e2}{pitchTimelineAssets}};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00036}00036\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Input\ action\ references"{}})]}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00037}\mbox{\hyperlink{class_sec1_stall_activity_aaaae4796c11e8ef6f544b9324beb3dba}{00037}}\ \ \ \ \ \textcolor{keyword}{public}\ InputActionReference\ \mbox{\hyperlink{class_sec1_stall_activity_aaaae4796c11e8ef6f544b9324beb3dba}{rotationInput}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00039}00039\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Control\ Settings"{}})]}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00040}\mbox{\hyperlink{class_sec1_stall_activity_ace16878c938c6ca9e694a82c03e3729d}{00040}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_sec1_stall_activity_ace16878c938c6ca9e694a82c03e3729d}{pitchSensitivity}}\ =\ 1f;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00041}\mbox{\hyperlink{class_sec1_stall_activity_af53c4fc142e9457534b9e7ae823afd66}{00041}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_sec1_stall_activity_af53c4fc142e9457534b9e7ae823afd66}{deadZone}}\ =\ 15f;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00042}\mbox{\hyperlink{class_sec1_stall_activity_aa0655b698d9dfa1b13b5719498489096}{00042}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_sec1_stall_activity_aa0655b698d9dfa1b13b5719498489096}{stepAdvanceTolerance}}\ =\ 3f;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00043}\mbox{\hyperlink{class_sec1_stall_activity_a812282d680513a5d71e0c66f7b4e6ecd}{00043}}\ \ \ \ \ \textcolor{keyword}{private}\ Quaternion\ \mbox{\hyperlink{class_sec1_stall_activity_a812282d680513a5d71e0c66f7b4e6ecd}{controllerOrigin}}\ =\ Quaternion.identity;\ \ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00044}\mbox{\hyperlink{class_sec1_stall_activity_adaa646189b9bc73298d7c344c3ed16a6}{00044}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_sec1_stall_activity_adaa646189b9bc73298d7c344c3ed16a6}{hasControllerOrigin}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00046}00046\ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Editor\ Debug\ settings"{}})]}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00047}\mbox{\hyperlink{class_sec1_stall_activity_a8daf90be275c5f4838179a592a60b6cc}{00047}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_sec1_stall_activity_a8daf90be275c5f4838179a592a60b6cc}{useMouseClicks}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00048}\mbox{\hyperlink{class_sec1_stall_activity_aa4ed01a508a2a2da78d716f8d384a428}{00048}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_sec1_stall_activity_aa4ed01a508a2a2da78d716f8d384a428}{mouseRollSpeed}}\ =\ 10f;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00055}\mbox{\hyperlink{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7}{00055}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7}{TurnStep}}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00056}00056\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00057}\mbox{\hyperlink{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7a87f800274a7f46c50e17114f89171e2e}{00057}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7a87f800274a7f46c50e17114f89171e2e}{Pitch}},\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00058}\mbox{\hyperlink{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7aae94f80b3ce82062a5dd7815daa04f9d}{00058}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7aae94f80b3ce82062a5dd7815daa04f9d}{Complete}}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00060}00060\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00061}\mbox{\hyperlink{class_sec1_stall_activity_a46654aef7ef965284e36739809d93349}{00061}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}[]\ \mbox{\hyperlink{class_sec1_stall_activity_a46654aef7ef965284e36739809d93349}{pitchTargets}}\ =\ \{\ 3f,\ 7f,\ 10f,\ 14f,\ 16f,\ 18f\ \};\ \ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00062}\mbox{\hyperlink{class_sec1_stall_activity_abb28b926f05cba871cc270193573e5a2}{00062}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_sec1_stall_activity_abb28b926f05cba871cc270193573e5a2}{currentPitchTarget}}\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00063}\mbox{\hyperlink{class_sec1_stall_activity_ad8abcb13947733eda7c745ef8d27b6e5}{00063}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7}{TurnStep}}\ \mbox{\hyperlink{class_sec1_stall_activity_ad8abcb13947733eda7c745ef8d27b6e5}{currentStep}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00064}\mbox{\hyperlink{class_sec1_stall_activity_a81ef6cb547a4abaaa28a2ddba1bcec2a}{00064}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_sec1_stall_activity_a81ef6cb547a4abaaa28a2ddba1bcec2a}{inputLocked}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00065}\mbox{\hyperlink{class_sec1_stall_activity_a9e86b3726cc258c40a090dcad448ea0b}{00065}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_sec1_stall_activity_a9e86b3726cc258c40a090dcad448ea0b}{currentPitch}}\ =\ 0f;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00067}\mbox{\hyperlink{class_sec1_stall_activity_a1756985005dbb16979c620577b5d6a73}{00067}}\ \ \ \ \ \textcolor{keyword}{private}\ PlayableDirector[]\ \mbox{\hyperlink{class_sec1_stall_activity_a1756985005dbb16979c620577b5d6a73}{pitchTimelines}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00068}\mbox{\hyperlink{class_sec1_stall_activity_ae6e8d83430f1f3b75c2c8116dec97269}{00068}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_axis_rotation_controller}{AxisRotationController}}\ \mbox{\hyperlink{class_sec1_stall_activity_ae6e8d83430f1f3b75c2c8116dec97269}{aoaManipulator}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00069}\mbox{\hyperlink{class_sec1_stall_activity_a435540f024044bbd0e2e675beb1c541f}{00069}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_procedural_airflow}{ProceduralAirflow}}\ \mbox{\hyperlink{class_sec1_stall_activity_a435540f024044bbd0e2e675beb1c541f}{proceduralAirflow}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00079}\mbox{\hyperlink{class_sec1_stall_activity_aff55b064dc8ddb8bf165e09d0e934f94}{00079}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sec1_stall_activity_aff55b064dc8ddb8bf165e09d0e934f94}{OnEnable}}()}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00080}00080\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_sec1_stall_activity_aaaae4796c11e8ef6f544b9324beb3dba}{rotationInput}}\ !=\ \textcolor{keyword}{null}\ \&\&\ \mbox{\hyperlink{class_sec1_stall_activity_aaaae4796c11e8ef6f544b9324beb3dba}{rotationInput}}.action\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_aaaae4796c11e8ef6f544b9324beb3dba}{rotationInput}}.action.Enable();}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ reset\ progression}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_ad8abcb13947733eda7c745ef8d27b6e5}{currentStep}}\ =\ \mbox{\hyperlink{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7}{TurnStep}}.Pitch;}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_abb28b926f05cba871cc270193573e5a2}{currentPitchTarget}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_a81ef6cb547a4abaaa28a2ddba1bcec2a}{inputLocked}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_a9e86b3726cc258c40a090dcad448ea0b}{currentPitch}}\ =\ 0f;}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Manipulators}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_ae6e8d83430f1f3b75c2c8116dec97269}{aoaManipulator}}\ =\ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_adb076aa068f0702843b7d4709caf5ca8}{getAxisRotationController}}(0f,\ 0f);}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_a435540f024044bbd0e2e675beb1c541f}{proceduralAirflow}}\ =\ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a28a0fcbfe145b5f4d8101a49b41a717e}{getProceduralAirflow}}();}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Call\ helper\ to\ find\ directors\ for\ timeline\ assets}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_a1756985005dbb16979c620577b5d6a73}{pitchTimelines}}\ =\ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a3a17628c1569eeef4dcce5598f021905}{FindPlayableDirector}}(\mbox{\hyperlink{class_sec1_stall_activity_a974d5eaddc3c3d33936715f6aa4bd7e2}{pitchTimelineAssets}});}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ proceduralAirflow.enableForceArrows\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ proceduralAirflow.enableParticleSystem\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ proceduralAirflow.enableCentreOfPressure\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Sec1StallActivity\ OnEnable\ completed"{}});}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00099}00099\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00107}\mbox{\hyperlink{class_sec1_stall_activity_a27fb973e1f3a404db9642a9226ee973f}{00107}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sec1_stall_activity_a27fb973e1f3a404db9642a9226ee973f}{OnDisable}}()}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00108}00108\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_sec1_stall_activity_aaaae4796c11e8ef6f544b9324beb3dba}{rotationInput}}\ !=\ \textcolor{keyword}{null}\ \&\&\ \mbox{\hyperlink{class_sec1_stall_activity_aaaae4796c11e8ef6f544b9324beb3dba}{rotationInput}}.action\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_aaaae4796c11e8ef6f544b9324beb3dba}{rotationInput}}.action.Disable();}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ proceduralAirflow.enableForceArrows\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ proceduralAirflow.enableParticleSystem\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ proceduralAirflow.enableCentreOfPressure\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00116}00116\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00124}\mbox{\hyperlink{class_sec1_stall_activity_a0c0033387b5efb35d4bd0bfa4867ba5f}{00124}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sec1_stall_activity_a0c0033387b5efb35d4bd0bfa4867ba5f}{StartActivity}}()}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00125}00125\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_ac77b4bdf29e186ed303dbfd4ab3d1a9b}{EnableCurrentStep}}();}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00127}00127\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00135}\mbox{\hyperlink{class_sec1_stall_activity_ac77b4bdf29e186ed303dbfd4ab3d1a9b}{00135}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sec1_stall_activity_ac77b4bdf29e186ed303dbfd4ab3d1a9b}{EnableCurrentStep}}()}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00136}00136\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_a81ef6cb547a4abaaa28a2ddba1bcec2a}{inputLocked}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_adaa646189b9bc73298d7c344c3ed16a6}{hasControllerOrigin}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00139}00139\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00147}\mbox{\hyperlink{class_sec1_stall_activity_afe4033e3b965f719991382d59ccb218b}{00147}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sec1_stall_activity_afe4033e3b965f719991382d59ccb218b}{Update}}()}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00148}00148\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ ((\mbox{\hyperlink{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7}{TurnStep}})\mbox{\hyperlink{class_sec1_stall_activity_ad8abcb13947733eda7c745ef8d27b6e5}{currentStep}})}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7}{TurnStep}}.Pitch:}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_a0bce475135bc142185634ecca191dee1}{HandlePitching}}();}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_sec1_stall_activity_a8e22629d81a1ba0ff2ae79ad8ac45cb7}{TurnStep}}.Complete:}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_a445afb443680b2b62c81c932f6f44c48}{mas}}.OnExternalStepCompleted();}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00158}00158\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00177}\mbox{\hyperlink{class_sec1_stall_activity_a0bce475135bc142185634ecca191dee1}{00177}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sec1_stall_activity_a0bce475135bc142185634ecca191dee1}{HandlePitching}}()}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00178}00178\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_sec1_stall_activity_a81ef6cb547a4abaaa28a2ddba1bcec2a}{inputLocked}})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Read\ current\ rotation\ from\ the\ input}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ Quaternion\ currentRotation\ =\ \mbox{\hyperlink{class_sec1_stall_activity_aaaae4796c11e8ef6f544b9324beb3dba}{rotationInput}}.action.ReadValue<Quaternion>();}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_sec1_stall_activity_adaa646189b9bc73298d7c344c3ed16a6}{hasControllerOrigin}})}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_a812282d680513a5d71e0c66f7b4e6ecd}{controllerOrigin}}\ =\ currentRotation;}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_adaa646189b9bc73298d7c344c3ed16a6}{hasControllerOrigin}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Captured\ controller\ origin:\ "{}}\ +\ \mbox{\hyperlink{class_sec1_stall_activity_a812282d680513a5d71e0c66f7b4e6ecd}{controllerOrigin}}.eulerAngles);}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_a9e86b3726cc258c40a090dcad448ea0b}{currentPitch}}\ =\ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a937c930008f9e200cbb6324e3981fe7d}{getNormalisedPlanePitch}}(\mbox{\hyperlink{class_sec1_stall_activity_ae6e8d83430f1f3b75c2c8116dec97269}{aoaManipulator}});}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a9340481b12579f96c9b13f1a6ab865a0}{checkExactRotationTargetAchieved}}(\mbox{\hyperlink{class_sec1_stall_activity_a9e86b3726cc258c40a090dcad448ea0b}{currentPitch}},\ \mbox{\hyperlink{class_sec1_stall_activity_a46654aef7ef965284e36739809d93349}{pitchTargets}}[\mbox{\hyperlink{class_sec1_stall_activity_abb28b926f05cba871cc270193573e5a2}{currentPitchTarget}}],\ \mbox{\hyperlink{class_sec1_stall_activity_aa0655b698d9dfa1b13b5719498489096}{stepAdvanceTolerance}}))}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_a81ef6cb547a4abaaa28a2ddba1bcec2a}{inputLocked}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_adaa646189b9bc73298d7c344c3ed16a6}{hasControllerOrigin}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_ae6e8d83430f1f3b75c2c8116dec97269}{aoaManipulator}}.LerpAOA(\mbox{\hyperlink{class_sec1_stall_activity_a46654aef7ef965284e36739809d93349}{pitchTargets}}[\mbox{\hyperlink{class_sec1_stall_activity_abb28b926f05cba871cc270193573e5a2}{currentPitchTarget}}]);}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_a96bb773842c1fce0e460557bf7e64c1a}{PlayTimeLine}}(\mbox{\hyperlink{class_sec1_stall_activity_a1756985005dbb16979c620577b5d6a73}{pitchTimelines}}[\mbox{\hyperlink{class_sec1_stall_activity_abb28b926f05cba871cc270193573e5a2}{currentPitchTarget}}],\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EnableCurrentStep();}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentPitchTarget++;}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}currentPitch\ target:\ "{}}\ +\ currentPitchTarget\ +\ \textcolor{stringliteral}{"{}\ pitchTarget\ Length:\ "{}}\ +\ pitchTargets.Length);}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (currentPitchTarget\ >=\ pitchTargets.Length)}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Advance\ to\ completion}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentStep\ =\ TurnStep.Complete;}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}currentPitchTarget:\ "{}}\ +\ currentPitchTarget\ +\ \textcolor{stringliteral}{"{}\ pitchTarget\ length:\ "{}}\ +\ pitchTargets.Length\ +\ \textcolor{stringliteral}{"{}\ currentStep\ "{}}\ +\ currentStep);}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sec1_stall_activity_a445afb443680b2b62c81c932f6f44c48}{mas}}.OnExternalStepCompleted();}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_sec1_stall_activity_a8daf90be275c5f4838179a592a60b6cc}{useMouseClicks}})}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_activity_helper}{ActivityHelper}}.\mbox{\hyperlink{class_activity_helper_ac7033b3da588d5137ce2a33c96943d1e}{DebugMouseControlPitch}}(\mbox{\hyperlink{class_sec1_stall_activity_aa4ed01a508a2a2da78d716f8d384a428}{mouseRollSpeed}},\ \mbox{\hyperlink{class_sec1_stall_activity_ae6e8d83430f1f3b75c2c8116dec97269}{aoaManipulator}});}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ActivityHelper.controllerPitchControl(\mbox{\hyperlink{class_sec1_stall_activity_ace16878c938c6ca9e694a82c03e3729d}{pitchSensitivity}},\ \mbox{\hyperlink{class_sec1_stall_activity_ae6e8d83430f1f3b75c2c8116dec97269}{aoaManipulator}},\ \mbox{\hyperlink{class_sec1_stall_activity_aaaae4796c11e8ef6f544b9324beb3dba}{rotationInput}},\ \mbox{\hyperlink{class_sec1_stall_activity_af53c4fc142e9457534b9e7ae823afd66}{deadZone}},\ \mbox{\hyperlink{class_sec1_stall_activity_a812282d680513a5d71e0c66f7b4e6ecd}{controllerOrigin}}.eulerAngles.x);}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00224}00224\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sec1_stall_activity_8cs_source_l00225}00225\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,23 @@
+\doxysection{Move\+Plane\+To\+Platform.\+cs}
+\hypertarget{_move_plane_to_platform_8cs_source}{}\label{_move_plane_to_platform_8cs_source}\index{Assets/Scripts/MiscBehaviour/MovePlaneToPlatform.cs@{Assets/Scripts/MiscBehaviour/MovePlaneToPlatform.cs}}
+\mbox{\hyperlink{_move_plane_to_platform_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_move_plane_to_platform_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_move_plane_to_platform_8cs_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_move_plane_to_platform_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_move_plane_to_platform_8cs_source_l00009}\mbox{\hyperlink{class_plane_teleporter}{00009}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_plane_teleporter}{PlaneTeleporter}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_move_plane_to_platform_8cs_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{_move_plane_to_platform_8cs_source_l00011}\mbox{\hyperlink{class_plane_teleporter_a16e105cb96255d55f226eb34e4a7f6d0}{00011}}\ \ \ \ \ \textcolor{keyword}{public}\ Vector3\ \mbox{\hyperlink{class_plane_teleporter_a16e105cb96255d55f226eb34e4a7f6d0}{targetPosition}};\ }
+\DoxyCodeLine{\Hypertarget{_move_plane_to_platform_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_move_plane_to_platform_8cs_source_l00017}\mbox{\hyperlink{class_plane_teleporter_a9bda0ea1bb1b0c125eb6a279f9b77982}{00017}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_plane_teleporter_a9bda0ea1bb1b0c125eb6a279f9b77982}{TeleportToTarget}}()}
+\DoxyCodeLine{\Hypertarget{_move_plane_to_platform_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_move_plane_to_platform_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ transform.position\ =\ \mbox{\hyperlink{class_plane_teleporter_a16e105cb96255d55f226eb34e4a7f6d0}{targetPosition}};}
+\DoxyCodeLine{\Hypertarget{_move_plane_to_platform_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_move_plane_to_platform_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ HARD-\/CODED:\ Subject\ to\ change\ in\ future.\ Keep\ for\ now.}}
+\DoxyCodeLine{\Hypertarget{_move_plane_to_platform_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ Vector3\ localEuler\ =\ transform.rotation.eulerAngles;}
+\DoxyCodeLine{\Hypertarget{_move_plane_to_platform_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ localEuler.y\ =\ 180f;}
+\DoxyCodeLine{\Hypertarget{_move_plane_to_platform_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ transform.rotation\ =\ Quaternion.Euler(localEuler);}
+\DoxyCodeLine{\Hypertarget{_move_plane_to_platform_8cs_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_move_plane_to_platform_8cs_source_l00026}00026\ \}}
+
+\end{DoxyCode}

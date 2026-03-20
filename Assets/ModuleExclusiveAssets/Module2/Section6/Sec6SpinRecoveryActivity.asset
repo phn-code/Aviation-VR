@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7af545500308947a6c9ee6772556fe, type: 3}
+  m_Name: Sec6SpinRecoveryActivity
+  m_EditorClassIdentifier: 
+  activityName: 
+  instructions:
+  - Pull Left Thumbstick back to lower throttle
+  - Keep Ailerons Neutral (Dont Move)
+  - Tilt controller right to counter spin
+  - Push controller forward to lower AOA
+  usesCustomScript: 1
+  customScript: {fileID: 1016961114638389524, guid: b077503e135455849babd116d44fe59b, type: 3}
+  playerInputRequired: 1
+  totalSteps: 4
+  currentStep: 0

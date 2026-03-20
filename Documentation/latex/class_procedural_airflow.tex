@@ -1,0 +1,1176 @@
+\doxysection{Procedural\+Airflow Class Reference}
+\hypertarget{class_procedural_airflow}{}\label{class_procedural_airflow}\index{ProceduralAirflow@{ProceduralAirflow}}
+
+
+Airflow, Force Arrows and COP Behaviour.  
+
+
+
+
+Inheritance diagram for Procedural\+Airflow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{class_procedural_airflow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Procedural\+Airflow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{class_procedural_airflow__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_procedural_airflow_a6fec0fa25a6905132421eb792db4d5d8}{enable\+Particle\+System}} = false
+\begin{DoxyCompactList}\small\item\em Enable or disable procedural airflow. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_procedural_airflow_aea8d91982058402643a892ccfab82484}{enable\+Force\+Arrows}} = false
+\begin{DoxyCompactList}\small\item\em Enable or disable force arrows. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_procedural_airflow_a6380504cf984cf8cd8efb186238dfdf9}{enable\+Centre\+Of\+Pressure}} = false
+\begin{DoxyCompactList}\small\item\em Enable or disable centre of pressure arrow. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_procedural_airflow_a32c9cc93a9cbe1a4bd158c855c7d71c3}{leading\+Edge}}
+\begin{DoxyCompactList}\small\item\em Transform located at wings leading edge. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_procedural_airflow_ac22293941f23eae5b6ace878af8172d6}{trailing\+Edge}}
+\begin{DoxyCompactList}\small\item\em Transform located at wings trailing edge. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_procedural_airflow_a2e32b0536075dda68f06ec22d1f95dc1}{lift\+Anchor}}
+\begin{DoxyCompactList}\small\item\em Tranfrom for lift arrow generation. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_procedural_airflow_a82fab4f32b18d76896a2659406e72f77}{weight\+Anchor}}
+\begin{DoxyCompactList}\small\item\em Transform for weight arrow generation. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_procedural_airflow_afc09dede145d3c1ef3b35d5b9984f7d8}{thrus\+Anchor}}
+\begin{DoxyCompactList}\small\item\em Transform for thrust arrow generation. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_procedural_airflow_a029cbe72dfb6da5e7524b9c8f5e42c55}{drag\+Anchor}}
+\begin{DoxyCompactList}\small\item\em Transform for drag arrow generation. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_procedural_airflow_a4a5f1d2fe1d182db13e4cd66aeec9fa4}{default\+Arrow\+Size}} = 1f
+\begin{DoxyCompactList}\small\item\em Default size of force arrows. \end{DoxyCompactList}\item 
+Material \mbox{\hyperlink{class_procedural_airflow_a4c98c4ce23a3e96ae487628aac356054}{force\+Arrow\+Material}}
+\begin{DoxyCompactList}\small\item\em Material for force arrows. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_procedural_airflow_a7ea2d9168a074a40176a876d972dc4b7}{arrow\+Head\+Model}}
+\begin{DoxyCompactList}\small\item\em Arrow head game object for force arrows. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_procedural_airflow_aee503d8b6da33b879bc9cf8535a18c8f}{cop\+Model}}
+\begin{DoxyCompactList}\small\item\em Prefab for centre of pressure indicator. \end{DoxyCompactList}\item 
+Particle\+System \mbox{\hyperlink{class_procedural_airflow_aafdc546a334fd32472fd9049a24ce243}{ps}}
+\begin{DoxyCompactList}\small\item\em Airflow particle system, if null script generates new particle system. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_procedural_airflow_aab2f990469ad23f7cc73fc25aca5003f}{emission\+Rate}} = 20f
+\begin{DoxyCompactList}\small\item\em Procedural Airflow, particles per second. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_procedural_airflow_a1e138f3b30f7500ef57e433a3d0199a2}{forward\+Spawn\+Distance}} = 0.\+5f
+\begin{DoxyCompactList}\small\item\em Percentage of. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_procedural_airflow_a010273564fe39d29651c19c8f7e3e33f}{particle\+Size}} = 0.\+05f
+\begin{DoxyCompactList}\small\item\em Size of particles. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_procedural_airflow_a1f4c377f27c3de16d1dc693f2cbec0dc}{max\+Particles}} = 1000
+\begin{DoxyCompactList}\small\item\em Max number of particles from particle system. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_procedural_airflow_a35ccc55c5e6878e68d827fe559f5d3f6}{top\+Max\+Speed}} = 2f
+\begin{DoxyCompactList}\small\item\em Max speed for particles on top of the wing. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_procedural_airflow_a8f76b6f45346cec39e4a2112a198ac36}{top\+Min\+Speed}} = 1.\+5f
+\begin{DoxyCompactList}\small\item\em Min speed for particles on top of the wing. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_procedural_airflow_a8e6c936393cb9896835cc41a13798d60}{bottom\+Max\+Speed}} = 1f
+\begin{DoxyCompactList}\small\item\em Max speed for particles below the wing. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_procedural_airflow_a685db6ec440818064c0f827152f733ca}{bottom\+Min\+Speed}} = 0.\+5f
+\begin{DoxyCompactList}\small\item\em Min speed for particles below the wing. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_procedural_airflow_a7f39168089285eb0688113a105365c1f}{air\+Seperation\+Strength}} = 0.\+5f
+\begin{DoxyCompactList}\small\item\em Multiplies y velocity of top particles to reduce airflow stick to wing chord at higher AOA. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_procedural_airflow_abe4b22aa654acc664213473b5c504aaf}{trail\+Down\+Force\+Percent}} = 0.\+2f
+\begin{DoxyCompactList}\small\item\em Percent of particle y direction to be maintained after trailing edge. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_procedural_airflow_a27f911dda96acb389d59664a1fa043ff}{use\+Fixed\+Delta\+In\+Editor}} = true
+\begin{DoxyCompactList}\small\item\em Enable ariflow in the editor. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_procedural_airflow_aa7332fa6d8c5a124edcaf33fd964d101}{editor\+Delta}} = 1f / 60f
+\begin{DoxyCompactList}\small\item\em 60fps deltatime for editor sim \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_procedural_airflow_a2b5762fd47eca82fd2b02b4ed56aeee7}{Awake}} ()
+\begin{DoxyCompactList}\small\item\em Setup Particle System on awake. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_procedural_airflow_a33d3beed08a30832ea8a8f767dd156c4}{Initialize\+Particle\+System}} ()
+\begin{DoxyCompactList}\small\item\em Setup particle system for procedural airflow. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_procedural_airflow_a33c45b9ffcdedb5e3457936970b6d8ff}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Main update loop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_procedural_airflow_a5709163e184898993a5b68823da845cf}{Emit\+Particles}} (float dt)
+\begin{DoxyCompactList}\small\item\em Manual Airflow Particle Emission. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_procedural_airflow_af37e0357f7910dde24bee472e113f073}{Update\+Particles}} (float dt)
+\begin{DoxyCompactList}\small\item\em Manual Airflow Particle Update. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_procedural_airflow_a16f833bdcce098119c9aa0bc9c3c058f}{Update\+Force\+Arrows}} ()
+\begin{DoxyCompactList}\small\item\em Updates four force arrows. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_procedural_airflow_ac7f36639759393137c590df20f5fec4f}{Get\+Lift\+Length}} (float aoa)
+\begin{DoxyCompactList}\small\item\em Returns lift arrow length as a multiplier. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_procedural_airflow_a8a5eb5afa469808a782a3df8b5acc0ce}{Get\+Weight\+Length}} (float aoa)
+\begin{DoxyCompactList}\small\item\em Returns weight arrow length as a constant multiplier. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_procedural_airflow_ad19dfef3a1475257ca6e0b7e21db38e3}{Get\+Thrust\+Length}} (float aoa)
+\begin{DoxyCompactList}\small\item\em Returns thrust arrow length as a multiplier. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_procedural_airflow_ae9fec637887c3ecc446e5a983e5da939}{Get\+Drag\+Length}} (float aoa)
+\begin{DoxyCompactList}\small\item\em Returns drag arrow length as a multiplier. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_procedural_airflow_a185723e23968638c5f237570be490668}{Interpolate\+Force\+Value}} (float aoa, float\mbox{[}$\,$\mbox{]} force\+Values)
+\begin{DoxyCompactList}\small\item\em Interpolates force coefficient values based on angle of attack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_procedural_airflow_af7e785d4224d6d0bdccf8e360c383c0b}{Set\+Arrow}} (Game\+Object arrow, Vector3 base\+Pos, Vector3 dir, float length)
+\begin{DoxyCompactList}\small\item\em Configures arrow transform properties. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_procedural_airflow_a981a9efbb0abe158ed82da3d7a3cb9af}{Create\+Force\+Arrows}} ()
+\begin{DoxyCompactList}\small\item\em Creates all four force arrow game objects. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_procedural_airflow_a5325b21371f95a54c563374ecf9712b4}{Create\+Arrow}} (string name, Color colour)
+\begin{DoxyCompactList}\small\item\em Creates a single force arrow game object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_procedural_airflow_a2ad553da31bb630067c0b0d6298d6787}{Destroy\+Previous\+Arrows}} ()
+\begin{DoxyCompactList}\small\item\em Destroys all existing force arrow game objects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_procedural_airflow_ae53f0b31ccdb2645ee7a854fbde25676}{update\+Centre\+Of\+Pressure}} ()
+\begin{DoxyCompactList}\small\item\em Updates centre of pressure indicator position. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_procedural_airflow_ac096db013e846e6dc9e89539b23360ae}{create\+Cop\+Indicator}} (string name, Color colour)
+\begin{DoxyCompactList}\small\item\em Creates centre of pressure indicator game object. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_procedural_airflow_aee0e75708d59c900c885c058b8120508}{get\+Cop\+Percentage}} (float aoa)
+\begin{DoxyCompactList}\small\item\em Returns centre of pressure position as percentage of chord. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_procedural_airflow_a080635f7f18f77802d45cee917c5174e}{destroy\+Centre\+Of\+Pressure}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the centre of pressure indicator game object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_procedural_airflow_a516092f238026607d97aa76a2f3c3104}{On\+Draw\+Gizmos}} ()
+\begin{DoxyCompactList}\small\item\em Draws editor gizmos for visualization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Particle\+System.\+Particle\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_procedural_airflow_a40b8421c4b00fb8ae8dec30a5859157e}{buffer}}
+\begin{DoxyCompactList}\small\item\em Array of particles from the particle system. \end{DoxyCompactList}\item 
+List$<$ Vector3 $>$ \mbox{\hyperlink{class_procedural_airflow_a9183f5c4df257ca40e65cc63e9800c48}{velocities}} = new List$<$Vector3$>$()
+\begin{DoxyCompactList}\small\item\em Parallel List to buffer to store individual velocities. \end{DoxyCompactList}\item 
+List$<$ bool $>$ \mbox{\hyperlink{class_procedural_airflow_accc798171f724404dbbfa837ce3b4932}{side\+Flags}} = new List$<$bool$>$()
+\begin{DoxyCompactList}\small\item\em Parallel List to buffer to store side flags, true = above wing, falase = below wing. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_procedural_airflow_a83cbb8590a5fded67bb0d0d753728e9a}{emissions\+Next\+Frame}} = 0f
+\begin{DoxyCompactList}\small\item\em Holds emmisions required per frame. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_procedural_airflow_a87b3e127c27ec56ceb460c04cfbab777}{rotation}} = 0f
+\begin{DoxyCompactList}\small\item\em z rotation for arrows update loop \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_procedural_airflow_aa9e1dfd501cb31685c954fd616e37fcf}{lift\+Arrow}}
+\begin{DoxyCompactList}\small\item\em Instance of the lift force arrow game object. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_procedural_airflow_a8dae8e4a225a83394038c38b81a57ad6}{weight\+Arrow}}
+\begin{DoxyCompactList}\small\item\em Instance of the weight force arrow game object. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_procedural_airflow_a3d47a854cdfe91d14b2105e3ff939006}{thrust\+Arrow}}
+\begin{DoxyCompactList}\small\item\em Instance of the thrust force arrow game object. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_procedural_airflow_ab99b0ff8df8181961f69dab7e53cc17f}{drag\+Arrow}}
+\begin{DoxyCompactList}\small\item\em Instance of the drag force arrow game object. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_procedural_airflow_adf5bba10e6b97f32033242a36fa73b89}{cop\+Game\+Object}}
+\begin{DoxyCompactList}\small\item\em cop arrow insatnce \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}{aoa\+Stages}} = \{3f, 7f, 10f, 14f, 16f, 18f\}
+\begin{DoxyCompactList}\small\item\em Predefined aoa stages for Force arrow and COP calc. \end{DoxyCompactList}\item 
+static float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_procedural_airflow_a57f1444731855efb7b948cb0440f7fea}{lift\+Values}} = \{ 1.\+0f, 1.\+2f, 1.\+5f, 1.\+7f, 1.\+6f, 0.\+8f \}
+\begin{DoxyCompactList}\small\item\em Parallel array to aoa\+Stages, stores mmultipliers to scale lift\+Arrow. \end{DoxyCompactList}\item 
+static float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_procedural_airflow_a4a53fbe3ac2a76bb4bf67391b67e3367}{drag\+Values}} = \{ 1.\+0f, 1.\+2f, 1.\+5f, 1.\+7f, 2.\+0f, 2.\+5f \}
+\begin{DoxyCompactList}\small\item\em Parallel array to aoa\+Stages, stores multipliers to scale drag\+Arrow. \end{DoxyCompactList}\item 
+static float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_procedural_airflow_a82e6315db54d7f343b9b1b4172210886}{thrust\+Values}} = \{ 1.\+0f, 1.\+2f, 1.\+5f, 1.\+6f, 1.\+0f, 0.\+6f \}
+\begin{DoxyCompactList}\small\item\em Parallel array to aoa\+Stages, stores multipliers to scale thrust\+Arrow. \end{DoxyCompactList}\item 
+static float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_procedural_airflow_a3e22a9edb2de537e6961119656dd244d}{cop\+Values}} = \{ 0.\+25f, 0.\+24f, 0.\+22f, 0.\+20f, 0.\+20f, 0.\+45f \}
+\begin{DoxyCompactList}\small\item\em Parallel array to aoa\+Stages, stores multipliers to move cop arrow along plane chord. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Airflow, Force Arrows and COP Behaviour. 
+
+Class contains definitions and behaviour for
+\begin{DoxyItemize}
+\item Procedural Airflow
+\item Force Arrows
+\item Centre of Pressure indicator
+\end{DoxyItemize}
+
+Current implementaiton of both Fore Arrows and COP indicator utilize hardcoded value that reflect the provided values for Module 2 Section 1 Procedural airflow simulation is more versitile and allows for dynamic modificaitons to behaviour.
+
+\begin{DoxyAuthor}{Author}
+Connor Freebairn \texorpdfstring{$\vert$}{|} \href{mailto:frecd002@mymail.unisa.edu.au}{\texttt{frecd002@mymail.\+unisa.\+edu.\+au}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_procedural_airflow_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_procedural_airflow_a2b5762fd47eca82fd2b02b4ed56aeee7}\index{ProceduralAirflow@{ProceduralAirflow}!Awake@{Awake}}
+\index{Awake@{Awake}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a2b5762fd47eca82fd2b02b4ed56aeee7} 
+void Procedural\+Airflow.\+Awake (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Setup Particle System on awake. 
+
+Calls \doxylink{class_procedural_airflow_a33d3beed08a30832ea8a8f767dd156c4}{Initialize\+Particle\+System()} and declares new Particle \+::buffer with size of the particle systems internal buffer. 
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00101}{101}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a5325b21371f95a54c563374ecf9712b4}\index{ProceduralAirflow@{ProceduralAirflow}!CreateArrow@{CreateArrow}}
+\index{CreateArrow@{CreateArrow}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{CreateArrow()}{CreateArrow()}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a5325b21371f95a54c563374ecf9712b4} 
+Game\+Object Procedural\+Airflow.\+Create\+Arrow (\begin{DoxyParamCaption}\item[{string}]{name}{, }\item[{Color}]{colour}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates a single force arrow game object. 
+
+Instantiates a cube primitive as the arrow shaft and attaches an arrow head model as a child. Assigns the specified color to both shaft and head materials.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Base name for the arrow (e.\+g. "{}\+Lift"{}, "{}\+Drag"{}) \\
+\hline
+{\em colour} & Color to apply to the arrow material \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created arrow game object 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00580}{580}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_ac096db013e846e6dc9e89539b23360ae}\index{ProceduralAirflow@{ProceduralAirflow}!createCopIndicator@{createCopIndicator}}
+\index{createCopIndicator@{createCopIndicator}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{createCopIndicator()}{createCopIndicator()}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_ac096db013e846e6dc9e89539b23360ae} 
+Game\+Object Procedural\+Airflow.\+create\+Cop\+Indicator (\begin{DoxyParamCaption}\item[{string}]{name}{, }\item[{Color}]{colour}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates centre of pressure indicator game object. 
+
+Destroys any existing COP indicator and instantiates a new one from the COP model prefab with the specified name and color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name to assign to the COP indicator game object \\
+\hline
+{\em colour} & Color to apply to the indicator (currently unused in implementation) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created COP indicator game object 
+\end{DoxyReturn}
+\begin{DoxyVerb}    Renderer rend = cop.GetComponent<Renderer>();
+\end{DoxyVerb}
+ Handle material leaks during edit mode if (Application.\+is\+Playing) rend.\+material.\+color = colour; else rend.\+shared\+Material.\+color = colour;
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00683}{683}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a981a9efbb0abe158ed82da3d7a3cb9af}\index{ProceduralAirflow@{ProceduralAirflow}!CreateForceArrows@{CreateForceArrows}}
+\index{CreateForceArrows@{CreateForceArrows}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{CreateForceArrows()}{CreateForceArrows()}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a981a9efbb0abe158ed82da3d7a3cb9af} 
+void Procedural\+Airflow.\+Create\+Force\+Arrows (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates all four force arrow game objects. 
+
+Destroys any existing arrows and instantiates new lift, weight, thrust, and drag arrows with their respective colors. 
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00560}{560}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a080635f7f18f77802d45cee917c5174e}\index{ProceduralAirflow@{ProceduralAirflow}!destroyCentreOfPressure@{destroyCentreOfPressure}}
+\index{destroyCentreOfPressure@{destroyCentreOfPressure}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{destroyCentreOfPressure()}{destroyCentreOfPressure()}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a080635f7f18f77802d45cee917c5174e} 
+void Procedural\+Airflow.\+destroy\+Centre\+Of\+Pressure (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Destroys the centre of pressure indicator game object. 
+
+Searches for and destroys the COP indicator if it exists in the scene. Uses Destroy\+Immediate in edit mode and Destroy in play mode. 
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00733}{733}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a2ad553da31bb630067c0b0d6298d6787}\index{ProceduralAirflow@{ProceduralAirflow}!DestroyPreviousArrows@{DestroyPreviousArrows}}
+\index{DestroyPreviousArrows@{DestroyPreviousArrows}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{DestroyPreviousArrows()}{DestroyPreviousArrows()}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a2ad553da31bb630067c0b0d6298d6787} 
+void Procedural\+Airflow.\+Destroy\+Previous\+Arrows (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Destroys all existing force arrow game objects. 
+
+Searches for and destroys any existing lift, weight, thrust, or drag arrows in the scene. Uses Destroy\+Immediate in edit mode and Destroy in play mode. 
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00621}{621}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a5709163e184898993a5b68823da845cf}\index{ProceduralAirflow@{ProceduralAirflow}!EmitParticles@{EmitParticles}}
+\index{EmitParticles@{EmitParticles}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{EmitParticles()}{EmitParticles()}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a5709163e184898993a5b68823da845cf} 
+void Procedural\+Airflow.\+Emit\+Particles (\begin{DoxyParamCaption}\item[{float}]{dt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Manual Airflow Particle Emission. 
+
+Spawns particles at a fixed rate and assigns initial \+::velocities and \+::side\+Flags values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & deltatime, fixed value for editor or actual suring play \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00213}{213}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_aee0e75708d59c900c885c058b8120508}\index{ProceduralAirflow@{ProceduralAirflow}!getCopPercentage@{getCopPercentage}}
+\index{getCopPercentage@{getCopPercentage}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{getCopPercentage()}{getCopPercentage()}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_aee0e75708d59c900c885c058b8120508} 
+float Procedural\+Airflow.\+get\+Cop\+Percentage (\begin{DoxyParamCaption}\item[{float}]{aoa}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Returns centre of pressure position as percentage of chord. 
+
+Calculates the COP position along the wing chord as a percentage from the leading edge based on angle of attack. Uses linear interpolation between predefined stages in \+::aoa\+Stages and \+::cop\+Values arrays.
+
+
+\begin{DoxyParams}{Parameters}
+{\em aoa} & Current angle of attack (pitch) of the plane \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Percentage distance from leading edge (0.\+0 = leading edge, 1.\+0 = trailing edge) 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00715}{715}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_ae9fec637887c3ecc446e5a983e5da939}\index{ProceduralAirflow@{ProceduralAirflow}!GetDragLength@{GetDragLength}}
+\index{GetDragLength@{GetDragLength}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{GetDragLength()}{GetDragLength()}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_ae9fec637887c3ecc446e5a983e5da939} 
+float Procedural\+Airflow.\+Get\+Drag\+Length (\begin{DoxyParamCaption}\item[{float}]{aoa}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Returns drag arrow length as a multiplier. 
+
+Checks the current angle of attack against the values in \+::aoa\+Stages. Returns a multiplier for the arrow length via linear interpolation between the upper and lower bounds of the current aoa against the \+::aoa\+Stages.
+
+
+\begin{DoxyParams}{Parameters}
+{\em aoa} & Current angle of attack (pitch) of the plane \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Arrow length multiplier based on interpolated drag values 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00467}{467}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_ac7f36639759393137c590df20f5fec4f}\index{ProceduralAirflow@{ProceduralAirflow}!GetLiftLength@{GetLiftLength}}
+\index{GetLiftLength@{GetLiftLength}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{GetLiftLength()}{GetLiftLength()}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_ac7f36639759393137c590df20f5fec4f} 
+float Procedural\+Airflow.\+Get\+Lift\+Length (\begin{DoxyParamCaption}\item[{float}]{aoa}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Returns lift arrow length as a multiplier. 
+
+Checks the current angle of attack against the values in \+::aoa\+Stages. Returns a multiplier for the arrow length via linear interpolation between the upper and lower bounds of the current aoa against the \+::aoa\+Stages.
+
+
+\begin{DoxyParams}{Parameters}
+{\em aoa} & Current angle of attack (pitch) of the plane \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Arrow length multiplier based on interpolated lift values 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00423}{423}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_ad19dfef3a1475257ca6e0b7e21db38e3}\index{ProceduralAirflow@{ProceduralAirflow}!GetThrustLength@{GetThrustLength}}
+\index{GetThrustLength@{GetThrustLength}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{GetThrustLength()}{GetThrustLength()}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_ad19dfef3a1475257ca6e0b7e21db38e3} 
+float Procedural\+Airflow.\+Get\+Thrust\+Length (\begin{DoxyParamCaption}\item[{float}]{aoa}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Returns thrust arrow length as a multiplier. 
+
+Checks the current angle of attack against the values in \+::aoa\+Stages. Returns a multiplier for the arrow length via linear interpolation between the upper and lower bounds of the current aoa against the \+::aoa\+Stages.
+
+
+\begin{DoxyParams}{Parameters}
+{\em aoa} & Current angle of attack (pitch) of the plane \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Arrow length multiplier based on interpolated thrust values 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00452}{452}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a8a5eb5afa469808a782a3df8b5acc0ce}\index{ProceduralAirflow@{ProceduralAirflow}!GetWeightLength@{GetWeightLength}}
+\index{GetWeightLength@{GetWeightLength}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{GetWeightLength()}{GetWeightLength()}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a8a5eb5afa469808a782a3df8b5acc0ce} 
+float Procedural\+Airflow.\+Get\+Weight\+Length (\begin{DoxyParamCaption}\item[{float}]{aoa}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Returns weight arrow length as a constant multiplier. 
+
+Weight is constant and does not vary with angle of attack, so returns the base arrow size without any scaling factor applied.
+
+
+\begin{DoxyParams}{Parameters}
+{\em aoa} & Current angle of attack (pitch) of the plane (unused) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Constant arrow length equal to default\+Arrow\+Size 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00437}{437}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a33d3beed08a30832ea8a8f767dd156c4}\index{ProceduralAirflow@{ProceduralAirflow}!InitializeParticleSystem@{InitializeParticleSystem}}
+\index{InitializeParticleSystem@{InitializeParticleSystem}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{InitializeParticleSystem()}{InitializeParticleSystem()}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a33d3beed08a30832ea8a8f767dd156c4} 
+void Procedural\+Airflow.\+Initialize\+Particle\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Setup particle system for procedural airflow. 
+
+If particle system parameter is null generate a new particle system and set relevant variables to ensure compatability with existing functions.
+\begin{DoxyItemize}
+\item \doxylink{class_procedural_airflow_a5709163e184898993a5b68823da845cf}{Emit\+Particles()}
+\item \doxylink{class_procedural_airflow_af37e0357f7910dde24bee472e113f073}{Update\+Particles()} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00114}{114}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a185723e23968638c5f237570be490668}\index{ProceduralAirflow@{ProceduralAirflow}!InterpolateForceValue@{InterpolateForceValue}}
+\index{InterpolateForceValue@{InterpolateForceValue}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{InterpolateForceValue()}{InterpolateForceValue()}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a185723e23968638c5f237570be490668} 
+float Procedural\+Airflow.\+Interpolate\+Force\+Value (\begin{DoxyParamCaption}\item[{float}]{aoa}{, }\item[{float\mbox{[}$\,$\mbox{]}}]{force\+Values}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Interpolates force coefficient values based on angle of attack. 
+
+Performs linear interpolation between force coefficient values based on the current angle of attack. The interpolation factor (t) is calculated as\+: t = (aoa -\/ aoa\+Stages\mbox{[}i\mbox{]}) / (aoa\+Stages\mbox{[}i+1\mbox{]} -\/ aoa\+Stages\mbox{[}i\mbox{]}) where t ranges from 0 (at lower bound) to 1 (at upper bound).
+
+For aoa values outside the defined \+::aoa\+Stages range, returns the minimum or maximum force value without interpolation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em aoa} & Current angle of attack (pitch) of the plane \\
+\hline
+{\em force\+Values} & Array of force coefficient values corresponding to \+::aoa\+Stages \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Interpolated force coefficient value 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00487}{487}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a516092f238026607d97aa76a2f3c3104}\index{ProceduralAirflow@{ProceduralAirflow}!OnDrawGizmos@{OnDrawGizmos}}
+\index{OnDrawGizmos@{OnDrawGizmos}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{OnDrawGizmos()}{OnDrawGizmos()}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a516092f238026607d97aa76a2f3c3104} 
+void Procedural\+Airflow.\+On\+Draw\+Gizmos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws editor gizmos for visualization. 
+
+Renders visual guides in the Unity editor showing the wing chord line (yellow), top airflow guide (cyan), and bottom airflow guide (magenta) at the chord midpoint. 
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00750}{750}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_af7e785d4224d6d0bdccf8e360c383c0b}\index{ProceduralAirflow@{ProceduralAirflow}!SetArrow@{SetArrow}}
+\index{SetArrow@{SetArrow}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{SetArrow()}{SetArrow()}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_af7e785d4224d6d0bdccf8e360c383c0b} 
+void Procedural\+Airflow.\+Set\+Arrow (\begin{DoxyParamCaption}\item[{Game\+Object}]{arrow}{, }\item[{Vector3}]{base\+Pos}{, }\item[{Vector3}]{dir}{, }\item[{float}]{length}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Configures arrow transform properties. 
+
+Sets the scale, rotation, and position of a force arrow game object. The arrow is oriented to point in the specified direction and positioned so its base sits at the anchor point. Also scales and positions the arrow head child object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arrow} & The arrow game object to configure \\
+\hline
+{\em base\+Pos} & World position for the base of the arrow \\
+\hline
+{\em dir} & Direction vector the arrow should point \\
+\hline
+{\em length} & Total length of the arrow in world units \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00524}{524}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a33c45b9ffcdedb5e3457936970b6d8ff}\index{ProceduralAirflow@{ProceduralAirflow}!Update@{Update}}
+\index{Update@{Update}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a33c45b9ffcdedb5e3457936970b6d8ff} 
+void Procedural\+Airflow.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Main update loop. 
+
+Handles Airflow particle, Force Arrows and COP indicator rendering. Uses fake delta time for editor rendering. 
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00150}{150}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_ae53f0b31ccdb2645ee7a854fbde25676}\index{ProceduralAirflow@{ProceduralAirflow}!updateCentreOfPressure@{updateCentreOfPressure}}
+\index{updateCentreOfPressure@{updateCentreOfPressure}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{updateCentreOfPressure()}{updateCentreOfPressure()}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_ae53f0b31ccdb2645ee7a854fbde25676} 
+void Procedural\+Airflow.\+update\+Centre\+Of\+Pressure (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates centre of pressure indicator position. 
+
+Creates the COP indicator if it doesn\textquotesingle{}t exist, then calculates its position along the wing chord based on the current angle of attack. Positions the indicator below the chord at the calculated percentage distance from the leading edge. 
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00647}{647}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a16f833bdcce098119c9aa0bc9c3c058f}\index{ProceduralAirflow@{ProceduralAirflow}!UpdateForceArrows@{UpdateForceArrows}}
+\index{UpdateForceArrows@{UpdateForceArrows}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{UpdateForceArrows()}{UpdateForceArrows()}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a16f833bdcce098119c9aa0bc9c3c058f} 
+void Procedural\+Airflow.\+Update\+Force\+Arrows (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates four force arrows. 
+
+Check if arrows exist and recreates if not. Sets each arrows position and scale 
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00391}{391}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_af37e0357f7910dde24bee472e113f073}\index{ProceduralAirflow@{ProceduralAirflow}!UpdateParticles@{UpdateParticles}}
+\index{UpdateParticles@{UpdateParticles}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{UpdateParticles()}{UpdateParticles()}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_af37e0357f7910dde24bee472e113f073} 
+void Procedural\+Airflow.\+Update\+Particles (\begin{DoxyParamCaption}\item[{float}]{dt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Manual Airflow Particle Update. 
+
+Determines position of each partiicle in relation to key positions along the chord. Updates particles velocity to coform to the chord of the wing. Particles with the \+::side\+Flags bool velue of
+\begin{DoxyItemize}
+\item False, move along the winf base
+\item True, move at a reduced y velocity to replicate airflow separation.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & deltatime, fixed value for editor or actual suring play \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00278}{278}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_procedural_airflow_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_procedural_airflow_a7f39168089285eb0688113a105365c1f}\index{ProceduralAirflow@{ProceduralAirflow}!airSeperationStrength@{airSeperationStrength}}
+\index{airSeperationStrength@{airSeperationStrength}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{airSeperationStrength}{airSeperationStrength}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a7f39168089285eb0688113a105365c1f} 
+float Procedural\+Airflow.\+air\+Seperation\+Strength = 0.\+5f}
+
+
+
+Multiplies y velocity of top particles to reduce airflow stick to wing chord at higher AOA. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00065}{65}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1}\index{ProceduralAirflow@{ProceduralAirflow}!aoaStages@{aoaStages}}
+\index{aoaStages@{aoaStages}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{aoaStages}{aoaStages}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a701e5353de865ace56848ce9c53564a1} 
+float \mbox{[}$\,$\mbox{]} Procedural\+Airflow.\+aoa\+Stages = \{3f, 7f, 10f, 14f, 16f, 18f\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Predefined aoa stages for Force arrow and COP calc. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00082}{82}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a7ea2d9168a074a40176a876d972dc4b7}\index{ProceduralAirflow@{ProceduralAirflow}!arrowHeadModel@{arrowHeadModel}}
+\index{arrowHeadModel@{arrowHeadModel}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{arrowHeadModel}{arrowHeadModel}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a7ea2d9168a074a40176a876d972dc4b7} 
+Game\+Object Procedural\+Airflow.\+arrow\+Head\+Model}
+
+
+
+Arrow head game object for force arrows. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00043}{43}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a8e6c936393cb9896835cc41a13798d60}\index{ProceduralAirflow@{ProceduralAirflow}!bottomMaxSpeed@{bottomMaxSpeed}}
+\index{bottomMaxSpeed@{bottomMaxSpeed}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{bottomMaxSpeed}{bottomMaxSpeed}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a8e6c936393cb9896835cc41a13798d60} 
+float Procedural\+Airflow.\+bottom\+Max\+Speed = 1f}
+
+
+
+Max speed for particles below the wing. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00060}{60}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a685db6ec440818064c0f827152f733ca}\index{ProceduralAirflow@{ProceduralAirflow}!bottomMinSpeed@{bottomMinSpeed}}
+\index{bottomMinSpeed@{bottomMinSpeed}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{bottomMinSpeed}{bottomMinSpeed}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a685db6ec440818064c0f827152f733ca} 
+float Procedural\+Airflow.\+bottom\+Min\+Speed = 0.\+5f}
+
+
+
+Min speed for particles below the wing. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00061}{61}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a40b8421c4b00fb8ae8dec30a5859157e}\index{ProceduralAirflow@{ProceduralAirflow}!buffer@{buffer}}
+\index{buffer@{buffer}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a40b8421c4b00fb8ae8dec30a5859157e} 
+Particle\+System.\+Particle \mbox{[}$\,$\mbox{]} Procedural\+Airflow.\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Array of particles from the particle system. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00071}{71}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_adf5bba10e6b97f32033242a36fa73b89}\index{ProceduralAirflow@{ProceduralAirflow}!copGameObject@{copGameObject}}
+\index{copGameObject@{copGameObject}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{copGameObject}{copGameObject}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_adf5bba10e6b97f32033242a36fa73b89} 
+Game\+Object Procedural\+Airflow.\+cop\+Game\+Object\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+cop arrow insatnce 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00093}{93}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_aee503d8b6da33b879bc9cf8535a18c8f}\index{ProceduralAirflow@{ProceduralAirflow}!copModel@{copModel}}
+\index{copModel@{copModel}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{copModel}{copModel}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_aee503d8b6da33b879bc9cf8535a18c8f} 
+Game\+Object Procedural\+Airflow.\+cop\+Model}
+
+
+
+Prefab for centre of pressure indicator. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00046}{46}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a3e22a9edb2de537e6961119656dd244d}\index{ProceduralAirflow@{ProceduralAirflow}!copValues@{copValues}}
+\index{copValues@{copValues}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{copValues}{copValues}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a3e22a9edb2de537e6961119656dd244d} 
+float \mbox{[}$\,$\mbox{]} Procedural\+Airflow.\+cop\+Values = \{ 0.\+25f, 0.\+24f, 0.\+22f, 0.\+20f, 0.\+20f, 0.\+45f \}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Parallel array to aoa\+Stages, stores multipliers to move cop arrow along plane chord. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00090}{90}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a4a5f1d2fe1d182db13e4cd66aeec9fa4}\index{ProceduralAirflow@{ProceduralAirflow}!defaultArrowSize@{defaultArrowSize}}
+\index{defaultArrowSize@{defaultArrowSize}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{defaultArrowSize}{defaultArrowSize}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a4a5f1d2fe1d182db13e4cd66aeec9fa4} 
+float Procedural\+Airflow.\+default\+Arrow\+Size = 1f}
+
+
+
+Default size of force arrows. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00041}{41}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a029cbe72dfb6da5e7524b9c8f5e42c55}\index{ProceduralAirflow@{ProceduralAirflow}!dragAnchor@{dragAnchor}}
+\index{dragAnchor@{dragAnchor}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{dragAnchor}{dragAnchor}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a029cbe72dfb6da5e7524b9c8f5e42c55} 
+Transform Procedural\+Airflow.\+drag\+Anchor}
+
+
+
+Transform for drag arrow generation. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_ab99b0ff8df8181961f69dab7e53cc17f}\index{ProceduralAirflow@{ProceduralAirflow}!dragArrow@{dragArrow}}
+\index{dragArrow@{dragArrow}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{dragArrow}{dragArrow}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_ab99b0ff8df8181961f69dab7e53cc17f} 
+Game\+Object Procedural\+Airflow.\+drag\+Arrow\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instance of the drag force arrow game object. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00080}{80}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a4a53fbe3ac2a76bb4bf67391b67e3367}\index{ProceduralAirflow@{ProceduralAirflow}!dragValues@{dragValues}}
+\index{dragValues@{dragValues}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{dragValues}{dragValues}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a4a53fbe3ac2a76bb4bf67391b67e3367} 
+float \mbox{[}$\,$\mbox{]} Procedural\+Airflow.\+drag\+Values = \{ 1.\+0f, 1.\+2f, 1.\+5f, 1.\+7f, 2.\+0f, 2.\+5f \}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Parallel array to aoa\+Stages, stores multipliers to scale drag\+Arrow. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00086}{86}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_aa7332fa6d8c5a124edcaf33fd964d101}\index{ProceduralAirflow@{ProceduralAirflow}!editorDelta@{editorDelta}}
+\index{editorDelta@{editorDelta}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{editorDelta}{editorDelta}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_aa7332fa6d8c5a124edcaf33fd964d101} 
+float Procedural\+Airflow.\+editor\+Delta = 1f / 60f}
+
+
+
+60fps deltatime for editor sim 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00068}{68}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_aab2f990469ad23f7cc73fc25aca5003f}\index{ProceduralAirflow@{ProceduralAirflow}!emissionRate@{emissionRate}}
+\index{emissionRate@{emissionRate}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{emissionRate}{emissionRate}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_aab2f990469ad23f7cc73fc25aca5003f} 
+float Procedural\+Airflow.\+emission\+Rate = 20f}
+
+
+
+Procedural Airflow, particles per second. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00051}{51}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a83cbb8590a5fded67bb0d0d753728e9a}\index{ProceduralAirflow@{ProceduralAirflow}!emissionsNextFrame@{emissionsNextFrame}}
+\index{emissionsNextFrame@{emissionsNextFrame}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{emissionsNextFrame}{emissionsNextFrame}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a83cbb8590a5fded67bb0d0d753728e9a} 
+float Procedural\+Airflow.\+emissions\+Next\+Frame = 0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Holds emmisions required per frame. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00074}{74}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a6380504cf984cf8cd8efb186238dfdf9}\index{ProceduralAirflow@{ProceduralAirflow}!enableCentreOfPressure@{enableCentreOfPressure}}
+\index{enableCentreOfPressure@{enableCentreOfPressure}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{enableCentreOfPressure}{enableCentreOfPressure}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a6380504cf984cf8cd8efb186238dfdf9} 
+bool Procedural\+Airflow.\+enable\+Centre\+Of\+Pressure = false}
+
+
+
+Enable or disable centre of pressure arrow. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00025}{25}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_aea8d91982058402643a892ccfab82484}\index{ProceduralAirflow@{ProceduralAirflow}!enableForceArrows@{enableForceArrows}}
+\index{enableForceArrows@{enableForceArrows}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{enableForceArrows}{enableForceArrows}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_aea8d91982058402643a892ccfab82484} 
+bool Procedural\+Airflow.\+enable\+Force\+Arrows = false}
+
+
+
+Enable or disable force arrows. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a6fec0fa25a6905132421eb792db4d5d8}\index{ProceduralAirflow@{ProceduralAirflow}!enableParticleSystem@{enableParticleSystem}}
+\index{enableParticleSystem@{enableParticleSystem}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{enableParticleSystem}{enableParticleSystem}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a6fec0fa25a6905132421eb792db4d5d8} 
+bool Procedural\+Airflow.\+enable\+Particle\+System = false}
+
+
+
+Enable or disable procedural airflow. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00023}{23}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a4c98c4ce23a3e96ae487628aac356054}\index{ProceduralAirflow@{ProceduralAirflow}!forceArrowMaterial@{forceArrowMaterial}}
+\index{forceArrowMaterial@{forceArrowMaterial}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{forceArrowMaterial}{forceArrowMaterial}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a4c98c4ce23a3e96ae487628aac356054} 
+Material Procedural\+Airflow.\+force\+Arrow\+Material}
+
+
+
+Material for force arrows. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00042}{42}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a1e138f3b30f7500ef57e433a3d0199a2}\index{ProceduralAirflow@{ProceduralAirflow}!forwardSpawnDistance@{forwardSpawnDistance}}
+\index{forwardSpawnDistance@{forwardSpawnDistance}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{forwardSpawnDistance}{forwardSpawnDistance}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a1e138f3b30f7500ef57e433a3d0199a2} 
+float Procedural\+Airflow.\+forward\+Spawn\+Distance = 0.\+5f}
+
+
+
+Percentage of. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00052}{52}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a32c9cc93a9cbe1a4bd158c855c7d71c3}\index{ProceduralAirflow@{ProceduralAirflow}!leadingEdge@{leadingEdge}}
+\index{leadingEdge@{leadingEdge}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{leadingEdge}{leadingEdge}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a32c9cc93a9cbe1a4bd158c855c7d71c3} 
+Transform Procedural\+Airflow.\+leading\+Edge}
+
+
+
+Transform located at wings leading edge. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a2e32b0536075dda68f06ec22d1f95dc1}\index{ProceduralAirflow@{ProceduralAirflow}!liftAnchor@{liftAnchor}}
+\index{liftAnchor@{liftAnchor}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{liftAnchor}{liftAnchor}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a2e32b0536075dda68f06ec22d1f95dc1} 
+Transform Procedural\+Airflow.\+lift\+Anchor}
+
+
+
+Tranfrom for lift arrow generation. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_aa9e1dfd501cb31685c954fd616e37fcf}\index{ProceduralAirflow@{ProceduralAirflow}!liftArrow@{liftArrow}}
+\index{liftArrow@{liftArrow}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{liftArrow}{liftArrow}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_aa9e1dfd501cb31685c954fd616e37fcf} 
+Game\+Object Procedural\+Airflow.\+lift\+Arrow\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instance of the lift force arrow game object. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00077}{77}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a57f1444731855efb7b948cb0440f7fea}\index{ProceduralAirflow@{ProceduralAirflow}!liftValues@{liftValues}}
+\index{liftValues@{liftValues}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{liftValues}{liftValues}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a57f1444731855efb7b948cb0440f7fea} 
+float \mbox{[}$\,$\mbox{]} Procedural\+Airflow.\+lift\+Values = \{ 1.\+0f, 1.\+2f, 1.\+5f, 1.\+7f, 1.\+6f, 0.\+8f \}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Parallel array to aoa\+Stages, stores mmultipliers to scale lift\+Arrow. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00085}{85}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a1f4c377f27c3de16d1dc693f2cbec0dc}\index{ProceduralAirflow@{ProceduralAirflow}!maxParticles@{maxParticles}}
+\index{maxParticles@{maxParticles}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{maxParticles}{maxParticles}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a1f4c377f27c3de16d1dc693f2cbec0dc} 
+int Procedural\+Airflow.\+max\+Particles = 1000}
+
+
+
+Max number of particles from particle system. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00054}{54}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a010273564fe39d29651c19c8f7e3e33f}\index{ProceduralAirflow@{ProceduralAirflow}!particleSize@{particleSize}}
+\index{particleSize@{particleSize}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{particleSize}{particleSize}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a010273564fe39d29651c19c8f7e3e33f} 
+float Procedural\+Airflow.\+particle\+Size = 0.\+05f}
+
+
+
+Size of particles. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00053}{53}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_aafdc546a334fd32472fd9049a24ce243}\index{ProceduralAirflow@{ProceduralAirflow}!ps@{ps}}
+\index{ps@{ps}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{ps}{ps}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_aafdc546a334fd32472fd9049a24ce243} 
+Particle\+System Procedural\+Airflow.\+ps}
+
+
+
+Airflow particle system, if null script generates new particle system. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00050}{50}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a87b3e127c27ec56ceb460c04cfbab777}\index{ProceduralAirflow@{ProceduralAirflow}!rotation@{rotation}}
+\index{rotation@{rotation}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{rotation}{rotation}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a87b3e127c27ec56ceb460c04cfbab777} 
+float Procedural\+Airflow.\+rotation = 0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+z rotation for arrows update loop 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00075}{75}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_accc798171f724404dbbfa837ce3b4932}\index{ProceduralAirflow@{ProceduralAirflow}!sideFlags@{sideFlags}}
+\index{sideFlags@{sideFlags}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{sideFlags}{sideFlags}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_accc798171f724404dbbfa837ce3b4932} 
+List$<$bool$>$ Procedural\+Airflow.\+side\+Flags = new List$<$bool$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parallel List to buffer to store side flags, true = above wing, falase = below wing. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00073}{73}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_afc09dede145d3c1ef3b35d5b9984f7d8}\index{ProceduralAirflow@{ProceduralAirflow}!thrusAnchor@{thrusAnchor}}
+\index{thrusAnchor@{thrusAnchor}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{thrusAnchor}{thrusAnchor}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_afc09dede145d3c1ef3b35d5b9984f7d8} 
+Transform Procedural\+Airflow.\+thrus\+Anchor}
+
+
+
+Transform for thrust arrow generation. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00036}{36}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a3d47a854cdfe91d14b2105e3ff939006}\index{ProceduralAirflow@{ProceduralAirflow}!thrustArrow@{thrustArrow}}
+\index{thrustArrow@{thrustArrow}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{thrustArrow}{thrustArrow}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a3d47a854cdfe91d14b2105e3ff939006} 
+Game\+Object Procedural\+Airflow.\+thrust\+Arrow\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instance of the thrust force arrow game object. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00079}{79}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a82e6315db54d7f343b9b1b4172210886}\index{ProceduralAirflow@{ProceduralAirflow}!thrustValues@{thrustValues}}
+\index{thrustValues@{thrustValues}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{thrustValues}{thrustValues}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a82e6315db54d7f343b9b1b4172210886} 
+float \mbox{[}$\,$\mbox{]} Procedural\+Airflow.\+thrust\+Values = \{ 1.\+0f, 1.\+2f, 1.\+5f, 1.\+6f, 1.\+0f, 0.\+6f \}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Parallel array to aoa\+Stages, stores multipliers to scale thrust\+Arrow. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00087}{87}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a35ccc55c5e6878e68d827fe559f5d3f6}\index{ProceduralAirflow@{ProceduralAirflow}!topMaxSpeed@{topMaxSpeed}}
+\index{topMaxSpeed@{topMaxSpeed}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{topMaxSpeed}{topMaxSpeed}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a35ccc55c5e6878e68d827fe559f5d3f6} 
+float Procedural\+Airflow.\+top\+Max\+Speed = 2f}
+
+
+
+Max speed for particles on top of the wing. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00058}{58}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a8f76b6f45346cec39e4a2112a198ac36}\index{ProceduralAirflow@{ProceduralAirflow}!topMinSpeed@{topMinSpeed}}
+\index{topMinSpeed@{topMinSpeed}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{topMinSpeed}{topMinSpeed}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a8f76b6f45346cec39e4a2112a198ac36} 
+float Procedural\+Airflow.\+top\+Min\+Speed = 1.\+5f}
+
+
+
+Min speed for particles on top of the wing. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00059}{59}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_abe4b22aa654acc664213473b5c504aaf}\index{ProceduralAirflow@{ProceduralAirflow}!trailDownForcePercent@{trailDownForcePercent}}
+\index{trailDownForcePercent@{trailDownForcePercent}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{trailDownForcePercent}{trailDownForcePercent}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_abe4b22aa654acc664213473b5c504aaf} 
+float Procedural\+Airflow.\+trail\+Down\+Force\+Percent = 0.\+2f}
+
+
+
+Percent of particle y direction to be maintained after trailing edge. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00066}{66}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_ac22293941f23eae5b6ace878af8172d6}\index{ProceduralAirflow@{ProceduralAirflow}!trailingEdge@{trailingEdge}}
+\index{trailingEdge@{trailingEdge}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{trailingEdge}{trailingEdge}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_ac22293941f23eae5b6ace878af8172d6} 
+Transform Procedural\+Airflow.\+trailing\+Edge}
+
+
+
+Transform located at wings trailing edge. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00030}{30}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a27f911dda96acb389d59664a1fa043ff}\index{ProceduralAirflow@{ProceduralAirflow}!useFixedDeltaInEditor@{useFixedDeltaInEditor}}
+\index{useFixedDeltaInEditor@{useFixedDeltaInEditor}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{useFixedDeltaInEditor}{useFixedDeltaInEditor}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a27f911dda96acb389d59664a1fa043ff} 
+bool Procedural\+Airflow.\+use\+Fixed\+Delta\+In\+Editor = true}
+
+
+
+Enable ariflow in the editor. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00067}{67}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a9183f5c4df257ca40e65cc63e9800c48}\index{ProceduralAirflow@{ProceduralAirflow}!velocities@{velocities}}
+\index{velocities@{velocities}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{velocities}{velocities}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a9183f5c4df257ca40e65cc63e9800c48} 
+List$<$Vector3$>$ Procedural\+Airflow.\+velocities = new List$<$Vector3$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parallel List to buffer to store individual velocities. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00072}{72}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a82fab4f32b18d76896a2659406e72f77}\index{ProceduralAirflow@{ProceduralAirflow}!weightAnchor@{weightAnchor}}
+\index{weightAnchor@{weightAnchor}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{weightAnchor}{weightAnchor}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a82fab4f32b18d76896a2659406e72f77} 
+Transform Procedural\+Airflow.\+weight\+Anchor}
+
+
+
+Transform for weight arrow generation. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00035}{35}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+\Hypertarget{class_procedural_airflow_a8dae8e4a225a83394038c38b81a57ad6}\index{ProceduralAirflow@{ProceduralAirflow}!weightArrow@{weightArrow}}
+\index{weightArrow@{weightArrow}!ProceduralAirflow@{ProceduralAirflow}}
+\doxysubsubsection{\texorpdfstring{weightArrow}{weightArrow}}
+{\footnotesize\ttfamily \label{class_procedural_airflow_a8dae8e4a225a83394038c38b81a57ad6} 
+Game\+Object Procedural\+Airflow.\+weight\+Arrow\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instance of the weight force arrow game object. 
+
+
+
+Definition at line \mbox{\hyperlink{_procedural_airflow_8cs_source_l00078}{78}} of file \mbox{\hyperlink{_procedural_airflow_8cs_source}{Procedural\+Airflow.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+DA\+\_\+40\+\_\+\+Special\+Features/\mbox{\hyperlink{_procedural_airflow_8cs}{Procedural\+Airflow.\+cs}}\end{DoxyCompactItemize}

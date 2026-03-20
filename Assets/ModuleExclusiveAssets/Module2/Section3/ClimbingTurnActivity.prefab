@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7838312705647658051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1006851325088529273}
+  - component: {fileID: 4838773031102529300}
+  m_Layer: 0
+  m_Name: ClimbingTurnActivity
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1006851325088529273
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7838312705647658051}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -23.76615, y: 0.01091, z: -6.27977}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4838773031102529300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7838312705647658051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1923ce82614980646a991b75c0cbda60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  postSlipStream: {fileID: 11400000, guid: 1fb7d177e6bf24b438d57dfd75e09c94, type: 2}
+  postBank: {fileID: 11400000, guid: 739ae5cd3d9b3244ebf166b2e39b8ade, type: 2}
+  postStall: {fileID: 11400000, guid: cb6645a1e9006f14b9eeee79518d94bd, type: 2}
+  rotationInput: {fileID: 5979926668809119104, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  bankSensitivity: 1
+  deadZone: 15
+  stepAdvanceTolerance: 3
+  useMouseClicks: 0
+  mouseRollSpeed: 1

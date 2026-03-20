@@ -1,0 +1,174 @@
+\doxysection{Module\+Manager.\+cs}
+\hypertarget{_module_manager_8cs_source}{}\label{_module_manager_8cs_source}\index{Assets/Scripts/ModuleStructure/ModuleManager.cs@{Assets/Scripts/ModuleStructure/ModuleManager.cs}}
+\mbox{\hyperlink{_module_manager_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine.Playables;}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine.Timeline;}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }UnityEngine.UI;}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00013}\mbox{\hyperlink{class_module_manager}{00013}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_module_manager}{ModuleManager}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00018}00018\ \ \ \ \ [System.Serializable]}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00019}\mbox{\hyperlink{class_module_manager_1_1_module}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_module_manager_1_1_module}{Module}}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00021}\mbox{\hyperlink{class_module_manager_1_1_module_a9fe4f7c4b950c0b7542c8c000883e0db}{00021}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_module_manager_1_1_module_a9fe4f7c4b950c0b7542c8c000883e0db}{name}};\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00022}\mbox{\hyperlink{class_module_manager_1_1_module_a877176ad61d2ffe27335cc9898fc5275}{00022}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<Section>\ \mbox{\hyperlink{class_module_manager_1_1_module_a877176ad61d2ffe27335cc9898fc5275}{sections}};\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00028}00028\ \ \ \ \ [System.Serializable]}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00029}\mbox{\hyperlink{class_module_manager_1_1_section}{00029}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_module_manager_1_1_section}{Section}}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00030}00030\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00031}\mbox{\hyperlink{class_module_manager_1_1_section_a02eba0230b253d94f7dd7fa517444362}{00031}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_module_manager_1_1_section_a02eba0230b253d94f7dd7fa517444362}{name}};}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00032}\mbox{\hyperlink{class_module_manager_1_1_section_a181cef90ce6d76c49a3369c304e4045a}{00032}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<PlayableDirector>\ \mbox{\hyperlink{class_module_manager_1_1_section_a181cef90ce6d76c49a3369c304e4045a}{timelines}};\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00033}\mbox{\hyperlink{class_module_manager_1_1_section_a3c8de639a8e4092c17e6252e46aca1e0}{00033}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<ModuleActivities>\ \mbox{\hyperlink{class_module_manager_1_1_section_a3c8de639a8e4092c17e6252e46aca1e0}{activities}};\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00036}\mbox{\hyperlink{class_module_manager_ad5aa308b6371230768697d7801075c45}{00036}}\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_module_activity_scheduler}{ModuleActivityScheduler}}\ \mbox{\hyperlink{class_module_manager_ad5aa308b6371230768697d7801075c45}{activityScheduler}};\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00037}\mbox{\hyperlink{class_module_manager_a08a427bc3d59be9fbacd6829181769cb}{00037}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Module>\ \mbox{\hyperlink{class_module_manager_a08a427bc3d59be9fbacd6829181769cb}{modules}}\ =\ \textcolor{keyword}{new}\ List<Module>();\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00039}\mbox{\hyperlink{class_module_manager_a36e070879809e767db1b401e9256c94c}{00039}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_module_manager_a36e070879809e767db1b401e9256c94c}{currentModuleIndex}}\ =\ 0;\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00040}\mbox{\hyperlink{class_module_manager_a21966cb38a4be07e91bbb0d2bd8d0d98}{00040}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_module_manager_a21966cb38a4be07e91bbb0d2bd8d0d98}{currentSectionIndex}}\ =\ 0;\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00041}\mbox{\hyperlink{class_module_manager_a78320ac7c9be86032f79f548c286b6c9}{00041}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_module_manager_a78320ac7c9be86032f79f548c286b6c9}{currentTimelineIndex}}\ =\ 0;\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00042}\mbox{\hyperlink{class_module_manager_a77228b8c7e2ac3ed3e7da464582c5170}{00042}}\ \ \ \ \ \textcolor{keyword}{private}\ PlayableDirector\ \mbox{\hyperlink{class_module_manager_a77228b8c7e2ac3ed3e7da464582c5170}{activeDirector}};\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00044}\mbox{\hyperlink{class_module_manager_a3a603d3b07953b8cda83bedb4a2b7107}{00044}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_module_manager_a3a603d3b07953b8cda83bedb4a2b7107}{waitingForActivity}}\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00046}\mbox{\hyperlink{class_module_manager_a8a364d7dc3411275d4e95cd92a7fb677}{00046}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_module_manager_a8a364d7dc3411275d4e95cd92a7fb677}{Start}}()}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00055}\mbox{\hyperlink{class_module_manager_a2fc4783efa775ad88ad6f7b951f3d864}{00055}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_module_manager_a2fc4783efa775ad88ad6f7b951f3d864}{PlayCurrentTimeline}}()}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00056}00056\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ var\ module\ =\ \mbox{\hyperlink{class_module_manager_a08a427bc3d59be9fbacd6829181769cb}{modules}}[\mbox{\hyperlink{class_module_manager_a36e070879809e767db1b401e9256c94c}{currentModuleIndex}}];}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ var\ section\ =\ module.sections[\mbox{\hyperlink{class_module_manager_a21966cb38a4be07e91bbb0d2bd8d0d98}{currentSectionIndex}}];}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ there\ are\ no\ timelines\ in\ the\ currently\ selected\ section,\ skip\ it}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (section.timelines.Count\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_ab291c05e9b2ab7ed1d0f24f92e236909}{NextSection}}();}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reassign\ current\ director,\ and\ play\ it}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a77228b8c7e2ac3ed3e7da464582c5170}{activeDirector}}\ =\ section.timelines[\mbox{\hyperlink{class_module_manager_a78320ac7c9be86032f79f548c286b6c9}{currentTimelineIndex}}];}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ activeDirector.stopped\ +=\ \mbox{\hyperlink{class_module_manager_afd5a598d10501c72285be17231a3b462}{OnTimelineFinished}};\ \textcolor{comment}{//\ This\ is\ a\ subscription\ to\ an\ event!\ When\ the\ timeline\ finishes\ (the\ timeline\ being\ a\ PlayableDirector)\ it\ will\ automatically\ call\ OnTimelineFinished()\ below}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a77228b8c7e2ac3ed3e7da464582c5170}{activeDirector}}.Play();}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00078}\mbox{\hyperlink{class_module_manager_afd5a598d10501c72285be17231a3b462}{00078}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_module_manager_afd5a598d10501c72285be17231a3b462}{OnTimelineFinished}}(PlayableDirector\ director)}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00079}00079\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_module_manager_a3a603d3b07953b8cda83bedb4a2b7107}{waitingForActivity}})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}Timeline\ finished:\ \{director\}"{}});}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}waitingForActivity:\ "{}}\ +\ \mbox{\hyperlink{class_module_manager_a3a603d3b07953b8cda83bedb4a2b7107}{waitingForActivity}});\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ director.stopped\ -\/=\ \mbox{\hyperlink{class_module_manager_afd5a598d10501c72285be17231a3b462}{OnTimelineFinished}};\ \textcolor{comment}{//\ This\ is\ an\ unsubscription\ to\ an\ event!\ This\ is\ just\ to\ ensure\ that\ we\ don't\ end\ up\ with\ multiple\ stacking\ event\ listeners.\ It's\ good\ practice}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ var\ section\ =\ \mbox{\hyperlink{class_module_manager_a08a427bc3d59be9fbacd6829181769cb}{modules}}[\mbox{\hyperlink{class_module_manager_a36e070879809e767db1b401e9256c94c}{currentModuleIndex}}].sections[\mbox{\hyperlink{class_module_manager_a21966cb38a4be07e91bbb0d2bd8d0d98}{currentSectionIndex}}];}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ to\ see\ if\ there\ exists\ an\ activity\ for\ this\ timeline}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_activities}{ModuleActivities}}\ activityForTimeline\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (section.activities\ !=\ \textcolor{keyword}{null}\ \&\&\ \mbox{\hyperlink{class_module_manager_a78320ac7c9be86032f79f548c286b6c9}{currentTimelineIndex}}\ <\ section.activities.Count)}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ activityForTimeline\ =\ section.activities[\mbox{\hyperlink{class_module_manager_a78320ac7c9be86032f79f548c286b6c9}{currentTimelineIndex}}];}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}activityForTimeline:\ "{}}\ +\ activityForTimeline);}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (activityForTimeline\ !=\ \textcolor{keyword}{null}\ \&\&\ !\mbox{\hyperlink{class_module_manager_a3a603d3b07953b8cda83bedb4a2b7107}{waitingForActivity}})}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a3a603d3b07953b8cda83bedb4a2b7107}{waitingForActivity}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}Activity\ has\ started:\ \{activityForTimeline\}"{}});}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a3e2c8c163a10d082da43cc86c29d4dca}{StartActivity}}(activityForTimeline);}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ we\ get\ here,\ there\ is\ no\ activity\ and\ we\ can\ skip\ directly\ to\ the\ next\ timeline}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a3a603d3b07953b8cda83bedb4a2b7107}{waitingForActivity}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a734a26725022dd96d7c87ce4fa597c0e}{NextTimeline}}();}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00116}\mbox{\hyperlink{class_module_manager_a3e2c8c163a10d082da43cc86c29d4dca}{00116}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_module_manager_a3e2c8c163a10d082da43cc86c29d4dca}{StartActivity}}(\mbox{\hyperlink{class_module_activities}{ModuleActivities}}\ activity)}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00117}00117\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Skip\ if\ no\ activities\ are\ assigned}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (activity\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a84555f55d269e5c76a466eaf3e27a68d}{OnActivityComplete}}();}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Talk\ to\ the\ activity\ scheduler\ and\ send\ the\ activity\ for\ this\ section}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_ad5aa308b6371230768697d7801075c45}{activityScheduler}}.StartActivity(activity,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00127}00127\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00133}\mbox{\hyperlink{class_module_manager_a84555f55d269e5c76a466eaf3e27a68d}{00133}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_module_manager_a84555f55d269e5c76a466eaf3e27a68d}{OnActivityComplete}}()}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00134}00134\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a3a603d3b07953b8cda83bedb4a2b7107}{waitingForActivity}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a734a26725022dd96d7c87ce4fa597c0e}{NextTimeline}}();}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00137}00137\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00143}\mbox{\hyperlink{class_module_manager_a734a26725022dd96d7c87ce4fa597c0e}{00143}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_module_manager_a734a26725022dd96d7c87ce4fa597c0e}{NextTimeline}}()}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00144}00144\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ var\ section\ =\ \mbox{\hyperlink{class_module_manager_a08a427bc3d59be9fbacd6829181769cb}{modules}}[\mbox{\hyperlink{class_module_manager_a36e070879809e767db1b401e9256c94c}{currentModuleIndex}}].sections[\mbox{\hyperlink{class_module_manager_a21966cb38a4be07e91bbb0d2bd8d0d98}{currentSectionIndex}}];}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a78320ac7c9be86032f79f548c286b6c9}{currentTimelineIndex}}++;}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_module_manager_a78320ac7c9be86032f79f548c286b6c9}{currentTimelineIndex}}\ >=\ section.timelines.Count)}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_ab291c05e9b2ab7ed1d0f24f92e236909}{NextSection}}();}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a2fc4783efa775ad88ad6f7b951f3d864}{PlayCurrentTimeline}}();}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00155}00155\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00161}\mbox{\hyperlink{class_module_manager_ab291c05e9b2ab7ed1d0f24f92e236909}{00161}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_module_manager_ab291c05e9b2ab7ed1d0f24f92e236909}{NextSection}}()}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00162}00162\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a78320ac7c9be86032f79f548c286b6c9}{currentTimelineIndex}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a21966cb38a4be07e91bbb0d2bd8d0d98}{currentSectionIndex}}++;}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ var\ module\ =\ \mbox{\hyperlink{class_module_manager_a08a427bc3d59be9fbacd6829181769cb}{modules}}[\mbox{\hyperlink{class_module_manager_a36e070879809e767db1b401e9256c94c}{currentModuleIndex}}];}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_module_manager_a21966cb38a4be07e91bbb0d2bd8d0d98}{currentSectionIndex}}\ >=\ module.sections.Count)}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_ab5f5a8f3cbdcd4069bf4602b4a10bcea}{NextModule}}();}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a2fc4783efa775ad88ad6f7b951f3d864}{PlayCurrentTimeline}}();}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00174}00174\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00180}\mbox{\hyperlink{class_module_manager_ab5f5a8f3cbdcd4069bf4602b4a10bcea}{00180}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_module_manager_ab5f5a8f3cbdcd4069bf4602b4a10bcea}{NextModule}}()}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00181}00181\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a21966cb38a4be07e91bbb0d2bd8d0d98}{currentSectionIndex}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a78320ac7c9be86032f79f548c286b6c9}{currentTimelineIndex}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a36e070879809e767db1b401e9256c94c}{currentModuleIndex}}++;}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_module_manager_a36e070879809e767db1b401e9256c94c}{currentModuleIndex}}\ >=\ \mbox{\hyperlink{class_module_manager_a08a427bc3d59be9fbacd6829181769cb}{modules}}.Count)}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Last\ module\ completed.}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a2fc4783efa775ad88ad6f7b951f3d864}{PlayCurrentTimeline}}();}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00194}00194\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00201}\mbox{\hyperlink{class_module_manager_aa8cd40defadea52fc0925a7a5998ac7d}{00201}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_module_manager_aa8cd40defadea52fc0925a7a5998ac7d}{PlayModule}}(\textcolor{keywordtype}{int}\ moduleIndex)}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00202}00202\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (moduleIndex\ <\ 0\ ||\ moduleIndex\ >=\ \mbox{\hyperlink{class_module_manager_a08a427bc3d59be9fbacd6829181769cb}{modules}}.Count)}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a36e070879809e767db1b401e9256c94c}{currentModuleIndex}}\ =\ moduleIndex;}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a21966cb38a4be07e91bbb0d2bd8d0d98}{currentSectionIndex}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a78320ac7c9be86032f79f548c286b6c9}{currentTimelineIndex}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_module_manager_a2fc4783efa775ad88ad6f7b951f3d864}{PlayCurrentTimeline}}();}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00213}00213\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_module_manager_8cs_source_l00214}00214\ \}}
+
+\end{DoxyCode}

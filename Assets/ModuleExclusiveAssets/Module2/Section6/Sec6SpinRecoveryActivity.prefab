@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1016961114638389524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7449348865556620934}
+  - component: {fileID: 4775770942125292467}
+  m_Layer: 0
+  m_Name: Sec6SpinRecoveryActivity
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7449348865556620934
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016961114638389524}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -347.96063, y: 43.5636, z: -2494.0608}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4775770942125292467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016961114638389524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bec28b04aa3e23469c9a2ce80b5938f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throttleCanvasPrefab: {fileID: 3804156210919158291, guid: e0e8a034ee267c8468ebb5602364849b, type: 3}
+  pareStepTimelineAssets:
+  - {fileID: 11400000, guid: 5b69ccfe78c55c74e87a499b9997e693, type: 2}
+  - {fileID: 11400000, guid: e8c856fd99b6dbe418d838e0385f593e, type: 2}
+  - {fileID: 11400000, guid: 1801d0403aefd39448e5e833c0a0709a, type: 2}
+  - {fileID: 11400000, guid: 7bb885a64ec041b48a9c9e9fe581802b, type: 2}
+  rotationInput: {fileID: 5979926668809119104, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  throttleInput: {fileID: 7244459069281977599, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  controlSensitivity: 1
+  deadZone: 20
+  spinDirectionRight: 1
+  spinRotationSpeed: 180
+  initialSpinBank: 60
+  initialSpinAOA: 25
+  useMouseInput: 0
+  mouseControlSpeed: 10000

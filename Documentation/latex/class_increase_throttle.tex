@@ -1,0 +1,192 @@
+\doxysection{Increase\+Throttle Class Reference}
+\hypertarget{class_increase_throttle}{}\label{class_increase_throttle}\index{IncreaseThrottle@{IncreaseThrottle}}
+
+
+Inheritance diagram for Increase\+Throttle\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_increase_throttle__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Increase\+Throttle\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_increase_throttle__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_increase_throttle_a55fc8109cb466c8f1192e8bb35f208cf}{Start\+Activity}} ()
+\begin{DoxyCompactList}\small\item\em Each child activity can have a differing implementation of what must be carried out/what inputs must be switched on when the activity starts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Input\+Action\+Reference \mbox{\hyperlink{class_increase_throttle_a3c707e046398c50ac1e6965398690a91}{input\+Action}}
+\item 
+float \mbox{\hyperlink{class_increase_throttle_a9fa87553ea5eb6a34c5ca72a4c9fa78c}{throttle\+Threshold}} = 0.\+1f
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} \mbox{\hyperlink{class_increase_throttle_a529c5aec5c51932d640616e481ca83bc}{mas}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_increase_throttle_ab2e9c85c89199f220a93d9cfa11a2054}{On\+Enable}} ()
+\item 
+void \mbox{\hyperlink{class_increase_throttle_a5f9d3d806e85b32033577179d52097c3}{On\+Disable}} ()
+\item 
+void \mbox{\hyperlink{class_increase_throttle_a24bb4e832543f862020aba76db2d23d0}{On\+Pad\+Moved}} (Input\+Action.\+Callback\+Context ctx)
+\item 
+void \mbox{\hyperlink{class_increase_throttle_a937aa4b1fbbae8d0db924f884e977537}{On\+Pad\+Released}} (Input\+Action.\+Callback\+Context ctx)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_increase_throttle_a6bc335e6c3d12aa6fe2a5206f6715b20}{activity\+Enabled}} = false
+\item 
+bool \mbox{\hyperlink{class_increase_throttle_adde737023a17800b925006adad4d5d7f}{has\+Triggered}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_increase_throttle_8cs_source_l00004}{4}} of file \mbox{\hyperlink{_increase_throttle_8cs_source}{Increase\+Throttle.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_increase_throttle_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_increase_throttle_a5f9d3d806e85b32033577179d52097c3}\index{IncreaseThrottle@{IncreaseThrottle}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!IncreaseThrottle@{IncreaseThrottle}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily \label{class_increase_throttle_a5f9d3d806e85b32033577179d52097c3} 
+void Increase\+Throttle.\+On\+Disable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_increase_throttle_8cs_source_l00026}{26}} of file \mbox{\hyperlink{_increase_throttle_8cs_source}{Increase\+Throttle.\+cs}}.
+
+\Hypertarget{class_increase_throttle_ab2e9c85c89199f220a93d9cfa11a2054}\index{IncreaseThrottle@{IncreaseThrottle}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!IncreaseThrottle@{IncreaseThrottle}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily \label{class_increase_throttle_ab2e9c85c89199f220a93d9cfa11a2054} 
+void Increase\+Throttle.\+On\+Enable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_increase_throttle_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_increase_throttle_8cs_source}{Increase\+Throttle.\+cs}}.
+
+\Hypertarget{class_increase_throttle_a24bb4e832543f862020aba76db2d23d0}\index{IncreaseThrottle@{IncreaseThrottle}!OnPadMoved@{OnPadMoved}}
+\index{OnPadMoved@{OnPadMoved}!IncreaseThrottle@{IncreaseThrottle}}
+\doxysubsubsection{\texorpdfstring{OnPadMoved()}{OnPadMoved()}}
+{\footnotesize\ttfamily \label{class_increase_throttle_a24bb4e832543f862020aba76db2d23d0} 
+void Increase\+Throttle.\+On\+Pad\+Moved (\begin{DoxyParamCaption}\item[{Input\+Action.\+Callback\+Context}]{ctx}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_increase_throttle_8cs_source_l00043}{43}} of file \mbox{\hyperlink{_increase_throttle_8cs_source}{Increase\+Throttle.\+cs}}.
+
+\Hypertarget{class_increase_throttle_a937aa4b1fbbae8d0db924f884e977537}\index{IncreaseThrottle@{IncreaseThrottle}!OnPadReleased@{OnPadReleased}}
+\index{OnPadReleased@{OnPadReleased}!IncreaseThrottle@{IncreaseThrottle}}
+\doxysubsubsection{\texorpdfstring{OnPadReleased()}{OnPadReleased()}}
+{\footnotesize\ttfamily \label{class_increase_throttle_a937aa4b1fbbae8d0db924f884e977537} 
+void Increase\+Throttle.\+On\+Pad\+Released (\begin{DoxyParamCaption}\item[{Input\+Action.\+Callback\+Context}]{ctx}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_increase_throttle_8cs_source_l00074}{74}} of file \mbox{\hyperlink{_increase_throttle_8cs_source}{Increase\+Throttle.\+cs}}.
+
+\Hypertarget{class_increase_throttle_a55fc8109cb466c8f1192e8bb35f208cf}\index{IncreaseThrottle@{IncreaseThrottle}!StartActivity@{StartActivity}}
+\index{StartActivity@{StartActivity}!IncreaseThrottle@{IncreaseThrottle}}
+\doxysubsubsection{\texorpdfstring{StartActivity()}{StartActivity()}}
+{\footnotesize\ttfamily \label{class_increase_throttle_a55fc8109cb466c8f1192e8bb35f208cf} 
+void Increase\+Throttle.\+Start\+Activity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Each child activity can have a differing implementation of what must be carried out/what inputs must be switched on when the activity starts. 
+
+Override this method for new activity scripts. 
+
+Implements \mbox{\hyperlink{interface_i_activity_controller_a5edbf7511d4b716c7e5de8d2c0c261a0}{IActivity\+Controller}}.
+
+
+
+Definition at line \mbox{\hyperlink{_increase_throttle_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_increase_throttle_8cs_source}{Increase\+Throttle.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_increase_throttle_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_increase_throttle_a6bc335e6c3d12aa6fe2a5206f6715b20}\index{IncreaseThrottle@{IncreaseThrottle}!activityEnabled@{activityEnabled}}
+\index{activityEnabled@{activityEnabled}!IncreaseThrottle@{IncreaseThrottle}}
+\doxysubsubsection{\texorpdfstring{activityEnabled}{activityEnabled}}
+{\footnotesize\ttfamily \label{class_increase_throttle_a6bc335e6c3d12aa6fe2a5206f6715b20} 
+bool Increase\+Throttle.\+activity\+Enabled = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_increase_throttle_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_increase_throttle_8cs_source}{Increase\+Throttle.\+cs}}.
+
+\Hypertarget{class_increase_throttle_adde737023a17800b925006adad4d5d7f}\index{IncreaseThrottle@{IncreaseThrottle}!hasTriggered@{hasTriggered}}
+\index{hasTriggered@{hasTriggered}!IncreaseThrottle@{IncreaseThrottle}}
+\doxysubsubsection{\texorpdfstring{hasTriggered}{hasTriggered}}
+{\footnotesize\ttfamily \label{class_increase_throttle_adde737023a17800b925006adad4d5d7f} 
+bool Increase\+Throttle.\+has\+Triggered = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_increase_throttle_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_increase_throttle_8cs_source}{Increase\+Throttle.\+cs}}.
+
+\Hypertarget{class_increase_throttle_a3c707e046398c50ac1e6965398690a91}\index{IncreaseThrottle@{IncreaseThrottle}!inputAction@{inputAction}}
+\index{inputAction@{inputAction}!IncreaseThrottle@{IncreaseThrottle}}
+\doxysubsubsection{\texorpdfstring{inputAction}{inputAction}}
+{\footnotesize\ttfamily \label{class_increase_throttle_a3c707e046398c50ac1e6965398690a91} 
+Input\+Action\+Reference Increase\+Throttle.\+input\+Action}
+
+
+
+Definition at line \mbox{\hyperlink{_increase_throttle_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_increase_throttle_8cs_source}{Increase\+Throttle.\+cs}}.
+
+\Hypertarget{class_increase_throttle_a9fa87553ea5eb6a34c5ca72a4c9fa78c}\index{IncreaseThrottle@{IncreaseThrottle}!throttleThreshold@{throttleThreshold}}
+\index{throttleThreshold@{throttleThreshold}!IncreaseThrottle@{IncreaseThrottle}}
+\doxysubsubsection{\texorpdfstring{throttleThreshold}{throttleThreshold}}
+{\footnotesize\ttfamily \label{class_increase_throttle_a9fa87553ea5eb6a34c5ca72a4c9fa78c} 
+float Increase\+Throttle.\+throttle\+Threshold = 0.\+1f}
+
+
+
+Definition at line \mbox{\hyperlink{_increase_throttle_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_increase_throttle_8cs_source}{Increase\+Throttle.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_increase_throttle_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_increase_throttle_a529c5aec5c51932d640616e481ca83bc}\index{IncreaseThrottle@{IncreaseThrottle}!mas@{mas}}
+\index{mas@{mas}!IncreaseThrottle@{IncreaseThrottle}}
+\doxysubsubsection{\texorpdfstring{mas}{mas}}
+{\footnotesize\ttfamily \label{class_increase_throttle_a529c5aec5c51932d640616e481ca83bc} 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} Increase\+Throttle.\+mas\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_increase_throttle_8cs_source_l00006}{6}} of file \mbox{\hyperlink{_increase_throttle_8cs_source}{Increase\+Throttle.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Module\+Exclusive\+Assets/\+Module2/\+Section2/\+NEW/\mbox{\hyperlink{_increase_throttle_8cs}{Increase\+Throttle.\+cs}}\end{DoxyCompactItemize}

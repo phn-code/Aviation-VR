@@ -1,0 +1,649 @@
+\doxysection{Descending\+Turn\+Activity Class Reference}
+\hypertarget{class_descending_turn_activity}{}\label{class_descending_turn_activity}\index{DescendingTurnActivity@{DescendingTurnActivity}}
+
+
+Descending turn training activity controller.  
+
+
+
+
+Inheritance diagram for Descending\+Turn\+Activity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_descending_turn_activity__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Descending\+Turn\+Activity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_descending_turn_activity__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_descending_turn_activity_a7fb11a6c5b62cc414c7cfed8d418044b}{On\+Enable}} ()
+\begin{DoxyCompactList}\small\item\em Initialize activity on component enable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_descending_turn_activity_a0d3f6d81ca5114c9eea30e95cc3ca5f2}{On\+Disable}} ()
+\begin{DoxyCompactList}\small\item\em Cleanup activity on component disable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_descending_turn_activity_a82335a585e197c76ea724fa05773e6ce}{Start\+Activity}} ()
+\begin{DoxyCompactList}\small\item\em Start the activity when triggered by \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_descending_turn_activity_aef32cc39e50837e118c46820584d651b}{Enable\+Current\+Step}} ()
+\begin{DoxyCompactList}\small\item\em Unlock input for the current training step. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_descending_turn_activity_a7036613691c598d70fe882e5b85f26fd}{Check\+Setup\+Complete}} ()
+\begin{DoxyCompactList}\small\item\em Check if initial setup positioning is complete. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_descending_turn_activity_af7bc7acd1dd85dd209284d63adc4d32d}{Handle\+Bank\+And\+Pitch}} ()
+\begin{DoxyCompactList}\small\item\em Handle simultaneous bank and pitch training step. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_descending_turn_activity_a9714f7f619df146817b60e19d8950adb}{Handle\+Pitch}} ()
+\begin{DoxyCompactList}\small\item\em Handle pitch recovery training step. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_descending_turn_activity_a16eea379fdfa48b79e4ead58970baf33}{Handle\+Stall}} ()
+\begin{DoxyCompactList}\small\item\em Handle automated stall demonstration step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Timeline\+Asset \mbox{\hyperlink{class_descending_turn_activity_a552d5a85336fcdc99bdc68a864a3ebb4}{post\+Bank\+And\+Pitch}}
+\begin{DoxyCompactList}\small\item\em Timeline played after achieving bank and pitch targets. \end{DoxyCompactList}\item 
+Timeline\+Asset \mbox{\hyperlink{class_descending_turn_activity_aadad888c24f758bbb0a6d24e2f1efc79}{post\+Pitch\+Up}}
+\begin{DoxyCompactList}\small\item\em Timeline played after pitch recovery. \end{DoxyCompactList}\item 
+Timeline\+Asset \mbox{\hyperlink{class_descending_turn_activity_aa8438ce6b2c92d93e09a64c177da67f8}{post\+Stall}}
+\begin{DoxyCompactList}\small\item\em Timeline demonstrating stall scenario. \end{DoxyCompactList}\item 
+Input\+Action\+Reference \mbox{\hyperlink{class_descending_turn_activity_ab75cadcb7a9809ea913c890523a8aa85}{rotation\+Input}}
+\begin{DoxyCompactList}\small\item\em VR controller rotation input action for aircraft control. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_descending_turn_activity_a20d96c522d4a08d1161da9b31a9128d3}{bank\+Sensitivity}} = 45f
+\begin{DoxyCompactList}\small\item\em Roll/pitch sensitivity multiplier for controller input. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_descending_turn_activity_a163ac041aff8a83adb13f8927ccab21d}{dead\+Zone}} = 0.\+1f
+\begin{DoxyCompactList}\small\item\em Controller deadzone threshold in degrees to filter noise. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_descending_turn_activity_a4dc90d71853e3a81d89577aa69ff9ca3}{step\+Advance\+Tolerance}} = 3f
+\begin{DoxyCompactList}\small\item\em Tolerance in degrees for achieving target angles before advancing. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_descending_turn_activity_a9a8874ea3ada73532eb954ae60afe229}{use\+Mouse\+Clicks}} = true
+\begin{DoxyCompactList}\small\item\em Enable mouse button control for testing without VR. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_descending_turn_activity_a96519f398c2435b3273828d16e39b711}{mouse\+Roll\+Speed}} = 10f
+\begin{DoxyCompactList}\small\item\em Speed multiplier for mouse-\/based roll/pitch control. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} \mbox{\hyperlink{class_descending_turn_activity_ae7ffb8ddf96776eeb5372a40bbeb8675}{mas}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Reference to singleton activity scheduler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9}{Turn\+Step}} \{ \newline
+\mbox{\hyperlink{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9a1a58ce6aff61084377080bddf1808647}{Initial\+Setup}}
+, \mbox{\hyperlink{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9a119c06906cbdebcd08c6b81ea796f010}{Bank\+And\+Pitch}}
+, \mbox{\hyperlink{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9a0001fa34328ad6c9dd04d6459cefb1d8}{Pitch\+Up}}
+, \mbox{\hyperlink{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9aa0f50ad4a913f4008911c70870d4028b}{Stall}}
+, \newline
+\mbox{\hyperlink{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9aae94f80b3ce82062a5dd7815daa04f9d}{Complete}}
+, \mbox{\hyperlink{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9a9c07b0baeef945c86b6b65569feb5ecb}{Playing\+Timeline}}
+ \}
+\begin{DoxyCompactList}\small\item\em Training progression states. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_descending_turn_activity_abbe73927bce34e78e6338eefaa2fbf07}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Main update loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Quaternion \mbox{\hyperlink{class_descending_turn_activity_a45c5af842851fb2aac18d1c9b41a48af}{controller\+Origin}} = Quaternion.\+identity
+\begin{DoxyCompactList}\small\item\em Initial controller orientation captured at step start. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_descending_turn_activity_a1ef444f507444c64e6992521f42820c6}{has\+Controller\+Origin}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if controller origin has been captured this step. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_descending_turn_activity_af2de6c9b668f73eb78bbe9fb36c9c50f}{has\+Notified\+MAS}} = false
+\begin{DoxyCompactList}\small\item\em Failsafe flag to prevent multiple completion notifications to scheduler. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_descending_turn_activity_ae04c7907839bd6e2e44bff4213c27dcb}{roll\+Input\+Locked}} = false
+\begin{DoxyCompactList}\small\item\em Flag to disable roll input during transitions and timelines. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_descending_turn_activity_a8bdeffa756510e3899bdba04c4ef035c}{pitch\+Input\+Locked}} = false
+\begin{DoxyCompactList}\small\item\em Flag to disable pitch input during transitions and timelines. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9}{Turn\+Step}} \mbox{\hyperlink{class_descending_turn_activity_a0e6f9a55f1e8d63693b7b371a44964b4}{current\+Step}}
+\begin{DoxyCompactList}\small\item\em Current training step in the activity sequence. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_descending_turn_activity_a357bc1c5fc2cc066431dd17d5dbb76f7}{current\+Bank}} = 0f
+\begin{DoxyCompactList}\small\item\em Current aircraft bank angle in degrees, updated each frame. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} \mbox{\hyperlink{class_descending_turn_activity_a5ef77d06d6a198c238fe2ceac1d1ec99}{aoa\+Manipulator}}
+\begin{DoxyCompactList}\small\item\em Controller for aircraft pitch and roll manipulation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bank_ghost_trail_behaviour}{Bank\+Ghost\+Trail\+Behaviour}} \mbox{\hyperlink{class_descending_turn_activity_aef6656ce77914a36b67f47393c9d5f20}{bank\+Ghost\+Trail}}
+\begin{DoxyCompactList}\small\item\em Visual trail effect showing aircraft bank history. \end{DoxyCompactList}\item 
+Playable\+Director \mbox{\hyperlink{class_descending_turn_activity_a0e3e6d1f3a43f7d190270793d54ce095}{post\+Bank\+And\+Pitch\+Director}}
+\begin{DoxyCompactList}\small\item\em Playable\+Director for post bank-\/and-\/pitch timeline. \end{DoxyCompactList}\item 
+Playable\+Director \mbox{\hyperlink{class_descending_turn_activity_a64f246921a8e6d88bd1ff4122042054c}{post\+Pitch\+Up\+Director}}
+\begin{DoxyCompactList}\small\item\em Playable\+Director for post pitch-\/up timeline. \end{DoxyCompactList}\item 
+Playable\+Director \mbox{\hyperlink{class_descending_turn_activity_a098b8522dbcf6d9579c52aac6800feff}{post\+Stall\+Director}}
+\begin{DoxyCompactList}\small\item\em Playable\+Director for stall demonstration timeline. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Descending turn training activity controller. 
+
+Manages a multi-\/step descending turn exercise where users practice simultaneous banking and pitch control, followed by recovery and stall demonstration. Implements the \doxylink{interface_i_activity_controller}{IActivity\+Controller} interface for integration with the \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler} system.
+
+Training sequence\+:
+\begin{DoxyEnumerate}
+\item Initial Setup -\/ Automatically positions aircraft to -\/10 pitch
+\item Bank and Pitch -\/ User simultaneously achieves 30 bank and -\/5 pitch (descending turn)
+\item Pitch Up -\/ User recovers from descent by pitching up to +5
+\item Stall -\/ Automated stall demonstration timeline
+\item Complete -\/ Activity finished, notifies scheduler
+\end{DoxyEnumerate}
+
+\begin{DoxyAuthor}{Author}
+Connor Freebairn \texorpdfstring{$\vert$}{|} \href{mailto:frecd002@mymail.unisa.edu.au}{\texttt{frecd002@mymail.\+unisa.\+edu.\+au}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00022}{22}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+
+
+\label{doc-enum-members}
+\Hypertarget{class_descending_turn_activity_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9}\index{DescendingTurnActivity@{DescendingTurnActivity}!TurnStep@{TurnStep}}
+\index{TurnStep@{TurnStep}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{TurnStep}{TurnStep}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9} 
+enum \mbox{\hyperlink{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9}{Descending\+Turn\+Activity.\+Turn\+Step}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Training progression states. 
+
+Defines the sequence of training steps in the descending turn activity. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InitialSetup@{InitialSetup}!DescendingTurnActivity@{DescendingTurnActivity}}\index{DescendingTurnActivity@{DescendingTurnActivity}!InitialSetup@{InitialSetup}}}\Hypertarget{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9a1a58ce6aff61084377080bddf1808647}\label{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9a1a58ce6aff61084377080bddf1808647} 
+Initial\+Setup&Automated positioning to starting pitch angle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BankAndPitch@{BankAndPitch}!DescendingTurnActivity@{DescendingTurnActivity}}\index{DescendingTurnActivity@{DescendingTurnActivity}!BankAndPitch@{BankAndPitch}}}\Hypertarget{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9a119c06906cbdebcd08c6b81ea796f010}\label{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9a119c06906cbdebcd08c6b81ea796f010} 
+Bank\+And\+Pitch&User performs simultaneous bank and pitch to descend. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PitchUp@{PitchUp}!DescendingTurnActivity@{DescendingTurnActivity}}\index{DescendingTurnActivity@{DescendingTurnActivity}!PitchUp@{PitchUp}}}\Hypertarget{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9a0001fa34328ad6c9dd04d6459cefb1d8}\label{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9a0001fa34328ad6c9dd04d6459cefb1d8} 
+Pitch\+Up&User recovers from descent by pitching up. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Stall@{Stall}!DescendingTurnActivity@{DescendingTurnActivity}}\index{DescendingTurnActivity@{DescendingTurnActivity}!Stall@{Stall}}}\Hypertarget{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9aa0f50ad4a913f4008911c70870d4028b}\label{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9aa0f50ad4a913f4008911c70870d4028b} 
+Stall&Automated stall demonstration. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Complete@{Complete}!DescendingTurnActivity@{DescendingTurnActivity}}\index{DescendingTurnActivity@{DescendingTurnActivity}!Complete@{Complete}}}\Hypertarget{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9aae94f80b3ce82062a5dd7815daa04f9d}\label{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9aae94f80b3ce82062a5dd7815daa04f9d} 
+Complete&Activity finished, awaiting cleanup. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PlayingTimeline@{PlayingTimeline}!DescendingTurnActivity@{DescendingTurnActivity}}\index{DescendingTurnActivity@{DescendingTurnActivity}!PlayingTimeline@{PlayingTimeline}}}\Hypertarget{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9a9c07b0baeef945c86b6b65569feb5ecb}\label{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9a9c07b0baeef945c86b6b65569feb5ecb} 
+Playing\+Timeline&Transitional state while timeline is playing. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00053}{53}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_descending_turn_activity_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_descending_turn_activity_a7036613691c598d70fe882e5b85f26fd}\index{DescendingTurnActivity@{DescendingTurnActivity}!CheckSetupComplete@{CheckSetupComplete}}
+\index{CheckSetupComplete@{CheckSetupComplete}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{CheckSetupComplete()}{CheckSetupComplete()}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a7036613691c598d70fe882e5b85f26fd} 
+void Descending\+Turn\+Activity.\+Check\+Setup\+Complete (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Check if initial setup positioning is complete. 
+
+Monitors the \doxylink{class_axis_rotation_controller}{Axis\+Rotation\+Controller} lerp operations to detect when the aircraft has finished moving to the initial -\/10 pitch position. Advances to Bank\+And\+Pitch step when both pitch and roll lerps are complete. 
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00187}{187}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_aef32cc39e50837e118c46820584d651b}\index{DescendingTurnActivity@{DescendingTurnActivity}!EnableCurrentStep@{EnableCurrentStep}}
+\index{EnableCurrentStep@{EnableCurrentStep}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{EnableCurrentStep()}{EnableCurrentStep()}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_aef32cc39e50837e118c46820584d651b} 
+void Descending\+Turn\+Activity.\+Enable\+Current\+Step (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Unlock input for the current training step. 
+
+Resets roll and pitch input locks and controller origin flag to allow user control. Called after transitions and timeline completions. 
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00139}{139}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_af7bc7acd1dd85dd209284d63adc4d32d}\index{DescendingTurnActivity@{DescendingTurnActivity}!HandleBankAndPitch@{HandleBankAndPitch}}
+\index{HandleBankAndPitch@{HandleBankAndPitch}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{HandleBankAndPitch()}{HandleBankAndPitch()}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_af7bc7acd1dd85dd209284d63adc4d32d} 
+void Descending\+Turn\+Activity.\+Handle\+Bank\+And\+Pitch (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handle simultaneous bank and pitch training step. 
+
+Captures controller origin on first frame, reads current bank and pitch angles, and independently tracks achievement of two targets\+:
+\begin{DoxyItemize}
+\item Roll\+: 30 bank angle
+\item Pitch\+: -\/5 angle (descending)
+\end{DoxyItemize}
+
+Each axis locks independently when its target is achieved. When both are locked, plays confirmation timeline and advances to pitch recovery step. Allows independent controller or debug mouse input for each unlocked axis. 
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00208}{208}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_a9714f7f619df146817b60e19d8950adb}\index{DescendingTurnActivity@{DescendingTurnActivity}!HandlePitch@{HandlePitch}}
+\index{HandlePitch@{HandlePitch}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{HandlePitch()}{HandlePitch()}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a9714f7f619df146817b60e19d8950adb} 
+void Descending\+Turn\+Activity.\+Handle\+Pitch (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handle pitch recovery training step. 
+
+Captures controller origin on first frame, reads current pitch angle, and checks if user has achieved +5 pitch target to recover from the descent. When target is reached, locks input, plays confirmation timeline, and advances to stall demonstration. Allows controller or debug mouse input when target not yet achieved. 
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00288}{288}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_a16eea379fdfa48b79e4ead58970baf33}\index{DescendingTurnActivity@{DescendingTurnActivity}!HandleStall@{HandleStall}}
+\index{HandleStall@{HandleStall}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{HandleStall()}{HandleStall()}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a16eea379fdfa48b79e4ead58970baf33} 
+void Descending\+Turn\+Activity.\+Handle\+Stall (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handle automated stall demonstration step. 
+
+Locks pitch input and immediately plays the stall demonstration timeline. Advances to completion state after timeline finishes. This is a passive demonstration step with no user input required. 
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00335}{335}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_a0d3f6d81ca5114c9eea30e95cc3ca5f2}\index{DescendingTurnActivity@{DescendingTurnActivity}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a0d3f6d81ca5114c9eea30e95cc3ca5f2} 
+void Descending\+Turn\+Activity.\+On\+Disable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cleanup activity on component disable. 
+
+Disables input actions and turns off visual trail effects. 
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00113}{113}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_a7fb11a6c5b62cc414c7cfed8d418044b}\index{DescendingTurnActivity@{DescendingTurnActivity}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a7fb11a6c5b62cc414c7cfed8d418044b} 
+void Descending\+Turn\+Activity.\+On\+Enable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize activity on component enable. 
+
+Enables input actions, resets progression state to initial values, retrieves references to aircraft controllers and visual effects, and finds Playable\+Directors for all timeline assets. Initializes aircraft to -\/10 pitch for descending turn start. 
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00084}{84}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_a82335a585e197c76ea724fa05773e6ce}\index{DescendingTurnActivity@{DescendingTurnActivity}!StartActivity@{StartActivity}}
+\index{StartActivity@{StartActivity}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{StartActivity()}{StartActivity()}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a82335a585e197c76ea724fa05773e6ce} 
+void Descending\+Turn\+Activity.\+Start\+Activity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Start the activity when triggered by \doxylink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}. 
+
+Called by the activity scheduler to begin the training sequence. Unlocks input for the first step. 
+
+Implements \mbox{\hyperlink{interface_i_activity_controller_a5edbf7511d4b716c7e5de8d2c0c261a0}{IActivity\+Controller}}.
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00128}{128}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_abbe73927bce34e78e6338eefaa2fbf07}\index{DescendingTurnActivity@{DescendingTurnActivity}!Update@{Update}}
+\index{Update@{Update}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_abbe73927bce34e78e6338eefaa2fbf07} 
+void Descending\+Turn\+Activity.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Main update loop. 
+
+Routes execution to appropriate handler based on current training step. Logs current step for debugging purposes. 
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00152}{152}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_descending_turn_activity_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_descending_turn_activity_a5ef77d06d6a198c238fe2ceac1d1ec99}\index{DescendingTurnActivity@{DescendingTurnActivity}!aoaManipulator@{aoaManipulator}}
+\index{aoaManipulator@{aoaManipulator}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{aoaManipulator}{aoaManipulator}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a5ef77d06d6a198c238fe2ceac1d1ec99} 
+\mbox{\hyperlink{class_axis_rotation_controller}{Axis\+Rotation\+Controller}} Descending\+Turn\+Activity.\+aoa\+Manipulator\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Controller for aircraft pitch and roll manipulation. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00069}{69}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_aef6656ce77914a36b67f47393c9d5f20}\index{DescendingTurnActivity@{DescendingTurnActivity}!bankGhostTrail@{bankGhostTrail}}
+\index{bankGhostTrail@{bankGhostTrail}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{bankGhostTrail}{bankGhostTrail}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_aef6656ce77914a36b67f47393c9d5f20} 
+\mbox{\hyperlink{class_bank_ghost_trail_behaviour}{Bank\+Ghost\+Trail\+Behaviour}} Descending\+Turn\+Activity.\+bank\+Ghost\+Trail\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Visual trail effect showing aircraft bank history. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00070}{70}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_a20d96c522d4a08d1161da9b31a9128d3}\index{DescendingTurnActivity@{DescendingTurnActivity}!bankSensitivity@{bankSensitivity}}
+\index{bankSensitivity@{bankSensitivity}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{bankSensitivity}{bankSensitivity}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a20d96c522d4a08d1161da9b31a9128d3} 
+float Descending\+Turn\+Activity.\+bank\+Sensitivity = 45f}
+
+
+
+Roll/pitch sensitivity multiplier for controller input. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00035}{35}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_a45c5af842851fb2aac18d1c9b41a48af}\index{DescendingTurnActivity@{DescendingTurnActivity}!controllerOrigin@{controllerOrigin}}
+\index{controllerOrigin@{controllerOrigin}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{controllerOrigin}{controllerOrigin}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a45c5af842851fb2aac18d1c9b41a48af} 
+Quaternion Descending\+Turn\+Activity.\+controller\+Origin = Quaternion.\+identity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initial controller orientation captured at step start. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00039}{39}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_a357bc1c5fc2cc066431dd17d5dbb76f7}\index{DescendingTurnActivity@{DescendingTurnActivity}!currentBank@{currentBank}}
+\index{currentBank@{currentBank}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{currentBank}{currentBank}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a357bc1c5fc2cc066431dd17d5dbb76f7} 
+float Descending\+Turn\+Activity.\+current\+Bank = 0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current aircraft bank angle in degrees, updated each frame. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00066}{66}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_a0e6f9a55f1e8d63693b7b371a44964b4}\index{DescendingTurnActivity@{DescendingTurnActivity}!currentStep@{currentStep}}
+\index{currentStep@{currentStep}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{currentStep}{currentStep}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a0e6f9a55f1e8d63693b7b371a44964b4} 
+\mbox{\hyperlink{class_descending_turn_activity_a0b4ed5e5caeecf6cad04902ba0d9c4c9}{Turn\+Step}} Descending\+Turn\+Activity.\+current\+Step\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current training step in the activity sequence. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00065}{65}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_a163ac041aff8a83adb13f8927ccab21d}\index{DescendingTurnActivity@{DescendingTurnActivity}!deadZone@{deadZone}}
+\index{deadZone@{deadZone}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{deadZone}{deadZone}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a163ac041aff8a83adb13f8927ccab21d} 
+float Descending\+Turn\+Activity.\+dead\+Zone = 0.\+1f}
+
+
+
+Controller deadzone threshold in degrees to filter noise. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00036}{36}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_a1ef444f507444c64e6992521f42820c6}\index{DescendingTurnActivity@{DescendingTurnActivity}!hasControllerOrigin@{hasControllerOrigin}}
+\index{hasControllerOrigin@{hasControllerOrigin}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{hasControllerOrigin}{hasControllerOrigin}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a1ef444f507444c64e6992521f42820c6} 
+bool Descending\+Turn\+Activity.\+has\+Controller\+Origin = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag indicating if controller origin has been captured this step. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00040}{40}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_af2de6c9b668f73eb78bbe9fb36c9c50f}\index{DescendingTurnActivity@{DescendingTurnActivity}!hasNotifiedMAS@{hasNotifiedMAS}}
+\index{hasNotifiedMAS@{hasNotifiedMAS}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{hasNotifiedMAS}{hasNotifiedMAS}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_af2de6c9b668f73eb78bbe9fb36c9c50f} 
+bool Descending\+Turn\+Activity.\+has\+Notified\+MAS = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Failsafe flag to prevent multiple completion notifications to scheduler. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00042}{42}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_a96519f398c2435b3273828d16e39b711}\index{DescendingTurnActivity@{DescendingTurnActivity}!mouseRollSpeed@{mouseRollSpeed}}
+\index{mouseRollSpeed@{mouseRollSpeed}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{mouseRollSpeed}{mouseRollSpeed}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a96519f398c2435b3273828d16e39b711} 
+float Descending\+Turn\+Activity.\+mouse\+Roll\+Speed = 10f}
+
+
+
+Speed multiplier for mouse-\/based roll/pitch control. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00046}{46}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_a8bdeffa756510e3899bdba04c4ef035c}\index{DescendingTurnActivity@{DescendingTurnActivity}!pitchInputLocked@{pitchInputLocked}}
+\index{pitchInputLocked@{pitchInputLocked}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{pitchInputLocked}{pitchInputLocked}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a8bdeffa756510e3899bdba04c4ef035c} 
+bool Descending\+Turn\+Activity.\+pitch\+Input\+Locked = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag to disable pitch input during transitions and timelines. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00064}{64}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_a552d5a85336fcdc99bdc68a864a3ebb4}\index{DescendingTurnActivity@{DescendingTurnActivity}!postBankAndPitch@{postBankAndPitch}}
+\index{postBankAndPitch@{postBankAndPitch}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{postBankAndPitch}{postBankAndPitch}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a552d5a85336fcdc99bdc68a864a3ebb4} 
+Timeline\+Asset Descending\+Turn\+Activity.\+post\+Bank\+And\+Pitch}
+
+
+
+Timeline played after achieving bank and pitch targets. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00027}{27}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_a0e3e6d1f3a43f7d190270793d54ce095}\index{DescendingTurnActivity@{DescendingTurnActivity}!postBankAndPitchDirector@{postBankAndPitchDirector}}
+\index{postBankAndPitchDirector@{postBankAndPitchDirector}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{postBankAndPitchDirector}{postBankAndPitchDirector}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a0e3e6d1f3a43f7d190270793d54ce095} 
+Playable\+Director Descending\+Turn\+Activity.\+post\+Bank\+And\+Pitch\+Director\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Playable\+Director for post bank-\/and-\/pitch timeline. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00073}{73}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_aadad888c24f758bbb0a6d24e2f1efc79}\index{DescendingTurnActivity@{DescendingTurnActivity}!postPitchUp@{postPitchUp}}
+\index{postPitchUp@{postPitchUp}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{postPitchUp}{postPitchUp}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_aadad888c24f758bbb0a6d24e2f1efc79} 
+Timeline\+Asset Descending\+Turn\+Activity.\+post\+Pitch\+Up}
+
+
+
+Timeline played after pitch recovery. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00028}{28}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_a64f246921a8e6d88bd1ff4122042054c}\index{DescendingTurnActivity@{DescendingTurnActivity}!postPitchUpDirector@{postPitchUpDirector}}
+\index{postPitchUpDirector@{postPitchUpDirector}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{postPitchUpDirector}{postPitchUpDirector}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a64f246921a8e6d88bd1ff4122042054c} 
+Playable\+Director Descending\+Turn\+Activity.\+post\+Pitch\+Up\+Director\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Playable\+Director for post pitch-\/up timeline. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00074}{74}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_aa8438ce6b2c92d93e09a64c177da67f8}\index{DescendingTurnActivity@{DescendingTurnActivity}!postStall@{postStall}}
+\index{postStall@{postStall}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{postStall}{postStall}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_aa8438ce6b2c92d93e09a64c177da67f8} 
+Timeline\+Asset Descending\+Turn\+Activity.\+post\+Stall}
+
+
+
+Timeline demonstrating stall scenario. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_a098b8522dbcf6d9579c52aac6800feff}\index{DescendingTurnActivity@{DescendingTurnActivity}!postStallDirector@{postStallDirector}}
+\index{postStallDirector@{postStallDirector}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{postStallDirector}{postStallDirector}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a098b8522dbcf6d9579c52aac6800feff} 
+Playable\+Director Descending\+Turn\+Activity.\+post\+Stall\+Director\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Playable\+Director for stall demonstration timeline. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00075}{75}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_ae04c7907839bd6e2e44bff4213c27dcb}\index{DescendingTurnActivity@{DescendingTurnActivity}!rollInputLocked@{rollInputLocked}}
+\index{rollInputLocked@{rollInputLocked}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{rollInputLocked}{rollInputLocked}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_ae04c7907839bd6e2e44bff4213c27dcb} 
+bool Descending\+Turn\+Activity.\+roll\+Input\+Locked = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag to disable roll input during transitions and timelines. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00063}{63}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_ab75cadcb7a9809ea913c890523a8aa85}\index{DescendingTurnActivity@{DescendingTurnActivity}!rotationInput@{rotationInput}}
+\index{rotationInput@{rotationInput}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{rotationInput}{rotationInput}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_ab75cadcb7a9809ea913c890523a8aa85} 
+Input\+Action\+Reference Descending\+Turn\+Activity.\+rotation\+Input}
+
+
+
+VR controller rotation input action for aircraft control. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_a4dc90d71853e3a81d89577aa69ff9ca3}\index{DescendingTurnActivity@{DescendingTurnActivity}!stepAdvanceTolerance@{stepAdvanceTolerance}}
+\index{stepAdvanceTolerance@{stepAdvanceTolerance}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{stepAdvanceTolerance}{stepAdvanceTolerance}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a4dc90d71853e3a81d89577aa69ff9ca3} 
+float Descending\+Turn\+Activity.\+step\+Advance\+Tolerance = 3f}
+
+
+
+Tolerance in degrees for achieving target angles before advancing. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+\Hypertarget{class_descending_turn_activity_a9a8874ea3ada73532eb954ae60afe229}\index{DescendingTurnActivity@{DescendingTurnActivity}!useMouseClicks@{useMouseClicks}}
+\index{useMouseClicks@{useMouseClicks}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{useMouseClicks}{useMouseClicks}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_a9a8874ea3ada73532eb954ae60afe229} 
+bool Descending\+Turn\+Activity.\+use\+Mouse\+Clicks = true}
+
+
+
+Enable mouse button control for testing without VR. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00045}{45}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_descending_turn_activity_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_descending_turn_activity_ae7ffb8ddf96776eeb5372a40bbeb8675}\index{DescendingTurnActivity@{DescendingTurnActivity}!mas@{mas}}
+\index{mas@{mas}!DescendingTurnActivity@{DescendingTurnActivity}}
+\doxysubsubsection{\texorpdfstring{mas}{mas}}
+{\footnotesize\ttfamily \label{class_descending_turn_activity_ae7ffb8ddf96776eeb5372a40bbeb8675} 
+\mbox{\hyperlink{class_module_activity_scheduler}{Module\+Activity\+Scheduler}} Descending\+Turn\+Activity.\+mas\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
+
+
+
+Reference to singleton activity scheduler. 
+
+
+
+Definition at line \mbox{\hyperlink{_descending_turn_activity_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_descending_turn_activity_8cs_source}{Descending\+Turn\+Activity.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Module\+Exclusive\+Assets/\+Module2/\+Section3/\mbox{\hyperlink{_descending_turn_activity_8cs}{Descending\+Turn\+Activity.\+cs}}\end{DoxyCompactItemize}
