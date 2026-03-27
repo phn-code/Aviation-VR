@@ -1,4 +1,0 @@
-repository "VRAviationTheory/VRAviationTheory@16768297587920@cloud"
-  path "/"
-    br "/main"
-    co "/main"
