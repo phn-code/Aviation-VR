@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activityName: Descending Turns
   instructions:
-  - Rotate left controller to apply 30 degrees of roll and -5 degrees of pitch
+  - Push forward to pitch down by -5 degrees
+  - Tilt the controller to the left to bank the aircraft by 30 degrees
   - Rotate left controller to apply +5 degrees of pitch
   usesCustomScript: 1
   customScript: {fileID: 3867888200257410541, guid: c7e50fa603539ce40a762767e0215c9f, type: 3}
   playerInputRequired: 1
-  totalSteps: 2
+  totalSteps: 3
   currentStep: 0

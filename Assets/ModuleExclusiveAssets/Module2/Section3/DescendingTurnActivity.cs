@@ -12,12 +12,14 @@ IActivityController interface for integration with the ModuleActivityScheduler s
 
 Training sequence:
 1. Initial Setup - Automatically positions aircraft to -10 pitch
-2. Bank and Pitch - User simultaneously achieves 30 bank and -5 pitch (descending turn)
-3. Pitch Up - User recovers from descent by pitching up to +5
-4. Stall - Automated stall demonstration timeline
-5. Complete - Activity finished, notifies scheduler
+2. Pitch - User pitches down by -5 degrees.
+3. Bank - User banks left by 30 degrees.
+4. Pitch Up - User recovers from descent by pitching up to +5
+5. Stall - Automated stall demonstration timeline
+6. Complete - Activity finished, notifies scheduler
 
 @author Connor Freebairn | frecd002@mymail.unisa.edu.au
+@author mahz | do not try to contact me.
 */
 public class DescendingTurnActivity : MonoBehaviour, IActivityController
 {
@@ -53,7 +55,8 @@ public class DescendingTurnActivity : MonoBehaviour, IActivityController
     private enum TurnStep
     {
         InitialSetup,       /**< Automated positioning to starting pitch angle */
-        BankAndPitch,       /**< User performs simultaneous bank and pitch to descend */
+        Pitch,              /** User pitches down by -5 degrees */
+        Bank,               /** User banks left by 30 degrees. */
         PitchUp,            /**< User recovers from descent by pitching up */
         Stall,              /**< Automated stall demonstration */
         Complete,           /**< Activity finished, awaiting cleanup */
@@ -157,8 +160,11 @@ public class DescendingTurnActivity : MonoBehaviour, IActivityController
             case TurnStep.InitialSetup:
                 CheckSetupComplete();
                 break;
-            case TurnStep.BankAndPitch:
-                HandleBankAndPitch();
+            case TurnStep.Pitch:
+                HandlePitchDown();
+                break;
+            case TurnStep.Bank:
+                HandleBank();
                 break;
             case TurnStep.PitchUp:
                 HandlePitch();
@@ -181,30 +187,97 @@ public class DescendingTurnActivity : MonoBehaviour, IActivityController
     Check if initial setup positioning is complete
     
     Monitors the AxisRotationController lerp operations to detect when the aircraft
-    has finished moving to the initial -10 pitch position. Advances to BankAndPitch
+    has finished moving to the initial -10 pitch position. Advances to Pitch 
     step when both pitch and roll lerps are complete.
     */
     public void CheckSetupComplete()
     {
         if (!aoaManipulator.IsLerpingPitch() && !aoaManipulator.IsLerpingRoll())
         {
-            currentStep = TurnStep.BankAndPitch;
+            currentStep = TurnStep.Pitch;
             EnableCurrentStep();
         }
     }
 
     /**
-    Handle simultaneous bank and pitch training step
+    Handle pitch down training step
     
-    Captures controller origin on first frame, reads current bank and pitch angles,
-    and independently tracks achievement of two targets:
-    - Roll: 30 bank angle
-    - Pitch: -5 angle (descending)
-    
-    Each axis locks independently when its target is achieved. When both are locked,
-    plays confirmation timeline and advances to pitch recovery step. Allows independent
-    controller or debug mouse input for each unlocked axis.
+    Captures controller origin on first frame, reads current pitch angle, and checks
+    if user has achieved -5 pitch target to begin descending. When target is reached,
+    locks input, advances to Bank step. Allows controller or debug mouse input when
+    target not yet achieved.
     */
+
+    public void HandlePitchDown () {
+        if (pitchInputLocked) return;
+
+        Quaternion currentRotation = rotationInput.action.ReadValue<Quaternion>();
+        if (!hasControllerOrigin){
+            controllerOrigin = currentRotation;
+            hasControllerOrigin = true;
+        }
+
+        float currentPitch = ActivityHelper.getNormalisedPlanePitch(aoaManipulator);
+
+        if (ActivityHelper.checkExactRotationTargetAchieved(currentPitch, -5f, stepAdvanceTolerance)){
+            Debug.Log($"Pitch down target achieved: {currentPitch}");
+            pitchInputLocked = true;
+            hasControllerOrigin = false;
+            aoaManipulator.LerpAOA(-5f, 0.5f);
+            currentStep = TurnStep.Bank;
+            EnableCurrentStep();
+            mas.OnExternalStepCompleted();
+        } else {
+            if (useMouseClicks){
+                ActivityHelper.DebugMouseControlPitchDown(mouseRollSpeed, aoaManipulator);
+            } else {
+                ActivityHelper.controllerPitchControl(bankSensitivity, aoaManipulator, rotationInput, deadZone, controllerOrigin.eulerAngles.x);
+            }
+        }
+    }
+
+     /**
+    Handle bank training step
+    
+    Captures controller origin on first frame, reads current bank angle, and checks
+    if user has achieved 30 degree bank target. When target is reached, locks input,
+    plays confirmation timeline, and advances to pitch recovery step. Allows controller
+    or debug mouse input when target not yet achieved.
+    */
+
+    public void HandleBank() {
+        if (rollInputLocked) return;
+
+        Quaternion currentRotation = rotationInput.action.ReadValue<Quaternion>();
+        if (!hasControllerOrigin){
+            controllerOrigin = currentRotation;
+            hasControllerOrigin = true;
+        }
+
+        float planeRoll = ActivityHelper.getNormalisedPlaneRoll(aoaManipulator);
+
+        if (ActivityHelper.checkExactRotationTargetAchieved(planeRoll, 30f, stepAdvanceTolerance)){
+            Debug.Log($"Bank target achieved: {planeRoll}");
+            rollInputLocked = true;
+            hasControllerOrigin = false;
+            aoaManipulator.LerpBank(30f);
+            StartCoroutine(ActivityHelper.PlayTimeLine(postBankAndPitchDirector, () => {
+                Debug.Log("Timeline complete, advancing to PitchUp");
+                currentStep = TurnStep.PitchUp;
+                rollInputLocked = false;
+                EnableCurrentStep();
+                mas.OnExternalStepCompleted();
+            }));
+        } else {
+            if (useMouseClicks) {
+                ActivityHelper.DebugMouseControlRollLeft(mouseRollSpeed, aoaManipulator);
+            } else {
+                ActivityHelper.controllerRollControl(bankSensitivity, aoaManipulator, rotationInput, deadZone, controllerOrigin.eulerAngles.z);
+            }
+        }
+    }
+
+    /**
     public void HandleBankAndPitch()
     {
         Quaternion currentRotation = rotationInput.action.ReadValue<Quaternion>();
@@ -276,6 +349,7 @@ public class DescendingTurnActivity : MonoBehaviour, IActivityController
             }
         }
     }
+    */
 
     /**
     Handle pitch recovery training step
