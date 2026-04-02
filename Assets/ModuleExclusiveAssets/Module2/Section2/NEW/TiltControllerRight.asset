@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activityName: Roll Wings Level
   instructions:
-  - Tilt the left controller to the right to level the wings.
+  - Tilt the left controller to the left to level the wings.
   usesCustomScript: 1
   customScript: {fileID: 21315843494900281, guid: eca1c159e702eb148905ea7928805357, type: 3}
   playerInputRequired: 1
