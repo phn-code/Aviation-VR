@@ -199,7 +199,7 @@ public class ModuleManager : MonoBehaviour
     //playing specific module and section
     public void PlayModuleSection(int moduleIndex, int sectionIndex)
     {
-
+        waitingForActivity = false;
         //uses my stoptimeline function
         StopTimeline();
 
