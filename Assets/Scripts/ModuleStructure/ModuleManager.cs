@@ -64,6 +64,9 @@ public class ModuleManager : MonoBehaviour
             return;
         }
 
+        //uses my stoptimeline function
+        StopTimeline();
+
         // Reassign current director, and play it
         activeDirector = section.timelines[currentTimelineIndex];
         activeDirector.stopped += OnTimelineFinished; // This is a subscription to an event! When the timeline finishes (the timeline being a PlayableDirector) it will automatically call OnTimelineFinished() below
@@ -193,22 +196,41 @@ public class ModuleManager : MonoBehaviour
         PlayCurrentTimeline();
     }
 
-    /**
-    Play a specific Module instead of beginning from the first one.
-    @param moduleIndex The selected Module to play.
-    @return void
-    */
-    public void PlayModule(int moduleIndex)
+    //playing specific module and section
+    public void PlayModuleSection(int moduleIndex, int sectionIndex)
     {
-        if (moduleIndex < 0 || moduleIndex >= modules.Count)
-        {
-            return;
-        }
 
+        //uses my stoptimeline function
+        StopTimeline();
+
+        //for checklists for each section to reset
+        if (activityScheduler != null)
+        {
+            activityScheduler.ActivityReset();
+        }
+        //resets the indexes on moving to next section
         currentModuleIndex = moduleIndex;
-        currentSectionIndex = 0;
+        currentSectionIndex = sectionIndex;
         currentTimelineIndex = 0;
 
         PlayCurrentTimeline();
     }
+
+
+    /*
+    function used to stop timeline when selecting a section from menu (note for future developers activeDirector
+    is a reference to the PlayableDirector in a timeline
+    */
+    private void StopTimeline()
+    {
+        if (activeDirector != null)
+        {
+            activeDirector.Stop(); //stops playback
+            activeDirector.time = 0; //resets timeline
+            activeDirector.stopped -= OnTimelineFinished; /*using the previous groups function to stop timeline but to my understanding it means 
+            the playableDirector has an event called stopped and it basically tells if the timeline has finished */
+
+        }
+    }
+
 }
