@@ -1,6 +1,7 @@
 using UnityEngine;
+using TMPro;
 using System.Collections.Generic;
-using System.Collections;
+
 
 /** 
 Airflow, Force Arrows and COP Behaviour
@@ -79,14 +80,6 @@ public class ProceduralAirflow : MonoBehaviour
     private GameObject weightArrow;         /**< Instance of the weight force arrow game object */
     private GameObject thrustArrow;         /**< Instance of the thrust force arrow game object */
     private GameObject dragArrow;           /**< Instance of the drag force arrow game object */
-
-    private GameObject liftLabel;
-    private GameObject weightLabel;
-    private GameObject thrustLabel;
-    private GameObject dragLabel;
-    private GameObject copLabel;
-
-
     // AOA stages
     private static float[] aoaStages = {3f, 7f, 10f, 14f, 16f, 18f};                /**< Predefined aoa stages for Force arrow and COP calc */
     // multipliers for default arrow size
@@ -101,18 +94,6 @@ public class ProceduralAirflow : MonoBehaviour
     // COP indicator
     private GameObject copGameObject;       /**< cop arrow insatnce */
     // Initialization
-
-    // Flash settings
-    [Header("Flash Settings")]
-    public float flashDuration = 1.5f;
-    public float flashSpeed = 4f;
-    public Color flashColour = Color.white;
-    private Dictionary<string, Coroutine> activeFlashes = new Dictionary<string, Coroutine>();
-
-    private Color liftColour   = Color.green;
-    private Color weightColour = Color.red;
-    private Color thrustColour = Color.blue;
-    private Color dragColour   = Color.yellow;
 
     /**
     Setup Particle System on awake
@@ -428,12 +409,6 @@ public class ProceduralAirflow : MonoBehaviour
         SetArrow(weightArrow, weightAnchor.position, Vector3.down, GetWeightLength(aoa));
         SetArrow(thrustArrow, thrusAnchor.position, Vector3.right, GetThrustLength(aoa));
         SetArrow(dragArrow, dragAnchor.position, Vector3.left, GetDragLength(aoa));
-        // Position labels above each arrow tip in world space
-        float offset = 0.15f;
-        if (liftLabel) liftLabel.transform.position = liftAnchor.position + Vector3.up * offset;
-        if (weightLabel) weightLabel.transform.position = weightAnchor.position + Vector3.down * 0.35f;
-        if (thrustLabel) thrustLabel.transform.position = thrusAnchor.position + Vector3.up * offset;
-        if (dragLabel) dragLabel.transform.position = dragAnchor.position + Vector3.up * offset;
 
     }
 
@@ -548,42 +523,33 @@ public class ProceduralAirflow : MonoBehaviour
     @param dir Direction vector the arrow should point
     @param length Total length of the arrow in world units
     */
-    void SetArrow(GameObject arrow, Vector3 basePos, Vector3 dir, float length)
+    void SetArrow(GameObject root, Vector3 basePos, Vector3 dir, float length)
     {
-        float width = 0.1f;   // arrow width
-        float height = 0.1f;  // arrow height
-        float headSize = .2f; // Arrow head size
+        float width = 0.1f;
+        float height = 0.1f;
+        float headSize = .2f;
 
-        //Debug.Log(arrow.name + " " + length);
+        Transform shaft = root.transform.Find(root.name.Replace("_Arrow_Root", "") + "_Shaft");
+        if (shaft == null) return;
 
-        // Scale the arrow
-        arrow.transform.localScale = new Vector3(width, height, length);
+        shaft.localScale = new Vector3(width, height, length);
 
-        // Make the arrow point along the force direction
         Quaternion lookRotation = Quaternion.LookRotation(dir, Vector3.up);
-        // Create a quaternion consisting only of the planes y rotation
         Quaternion yRotation = Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
-        // apply the planes y rotation then rotate the arrow to point along force direction
-        arrow.transform.rotation = yRotation * lookRotation;
+        root.transform.rotation = yRotation * lookRotation;
+        
+        // Position root at the middle of the arrow
+        root.transform.position = basePos + root.transform.forward * (length * 0.5f);
 
-        // Set the arrows position so the base is along the anchor point.
-        arrow.transform.position = basePos + arrow.transform.forward * (length * 0.5f);
-
-        // Get the arrow head
-        Transform headTransform = arrow.transform.GetChild(0);
-        // Set the head position to the shafts forward face
+        Transform headTransform = shaft.GetChild(0);
         headTransform.localPosition = new Vector3(0, 0, 0.5f);
-        // compensate for the shafts scale.
-        // localScale * parentScale = worldScale therefore localScale = worldScale / parentScale
         headTransform.localScale = new Vector3(headSize / width, headSize / height, headSize / length);
-
-
-        // Force text label to face camera regardless of arrow rotation
-        if (arrow.transform.childCount > 1)
-        {
-            Transform labelTransform = arrow.transform.GetChild(1);
-            if (Camera.main != null)
-                labelTransform.rotation = Camera.main.transform.rotation;
+        
+        // Keep the label safely at the center, just offset slightly outward so it doesn't clip
+        Transform label = root.transform.Find(root.name.Replace("_Arrow_Root", "") + "_Label");
+        if(label != null) {
+            // 0.25f units outward from the shaft center
+            label.localPosition = new Vector3(0, 0.25f, 0); 
         }
     }
 
@@ -598,13 +564,9 @@ public class ProceduralAirflow : MonoBehaviour
         DestroyPreviousArrows(); // remove old arrows
 
         liftArrow = CreateArrow("Lift", Color.green);
-        liftLabel = GameObject.Find("Lift_Label");
         weightArrow = CreateArrow("Weight", Color.red);
-        weightLabel = GameObject.Find("Weight_Label");
         thrustArrow = CreateArrow("Thrust", Color.blue);
-        thrustLabel = GameObject.Find("Thrust_Label");
         dragArrow = CreateArrow("Drag", Color.yellow);
-        dragLabel = GameObject.Find("Drag_Label");
     }
 
     /**
@@ -619,48 +581,36 @@ public class ProceduralAirflow : MonoBehaviour
     */
     GameObject CreateArrow(string name, Color colour)
     {
-        // Create a new box / "Arrow"
-        GameObject box = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        // set the name
-        box.name = name + "_Arrow";
+        GameObject root = new GameObject(name + "_Arrow_Root");
 
-        Renderer rend = box.GetComponent<Renderer>();
+        GameObject shaft = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        shaft.name = name + "_Shaft";
+        shaft.transform.SetParent(root.transform);
+
+        Renderer rend = shaft.GetComponent<Renderer>();
         Material mat = new Material(forceArrowMaterial);
-        // Handle material leaks during edit mode
-        if (Application.isPlaying)
-        {
-            mat.color = colour;
-            rend.material = mat;
-        }
-        else
-            rend.sharedMaterial.color = colour;
+        if (Application.isPlaying) { mat.color = colour; rend.material = mat; }
+        else { rend.sharedMaterial.color = colour; }
 
-        // Create empt game object for the head with specified name
         GameObject arrowHead = Instantiate(arrowHeadModel);
-        // Parent to arrow shaft
-        arrowHead.transform.SetParent(box.transform);
-        // Get mesh renderer
-        MeshRenderer rendHead = arrowHead.GetComponent<MeshRenderer>();
-        // Assign material to arrow head
-        rendHead.material = mat;
-
-        // Position head to front face of parent arrow shaft
+        arrowHead.transform.SetParent(shaft.transform);
+        arrowHead.GetComponent<MeshRenderer>().material = mat;
         arrowHead.transform.localPosition = new Vector3(0, 0, 0.5f);
         arrowHead.transform.localRotation = Quaternion.Euler(0, 0, 0);
 
-        // Create 3D text label
-        // Create 3D text label as standalone world-space object (no parent)
-        GameObject textObj = new GameObject(name + "_Label");
-        TextMesh textMesh = textObj.AddComponent<TextMesh>();
+        //new code
+        GameObject labelObj = new GameObject(name + "_Label");
+        labelObj.transform.SetParent(root.transform);
+        
+        TextMeshPro textMesh = labelObj.AddComponent<TextMeshPro>();
         textMesh.text = name;
-        textMesh.fontSize = 24;
-        textMesh.color = Color.black;
-        textMesh.anchor = TextAnchor.MiddleCenter;
-        textMesh.fontStyle = FontStyle.Bold;
-        textObj.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-        textObj.AddComponent<Billboard>();
-        // Return new arrow game object
-        return box;
+        textMesh.color = Color.black; 
+        textMesh.fontSize = 2.2f;     
+        textMesh.fontStyle = FontStyles.Bold; 
+        textMesh.alignment = TextAlignmentOptions.Center;        
+        labelObj.AddComponent<Billboard>();
+
+        return root; 
     }
 
     /**
@@ -671,19 +621,15 @@ public class ProceduralAirflow : MonoBehaviour
     */
     void DestroyPreviousArrows()
     {
-        // Names of generated Arrows 
-        string[] arrowNames = { "Lift_Arrow", "Weight_Arrow", "Thrust_Arrow", "Drag_Arrow" };
+        // Updated names to match the new Root naming convention
+        string[] arrowNames = { "Lift_Arrow_Root", "Weight_Arrow_Root", "Thrust_Arrow_Root", "Drag_Arrow_Root" };
         foreach (string name in arrowNames)
         {
             GameObject existing = GameObject.Find(name);
             if (existing != null)
             {
-                // Schedule dduplicates for destruction in play mode
-                if (Application.isPlaying)
-                    Destroy(existing);
-                // Else in edit mode destroy immediately
-                else
-                    DestroyImmediate(existing);
+                if (Application.isPlaying) Destroy(existing);
+                else DestroyImmediate(existing);
             }
         }
     }
@@ -702,36 +648,20 @@ public class ProceduralAirflow : MonoBehaviour
             copGameObject = createCopIndicator("COP_Indicator", Color.grey);
         }
 
-        // get the angle of the plane
         float aoa = transform.eulerAngles.z;
-
-        // Get the percentage along the chord
         float percentage = getCopPercentage(aoa);
-        //Debug.Log("COP percentage: " + percentage);
 
-        // Calculate chord direction and length
         Vector3 chordDir = (trailingEdge.position - leadingEdge.position).normalized;
         float chordLength = Vector3.Distance(leadingEdge.position, trailingEdge.position);
 
-        // Calculate position along the chord
         Vector3 copPos = leadingEdge.position + chordDir * (chordLength * percentage);
-
-        // Offset below the chord 
         Vector3 offset = -transform.up * 0.3f;
+        
+        // Move the ROOT
         copGameObject.transform.position = copPos + offset;
-        if (copLabel == null)
-        {
-            copLabel = new GameObject("COP_Label");
-            TextMesh tm = copLabel.AddComponent<TextMesh>();
-            tm.text = "CoP";
-            tm.fontSize = 24;
-            tm.color = Color.black;
-            tm.anchor = TextAnchor.MiddleCenter;
-            tm.fontStyle = FontStyle.Bold;
-            copLabel.transform.localScale = new Vector3(0.075f, 0.075f, 0.075f);
-            copLabel.AddComponent<Billboard>();
-        }
-        copLabel.transform.position = copGameObject.transform.position + Vector3.right * 0.15f;
+        
+        // Match the plane's rotation so local offsets make sense
+        copGameObject.transform.rotation = transform.rotation;
     }
 
     /**
@@ -748,22 +678,34 @@ public class ProceduralAirflow : MonoBehaviour
     {
         destroyCentreOfPressure();
 
-        GameObject cop = Instantiate(copModel);
+        // 1. Create a Root container to prevent scaling bugs
+        GameObject copRoot = new GameObject(name);
 
-        // set the name
-        cop.name = name;
+        // 2. Instantiate the model and put it inside the root
+        GameObject copModelInstance = Instantiate(copModel);
+        copModelInstance.transform.SetParent(copRoot.transform);
+        
+        // Reset the model's local position so it sits perfectly at the root
+        copModelInstance.transform.localPosition = Vector3.zero;
 
-        //cop.transform.localScale = new Vector3(0.1f, 0.2f,0.1f);
-        /**
-        Renderer rend = cop.GetComponent<Renderer>();
-        // Handle material leaks during edit mode
-        if (Application.isPlaying)
-            rend.material.color = colour;
-        else
-            rend.sharedMaterial.color = colour;
-        **/
-        return cop;
- 
+        // 3. Create the Label and parent to ROOT
+        GameObject labelObj = new GameObject(name + "_Label");
+        labelObj.transform.SetParent(copRoot.transform);
+        
+        labelObj.transform.localPosition = new Vector3(0f, -0.5f, 0f); 
+        
+        TextMeshPro textMesh = labelObj.AddComponent<TextMeshPro>();
+        textMesh.text = "CoP"; 
+        
+        textMesh.color = Color.black; 
+        
+        textMesh.fontSize = 1.5f;     
+        textMesh.fontStyle = FontStyles.Bold; 
+        textMesh.alignment = TextAlignmentOptions.Center;
+        
+        labelObj.AddComponent<Billboard>(); 
+
+        return copRoot; 
     }
 
     /**
@@ -803,13 +745,6 @@ public class ProceduralAirflow : MonoBehaviour
         // Else in edit mode destroy immediately (Since destroy is tied to the end of the next frame which doesnt trigger in edit mode)
         else
             DestroyImmediate(existing);
-
-        if (copLabel != null)
-        {
-            if (Application.isPlaying) Destroy(copLabel);
-            else DestroyImmediate(copLabel);
-            copLabel = null;
-        }
     }
 
     /**
@@ -836,111 +771,5 @@ public class ProceduralAirflow : MonoBehaviour
             Gizmos.color = Color.magenta;
             Gizmos.DrawLine(midpoint, midpoint + Vector3.down * 0.2f);
         }
-    }
-
-    // Public Flash Methods for signal receiver D40
-    public void FlashLift()   => FlashForce("Lift",   liftArrow,   liftLabel,   liftColour);
-
-    public void FlashWeight() => FlashForce("Weight", weightArrow, weightLabel, weightColour);
-
-    public void FlashThrust() => FlashForce("Thrust", thrustArrow, thrustLabel, thrustColour);
-
-    public void FlashDrag()   => FlashForce("Drag",   dragArrow,   dragLabel,   dragColour);
-
-    public void FlashCoP()
-    {
-        if (copGameObject == null)
-        {
-            Debug.LogWarning("FlashCoP error");
-            return;
-        }
-        if (activeFlashes.ContainsKey("CoP") && activeFlashes["CoP"] != null)
-            StopCoroutine(activeFlashes["CoP"]);
-
-        activeFlashes["CoP"] = StartCoroutine(FlashCoPCoroutine());
-    }
-
-    // Starts a flash coroutine on the named arrow, stopping any existing flash first
-
-    void FlashForce(string forceName, GameObject arrow, GameObject label, Color baseColour)
-    {
-        if (arrow == null)
-        {
-            Debug.LogWarning($"[ProceduralAirflow] Flash called for {forceName} but arrow is null");
-            return;
-        }
-        if (activeFlashes.ContainsKey(forceName) && activeFlashes[forceName] != null)
-            StopCoroutine(activeFlashes[forceName]);
-
-        activeFlashes[forceName] = StartCoroutine(FlashCoroutine(arrow, label, baseColour, forceName));
-    }
-
-    // Pulses the arrow colour and label scale for flashDuration seconds
-    IEnumerator FlashCoroutine(GameObject arrow, GameObject label, Color baseColour, string forceName)
-    {
-        Renderer shaftRend = arrow.GetComponent<Renderer>(); //arrow
-        Renderer headRend  = arrow.GetComponentInChildren<Renderer>(); //arrow tip
-        if (shaftRend == null) yield break;
-
-        Vector3 baseScale    = label != null ? label.transform.localScale : Vector3.one * 0.1f;
-        Vector3 boostedScale = baseScale * 1.4f;
-        float elapsed = 0f;
-
-        while (elapsed < flashDuration)
-        {
-            float t = (Mathf.Sin(elapsed * flashSpeed * Mathf.PI * 2f) + 1f) * 0.5f;
-
-            Color current = Color.Lerp(baseColour, flashColour, t);
-            shaftRend.material.color = current;
-            if (headRend != null) headRend.material.color = current;
-            if (label != null) label.transform.localScale = Vector3.Lerp(baseScale, boostedScale, t);
-
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-
-        // Restore everything
-        shaftRend.material.color = baseColour;
-        if (headRend != null) headRend.material.color = baseColour;
-        if (label != null) label.transform.localScale = baseScale;
-        activeFlashes.Remove(forceName);
-    }
-
-    IEnumerator FlashCoPCoroutine()
-    {
-        Renderer[] copRenderers = copGameObject.GetComponentsInChildren<Renderer>();
-        if (copRenderers.Length == 0) yield break;
-
-        // Store original colours per renderer
-        Color[] originalColours = new Color[copRenderers.Length];
-        for (int i = 0; i < copRenderers.Length; i++)
-            originalColours[i] = copRenderers[i].material.color;
-
-        Vector3 baseScale    = copLabel != null ? copLabel.transform.localScale : Vector3.one * 0.075f;
-        Vector3 boostedScale = baseScale * 1.4f;
-
-        float elapsed = 0f;
-        while (elapsed < flashDuration)
-        {
-            float t = (Mathf.Sin(elapsed * flashSpeed * Mathf.PI * 2f) + 1f) * 0.5f;
-
-            for (int i = 0; i < copRenderers.Length; i++)
-                copRenderers[i].material.color = Color.Lerp(originalColours[i], flashColour, t);
-
-            if (copLabel != null)
-                copLabel.transform.localScale = Vector3.Lerp(baseScale, boostedScale, t);
-
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-
-        // Restore everything
-        for (int i = 0; i < copRenderers.Length; i++)
-            copRenderers[i].material.color = originalColours[i];
-
-        if (copLabel != null)
-            copLabel.transform.localScale = baseScale;
-
-        activeFlashes.Remove("CoP");
     }
 }
