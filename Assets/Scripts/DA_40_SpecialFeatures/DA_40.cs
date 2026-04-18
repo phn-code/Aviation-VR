@@ -136,12 +136,17 @@ public class DA_40 : MonoBehaviour
 
     void Update()
     {
+        // Debug.Log("PropellerEnabled: " + PropellerEnabled); // TEMP debugging for propeller
+        // Debug.Log($"PropellerEnabled: {PropellerEnabled} | Speed: {currentPropellerSpeed} | TargetSpeed: {PropellerRotationSpeed}");
+
         // Linear increase and decrease of propeller speed when toggled on and off respectively
         if (PropellerEnabled && Helice != null) // Rotate the propeller if it is toggled on
         {
             currentPropellerSpeed = Mathf.MoveTowards(currentPropellerSpeed, PropellerRotationSpeed, propellerAcceleration * Time.deltaTime);
 
             Helice.transform.Rotate(Vector3.right, -currentPropellerSpeed * Time.deltaTime);
+
+            // Debug.Log($"LOCAL angles: {Helice.transform.localEulerAngles}"); // Debugging for propeller rotation
         }
         else
         {

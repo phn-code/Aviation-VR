@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 /** 
 Airflow, Force Arrows and COP Behaviour
@@ -78,6 +79,14 @@ public class ProceduralAirflow : MonoBehaviour
     private GameObject weightArrow;         /**< Instance of the weight force arrow game object */
     private GameObject thrustArrow;         /**< Instance of the thrust force arrow game object */
     private GameObject dragArrow;           /**< Instance of the drag force arrow game object */
+
+    private GameObject liftLabel;
+    private GameObject weightLabel;
+    private GameObject thrustLabel;
+    private GameObject dragLabel;
+    private GameObject copLabel;
+
+
     // AOA stages
     private static float[] aoaStages = {3f, 7f, 10f, 14f, 16f, 18f};                /**< Predefined aoa stages for Force arrow and COP calc */
     // multipliers for default arrow size
@@ -92,6 +101,18 @@ public class ProceduralAirflow : MonoBehaviour
     // COP indicator
     private GameObject copGameObject;       /**< cop arrow insatnce */
     // Initialization
+
+    // Flash settings
+    [Header("Flash Settings")]
+    public float flashDuration = 1.5f;
+    public float flashSpeed = 4f;
+    public Color flashColour = Color.white;
+    private Dictionary<string, Coroutine> activeFlashes = new Dictionary<string, Coroutine>();
+
+    private Color liftColour   = Color.green;
+    private Color weightColour = Color.red;
+    private Color thrustColour = Color.blue;
+    private Color dragColour   = Color.yellow;
 
     /**
     Setup Particle System on awake
@@ -407,6 +428,12 @@ public class ProceduralAirflow : MonoBehaviour
         SetArrow(weightArrow, weightAnchor.position, Vector3.down, GetWeightLength(aoa));
         SetArrow(thrustArrow, thrusAnchor.position, Vector3.right, GetThrustLength(aoa));
         SetArrow(dragArrow, dragAnchor.position, Vector3.left, GetDragLength(aoa));
+        // Position labels above each arrow tip in world space
+        float offset = 0.15f;
+        if (liftLabel) liftLabel.transform.position = liftAnchor.position + Vector3.up * offset;
+        if (weightLabel) weightLabel.transform.position = weightAnchor.position + Vector3.down * 0.35f;
+        if (thrustLabel) thrustLabel.transform.position = thrusAnchor.position + Vector3.up * offset;
+        if (dragLabel) dragLabel.transform.position = dragAnchor.position + Vector3.up * offset;
 
     }
 
@@ -549,6 +576,15 @@ public class ProceduralAirflow : MonoBehaviour
         // compensate for the shafts scale.
         // localScale * parentScale = worldScale therefore localScale = worldScale / parentScale
         headTransform.localScale = new Vector3(headSize / width, headSize / height, headSize / length);
+
+
+        // Force text label to face camera regardless of arrow rotation
+        if (arrow.transform.childCount > 1)
+        {
+            Transform labelTransform = arrow.transform.GetChild(1);
+            if (Camera.main != null)
+                labelTransform.rotation = Camera.main.transform.rotation;
+        }
     }
 
     /**
@@ -562,9 +598,13 @@ public class ProceduralAirflow : MonoBehaviour
         DestroyPreviousArrows(); // remove old arrows
 
         liftArrow = CreateArrow("Lift", Color.green);
+        liftLabel = GameObject.Find("Lift_Label");
         weightArrow = CreateArrow("Weight", Color.red);
+        weightLabel = GameObject.Find("Weight_Label");
         thrustArrow = CreateArrow("Thrust", Color.blue);
+        thrustLabel = GameObject.Find("Thrust_Label");
         dragArrow = CreateArrow("Drag", Color.yellow);
+        dragLabel = GameObject.Find("Drag_Label");
     }
 
     /**
@@ -608,6 +648,17 @@ public class ProceduralAirflow : MonoBehaviour
         arrowHead.transform.localPosition = new Vector3(0, 0, 0.5f);
         arrowHead.transform.localRotation = Quaternion.Euler(0, 0, 0);
 
+        // Create 3D text label
+        // Create 3D text label as standalone world-space object (no parent)
+        GameObject textObj = new GameObject(name + "_Label");
+        TextMesh textMesh = textObj.AddComponent<TextMesh>();
+        textMesh.text = name;
+        textMesh.fontSize = 24;
+        textMesh.color = Color.black;
+        textMesh.anchor = TextAnchor.MiddleCenter;
+        textMesh.fontStyle = FontStyle.Bold;
+        textObj.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        textObj.AddComponent<Billboard>();
         // Return new arrow game object
         return box;
     }
@@ -668,6 +719,19 @@ public class ProceduralAirflow : MonoBehaviour
         // Offset below the chord 
         Vector3 offset = -transform.up * 0.3f;
         copGameObject.transform.position = copPos + offset;
+        if (copLabel == null)
+        {
+            copLabel = new GameObject("COP_Label");
+            TextMesh tm = copLabel.AddComponent<TextMesh>();
+            tm.text = "CoP";
+            tm.fontSize = 24;
+            tm.color = Color.black;
+            tm.anchor = TextAnchor.MiddleCenter;
+            tm.fontStyle = FontStyle.Bold;
+            copLabel.transform.localScale = new Vector3(0.075f, 0.075f, 0.075f);
+            copLabel.AddComponent<Billboard>();
+        }
+        copLabel.transform.position = copGameObject.transform.position + Vector3.right * 0.15f;
     }
 
     /**
@@ -739,6 +803,13 @@ public class ProceduralAirflow : MonoBehaviour
         // Else in edit mode destroy immediately (Since destroy is tied to the end of the next frame which doesnt trigger in edit mode)
         else
             DestroyImmediate(existing);
+
+        if (copLabel != null)
+        {
+            if (Application.isPlaying) Destroy(copLabel);
+            else DestroyImmediate(copLabel);
+            copLabel = null;
+        }
     }
 
     /**
@@ -765,5 +836,111 @@ public class ProceduralAirflow : MonoBehaviour
             Gizmos.color = Color.magenta;
             Gizmos.DrawLine(midpoint, midpoint + Vector3.down * 0.2f);
         }
+    }
+
+    // Public Flash Methods for signal receiver D40
+    public void FlashLift()   => FlashForce("Lift",   liftArrow,   liftLabel,   liftColour);
+
+    public void FlashWeight() => FlashForce("Weight", weightArrow, weightLabel, weightColour);
+
+    public void FlashThrust() => FlashForce("Thrust", thrustArrow, thrustLabel, thrustColour);
+
+    public void FlashDrag()   => FlashForce("Drag",   dragArrow,   dragLabel,   dragColour);
+
+    public void FlashCoP()
+    {
+        if (copGameObject == null)
+        {
+            Debug.LogWarning("FlashCoP error");
+            return;
+        }
+        if (activeFlashes.ContainsKey("CoP") && activeFlashes["CoP"] != null)
+            StopCoroutine(activeFlashes["CoP"]);
+
+        activeFlashes["CoP"] = StartCoroutine(FlashCoPCoroutine());
+    }
+
+    // Starts a flash coroutine on the named arrow, stopping any existing flash first
+
+    void FlashForce(string forceName, GameObject arrow, GameObject label, Color baseColour)
+    {
+        if (arrow == null)
+        {
+            Debug.LogWarning($"[ProceduralAirflow] Flash called for {forceName} but arrow is null");
+            return;
+        }
+        if (activeFlashes.ContainsKey(forceName) && activeFlashes[forceName] != null)
+            StopCoroutine(activeFlashes[forceName]);
+
+        activeFlashes[forceName] = StartCoroutine(FlashCoroutine(arrow, label, baseColour, forceName));
+    }
+
+    // Pulses the arrow colour and label scale for flashDuration seconds
+    IEnumerator FlashCoroutine(GameObject arrow, GameObject label, Color baseColour, string forceName)
+    {
+        Renderer shaftRend = arrow.GetComponent<Renderer>(); //arrow
+        Renderer headRend  = arrow.GetComponentInChildren<Renderer>(); //arrow tip
+        if (shaftRend == null) yield break;
+
+        Vector3 baseScale    = label != null ? label.transform.localScale : Vector3.one * 0.1f;
+        Vector3 boostedScale = baseScale * 1.4f;
+        float elapsed = 0f;
+
+        while (elapsed < flashDuration)
+        {
+            float t = (Mathf.Sin(elapsed * flashSpeed * Mathf.PI * 2f) + 1f) * 0.5f;
+
+            Color current = Color.Lerp(baseColour, flashColour, t);
+            shaftRend.material.color = current;
+            if (headRend != null) headRend.material.color = current;
+            if (label != null) label.transform.localScale = Vector3.Lerp(baseScale, boostedScale, t);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        // Restore everything
+        shaftRend.material.color = baseColour;
+        if (headRend != null) headRend.material.color = baseColour;
+        if (label != null) label.transform.localScale = baseScale;
+        activeFlashes.Remove(forceName);
+    }
+
+    IEnumerator FlashCoPCoroutine()
+    {
+        Renderer[] copRenderers = copGameObject.GetComponentsInChildren<Renderer>();
+        if (copRenderers.Length == 0) yield break;
+
+        // Store original colours per renderer
+        Color[] originalColours = new Color[copRenderers.Length];
+        for (int i = 0; i < copRenderers.Length; i++)
+            originalColours[i] = copRenderers[i].material.color;
+
+        Vector3 baseScale    = copLabel != null ? copLabel.transform.localScale : Vector3.one * 0.075f;
+        Vector3 boostedScale = baseScale * 1.4f;
+
+        float elapsed = 0f;
+        while (elapsed < flashDuration)
+        {
+            float t = (Mathf.Sin(elapsed * flashSpeed * Mathf.PI * 2f) + 1f) * 0.5f;
+
+            for (int i = 0; i < copRenderers.Length; i++)
+                copRenderers[i].material.color = Color.Lerp(originalColours[i], flashColour, t);
+
+            if (copLabel != null)
+                copLabel.transform.localScale = Vector3.Lerp(baseScale, boostedScale, t);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        // Restore everything
+        for (int i = 0; i < copRenderers.Length; i++)
+            copRenderers[i].material.color = originalColours[i];
+
+        if (copLabel != null)
+            copLabel.transform.localScale = baseScale;
+
+        activeFlashes.Remove("CoP");
     }
 }

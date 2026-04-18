@@ -22,5 +22,11 @@ public class PlaneTeleporter : MonoBehaviour
         Vector3 localEuler = transform.rotation.eulerAngles;
         localEuler.y = 180f;
         transform.rotation = Quaternion.Euler(localEuler);
+
+        //hiding runway to fix z flickering
+        // GameObject.Find("Runway").SetActive(false);
+        // Debug.Log("Runway hidden!");
     }
+
+    
 }
