@@ -8593,8 +8593,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The more stalled wing produces less lift and more drag, creating a yawing
-    and rolling moment.
+  m_text: Here are two aircrafts side by side. The left aircraft performs a coordinated
+    stall.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 92a26de1dc88f694f8e562da8a93141c, type: 2}
@@ -30088,7 +30088,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &896839436
 Transform:
   m_ObjectHideFlags: 0
@@ -58435,12 +58435,8 @@ PlayableDirector:
     value: {fileID: 2049488083}
   - key: {fileID: 5791220285564456347, guid: e052c3d3971100c4cad45f49cdf4fde8, type: 2}
     value: {fileID: 1696701991}
-  - key: {fileID: -8290235704195427323, guid: e052c3d3971100c4cad45f49cdf4fde8, type: 2}
-    value: {fileID: 1696701989}
-  - key: {fileID: -7139449170901287355, guid: e052c3d3971100c4cad45f49cdf4fde8, type: 2}
-    value: {fileID: 300599993}
-  - key: {fileID: 9097573164656181589, guid: e052c3d3971100c4cad45f49cdf4fde8, type: 2}
-    value: {fileID: 531651482}
+  - key: {fileID: 2672122189411998163, guid: e052c3d3971100c4cad45f49cdf4fde8, type: 2}
+    value: {fileID: 896839435}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1388926013
