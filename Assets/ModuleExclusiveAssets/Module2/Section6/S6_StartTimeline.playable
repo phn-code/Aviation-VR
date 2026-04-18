@@ -1379,8 +1379,8 @@ MonoBehaviour:
   m_Name: SubtitleClip
   m_EditorClassIdentifier: 
   subtitleColor: {r: 0, g: 0, b: 0, a: 0}
-  subtitleText: "Let\u2019s recover from the spin together. Follow these steps in
-    order"
+  subtitleText: "Let\u2019s recover from the spin together! Follow these steps in
+    order."
 --- !u!114 &4403988997921446821
 MonoBehaviour:
   m_ObjectHideFlags: 1

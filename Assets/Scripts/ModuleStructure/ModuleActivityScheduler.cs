@@ -158,4 +158,20 @@ public class ModuleActivityScheduler : MonoBehaviour
         Debug.Log("Calling ModuleManager.OnActivityComplete()");
         moduleManager.OnActivityComplete();
     }
+    /*
+    code used to reset activity to ensure that an activity is not running during changing scenes 
+    */
+    public void ActivityReset()
+    {
+        activityInProgress = false;
+        currentStepIndex = 0;
+        currentActivity = null;
+
+        //steps of activities (referenced from startActivity function)
+        if (activeControllerObject != null)
+            Destroy(activeControllerObject);
+
+        //stops the checkbox panel if there is one in the certain section
+        checkboxPanel.SetActive(false);
+    }
 }

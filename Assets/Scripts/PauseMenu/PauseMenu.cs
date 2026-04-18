@@ -11,12 +11,14 @@ public class PauseMenu : MonoBehaviour
     {
     }
 
-    public void PauseButton(){
+    public void PauseButton()
+    {
         // function for pausing which pauses the whole scene altogether
         Time.timeScale = 0;
     }
 
-    public void ResumeButton(){
+    public void ResumeButton()
+    {
         // function for resuming opposite to Pause()
         Time.timeScale = 1;
     }
@@ -24,12 +26,14 @@ public class PauseMenu : MonoBehaviour
     /* will make it so it resumes timescale for the scene but also just restarts the whole scene
     i think that its a bit difficult that this prototype is made in one whole scene but maybe we can create levels later down the line -Randy
     */
-    public void MainMenuButton(){
+    public void MainMenuButton()
+    {
         Time.timeScale = 1;
         SceneManager.LoadScene("MainVRScene");
     }
 
-    public void ExitButton(){
+    public void ExitButton()
+    {
         Application.Quit();
     }
 }

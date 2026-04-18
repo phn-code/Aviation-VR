@@ -16,7 +16,6 @@ MonoBehaviour:
   instructions:
   - Tilt the left controller to bank to the left by 15 degrees.
   - Tilt the left controller backwards to apply backpressure.
-  - 
   usesCustomScript: 1
   customScript: {fileID: 7838312705647658051, guid: fb51d24861e0d6d4dbc962b8f3899b97, type: 3}
   playerInputRequired: 1

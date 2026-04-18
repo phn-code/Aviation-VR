@@ -30,7 +30,7 @@ MonoBehaviour:
   m_Name: SubtitleClip
   m_EditorClassIdentifier: 
   subtitleColor: {r: 0, g: 0, b: 0, a: 0}
-  subtitleText: "That\u2019s why the angle of back in a climbing turn is limited,
+  subtitleText: "That\u2019s why the angle of bank in a climbing turn is limited,
     as the margin above stalling speed is already narrow."
 --- !u!114 &-3837537583201791283
 MonoBehaviour:

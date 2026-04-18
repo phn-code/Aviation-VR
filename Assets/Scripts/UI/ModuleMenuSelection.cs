@@ -21,6 +21,7 @@ public class ModuleMenuSelection : MonoBehaviour
     [SerializeField] private ModuleManager moduleManager; /**< Reference to the ModuleManager. */
 
     private int selectedModule = -1; /**< Index for the currently selected Module, defaulting to -1 where no Module is selected. */
+    private int selectedSection = -1; /**< Index for the currently selected Section, defaulting to -1 when no section is selected. */
 
     void Start()
     {
@@ -42,17 +43,28 @@ public class ModuleMenuSelection : MonoBehaviour
     @param moduleIndex The Module to be selected.
     @return void
     */
-    void SelectModule(int moduleIndex)
+    public void SelectModule(int moduleIndex)
     {
-        // Update selected module
         selectedModule = moduleIndex;
-
-        // Allow the play button to be interacted with
+        selectedSection = -1;
         playButton.interactable = true;
     }
 
     /**
-    Called by the Play button, calls the ModuleManager to initiate the selected Module.
+    Changes the currently selected Module and Section to a new one.
+    @param moduleIndex The Module to be selected.
+    @param sectionIndex The Section inside that module to be selected.
+    @return void
+    */
+    public void SelectModule(int moduleIndex, int sectionIndex)
+    {
+        selectedModule = moduleIndex;
+        selectedSection = sectionIndex;
+        playButton.interactable = true;
+    }
+
+    /**
+    Called by the Play button, calls the ModuleManager to initiate the selected Module or Section.
     @return void
     */
     void OnPlayPressed()
@@ -63,10 +75,26 @@ public class ModuleMenuSelection : MonoBehaviour
         // Disable the menu and reset state of menu
         playButton.interactable = false;
         gameObject.SetActive(false);
+        if (selectedSection >= 0)
+        {
+            moduleManager.PlayModuleSection(selectedModule, selectedSection);
+        }
+        else
+        {
+            moduleManager.PlayModuleSection(selectedModule, 0);
+        }
 
-        // Play the selected module timeline by talking to ModuleManager
-        moduleManager.PlayModule(selectedModule);
         selectedModule = -1;
+        selectedSection = -1;
+    }
+
+    //makes it so the section selected is the one that is played when play button is pressed
+    public void PlayModuleSectionDirect(int moduleIndex, int sectionIndex)
+    {
+        if (moduleManager == null) return;
+
+        moduleManager.PlayModuleSection(moduleIndex, sectionIndex);
+        gameObject.SetActive(false);
     }
 
     /**

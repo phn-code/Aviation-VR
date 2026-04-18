@@ -339,6 +339,17 @@ public static class ActivityHelper
     }
 
     /**
+    debug moust control for Stalls in Descending Turns - Checklist -> mahir
+    */
+    public static void DebugMouseControlPitchDown(float speed, AxisRotationController manip)
+    {
+        if (Mouse.current.leftButton.isPressed)
+        {
+            manip.IncrementAOA(-speed * Time.deltaTime);
+        }
+    }
+
+    /**
     Processes VR controller input for aircraft roll control
     
     Reads controller Z-axis rotation and applies it to the aircraft's bank angle with

@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: SubtitleClip
   m_EditorClassIdentifier: 
   subtitleColor: {r: 0, g: 0, b: 0, a: 0}
-  subtitleText: n a climb, the aircraft is nose-high, operating at a lower airspeed
+  subtitleText: In a climb, the aircraft is nose-high, operating at a lower airspeed
     and higher angle of attack.
 --- !u!114 &-2858006175516559745
 MonoBehaviour:
