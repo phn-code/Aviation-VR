@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SubtitleClip
   m_EditorClassIdentifier: 
   subtitleColor: {r: 0, g: 0, b: 0, a: 0}
-  subtitleText: As we are rotating to the <x direction>, apply the <y rudder>.
+  subtitleText: As we are rotating to the left, we apply the right rudder.
 --- !u!114 &-1793217705378347614
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SubtitleClip
   m_EditorClassIdentifier: 
   subtitleColor: {r: 0, g: 0, b: 0, a: 0}
-  subtitleText: At 45 degrees of bank, load factor climbs to about 1.4 g. Stall speed
+  subtitleText: At 45 degrees of bank, load factor climbs to about 1.4 g. stall speed
     has now risen more than 10 knots above the straight and level figure.
 --- !u!114 &-4092665989777789758
 MonoBehaviour:
