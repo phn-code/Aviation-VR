@@ -42,11 +42,9 @@ public class ModuleManager : MonoBehaviour
     private PlayableDirector activeDirector; /**< Reference to the current timeline. */
 
     private bool waitingForActivity = false; /**< Flag that determines if an activity is currently playing or not, used to yield moving to the next timeline in the Section. */
-
-    /// <summary>
+    
     /// Public property to access the currently active PlayableDirector.
     /// Used by systems that need to sync with the timeline (e.g., haptic feedback).
-    /// </summary>
     public PlayableDirector GetActiveDirector => activeDirector;
 
     void Start()

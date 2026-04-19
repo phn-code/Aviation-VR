@@ -265,7 +265,13 @@ public class Sec6SpinRecoveryActivity : MonoBehaviour, IActivityController
     */
     private void HandlePowerToIdle()
     {
-        totalThrottle += Mathf.Sign(currentThrottle) * Time.deltaTime * throttleIncrement;
+        //totalThrottle += Mathf.Sign(currentThrottle) * Time.deltaTime * throttleIncrement;
+        
+        if (Mathf.Abs(currentThrottle) > 0.3f)  // Only update if input is significant
+        {
+            totalThrottle += Mathf.Sign(currentThrottle) * Time.deltaTime * throttleIncrement;
+        }
+        
         totalThrottle = Mathf.Clamp(totalThrottle, 0, 100);
 
         Debug.Log($"Total throttle: {totalThrottle}     currentThrottle: {currentThrottle}");
@@ -467,7 +473,8 @@ public class Sec6SpinRecoveryActivity : MonoBehaviour, IActivityController
         // Update the displayed throttle value
         if (throttleText != null)
         {
-            throttleText.text = totalThrottle.ToString();
+            // mahir - remove the decimals
+            throttleText.text = ((int)totalThrottle).ToString();
         }
 
     }
