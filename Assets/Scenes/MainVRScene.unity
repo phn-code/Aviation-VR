@@ -9213,8 +9213,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Finally, the third phase is recovery, in which the spin stops when the
-    correct control inputs are applied to stop the rotation and break the stall.
+  m_text: 'Factor 4: Flap Configuration'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 92a26de1dc88f694f8e562da8a93141c, type: 2}
@@ -38666,7 +38665,7 @@ Transform:
   m_GameObject: {fileID: 1021240812}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -457.8225, y: 1368.6758, z: 4861.499}
+  m_LocalPosition: {x: -469.7, y: 1368.6758, z: 4861.499}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38697,6 +38696,10 @@ PlayableDirector:
     value: {fileID: 1359102755}
   - key: {fileID: -3734920244968859571, guid: 61ba0c2c238fd7c44ae3a2d0c37f7ef5, type: 2}
     value: {fileID: 7303220}
+  - key: {fileID: -5222632140321803100, guid: 61ba0c2c238fd7c44ae3a2d0c37f7ef5, type: 2}
+    value: {fileID: 6050516531732870868}
+  - key: {fileID: -6712762618644340406, guid: 61ba0c2c238fd7c44ae3a2d0c37f7ef5, type: 2}
+    value: {fileID: 4650877216039013565}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1024107142
@@ -77135,7 +77138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -108967,6 +108970,8 @@ GameObject:
   - component: {fileID: 4138944926380800013}
   - component: {fileID: 3152567750091660186}
   - component: {fileID: 4650877216039013563}
+  - component: {fileID: 4650877216039013565}
+  - component: {fileID: 4650877216039013564}
   m_Layer: 0
   m_Name: Landing Flap (Left)
   m_TagString: Untagged
@@ -109156,6 +109161,8 @@ GameObject:
   - component: {fileID: 4658044202667337609}
   - component: {fileID: 5625249502904545767}
   - component: {fileID: 6050516531732870866}
+  - component: {fileID: 6050516531732870868}
+  - component: {fileID: 6050516531732870867}
   m_Layer: 0
   m_Name: Landing Flap (Right)
   m_TagString: Untagged
@@ -112169,6 +112176,47 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!320 &4650877216039013564
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3693141267037247531}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: e8f8984adb1ecfb49a475595d315a47b, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 5785726593917061898, guid: e8f8984adb1ecfb49a475595d315a47b, type: 2}
+    value: {fileID: 4650877216039013565}
+  m_ExposedReferences:
+    m_References: []
+--- !u!95 &4650877216039013565
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3693141267037247531}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5a8fe96dbd6b3fc4f9c4747d7ad0c757, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!23 &4652081078120321626
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -121782,6 +121830,45 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!320 &6050516531732870867
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3724027808408170185}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: d96825a0bdfaa1c43876a41aa668db4b, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
+--- !u!95 &6050516531732870868
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3724027808408170185}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 054759c5078d42e4887b7d9676169baf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!23 &6051974549216491506
 MeshRenderer:
   m_ObjectHideFlags: 0
