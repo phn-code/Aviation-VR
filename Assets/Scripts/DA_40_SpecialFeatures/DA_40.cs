@@ -225,4 +225,9 @@ public class DA_40 : MonoBehaviour
     {
         PropellerEnabled = newState;
     }
+
+    public void EnableGhostTrail(bool state)
+    {
+        GhostTrailEnabled = state;
+    }
 }
