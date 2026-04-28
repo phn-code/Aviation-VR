@@ -220,4 +220,12 @@ public class DA_40 : MonoBehaviour
     {
         PropellerEnabled = newState;
     }
+
+    /**
+    Toggles the state of the ghost trail effect.
+    */
+    public void ToggleGhostTrail()
+    {
+        GhostTrailEnabled = !GhostTrailEnabled;
+    }
 }
