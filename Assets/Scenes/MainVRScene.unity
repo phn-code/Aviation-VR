@@ -9165,8 +9165,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Finally, the third phase is recovery, in which the spin stops when the
-    correct control inputs are applied to stop the rotation and break the stall.
+  m_text: Factors Influencing Stall Speed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 92a26de1dc88f694f8e562da8a93141c, type: 2}
@@ -89550,6 +89549,8 @@ MonoBehaviour:
   enable: 1
   ghostTrail: {fileID: 581464286}
   velocity: 50
+  bankDeadZone: 3
+  velocityBlendSpeed: 8
 --- !u!114 &919132149332208334
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,7 +8,15 @@ public class BankGhostTrailBehaviour : MonoBehaviour
     public ParticleSystem ghostTrail;   /**< Ghost trail particle system */
     [Header("Ghost Trail Motion")]
     public float velocity = 50f;        /**< Velocity of the particles */
+
+
     private ParticleSystem.Particle[] ghostParticles; /**< List of particles emitted by the particle system */
+
+    //following are the angles that determine how the ghost trail behaves
+    private bool isBanking = false; //variable to track whether it is banking (banking is the tilt of plane btw)
+    public float bankDeadZone = 3f; //bank angle needed to start curving
+    public float velocityBlendSpeed = 8f; //blend speed is made so that particles change direction slowly
+
 
     /**
     Main update loop
@@ -51,80 +59,93 @@ public class BankGhostTrailBehaviour : MonoBehaviour
         }
 
         int count = ghostTrail.GetParticles(ghostParticles);
-        //Debug.Log("Particle count: " + count);
         if (count == 0) return;
 
-        // Get bank angle
-        float bankAngle = transform.rotation.eulerAngles.x;
+        float bankAngle = transform.rotation.eulerAngles.z; //change to z was x before
         // convert from unsigned 0-360 to range -180 and 180
         float signedBank = Mathf.DeltaAngle(0f, bankAngle);
 
-        // Check if in level flight
-        if (Mathf.Abs(signedBank) < 1f)
-        {
-            // return, particle system handles level flight by default
-            return;
-        }
+        //added banking boolean to track when the plane is in banking position
+        float absBank = Mathf.Abs(signedBank);
+        if (!isBanking && absBank >= bankDeadZone) isBanking = true;
+        else if (isBanking && absBank < bankDeadZone * 0.5f) isBanking = false;
 
-        /* Formula for calculating turning radius
-         * R = V^2 / (g * tan(BankAngle)
-         * R = Radius m
-         * V = velocity m/s
-         * g = gravity m/s
-         * bankAngle = degrees
-        */
-
-        float g = 9.81f;
-        // convert bank angle from degrees to radians
-        float bankRadians = Mathf.Abs(signedBank) * Mathf.Deg2Rad;
-        // Mathf.Tan expects radians not degrees
-        float tanResult = Mathf.Tan(bankRadians);
-
-        // Calculate radius
-        float radius = (velocity * velocity) / (g * tanResult);
         // turn direction -1 = right 1 = left
         float turnDir = Mathf.Sign(signedBank);
 
         // The planes forward axis is +x therefore transform.forward returns the direction the planes +z axis is facing
-        Vector3 sidewaysDir = transform.forward;
-        // Isolate horizontal x and z directions
-        sidewaysDir.y = 0;
-        //Normalize horizontal dir
-        sidewaysDir.Normalize();
-        // change direction to left or right
-        sidewaysDir *= turnDir;
+        Vector3 turnCentre = transform.position;
 
-        // calculate turn centre
-        Vector3 turnCentre = transform.position + sidewaysDir * radius;
+        /*using my boolean used previous group logic calculations to basically have the particles follow
+         a curve when the plane is banking */
+        if (isBanking)
+        {
+            // Mathf.Tan expects radians not degrees
+            float tanBank = Mathf.Tan(absBank * Mathf.Deg2Rad);
+            if (tanBank >= 0.01f)
+            {
+                /* Formula for calculating turning radius
+                 * R = V^2 / (g * tan(BankAngle)
+                 * R = Radius m
+                 * V = velocity m/s
+                 * g = gravity m/s
+                 * bankAngle = degrees
+                */
+                // tighter bank = smaller radius = sharper curve
+                // shallower bank = bigger radius = wider curve
+                float radius = (velocity * velocity) / (9.81f * tanBank);
+                // Isolate horizontal x and z directions
+                Vector3 side = transform.forward;
+                side.y = 0;
+                // Normalize horizontal dir and change direction to left or right
+                side = side.normalized * turnDir;
+                // calculate turn centre
+                turnCentre = transform.position + side * radius;
+            }
+        }
 
         float verticalComponent = -transform.right.y;
 
         // Update Each Ghost Particle
         for (int i = 0; i < count; i++)
         {
-            // particle position
-            Vector3 pos = ghostParticles[i].position;
-            // get vector from current pos to centre
-            Vector3 toCentre = turnCentre - pos;
-            // remove y conponent
-            toCentre.y = 0f;
-            // normalize
-            Vector3 dirToCentre = toCentre.normalized;
+            Vector3 target;
 
-            // calculate the "tangent" using the cross product of the diirection to centre and vector3.down
-            // returns the a vector perpendicular to both inputs
-            Vector3 tangentDir = Vector3.Cross(Vector3.down, dirToCentre).normalized;
-            // flip the tangent direction based on the turn side.
-            tangentDir *= turnDir;
+            if (isBanking)
+            {
+                // get vector from current pos to centre
+                Vector3 toCentre = turnCentre - ghostParticles[i].position;
+                // remove y component
+                toCentre.y = 0f;
+                // normalize
+                Vector3 dirToCentre = toCentre.normalized;
 
-            // Add vertical component
-            tangentDir.y = verticalComponent;
+                // calculate the "tangent" using the cross product of the direction to centre and vector3.down
+                // returns the a vector perpendicular to both inputs
+                Vector3 tangentDir = Vector3.Cross(Vector3.down, dirToCentre).normalized;
+                // flip the tangent direction based on the turn side
+                tangentDir *= turnDir;
 
-            // set the new velocity along the tangent
-            ghostParticles[i].velocity = tangentDir * velocity;
+                // Add vertical component
+                tangentDir.y = verticalComponent;
 
-            //Debug.Log("Particles velocity" + tangentDir*velocity);
+                // set the new velocity along the tangent
+                target = tangentDir * velocity;
+            }
+            else
+            {
+                // return, particle system handles level flight by default
+                target = ghostParticles[i].velocity;
+            }
+
+            // blend smoothly to target velocity instead of snapping, prevents flickering at origin
+            ghostParticles[i].velocity = Vector3.Lerp(
+                ghostParticles[i].velocity,
+                target,
+                Time.deltaTime * velocityBlendSpeed //uses delta time to gradually blend the particles as we change direction -randy
+            );
         }
+
         // Pass the updated particles back to the ParticleSystem
         ghostTrail.SetParticles(ghostParticles, count);
     }
@@ -139,33 +160,24 @@ public class BankGhostTrailBehaviour : MonoBehaviour
         if (ghostTrail == null) return;
 
         // Get bank angle
-        float bankAngle = transform.rotation.eulerAngles.x;
+        float signedBank = Mathf.DeltaAngle(0f, transform.rotation.eulerAngles.z);
+        if (Mathf.Abs(signedBank) < 5f) return;
 
-        if (bankAngle < 5f) return;
-
-        // convert from unsigned 0-360 to range -180 and 180
-        float signedBank = Mathf.DeltaAngle(0f, bankAngle);
-        float g = 9.81f;
-        // convert bank angle from degrees to radians
-        float bankRadians = Mathf.Abs(signedBank) * Mathf.Deg2Rad;
         // Mathf.Tan expects radians not degrees
-        float tanResult = Mathf.Tan(bankRadians);
-        // Calculate radius
-        float radius = (velocity * velocity) / (g * tanResult);
-        // turn direction -1 = right 1 = left
-        float turnDir = Mathf.Sign(signedBank);
-        // The planes forward axis is +x therefore transform.forward returns the direction the planes +z axis is facing
-        Vector3 sidewaysDir = transform.forward;
-        // Isolate horizontal x and z directions
-        sidewaysDir.y = 0;
-        //Normalize horizontal dir
-        sidewaysDir.Normalize();
-        // change direction to left or right
-        sidewaysDir *= turnDir;
-        // calculate turn centre
-        Vector3 turnCentre = transform.position + sidewaysDir * radius;
+        float tanBank = Mathf.Tan(Mathf.Abs(signedBank) * Mathf.Deg2Rad);
+        if (tanBank < 0.01f) return;
 
+        // Calculate radius
+        float radius = (velocity * velocity) / (9.81f * tanBank);
+        // The planes forward axis is +x therefore transform.forward returns the direction the planes +z axis is facing
+        Vector3 side = transform.forward;
+        // Isolate horizontal x and z directions
+        side.y = 0;
+        // change direction to left or right
+        side = side.normalized * Mathf.Sign(signedBank);
+
+        // cyan sphere in scene view shows the current turn radius
         Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(turnCentre, radius);
+        Gizmos.DrawWireSphere(transform.position + side * radius, radius);
     }
 }
