@@ -169,7 +169,14 @@ public class ModuleActivityScheduler : MonoBehaviour
 
         //steps of activities (referenced from startActivity function)
         if (activeControllerObject != null)
+        {
+            var controller = activeControllerObject.GetComponent<IActivityController>();
+            if (controller != null)
+            {
+                controller.StopActivity(); // stop coroutines and internal PlayableDirectors before destroying
+            }
             Destroy(activeControllerObject);
+        }
 
         //stops the checkbox panel if there is one in the certain section
         checkboxPanel.SetActive(false);

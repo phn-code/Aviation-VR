@@ -63,6 +63,12 @@ public class HoldToLowerNose : MonoBehaviour, IActivityController
         //      rotateAction.action.Enable();
     }
 
+    public void StopActivity()
+    {
+        StopAllCoroutines();
+        activityEnabled = false;
+    }
+
 
     IEnumerator WaitPeriod()
     {

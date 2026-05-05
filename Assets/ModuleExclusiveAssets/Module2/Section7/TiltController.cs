@@ -46,6 +46,12 @@ public class TiltController : MonoBehaviour, IActivityController
         StartCoroutine(CaptureInitialRotationDelayed());
     }
 
+    public void StopActivity()
+    {
+        StopAllCoroutines();
+        activityEnabled = false;
+    }
+
     // Capture a neutral position to calculate rotation change from (prevent instant triggering, depending on which direction the user has the controller sat in when the activity begins)
     private IEnumerator CaptureInitialRotationDelayed()
     {
@@ -73,7 +79,7 @@ public class TiltController : MonoBehaviour, IActivityController
         deltaEuler.y = NormalizeAngle(deltaEuler.y);
         deltaEuler.z = NormalizeAngle(deltaEuler.z);
 
-        // Pick the axis we’re monitoring
+        // Pick the axis weï¿½re monitoring
         float valueToCheck = 0f;
         switch (monitoredAxis)
         {

@@ -187,9 +187,21 @@ public class Sec6SpinRecoveryActivity : MonoBehaviour, IActivityController
         EnableCurrentStep();
     }
 
+    public void StopActivity()
+    {
+        StopAllCoroutines();
+        if (pareStepTimelines != null)
+        {
+            foreach (var director in pareStepTimelines)
+            {
+                if (director != null) director.Stop();
+            }
+        }
+    }
+
     /**
     Unlock input for the current training step
-    
+
     Resets input lock and controller origin flag to allow user control, and records
     the step start time for minimum duration enforcement.
     */

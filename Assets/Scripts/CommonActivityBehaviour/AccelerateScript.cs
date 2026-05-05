@@ -48,6 +48,12 @@ public class AccelerateScript : MonoBehaviour, IActivityController
         hasTriggered = false;
     }
 
+    public void StopActivity()
+    {
+        StopAllCoroutines();
+        activityEnabled = false;
+    }
+
     private void OnPadMoved(InputAction.CallbackContext ctx)
     {
         if (!activityEnabled || hasTriggered) return;

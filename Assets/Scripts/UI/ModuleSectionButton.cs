@@ -32,6 +32,9 @@ public class ModuleSectionButton : MonoBehaviour
 
     private void OnButtonPressed()
     {
+        Time.timeScale = 1;
+        AudioListener.pause = false;
+
         //sets the module and section to be played when play button is pressed
         moduleManager.PlayModuleSection(moduleIndex, sectionIndex);
 

@@ -39,6 +39,11 @@ public class RotateLeftController : MonoBehaviour, IActivityController
 //      rotateAction.action.Enable();
     }
 
+    public void StopActivity()
+    {
+        activityEnabled = false;
+    }
+
 
 
 

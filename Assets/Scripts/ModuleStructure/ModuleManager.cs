@@ -229,10 +229,9 @@ public class ModuleManager : MonoBehaviour
     {
         if (activeDirector != null)
         {
+            activeDirector.stopped -= OnTimelineFinished; // unsubscribe before Stop() to prevent spurious OnTimelineFinished call
             activeDirector.Stop(); //stops playback
             activeDirector.time = 0; //resets timeline
-            activeDirector.stopped -= OnTimelineFinished; /*using the previous groups function to stop timeline but to my understanding it means 
-            the playableDirector has an event called stopped and it basically tells if the timeline has finished */
 
         }
     }
