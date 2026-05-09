@@ -19,6 +19,21 @@ public class GhostTrailToggle : MonoBehaviour
     Code to be executed at runtime, subscribes to input action so that ghost trail can be toggled on and off.
     @return void
     */
+
+    //RANDY function made for button to toggle back and forth for the ghost trail
+    public void ToggleGhostTrail()
+    {
+        ghostTrailEnabled = !ghostTrailEnabled;
+
+        if (ghostTrailEnabled)
+        {
+            GhostTrail.Play();
+        }
+        else
+        {
+            GhostTrail.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        }
+    }
     void OnEnable()
     {
         toggleAction.action.performed += OnTogglePressed;
