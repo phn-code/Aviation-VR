@@ -8807,7 +8807,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Recover from the stall by following these steps:'
+  m_text: Flight control responsiveness will be reduced.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 92a26de1dc88f694f8e562da8a93141c, type: 2}
@@ -9199,6 +9199,18 @@ PlayableDirector:
     value: {fileID: 919132149332208319}
   - key: {fileID: 9086055601364887966, guid: a595be751d98d5a43a044e16cf77feb5, type: 2}
     value: {fileID: 7303220}
+  - key: {fileID: 8216095059684592162, guid: a595be751d98d5a43a044e16cf77feb5, type: 2}
+    value: {fileID: 4706074100019350908}
+  - key: {fileID: 1695171481065545074, guid: a595be751d98d5a43a044e16cf77feb5, type: 2}
+    value: {fileID: 7763434973935119703}
+  - key: {fileID: 4065006665452853856, guid: a595be751d98d5a43a044e16cf77feb5, type: 2}
+    value: {fileID: 8132992539854717881}
+  - key: {fileID: -1511408095438929341, guid: a595be751d98d5a43a044e16cf77feb5, type: 2}
+    value: {fileID: 8428950569629400697}
+  - key: {fileID: -1949553445710428344, guid: a595be751d98d5a43a044e16cf77feb5, type: 2}
+    value: {fileID: 6050516531732870868}
+  - key: {fileID: 1231713772680345085, guid: a595be751d98d5a43a044e16cf77feb5, type: 2}
+    value: {fileID: 4650877216039013565}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &376200985
@@ -83114,6 +83126,8 @@ GameObject:
   - component: {fileID: 5782040798739172814}
   - component: {fileID: 6146390976388102361}
   - component: {fileID: 8132992539854717879}
+  - component: {fileID: 8132992539854717881}
+  - component: {fileID: 8132992539854717880}
   m_Layer: 0
   m_Name: Aileron (Right)
   m_TagString: Untagged
@@ -84052,6 +84066,7 @@ GameObject:
   - component: {fileID: 919132149332208333}
   - component: {fileID: 919132149332208334}
   - component: {fileID: 919132149332208335}
+  - component: {fileID: 919132149332208336}
   m_Layer: 0
   m_Name: DA_40
   m_TagString: Untagged
@@ -89197,6 +89212,21 @@ MonoBehaviour:
   aircraft: {fileID: 919132149332208318}
   ghostTrail: {fileID: 581464286}
   sinkRate: 4
+--- !u!114 &919132149332208336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149332208317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1587cd7c058743ceb7e04a20a15c94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 1, g: 0, b: 0, a: 1}
+  pulseDuration: 0.3
+  pulseCount: 3
 --- !u!1 &930615536076846285
 GameObject:
   m_ObjectHideFlags: 0
@@ -106182,6 +106212,8 @@ GameObject:
   - component: {fileID: 120927962397963855}
   - component: {fileID: 4032378153258628932}
   - component: {fileID: 8428950569629400695}
+  - component: {fileID: 8428950569629400697}
+  - component: {fileID: 8428950569629400696}
   m_Layer: 0
   m_Name: Aileron (Left)
   m_TagString: Untagged
@@ -107358,6 +107390,8 @@ GameObject:
   - component: {fileID: 4138944926380800013}
   - component: {fileID: 3152567750091660186}
   - component: {fileID: 4650877216039013563}
+  - component: {fileID: 4650877216039013565}
+  - component: {fileID: 4650877216039013564}
   m_Layer: 0
   m_Name: Landing Flap (Left)
   m_TagString: Untagged
@@ -107547,6 +107581,8 @@ GameObject:
   - component: {fileID: 4658044202667337609}
   - component: {fileID: 5625249502904545767}
   - component: {fileID: 6050516531732870866}
+  - component: {fileID: 6050516531732870868}
+  - component: {fileID: 6050516531732870867}
   m_Layer: 0
   m_Name: Landing Flap (Right)
   m_TagString: Untagged
@@ -110560,6 +110596,51 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4650877216039013564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3693141267037247531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1587cd7c058743ceb7e04a20a15c94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 1, g: 0, b: 0, a: 1}
+  pulseDuration: 0.3
+  pulseCount: 3
+--- !u!114 &4650877216039013565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3693141267037247531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: eb3dc0eef6e554f9d9696156050edc2e, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4650877216039013564}
+          m_TargetAssemblyTypeName: HighlightPart, Assembly-CSharp
+          m_MethodName: Activate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!23 &4652081078120321626
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -110743,6 +110824,8 @@ GameObject:
   - component: {fileID: 3503767877934362487}
   - component: {fileID: 2307075094511960625}
   - component: {fileID: 2564736942107807181}
+  - component: {fileID: 4706074100019350908}
+  - component: {fileID: 4706074100019350907}
   m_Layer: 0
   m_Name: Elevator
   m_TagString: Untagged
@@ -110750,6 +110833,51 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4706074100019350907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4706074100019350906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1587cd7c058743ceb7e04a20a15c94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 1, g: 0, b: 0, a: 1}
+  pulseDuration: 0.3
+  pulseCount: 3
+--- !u!114 &4706074100019350908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4706074100019350906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8461fbcd77706486fb11185db7bc96fe, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4706074100019350907}
+          m_TargetAssemblyTypeName: HighlightPart, Assembly-CSharp
+          m_MethodName: Activate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &4706838613930419382
 GameObject:
   m_ObjectHideFlags: 0
@@ -120173,6 +120301,51 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6050516531732870867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3724027808408170185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1587cd7c058743ceb7e04a20a15c94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 1, g: 0, b: 0, a: 1}
+  pulseDuration: 0.3
+  pulseCount: 3
+--- !u!114 &6050516531732870868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3724027808408170185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: d2739457ee2eb44d28ba38204214090c, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6050516531732870867}
+          m_TargetAssemblyTypeName: HighlightPart, Assembly-CSharp
+          m_MethodName: Activate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!23 &6051974549216491506
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -126104,6 +126277,8 @@ GameObject:
   - component: {fileID: 4357395007736722268}
   - component: {fileID: 1587598169800402958}
   - component: {fileID: 1313355339351282158}
+  - component: {fileID: 7763434973935119703}
+  - component: {fileID: 7763434973935119702}
   m_Layer: 0
   m_Name: Rudder
   m_TagString: Untagged
@@ -126111,6 +126286,51 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7763434973935119702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7763434973935119701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1587cd7c058743ceb7e04a20a15c94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 1, g: 0, b: 0, a: 1}
+  pulseDuration: 0.3
+  pulseCount: 3
+--- !u!114 &7763434973935119703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7763434973935119701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: dc2773409f7144f75957b267b1e1379f, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7763434973935119702}
+          m_TargetAssemblyTypeName: HighlightPart, Assembly-CSharp
+          m_MethodName: Activate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7768779062266589229
 GameObject:
   m_ObjectHideFlags: 0
@@ -127470,6 +127690,51 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8132992539854717880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645031526914986730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1587cd7c058743ceb7e04a20a15c94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 1, g: 0, b: 0, a: 1}
+  pulseDuration: 0.3
+  pulseCount: 3
+--- !u!114 &8132992539854717881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645031526914986730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: bc15a4759eb7245469a933f424993d0e, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8132992539854717880}
+          m_TargetAssemblyTypeName: HighlightPart, Assembly-CSharp
+          m_MethodName: Activate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!33 &8133098231967568025
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -128330,6 +128595,51 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8428950569629400696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3370302332141549045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1587cd7c058743ceb7e04a20a15c94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 1, g: 0, b: 0, a: 1}
+  pulseDuration: 0.3
+  pulseCount: 3
+--- !u!114 &8428950569629400697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3370302332141549045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: f872e5e1f58244edebb1892b7c3adcef, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8428950569629400696}
+          m_TargetAssemblyTypeName: HighlightPart, Assembly-CSharp
+          m_MethodName: Activate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &8433318353361913608
 Transform:
   m_ObjectHideFlags: 0
