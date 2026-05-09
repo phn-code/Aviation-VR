@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
+
 
 /** 
 Airflow, Force Arrows and COP Behaviour
@@ -521,34 +523,42 @@ public class ProceduralAirflow : MonoBehaviour
     @param dir Direction vector the arrow should point
     @param length Total length of the arrow in world units
     */
-    void SetArrow(GameObject arrow, Vector3 basePos, Vector3 dir, float length)
+    // NEW
+    void SetArrow(GameObject root, Vector3 basePos, Vector3 dir, float length)
     {
-        float width = 0.1f;   // arrow width
-        float height = 0.1f;  // arrow height
-        float headSize = .2f; // Arrow head size
+        float width = 0.1f;
+        float height = 0.1f;
+        float headSize = 0.2f;
 
-        //Debug.Log(arrow.name + " " + length);
+        // Find the shaft child — this is what gets scaled
+        Transform shaft = root.transform.Find(root.name.Replace("_Arrow_Root", "") + "_Shaft");
+        if (shaft == null) return;
 
-        // Scale the arrow
-        arrow.transform.localScale = new Vector3(width, height, length);
+        shaft.localScale = new Vector3(width, height, length);
 
-        // Make the arrow point along the force direction
         Quaternion lookRotation = Quaternion.LookRotation(dir, Vector3.up);
-        // Create a quaternion consisting only of the planes y rotation
         Quaternion yRotation = Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
-        // apply the planes y rotation then rotate the arrow to point along force direction
-        arrow.transform.rotation = yRotation * lookRotation;
+        root.transform.rotation = yRotation * lookRotation;
 
-        // Set the arrows position so the base is along the anchor point.
-        arrow.transform.position = basePos + arrow.transform.forward * (length * 0.5f);
+        root.transform.position = basePos + root.transform.forward * (length * 0.5f);
 
-        // Get the arrow head
-        Transform headTransform = arrow.transform.GetChild(0);
-        // Set the head position to the shafts forward face
+        Transform headTransform = shaft.GetChild(0);
         headTransform.localPosition = new Vector3(0, 0, 0.5f);
-        // compensate for the shafts scale.
-        // localScale * parentScale = worldScale therefore localScale = worldScale / parentScale
         headTransform.localScale = new Vector3(headSize / width, headSize / height, headSize / length);
+
+        // Position the label and push it toward the camera to prevent occlusion
+        Transform label = root.transform.Find(root.name.Replace("_Arrow_Root", "") + "_Label");
+        if (label != null)
+        {
+            label.localPosition = new Vector3(0, 0.25f, 0);
+
+            // This is the fix for the weight label being hidden behind the arrow shaft
+            if (Camera.main != null)
+            {
+                Vector3 toCamera = (Camera.main.transform.position - label.position).normalized;
+                label.position += toCamera * 0.15f;
+            }
+        }
     }
 
     /**
@@ -577,39 +587,39 @@ public class ProceduralAirflow : MonoBehaviour
     @param colour Color to apply to the arrow material
     @return The created arrow game object
     */
+    // NEW
     GameObject CreateArrow(string name, Color colour)
     {
-        // Create a new box / "Arrow"
-        GameObject box = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        // set the name
-        box.name = name + "_Arrow";
+        GameObject root = new GameObject(name + "_Arrow_Root");
 
-        Renderer rend = box.GetComponent<Renderer>();
+        GameObject shaft = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        shaft.name = name + "_Shaft";
+        shaft.transform.SetParent(root.transform);
+
+        Renderer rend = shaft.GetComponent<Renderer>();
         Material mat = new Material(forceArrowMaterial);
-        // Handle material leaks during edit mode
-        if (Application.isPlaying)
-        {
-            mat.color = colour;
-            rend.material = mat;
-        }
-        else
-            rend.sharedMaterial.color = colour;
+        if (Application.isPlaying) { mat.color = colour; rend.material = mat; }
+        else { rend.sharedMaterial.color = colour; }
 
-        // Create empt game object for the head with specified name
         GameObject arrowHead = Instantiate(arrowHeadModel);
-        // Parent to arrow shaft
-        arrowHead.transform.SetParent(box.transform);
-        // Get mesh renderer
-        MeshRenderer rendHead = arrowHead.GetComponent<MeshRenderer>();
-        // Assign material to arrow head
-        rendHead.material = mat;
-
-        // Position head to front face of parent arrow shaft
+        arrowHead.transform.SetParent(shaft.transform);
+        arrowHead.GetComponent<MeshRenderer>().material = mat;
         arrowHead.transform.localPosition = new Vector3(0, 0, 0.5f);
         arrowHead.transform.localRotation = Quaternion.Euler(0, 0, 0);
 
-        // Return new arrow game object
-        return box;
+        // Label
+        GameObject labelObj = new GameObject(name + "_Label");
+        labelObj.transform.SetParent(root.transform);
+
+        TextMeshPro textMesh = labelObj.AddComponent<TextMeshPro>();
+        textMesh.text = name;
+        textMesh.color = Color.black;
+        textMesh.fontSize = 2.2f;
+        textMesh.fontStyle = FontStyles.Bold;
+        textMesh.alignment = TextAlignmentOptions.Center;
+        labelObj.AddComponent<Billboard>();
+
+        return root;
     }
 
     /**
@@ -618,21 +628,17 @@ public class ProceduralAirflow : MonoBehaviour
     Searches for and destroys any existing lift, weight, thrust, or drag arrows in the
     scene. Uses DestroyImmediate in edit mode and Destroy in play mode.
     */
+    // NEW
     void DestroyPreviousArrows()
     {
-        // Names of generated Arrows 
-        string[] arrowNames = { "Lift_Arrow", "Weight_Arrow", "Thrust_Arrow", "Drag_Arrow" };
+        string[] arrowNames = { "Lift_Arrow_Root", "Weight_Arrow_Root", "Thrust_Arrow_Root", "Drag_Arrow_Root" };
         foreach (string name in arrowNames)
         {
             GameObject existing = GameObject.Find(name);
             if (existing != null)
             {
-                // Schedule dduplicates for destruction in play mode
-                if (Application.isPlaying)
-                    Destroy(existing);
-                // Else in edit mode destroy immediately
-                else
-                    DestroyImmediate(existing);
+                if (Application.isPlaying) Destroy(existing);
+                else DestroyImmediate(existing);
             }
         }
     }
@@ -684,22 +690,27 @@ public class ProceduralAirflow : MonoBehaviour
     {
         destroyCentreOfPressure();
 
-        GameObject cop = Instantiate(copModel);
+        // Root container — always scale (1,1,1), so label offsets are predictable
+        GameObject copRoot = new GameObject(name);
 
-        // set the name
-        cop.name = name;
+        GameObject copModelInstance = Instantiate(copModel);
+        copModelInstance.transform.SetParent(copRoot.transform);
+        copModelInstance.transform.localPosition = Vector3.zero;
 
-        //cop.transform.localScale = new Vector3(0.1f, 0.2f,0.1f);
-        /**
-        Renderer rend = cop.GetComponent<Renderer>();
-        // Handle material leaks during edit mode
-        if (Application.isPlaying)
-            rend.material.color = colour;
-        else
-            rend.sharedMaterial.color = colour;
-        **/
-        return cop;
- 
+        // Label is parented to root, not the scaled model
+        GameObject labelObj = new GameObject("COP_Label");
+        labelObj.transform.SetParent(copRoot.transform);
+        labelObj.transform.localPosition = new Vector3(0f, -0.5f, 0f);
+
+        TextMeshPro textMesh = labelObj.AddComponent<TextMeshPro>();
+        textMesh.text = "CoP";
+        textMesh.color = Color.black;
+        textMesh.fontSize = 1.5f;
+        textMesh.fontStyle = FontStyles.Bold;
+        textMesh.alignment = TextAlignmentOptions.Center;
+        labelObj.AddComponent<Billboard>();
+
+        return copRoot;
     }
 
     /**
