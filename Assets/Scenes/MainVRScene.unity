@@ -8805,7 +8805,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: In this module, you'll learn how stalls and spins occur,
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 92a26de1dc88f694f8e562da8a93141c, type: 2}
@@ -79781,6 +79781,8 @@ PlayableDirector:
     value: {fileID: 27679432}
   - key: {fileID: -2816586113632558243, guid: 3f7f0c5d2c3939849a18bf9a98134d09, type: 2}
     value: {fileID: 2049488083}
+  - key: {fileID: -8838137938598304838, guid: 3f7f0c5d2c3939849a18bf9a98134d09, type: 2}
+    value: {fileID: 175998903}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &2105382748
