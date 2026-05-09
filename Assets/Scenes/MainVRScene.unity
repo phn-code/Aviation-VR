@@ -3645,6 +3645,8 @@ PlayableDirector:
     value: {fileID: 365541043}
   - key: {fileID: 5527272206507370545, guid: 395eac77bc9bce64199bef0c79d24b33, type: 2}
     value: {fileID: 546765972}
+  - key: {fileID: -2490885481265344578, guid: 395eac77bc9bce64199bef0c79d24b33, type: 2}
+    value: {fileID: 919132149332208325}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &142677283
@@ -8805,7 +8807,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: In this module, you'll learn how stalls and spins occur,
+  m_text: 'Recover from the stall by following these steps:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 92a26de1dc88f694f8e562da8a93141c, type: 2}
@@ -84211,6 +84213,8 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 11400000, guid: b95a2a725133c5549b8b8425d6c89d2d, type: 2}
     - {fileID: 11400000, guid: a97b2358fdef35449b549a23194e69c9, type: 2}
+    - {fileID: 11400000, guid: 660ed529848474dd584552cce96a736b, type: 2}
+    - {fileID: 11400000, guid: a30ee237167984b15a65920bc528b742, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -84254,6 +84258,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 1
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 919132149332208317}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 919132149332208317}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &919132149332208328
 MonoBehaviour:
   m_ObjectHideFlags: 0
