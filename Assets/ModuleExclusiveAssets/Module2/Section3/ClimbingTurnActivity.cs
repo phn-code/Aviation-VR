@@ -127,6 +127,14 @@ public class ClimbingTurnActivity : MonoBehaviour, IActivityController
         EnableCurrentStep();
     }
 
+    public void StopActivity()
+    {
+        StopAllCoroutines();
+        if (postSlipStreamDirector != null) postSlipStreamDirector.Stop();
+        if (postBankDirector != null) postBankDirector.Stop();
+        if (postStallDirector != null) postStallDirector.Stop();
+    }
+
     /**
     Unlock input for the current training step
     

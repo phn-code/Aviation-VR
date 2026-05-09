@@ -126,6 +126,18 @@ public class Sec1StallActivity : MonoBehaviour, IActivityController
         EnableCurrentStep();
     }
 
+    public void StopActivity()
+    {
+        StopAllCoroutines();
+        if (pitchTimelines != null)
+        {
+            foreach (var director in pitchTimelines)
+            {
+                if (director != null) director.Stop();
+            }
+        }
+    }
+
     /**
     Unlock input for the current training step
     

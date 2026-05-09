@@ -57,6 +57,11 @@ public class ControllerBackward : MonoBehaviour, IActivityController
         //      rotateAction.action.Enable();
     }
 
+    public void StopActivity()
+    {
+        activityEnabled = false;
+    }
+
     // Wrapper for TriggerHaptic method.
     public void TriggerHaptic(BaseInteractionEventArgs e) {
 
@@ -82,7 +87,7 @@ public class ControllerBackward : MonoBehaviour, IActivityController
         if (!activityEnabled) return;
 
         // Same logic as ControllerForward.cs but using negative values this time.
-        if (zPosition >= -minZPositionThreshold && zPosition <= -maxZPositionThreshold)
+        if (zPosition <= -minZPositionThreshold && zPosition >= -maxZPositionThreshold)
         {
 
             // Send a haptic to the user so the user knows they are within range, also could be a good idea to add an angle meter for the DA-40 rotation.

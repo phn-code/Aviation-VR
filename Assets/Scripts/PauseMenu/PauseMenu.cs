@@ -15,12 +15,14 @@ public class PauseMenu : MonoBehaviour
     {
         // function for pausing which pauses the whole scene altogether
         Time.timeScale = 0;
+        AudioListener.pause = true;
     }
 
     public void ResumeButton()
     {
         // function for resuming opposite to Pause()
         Time.timeScale = 1;
+        AudioListener.pause = false;
     }
 
     /* will make it so it resumes timescale for the scene but also just restarts the whole scene

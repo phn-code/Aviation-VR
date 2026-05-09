@@ -117,9 +117,22 @@ public class LevelTurnActivity : MonoBehaviour, IActivityController
         EnableCurrentStep();
     }
 
+    public void StopActivity()
+    {
+        StopAllCoroutines();
+        if (bankTimelines != null)
+        {
+            foreach (var director in bankTimelines)
+            {
+                if (director != null) director.Stop();
+            }
+        }
+        if (stallTimeline != null) stallTimeline.Stop();
+    }
+
     /**
     Unlock input for the current training step
-    
+
     Resets input lock and controller origin flags to allow user control.
     Called after transitions and timeline completions.
     */

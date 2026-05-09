@@ -133,9 +133,17 @@ public class DescendingTurnActivity : MonoBehaviour, IActivityController
         EnableCurrentStep();
     }
 
+    public void StopActivity()
+    {
+        StopAllCoroutines();
+        if (postBankAndPitchDirector != null) postBankAndPitchDirector.Stop();
+        if (postPitchUpDirector != null) postPitchUpDirector.Stop();
+        if (postStallDirector != null) postStallDirector.Stop();
+    }
+
     /**
     Unlock input for the current training step
-    
+
     Resets roll and pitch input locks and controller origin flag to allow user control.
     Called after transitions and timeline completions.
     */

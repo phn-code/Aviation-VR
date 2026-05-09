@@ -40,6 +40,11 @@ public class IncreaseThrottle : MonoBehaviour, IActivityController
         hasTriggered = false;
     }
 
+    public void StopActivity()
+    {
+        activityEnabled = false;
+    }
+
     private void OnPadMoved(InputAction.CallbackContext ctx)
     {
         if (!activityEnabled || hasTriggered) return;
