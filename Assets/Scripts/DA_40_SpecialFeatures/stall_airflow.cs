@@ -31,8 +31,12 @@ public class StallVisualTrigger : MonoBehaviour
 
             for (int i = 0; i < count; i++)
             {
-                // Just fall downward the whole time
-                particles[i].velocity += Vector3.down * sinkRate * Time.deltaTime;
+                float age = 1f - (particles[i].remainingLifetime / particles[i].startLifetime);
+
+                if (age < 0.5f)
+                    particles[i].velocity += Vector3.up * 1.5f * Time.deltaTime;
+                else
+                    particles[i].velocity += Vector3.down * sinkRate * Time.deltaTime;
             }
 
             ghostTrail.SetParticles(particles, count);
