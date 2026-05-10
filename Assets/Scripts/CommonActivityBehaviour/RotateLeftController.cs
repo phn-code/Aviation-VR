@@ -19,6 +19,7 @@ public class RotateLeftController : MonoBehaviour, IActivityController
     {
         // Find it even if disabled by searching all objects including inactive
         ControllerHint[] hints = Resources.FindObjectsOfTypeAll<ControllerHint>();
+        Debug.Log($"Found {hints.Length} ControllerHint objects");
         if (hints.Length > 0)
             controllerHint = hints[0].gameObject;
 
