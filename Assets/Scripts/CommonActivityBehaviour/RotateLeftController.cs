@@ -11,10 +11,13 @@ public class RotateLeftController : MonoBehaviour, IActivityController
     public InputActionReference rotateAction; // Input action for rotating the left controller
     public float rotationThreshold = 0.1f; // Default, can be changed in inspector
     private bool activityEnabled = false; // Start as disabled
+    private GameObject controllerHint;
+
 
     // Subscribe to event listener and enable input action
     private void OnEnable()
     {
+        controllerHint = GameObject.Find("Left Controller tilt right tutorial");
         if (rotateAction != null)
         {
             rotateAction.action.performed += OnRotatePerformed;
@@ -37,6 +40,8 @@ public class RotateLeftController : MonoBehaviour, IActivityController
     {
         activityEnabled = true;
 //      rotateAction.action.Enable();
+        if (controllerHint != null) controllerHint.SetActive(true);
+
     }
 
     public void StopActivity()
@@ -65,7 +70,7 @@ public class RotateLeftController : MonoBehaviour, IActivityController
         
         if (rotationAmount >= rotationThreshold)
         {
-
+            if (controllerHint != null) controllerHint.SetActive(false);
             AxisRotationController aoaManip = GameObject.FindAnyObjectByType<AxisRotationController>();
             aoaManip.LerpAOA(-10); // Lower AOA by 10 degrees. // this value may be needed to change if you want to reuse the script for multiple rotation angles.
 
