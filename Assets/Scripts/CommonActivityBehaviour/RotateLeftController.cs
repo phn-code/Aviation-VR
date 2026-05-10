@@ -17,7 +17,11 @@ public class RotateLeftController : MonoBehaviour, IActivityController
     // Subscribe to event listener and enable input action
     private void OnEnable()
     {
-        controllerHint = GameObject.Find("Left Controller tilt right tutorial");
+        // Find it even if disabled by searching all objects including inactive
+        ControllerHint[] hints = Resources.FindObjectsOfTypeAll<ControllerHint>();
+        if (hints.Length > 0)
+            controllerHint = hints[0].gameObject;
+
         if (rotateAction != null)
         {
             rotateAction.action.performed += OnRotatePerformed;
