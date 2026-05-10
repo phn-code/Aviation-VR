@@ -32283,6 +32283,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971040233}
   m_Mesh: {fileID: 6703342663530830375, guid: 6b1e55062a5b52a47a27bbecfec2de8e, type: 3}
+--- !u!1 &975081472 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8758423527188247893, guid: 1392f805216c47742996d4742c80721c, type: 3}
+  m_PrefabInstance: {fileID: 1834598449}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &975081475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975081472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 083b5ac1e3b05407c8eae5c9a40271f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controllerModel: {fileID: 1385707357}
+  tiltAngle: 35
+  tiltSpeed: 1.5
 --- !u!1 &990278024
 GameObject:
   m_ObjectHideFlags: 0
@@ -58013,6 +58033,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371910620}
   m_Mesh: {fileID: 8739780196101301409, guid: 6b1e55062a5b52a47a27bbecfec2de8e, type: 3}
+--- !u!4 &1385707357 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3831596280851641935, guid: 1392f805216c47742996d4742c80721c, type: 3}
+  m_PrefabInstance: {fileID: 1834598449}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1386561603
 GameObject:
   m_ObjectHideFlags: 0
@@ -72832,7 +72857,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8758423527188247893, guid: 1392f805216c47742996d4742c80721c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 975081475}
   m_SourcePrefab: {fileID: 100100000, guid: 1392f805216c47742996d4742c80721c, type: 3}
 --- !u!1 &1835644963
 GameObject:
