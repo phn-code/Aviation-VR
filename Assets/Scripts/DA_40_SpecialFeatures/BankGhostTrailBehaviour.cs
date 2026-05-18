@@ -61,7 +61,7 @@ public class BankGhostTrailBehaviour : MonoBehaviour
         int count = ghostTrail.GetParticles(ghostParticles);
         if (count == 0) return;
 
-        float bankAngle = transform.rotation.eulerAngles.z; //change to z was x before
+        float bankAngle = transform.eulerAngles.z;
         // convert from unsigned 0-360 to range -180 and 180
         float signedBank = Mathf.DeltaAngle(0f, bankAngle);
 
