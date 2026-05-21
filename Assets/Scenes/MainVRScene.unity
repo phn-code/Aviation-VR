@@ -89444,7 +89444,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aircraft: {fileID: 919132149332208318}
   ghostTrail: {fileID: 581464286}
-  sinkRate: 4
+  initialUpwardSpeed: 40
+  upwardAcceleration: 20
 --- !u!114 &919132149332208336
 MonoBehaviour:
   m_ObjectHideFlags: 0

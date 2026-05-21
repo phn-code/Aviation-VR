@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 /**
 @author Chintana Luu | luucy003@mymail.unisa.edu.au
@@ -43,10 +44,9 @@ public class RotateLeftController : MonoBehaviour, IActivityController
     // 
     public void StartActivity()
     {
+        Debug.Log("StartActivity called on RotateLeftController");
         activityEnabled = true;
-//      rotateAction.action.Enable();
-        if (controllerHint != null) controllerHint.SetActive(true);
-
+        StartCoroutine(ShowHintNextFrame());
     }
 
     public void StopActivity()
@@ -86,6 +86,20 @@ public class RotateLeftController : MonoBehaviour, IActivityController
 
             // Clean-up
             Destroy(gameObject);
+        }
+    }
+
+    private IEnumerator ShowHintNextFrame()
+    {
+        yield return null; // wait one frame for everything to initialize
+        if (controllerHint != null)
+        {
+            controllerHint.SetActive(true);
+            Debug.Log("Hint shown");
+        }
+        else
+        {
+            Debug.Log("controllerHint still null after waiting");
         }
     }
 
