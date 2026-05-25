@@ -51,12 +51,12 @@ public class TiltController : MonoBehaviour, IActivityController
 
     public void StopActivity()
     {
-        StopAllCoroutines();
-        activityEnabled = false;
-        if (controllerHint != null) controllerHint.SetActive(false); // ADD THIS
+        StopAllCoroutines(); // stop any in-progress waits or timed steps so they don't carry over into the next section
+        activityEnabled = false; // stop accepting controller input
+        if (controllerHint != null) controllerHint.SetActive(false);
     }
 
-    private IEnumerator ShowHintNextFrame() // ADD THIS
+    private IEnumerator ShowHintNextFrame()
     {
         yield return null;
         if (showControllerHint && controllerHint != null)
@@ -91,6 +91,7 @@ public class TiltController : MonoBehaviour, IActivityController
         deltaEuler.y = NormalizeAngle(deltaEuler.y);
         deltaEuler.z = NormalizeAngle(deltaEuler.z);
 
+        // Pick the axis we're monitoring
         float valueToCheck = 0f;
         switch (monitoredAxis)
         {

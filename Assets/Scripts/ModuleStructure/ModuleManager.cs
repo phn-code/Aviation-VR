@@ -42,6 +42,11 @@ public class ModuleManager : MonoBehaviour
     private PlayableDirector activeDirector; /**< Reference to the current timeline. */
 
     private bool waitingForActivity = false; /**< Flag that determines if an activity is currently playing or not, used to yield moving to the next timeline in the Section. */
+    private GameObject da40DuplicateCached; /**< Cached reference to DA_40_Duplicate so it can be reactivated even when inactive (GameObject.Find only finds active objects). */
+    private GameObject aircraftLabelsCached; /**< Cached reference to AircraftLabels for the same reason. */
+    private GameObject da40Cached; /**< Cached reference to DA_40 for position restore after section 5. */
+    private Vector3 da40PositionBeforeSection5; /**< DA_40 world position cached before section 5 animates it. */
+    private Quaternion da40RotationBeforeSection5; /**< DA_40 world rotation cached before section 5 animates it. */
     
     /// Public property to access the currently active PlayableDirector.
     /// Used by systems that need to sync with the timeline (e.g., haptic feedback).
@@ -70,6 +75,12 @@ public class ModuleManager : MonoBehaviour
 
         //uses my stoptimeline function
         StopTimeline();
+
+        // Re-enable DA_40_Duplicate before the stall comparison timeline plays.
+        // It gets disabled when leaving section 5, but needs to be active when Play() is called
+        // otherwise the activation track inside the timeline can't bind to it and the animation freezes.
+        if (currentModuleIndex == 1 && currentSectionIndex == 5 && currentTimelineIndex == 1 && da40DuplicateCached != null)
+            da40DuplicateCached.SetActive(true);
 
         // Reassign current director, and play it
         activeDirector = section.timelines[currentTimelineIndex];
@@ -203,9 +214,53 @@ public class ModuleManager : MonoBehaviour
     //playing specific module and section
     public void PlayModuleSection(int moduleIndex, int sectionIndex)
     {
+        // If the pause menu is open when switching sections, force resume so timescale resets
+        var pauseMenu = FindObjectOfType<PauseMenu>();
+        if (pauseMenu != null) pauseMenu.ForceResume();
+
         waitingForActivity = false;
-        //uses my stoptimeline function
+        if (activeDirector != null)
+            activeDirector.extrapolationMode = DirectorWrapMode.None;
+
+        // This bit of code below is primarily for Section 5 Coordinated vs Uncoordinated animaiton
+
+        // Leaving section 5: restore DA_40 to its pre-section-5 position so it doesn't freeze mid-animation in the next section
+        if (currentModuleIndex == 1 && currentSectionIndex == 5 && da40Cached != null)
+        {
+            da40Cached.transform.position = da40PositionBeforeSection5;
+            da40Cached.transform.rotation = da40RotationBeforeSection5;
+            da40Cached.SetActive(true);
+        }
+
+        // Entering section 5: cache DA_40's current position before the animation moves it
+        // This is needed because otherwise when you switch out mid-animation the plane will
+        // Stay frozen in it's animation state until that section's timeline animation kicks in
+        if (moduleIndex == 1 && sectionIndex == 5)
+        {
+            if (da40Cached == null) da40Cached = GameObject.Find("DA_40");
+            if (da40Cached != null)
+            {
+                da40PositionBeforeSection5 = da40Cached.transform.position;
+                da40RotationBeforeSection5 = da40Cached.transform.rotation;
+            }
+        }
+
         StopTimeline();
+
+        // When switching away from section 5, manually hide DA_40_Duplicate and AircraftLabels.
+        // Stopping a timeline mid-play doesn't deactivate objects controlled by its activation track,
+        // so we have to do it ourselves. We also cache the references here while they're still active
+        // since Find won't work on inactive objects later.
+        if (currentModuleIndex == 1 && currentSectionIndex == 5)
+        {
+            var found = GameObject.Find("DA_40_Duplicate");
+            if (found != null) da40DuplicateCached = found;
+            if (da40DuplicateCached != null) da40DuplicateCached.SetActive(false);
+
+            var foundLabels = GameObject.Find("AircraftLabels");
+            if (foundLabels != null) aircraftLabelsCached = foundLabels;
+            if (aircraftLabelsCached != null) aircraftLabelsCached.SetActive(false);
+        }
 
         //for checklists for each section to reset
         if (activityScheduler != null)
@@ -229,10 +284,10 @@ public class ModuleManager : MonoBehaviour
     {
         if (activeDirector != null)
         {
-            activeDirector.stopped -= OnTimelineFinished; // unsubscribe before Stop() to prevent spurious OnTimelineFinished call
-            activeDirector.Stop(); //stops playback
-            activeDirector.time = 0; //resets timeline
+            activeDirector.stopped -= OnTimelineFinished; // unsubscribe before Stop() to prevent OnTimelineFinished call
 
+            activeDirector.Stop();
+            activeDirector.time = 0;
         }
     }
 

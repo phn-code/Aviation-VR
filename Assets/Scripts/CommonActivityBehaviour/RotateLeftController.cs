@@ -51,7 +51,7 @@ public class RotateLeftController : MonoBehaviour, IActivityController
 
     public void StopActivity()
     {
-        activityEnabled = false;
+        activityEnabled = false; // stop accepting controller input
     }
 
 

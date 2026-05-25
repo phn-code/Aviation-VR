@@ -2856,6 +2856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   container: {fileID: 6501237161739171951}
+  pauseMenuScreen: {fileID: 8240715434340700464}
 --- !u!1 &6749860032224709976
 GameObject:
   m_ObjectHideFlags: 0
@@ -4144,7 +4145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6083600665994170652
 RectTransform:
   m_ObjectHideFlags: 0

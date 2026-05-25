@@ -42,7 +42,7 @@ public class IncreaseThrottle : MonoBehaviour, IActivityController
 
     public void StopActivity()
     {
-        activityEnabled = false;
+        activityEnabled = false; // stop accepting controller input
     }
 
     private void OnPadMoved(InputAction.CallbackContext ctx)

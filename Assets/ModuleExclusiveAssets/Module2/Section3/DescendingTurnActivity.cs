@@ -135,7 +135,8 @@ public class DescendingTurnActivity : MonoBehaviour, IActivityController
 
     public void StopActivity()
     {
-        StopAllCoroutines();
+        StopAllCoroutines(); // stop any in-progress waits or timed steps so they don't carry over into the next section
+        // manually stop each internal timeline, destroying the GameObject doesn't cut the audio fast enough
         if (postBankAndPitchDirector != null) postBankAndPitchDirector.Stop();
         if (postPitchUpDirector != null) postPitchUpDirector.Stop();
         if (postStallDirector != null) postStallDirector.Stop();

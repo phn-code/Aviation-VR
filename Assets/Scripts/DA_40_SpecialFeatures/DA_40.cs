@@ -130,24 +130,17 @@ public class DA_40 : MonoBehaviour
         lastTrailState = GhostTrailEnabled;
 
         // Clear subtitles
-        subtitles.text = "";
+        if (subtitles != null) subtitles.text = "";
     }
 
 
     void Update()
     {
-        // Linear increase and decrease of propeller speed when toggled on and off respectively
-        if (PropellerEnabled && Helice != null) // Rotate the propeller if it is toggled on
-        {
+        // Update propeller speed each frame, rotation applied in LateUpdate to run after Animator
+        if (PropellerEnabled)
             currentPropellerSpeed = Mathf.MoveTowards(currentPropellerSpeed, PropellerRotationSpeed, propellerAcceleration * Time.deltaTime);
-
-            Helice.transform.Rotate(Vector3.right, -currentPropellerSpeed * Time.deltaTime);
-        }
         else
-        {
             currentPropellerSpeed = Mathf.MoveTowards(currentPropellerSpeed, 0f, propellerAcceleration * Time.deltaTime);
-            Helice.transform.Rotate(Vector3.right, -currentPropellerSpeed * Time.deltaTime);
-        }
 
         if (GhostTrailEnabled != lastTrailState) // Every frame, turn on the ghost trail if enabled by checking prev state
         {
@@ -189,6 +182,13 @@ public class DA_40 : MonoBehaviour
                 renderer.material.SetTextureOffset("_BaseMap", offset);
             }
         }
+    }
+
+    void LateUpdate()
+    {
+        // Apply propeller rotation after Animator runs so it isn't overridden
+        if (Helice != null)
+            Helice.transform.Rotate(Vector3.right, -currentPropellerSpeed * Time.deltaTime);
     }
 
     /**
