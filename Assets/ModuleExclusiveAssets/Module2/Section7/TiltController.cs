@@ -48,8 +48,8 @@ public class TiltController : MonoBehaviour, IActivityController
 
     public void StopActivity()
     {
-        StopAllCoroutines();
-        activityEnabled = false;
+        StopAllCoroutines(); // stop any in-progress waits or timed steps so they don't carry over into the next section
+        activityEnabled = false; // stop accepting controller input
     }
 
     // Capture a neutral position to calculate rotation change from (prevent instant triggering, depending on which direction the user has the controller sat in when the activity begins)
@@ -79,7 +79,7 @@ public class TiltController : MonoBehaviour, IActivityController
         deltaEuler.y = NormalizeAngle(deltaEuler.y);
         deltaEuler.z = NormalizeAngle(deltaEuler.z);
 
-        // Pick the axis we�re monitoring
+        // Pick the axis we're monitoring
         float valueToCheck = 0f;
         switch (monitoredAxis)
         {

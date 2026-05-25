@@ -50,8 +50,8 @@ public class AccelerateScript : MonoBehaviour, IActivityController
 
     public void StopActivity()
     {
-        StopAllCoroutines();
-        activityEnabled = false;
+        StopAllCoroutines(); // stop any in-progress waits or timed steps so they don't carry over into the next section
+        activityEnabled = false; // stop accepting controller input
     }
 
     private void OnPadMoved(InputAction.CallbackContext ctx)

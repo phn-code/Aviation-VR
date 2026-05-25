@@ -130,7 +130,7 @@ public class DA_40 : MonoBehaviour
         lastTrailState = GhostTrailEnabled;
 
         // Clear subtitles
-        subtitles.text = "";
+        if (subtitles != null) subtitles.text = "";
     }
 
 

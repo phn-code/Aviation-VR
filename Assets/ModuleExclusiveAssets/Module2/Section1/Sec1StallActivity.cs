@@ -128,7 +128,8 @@ public class Sec1StallActivity : MonoBehaviour, IActivityController
 
     public void StopActivity()
     {
-        StopAllCoroutines();
+        StopAllCoroutines(); // stop any in-progress waits or timed steps so they don't carry over into the next section
+        // manually stop each internal timeline, destroying the GameObject doesn't cut the audio fast enough
         if (pitchTimelines != null)
         {
             foreach (var director in pitchTimelines)

@@ -507,7 +507,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset(Clone)(Clone)
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   m_Clip: {fileID: 7400000, guid: deb75cd40e4c8e74496c3d5726d8affe, type: 2}
   m_Position: {x: 548.6, y: 1441.85, z: 1876.075}
   m_EulerAngles: {x: 0, y: 0, z: 0}
