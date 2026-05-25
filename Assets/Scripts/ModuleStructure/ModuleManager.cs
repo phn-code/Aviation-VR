@@ -76,6 +76,18 @@ public class ModuleManager : MonoBehaviour
         //uses my stoptimeline function
         StopTimeline();
 
+        // Cache DA_40 position/rotation at the very start of section 5 (timeline 0) so it can be
+        // restored after the animation ends, whether via manual switch or natural completion.
+        if (currentModuleIndex == 1 && currentSectionIndex == 5 && currentTimelineIndex == 0)
+        {
+            if (da40Cached == null) da40Cached = GameObject.Find("DA_40");
+            if (da40Cached != null)
+            {
+                da40PositionBeforeSection5 = da40Cached.transform.position;
+                da40RotationBeforeSection5 = da40Cached.transform.rotation;
+            }
+        }
+
         // Re-enable DA_40_Duplicate before the stall comparison timeline plays.
         // It gets disabled when leaving section 5, but needs to be active when Play() is called
         // otherwise the activation track inside the timeline can't bind to it and the animation freezes.
@@ -178,6 +190,26 @@ public class ModuleManager : MonoBehaviour
     */
     void NextSection()
     {
+        // Leaving section 5 naturally (animation completed): hide DA_40_Duplicate and AircraftLabels,
+        // and restore DA_40 to its pre-animation position so it appears normally in subsequent sections.
+        if (currentModuleIndex == 1 && currentSectionIndex == 5)
+        {
+            var found = GameObject.Find("DA_40_Duplicate");
+            if (found != null) da40DuplicateCached = found;
+            if (da40DuplicateCached != null) da40DuplicateCached.SetActive(false);
+
+            var foundLabels = GameObject.Find("AircraftLabels");
+            if (foundLabels != null) aircraftLabelsCached = foundLabels;
+            if (aircraftLabelsCached != null) aircraftLabelsCached.SetActive(false);
+
+            if (da40Cached != null)
+            {
+                da40Cached.transform.position = da40PositionBeforeSection5;
+                da40Cached.transform.rotation = da40RotationBeforeSection5;
+                da40Cached.SetActive(true);
+            }
+        }
+
         currentTimelineIndex = 0;
         currentSectionIndex++;
 
