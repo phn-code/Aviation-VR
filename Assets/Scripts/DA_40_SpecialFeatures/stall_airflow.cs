@@ -11,20 +11,24 @@ public class StallVisualTrigger : MonoBehaviour
     // How fast it continues to curve up into the sky over time
     [SerializeField] private float upwardAcceleration = 20f; 
 
+    private bool isStalling;
     private ParticleSystem.Particle[] particles;
 
     public void OnStallBegin()
     {
+        isStalling = true;
         aircraft.EnableGhostTrail(true);
     }
 
     public void OnStallEnd()
     {
+        isStalling = false;
         aircraft.EnableGhostTrail(false);
     }
 
     private void LateUpdate()
     {
+        if (!isStalling) return;
         if (ghostTrail == null || ghostTrail.particleCount == 0) return;
 
         if (particles == null || particles.Length < ghostTrail.main.maxParticles)

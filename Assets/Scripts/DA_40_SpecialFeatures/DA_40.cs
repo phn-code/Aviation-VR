@@ -122,10 +122,7 @@ public class DA_40 : MonoBehaviour
         }
 
         // Initial setup of ghost trail
-        if (GhostTrailEnabled)
-            GhostTrail.Play();
-        else
-            GhostTrail.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        SetGhostTrail(GhostTrailEnabled);
 
         lastTrailState = GhostTrailEnabled;
 
@@ -144,11 +141,7 @@ public class DA_40 : MonoBehaviour
 
         if (GhostTrailEnabled != lastTrailState) // Every frame, turn on the ghost trail if enabled by checking prev state
         {
-            if (GhostTrailEnabled)
-                GhostTrail.Play();
-            else
-                GhostTrail.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-
+            SetGhostTrail(GhostTrailEnabled);
             lastTrailState = GhostTrailEnabled;
         }
 
@@ -224,5 +217,17 @@ public class DA_40 : MonoBehaviour
     public void EnableGhostTrail(bool enabled)
     {
         GhostTrailEnabled = enabled;
+        SetGhostTrail(enabled);
+        lastTrailState = enabled;
+    }
+
+    private void SetGhostTrail(bool enabled)
+    {
+        if (GhostTrail == null) return;
+
+        if (enabled)
+            GhostTrail.Play();
+        else
+            GhostTrail.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
 }

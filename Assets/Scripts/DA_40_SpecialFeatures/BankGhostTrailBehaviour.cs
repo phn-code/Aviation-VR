@@ -17,11 +17,6 @@ public class BankGhostTrailBehaviour : MonoBehaviour
     public float bankDeadZone = 3f; //bank angle needed to start curving
     public float velocityBlendSpeed = 8f; //blend speed is made so that particles change direction slowly
 
-    void OnEnable()
-    {
-        ConfigureGhostTrail();
-    }
-
     /**
     Main update loop
 
@@ -33,15 +28,6 @@ public class BankGhostTrailBehaviour : MonoBehaviour
         {
             UpdateGhostTrailMotion();
         }
-    }
-
-    void ConfigureGhostTrail()
-    {
-        if (ghostTrail == null) return;
-
-        ParticleSystem.MainModule main = ghostTrail.main;
-        main.startSpeed = 0f;
-        main.simulationSpace = ParticleSystemSimulationSpace.World;
     }
 
     /** 
@@ -74,7 +60,7 @@ public class BankGhostTrailBehaviour : MonoBehaviour
         int count = ghostTrail.GetParticles(ghostParticles);
         if (count == 0) return;
 
-        float bankAngle = transform.eulerAngles.x;
+        float bankAngle = transform.eulerAngles.z;
         // convert from unsigned 0-360 to range -180 and 180
         float signedBank = Mathf.DeltaAngle(0f, bankAngle);
 
@@ -85,10 +71,6 @@ public class BankGhostTrailBehaviour : MonoBehaviour
 
         // turn direction -1 = right 1 = left
         float turnDir = Mathf.Sign(signedBank);
-
-        Vector3 straightTrailDir = -transform.right;
-        straightTrailDir.y = 0f;
-        straightTrailDir.Normalize();
 
         // The planes forward axis is +x therefore transform.forward returns the direction the planes +z axis is facing
         Vector3 turnCentre = transform.position;
@@ -121,6 +103,8 @@ public class BankGhostTrailBehaviour : MonoBehaviour
             }
         }
 
+        float verticalComponent = -transform.right.y;
+
         // Update Each Ghost Particle
         for (int i = 0; i < count; i++)
         {
@@ -141,22 +125,24 @@ public class BankGhostTrailBehaviour : MonoBehaviour
                 // flip the tangent direction based on the turn side
                 tangentDir *= turnDir;
 
+                // Add vertical component
+                tangentDir.y = verticalComponent;
+
                 // set the new velocity along the tangent
                 target = tangentDir * velocity;
             }
             else
             {
-                target = straightTrailDir * velocity;
+                // return, particle system handles level flight by default
+                target = ghostParticles[i].velocity;
             }
 
             // blend smoothly to target velocity instead of snapping, prevents flickering at origin
-            Vector3 blendedVelocity = Vector3.Lerp(
+            ghostParticles[i].velocity = Vector3.Lerp(
                 ghostParticles[i].velocity,
                 target,
                 Time.deltaTime * velocityBlendSpeed //uses delta time to gradually blend the particles as we change direction -randy
             );
-            blendedVelocity.y = 0f;
-            ghostParticles[i].velocity = blendedVelocity;
         }
 
         // Pass the updated particles back to the ParticleSystem
@@ -173,7 +159,7 @@ public class BankGhostTrailBehaviour : MonoBehaviour
         if (ghostTrail == null) return;
 
         // Get bank angle
-        float signedBank = Mathf.DeltaAngle(0f, transform.rotation.eulerAngles.x);
+        float signedBank = Mathf.DeltaAngle(0f, transform.rotation.eulerAngles.z);
         if (Mathf.Abs(signedBank) < 5f) return;
 
         // Mathf.Tan expects radians not degrees

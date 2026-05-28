@@ -196,6 +196,15 @@ public static class ActivityHelper
         {
             BankGhostTrailBehaviour trail = GameObject.FindObjectOfType<BankGhostTrailBehaviour>();
             trail.enable = enable;
+
+            if (trail.ghostTrail != null)
+            {
+                if (enable)
+                    trail.ghostTrail.Play();
+                else
+                    trail.ghostTrail.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            }
+
             return trail;
         }
         catch
