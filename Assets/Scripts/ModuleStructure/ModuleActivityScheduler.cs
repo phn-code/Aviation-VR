@@ -67,17 +67,12 @@ public class ModuleActivityScheduler : MonoBehaviour
         if (currentActivity.customScript != null)
         {
             activeControllerObject = Instantiate(currentActivity.customScript, new Vector3(0, 0, 0), Quaternion.identity);
-            Debug.Log("Instantiated: " + activeControllerObject.name);
 
-
-            var controller = activeControllerObject.GetComponentInChildren<IActivityController>();
-            Debug.Log("Controller found: " + (controller != null));
+            var controller = activeControllerObject.GetComponent<IActivityController>();
             if (controller != null)
             {
                 controller.StartActivity();
             }
-        }else{
-            Debug.Log("customScript is NULL on currentActivity");
         }
 
         // Display first step! Let's get this party started
@@ -175,7 +170,7 @@ public class ModuleActivityScheduler : MonoBehaviour
         //steps of activities (referenced from startActivity function)
         if (activeControllerObject != null)
         {
-            var controller = activeControllerObject.GetComponentInChildren<IActivityController>();
+            var controller = activeControllerObject.GetComponent<IActivityController>();
             if (controller != null)
             {
                 controller.StopActivity(); // stop coroutines and internal PlayableDirectors before destroying

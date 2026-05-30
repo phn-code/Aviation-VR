@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 /** 
 Handles menu selection of each Module alongside a Play button to trigger Modules via the ModuleManager.
@@ -29,7 +30,7 @@ public class ModuleMenuSelection : MonoBehaviour
         playButton.interactable = false;
 
         // Buttons will call SelectModule passing in their unique index when clicked
-        //module1Button.onClick.AddListener(() => SelectModule(0));
+        module1Button.onClick.AddListener(() => SelectModule(0));
         module2Button.onClick.AddListener(() => SelectModule(1));
         //module3Button.onClick.AddListener(() => SelectModule(2));
 
@@ -71,6 +72,11 @@ public class ModuleMenuSelection : MonoBehaviour
     {
         // No module selected, do nothing
         if (selectedModule == -1) return;
+
+        if (selectedModule == 0){
+            SceneManager.LoadScene("current_version");
+            return;
+        }
 
         // Disable the menu and reset state of menu
         playButton.interactable = false;

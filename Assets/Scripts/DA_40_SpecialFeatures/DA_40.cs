@@ -122,26 +122,40 @@ public class DA_40 : MonoBehaviour
         }
 
         // Initial setup of ghost trail
-        SetGhostTrail(GhostTrailEnabled);
+        if (GhostTrailEnabled)
+            GhostTrail.Play();
+        else
+            GhostTrail.Stop(true, ParticleSystemStopBehavior.StopEmitting);
 
         lastTrailState = GhostTrailEnabled;
 
         // Clear subtitles
-        if (subtitles != null) subtitles.text = "";
+        subtitles.text = "";
     }
 
 
     void Update()
     {
-        // Update propeller speed each frame, rotation applied in LateUpdate to run after Animator
-        if (PropellerEnabled)
+        // Linear increase and decrease of propeller speed when toggled on and off respectively
+        if (PropellerEnabled && Helice != null) // Rotate the propeller if it is toggled on
+        {
             currentPropellerSpeed = Mathf.MoveTowards(currentPropellerSpeed, PropellerRotationSpeed, propellerAcceleration * Time.deltaTime);
+
+            Helice.transform.Rotate(Vector3.right, -currentPropellerSpeed * Time.deltaTime);
+        }
         else
+        {
             currentPropellerSpeed = Mathf.MoveTowards(currentPropellerSpeed, 0f, propellerAcceleration * Time.deltaTime);
+            Helice.transform.Rotate(Vector3.right, -currentPropellerSpeed * Time.deltaTime);
+        }
 
         if (GhostTrailEnabled != lastTrailState) // Every frame, turn on the ghost trail if enabled by checking prev state
         {
-            SetGhostTrail(GhostTrailEnabled);
+            if (GhostTrailEnabled)
+                GhostTrail.Play();
+            else
+                GhostTrail.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+
             lastTrailState = GhostTrailEnabled;
         }
 
@@ -177,13 +191,6 @@ public class DA_40 : MonoBehaviour
         }
     }
 
-    void LateUpdate()
-    {
-        // Apply propeller rotation after Animator runs so it isn't overridden
-        if (Helice != null)
-            Helice.transform.Rotate(Vector3.right, -currentPropellerSpeed * Time.deltaTime);
-    }
-
     /**
     Plays a sound that is passed in as an AudioSource.
     @param sound The sound to be played.
@@ -217,17 +224,5 @@ public class DA_40 : MonoBehaviour
     public void EnableGhostTrail(bool enabled)
     {
         GhostTrailEnabled = enabled;
-        SetGhostTrail(enabled);
-        lastTrailState = enabled;
-    }
-
-    private void SetGhostTrail(bool enabled)
-    {
-        if (GhostTrail == null) return;
-
-        if (enabled)
-            GhostTrail.Play();
-        else
-            GhostTrail.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
 }

@@ -6483,6 +6483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vibrationIntensity: 0.3
   vibrationDuration: 8
+  vibrationStartTime: 8.69
 --- !u!4 &237822343
 Transform:
   m_ObjectHideFlags: 0
@@ -51226,7 +51227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playButton: {fileID: 2105710881}
-  module1Button: {fileID: 0}
+  module1Button: {fileID: 343073452}
   module2Button: {fileID: 171514013}
   module3Button: {fileID: 0}
   backButton: {fileID: 1639674192}
@@ -70673,9 +70674,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   container: {fileID: 167705739}
-  pauseMenuScreen: {fileID: 0}
-  menuDistance: 4
-  menuHeightOffset: 1.5
 --- !u!114 &1726861161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90291,8 +90289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aircraft: {fileID: 919132149332208318}
   ghostTrail: {fileID: 581464286}
-  initialUpwardSpeed: 40
-  upwardAcceleration: 20
+  sinkRate: 4
 --- !u!114 &919132149332208336
 MonoBehaviour:
   m_ObjectHideFlags: 0

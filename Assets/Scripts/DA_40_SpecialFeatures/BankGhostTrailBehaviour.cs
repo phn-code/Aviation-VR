@@ -17,6 +17,7 @@ public class BankGhostTrailBehaviour : MonoBehaviour
     public float bankDeadZone = 3f; //bank angle needed to start curving
     public float velocityBlendSpeed = 8f; //blend speed is made so that particles change direction slowly
 
+
     /**
     Main update loop
 
@@ -60,7 +61,7 @@ public class BankGhostTrailBehaviour : MonoBehaviour
         int count = ghostTrail.GetParticles(ghostParticles);
         if (count == 0) return;
 
-        float bankAngle = transform.eulerAngles.z;
+        float bankAngle = transform.rotation.eulerAngles.z; //change to z was x before
         // convert from unsigned 0-360 to range -180 and 180
         float signedBank = Mathf.DeltaAngle(0f, bankAngle);
 

@@ -59,7 +59,7 @@ public class ControllerBackward : MonoBehaviour, IActivityController
 
     public void StopActivity()
     {
-        activityEnabled = false; // stop accepting controller input
+        activityEnabled = false;
     }
 
     // Wrapper for TriggerHaptic method.

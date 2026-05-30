@@ -119,8 +119,7 @@ public class LevelTurnActivity : MonoBehaviour, IActivityController
 
     public void StopActivity()
     {
-        StopAllCoroutines(); // stop any in-progress waits or timed steps so they don't carry over into the next section
-        // manually stop each internal timeline, destroying the GameObject doesn't cut the audio fast enough
+        StopAllCoroutines();
         if (bankTimelines != null)
         {
             foreach (var director in bankTimelines)

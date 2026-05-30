@@ -189,22 +189,13 @@ public class Sec6SpinRecoveryActivity : MonoBehaviour, IActivityController
 
     public void StopActivity()
     {
-        StopAllCoroutines(); // stop any in-progress waits or timed steps so they don't carry over into the next section
-        // manually stop each internal timeline, destroying the GameObject doesn't cut the audio fast enough
+        StopAllCoroutines();
         if (pareStepTimelines != null)
         {
             foreach (var director in pareStepTimelines)
             {
                 if (director != null) director.Stop();
             }
-        }
-        // The throttle canvas only gets destroyed normally when the user completes step 1.
-        // If they switch sections before that, it just hangs around in the scene forever.
-        // So we clean it up here too just in case.
-        if (throttleCanvasInstance != null)
-        {
-            Destroy(throttleCanvasInstance);
-            throttleCanvasInstance = null;
         }
     }
 
