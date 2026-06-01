@@ -8980,7 +8980,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: even though indicated airspeed remains roughly the same.
+  m_text: 'Step 3: Apply full rudder opposite the direction of rotation to stop the
+    yaw. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 92a26de1dc88f694f8e562da8a93141c, type: 2}
@@ -83780,8 +83781,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149332208317}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.006615343, y: -0.2502926, z: 0.025579631, w: 0.9678097}
-  m_LocalPosition: {x: 32, y: 0.81, z: -0.9}
+  m_LocalRotation: {x: 0.026421208, y: 0.9996509, z: -6.894087e-10, w: -0.000000043708432}
+  m_LocalPosition: {x: 803.25, y: 1450.36, z: 1890.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
