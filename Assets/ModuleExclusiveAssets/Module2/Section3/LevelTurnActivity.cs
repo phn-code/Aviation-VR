@@ -33,6 +33,7 @@ public class LevelTurnActivity : MonoBehaviour, IActivityController
     public float bankSensitivity = 45f;             /**< Roll sensitivity multiplier for controller input */
     public float deadZone = 0.1f;                   /**< Controller deadzone threshold in degrees to filter noise */
     public float stepAdvanceTolerance = 3f;         /**< Tolerance in degrees for achieving target angles before advancing */
+    public float bankSettleDuration = 0.15f;        /**< Seconds to settle onto the exact bank target once achieved. Kept short so the aircraft stops promptly instead of drifting. */
 
     private Quaternion controllerOrigin = Quaternion.identity;  /**< Initial controller orientation captured at step start */
     private bool hasControllerOrigin = false;                   /**< Flag indicating if controller origin has been captured this step */
@@ -194,7 +195,10 @@ public class LevelTurnActivity : MonoBehaviour, IActivityController
         {
             inputLocked = true;
             hasControllerOrigin = false;
-            aoaManipulator.LerpBank(bankTargets[currentBankTarget] * Mathf.Sign(currentBank));
+            // Snap to the exact target quickly. Previously this used the default 1.5s lerp,
+            // which made the aircraft keep rolling slowly for ~1.5s after the bank angle was
+            // already achieved. A short duration stops the motion as soon as the action is met.
+            aoaManipulator.LerpBank(bankTargets[currentBankTarget] * Mathf.Sign(currentBank), bankSettleDuration);
             StartCoroutine(ActivityHelper.PlayTimeLine(bankTimelines[currentBankTarget], () =>
             {
                 EnableCurrentStep();
