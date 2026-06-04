@@ -73,7 +73,7 @@ public class RotateLeftController : MonoBehaviour, IActivityController
 
         float rotationAmount = ctx.ReadValue<float>();// Get the value from the controller
         
-        if (rotationAmount >= rotationThreshold)
+        if (rotationAmount <= -rotationThreshold)
         {
             if (controllerHint != null) controllerHint.SetActive(false);
             AxisRotationController aoaManip = GameObject.FindAnyObjectByType<AxisRotationController>();
