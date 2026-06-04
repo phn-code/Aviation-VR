@@ -44,6 +44,7 @@ public class ModuleManager : MonoBehaviour
     private bool waitingForActivity = false; /**< Flag that determines if an activity is currently playing or not, used to yield moving to the next timeline in the Section. */
     private GameObject da40DuplicateCached; /**< Cached reference to DA_40_Duplicate so it can be reactivated even when inactive (GameObject.Find only finds active objects). */
     private GameObject aircraftLabelsCached; /**< Cached reference to AircraftLabels for the same reason. */
+    private GameObject spinSpiralLabelsCached; /**< Cached reference to SpinSpiralLabels for section 7 cleanup. */
     private GameObject da40Cached; /**< Cached reference to DA_40 for position restore after section 5. */
     private Vector3 da40PositionBeforeSection5; /**< DA_40 world position cached before section 5 animates it. */
     private Quaternion da40RotationBeforeSection5; /**< DA_40 world rotation cached before section 5 animates it. */
@@ -92,6 +93,11 @@ public class ModuleManager : MonoBehaviour
         // It gets disabled when leaving section 5, but needs to be active when Play() is called
         // otherwise the activation track inside the timeline can't bind to it and the animation freezes.
         if (currentModuleIndex == 1 && currentSectionIndex == 5 && currentTimelineIndex == 1 && da40DuplicateCached != null)
+            da40DuplicateCached.SetActive(true);
+
+        // Re-enable DA_40_Duplicate before the spin vs spiral dive timeline plays.
+        // It gets disabled when leaving section 5 or section 7, so must be re-enabled here.
+        if (currentModuleIndex == 1 && currentSectionIndex == 7 && currentTimelineIndex == 0 && da40DuplicateCached != null)
             da40DuplicateCached.SetActive(true);
 
         // Reassign current director, and play it
@@ -210,6 +216,18 @@ public class ModuleManager : MonoBehaviour
             }
         }
 
+        // Leaving section 7 naturally: hide DA_40_Duplicate and SpinSpiralLabels.
+        if (currentModuleIndex == 1 && currentSectionIndex == 7)
+        {
+            var found = GameObject.Find("DA_40_Duplicate");
+            if (found != null) da40DuplicateCached = found;
+            if (da40DuplicateCached != null) da40DuplicateCached.SetActive(false);
+
+            var foundLabels = GameObject.Find("SpinSpiralLabels");
+            if (foundLabels != null) spinSpiralLabelsCached = foundLabels;
+            if (spinSpiralLabelsCached != null) spinSpiralLabelsCached.SetActive(false);
+        }
+
         currentTimelineIndex = 0;
         currentSectionIndex++;
 
@@ -278,6 +296,18 @@ public class ModuleManager : MonoBehaviour
         }
 
         StopTimeline();
+
+        // When switching away from section 7, manually hide DA_40_Duplicate and SpinSpiralLabels.
+        if (currentModuleIndex == 1 && currentSectionIndex == 7)
+        {
+            var found = GameObject.Find("DA_40_Duplicate");
+            if (found != null) da40DuplicateCached = found;
+            if (da40DuplicateCached != null) da40DuplicateCached.SetActive(false);
+
+            var foundLabels = GameObject.Find("SpinSpiralLabels");
+            if (foundLabels != null) spinSpiralLabelsCached = foundLabels;
+            if (spinSpiralLabelsCached != null) spinSpiralLabelsCached.SetActive(false);
+        }
 
         // When switching away from section 5, manually hide DA_40_Duplicate and AircraftLabels.
         // Stopping a timeline mid-play doesn't deactivate objects controlled by its activation track,
