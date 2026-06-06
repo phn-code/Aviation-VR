@@ -3,7 +3,8 @@ using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
 using System.Collections.Generic;
-
+// amir part
+using UnityEngine.SceneManagement;
 /** 
 Central driver class to control the flow of logic on which Modules/sections/timelines/activities should play, and in sequence.
 
@@ -264,6 +265,12 @@ public class ModuleManager : MonoBehaviour
     //playing specific module and section
     public void PlayModuleSection(int moduleIndex, int sectionIndex)
     {
+        // module 1 tiutoral scene
+        if (moduleIndex == 0)
+        {
+            SceneManager.LoadScene("v1.2");
+            return;
+        }
         // If the pause menu is open when switching sections, force resume so timescale resets
         var pauseMenu = FindObjectOfType<PauseMenu>();
         if (pauseMenu != null) pauseMenu.ForceResume();
