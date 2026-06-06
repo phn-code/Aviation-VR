@@ -556,7 +556,10 @@ public class ProceduralAirflow : MonoBehaviour
             if (Camera.main != null)
             {
                 Vector3 toCamera = (Camera.main.transform.position - label.position).normalized;
-                label.position += toCamera * 0.15f;
+                label.position += toCamera * 0.3f;
+
+                Vector3 lateral = Vector3.Cross(root.transform.forward, toCamera).normalized;
+                label.position += lateral * 0.2f;
             }
         }
     }
