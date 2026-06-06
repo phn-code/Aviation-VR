@@ -550,16 +550,12 @@ public class ProceduralAirflow : MonoBehaviour
         Transform label = root.transform.Find(root.name.Replace("_Arrow_Root", "") + "_Label");
         if (label != null)
         {
-            label.localPosition = new Vector3(0, 0.25f, 0);
+            label.position = root.transform.position;
 
-            // This is the fix for the weight label being hidden behind the arrow shaft
             if (Camera.main != null)
             {
                 Vector3 toCamera = (Camera.main.transform.position - label.position).normalized;
-                label.position += toCamera * 0.3f;
-
-                Vector3 lateral = Vector3.Cross(root.transform.forward, toCamera).normalized;
-                label.position += lateral * 0.2f;
+                label.position += toCamera * 0.5f;
             }
         }
     }
