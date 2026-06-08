@@ -29,7 +29,7 @@ public class ModuleMenuSelection : MonoBehaviour
         playButton.interactable = false;
 
         // Buttons will call SelectModule passing in their unique index when clicked
-        //module1Button.onClick.AddListener(() => SelectModule(0));
+        module1Button.onClick.AddListener(() => SelectModule(0));
         module2Button.onClick.AddListener(() => SelectModule(1));
         //module3Button.onClick.AddListener(() => SelectModule(2));
 
