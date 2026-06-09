@@ -638,6 +638,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7361096509378618142, guid: 3e6c8998a0b8701459ab666be1010e91, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7361096509378618142, guid: 3e6c8998a0b8701459ab666be1010e91, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2121928679}
+    - target: {fileID: 7361096509378618142, guid: 3e6c8998a0b8701459ab666be1010e91, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenuButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7361096509378618142, guid: 3e6c8998a0b8701459ab666be1010e91, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7490445940128681401, guid: 3e6c8998a0b8701459ab666be1010e91, type: 3}
       propertyPath: moduleManager
       value: 
@@ -51119,7 +51135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1296903164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81577,6 +81593,17 @@ PlayableDirector:
     value: {fileID: 1726861159}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &2121928679 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5022264406356385689, guid: 3e6c8998a0b8701459ab666be1010e91, type: 3}
+  m_PrefabInstance: {fileID: 10114916}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abdaebe852b25b44395d4030add74ae3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2124291342
 GameObject:
   m_ObjectHideFlags: 0

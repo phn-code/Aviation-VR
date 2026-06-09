@@ -90,10 +90,10 @@ public class PauseMenu : MonoBehaviour
     /* will make it so it resumes timescale for the scene but also just restarts the whole scene
     i think that its a bit difficult that this prototype is made in one whole scene but maybe we can create levels later down the line -Randy
     */
-    public void MainMenuButton() // Randy
+    public void MainMenuButton() // Randy - //Amir have updated to load menu start
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("MainVRScene");
+        SceneManager.LoadScene("MenuStart");
     }
 
     public void ExitButton() // Randy

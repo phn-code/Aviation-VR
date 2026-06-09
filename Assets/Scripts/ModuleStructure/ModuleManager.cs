@@ -3,8 +3,7 @@ using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
 using System.Collections.Generic;
-// amir part
-using UnityEngine.SceneManagement;
+
 
 /** 
 Central driver class to control the flow of logic on which Modules/sections/timelines/activities should play, and in sequence.
@@ -57,7 +56,7 @@ public class ModuleManager : MonoBehaviour
 
     void Start()
     {
-
+        PlayModuleSection(1, 0);
     }
 
     /**
@@ -275,12 +274,6 @@ public class ModuleManager : MonoBehaviour
         if (activeDirector != null)
             activeDirector.extrapolationMode = DirectorWrapMode.None;
 
-        // module 1 tiutoral scene
-        if (moduleIndex == 0)
-        {
-            SceneManager.LoadScene("v1.2");
-            return;
-        }
         // This bit of code below is primarily for Section 5 Coordinated vs Uncoordinated animaiton
 
         // Leaving section 5: restore DA_40 to its pre-section-5 position so it doesn't freeze mid-animation in the next section
