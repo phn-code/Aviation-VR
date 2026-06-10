@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 // tts website: https://en.texttospeech.online/
 
+
+// Drives the entire tutorial sequence, plays audio cues, animates the plane,
+// shows UI text, and waits for the player to perform each control input before advancing.
 public class TutorialManager : MonoBehaviour
 {
     [Header("Audio")]
@@ -46,6 +49,7 @@ public class TutorialManager : MonoBehaviour
         StartCoroutine(RunTutorial());
     }
 
+    // Master coroutine, runs each teaching step in order then quits the app
     private IEnumerator RunTutorial()
     {
         //  Intro 
@@ -67,7 +71,6 @@ public class TutorialManager : MonoBehaviour
 
         yield return StartCoroutine(TeachGhostTrail());
 
-
         //  Throttle + Fly Away 
         yield return StartCoroutine(TeachThrottle());
 
@@ -76,7 +79,7 @@ public class TutorialManager : MonoBehaviour
 
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
-        #else
+        #else //running in a build 
             Application.Quit();
         #endif
     }
@@ -157,7 +160,7 @@ public class TutorialManager : MonoBehaviour
         // Keyboard fallback for testing
         if (Keyboard.current != null && Keyboard.current.leftArrowKey.isPressed)
         {
-            Debug.Log("Keyboard trigger - LEFT ARROW pressed");
+            // Debug.Log("Keyboard trigger - LEFT ARROW pressed");
             return true;
         }
 
@@ -170,7 +173,7 @@ public class TutorialManager : MonoBehaviour
             {
                 Vector3 euler = rotation.eulerAngles;
                 float signedZ = euler.z > 180f ? euler.z - 360f : euler.z;
-                Debug.Log($"Controller Z: {signedZ:F1}");
+                // Debug.Log($"Controller Z: {signedZ:F1}");
                 return signedZ > rollThreshold;
             }
         }
@@ -183,7 +186,7 @@ public class TutorialManager : MonoBehaviour
         // Keyboard fallback for testing
         if (Keyboard.current != null && Keyboard.current.rightArrowKey.isPressed)
         {
-            Debug.Log("Keyboard trigger - RIGHT ARROW pressed");
+            // Debug.Log("Keyboard trigger - RIGHT ARROW pressed");
             return true;
         }
 
@@ -238,7 +241,7 @@ public class TutorialManager : MonoBehaviour
         // Keyboard fallback for testing
         if (Keyboard.current != null && Keyboard.current.upArrowKey.isPressed)
         {
-            Debug.Log("Keyboard trigger UP ARROW pressed");
+            // Debug.Log("Keyboard trigger UP ARROW pressed");
             return true;
         }
 
@@ -250,7 +253,7 @@ public class TutorialManager : MonoBehaviour
             if (leftController.TryGetFeatureValue(
                 UnityEngine.XR.CommonUsages.primary2DAxis, out Vector2 axis))
             {
-                Debug.Log($"Left Joystick Y: {axis.y:F2}");
+                // Debug.Log($"Left Joystick Y: {axis.y:F2}");
                 return axis.y > joystickThreshold;
             }
         }
@@ -346,7 +349,7 @@ private bool IsControllerPitchedUp()
             // Convert how much it's pointing up/down into actual degrees
             float pitchAngle = Mathf.Asin(controllerForward.y) * Mathf.Rad2Deg;
             
-            Debug.Log($"Controller Pitch Angle: {pitchAngle:F1}");
+            // Debug.Log($"Controller Pitch Angle: {pitchAngle:F1}");
             
             // Tilting back (Pitch Up) makes the front point toward the ceiling (Positive Angle)
             return pitchAngle > pitchThreshold;
@@ -375,7 +378,7 @@ private bool IsControllerPitchedDown()
             // 2. Convert how much it's pointing up/down into actual degrees
             float pitchAngle = Mathf.Asin(controllerForward.y) * Mathf.Rad2Deg;
             
-            Debug.Log($"Controller Pitch Angle: {pitchAngle:F1}");
+            // Debug.Log($"Controller Pitch Angle: {pitchAngle:F1}");
             
             // 3. Tilting forward (Pitch Down) makes the front point toward the floor (Negative Angle)
             return pitchAngle < -pitchThreshold;
@@ -390,7 +393,7 @@ private bool IsControllerPitchedDown()
 private IEnumerator TeachGhostTrail()
 {
     tutorialTextBox.SetActive(true);
-    ghostTrailToggle.enabled = false; 
+    ghostTrailToggle.enabled = false; // Prevent the trail toggling automatically during this step
 
     audioSource.PlayOneShot(ghostTrailOnClip);
     yield return new WaitUntil(() => !audioSource.isPlaying);
@@ -415,7 +418,7 @@ private IEnumerator TeachGhostTrail()
 
     tutorialText.text = "";
     tutorialTextBox.SetActive(false);
-    ghostTrailToggle.enabled = true;
+    ghostTrailToggle.enabled = true; // Restore normal ghost trail behaviour yield return new WaitForSeconds(1f); }
     yield return new WaitForSeconds(1f);
 }
 
