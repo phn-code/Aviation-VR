@@ -66,7 +66,7 @@ public class ThrottleController : MonoBehaviour
         float targetPitch = -25f;
         float startYaw = planeTransform.localEulerAngles.y;
 
-        Vector3 flyDirection = Vector3.right;
+        Vector3 flyDirection = planeTransform.right;
         flyDirection.y = 0f;
         flyDirection.Normalize();
 
