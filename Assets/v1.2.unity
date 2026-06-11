@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 520c808f226e748ef806116dc230ad70, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: bbaa846bd3e5bc340953e218c5ac5d83, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -929,6 +929,7 @@ MonoBehaviour:
   ghostTrailToggle: {fileID: 1695689845}
   rollThreshold: 30
   pitchThreshold: 30
+  invertPitchDirection: 0
   throttleClip: {fileID: 8300000, guid: 055c831857f7c4176a4b7519256351f4, type: 3}
   throttleController: {fileID: 1695689832}
   joystickThreshold: 0.5
@@ -1096,7 +1097,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7277802327414017196, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: far clip plane
-      value: 5000
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277802327414017196, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
+      propertyPath: near clip plane
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7434851320941268098, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_AnchorMax.y
