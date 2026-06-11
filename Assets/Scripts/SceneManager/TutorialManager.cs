@@ -310,7 +310,7 @@ private IEnumerator TeachPitchUp()
     yield return new WaitUntil(() => !audioSource.isPlaying);
 
     audioSource.Stop();
-    controllerHint.ShowPitchUp();
+    controllerHint.ShowPitchDown();
     tutorialText.text = "Go ahead, tilt your left controller back";
     yield return new WaitForSeconds(1f); 
     CapturePitchBaseline();
@@ -345,7 +345,7 @@ private IEnumerator TeachPitchDown()
     yield return new WaitUntil(() => !audioSource.isPlaying);
 
     audioSource.Stop();
-    controllerHint.ShowPitchDown();
+    controllerHint.ShowPitchUp();
     tutorialText.text = "Go ahead, tilt your left controller forward";
     CapturePitchBaseline();
     yield return new WaitUntil(() => IsControllerPitchedDown());
