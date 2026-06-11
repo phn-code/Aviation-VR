@@ -634,6 +634,10 @@ PrefabInstance:
       propertyPath: moduleManager
       value: 
       objectReference: {fileID: 27679433}
+    - target: {fileID: 5022264406356385689, guid: 3e6c8998a0b8701459ab666be1010e91, type: 3}
+      propertyPath: togglePauseAction
+      value: 
+      objectReference: {fileID: 8252804019490181162, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     - target: {fileID: 6660188882732957385, guid: 3e6c8998a0b8701459ab666be1010e91, type: 3}
       propertyPath: m_Name
       value: PauseMenuCanvas
@@ -70686,6 +70690,7 @@ MonoBehaviour:
   pauseMenuScreen: {fileID: 0}
   menuDistance: 4
   menuHeightOffset: 1.5
+  togglePauseAction: {fileID: 0}
 --- !u!114 &1726861161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76170,7 +76175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
