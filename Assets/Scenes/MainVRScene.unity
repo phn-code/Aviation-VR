@@ -638,22 +638,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenuCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7361096509378618142, guid: 3e6c8998a0b8701459ab666be1010e91, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7361096509378618142, guid: 3e6c8998a0b8701459ab666be1010e91, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2121928679}
-    - target: {fileID: 7361096509378618142, guid: 3e6c8998a0b8701459ab666be1010e91, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MainMenuButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 7361096509378618142, guid: 3e6c8998a0b8701459ab666be1010e91, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PauseMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 7490445940128681401, guid: 3e6c8998a0b8701459ab666be1010e91, type: 3}
       propertyPath: moduleManager
       value: 
