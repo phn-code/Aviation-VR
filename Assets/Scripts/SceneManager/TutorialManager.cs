@@ -97,6 +97,7 @@ public class TutorialManager : MonoBehaviour
         // Show controller hint animation
         controllerHint.ShowRollLeft();
         tutorialText.text = "To role the aircraft to the left, simply tilt your left controller to the left, as if you were turning a key";
+        CaptureRollBaseline();
         yield return new WaitUntil(() => IsControllerRolledLeft());
 
         // Hide hint when player does it
@@ -132,6 +133,7 @@ public class TutorialManager : MonoBehaviour
         // Show controller hint animation
         controllerHint.ShowRollRight();
         tutorialText.text = "Go ahead, tilt your left controller to the right";
+        CaptureRollBaseline();
         yield return new WaitUntil(() => IsControllerRolledRight());
 
         // Hide hint when player does it
@@ -154,6 +156,40 @@ public class TutorialManager : MonoBehaviour
     }
 
 
+    // --- Per-step rotation baselines (fix: a controller left tilted after one step must NOT
+    //     already satisfy the next step's threshold, which made every later step auto-complete) ---
+    private float rollBaselineZ;
+    private float pitchBaselineAngle;
+
+    private bool TryGetLeftControllerRotation(out Quaternion rotation)
+    {
+        UnityEngine.XR.InputDevice dev = UnityEngine.XR.InputDevices.GetDeviceAtXRNode(UnityEngine.XR.XRNode.LeftHand);
+        if (dev.isValid && dev.TryGetFeatureValue(UnityEngine.XR.CommonUsages.deviceRotation, out rotation))
+            return true;
+        rotation = Quaternion.identity;
+        return false;
+    }
+
+    private float CurrentRollZ()
+    {
+        if (TryGetLeftControllerRotation(out Quaternion rot))
+        {
+            float z = rot.eulerAngles.z;
+            return z > 180f ? z - 360f : z;
+        }
+        return rollBaselineZ; // no controller -> zero delta (keyboard fallback still works)
+    }
+
+    private float CurrentPitchAngle()
+    {
+        if (TryGetLeftControllerRotation(out Quaternion rot))
+            return Mathf.Asin(Mathf.Clamp((rot * Vector3.forward).y, -1f, 1f)) * Mathf.Rad2Deg;
+        return pitchBaselineAngle;
+    }
+
+    private void CaptureRollBaseline()  { rollBaselineZ = CurrentRollZ(); }
+    private void CapturePitchBaseline() { pitchBaselineAngle = CurrentPitchAngle(); }
+
     // DETECTION
     private bool IsControllerRolledLeft()
     {
@@ -174,7 +210,7 @@ public class TutorialManager : MonoBehaviour
                 Vector3 euler = rotation.eulerAngles;
                 float signedZ = euler.z > 180f ? euler.z - 360f : euler.z;
                 // Debug.Log($"Controller Z: {signedZ:F1}");
-                return signedZ > rollThreshold;
+                return Mathf.DeltaAngle(rollBaselineZ, signedZ) > rollThreshold;
             }
         }
 
@@ -201,7 +237,7 @@ public class TutorialManager : MonoBehaviour
                 Vector3 euler = rotation.eulerAngles;
                 float signedZ = euler.z > 180f ? euler.z - 360f : euler.z;
                 // Debug.Log($"Controller Z: {signedZ:F1}");
-                return signedZ < -rollThreshold;
+                return Mathf.DeltaAngle(rollBaselineZ, signedZ) < -rollThreshold;
             }
         }
 
@@ -276,6 +312,7 @@ private IEnumerator TeachPitchUp()
     controllerHint.ShowPitchUp();
     tutorialText.text = "Go ahead, tilt your left controller back";
     yield return new WaitForSeconds(1f); 
+    CapturePitchBaseline();
     yield return new WaitUntil(() => IsControllerPitchedUp());
 
     controllerHint.Hide();
@@ -309,6 +346,7 @@ private IEnumerator TeachPitchDown()
     audioSource.Stop();
     controllerHint.ShowPitchDown();
     tutorialText.text = "Go ahead, tilt your left controller forward";
+    CapturePitchBaseline();
     yield return new WaitUntil(() => IsControllerPitchedDown());
 
     controllerHint.Hide();
@@ -352,7 +390,7 @@ private bool IsControllerPitchedUp()
             // Debug.Log($"Controller Pitch Angle: {pitchAngle:F1}");
             
             // Tilting back (Pitch Up) makes the front point toward the ceiling (Positive Angle)
-            return pitchAngle > pitchThreshold;
+            return Mathf.DeltaAngle(pitchBaselineAngle, pitchAngle) > pitchThreshold;
         }
     }
 
@@ -381,7 +419,7 @@ private bool IsControllerPitchedDown()
             // Debug.Log($"Controller Pitch Angle: {pitchAngle:F1}");
             
             // 3. Tilting forward (Pitch Down) makes the front point toward the floor (Negative Angle)
-            return pitchAngle < -pitchThreshold;
+            return Mathf.DeltaAngle(pitchBaselineAngle, pitchAngle) < -pitchThreshold;
         }
     }
 
