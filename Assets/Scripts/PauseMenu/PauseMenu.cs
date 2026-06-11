@@ -6,15 +6,15 @@ public class PauseMenu : MonoBehaviour
 {
     // the container is just the thing we referenced in unity as the object in the canvas - Randy
     public GameObject container;
-    [SerializeField] private GameObject pauseMenuScreen; // Mahir - explicit reference so it can be active on each open
+    [SerializeField] private GameObject pauseMenuScreen; 
 
-    [SerializeField] private float menuDistance = 4f; // Mahir - how far in front of the player the menu appears
-    [SerializeField] private float menuHeightOffset = 1.5f; // Mahir - how high above eye level the menu appears
-    private bool isPaused = false; // Mahir
+    [SerializeField] private float menuDistance = 4f; 
+    [SerializeField] private float menuHeightOffset = 1.5f;
+    private bool isPaused = false; 
 
     [SerializeField] private InputActionReference togglePauseAction;
 
-    void OnEnable()
+    void OnEnable() // randy
     {
         if (togglePauseAction != null)
         {
@@ -23,7 +23,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    void OnDisable()
+    void OnDisable() // randy
     {
         if (togglePauseAction != null)
         {
@@ -32,9 +32,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    // TogglePause is a Button action, so the Input System fires "performed" exactly once per
-    // press (the rising edge) - no manual polling or edge tracking needed.
-    private void OnTogglePause(InputAction.CallbackContext ctx)
+    private void OnTogglePause(InputAction.CallbackContext ctx) // randy
     {
         if (isPaused)
             ResumeButton();
@@ -42,9 +40,9 @@ public class PauseMenu : MonoBehaviour
             PauseButton();
     }
 
-    public void PauseButton()
+    public void PauseButton() // randy and mahir
     {
-        // Mahir - position the canvas right in front of wherever the player is looking, facing toward them
+        //  position the canvas right in front of wherever the player is looking, facing toward them - mahir
         Camera cam = Camera.main;
         if (cam != null)
         {
@@ -52,19 +50,19 @@ public class PauseMenu : MonoBehaviour
             transform.position = menuPos;
         }
 
-        container.SetActive(true); // Mahir
-        if (pauseMenuScreen != null) pauseMenuScreen.SetActive(true); // Mahir - force active in case it got deactivated on previous close, shouldnt reallly happen tho
-        isPaused = true; // Mahir
-        Time.timeScale = 0; // Randy
-        AudioListener.pause = true; // Mahir
+        container.SetActive(true); 
+        if (pauseMenuScreen != null) pauseMenuScreen.SetActive(true); // force active in case it got deactivated on previous close, shouldnt reallly happen tho
+        isPaused = true; 
+        Time.timeScale = 0; 
+        AudioListener.pause = true; 
     }
 
-    public void ResumeButton()
+    public void ResumeButton() // randy and mahir
     {
-        container.SetActive(false); // Mahir
-        isPaused = false; // Mahir
-        Time.timeScale = 1; // Randy
-        AudioListener.pause = false; // Mahir
+        container.SetActive(false);
+        isPaused = false; 
+        Time.timeScale = 1; 
+        AudioListener.pause = false; 
     }
 
     // Called by ModuleManager when switching sections to reset pause state without user interaction
