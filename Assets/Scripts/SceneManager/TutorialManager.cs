@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 // tts website: https://en.texttospeech.online/
 
@@ -36,6 +37,9 @@ public class TutorialManager : MonoBehaviour
     [Header("Detection Settings")]
     public float rollThreshold = 30f;
     public float pitchThreshold = 30f;
+    // Tick this only if pitch is reversed on your headset (tilting back triggers the
+    // forward step or vice-versa). Default assumes the standard XR pitch-axis sign.
+    public bool invertPitchDirection = false;
 
     [Header("Throttle")]
     public AudioClip throttleClip;
@@ -80,7 +84,7 @@ public class TutorialManager : MonoBehaviour
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
         #else //running in a build 
-            Application.Quit();
+            SceneManager.LoadScene("MenuStart");
         #endif
     }
 
@@ -159,7 +163,7 @@ public class TutorialManager : MonoBehaviour
     // --- Per-step rotation baselines (fix: a controller left tilted after one step must NOT
     //     already satisfy the next step's threshold, which made every later step auto-complete) ---
     private float rollBaselineZ;
-    private float pitchBaselineAngle;
+    private Quaternion pitchBaselineRotation = Quaternion.identity;
 
     private bool TryGetLeftControllerRotation(out Quaternion rotation)
     {
@@ -180,15 +184,12 @@ public class TutorialManager : MonoBehaviour
         return rollBaselineZ; // no controller -> zero delta (keyboard fallback still works)
     }
 
-    private float CurrentPitchAngle()
+    private void CaptureRollBaseline()  { rollBaselineZ = CurrentRollZ(); }
+    private void CapturePitchBaseline()
     {
         if (TryGetLeftControllerRotation(out Quaternion rot))
-            return Mathf.Asin(Mathf.Clamp((rot * Vector3.forward).y, -1f, 1f)) * Mathf.Rad2Deg;
-        return pitchBaselineAngle;
+            pitchBaselineRotation = rot;
     }
-
-    private void CaptureRollBaseline()  { rollBaselineZ = CurrentRollZ(); }
-    private void CapturePitchBaseline() { pitchBaselineAngle = CurrentPitchAngle(); }
 
     // DETECTION
     private bool IsControllerRolledLeft()
@@ -385,12 +386,17 @@ private bool IsControllerPitchedUp()
             Vector3 controllerForward = rotation * Vector3.forward;
             
             // Convert how much it's pointing up/down into actual degrees
-            float pitchAngle = Mathf.Asin(controllerForward.y) * Mathf.Rad2Deg;
+            // How far the controller has pitched (nose up/down) from the baseline, measured as
+            // rotation about its own right axis. True pitch angle — never folds near vertical.
+            float pitchDelta = Vector3.SignedAngle(
+                pitchBaselineRotation * Vector3.forward, controllerForward, pitchBaselineRotation * Vector3.right);
             
             // Debug.Log($"Controller Pitch Angle: {pitchAngle:F1}");
             
-            // Tilting back (Pitch Up) makes the front point toward the ceiling (Positive Angle)
-            return Mathf.DeltaAngle(pitchBaselineAngle, pitchAngle) > pitchThreshold;
+            // Strictly BACKWARD only. A backward tilt (nose up) is a negative pitch about the
+            // controller's right axis under the standard XR convention; a forward tilt is
+            // positive and must NOT complete this step. (Flip with invertPitchDirection.)
+            return (invertPitchDirection ? -pitchDelta : pitchDelta) <= -pitchThreshold;
         }
     }
 
@@ -414,12 +420,16 @@ private bool IsControllerPitchedDown()
             Vector3 controllerForward = rotation * Vector3.forward;
             
             // 2. Convert how much it's pointing up/down into actual degrees
-            float pitchAngle = Mathf.Asin(controllerForward.y) * Mathf.Rad2Deg;
+            // How far the controller has pitched (nose up/down) from the baseline, measured as
+            // rotation about its own right axis. True pitch angle — never folds near vertical.
+            float pitchDelta = Vector3.SignedAngle(
+                pitchBaselineRotation * Vector3.forward, controllerForward, pitchBaselineRotation * Vector3.right);
             
             // Debug.Log($"Controller Pitch Angle: {pitchAngle:F1}");
             
-            // 3. Tilting forward (Pitch Down) makes the front point toward the floor (Negative Angle)
-            return Mathf.DeltaAngle(pitchBaselineAngle, pitchAngle) < -pitchThreshold;
+            // Strictly FORWARD only (nose down = positive pitch under the standard convention);
+            // a backward tilt is negative and must NOT complete this step.
+            return (invertPitchDirection ? -pitchDelta : pitchDelta) >= pitchThreshold;
         }
     }
 
