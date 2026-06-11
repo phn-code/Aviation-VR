@@ -37,9 +37,7 @@ public class TutorialManager : MonoBehaviour
     [Header("Detection Settings")]
     public float rollThreshold = 30f;
     public float pitchThreshold = 30f;
-    // Tick this only if pitch is reversed on your headset (tilting back triggers the
-    // forward step or vice-versa). Default assumes the standard XR pitch-axis sign.
-    public bool invertPitchDirection = false;
+    public bool invertPitchDirection = false; //in case you want to invert for in the future
 
     [Header("Throttle")]
     public AudioClip throttleClip;
@@ -246,7 +244,6 @@ public class TutorialManager : MonoBehaviour
     }
 
 // THROTTLE
-
     private IEnumerator TeachThrottle()
     {
         tutorialTextBox.SetActive(true);
@@ -386,16 +383,11 @@ private bool IsControllerPitchedUp()
             Vector3 controllerForward = rotation * Vector3.forward;
             
             // Convert how much it's pointing up/down into actual degrees
-            // How far the controller has pitched (nose up/down) from the baseline, measured as
-            // rotation about its own right axis. True pitch angle — never folds near vertical.
             float pitchDelta = Vector3.SignedAngle(
                 pitchBaselineRotation * Vector3.forward, controllerForward, pitchBaselineRotation * Vector3.right);
             
             // Debug.Log($"Controller Pitch Angle: {pitchAngle:F1}");
-            
-            // Strictly BACKWARD only. A backward tilt (nose up) is a negative pitch about the
-            // controller's right axis under the standard XR convention; a forward tilt is
-            // positive and must NOT complete this step. (Flip with invertPitchDirection.)
+
             return (invertPitchDirection ? -pitchDelta : pitchDelta) <= -pitchThreshold;
         }
     }
@@ -420,15 +412,11 @@ private bool IsControllerPitchedDown()
             Vector3 controllerForward = rotation * Vector3.forward;
             
             // 2. Convert how much it's pointing up/down into actual degrees
-            // How far the controller has pitched (nose up/down) from the baseline, measured as
-            // rotation about its own right axis. True pitch angle — never folds near vertical.
             float pitchDelta = Vector3.SignedAngle(
                 pitchBaselineRotation * Vector3.forward, controllerForward, pitchBaselineRotation * Vector3.right);
             
             // Debug.Log($"Controller Pitch Angle: {pitchAngle:F1}");
             
-            // Strictly FORWARD only (nose down = positive pitch under the standard convention);
-            // a backward tilt is negative and must NOT complete this step.
             return (invertPitchDirection ? -pitchDelta : pitchDelta) >= pitchThreshold;
         }
     }
