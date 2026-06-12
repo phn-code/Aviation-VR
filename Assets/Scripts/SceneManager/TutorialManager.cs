@@ -158,8 +158,7 @@ public class TutorialManager : MonoBehaviour
     }
 
 
-    // --- Per-step rotation baselines (fix: a controller left tilted after one step must NOT
-    //     already satisfy the next step's threshold, which made every later step auto-complete) ---
+    //  Per-step rotation baselines (fix: a controller left tilted after one step must NOT already satisfy the next step's threshold, which made every later step auto-complete) 
     private float rollBaselineZ;
     private Quaternion pitchBaselineRotation = Quaternion.identity;
 
