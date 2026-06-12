@@ -82,7 +82,6 @@ public class ControllerHintAnimation : MonoBehaviour
 
     public void ShowThrottleForward()
     {
-        // placeholder — add your animation here later
     }
 
     public void ShowPitchUp()
