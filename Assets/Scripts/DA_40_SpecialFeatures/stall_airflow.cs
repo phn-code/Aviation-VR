@@ -17,13 +17,15 @@ public class StallVisualTrigger : MonoBehaviour
     public void OnStallBegin()
     {
         isStalling = true;
-        aircraft.EnableGhostTrail(true);
+        // Do NOT auto-enable the ghost trail. By design it must only ever be turned on by the
+        // user's controller toggle. We only flag the stall so LateUpdate can shape the trail's
+        // particles IF the user already has it on (LateUpdate no-ops when the trail is off).
     }
 
     public void OnStallEnd()
     {
         isStalling = false;
-        aircraft.EnableGhostTrail(false);
+        // Don't force the trail off either — its on/off state is entirely the user's to control.
     }
 
     private void LateUpdate()

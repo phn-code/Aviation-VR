@@ -20,6 +20,17 @@ public class GhostTrailToggle : MonoBehaviour
     @return void
     */
 
+    // Hard rule: the ghost trail must ONLY play when the user toggles it on from the controller.
+    // Play-On-Awake is ruled out, so something else (a Timeline Control track in this section) is
+    // calling Play() on it directly. Enforce the state every frame in LateUpdate, which runs AFTER
+    // Timeline/Directors evaluate: if we're logically off but something started it, stop and clear
+    // it the same frame so it never renders.
+    private void LateUpdate()
+    {
+        if (!ghostTrailEnabled && GhostTrail != null && GhostTrail.isPlaying)
+            GhostTrail.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+    }
+
     //RANDY function made for button to toggle back and forth for the ghost trail
     public void ToggleGhostTrail()
     {
